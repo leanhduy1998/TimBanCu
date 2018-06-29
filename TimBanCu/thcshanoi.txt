@@ -1,0 +1,1240 @@
+THCS YÊN SƠN - BA VÌ
+Xã Yên Sơn
+THCS YÊN BÀI B
+Xã Yên Bài
+THCS YÊN BÀI A
+Xã Yên Bài
+THCS VẬT LẠI
+Xã Vật Lại
+THCS VẠN THẮNG
+Xã Vạn Thắng
+THCS VÂN HOÀ
+Xã Vân Hòa
+THCS TTNC BÒ & ĐỒNG CỎ
+Xã Tản Lĩnh
+THCS TÒNG BẠT
+Xã Tòng Bạt
+THCS TIÊN PHONG
+Xã Tiên Phong
+THCS THUỴ AN
+Xã Thụy An
+THCS THUẦN MỸ
+Xã Thuần Mỹ
+THCS THÁI HOÀ
+Xã Thái Hòa
+THCS TÂY ĐẰNG
+Xã Tây Đằng
+THCS TẢN LĨNH
+Xã Tản Lĩnh
+THCS TẢN HỒNG
+Xã Tản Hồng
+THCS TẢN ĐÀ
+Thị Trấn Tây Đằng
+THCS SƠN ĐÀ
+Xã Sơn Đà
+THCS PHÚ SƠN
+Xã Phú Sơn
+THCS PHÚ PHƯƠNG
+Xã Phú Phương
+THCS PHÚ ĐÔNG
+Xã Phú Đông
+THCS PHÚ CƯỜNG - BA VÌ
+Xã Phú Cường
+THCS PHÚ CHÂU
+Xã Phú Châu
+THCS PHONG VÂN
+Xã Phong Vân
+THCS PHỔ THÔNG DÂN TỘC NỘI TRÚ
+Xã Ba Trại
+THCS MINH QUANG
+Xã Minh Quang
+THCS MINH CHÂU
+Xã Minh Châu
+THCS KHÁNH THƯỢNG
+Xã Khánh Thượng
+THCS HỢP NHẤT
+Xã Ba Vì
+THCS ĐỒNG THÁI
+Xã Đồng Thái
+THCS ĐÔNG QUANG
+Xã Đông Quang
+THCS CỔ ĐÔ
+Xã Cổ Đô
+THCS CHU MINH
+Xã Chu Minh
+THCS CHÂU SƠN
+Xã Châu Sơn
+THCS CAM THƯỢNG
+Xã Cam Thượng
+THCS CẨM LĨNH
+Xã Cẩm Lĩnh
+THCS BA TRẠI
+Xã Ba Trại
+THCS THỰC NGHIỆM
+50 Liễu Giai
+THCS THỐNG NHẤT - BA ĐÌNH
+Ngõ 210 Phố Đội Cấn
+THCS THẾ GIỚI TRẺ EM
+46 Vạn Bảo
+THCS THÀNH CÔNG
+TT Thành Công
+THCS THĂNG LONG
+Số 46 A Nguyễn Văn Ngọc
+THCS PHÚC XÁ
+Số 2 Phố An Xá
+THCS PHAN CHU TRINH
+Số 24 Phố Nguyễn Công Hoan
+THCS NGUYỄN TRI PHƯƠNG
+67 Cửa Bắc
+THCS NGUYỄN TRÃI - BA ĐÌNH
+Số 4 Phố Giang Văn Minh
+THCS NGUYỄN CÔNG TRỨ
+Số 8 Phố Nguyễn Trường Tộ
+THCS MẠC ĐĨNH CHI
+Số 55 Phố Trúc Bạch
+THCS HOÀNG HOA THÁM
+Khu 7, 2 Ha Phố Vĩnh Phúc
+THCS GIẢNG VÕ
+Số 1 Phố Trần Huy Liệu
+THCS BA ĐÌNH
+Số 145 Hoàng Hoa Thám
+THCS - THPT Hà Thành
+Tòa nhà ĐH Nguyễn Trãi - Đội Cấn
+THCS&THPT NGUYỄN TẤT THÀNH
+Số 136 Đường Xuân Thủy - Cầu Giấy - Hà Nội
+THCS YÊN HOÀ
+Tổ 49 Phường Yên Hoà - Cầu Giấy
+THCS TRUNG HOÀ
+Số 3 Ngõ 22 Phố Trung Kính - Trung Hoà - Cầu Giấy
+THCS QUỐC TẾ ViỆT NAM SINGGAPORE
+Tòa nhà Dilmah - Ngõ 78 - Duy Tân - Dịch Vọng Hậu - Cầu Giấy
+THCS NGUYỄN SIÊU
+Phố Trung Kính - Phường Yên Hòa - Quận Cầu Giấy
+THCS NGUYỄN BỈNH KHIÊM
+Số 6 Trần Quốc Hoàn - Quận Cầu Giấy
+THCS NGHĨA TÂN
+Số 14 Tô Hiệu - Nghĩa Tân - Cầu Giấy
+THCS NAM TRUNG YÊN
+Khu Đô Thị Mới Nam Trung Yên
+THCS MAI DỊCH
+Phố Trần Bình - Cầu Giấy
+THCS LÝ THÁI TỔ
+Phố Hoàng Ngân- Khu ĐT Trung Hoà - Nhân Chính - Cầu Giấy - Hà Nội
+THCS LÊ QUÝ ĐÔN
+Đường Nguyễn Văn Huyên - Phường Nghĩa Đô - Cầu Giấy - Hà Nội
+THCS HERMANN
+Số 01 - Doãn Kế Thiện - Mai Dịch - Cầu Giấy - Hà Nội
+THCS Hà Nội Amsterdam
+Đường Hoàng Minh Giám - Trung Hòa - Cầu Giấy - Hà Nội
+THCS Global
+Khu Đô thị mới Yên Hòa
+THCS FPT
+Lô TH2 - Khu ĐTM Dịch Vọng - Cầu Giấy - HN
+THCS Dịch Vọng Hậu
+Khu đô thị mới phường Dịch Vọng - Cầu Giấy - Hà Nội
+THCS DỊCH VỌNG
+Đường Chùa Hà - Quận Cầu Giấy
+THCS Cầu Giấy
+Lô D12 Khu đô thị mới phường Dịch Vọng - Cầu Giấy - Hà Nội
+THCS & THPT HÀ NỘI AMSTERDAM
+Đường Hoàng Minh Giám - Trung Hòa - Cầu Giấy - Hà Nội
+THCS XUÂN MAI B
+Tt Xuân Mai
+THCS XUÂN MAI A
+Tt Xuân Mai
+THCS VĂN VÕ
+Xã Văn Võ
+THCS TT CHÚC SƠN
+Xã Trường Yên
+THCS TRƯỜNG YÊN
+Xã Trung Hòa
+THCS TRUNG HOÀ - CHƯƠNG MỸ
+Xã Trần Phú
+THCS TRẦN PHÚ - CHƯƠNG MỸ
+Xã Trần Phú
+THCS TỐT ĐỘNG
+Xã Tốt Động
+THCS TIÊN PHƯƠNG
+Xã Tiên Phương
+THCS THUỶ XUÂN TIÊN
+Xã Thủy Xuân Tiên
+THCS THỤY HƯƠNG
+Xã Thụy Hương
+THCS THƯỢNG VỰC
+Xã Thượng Vực
+THCS THANH BÌNH
+Xã Thanh Bình
+THCS TÂN TIẾN
+Xã Tân Tiến
+THCS QUẢNG BỊ
+Xã Quảng Bị
+THCS PHỤNG CHÂU
+Xã Phụng Châu
+THCS PHÚ NGHĨA
+Xã Phú Nghĩa
+THCS PHÚ NAM AN
+Xã Phú Nam An
+THCS NGỌC HOÀ
+Xã Ngọc Hòa
+THCS NGÔ SĨ LIÊN - CHƯƠNG MỸ
+Tt Chúc Sơn
+THCS NAM PHƯƠNG TIẾN B
+Xã Nam Phương Tiến
+THCS NAM PHƯƠNG TIẾN A
+Xã Nam Phương Tiến
+THCS MỸ LƯƠNG
+Xã Mỹ Lương
+THCS LƯƠNG MỸ
+Xã Hoàng Văn Thụ
+THCS LAM ĐIỀN
+Xã Lam Điền
+THCS HỮU VĂN
+Xã Hữu Văn
+THCS HỢP ĐỒNG
+Xã Hợp Đồng
+THCS HỒNG PHONG
+Xã Hồng Phong
+THCS HOÀNG VĂN THỤ - CHƯƠNG MỸ
+Xã Hoàng Văn Thụ
+THCS HOÀNG DIỆU - CHƯƠNG MỸ
+Xã Hoàng Diệu
+THCS HOÀ CHÍNH
+Xã Hòa Chính
+THCS ĐÔNG SƠN
+Xã Đông Sơn
+THCS ĐÔNG PHƯƠNG YÊN
+Xã Đông Phương Yên
+THCS ĐỒNG PHÚ
+Xã Đồng Phú
+THCS ĐỒNG LẠC
+Xã Đồng Lạc
+THCS ĐẠI YÊN
+Xã Đại Yên
+THCS BÊ TÔNG
+Xã Thủy Xuân Tiên
+THCS TRUNG CHÂU
+Thôn 4 - Trung Châu - Đan Phượng
+THCS TÔ HIẾN THÀNH
+Thôn Hạ Mỗ - Xã Hạ Mỗ -huyện Đan Phượng
+THCS THƯỢNG MỖ
+Thôn Đại Phú- Thượng Mỗ - Đan Phượng
+THCS THỌ XUÂN
+Cụm 3, Xã Thọ Xuân- Đan Phượng
+THCS THỌ AN
+Cụm 4- Thôn Đông Hải- Thọ An- Đan Phượng
+THCS TÂN LẬP
+Thôn Ngọc Kiệu - Xã Tân Lập - Đan Phượng
+THCS TÂN HỘI
+Thôn Phan Long - Tân Hội - Đan Phượng
+THCS SONG PHƯỢNG
+Thôn Thu Quế - Song Phượng - Đan Phượng
+THCS PHƯƠNG ĐÌNH
+Thôn La Thạch - Phương Đình - Đan Phượng
+THCS LƯƠNG THẾ VINH
+Phố Phùng Hưng- Thị Trấn Phùng- Đan Phượng
+THCS LIÊN TRUNG
+Thôn Trung - Xã Liên Trung - Đan Phượng
+THCS LIÊN HỒNG
+Thôn Đông Lai - Liên Hồng - Đan Phượng
+THCS LIÊN HÀ - ĐAN PHƯỢNG
+Cụm 1, Thôn thượng - Xã Liên Hà - Đanphượng
+THCS HỒNG HÀ - ĐAN PHƯỢNG
+Cụm 3 Đồng Tiến, Xã Hồng Hà, Huyện Đan Phượng
+THCS ĐỒNG THÁP
+Thôn Thụy - Xã Đồng Tháp- Huyện Đan Phượng
+THCS ĐAN PHƯỢNG
+Thôn Đông Khê- Đan Phượng- Đan Phượng
+THCS XUÂN NỘN
+Xã Xuân Nộn - Đông Anh
+THCS XUÂN CANH
+Xã Xuân Canh - Đông Anh
+THCS VÕNG LA
+Xã Võng La - Đông Anh
+THCS VĨNH NGỌC
+Xã Vĩnh Ngọc - Đông Anh
+THCS VIỆT HÙNG
+Xã Việt Hùng - Đông Anh
+THCS VÂN NỘI
+Xã Vân Nội - Đông Anh
+THCS VÂN HÀ - ĐÔNG ANH
+Xã Vân Hà - Đông Anh
+THCS UY NỖ
+Xã Uy Nỗ - Đông Anh
+THCS TIÊN DƯƠNG
+Xã Tiên Dương - Đông Anh
+THCS THỤY LÂM
+Xã Thuỵ Lâm - Đông Anh
+THCS THỊ TRẤN - ĐÔNG ANH
+Thị Trấn Đông Anh
+THCS TÀM XÁ
+Xã Tàm Xá - Đông Anh
+THCS NGUYÊN KHÊ
+Xã Nguyên Khê - Đông Anh
+THCS NGUYỄN HUY TƯỞNG
+Thị Trấn Đông Anh
+THCS NAM HỒNG
+Xã Nam Hồng - Đông Anh
+THCS MAI LÂM
+Xã Mai Lâm - Đông Anh
+THCS LIÊN HÀ - ĐÔNG ANH
+Xã Liên Hà - Đông Anh
+THCS KIM NỖ
+Xã Kim Nỗ - Đông Anh
+THCS KIM CHUNG - ĐÔNG ANH
+Xã Kim Chung - Đông Anh
+THCS HẢI BỐI
+Xã Hảo Bối - Đông Anh
+THCS DỤC TÚ
+Xã Dục Tú - Đông Anh
+THCS ĐÔNG HỘI
+Xã Đông Hội - Đông Anh
+THCS CỔ LOA
+Xã Cổ Loa - Đông Anh
+THCS BÙI QUANG MẠI
+Xã Đại Mạch - Đông Anh
+THCS BẮC HỒNG
+Xã Bắc Hồng - Đông Anh
+THCS TRUNG PHỤNG
+Số 38 Ngõ 218 Phố Chợ Khâm Thiên
+THCS TÔ VĨNH DIỆN
+79 Ngõ Cẩm Văn
+THCS THỊNH QUANG
+122 Đường Láng
+THCS THÁI THỊNH
+Số 131a Phố Thái Thịnh
+THCS TAM KHƯƠNG
+Số 163 Khương Thượng
+THCS QUANG TRUNG - ĐỐNG ĐA
+Số 100 phố Trần Quang Diệu
+THCS PHƯƠNG MAI
+Số 8 Ngõ 218 Phố Chợ Khâm Thiên
+THCS NGUYỄN TRƯỜNG TỘ
+Số 20 Ngõ 5 Láng Hạ
+THCS LÝ THƯỜNG KIỆT
+Số 104 Nguyễn Khuyến
+THCS LÁNG THƯỢNG
+Số 159 Đường Chùa Láng
+THCS LÁNG HẠ
+Số 1 Ngõ 538 Đường Láng
+THCS KHƯƠNG THƯỢNG
+Số 10 Tôn Thất Tùng
+THCS HUY VĂN
+Số 191 Ngõ Văn Chương
+THCS ĐỐNG ĐA
+Số 28 Phố Lương Định Của
+THCS CÁT LINH
+31 Cát Linh
+THCS BẾ VĂN ĐÀN
+Số 181 Nguyễn Lương Bằng
+THCS YÊN VIÊN
+Xã Yên Viên, Gia Lâm
+THCS YÊN THƯỜNG
+Xã Yên Thường, Gia Lâm
+THCS VĂN ĐỨC
+Xã Văn Đức, Gia Lâm
+THCS TT TRÂU QUỲ
+Thị Trấn Trâu Quỳ, Gia Lâm
+THCS TRUNG MẦU
+Xã Trung Mầu, Gia Lâm
+THCS THỊ TRẤN YÊN VIÊN
+Thị Trấn Yên Viên, Gia Lâm
+THCS PHÚ THỊ
+Xã Phú Thị, Gia Lâm
+THCS PHÙ ĐỔNG
+Xã Phù Đổng, Gia Lâm
+THCS NINH HIỆP
+Xã Ninh Hiệp, Gia Lâm
+THCS LỆ CHI
+Xã Lệ Chi, Gia Lâm
+THCS KIM SƠN - GIA LÂM
+Xã Kim Sơn, Gia Lâm
+THCS KIM LAN
+Xã Kim Lan, Gia Lâm
+THCS KIÊU KỴ
+Xã Kiêu Kỵ, Gia Lâm
+THCS DƯƠNG XÁ
+Xã Dương Xá, Gia Lâm
+THCS DƯƠNG QUANG
+Xã Dương Quang, Gia Lâm
+THCS DƯƠNG HÀ
+Xã Dương Hà, Gia Lâm
+THCS ĐÔNG DƯ
+Xã Đông Dư, Gia Lâm
+THCS ĐÌNH XUYÊN
+Xã Đình Xuyên, Gia Lâm
+THCS ĐẶNG XÁ
+Xã Đặng Xá, Gia Lâm
+THCS ĐA TỐN
+Xã Đa Tốn, Gia Lâm
+THCS CỔ BI
+Xã Cổ Bi, Gia Lâm
+THCS BÁT TRÀNG
+Xã Bát Tràng, Huyện Gia Lâm
+THCS YÊN NGHĨA
+Phường Yên Nghĩa - Hà Đông
+THCS VĂN YÊN
+Phường Phúc La - Hà Đông
+THCS VẠN PHÚC
+Khối Độc Lập - Phường Vạn Phúc - Hà Đông
+THCS VĂN KHÊ
+Phường La Khê - Hà Đông
+THCS TRẦN ĐĂNG NINH
+Số 90-Bế Văn Đàn-Phường Quang Trung-hà Đông
+THCS PHÚ LƯƠNG
+Tổ 6, Phú Lương, Hà Đông
+THCS Phú Lãm
+Thanh Lãm, Phú Lãm, Hà Đông, Hà Nội
+THCS Phú La
+Khu Đô thị Văn Phú - Hà Đông - Hà Nội
+THCS NGUYỄN TRÃI
+Phố Hoàng Văn Thụ - P. Nguyễn Trãi - Hà Đông
+THCS MỖ LAO
+Khu Đô Thị Mỗ Lao - P. Mộ Lao - Hà Đông
+THCS Mậu Lương
+Phường Kiến Hưng, Hà Đông
+THCS Lê Quý Đôn
+Khu đô thị Dương Nội, Hà Đông
+THCS LÊ LỢI
+160 Lê Lợi - P. Nguyễn Trãi - Hà Đông
+THCS LÊ HỒNG PHONG
+123 Lê Hồng Phong - P. Hà Cầu - Hà Đông
+THCS KIẾN HƯNG
+Đa Sỹ, Quận Hà Đông
+THCS Dương Nội
+Phường Dương Nội, Hà Đông, Hà Nội
+THCS ĐỒNG MAI
+Tổ 7, Phường Đồng Mai, Hà Đông
+THCS BIÊN GIANG
+Quốc lộ 6, Q. Hà Đông, Hà Nội
+THCS BAN MAI
+Khu đô thị Văn Quán, Hà Đông, Hà Nội
+THCS VINSCHOOL
+Khu đô thị Time City
+THCS VĨNH TUY
+Phường Vĩnh Tuy
+THCS VÂN HỒ
+193 Phố Bà Triệu
+THCS TRƯNG NHỊ
+30 Phố Hương Viên
+THCS TÔ HOÀNG
+27 Đại Cồ Việt
+THCS TÂY SƠN
+52 A Phố Trần Nhân Tông
+THCS QUỲNH MAI
+Tập Thể Quỳnh Mai
+THCS NGUYỄN PHONG SẮC
+44 Đại La, Hai Bà Trưng, Hà Nội
+THCS NGÔ QUYỀN - HAI BÀ TRƯNG
+273 Ngõ Quỳnh, Bạch Mai
+THCS NGÔ GIA TỰ - HAI BÀ TRƯNG
+300 Phố Bạch Mai
+THCS MINH KHAI - HAI BÀ TRƯNG
+Ngõ 84 phố Kim Ngưu
+THCS LƯƠNG YÊN
+Ngõ 63 Lương Yên, Bạch Đằng
+THCS LÊ NGỌC HÂN
+41 Phố Lò Đúc
+THCS HỒNG HÀ - HAI BÀ TRƯNG
+780 Minh Khai, Hai Bà Trưng, Hà Nội
+THCS HOÀNG DIỆU - HAI BÀ TRƯNG
+Số 1 Phố Cẩm Hội
+THCS HAI BÀ TRƯNG
+Phường Thanh Lương
+THCS HÀ HUY TẬP
+Số 19 Ngõ 204 Phố Hồng Mai
+THCS ĐOÀN KẾT
+27 Phố Chùa Vua
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS YÊN SỞ - HOÀI ĐỨC
+Yên Sở - Hoài Đức
+THCS TRƯNG VƯƠNG - HOÀN KIẾM
+26 Hàng Bài
+THCS THANH QUAN
+29 Hàng Cót
+THCS NGUYỄN DU
+32 Lý Thường Kiệt
+THCS NGÔ SĨ LIÊN-HOÀN KIẾM
+27 Hàm Long
+THCS LÊ LỢI
+17 Nguyễn Thiện Thuật
+THCS HOÀN KIẾM
+2 Nhà Thờ
+THCS CHƯƠNG DƯƠNG
+103 Vọng Hà - P. Chương Dương
+THCS YÊN SỞ - HOÀNG MAI
+Số 225 - Phố Yên Duyên - Phường Yên Sở
+THCS VĨNH HƯNG
+Ngõ 126 - Phố Vĩnh Hưng - Phường Vĩnh Hưng
+THCS TRẦN PHÚ - HOÀNG MAI
+Số 16 - Đường Khuyến Lương - Phường Trần Phú
+THCS THỊNH LIỆT
+số 15 ngách 61 ngõ 88 phố Giáp Nhị - Thịnh Liệt - Hoàng Mai - HN
+THCS THANH TRÌ
+Số 1062 - Đường Nguyễn Khoái - Phường Thanh Trì
+THCS TÂN MAI
+Số 147 - Phố Tân Mai - Phường Tân Mai
+THCS TÂN ĐỊNH
+Số 35 - Phố Nguyễn An Ninh - Phường Tương Mai
+THCS MAI ĐỘNG
+Số 1 - Đường Lĩnh Nam - Phường Mai Động
+THCS LĨNH NAM
+Ngõ 649 - Đường Lĩnh Nam - Phường Lĩnh Nam
+THCS HOÀNG VĂN THỤ - HOÀNG MAI
+Số 2/160 - Đường Hoàng Mai - Phường Hoàng Văn Thụ
+THCS HOÀNG LIỆT
+Số 1 - Đường Ngọc Hồi - Phường Hoàng Liệt
+THCS GIÁP BÁT
+Số 35 ngõ Giáp Bát (Hoặc Ngõ 19 - Đường Kim Đồng) - Hoàng Mai - Hà Nội
+THCS ĐỊNH CÔNG
+Số 136 - Tổ 16 - Phường Định Công
+THCS ĐỀN LỪ
+Khu Đô Thị Đền Lừ - Phường Hoàng Văn Thụ
+THCS ĐẠI KIM
+Km Số 2 - Đường Kim Giang - Phường Đại Kim
+THCS VIỆT HƯNG
+Tổ 4 P.Việt Hưng, Long Biên
+THCS THƯỢNG THANH
+Tổ 12 P.Thượng Thanh, Long Biên
+THCS THẠCH BÀN
+Phường Thạch Bàn, Long Biên
+THCS SÀI ĐỒNG
+Số 11 Ngõ 557 Đường Nguyễn Văn Linh, Long Biên
+THCS PHÚC LỢI
+Tổ 7, P.Phúc Lợi, Long Biên
+THCS PHÚC ĐỒNG
+Tổ 12, Phường Phúc Đồng, Long Biên
+THCS NGỌC THUỴ
+Ngõ 268, tổ 17, P.Ngọc Thuỵ, Long Biên
+THCS NGỌC LÂM
+Số 6, ngõ 370 Nguyễn Văn Cừ, P.Bồ Đề, Long Biên
+THCS NGÔ GIA TỰ - LONG BIÊN
+82 Ngõ 528 Ngô Gia Tự, Long Biên
+THCS LONG BIÊN
+Số 21 Phố Tư Đình, P.Long Biên, Q.Long Biên
+THCS GIANG BIÊN
+Tổ 5 P.Giang Biên, Long Biên
+THCS GIA THUỴ
+Ngõ 562, Đường Nguyễn Văn Cừ, Long Biên
+THCS ĐỨC GIANG - LONG BIÊN
+Tổ 6a Phố Ô Cách, P.Đức Giang, Long Biên
+THCS đô thị Việt Hưng
+Khu đô thị Việt Hưng
+THCS CỰ KHỐI
+Tổ 11 P.Cự Khối, Long Biên
+THCS BỒ ĐỀ
+310 phố Hoàng Như Tiếp, Phường Bồ Đề, Quận Long Biên
+THCS ÁI MỘ
+Số 34, Ngõ 298, Ngọc Lâm, Long Biên
+THCS VẠN YÊN
+Xã Vạn Yên - Mê Linh
+THCS VĂN KHÊ B
+Xã Văn Khê - Mê Linh
+THCS VĂN KHÊ A
+Xã Văn Khê - Mê Linh
+THCS TỰ LẬP
+Xã Tự Lập - Mê Linh
+THCS TRƯNG VƯƠNG - MÊ LINH
+Xã Thanh Lâm - Mê Linh
+THCS TRÁNG VIỆT
+Xã Tráng Việt - Mê Linh
+THCS TIẾN THỊNH
+Xã Tiến Thịnh - Mê Linh
+THCS TIẾN THẮNG
+Xã Tiến Thắng - Mê Linh
+THCS TIỀN PHONG - MÊ LINH
+Xã Tiền Phong - Mê Linh
+THCS THANH LÂM B
+Xã Thanh Lâm - Mê Linh
+THCS THANH LÂM A
+Xã Thanh Lâm - Mê Linh
+THCS TAM ĐỒNG
+Xã Tam Đồng - Mê Linh
+THCS QUANG MINH
+TT Quang Minh - Mê Linh
+THCS Phạm Hồng Thái
+Xã Thạch Đà - Mê Linh
+THCS MÊ LINH
+Xã Mê Linh - Mê Linh
+THCS LIÊN MẠC B
+Xã Liên Mạc - Mê Linh
+THCS LIÊN MẠC A
+Xã Kim Hoa - Mê Linh
+THCS KIM HOA
+Xã Kim Hoa - Mê Linh
+THCS HOÀNG KIM
+Xã Hoàng Kim -mê Linh
+THCS ĐẠI THỊNH A
+Xã Đại Thịnh - Mê Linh
+THCS CHU PHAN
+Xã Chu Phan - Mê Linh
+THCS CHI ĐÔNG
+TT Chi Đông - Mê Linh
+THCS XUY XÁ
+Xuy Xá - Mỹ Đức
+THCS VẠN KIM
+Vạn Kim - Mỹ Đức
+THCS TUY LAI
+Tuy Lai - Mỹ Đức
+THCS THƯỢNG LÂM
+Thượng Lâm - Mỹ Đức
+THCS TẾ TIÊU
+Đại Nghĩa - Mỹ Đức
+THCS PHÙNG XÁ
+Phùng Xá - Mỹ Đức
+THCS PHÚC LÂM
+Phúc Lâm- Mỹ Đức
+THCS PHÙ LƯU TẾ
+Phù Lưu Tế - Mỹ Đức
+THCS MỸ THÀNH
+Mỹ Thành - Mỹ Đức
+THCS LÊ THANH
+Lê Thanh - Mỹ Đức
+THCS HƯƠNG SƠN
+Hương Sơn - Mỹ Đức
+THCS HÙNG TIẾN
+Hùng Tiến - Mỹ Đức
+THCS HỢP TIẾN
+Hợp Tiến - Mỹ Đức
+THCS HỢP THANH
+Hợp Thanh - Mỹ Đức
+THCS HỒNG SƠN
+Hồng Sơn - Mỹ Đức Hồng Sơn - Mỹ Đức
+THCS ĐỒNG TÂM
+Đồng Tâm- Mỹ Đức
+THCS ĐỐC TÍN
+Đốc Tín - Mỹ Đức
+THCS ĐẠI NGHĨA
+Đại Nghĩa - Mỹ Đức
+THCS ĐẠI HƯNG
+Đại Hưng - Mỹ Đức
+THCS BỘT XUYÊN
+Bột Xuyên - Mỹ Đức
+THCS AN TIẾN
+An Tiến - Mỹ Đức
+THCS AN PHÚ
+An Phú- Mỹ Đức
+THCS AN MỸ
+An Mỹ - Mỹ Đức
+THCS VÂN TỪ
+Vân Từ - Phú Xuyên
+THCS VĂN NHÂN
+Văn Nhân - Phú Xuyên
+THCS VĂN HOÀNG
+Văn Hoàng - Phú Xuyên
+THCS TT PHÚ XUYÊN
+TT Phú Xuyên - Phú Xuyên
+THCS TT PHÚ MINH
+TT Phú Minh - Phú Xuyên
+THCS TRI TRUNG
+Tri Trung - Phú Xuyên
+THCS TRI THUỶ
+Tri Thủy - Phú Xuyên
+THCS TRẦN PHÚ - PHÚ XUYÊN
+TT Phú Xuyên - Phú Xuyên
+THCS THUỴ PHÚ
+Thụy Phú - Phú Xuyên
+THCS TÂN DÂN - PHÚ XUYÊN
+Tân Dân - Phú Xuyên
+THCS SƠN HÀ - PHÚ XUYÊN
+Sơn Hà - Phú Xuyên
+THCS QUANG TRUNG - PHÚ XUYÊN
+Quang Trung - Phú Xuyên
+THCS QUANG LÃNG
+Quang Lãng - Phú Xuyên
+THCS PHƯỢNG DỰC
+Phượng Dực - Phú Xuyên
+THCS PHÚC TIẾN
+Phúc Tiến - Phú Xuyên
+THCS PHÚ YÊN
+Phú Yên - Phú Xuyên
+THCS PHÚ TÚC
+Phú Túc - Phú Xuyên
+THCS NAM TRIỀU
+Nam Triều - Phú Xuyên
+THCS NAM PHONG
+Nam Phong - Phú Xuyên
+THCS MINH TÂN
+Minh Tân - Phú Xuyên
+THCS KHAI THÁI
+Khai Thái - Phú Xuyên
+THCS HỒNG THÁI
+Hồng Thái - Phú Xuyên
+THCS HỒNG MINH
+Hồng Minh - Phú Xuyên
+THCS HOÀNG LONG
+Hoàng Long - Phú Xuyên
+THCS ĐẠI XUYÊN
+Đại Xuyên - Phú Xuyên
+THCS ĐẠI THẮNG
+Đại Thắng - Phú Xuyên
+THCS CHUYÊN MỸ
+Chuyên Mỹ - Phú Xuyên
+THCS CHÂU CAN
+Châu Can - Phú Xuyên
+THCS BẠCH HẠ
+Bạch Hạ - Phú Xuyên
+THCS XUÂN PHÚ
+Xã Xuân Phú
+THCS VÕNG XUYÊN
+Xã Võng Xuyên
+THCS VÂN PHÚC
+Xã Vân Phúc
+THCS VÂN NAM
+Xã Vân Nam
+THCS VÂN HÀ - PHÚC THỌ
+Xã Vân Hà
+THCS TRẠCH MỸ LỘC
+Xã Trạch Mỹ Lộc
+THCS TÍCH GIANG
+Xã Tích Giang
+THCS THƯỢNG CỐC
+Xã Thượng Cốc
+THCS Thượng Cốc
+Xã Thượng Cốc
+THCS THỌ LỘC
+Xã Thọ Lộc
+THCS THỊ TRẤN - PHÚC THỌ
+Thị Trấn Phúc Thọ
+THCS THANH ĐA
+Xã Thanh Đa
+THCS TAM THUẤN
+Xã Tam Thuấn
+THCS TAM HIỆP - PHÚC THỌ
+Xã Tam Hiệp
+THCS SEN CHIỂU
+Xã Sen Chiểu
+THCS PHƯƠNG ĐỘ
+Xã Phương Độ
+THCS PHỤNG THƯỢNG
+Xã Phụng Thượng
+THCS PHÚC HOÀ
+Xã Phúc Hòa
+THCS NGỌC TẢO
+Xã Ngọc Tảo
+THCS LONG XUYÊN
+Xã Long Xuyên
+THCS LIÊN HIỆP
+Xã Liên Hiệp
+THCS HIỆP THUẬN
+Xã Hiệp Thuận
+THCS HÁT MÔN
+Xã Hát Môn
+THCS CẨM ĐÌNH
+Xã Cẩm Đình
+THCS YÊN SƠN - QUỐC OAI
+Thôn Sơn Trung - Xã Yên Sơn - Huyện Quốc Oai
+THCS TUYẾT NGHĨA
+Xã Tuyết Nghĩa - Huyện Quốc Oai
+THCS THỊ TRẤN - QUỐC OAI
+Thôn Du Nghệ - Thị Trấn Quốc Oai - Huyện Quốc Oai
+THCS THẠCH THÁN
+Xóm 1 - Xã Thạch Thán - Huyện Quốc Oai
+THCS TÂN PHÚ
+Thôn Phú Hạng - Xã Tân Phú - Huyện Quốc Oai
+THCS TÂN HOÀ
+Xã Tân Hoà - Huyện Quốc Oai
+THCS SÀI SƠN
+Thôn Thụy Khuê - Xã Sài Sơn - Huyện Quốc Oai
+THCS PHƯỢNG CÁCH
+Đội 9 Khu 3 - Xã Phượng Cách - Huyện Quốc Oai
+THCS PHÚ MÃN
+Thôn Đồng Âm - Xã Phú Mãn - Huyện Quốc Oai
+THCS PHÚ CÁT
+Thôn 4 - Xã Phú Cát - Huyện Quốc Oai
+THCS NGỌC MỸ
+Thôn Phú Mỹ - Xã Ngọc Mỹ - Huyện Quốc Oai
+THCS NGỌC LIỆP
+Xã Ngọc Liệp - Huyện Quốc Oai
+THCS NGHĨA HƯƠNG
+Thôn văn Khê - Xã Nghĩa Hương - Huyện Quốc Oai
+THCS LIỆP TUYẾT
+Xã Liệp Tuyết - Huyện Quốc Oai
+THCS KIỀU PHÚ
+Thôn Du Nghệ - Thị Trấn Quốc Oai - Huyện Quốc Oai
+THCS HOÀ THẠCH
+Thôn Bạch Thạch - Xã Hoà Thạch - Huyện Quốc Oai
+THCS ĐÔNG YÊN
+Xã Đông Yên - Huyện Quốc Oai
+THCS ĐÔNG XUÂN - QUỐC OAI
+Thôn Lập Thành - Xã Đông Xuân - Huyện Quốc Oai
+THCS ĐỒNG QUANG
+Thôn Yên Nội- Xã Đồng Quang - Huyện Quốc Oai
+THCS ĐẠI THÀNH
+Xã Đại Thành - Huyện Quốc Oai
+THCS CỘNG HOÀ
+Xã Cộng Hoà - Huyện Quốc Oai
+THCS CẤN HỮU
+Thôn Cấn Thượng - Xã Cấn Hữu - Huyện Quốc Oai
+THCS XUÂN SƠN
+Xã Xuân Sơn
+THCS XUÂN KHANH
+Phường Xuân Khanh
+THCS VIÊN SƠN
+Phường Viên Sơn
+THCS TRUNG SƠN TRẦM
+Phường Trung Sơn Trầm
+THCS TRUNG HƯNG
+Phường Trung Hưng
+THCS THANH MỸ
+Xã Thanh Mỹ
+THCS SƠN TÂY
+Phường Trung Hưng
+THCS SƠN LỘC
+Phường Sơn Lộc
+THCS SƠN ĐÔNG
+Xã Sơn Đông
+THCS PHÙNG HƯNG
+Phường Quang Trung
+THCS NGÔ QUYỀN - SƠN TÂY
+Phường Ngô Quyền
+THCS KIM SƠN - SƠN TÂY
+Xã Kim Sơn
+THCS HỒNG HÀ - SƠN TÂY
+Phường Lê Lợi
+THCS ĐƯỜNG LÂM
+Xã Đường Lâm
+THCS CỔ ĐÔNG
+Xã Cổ Đông
+THCS XUÂN LA
+Phường Xuân La- Tây Hồ
+THCS TỨ LIÊN
+Số 3 đường Âu Cơ- Tây Hồ
+THCS SONG NGỮ HORIZON
+Villa 1-2, số 98 Tô Ngọc Vân
+THCS QUẢNG AN
+Ngõ 11 đường Tô Ngọc Vân Tây Hồ
+THCS PHÚ THƯỢNG
+Ngõ 143 Phú Gia-Tây Hồ
+THCS NHẬT TÂN
+474 Lạc Long Quân-Tây Hồ
+THCS ĐÔNG THÁI
+Số 73 Võng Thị-Tây Hồ
+THCS DL HÀ NỘI - ACADEMY (MN, TH,THCS)
+D45-D46 Khu Đô thị Quốc tế Ciputra Hà Nội
+THCS CHU VĂN AN
+17 Thụy Khuê-Tây Hồ
+THCS AN DƯƠNG
+Cụm 6 Yên Phụ-Tây Hồ
+TH và MN Sao Mai
+Quảng An
+TH Quốc tế Singapre
+38 Hoàng Hoa Thám
+THCS YÊN TRUNG
+ĐC: Thôn Đầm Bối - Yên Trung- Thạch Thấ t- Hà Nội
+THCS YÊN BÌNH
+ĐC: Xóm Đình - Xã Yên Bình - Thạch Thất
+THCS TIẾN XUÂN
+ĐC: Gò Chói - Tiến Xuân - Thạch Thất
+THCS THẠCH XÁ
+ĐC: Thôn Yên - Xã Thạch Xá - Thạch Thất
+THCS THẠCH THẤT
+ĐC: Thị Trấn Liên Quan - Huyện Thạch Thất
+THCS THẠCH HOÀ
+ĐC: Thôn 10 - Xã Thạch Hòa - Thạch Thất
+THCS TÂN XÃ
+Thôn Cừ Viên - Xã Tân Xã - Thạch Thất
+THCS PHÙNG XÁ - THẠCH THẤT
+ĐC: Xóm 1 - Thôn Vĩnh Lộc - Xã Phùng Xá - Thạch Thất
+THCS PHÚ KIM
+Thôn Phú Nghĩa - Xã Phú Kim - Huyện Thạch Thất
+THCS MINH HÀ - CANH NẬU
+ĐC: Thôn 4 - Xã Canh Nậu - Huyện Thạch Thất
+THCS LIÊN QUAN
+ĐC: Thị trấn Liên Quan - Thạch Thất
+THCS LẠI THƯỢNG
+Thôn Lại Khánh - Xã Lại Thượng - Huyện Thạch Thất
+THCS KIM QUAN
+ĐC: Thôn 3 - Xã Kim Quan - Huyện Thạch Thất
+THCS HỮU BẰNG
+Thôn Bò - Xã Hữu Bằng - Thạch Thất
+THCS HƯƠNG NGẢI
+Thôn 8 - Xã Hương Ngải - Thạch Thất
+THCS HẠ BẰNG
+ĐC: Thôn 6 - Xã Hạ Bằng -thạch Thất
+THCS ĐỒNG TRÚC
+ĐC: Thôn Trúc Động - Xã Đồng Trúc - Thạch Thất
+THCS DỊ NẬU
+ĐC: Thôn Hoà Bình - Xã Dị Nậu - Thạch Thất
+THCS ĐẠI ĐỒNG
+ĐC: Thôn Ngọc Lâu - Đại Đồng - Thạch Thất
+THCS CHÀNG SƠN
+ĐC: Thôn 1 - Chàng Sơn - Thạch Thất
+THCS CẦN KIỆM
+ĐC: Xã Cần Kiệm - Thạch Thất
+THCS CẨM YÊN
+ĐC: Thôn Yên Lỗ - Xã Cẩm Yên - Huyện Thạch Thất
+THCS BÌNH YÊN
+ĐC: Bình Yên - Thạch Thất
+THCS BÌNH PHÚ
+ĐC: Xã Bình Phú - Huyện Thạch Thất
+THCS XUÂN DƯƠNG
+Xã Xuân Dương , Huyện Thanh Oai
+THCS THANH VĂN
+Xã Thanh Văn , Huyện Thanh Oai
+THCS THANH THUỲ
+Xã Thanh Thuỳ , Huyện Thanh Oai
+THCS THANH MAI
+Xã Thanh Mai , Huyện Thanh Oai
+THCS THANH CAO
+Xã Thanh Cao , Huyện Thanh Oai
+THCS TÂN ƯỚC
+Xã Tân Ước , Huyện Thanh Oai
+THCS TAM HƯNG
+Xã Tam Hưng , Huyện Thanh Oai
+THCS PHƯƠNG TRUNG
+Xã Phương Trung , Huyện Thanh Oai
+THCS NGUYỄN TRỰC - TT KIM BÀI
+Tt Kim Bài , Huyện Thanh Oai
+THCS MỸ HƯNG
+Xã Mỹ Hưng , Huyện Thanh Oai
+THCS LIÊN CHÂU
+Xã Liên Châu , Huyện Thanh Oai
+THCS KIM THƯ
+Xã Kim Thư , Huyện Thanh Oai
+THCS KIM AN
+Xã Kim An , Huyện Thanh Oai
+THCS HỒNG DƯƠNG
+Xã Hồng Dương , Huyện Thanh Oai
+THCS ĐỖ ĐỘNG
+Xã Đỗ Động , Huyện Thanh Oai
+THCS DÂN HOÀ
+Xã Dân Hoà , Huyện Thanh Oai
+
+THCS CỰ KHÊ
+THCS CAO VIÊN
+Xã Cao Viên , Huyện Thanh Oai
+THCS CAO DƯƠNG
+Xã Cao Dương , Huyện Thanh Oai
+THCS BÌNH MINH
+Xã Bình Minh , Huyện Thanh Oai
+THCS BÍCH HOÀ
+Xã Bích Hoà , Huyện Thanh Oai
+THCS YÊN MỸ
+Yên Mỹ - Thanh Trì
+THCS VĨNH QUỲNH
+Vĩnh Quỳnh - Thanh Trì
+THCS VẠN PHÚC
+Vạn Phúc - Thanh Trì
+THCS TỨ HIỆP
+Tứ Hiệp - Thanh Trì
+THCS TT VĂN ĐIỂN
+Thị Trấn Văn Điển - Thanh Trì
+THCS THANH LIỆT
+Thanh Liệt - Thanh Trì
+THCS TÂN TRIỀU
+Tân Triều, Thanh Trì
+THCS TAM HIỆP
+Tam Hiệp - Thanh Trì
+THCS TẢ THANH OAI
+Tả Thanh Oai - Thanh Trì
+THCS NGŨ HIỆP
+Ngũ Hiệp - Thanh Trì
+THCS NGỌC HỒI
+Ngọc Hồi - Thanh Trì
+THCS LIÊN NINH
+Liên Linh - Thanh Trì
+THCS HỮU HOÀ
+Hữu Hòa - Thanh Trì
+THCS DUYÊN HÀ
+Duyên Hà - Thanh Trì
+THCS ĐÔNG MỸ
+Thôn 1- Xã Đông Mỹ -Thanh Trì
+THCS ĐẠI ÁNG
+Đại Áng - Thanh Trì
+THCS Chu Văn An
+Xã Tứ Hiệp - Thanh Trì - Hà Nội
+THCS VIỆT NAM - ANGIÊRI
+Phố Nguyễn Quý Đức, Phường Thanh Xuân Bắc
+THCS TT Archimedes Academy
+Đường Trung Yên 10, phường Yên Hòa, quận Cầu Giấy, Hà Nội
+THCS TT ALPHA
+Tầng 5,Tòa Nhà Lô T1, Trung Hòa Nhân Chính, Thanh Xuân, Hà Nội
+THCS THANH XUÂN NAM
+Phường Thanh Xuân Nam
+THCS PHƯƠNG LIỆT
+Ngõ 377 Đường Giải Phóng
+THCS PHAN ĐÌNH GIÓT
+Số 3- Phường Nhân Hoà, Phường Nhân Chính
+THCS NHÂN CHÍNH
+Số 17 Ngõ 134 Quan Nhân
+THCS NGUYỄN TRÃI - THANH XUÂN
+126 Phố Khương Trung
+THCS Ngôi Sao Hà Nội
+Lô 3 - Khu đô thị Trung Hòa Nhân Chính, Thanh Xuân, Hà Nội
+THCS KIM GIANG
+Đường Hoàng Đạo Thành , Phường Kim Giang
+THCS KHƯƠNG MAI
+Ngõ 93 Hoàng Văn Thái
+THCS KHƯƠNG ĐÌNH
+Số 16 - Phố Khương Hạ
+THCS HẠ ĐÌNH
+Ngõ 171 đường Nguyễn Xiển, Thanh Xuân, Hà Nội
+THCS VĂN TỰ
+Văn Tự - Thường Tín
+THCS VÂN TẢO
+Vân Tảo, Thường Tín
+THCS VĂN PHÚ
+Văn Phú - Thường Tín
+THCS VẠN ĐIỂM
+Vạn Điểm - Thường Tín
+THCS VĂN BÌNH
+Văn Bình - Thường Tín
+THCS TỰ NHIÊN
+Tự Nhiên - Thường Tín
+THCS TÔ HIỆU
+Tô Hiệu - Thường Tín
+THCS TIỀN PHONG - THƯỜNG TÍN
+Tiền Phong - Thường Tín
+THCS THƯỜNG TÍN
+Thị Trấn Thường Tín - Thường Tín
+THCS THƯ PHÚ
+Thôn Thư Dương- Xã Thư Phú- Thường Tín
+THCS THỐNG NHẤT - THƯỜNG TÍN
+Thống Nhất - Thường Tín
+THCS THỊ TRẤN - THƯỜNG TÍN
+Thị Trấn Thường Tín - Thường Tín
+THCS THẮNG LỢI
+Thắng Lợi - Thường Tín
+THCS TÂN MINH - THƯỜNG TÍN
+Tân Minh - Thường Tín
+THCS QUẤT ĐỘNG
+Quất Đông - Thường Tín
+THCS NINH SỞ
+Ninh Sở - Thường Tín
+THCS NHỊ KHÊ
+Nhị Khê - Thường Tín
+THCS NGUYỄN TRÃI - THƯỜNG TÍN
+Nguyễn Trãi - Thường Tín
+THCS NGHIÊM XUYÊN
+Nghiêm Xuyên - Thường Tín
+THCS MINH CƯỜNG
+Minh Cường - Thường Tín
+THCS LIÊN PHƯƠNG
+Liên Phương - Thường Tín
+THCS LÊ LỢI - THƯỜNG TÍN
+Lê Lợi - Thường Tín
+THCS KHÁNH HÀ
+Khánh Hà - Thường Tín
+THCS HỒNG VÂN
+Hồng Vân - Thường Tín
+THCS HOÀ BÌNH
+Hoà Bình - Thường Tín
+THCS HIỀN GIANG
+Hiền Giang - Thường Tín
+THCS HÀ HỒI
+Hà Hồi- Thường Tín
+THCS DUYÊN THÁI
+Duyên Thái - Thường Tín
+THCS DŨNG TIẾN
+Dũng Tiến - Thường Tín
+THCS CHƯƠNG DƯƠNG - THƯỜNG TÍN
+Chương Dương - Thường Tín
+THCS VIỆT - ÚC
+Phường Mỹ Đình
+THCS TRUNG VĂN
+Phường Trung Văn
+THCS TÂY MỖ
+Phường Tây Mỗ
+THCS PHƯƠNG CANH
+Phường Phương Canh
+THCS PHÚ ĐÔ
+Đường Lê Quang Đạo, Phường Phú Đô
+THCS OLYMPIA
+Phường Trung Văn, từ Liêm
+THCS NAM TỪ LIÊM
+Phường Xuân Phương - Nam Từ Liêm - Hà Nội
+THCS MỸ ĐÌNH 2
+Thôn Nhân Mỹ - Phường Mỹ Đình
+THCS MỄ TRÌ
+Phương Mễ Trì
+THCS MARIE CURIE
+TH1 Phố Trần Văn Lai, KĐT Mỹ Đình - Mễ Trì, Nam Từ Liêm, Hà Nội
+THCS LÝ NAM ĐẾ
+Phường Tây Mỗ, quận Nam Từ Liêm, TP Hà Nội
+THCS LÔMÔNÔXỐP
+Phường Mỹ Đình
+THCS LÊ QUÝ ĐÔN
+Lô 1A2, đường Hàm Nghi, Phường Cầu Diễn
+THCS ĐOÀN THỊ ĐIỂM
+Phường Mỹ Đình
+THCS ĐẠI MỖ
+Thôn Ngọc Trục - Phường Đại Mỗ
+THCS - THPT TRẦN QUỐC TUẤN
+Phường Mỹ Đình
+MẦM NON WOORI
+
+THCS Xuân Đỉnh
+Phường Xuân Đỉnh - Q. Bắc Từ Liêm
+THCS Thụy Phương
+Phường Thụy Phương - Q. Bắc Từ Liêm
+THCS Thượng Cát
+Phường Thượng Cát - Q. Bắc Từ Liêm
+THCS Tây Tựu
+Phường Tây Tựu - Q. Bắc Từ Liêm
+THCS Phúc Diễn
+Phường Phúc Diễn - Q. Bắc Từ Liêm
+THCS Phú Diễn
+Phường Phú Diễn - Q. Bắc Từ Liêm
+THCS Minh Khai
+Phường Minh Khai - Q. Bắc Từ Liêm
+THCS Liên Mạc
+Phường Liên Mạc - Q. Bắc Từ Liêm
+THCS Đông Ngạc
+Phường Đông Ngạc - Q. Bắc Từ Liêm
+THCS Cổ Nhuế 2
+Phường Cổ Nhuế 2 - Q. Bắc Từ Liêm
+THCS VIÊN NỘI
+Thôn Thượng- Viên Nội - Ứng Hòa
+THCS VIÊN AN
+Viên Ngoại - Viên An - Ứng Hòa
+THCS VẠN THÁI
+Nội Xá - Vạn Thái - Ứng Hòa
+THCS TRƯỜNG THỊNH
+Trung Thịnh - Trường Thịnh -ứng Hòa
+THCS TRUNG TÚ
+Dũng Cảm - Trung Tú - Ứng Hòa
+THCS TRẦM LỘNG
+Trầm Lộng - Ứng Hòa
+THCS THỊ TRẤN - ỨNG HOÀ
+Vân Đình - Thị Trấn Vân Đình - Ứng Hoà
+THCS TẢO DƯƠNG VĂN
+Tảo Khê- Tảo Dương Văn-ứng Hòa
+THCS SƠN CÔNG
+Nghi Lộc-sơn Công- Ứng Hòa
+THCS QUẢNG PHÚ CẦU
+Quảng Nguyên - Quảng Phú Cầu - Ứng Hòa
+THCS PHƯƠNG TÚ
+Dương Khê - Phương Tú - Ứng Hòa
+THCS PHÙ LƯU
+Thôn Hạ - Phù Lưu - Ứng Hòa
+THCS NGUYỄN THƯỢNG HIỀN
+Hoàng Xá -vân Đình - Ứng Hoà
+THCS MINH ĐỨC
+Thôn Cầu - Minh Đức - Ứng Hòa
+THCS LƯU HOÀNG
+Ngoại Hoàng - Lưu Hoàng - Ứng Hòa
+THCS LIÊN BẠT
+Lưu Khê - Liên Bạt - Ứng Hoà
+THCS KIM ĐƯỜNG
+Kim Bồng - Kim Đường - Ứng Hòa
+THCS HỒNG QUANG
+Bài Lâm Thượng - Hồng Quang - Ứng Hòa
+THCS HOÀ XÁ
+Xóm Trung - Hoà Xá
+THCS HOA SƠN
+Miêng Thượng - Hoa Sơn - Ứng Hòa
+THCS HOÀ PHÚ
+Đặng Giang - Hoà Phú - Ứng Hòa
+THCS HOÀ NAM
+Đinh Xuyên - Hoà Nam- Ứng Hòa
+THCS HOÀ LÂM
+Trạch Bái - Hoà Lâm - Ứng Hoà
+THCS ĐỒNG TIẾN
+Thành Vật - Đồng Tiến - Ứng Hòa
+THCS ĐỒNG TÂN
+Mỹ Cầu - Đồng Tân - Ứng Hòa
+THCS ĐÔNG LỖ
+Viên Đình - Đông Lỗ
+THCS ĐỘI BÌNH
+Triều Khê - Đội Bình - Ứng Hoà
+THCS ĐẠI HÙNG
+Trung Thượng - Đại Hùng - Ứng Hoà
+THCS ĐẠI CƯỜNG
+Kim Giang - Đại Cường -ứng Hòa
+THCS CAO THÀNH
+Tử Dương - Cao Thành
+THCS TÂN MINH B
+Xuân Đồng, Sóc Sơn
+THCS BẮC PHÚ
+Bắc Phú, Sóc Sơn
+THCS BẮC SƠN
+Bắc Sơn, Sóc Sơn
+THCS ĐÔNG XUÂN
+Đông Xuân, Sóc Sơn
+THCS ĐỨC HOÀ
+Đức Hoà, Sóc Sơn
+THCS HIỀN NINH
+Hiền Ninh, Sóc Sơn
+THCS HỒNG KỲ
+Hồng Kỳ, Sóc Sơn
+THCS KIM LŨ
+Kim Lũ, Sóc Sơn
+THCS MAI ĐÌNH
+Mai Đình, Sóc Sơn
+THCS MINH PHÚ
+Minh Phú, Sóc Sơn
+THCS MINH TRÍ
+Minh Trí, Sóc Sơn
+THCS NAM SƠN
+Nam Sơn, Sóc Sơn
+THCS PHÚ CƯỜNG
+Phú Cường, Sóc Sơn
+THCS PHÙ LINH
+Phù Linh, Sóc Sơn
+THCS PHÙ LỖ
+Phù Lỗ, Sóc Sơn
+THCS PHÚ MINH
+Phú Minh, Sóc Sơn
+THCS QUANG TIẾN
+Quang Tiến, Sóc Sơn
+THCS TÂN DÂN
+Tân Dân, Sóc Sơn
+THCS TÂN HƯNG
+Tân Hưng, Sóc Sơn
+THCS TÂN MINH A
+Tân Minh, Sóc Sơn
+THCS THANH XUÂN
+Thanh Xuân, Sóc Sơn
+THCS THỊ TRẤN SÓC SƠN
+Thị Trấn, Sóc Sơn
+THCS TIÊN DƯỢC
+Tiên Dược, Sóc Sơn
+THCS TRUNG GIÃ
+Trung Giã, Sóc Sơn
+THCS VIỆT LONG
+Việt Long, Sóc Sơn
+THCS XUÂN GIANG
+Xuân Giang, Sóc Sơn
+THCS XUÂN THU
+Xuân Thu, Sóc Sơn
