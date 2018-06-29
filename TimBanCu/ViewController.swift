@@ -13,19 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let path = Bundle.main.path(forResource: "thcstphcm", ofType: "txt") {
+        if let path = Bundle.main.path(forResource: "thpthanoi", ofType: "txt") {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 let myStrings = data.components(separatedBy: .newlines)
                 
                 var count = 0
                 while(count<myStrings.count){
-                    count = count + 4
+                    count = count + 7
                     
                     if(count<myStrings.count){
                         var name = myStrings[count]
                         
-                        count = count + 4
+                        count = count + 1
                         
                         if(count<myStrings.count){
                             let address = myStrings[count]
