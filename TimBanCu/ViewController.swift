@@ -13,16 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let path = Bundle.main.path(forResource: "thcshanoi", ofType: "txt") {
+        if let path = Bundle.main.path(forResource: "thcstphcm", ofType: "txt") {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 let myStrings = data.components(separatedBy: .newlines)
-                
-               /* for str in myStrings{
-                    if(!str.isEmpty){
-                        print(str)
-                    }
-                }*/
                 
                 var count = 0
                 while(count<myStrings.count){
