@@ -1,0 +1,6 @@
+framework module Pods_TimBanCu {
+  umbrella header "Pods-TimBanCu-umbrella.h"
+
+  export *
+  module * { export * }
+}
