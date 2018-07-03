@@ -4,7 +4,7 @@ KẾT ÐOÀN
 2 B LƯƠNG HỮU KHÁNH - Phường Phạm Ngũ Lão
 ÐINH TIÊN HOÀNG
 67 ÐINH TIÊN HOÀNG - Phường Ða Kao
-LÊ NGỌC HÂN
+LÊ NGỌC H N
 12 SƯƠNG NGUYỆT ANH - Phường Bến Thành
 CHƯƠNG DƯƠNG
 296 BẾN CHƯƠNG DƯƠNG - Phường Cô Giang
@@ -32,12 +32,12 @@ LƯƠNG THẾ VINH
 116 CÔ GIANG - Phường Cô Giang
 Tiểu học Tư thục Úc Châu
 Phường Tân Ðịnh
-TIỂU HỌC DÂN LẬP CHÂU Á THÁI BÌNH DƯƠNG
+TIỂU HỌC D N LẬP CH U Á THÁI BÌNH DƯƠNG
 Phường Tân Ðịnh
 AN KHÁNH
 311J5 KHU Khu Tái định cư 17,3 ha - Phường An Phú
 AN PHÚ
-KHU DÂN CƯ SÔNG GIỒNG, KHU PHỐ 2 - Phường An Phú
+KHU D N CƯ SÔNG GIỒNG, KHU PHỐ 2 - Phường An Phú
 GIỒNG ÔNG TỐ
 236C NGUYỄN DUY TRINH - Phường Bình Trưng Tây
 HUỲNH VĂN NGỠI
@@ -72,7 +72,7 @@ NGUYỄN VIỆT HỒNG
 300 CÁCH MẠNG THÁNG TÁM - Phường 10
 THSP PHAN ÐÌNH PHÙNG
 491/7 NGUYỄN ÐÌNH CHIỂU - Phường 2
-PHAN VĂN HÂN
+PHAN VĂN H N
 382/25 NGUYỄN THỊ MINH KHAI - Phường 5
 TRẦN QUANG DIỆU
 388 LÊ VĂN SỸ - Phường 14
@@ -86,7 +86,7 @@ Dân Lập Úc Châu
 32A Trương Định - Phường 7
 DL BẮC MỸ
 85 NGÔ THỜI NHIỆM - Phường 2
-TIỂU HỌC DÂN LẬP QUỐC TẾ FOSCO
+TIỂU HỌC D N LẬP QUỐC TẾ FOSCO
 40 Bà Huyện Thanh Quan - P 6
 NGUYỄN HUỆ 1
 25D CÙ LAO NGUYỄN KIỆU - Phường 1
@@ -97,9 +97,9 @@ NGUYỄN HUỆ 3
 VĨNH HỘI
 183C/3 TÔN THẤT THUYẾT - Phường 4
 ÐẶNG TRẦN CÔN
-202-203 BẾN VÂN ÐỒN - Phường 5
+202-203 BẾN V N ÐỒN - Phường 5
 LÝ NHƠN
-28 LÔ 1 CX VĨNH HỘI BẾN VÂN ĐỒN - Phường 6
+28 LÔ 1 CX VĨNH HỘI BẾN V N ĐỒN - Phường 6
 BẠCH ÐẰNG
 109/29 LÊ QUỐC HƯNG - Phường 12
 BẾN CẢNG
@@ -142,10 +142,10 @@ CHÍNH NGHĨA
 676 NGUYỄN TRÃI - Phường 11
 MINH ĐẠO
 15 KÝ HOÀ - Phường 11
-NGUYỄN VIẾT XUÂN
+NGUYỄN VIẾT XU N
 768 NGUYỄN TRÃI - Phường 11
 TRƯƠNG CÔNG ĐỊNH
-205/42/2 TÂN HOÀ ĐÔNG - Phường 14
+205/42/2 T N HOÀ ĐÔNG - Phường 14
 KIM ĐỒNG
 321 TRẦN VĂN KIỂU - Phường 3
 PHÙ ĐỔNG
@@ -154,9 +154,9 @@ NGUYỄN HUỆ
 178 GIA PHÚ - Phường 1
 CHI LĂNG
 199/31 Lê Quang Sung - Phường 6
-PHÚ LÂM
-6 TÂN HOÀ ĐÔNG - Phường 14
-CHÂU VĂN LIÊM
+PHÚ L M
+6 T N HOÀ ĐÔNG - Phường 14
+CH U VĂN LIÊM
 76-80 MINH PHỤNG - Phường 5
 LÊ VĂN TÁM
 97/18 NGUYỄN ĐÌNH CHI - Phường 9
@@ -180,21 +180,21 @@ HIM LAM
 63 ĐƯỜNG SỐ 11 CƯ XÁ ĐÀI RA ĐA - Phường 10
 Hùng Vương
 Phường 8
-TT LẬP NHÂN
+TT LẬP NH N
 839/4 Hậu Giang - Phường 11
 Quốc tế Mỹ Úc
 Phường 5
 PHAN HUY THỰC
 KP2 ÐƯỜNG SỐ 5, NAM SÀI GÒN - Phường Tân Kiểng
 LÊ QUÍ ĐÔN
-239/7 TRẦN XUÂN SOẠN, KP4 - Phường Tân Hưng
-TÂN QUY
+239/7 TRẦN XU N SOẠN, KP4 - Phường Tân Hưng
+T N QUY
 KP1, ÐƯỜNG SỐ 28 - Phường Tân Qui
 LƯƠNG THẾ VINH
 12 ÐƯỜNG SỐ 10, KP3 - Phường Tân Kiểng
 TRẦN QUỐC TOẢN
 KP1, HUỲNH TẤN PHÁT - Phường Tân Thuận Ðông
-TÂN THUẬN
+T N THUẬN
 8/7 BÙI VĂN BA - Phường Tân Thuận Ðông
 PHÙ ĐỔNG
 36B Lâm Văn Bền .KP4 - Phường Tân Thuận Tây
@@ -204,24 +204,24 @@ KP4, NGUYỄN THỊ THẬP - Phường Bình Thuận
 KP1, ÐƯỜNG NGUYỄN THỊ THẬP - Phường Tân Phong
 NGUYỄN VĂN HƯỞNG
 KP3, HUỲNH TẤN PHÁT - Phường Phú Thuận
-LÊ ANH XUÂN
+LÊ ANH XU N
 KP1NGÃ TƯ ÐA KHOA + HUỲNH TẤN PHÁT - Phường Phú Thuận
 PHÚ MỸ
 76/5 KP2, PHẠM HỮU LẦU - Phường Phú Mỹ
 NGUYỄN THỊ ĐỊNH
-203, KP6, LÂM VĂN BỀN - Phường Bình Thuận
+203, KP6, L M VĂN BỀN - Phường Bình Thuận
 KIM ĐỒNG
 KHU PHỐ 1 NGUYỄN VĂN LINH - Phường Tân Thuận Tây
-ĐẶNG THÙY TRÂM
-CƯ XÁ NGÂN HÀNG - Phường Tân Thuận Tây
+ĐẶNG THÙY TR M
+CƯ XÁ NG N HÀNG - Phường Tân Thuận Tây
 NAM SÀI GÒN
 KHU ĐÔ THỊ MỚI NAM SÀI GÒN - Phường Tân Phú
 NGUYỄN TRỰC
 38A - DƯƠNG BÁ TRẠC - Phường 1
 TIỂU HỌC RẠCH ÔNG
 284 - DƯƠNG BÁ TRẠC - Phường 2
-ÂU DƯƠNG LÂN
-79 - ÂU DƯƠNG LÂN - Phường 3
+U DƯƠNG L N
+79 -  U DƯƠNG L N - Phường 3
 VÀM CỎ ÐÔNG
 771-795 - PHẠM THẾ HIỂN - Phường 4
 THÁI HƯNG
@@ -234,7 +234,7 @@ PHẠM THẾ HIỂN
 2287 - PHẠM THẾ HIỂN - Phường 6
 AN PHONG
 Lô F1 Khu dân cư Hai Thành (PHạm Thế Hiển nối dài) - Phường 7
-TRẦN DANH LÂM
+TRẦN DANH L M
 68 - HƯNG PHÚ - Phường 8
 HƯNG PHÚ
 692B - HƯNG PHÚ - Phường 10
@@ -267,23 +267,23 @@ TẠ UYÊN
 PHÚ HỮU
 ĐƯỜNG 898 KHU PHỐ 4 - Phường Phú Hữu
 PHƯỚC LONG
-Ð.ÐỖ XUÂN HỢP - Phường Phước Long B
+Ð.ÐỖ XU N HỢP - Phường Phước Long B
 LONG THẠNH MỸ
 Khu Phố 1 - Phường Long Thạnh Mỹ
 HIỆP PHÚ
 KHU PHỐ 4 - Phường Hiệp Phú
 NGUYỄN MINH QUANG
-284 HOÀNG HỮU NAM-GIÃN DÂN - Phường Long Thạnh Mỹ
+284 HOÀNG HỮU NAM-GIÃN D N - Phường Long Thạnh Mỹ
 PHƯỚC THẠNH
 NGUYỄN DUY TRINH ẤP PHƯỚC LAI - Phường Long Trường
 TRƯƠNG VĂN THÀNH
-LÃ XUÂN OAI, KP 3 - Phường Tăng Nhơn Phú A
+LÃ XU N OAI, KP 3 - Phường Tăng Nhơn Phú A
 PHONG PHÚ
 KP 3 - Phường Tăng Nhơn Phú B
 LONG PHƯỚC
 ẤP LONG THUẬN - Phường Long Phước
-TÂN PHÚ
-ẤP TÂN NHƠN - Phường Tân Phú
+T N PHÚ
+ẤP T N NHƠN - Phường Tân Phú
 TRƯỜNG THẠNH
 ĐƯỜNG LÒ LU - Phường Trường Thạnh
 TH PHƯỚC LONG A
@@ -292,7 +292,7 @@ TH VIỆT MỸ
 32 QUANG TRUNG - Phường Hiệp Phú
 HỒ THỊ KỶ
 105 HỒ THỊ KỶ - Phường 1
-TRẦN NHÂN TÔN
+TRẦN NH N TÔN
 247 HÒA HẢO - Phường 2
 TRƯỜNG TIỂU HỌC TRƯƠNG ÐỊNH
 382 SƯ VẠN HẠNH - Phường 2
@@ -302,8 +302,8 @@ TRẦN QUANG CƠ
 438 NGÔ GIA TỰ - Phường 4
 NGUYỄN CHÍ THANH
 302 NGUYỄN CHÍ THANH - Phường 5
-DƯƠNG MINH CHÂU
-34 NGUYỄN LÂM - Phường 6
+DƯƠNG MINH CH U
+34 NGUYỄN L M - Phường 6
 NHẬT TẢO
 1 NHẬT TẢO - Phường 9
 ÐIỆN BIÊN
@@ -326,34 +326,34 @@ VÕ TRƯỜNG TOẢN
 354/74 LÝ THƯỜNG KIỆT - Phường 14
 TIỂU HỌC TRẦN VĂN KIỂU
 525 Nguyễn Tri Phương - Phường 8
-TRÍ TÂM
+TRÍ T M
 799 LÊ HỒNG PHONG - Phường 12
 HÒA BÌNH
 66 HÒA BÌNH - Phường 5
 LÊ ÐÌNH CHINH
 203 Nguyễn Thị Nhỏ - Phường 16
-ÂU CƠ
+U CƠ
 160 B TRẦN QUÝ - Phường 6
 PHẠM VĂN HAI
 888-890 NGUYỄN CHÍ THANH - Phường 4
 PHÙNG HƯNG
-250 LẠC LONG QUÂN - Phường 10
+250 LẠC LONG QU N - Phường 10
 NGUYỄN BÁ NGỌC
 395/9G MINH PHỤNG - Phường 10
 HÀN HẢI NGUYÊN
 137 - 139 THAI PHIEN - Phường 9
 TRẦN VĂN ƠN
-612 LẠC LONG QUÂN - Phường 5
+612 LẠC LONG QU N - Phường 5
 THÁI PHIÊN
 393C MINH PHỤNG - Phường 10
-LẠC LONG QUÂN
+LẠC LONG QU N
 225 LÒ SIÊU - Phường 8
 ÐỀ THÁM
 10 LÊ ĐẠI HÀNH - Phường 7
 QUYẾT THẮNG
 391 CX LÊ ÐẠI HÀNH - Phường 11
 ÐẠI THÀNH
-79/22 ÂU CƠ - Phường 14
+79/22  U CƠ - Phường 14
 NGUYỄN THI
 1484 ÐƯỜNG 3-2 - Phường 2
 PHÚ THỌ
@@ -365,7 +365,7 @@ HƯNG VIỆT
 BÌNH THỚI
 181/27-29 BÌNH THỚI - Phường 9
 VIỆT MỸ
-252 LẠC LONG QUÂN - Phường 10
+252 LẠC LONG QU N - Phường 10
 Việt Mỹ Úc
 45 Đường số 5 Cư xá Bình Thới - Phường 8
 Tiểu học APU
@@ -382,7 +382,7 @@ NGUYỄN KHUYẾN
 30/A1 KHU PHỐ 1 - Phường Ðông Hưng Thuận
 TRẦN VĂN ƠN
 78/4abis, kp7 - F.Tân Hưng Thuận
-QUỚI XUÂN
+QUỚI XU N
 309/6 KHU PHỐ 1 - Phường Thạnh Xuân
 NGUYỄN VĂN THỆ
 326/37 KHU PHỐ 3 - Phường Thạnh Xuân
@@ -401,7 +401,7 @@ số 1 , Lê Thị Riêng - Phường Thới An
 NGUYỂN TRÃI
 170/4A KHU PHỐ 1 - Phường Hiệp Thành
 VÕ VĂN TẦN
-TRUNG MỸ TÂY - Phường Trung Mỹ Tây
+TRUNG MỸ T Y - Phường Trung Mỹ Tây
 TRƯƠNG ĐỊNH
 Khu phố 4 - Phường Tân Thới Nhất
 LÊ LỢI
@@ -436,7 +436,7 @@ HỒNG HÀ
 155A- XÔ VIẾT NGHỆ TĨNH - Phường 17
 PHÙ ÐỔNG
 22B- XÔ VIẾT NGHỆ TĨNH - Phường 19
-THẠNH MỸ TÂY
+THẠNH MỸ T Y
 10- PHAM VIẾT CHÁNH - Phường 19
 NGUYỄN TRỌNG TUYỂN
 HẺM 294 - XÔ VIẾT NGHỆ TĨNH - Phường 21
@@ -450,12 +450,12 @@ TẦM VU
 69/3 XÔ VIẾT NGHỆ TĨNH - Phường 26
 THANH ÐA
 KHU 2 CƯ XÁ THANH ĐA - Phường 27
-BÌNH QUỚI TÂY 1
+BÌNH QUỚI T Y 1
 376 Bình Quới - Phường 28
 TRÍ ÐỨC
 153/3 NƠ TRANG LONG - Phường 12
 VIỆT MỸ
-ĐƯỜNG 12AB KHU DÂN CƯ MIẾU NỔI - Phường 3
+ĐƯỜNG 12AB KHU D N CƯ MIẾU NỔI - Phường 3
 Ngôi Nhà Thông Thái
 195/15 Điện Biên Phủ - Phường 15
 TH BẠCH ÐẰNG
@@ -468,7 +468,7 @@ PHẠM NGŨ LÃO
 05 PHẠM NGŨ LÃO - Phường 3
 HANH THÔNG
 05 LÊ LỢI - Phường 4
-NGUYỄN VIẾT XUÂN
+NGUYỄN VIẾT XU N
 332A DƯƠNG QUẢNG HÀM - Phường 5
 TRẦN QUỐC TOẢN
 A20 Phan Văn Trị - Phường 7
@@ -496,7 +496,7 @@ TRẦN QUANG KHẢI
 197/2 NGUYỄN VĂN LƯỢNG - Phường 17
 HOÀNG VĂN THỤ
 161/807E, Nguyễn Oanh - Phường 6
-NHỰT TÂN
+NHỰT T N
 12 NGUYỄN VĂN BẢO - Phường 4
 SÔNG LÔ
 37 PHAN XÍCH LONG - Phường 3
@@ -519,16 +519,16 @@ PHẠM NGỌC THẠCH
 TRUNG NHẤT
 243/3 PHAN ÐÌNH PHÙNG - Phường 15
 LÊ ÐÌNH CHINH
-34/5AB TRẦN KHẮC CHÂN - Phường 15
+34/5AB TRẦN KHẮC CH N - Phường 15
 HỒ VĂN HUÊ
 9 Hoàng Minh Giám - Phường 9
 LÊ VĂN SĨ
 322 - NGUYỄN TRỌNG TUYỂN - Phường 1
-TÂN SƠN NHẤT
+T N SƠN NHẤT
 43 - THĂNG LONG - Phường 2
 NGUYỄN THANH TUYỀN
 389 - HOÀNG VĂN THỤ - Phường 2
-NGUYỄN VIẾT XUÂN
+NGUYỄN VIẾT XU N
 31/17 - PHẠM VĂN HAI - Phường 3
 BÌNH GIÃ
 154/321 - PHẠM VĂN HAI - Phường 3
@@ -542,22 +542,22 @@ CHI LĂNG
 33/13/3 - KHAI TRÍ - Phường 6
 ÐỐNG ÐA
 1 - ÐẤT THÁNH - Phường 6
-BÀNH VĂN TRÂN
-123 - BÀNH VĂN TRÂN - Phường 7
+BÀNH VĂN TR N
+123 - BÀNH VĂN TR N - Phường 7
 TRẦN VĂN ƠN
-100 - DUY TÂN - Phường 8
+100 - DUY T N - Phường 8
 LÝ THƯỜNG KIỆT
 349 - LÝ THƯỜNG KIỆT - Phường 9
 NGỌC HỒI
 373/01/145 - LÝ THƯỜNG KIỆT - Phường 9
 PHÚ THỌ HOÀ
-482 - ÂU CƠ - Phường 10
+482 -  U CƠ - Phường 10
 LÊ THỊ HỒNG GẤM
-624/21 ÂU CƠ - Phường 10
+624/21  U CƠ - Phường 10
 NGUYỄN VĂN TRỖI
 25/1 - TÁI THIẾT - Phường 11
-LẠC LONG QUÂN
-1087 - LẠC LONG QUÂN - Phường 11
+LẠC LONG QU N
+1087 - LẠC LONG QU N - Phường 11
 CÁCH MẠNG THÁNG TÁM
 69 - TRƯỜNG CHINH - Phường 12
 NGUYỄN KHUYẾN
@@ -568,13 +568,13 @@ TRẦN QUỐC TOẢN
 114 ÐỒNG ÐEN - Phường 14
 YÊN THẾ
 31 - NÚI THÀNH - Phường 13
-TÂN TRỤ
+T N TRỤ
 100 - NGUYỄN PHÚC CHU - Phường 15
 SƠN CANG
 42/2A Văn Chung P 13 - Phường 13
 NGUYỄN VĂN KỊP
 45/33 Trần Thái tông - Phường 15
-LÊ ANH XUÂN
+LÊ ANH XU N
 17 Phú Hòa - Phường 7
 LƯƠNG THẾ VINH
 481/9 Trường Chinh -
@@ -584,9 +584,9 @@ RẠNG ÐÔNG
 11/10AB - TRƯƠNG CÔNG ÐỊNH - Phường 13
 TIỂU HỌC QUỐC TẾ PHÁP VIỆT THIÊN THẦN
 30 Bui Thi Xuan - Phường 2
-DUY TÂN
+DUY T N
 1A LŨY BÁN BÍCH - Phường Hiệp Tân
-ÂU CƠ
+U CƠ
 93/23/13A đường Lũy Bán Bích - Phường Tân Thới Hòa
 HUỲNH VĂN CHÍNH
 39 HUỲNH THIỆN LỘC - Phường Hòa Thạnh
@@ -595,26 +595,26 @@ PHAN CHU TRINH
 VÕ THỊ SÁU
 116 đường Nguyễn Sơn - Phường Phú Thạnh
 HỒ VĂN CƯỜNG
-1772 LẠC LONG QUÂN - Phường Phú Trung
-TÂN QUÝ
-3/1B TÂN KỲ TÂN QUÝ - Phường Sơn Kỳ
+1772 LẠC LONG QU N - Phường Phú Trung
+T N QUÝ
+3/1B T N KỲ T N QUÝ - Phường Sơn Kỳ
 TÔ VĨNH DIỆN
 51/8 ĐÔ ĐỐC LỘC - Phường Tân Quý
 ĐOÀN THỊ ĐIỂM
-9/45 TÂN KỲ TÂN QUÝ - Phường Tân Sơn Nhì
+9/45 T N KỲ T N QUÝ - Phường Tân Sơn Nhì
 LÊ VĂN TÁM
 145 Độc Lập - Phường Tân Thành
 LÊ LAI
-48/39 TÂY THẠNH - Phường Tây Thạnh
-TÂN HƯƠNG
-167/29 TÂN QUÝ - Phường Tân Quý
-TÂN SƠN NHÌ
-905/4 ÂU CƠ - Phường Tân Sơn Nhì
-HIỆP TÂN
+48/39 T Y THẠNH - Phường Tây Thạnh
+T N HƯƠNG
+167/29 T N QUÝ - Phường Tân Quý
+T N SƠN NHÌ
+905/4  U CƠ - Phường Tân Sơn Nhì
+HIỆP T N
 252/16 PHAN ANH - Phường Hiệp Tân
-TÂN THỚI
+T N THỚI
 Phường Hòa Thạnh
-TÂN HÓA
+T N HÓA
 Tân hóa - Phường Hiệp Tân
 DL HỒNG NGỌC
 ĐỖ TẤN PHONG
@@ -622,7 +622,7 @@ Phường Linh Trung
 NGUYỄN TRUNG TRỰC
 962 QL 1 - Phường Linh Chiểu
 LƯƠNG THẾ VINH
-1 DÂN CHỦ - Phường Bình Thọ
+1 D N CHỦ - Phường Bình Thọ
 TỪ ÐỨC
 43 ĐƯỜNG 4 KP2 - Phường Bình Thọ
 BÌNH TRIỆU
@@ -632,34 +632,34 @@ BÌNH TRIỆU
 HIỆP BÌNH PHƯỚC
 630 KP4 QL 13 - Phường Hiệp Bình Phước
 THÁI VĂN LUNG 1
-KP5 ĐƯỜNG TAM CHÂU - Phường Tam Phú
+KP5 ĐƯỜNG TAM CH U - Phường Tam Phú
 TAM BÌNH
 71 KHU PHỐ 3 - Phường Tam Bình
-TRẦN VĂN VÂN
+TRẦN VĂN V N
 15 ĐƯỜNG 6 KP 4 - Phường Bình Chiểu
 Tiểu học BÌNH CHIỂU
 902 Tỉnh lộ 42, KP1 - Phường Bình Chiểu
-XUÂN HIỆP
-LINH XUÂN - Phường Linh Xuân
+XU N HIỆP
+LINH XU N - Phường Linh Xuân
 HOÀNG DIỆU
 33 LÊ VĂN CHÍ KP3 - Phường Linh Trung
 NGUYỄN VĂN TRIẾT
 57 KHU PHỐ 2 - Phường Linh Trung
-LINH TÂY
+LINH T Y
 16/5 - Phường Linh Tây
 BÌNH QUỚI
 18/18 Đường 22, KP 4, - Phường Linh Ðông
 ÐẶNG VĂN BẤT
 KHU PHỐ 2 - Phường Linh Ðông
 LINH ÐÔNG
-170 KHU PHỐ 3 - TÔ NGỌC VÂN - Phường Linh Ðông
+170 KHU PHỐ 3 - TÔ NGỌC V N - Phường Linh Ðông
 NGUYỄN VĂN BANH
 7/9A KHU PHỐ 5 - Phường Trường Thọ
 TRƯƠNG VĂN HẢI
 76 Đường Phú Châu KP 4 - Phường Tam Phú
 NGUYỄN VĂN LỊCH
 66 Tổ 11 Đường số 6 KP3 - Phường Linh Xuân
-ĐÀO SƠN TÂY
+ĐÀO SƠN T Y
 61 Hiệp Bình - Phường Hiệp Bình Phước
 TH-THCS Mỹ
 47 Nguyễn Văn Bá - Phường Bình Thọ
@@ -679,7 +679,7 @@ BÌNH TRỊ 2
 BÌNH TRỊ ĐÔNG B - Phường Bình Trị Đông B
 BÌNH TRỊ ĐÔNG A
 SỐ 999 HƯƠNG LỘ 2 - Phường Bình Trị Đông A
-TÂN TẠO
+T N TẠO
 119 Hồ Văn Long KP3 - Phường Tân Tạo
 BÌNH THUẬN
 ẤP 3 - Phường Bình Hưng Hòa A
@@ -692,10 +692,10 @@ Số 1A, đường số 4, Khu phố 7 - Phường Bình Hưng Hòa A
 LÊ CÔNG PHÉP
 ĐƯỜNG SỐ 1A, KP6 - Phường An Lạc
 BÌNH TRỊ ĐÔNG
-ĐƯỜNG TÂN HÒA ĐÔNG, KP12 - Phường Bình Trị Đông
-BÌNH TÂN
+ĐƯỜNG T N HÒA ĐÔNG, KP12 - Phường Bình Trị Đông
+BÌNH T N
 ĐƯỜNG SỐ 48, KP9 - Phường Tân Tạo
-TÂN TẠO A
+T N TẠO A
 ĐƯỜNG LỘ TẺ, KP3 - Phường Tân Tạo A
 KIM ĐỒNG
 LÊ TRỌNG TẤN

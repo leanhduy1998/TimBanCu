@@ -7,42 +7,81 @@
 //
 
 import UIKit
+import AWSDynamoDB
+import AWSAuthCore
+import AWSMobileClient
 
 class ViewController: UIViewController {
+    
+    let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+
+    
+    var myStrings = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let credentialsProvider = AWSMobileClient.sharedInstance().getCredentialsProvider()
+        
+        // Get the identity Id from the AWSIdentityManager
+        let identityId = AWSIdentityManager.default().identityId
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
-        if let path = Bundle.main.path(forResource: "dhcanuoc", ofType: "txt") {
+        if let path = Bundle.main.path(forResource: "thpthanoi", ofType: "txt") {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
                 let myStrings = data.components(separatedBy: .newlines)
                 
-                var count = 4
-                while(count<myStrings.count){
-                    //count = count + 3
-                    
-                    if(count<myStrings.count){
-                        var name = myStrings[count]
-                        
-                        //count = count + 2
-                        
-                        if(count<myStrings.count){
-                            //let address = myStrings[count]
-                            print(name)
-                            //print(address)
-                            
-                            while(count<myStrings.count && myStrings[count] != "<tr>"){
-                                count = count + 1
-                            }
-                            count = count + 4
-                        }
-                    }
-                }
+                self.myStrings = myStrings
+            
+                let count = 0
+                recurse(count: count)
+                
+                
+                
+                
             } catch {
                 print(error)
             }
         }
+    }
+    
+    func recurse(count:Int){
+            let name = myStrings[count]
+            var address = myStrings[count+1]
+            
+            if(address.isEmpty){
+                address = "?"
+            }
+            
+            let school = School()
+            school?._school = name
+            school?._address = address
+            school?._type = "highschool"
+        
+            print(name)
+            print(address)
+            
+            dynamoDbObjectMapper.save(school!, completionHandler: {
+                (error: Error?) -> Void in
+                
+                if let error = error {
+                    print(school)
+                    print("Amazon DynamoDB Save Error: \(error)")
+                    return
+                }
+                print("An item was saved.")
+                
+                if(count+1 < self.myStrings.count){
+                    DispatchQueue.main.async {
+                        self.recurse(count: count + 2)
+                    }
+                    
+                }
+            })
+        
     }
 
     override func didReceiveMemoryWarning() {

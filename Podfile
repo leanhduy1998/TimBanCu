@@ -9,7 +9,10 @@ target 'TimBanCu' do
 
 
   pod 'ImageSlideshow'
-
+  pod 'AWSMobileClient'
+  pod 'AWSDynamoDB'
+  pod 'AWSFacebookSignIn'
+  pod 'AWSAuthUI'
 
 
   target 'TimBanCuTests' do
