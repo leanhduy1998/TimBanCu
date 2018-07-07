@@ -13,6 +13,8 @@ target 'TimBanCu' do
   pod 'AWSDynamoDB'
   pod 'AWSFacebookSignIn'
   pod 'AWSAuthUI'
+  pod 'AWSGoogleSignIn'
+  pod 'GoogleSignIn'
 
 
   target 'TimBanCuTests' do

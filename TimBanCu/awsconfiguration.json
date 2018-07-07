@@ -28,6 +28,10 @@
       "Region": "us-east-1"
     }
   },
+  "GoogleSignIn": {
+    "ClientId-iOS": "137184194492-5iokn36749o7gmlodjnv6gskddjen7p1.apps.googleusercontent.com",
+    "Permissions": "email,profile,openid"
+  },
   "FacebookSignIn": {
     "AppId": "1816918598394676",
     "Permissions": "public_profile"

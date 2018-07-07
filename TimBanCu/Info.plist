@@ -43,5 +43,32 @@
 	</array>
     
     
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1816918598394676</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1816918598394676</string>
+    <key>FacebookDisplayName</key>
+    <string>TimBanCu</string>
+    
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.137184194492-5iokn36749o7gmlodjnv6gskddjen7p1</string>
+            </array>
+        </dict>
+    </array>
+    
 </dict>
+
+
 </plist>
