@@ -23,7 +23,6 @@
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
 		1CAAAC6320F4428D00443225 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */; };
 		1CAD11B920F4FBBF00EC4B10 /* MajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */; };
-		1CAD11BB20F4FEC100EC4B10 /* NewSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD11BA20F4FEC100EC4B10 /* NewSchoolViewController.swift */; };
 		1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */; };
 		1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */; };
 		1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */; };
@@ -75,7 +74,6 @@
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 		1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorViewController.swift; sourceTree = "<group>"; };
-		1CAD11BA20F4FEC100EC4B10 /* NewSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSchoolViewController.swift; sourceTree = "<group>"; };
 		1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhochanoi.txt; sourceTree = "<group>"; };
 		1CBF5C7420A8197B00B78E6A /* TimBanCu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimBanCu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */,
 				1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */,
 				1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */,
-				1CAD11BA20F4FEC100EC4B10 /* NewSchoolViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -545,7 +542,6 @@
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1C5365C920E82070000F7FB2 /* School.swift in Sources */,
-				1CAD11BB20F4FEC100EC4B10 /* NewSchoolViewController.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
