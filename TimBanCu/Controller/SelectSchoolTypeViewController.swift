@@ -13,10 +13,13 @@ import AWSMobileClient
 
 import AWSAuthUI
 
+
 class SelectSchoolTypeViewController: UIViewController {
     
     let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
     var myStrings = [String]()
+    
+    var schoolViewModels = [SchoolViewModel]()
     
     enum scanType :String{
         case elementary
@@ -24,8 +27,6 @@ class SelectSchoolTypeViewController: UIViewController {
         case highschool
         case university
     }
-    
-    var selectedScan:scanType!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,29 +40,61 @@ class SelectSchoolTypeViewController: UIViewController {
                                             print("Error occurred: \(String(describing: error))")
                                         } else {
                                             // sign in successful.
+                                            AWSAuthHelper.sharedInstance.setupCredentialsProvider()
                                         }
                 })
         }
+        else{
+            AWSAuthHelper.sharedInstance.setupCredentialsProvider()
+        }
     }
     
+    
+    
+    
+    
     @IBAction func tieuHocBtnPressed(_ sender: Any) {
-        selectedScan = .elementary
+        var selectedSchools = [SchoolViewModel]()
+        for school in schoolViewModels{
+            if(school.type == "elementary"){
+                selectedSchools.append(school)
+            }
+        }
+        
         performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
     }
     
     @IBAction func trunghoccosoBtnPressed(_ sender: Any) {
-        selectedScan = .secondary
+        var selectedSchools = [SchoolViewModel]()
+        for school in schoolViewModels{
+            if(school.type == "secondary"){
+                selectedSchools.append(school)
+            }
+        }
+        
         performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
     }
     
     @IBAction func trunghocphothongBtnPressed(_ sender: Any) {
-        selectedScan = .highschool
+        var selectedSchools = [SchoolViewModel]()
+        for school in schoolViewModels{
+            if(school.type == "highschool"){
+                selectedSchools.append(school)
+            }
+        }
+        
         performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
     }
     
     
     @IBAction func daihocBtnPressed(_ sender: Any) {
-        selectedScan = .university
+        var selectedSchools = [SchoolViewModel]()
+        for school in schoolViewModels{
+            if(school.type == "university"){
+                selectedSchools.append(school)
+            }
+        }
+        
         performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
     }
 

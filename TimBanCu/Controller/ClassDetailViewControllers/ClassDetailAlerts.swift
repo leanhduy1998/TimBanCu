@@ -1,5 +1,5 @@
 //
-//  SchoolAlert.swift
+//  DetailClassAlerts.swift
 //  TimBanCu
 //
 //  Created by Duy Le 2 on 7/10/18.
@@ -10,23 +10,23 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-extension SchoolViewController{
+extension ClassDetailViewController{
     func setupAlerts(){
         setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()
     }
     
     private func setupAddNewSchoolAlert(){
-        addNewSchoolAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addNewSchoolAlert] (_) in
-            addNewSchoolAlert?.dismiss(animated: true, completion: nil)
+        addNewClassAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addNewClassAlert] (_) in
+            addNewClassAlert?.dismiss(animated: true, completion: nil)
         }))
         
-        addNewSchoolAlert.addTextField { (textField) in
-            textField.placeholder = "Tên Trường"
+        addNewClassAlert.addTextField { (textField) in
+            textField.placeholder = "Tên Lớp"
         }
-        
-        addNewSchoolAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewSchoolAlert] (_) in
-            let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
+        /*
+        addNewClassAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewClassAlert] (_) in
+            let textField = addNewClassAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
             if(!(schoolName?.isEmpty)!){
                 let newSchool = School()
@@ -55,13 +55,12 @@ extension SchoolViewController{
                 })
             }
         }))
+ */
     }
     
     private func setupAddNewSchoolCompletedAlert(){
-        addNewSchoolCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewSchoolCompletedAlert] (_) in
-            addNewSchoolCompletedAlert?.dismiss(animated: true, completion: nil)
+        addNewClassCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewClassCompletedAlert] (_) in
+            addNewClassCompletedAlert?.dismiss(animated: true, completion: nil)
         }))
     }
-    
-    
 }

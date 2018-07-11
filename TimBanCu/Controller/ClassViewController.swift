@@ -10,21 +10,12 @@ import UIKit
 
 class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
-    
-    
     var classes: [String]!
     var selectedSchoolVM:SchoolViewModel!
     
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,6 +10,11 @@
 		01F7AD756B4ABB210CAFF467 /* Pods_TimBanCu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4203691F03ED76B3F5BD22AE /* Pods_TimBanCu.framework */; };
 		1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */; };
 		1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */; };
+		1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */; };
+		1C0A03A520F51EF700E105A9 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A420F51EF700E105A9 /* Schools.swift */; };
+		1C0A03A820F5277B00E105A9 /* AWSAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */; };
+		1C0A03AC20F5779500E105A9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C0A03AB20F5779500E105A9 /* awsconfiguration.json */; };
+		1C3ADA8420F6B6F80041421F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
@@ -31,7 +36,6 @@
 		1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */; };
 		1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */; };
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
-		1CFB9C2220F0652000945819 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2120F0652000945819 /* awsconfiguration.json */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
@@ -61,6 +65,11 @@
 		1277A282A2B7EF6C61B7E6A4 /* Pods-TimBanCuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuUITests/Pods-TimBanCuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolAlert.swift; sourceTree = "<group>"; };
 		1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
+		1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailAlerts.swift; sourceTree = "<group>"; };
+		1C0A03A420F51EF700E105A9 /* Schools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
+		1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSAuthHelper.swift; sourceTree = "<group>"; };
+		1C0A03AB20F5779500E105A9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
 		1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpttphcm.txt; sourceTree = "<group>"; };
@@ -88,7 +97,6 @@
 		1CBF5C9320A8197C00B78E6A /* TimBanCuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimBanCuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimBanCuUITests.swift; sourceTree = "<group>"; };
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CFB9C2120F0652000945819 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,11 +145,29 @@
 			path = SchoolViewControllers;
 			sourceTree = "<group>";
 		};
+		1C0A039F20F51BE200E105A9 /* ClassDetailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */,
+				1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */,
+			);
+			path = ClassDetailViewControllers;
+			sourceTree = "<group>";
+		};
+		1C0A03A620F5276300E105A9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		1C5365C320E81F98000F7FB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1C5365C720E82070000F7FB2 /* School.swift */,
 				1C5365C620E82070000F7FB2 /* Student.swift */,
+				1C0A03A420F51EF700E105A9 /* Schools.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,10 +175,12 @@
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */,
 				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
 				1C0A039A20F5162100E105A9 /* SchoolViewControllers */,
 				1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */,
-				1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */,
+				1C0A039F20F51BE200E105A9 /* ClassDetailViewControllers */,
+				1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,7 +195,7 @@
 				1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */,
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
-				1CFB9C2120F0652000945819 /* awsconfiguration.json */,
+				1C0A03AB20F5779500E105A9 /* awsconfiguration.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -202,6 +230,7 @@
 				1CFB9C2820F1703300945819 /* View */,
 				1CFB9C2520F15A6F00945819 /* View Model */,
 				1CAAAC5C20F3CA6E00443225 /* Controller */,
+				1C0A03A620F5276300E105A9 /* Helper */,
 				1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */,
 				1CBF5C7B20A8197B00B78E6A /* Main.storyboard */,
 				1CBF5C7E20A8197C00B78E6A /* Assets.xcassets */,
@@ -242,7 +271,6 @@
 			children = (
 				1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */,
 				1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */,
-				1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -384,8 +412,8 @@
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
-				1CFB9C2220F0652000945819 /* awsconfiguration.json in Resources */,
 				1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */,
+				1C0A03AC20F5779500E105A9 /* awsconfiguration.json in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
@@ -535,16 +563,20 @@
 			files = (
 				1CAAAC6320F4428D00443225 /* ClassDetailViewController.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
+				1C3ADA8420F6B6F80041421F /* LoadingViewController.swift in Sources */,
 				1CAD11B920F4FBBF00EC4B10 /* MajorViewController.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
 				1C5365C820E82070000F7FB2 /* Student.swift in Sources */,
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
+				1C0A03A520F51EF700E105A9 /* Schools.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1C5365C920E82070000F7FB2 /* School.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
+				1C0A03A820F5277B00E105A9 /* AWSAuthHelper.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
+				1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */,
 				1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

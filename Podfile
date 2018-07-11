@@ -15,6 +15,7 @@ target 'TimBanCu' do
   pod 'AWSAuthUI'
   pod 'AWSGoogleSignIn'
   pod 'GoogleSignIn'
+  pod 'AWSAuthCore'
 
 
   target 'TimBanCuTests' do

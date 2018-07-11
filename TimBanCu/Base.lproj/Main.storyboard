@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OzG-KN-tOI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GRn-jX-QLs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="KhQ-da-b6e">
+            <objects>
+                <viewController id="GRn-jX-QLs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IYm-Ok-mCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm bạn cũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-Jz-41F">
+                                <rect key="frame" x="127" y="120" width="120.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c0D-sX-N4F">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ra4-Jz-41F" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="HM6-pM-Bax"/>
+                            <constraint firstItem="c0D-sX-N4F" firstAttribute="centerY" secondItem="IYm-Ok-mCR" secondAttribute="centerY" id="KER-Hf-BvE"/>
+                            <constraint firstItem="ra4-Jz-41F" firstAttribute="top" secondItem="DoJ-JJ-y5G" secondAttribute="top" constant="100" id="Pxb-Jp-nn8"/>
+                            <constraint firstItem="c0D-sX-N4F" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="wUg-QW-bYT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DoJ-JJ-y5G"/>
+                    </view>
+                    <connections>
+                        <segue destination="OzG-KN-tOI" kind="show" identifier="LoadingToSelectSchoolTypeSegue" id="s74-bk-ahi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiH-ED-d8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1618" y="130"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hIh-Oh-INn">
             <objects>
@@ -311,10 +346,10 @@
             </objects>
             <point key="canvasLocation" x="2238" y="923"/>
         </scene>
-        <!--View Controller-->
+        <!--Class Detail View Controller-->
         <scene sceneID="9xg-8t-i4s">
             <objects>
-                <viewController id="uqg-Jb-aZN" sceneMemberID="viewController">
+                <viewController id="uqg-Jb-aZN" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6F9-5b-PnC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,7 +428,7 @@
                                                 <rect key="frame" x="0.0" y="51" width="355" height="30"/>
                                                 <state key="normal" title="Thêm Lớp Mới"/>
                                                 <connections>
-                                                    <action selector="addNewSchoolBtnPressed:" destination="wCd-WF-phc" eventType="touchUpInside" id="FsR-Ac-ywO"/>
+                                                    <action selector="addNewClassDetailBtnPressed:" destination="uqg-Jb-aZN" eventType="touchUpInside" id="a2A-ls-ZU3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -431,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="3248.8000000000002" y="129.98500749625188"/>
         </scene>
-        <!--View Controller-->
+        <!--Class Detail View Controller-->
         <scene sceneID="GHI-vk-Sfu">
             <objects>
-                <viewController id="bot-Kc-ScF" sceneMemberID="viewController">
+                <viewController id="bot-Kc-ScF" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lVQ-rc-Isa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
