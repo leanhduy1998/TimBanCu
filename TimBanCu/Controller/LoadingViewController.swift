@@ -46,9 +46,15 @@ class LoadingViewController: UIViewController {
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SelectSchoolTypeViewController{
+        /*if let destination = segue.destination as? SelectSchoolTypeViewController{
             destination.schoolViewModels = schoolViewModels
-        }
+        }*/
+        
+        let navVC = segue.destination as? UINavigationController
+        
+        let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
+        
+        destination.schoolViewModels = schoolViewModels
     }
     
 

@@ -20,6 +20,7 @@ class SelectSchoolTypeViewController: UIViewController {
     var myStrings = [String]()
     
     var schoolViewModels = [SchoolViewModel]()
+    var selectedSchools = [SchoolViewModel]()
     
     enum scanType :String{
         case elementary
@@ -54,7 +55,7 @@ class SelectSchoolTypeViewController: UIViewController {
     
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {
-        var selectedSchools = [SchoolViewModel]()
+        selectedSchools.removeAll()
         for school in schoolViewModels{
             if(school.type == "elementary"){
                 selectedSchools.append(school)
@@ -65,7 +66,7 @@ class SelectSchoolTypeViewController: UIViewController {
     }
     
     @IBAction func trunghoccosoBtnPressed(_ sender: Any) {
-        var selectedSchools = [SchoolViewModel]()
+        selectedSchools.removeAll()
         for school in schoolViewModels{
             if(school.type == "secondary"){
                 selectedSchools.append(school)
@@ -76,7 +77,7 @@ class SelectSchoolTypeViewController: UIViewController {
     }
     
     @IBAction func trunghocphothongBtnPressed(_ sender: Any) {
-        var selectedSchools = [SchoolViewModel]()
+        selectedSchools.removeAll()
         for school in schoolViewModels{
             if(school.type == "highschool"){
                 selectedSchools.append(school)
@@ -88,7 +89,7 @@ class SelectSchoolTypeViewController: UIViewController {
     
     
     @IBAction func daihocBtnPressed(_ sender: Any) {
-        var selectedSchools = [SchoolViewModel]()
+        selectedSchools.removeAll()
         for school in schoolViewModels{
             if(school.type == "university"){
                 selectedSchools.append(school)
@@ -100,7 +101,7 @@ class SelectSchoolTypeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SchoolViewController{
-            destination.selectedScanStr = selectedScan.rawValue
+           destination.schoolViewModels = selectedSchools
         }
     }
 

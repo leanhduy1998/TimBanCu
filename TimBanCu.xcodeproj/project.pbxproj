@@ -13,8 +13,8 @@
 		1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */; };
 		1C0A03A520F51EF700E105A9 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A420F51EF700E105A9 /* Schools.swift */; };
 		1C0A03A820F5277B00E105A9 /* AWSAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */; };
-		1C0A03AC20F5779500E105A9 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C0A03AB20F5779500E105A9 /* awsconfiguration.json */; };
 		1C3ADA8420F6B6F80041421F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */; };
+		1C3ADA8620F6BDC90041421F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8520F6BDC90041421F /* awsconfiguration.json */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
@@ -68,8 +68,8 @@
 		1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailAlerts.swift; sourceTree = "<group>"; };
 		1C0A03A420F51EF700E105A9 /* Schools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
 		1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSAuthHelper.swift; sourceTree = "<group>"; };
-		1C0A03AB20F5779500E105A9 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		1C3ADA8520F6BDC90041421F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
 		1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpttphcm.txt; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */,
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
-				1C0A03AB20F5779500E105A9 /* awsconfiguration.json */,
+				1C3ADA8520F6BDC90041421F /* awsconfiguration.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -413,11 +413,11 @@
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
 				1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */,
-				1C0A03AC20F5779500E105A9 /* awsconfiguration.json in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
+				1C3ADA8620F6BDC90041421F /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

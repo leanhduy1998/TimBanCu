@@ -15,14 +15,12 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var noResultView: UIView!
     
-    
+    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     var schoolViewModels = [SchoolViewModel]()
     var searchSchoolVMs = [SchoolViewModel]()
     
     var selectedScanStr:String!
     var selectedSchoolVM:SchoolViewModel!
-    
-    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     
     var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
@@ -43,105 +41,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func fetchData(){
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 20000
-      //  scanExpression.filterExpression = "#type = :type"
-       // scanExpression.expressionAttributeNames = ["#type": "type"]
-       // scanExpression.expressionAttributeValues = [":type": selectedScanStr]
-        
-        dynamoDBObjectMapper.scan(Schools.self, expression: scanExpression).continueWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
-            if let error = task.error as NSError? {
-                print("The request failed. Error: \(error)")
-            } else if let paginatedOutput = task.result {
-                for item in paginatedOutput.items {
-                    let schools = item as? Schools
-                    
-                    for schoolStr in (schools?._schools)!{
-                        let array = schoolStr.components(separatedBy: "&&&")
-                        
-                        let schoolVM = SchoolViewModel(name: array[0], address: array[1], type: array[2])
-                        self.schoolViewModels.append(schoolVM)
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    self.searchSchoolVMs = self.schoolViewModels
-                    self.tableview.reloadData()
-                    self.updateData(count: 0)
-                    
-                    
-                }
-            }
-            return nil
-        })
+        self.searchSchoolVMs = self.schoolViewModels
+        self.tableview.reloadData()
     }
     
-    func updateData(count:Int){
-        
-         AWSAuthHelper.sharedInstance.getCurrentUID(completionHandler: { (uid) in
-            
-            self.dynamoDBObjectMapper.load(Schools.self, hashKey: uid, rangeKey:nil).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-                
-                
-                
-                var schools = [String]()
-                var temp = Schools()
-                
-                if let error = task.error as? NSError {
-                    print("The request failed. Error: \(error)")
-                    return nil
-                }
-                
-                if let result = task.result as? Schools {
-                    schools = result._schools!
-                }
-                    
-                for school in self.schoolViewModels{
-                    var string = school.name
-                    string?.append("&&&")
-                    string?.append(school.address)
-                    string?.append("&&&")
-                    string?.append(school.type)
-                    
-                    schools.append(string!)
-                }
-                temp?._schools = schools
-                
-                
-                temp?._userId = uid
-                
-                self.dynamoDBObjectMapper.save(temp!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-                    if let error = task.error as? NSError {
-                        print("The request failed. Error: \(error)")
-                    } else {
-                        print("success")
-                    }
-                    return nil
-                })
-     
-                
-                
-                return nil
-            })
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        })
-        
-       
-    }
 
     @objc func textFieldDidChange(_ textField: UITextField) {
         searchSchoolVMs.removeAll()
