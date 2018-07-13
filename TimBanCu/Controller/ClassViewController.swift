@@ -29,6 +29,10 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ClassToClassDetailSegue", sender: self)
+    }
+    
 
     /*
     // MARK: - Navigation

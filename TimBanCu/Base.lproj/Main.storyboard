@@ -324,7 +324,7 @@
                         <viewLayoutGuide key="safeArea" id="als-9s-OTj"/>
                     </view>
                     <connections>
-                        <segue destination="uqg-Jb-aZN" kind="show" id="0e2-8U-Nev"/>
+                        <segue destination="uqg-Jb-aZN" kind="show" identifier="ClassToClassDetailSegue" id="0e2-8U-Nev"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHd-EG-3Yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
