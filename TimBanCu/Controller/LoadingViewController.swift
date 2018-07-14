@@ -71,20 +71,20 @@ class LoadingViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDele
             
             var di = [String:Any]()
             
-            di = temp(t: "tieuhochanoi", di: di, id: signIn.clientID)
-            di = temp(t: "tieuhoctphcm", di: di, id: signIn.clientID)
-            di = temp(t: "thcshanoi", di: di, id: signIn.clientID)
-            di = temp(t: "thcstanbinh", di: di, id: signIn.clientID)
-            di = temp(t: "thpthanoi", di: di, id: signIn.clientID)
-            di = temp(t: "thpttphcm", di: di, id: signIn.clientID)
-            di = temp2(t: "dhcanuoc", di: di, id: signIn.clientID)
+            di = temp(t: "tieuhochanoi", di: di, id: signIn.clientID, type: "th")
+            di = temp(t: "tieuhoctphcm", di: di, id: signIn.clientID, type: "th")
+            di = temp(t: "thcshanoi", di: di, id: signIn.clientID, type: "thcs")
+            di = temp(t: "thcstanbinh", di: di, id: signIn.clientID, type: "thcs")
+            di = temp(t: "thpthanoi", di: di, id: signIn.clientID, type: "thpt")
+            di = temp(t: "thpttphcm", di: di, id: signIn.clientID, type: "thpt")
+            di = temp2(t: "dhcanuoc", di: di, id: signIn.clientID, type: "dh")
    
             self.ref.child("schools").setValue(di)
         }
        
     }
     
-    func temp(t:String,di:[String:Any],id:String) -> [String:Any]{
+    func temp(t:String,di:[String:Any],id:String,type:String) -> [String:Any]{
         var di = di as? [String:Any]
         
         if let path = Bundle.main.path(forResource: t, ofType: "txt") {
@@ -107,7 +107,7 @@ class LoadingViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDele
                     name = name.replacingOccurrences(of: ".", with: " ", options: .literal, range: nil)
                     name = name.replacingOccurrences(of: "/", with: " ", options: .literal, range: nil)
                     
-                    let dic = ["address":address,"type":"elementary","uid":id]
+                    let dic = ["address":address,"type":type,"uid":id]
                     
                     di![name] = dic
                     
@@ -122,7 +122,7 @@ class LoadingViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDele
         return di!
     }
     
-    func temp2(t:String,di:[String:Any],id:String) -> [String:Any]{
+    func temp2(t:String,di:[String:Any],id:String,type:String) -> [String:Any]{
         var di = di as? [String:Any]
         
         if let path = Bundle.main.path(forResource: t, ofType: "txt") {
@@ -142,7 +142,7 @@ class LoadingViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDele
                     
                     print(name)
                     
-                    let dic = ["address":"?","type":"elementary","uid":id]
+                    let dic = ["address":"?","type":type,"uid":id]
                     
                     di![name] = dic
                     

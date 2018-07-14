@@ -14,6 +14,7 @@
 		1C3ADA8420F6B6F80041421F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */; };
 		1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8B20F962BB0041421F /* awsconfiguration.json */; };
 		1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */; };
+		1C3ADA9220FABA360041421F /* Trash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA9120FABA360041421F /* Trash.swift */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
@@ -66,6 +67,7 @@
 		1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		1C3ADA8B20F962BB0041421F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1C3ADA9120FABA360041421F /* Trash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trash.swift; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
 		1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpttphcm.txt; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				1CBF5C7E20A8197C00B78E6A /* Assets.xcassets */,
 				1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */,
 				1CBF5C8320A8197C00B78E6A /* Info.plist */,
+				1C3ADA9120FABA360041421F /* Trash.swift */,
 			);
 			path = TimBanCu;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C3ADA9220FABA360041421F /* Trash.swift in Sources */,
 				1CAAAC6320F4428D00443225 /* ClassDetailViewController.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1C3ADA8420F6B6F80041421F /* LoadingViewController.swift in Sources */,
