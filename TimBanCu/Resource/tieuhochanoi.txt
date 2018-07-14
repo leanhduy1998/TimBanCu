@@ -106,7 +106,7 @@ Bà Triệu
 Số 31 Tô Hiến Thành
 Bạch Mai
 Số 44 Đường Hồng Mai
-Dl T.H.T
+Dl T H T
 Ngõ 487 Đông Kim Ngưu
 Đoàn Kết
 Số 27 Phố Chùa Vua
@@ -147,67 +147,67 @@ Số 1/30 Phố Hương Viên
 Vĩnh Tuy
 Cụm 2B Phường Vĩnh Tuy
 Dịch Vọng A
-
+?
 Dịch Vọng B
-
+?
 Dl Hermann
-
+?
 Dl Lý Thái Tổ
-
+?
 Mai Dịch
-
+?
 Nam Trung Yên
-
+?
 Nghĩa Đô
-
+?
 Nghĩa Tân
-
+?
 Nguyễn Khả Trạc
-
+?
 Nguyễn Siêu
-
+?
 Nguyễn Viết Xuân
-
+?
 Quan Hoa
-
+?
 Trung Hoà
-
+?
 Yên Hoà
-
+?
 Đại Kim
-
+?
 Đại Từ
-
+?
 Đền Lừ
-
+?
 Định Công
-
+?
 Giáp Bát
-
+?
 Hoàng Liệt
-
+?
 Hoàng Văn Thụ
-
+?
 Lĩnh Nam
-
+?
 Mai Động
-
+?
 Phương Nam
-
+?
 Tân Định
-
+?
 Tân Mai
-
+?
 Thanh Trì
-
+?
 Thịnh Liệt
-
+?
 Trần Phú
-
+?
 Vĩnh Hưng
-
+?
 Yên Sở
-
+?
 Ái Mộ
 Số 8 Ngõ 135 Nguyễn Văn Cừ, Long Biên
 Bồ Đề
@@ -255,7 +255,7 @@ Số 8 Võng Thị, Tây Hồ
 Hàn Thuyên
 38 Hoàng Hoa Thám, Tây Hồ
 Nhật Tân
-364 Đường  u Cơ, Tây Hồ
+364 Đường  u Cơ, Tây Hồ
 Phú Thượng
 Ngõ 143 Phú Gia - An Dương Vương, Phú Thượng, Tây Hồ
 Quảng An
@@ -263,141 +263,141 @@ Số 6 Đặng Thai Mai, Tây Hồ
 Th Và Thcs Dl Dream
 Nhà C, 98 Tô Ngọc Vân, Phường Quảng An, Tây Hồ
 Tứ Liên
-Số 6A Ngõ 200  u Cơ, Tứ Liên, Tây Hồ
+Số 6A Ngõ 200  u Cơ, Tứ Liên, Tây Hồ
 Xuân La
 Phường Xuân La, Tây Hồ
 Đặng Trần Côn A
-
+?
 Đặng Trần Côn B
-
+?
 Hạ Đình
-
+?
 Khương Đình
-
+?
 Khương Mai
-
+?
 Kim Giang
-
+?
 Nguyễn Trãi
-
+?
 Nhân Chính
-
+?
 Phan Đình Giót
-
+?
 Ptdl Nguyễn Trườn
-
+?
 Phương Liệt
-
+?
 Biên Giang
-
+?
 Đoàn Kết
-
+?
 Đồng Mai I
-
+?
 Đồng Mai Ii
-
+?
 Dương Nội A
-
+?
 Dương Nội B
-
+?
 Kiến Hưng
-
+?
 Lê Hồng Phong
-
+?
 Lê Lợi
-
+?
 Nguyễn Du
-
+?
 Nguyễn Trãi
-
+?
 Phú Lãm
-
+?
 Phú Lương I
-
+?
 Phú Lương Ii
-
+?
 Trần Phú
-
+?
 Văn Khê
-
+?
 Văn Yên
-
+?
 Vạn Phúc
-
+?
 Yên Nghĩa
-
+?
 Yết Kiêu
-
+?
 Cổ Đông
-
+?
 Đường Lâm
-
+?
 Kim Sơn
-
+?
 Lê Lợi
-
+?
 Phú Thịnh
-
+?
 Quang Trung
-
+?
 Sơn Đông
-
+?
 Sơn Lộc
-
+?
 Thanh Mỹ
-
+?
 Trần Phú
-
+?
 Trung Hưng
-
+?
 Trung Sơn Trầm
-
+?
 Viên Sơn
-
+?
 Xuân Khanh
-
+?
 Xuân Sơn
-
+?
 Bắc Hồng
-
+?
 Cổ Loa
-
+?
 Đại Mạch
-
+?
 Đông Hội
-
+?
 Dục Tú
-
+?
 Hải Bối
-
+?
 Kim Chung
-
+?
 Kim Nỗ
-
+?
 Lê Hữu Tựu
-
+?
 Liên Hà
-
+?
 Liên Hà A
-
+?
 Nam Hồng
-
+?
 Ngô Tất Tố
-
+?
 Tàm Xá
-
+?
 Thị Trấn
-
+?
 Thị Trấn A
-
+?
 Thuỵ Lâm
-
+?
 Thuỵ Lâm A
-
+?
 Tiên Dương
-
+?
 Tô Thị Hiển
-
+?
 Bát Tràng
 Xã Bát Tràng, Huyện Gia Lâm
 Cổ Bi
@@ -447,41 +447,41 @@ Xã Yên Thường, Gia Lâm
 Yên Viên Xã
 Xã Yên Viên, Gia Lâm
 Tân Triều
-
+?
 A Thị Trấn Văn Điển
-
+?
 B Thị Trấn Văn Điển
-
+?
 Duyên Hà
-
+?
 Đại Áng
-
+?
 Đông Mỹ
 Thôn 1 Xã Đông Mỹ -Thanh Trì - Hà Nội
 Dt Khuyết Tật
-
+?
 Hữu Hoà
-
+?
 Liên Ninh
-
+?
 Ngọc Hồi
-
+?
 Ngũ Hiệp
-
+?
 Tam Hiệp
-
+?
 Tả Thanh Oai
-
+?
 Thanh Liệt
-
+?
 Tứ Hiệp
-
+?
 Vạn Phúc
-
+?
 Vĩnh Quỳnh
-
+?
 Yên Mỹ
-
+?
 Cầu Diễn
 Thị Trấn Cầu Diễn
 Cổ Nhuế A
@@ -665,659 +665,660 @@ Xã Yên Bài
 Yên Bài
 Xã Yên Bài
 Bê Tông
-
+?
 Chúc Sơn A
-
+?
 Chúc Sơn B
-
+?
 Đại Yên
-
+?
 Đông Phương Yên
-
+?
 Đông Sơn
-
+?
 Đồng Lạc
-
+?
 Đồng Phú
-
+?
 Hoà Chính
-
+?
 Hoàng Diệu
-
+?
 Hoàng Văn Thụ
-
+?
 Hồng Phong
-
+?
 Hợp Đồng
-
+?
 Hữu Văn
-
+?
 Lam Điền
-
+?
 Lương Mỹ A
-
+?
 Lương Mỹ B
-
+?
 Mỹ Lương
-
+?
 Nam Phương Tiến A
-
+?
 Nam Phương Tiến B
-
+?
 Ngọc Hoà
-
+?
 Phú Nam An
-
+?
 Phú Nghĩa
-
+?
 Phụng Châu
-
+?
 Quảng Bị
-
+?
 Tân Tiến
-
+?
 Thanh Bình
-
+?
 Thượng Vực
-
+?
 Thuỵ Hương
-
+?
 Thuỷ Xuân Tiên
-
+?
 Tiên Phương
-
+?
 Tốt Động
-
+?
 Trần Phú A
-
+?
 Trần Phú B
-
+?
 Trung Hoà
-
+?
 Trường Yên
-
+?
 Văn Võ
-
+?
 Xuân Mai A
-
+?
 Xuân Mai B
-
+?
 Văn Võ
-
+?
 Đồng Tháp
-
+?
 Hồng Hà
-
+?
 Liên Hà
-
+?
 Liên Hồng
-
+?
 Liên Trung
-
+?
 Phương Đình A
-
+?
 Phương Đình B
-
+?
 Song Phượng
-
+?
 Tân Hội A
-
+?
 Tân Hội B
-
+?
 Tân Lập
-
+?
 Thị Trấn Phùng
-
+?
 Thọ An
-
+?
 Thọ Xuân
-
+?
 Thượng Mỗ
-
+?
 Tô Hiến Thành
-
+?
 Trung Châu A
-
+?
 Trung Châu B
-
+?
 An Khánh A
-
+?
 An Khánh B
-
+?
 An Thượng A
-
+?
 An Thượng B
-
+?
 Bình Minh
-
+?
 Cát Quế A
-
+?
 Cát Quế B
-
+?
 Di Trạch
-
+?
 Dương Liễu A
-
+?
 Dương Liễu B
-
+?
 Đông La
-
+?
 Đắc Sở
-
+?
 Đức Giang
-
+?
 Đức Thượng
-
+?
 Kim Chung
-
+?
 La Phù
-
+?
 Lại Yên
-
+?
 Minh Khai
-
+?
 Song Phương
-
+?
 Sơn Đồng
-
+?
 Thị Trấn
-
+?
 Tiền Yên
-
+?
 Vân Canh
-
+?
 Vân Côn
-
+?
 Yên Sở
-
+?
 An Mỹ
-
+?
 An Phú
-
+?
 An Tiến
-
+?
 Bột Xuyên
-
+?
 Đại Hưng
-
+?
 Đại Nghĩa
-
+?
 Đốc Tín
-
+?
 Đồng Tâm
-
+?
 Hồng Sơn
-
+?
 Hợp Thanh A
-
+?
 Hợp Thanh B
-
+?
 Hợp Tiến A
-
+?
 Hợp Tiến B
-
+?
 Hùng Tiến
-
+?
 Hương Sơn A
-
+?
 Hương Sơn B
-
+?
 Hương Sơn C
-
+?
 Lê Thanh A
-
+?
 Lê Thanh B
-
+?
 Mỹ Thành
-
+?
 Phù Lưu Tế
-
+?
 Phúc Lâm
-
+?
 Phùng Xá
-
+?
 Tế Tiêu
-
+?
 Thượng Lâm
-
+?
 Tuy Lai A
-
+?
 Tuy Lại B
-
+?
 Vạn Kim
-
+?
 Xuy Xá
-
+?
 Bạch Hạ
-
+?
 Châu Can
-
+?
 Chuyên Mỹ
-
+?
 Đại Thắng
-
+?
 Đại Xuyên
-
+?
 Hoàng Long
-
+?
 Hồng Minh
-
+?
 Hồng Thái
-
+?
 Khai Thái
-
+?
 Minh Tân A
-
+?
 Minh Tân B
-
+?
 Nam Phong
-
+?
 Nam Triều
-
+?
 Phú Túc
-
+?
 Phú Yên
-
+?
 Phúc Tiến
-
+?
 Phượng Dực
-
+?
 Quang Lãng
-
+?
 Quang Trung
-
+?
 Sơn Hà
-
+?
 Tân Dân
-
+?
 Thuỵ Phú
-
+?
 Tri Thuỷ
-
+?
 Tri Trung
-
+?
 Tt Phú Minh
-
+?
 Tt Phú Xuyên
-
+?
 Vân Từ
-
+?
 Văn Hoàng
-
+?
 Văn Nhân
-
+?
 Cẩm Đình
-
+?
 Hát Môn
-
+?
 Hiệp Thuận
-
+?
 Liên Hiệp
-
+?
 Long Xuyên
-
+?
 Ngọc Tảo
-
+?
 Phúc Hoà
-
+?
 Phụng Thượng
-
+?
 Phương Độ
-
+?
 Sen Chiểu
-
+?
 Tam Hiệp
-
+?
 Tam Thuấn
-
+?
 Thanh Đa
-
+?
 Thi Trấn
-
+?
 Thọ Lộc
-
+?
 Thượng Cốc
-
+?
 Tích Giang
-
+?
 Trạch Mỹ Lộc
-
+?
 Vân Hà
-
+?
 Vân Nam
-
+?
 Vân Phúc
-
+?
 Võng Xuyên A
-
+?
 Võng Xuyên B
-
+?
 Xuân Phú
-
+?
 Cấn Hữu
-
+?
 Cộng Hoà
-
+?
 Đại Thành
-
+?
 Đông Xuân
-
+?
 Đông Yên
-
+?
 Đồng Quang
-
+?
 Hoà Thạch A
-
+?
 Hoà Thạch B
-
+?
 Liệp Tuyết
-
+?
 Nghĩa Hương
-
+?
 Ngọc Liệp
-
+?
 Ngọc Mỹ
-
+?
 Phú Cát
-
+?
 Phú Mãn
-
+?
 Phượng Cách
-
+?
 Sài Sơn
-
+?
 Tân Hoà
-
+?
 Tân Phú
-
+?
 Thạch Thán
-
+?
 Thị Trấn A
-
+?
 Thị Trấn B
-
+?
 Tuyết Nghĩa
-
+?
 Yên Sơn
-
+?
 Bình Phú
-
+?
 Bình Yên
-
+?
 Cần Kiệm
-
+?
 Cẩm Yên
-
+?
 Chàng Sơn
-
+?
 Dị Nậu
-
+?
 Đại Đồng
-
+?
 Đồng Trúc
-
+?
 Hạ Bằng
-
+?
 Hương Ngải
-
+?
 Hữu Bằng
-
+?
 Kim Quan
-
+?
 Lại Thượng
-
+?
 Liên Quan
-
+?
 Minh Hà A
-
+?
 Minh Hà B
-
+?
 Phú Kim
-
+?
 Phùng Xá
-
+?
 Tân Xã
-
+?
 Thạch Hoà
-
+?
 Thạch Xá
-
+?
 Tiến Xuân A
-
+?
 Tiến Xuân B
-
+?
 Yên Bình A
-
+?
 Yên Bình B
-
+?
 Yên Trung
-
+?
 Bích Hoà
-
+?
 Bình Minh I
-
+?
 Bình Minh Ii
-
+?
 Cao Dương
-
+?
 Cao Viên I
-
+?
 Cao Viên Ii
-
+?
 Cự Khê
-
+?
 Dân Hoà
-
+?
 Đỗ Động
-
+?
 Hồng Dương
-
+?
 Kim An
-
+?
 Kim Bài
-
+?
 Kim Thư
-
+?
 Liên Châu
-
+?
 Mỹ Hưng
-
+?
 Phưong Trung I
-
+?
 Phương Trung Ii
-
+?
 Tam Hưng
-
+?
 Tân Ước
-
+?
 Thanh Cao
-
+?
 Thanh Mai
-
+?
 Thanh Thuỳ
-
+?
 Thanh Văn
-
+?
 Xuân Dương
-
+?
 Chương Dương
-
+?
 Duyên Thái
-
+?
 Dũng Tiến
-
+?
 Hà Hồi
-
+?
 Hiền Giang
-
+?
 Hoà Bình
-
+?
 Hồng Vân
-
+?
 Khánh Hà
-
+?
 Lê Lợi
-
+?
 Liên Phương
-
+?
 Minh Cường
-
+?
 Nghiêm Xuyên
-
+?
 Nguyễn Trãi
-
+?
 Nhị Khê
-
+?
 Ninh Sở
-
+?
 Quất Động
-
+?
 Tân Minh
-
+?
 Thắng Lợi
-
+?
 Thị Trấn
-
+?
 Thống Nhất
-
+?
 Thư Phú
-
+?
 Tiền Phong
-
+?
 Tô Hiệu
-
+?
 Tự Nhiên
-
+?
 Vân Tảo
-
+?
 Văn Bình
-
+?
 Văn Phú
-
+?
 Văn Tự
-
+?
 Vạn Điểm
-
+?
 Cao Thành
-
+?
 Đại Cường
-
+?
 Đại Hùng
-
+?
 Đông Lỗ
-
+?
 Đồng Tân
-
+?
 Đồng Tiến
-
+?
 Đội Bình
-
+?
 Hoà Lâm
-
+?
 Hoà Nam
-
+?
 Hoà Phú
-
+?
 Hoa Sơn
-
+?
 Hoà Xá
-
+?
 Hồng Quang
-
+?
 Kim Đường
-
+?
 Liên Bạt
-
+?
 Lưu Hoàng
-
+?
 Minh Đức
-
+?
 Phù Lưu
-
+?
 Phương Tú
-
+?
 Qpcầu
-
+?
 Sơn Công
-
+?
 Tảo Dương Văn
-
+?
 Thị Trấn
-
+?
 Tphương
-
+?
 Trầm Lộng
-
+?
 Trung Tú
-
+?
 Trường Thịnh
-
+?
 Vạn Thái
-
+?
 Viên An
-
+?
 Viên Nội
-
+?
 Đại Thịnh B
-
+?
 Chi Đông
-
+?
 Chu Phan A
-
+?
 Chu Phan B
-
+?
 Đại Thịnh A
-
+?
 Hoàng Kim
-
+?
 Kim Hoa A
-
+?
 Kim Hoa B
-
+?
 Liên Mạc A
-
+?
 Liên Mạc B
-
+?
 Mê Linh
-
+?
 Quang Minh A
-
+?
 Quang Minh B
-
+?
 Tam Đồng
-
+?
 Thạch Đà A
-
+?
 Thạch Đà B
-
+?
 Thanh Lâm A
-
+?
 Thanh Lâmb
-
+?
 Tiền Phong A
-
+?
 Tiền Phong B
-
+?
 Tiến Thắng A
-
+?
 Tiến Thắng B
-
+?
 Tiến Thịnh A
-
+?
 Tiến Thịnh B
-
+?
 Tráng Việt A
-
+?
 Tráng Việt B
-
+?
 Tự Lập A
-
+?
 Tự Lập B
-
+?
 Văn Khê A
-
+?
 Văn Khê B
-
+?
 Văn Khê C
-
+?
 Vạn Yên
+?

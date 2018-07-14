@@ -7,16 +7,12 @@
 //
 
 import UIKit
-import AWSDynamoDB
-import AWSAuthCore
-import AWSMobileClient
 
-import AWSAuthUI
+import FacebookLogin
 
 
 class SelectSchoolTypeViewController: UIViewController {
     
-    let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
     var myStrings = [String]()
     
     var schoolViewModels = [SchoolViewModel]()
@@ -31,27 +27,7 @@ class SelectSchoolTypeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        if !AWSSignInManager.sharedInstance().isLoggedIn {
-            AWSAuthUIViewController
-                .presentViewController(with: self.navigationController!,
-                                       configuration: nil,
-                                       completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-                                        if error != nil {
-                                            print("Error occurred: \(String(describing: error))")
-                                        } else {
-                                            // sign in successful.
-                                            AWSAuthHelper.sharedInstance.setupCredentialsProvider()
-                                        }
-                })
-        }
-        else{
-            AWSAuthHelper.sharedInstance.setupCredentialsProvider()
-        }
     }
-    
-    
-    
     
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {

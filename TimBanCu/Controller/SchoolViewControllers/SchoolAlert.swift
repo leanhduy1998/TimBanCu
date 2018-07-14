@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import AWSDynamoDB
 
 extension SchoolViewController{
     func setupAlerts(){
@@ -29,7 +28,7 @@ extension SchoolViewController{
             let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
             if(!(schoolName?.isEmpty)!){
-                let newSchool = School()
+               /* let newSchool = School()
                 newSchool?._type = self.selectedScanStr
                 newSchool?._address = "?"
                 newSchool?._school = schoolName
@@ -52,7 +51,7 @@ extension SchoolViewController{
                         }
                     }
                     return nil
-                })
+                })*/
             }
         }))
     }

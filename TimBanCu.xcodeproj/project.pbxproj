@@ -11,18 +11,15 @@
 		1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */; };
 		1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */; };
 		1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */; };
-		1C0A03A520F51EF700E105A9 /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A420F51EF700E105A9 /* Schools.swift */; };
-		1C0A03A820F5277B00E105A9 /* AWSAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */; };
 		1C3ADA8420F6B6F80041421F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */; };
-		1C3ADA8620F6BDC90041421F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8520F6BDC90041421F /* awsconfiguration.json */; };
+		1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8B20F962BB0041421F /* awsconfiguration.json */; };
+		1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
 		1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365BB20E6D034000F7FB2 /* thcstanbinh.txt */; };
 		1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */; };
 		1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */; };
-		1C5365C820E82070000F7FB2 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5365C620E82070000F7FB2 /* Student.swift */; };
-		1C5365C920E82070000F7FB2 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5365C720E82070000F7FB2 /* School.swift */; };
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
 		1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */; };
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
@@ -66,18 +63,15 @@
 		1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolAlert.swift; sourceTree = "<group>"; };
 		1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
 		1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailAlerts.swift; sourceTree = "<group>"; };
-		1C0A03A420F51EF700E105A9 /* Schools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
-		1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSAuthHelper.swift; sourceTree = "<group>"; };
 		1C3ADA8320F6B6F80041421F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		1C3ADA8520F6BDC90041421F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		1C3ADA8B20F962BB0041421F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
 		1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpttphcm.txt; sourceTree = "<group>"; };
 		1C5365BB20E6D034000F7FB2 /* thcstanbinh.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcstanbinh.txt; sourceTree = "<group>"; };
 		1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpthanoi.txt; sourceTree = "<group>"; };
 		1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dhcanuoc.txt; sourceTree = "<group>"; };
-		1C5365C620E82070000F7FB2 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		1C5365C720E82070000F7FB2 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
@@ -157,7 +151,6 @@
 		1C0A03A620F5276300E105A9 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				1C0A03A720F5277B00E105A9 /* AWSAuthHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -165,9 +158,6 @@
 		1C5365C320E81F98000F7FB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1C5365C720E82070000F7FB2 /* School.swift */,
-				1C5365C620E82070000F7FB2 /* Student.swift */,
-				1C0A03A420F51EF700E105A9 /* Schools.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +178,7 @@
 		1CAAAC5D20F3CA7E00443225 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */,
 				1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */,
 				1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */,
 				1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */,
@@ -195,7 +186,7 @@
 				1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */,
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
-				1C3ADA8520F6BDC90041421F /* awsconfiguration.json */,
+				1C3ADA8B20F962BB0041421F /* awsconfiguration.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -411,13 +402,14 @@
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
+				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
 				1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */,
+				1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
-				1C3ADA8620F6BDC90041421F /* awsconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,37 +509,35 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimBanCu/Pods-TimBanCu-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSFacebookSignIn/AWSFacebookSignIn.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSGoogleSignIn/AWSGoogleSignIn.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSFacebookSignIn.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSGoogleSignIn.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -567,13 +557,9 @@
 				1CAD11B920F4FBBF00EC4B10 /* MajorViewController.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
-				1C5365C820E82070000F7FB2 /* Student.swift in Sources */,
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
-				1C0A03A520F51EF700E105A9 /* Schools.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
-				1C5365C920E82070000F7FB2 /* School.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
-				1C0A03A820F5277B00E105A9 /* AWSAuthHelper.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
 				1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */,

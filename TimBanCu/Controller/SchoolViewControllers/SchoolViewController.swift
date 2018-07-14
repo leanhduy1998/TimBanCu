@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AWSDynamoDB
 
 class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -15,7 +14,6 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var noResultView: UIView!
     
-    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     var schoolViewModels = [SchoolViewModel]()
     var searchSchoolVMs = [SchoolViewModel]()
     

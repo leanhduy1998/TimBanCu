@@ -7,14 +7,11 @@
 //
 
 import UIKit
-import AWSDynamoDB
 
 class ClassDetailViewController: UIViewController {
 
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
     var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
-    
-    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
     
     override func viewDidLoad() {
         super.viewDidLoad()

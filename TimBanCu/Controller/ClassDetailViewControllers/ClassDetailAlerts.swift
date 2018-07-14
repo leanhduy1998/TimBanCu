@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import AWSDynamoDB
 
 extension ClassDetailViewController{
     func setupAlerts(){

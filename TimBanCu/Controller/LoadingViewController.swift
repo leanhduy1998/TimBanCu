@@ -7,41 +7,163 @@
 //
 
 import UIKit
-import AWSDynamoDB
 
-class LoadingViewController: UIViewController {
+import GoogleSignIn
+
+import FacebookCore
+import FacebookLogin
+
+import Firebase
+import FirebaseDatabase
+
+class LoadingViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
     
-    let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+    
+    
+    
     var schoolViewModels = [SchoolViewModel]()
+    
+    var ref: DatabaseReference!
+    
+    @IBOutlet weak var googleSignInBtn: GIDSignInButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 20000
+        ref = Database.database().reference()
         
-        dynamoDBObjectMapper.scan(Schools.self, expression: scanExpression).continueWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
-            if let error = task.error as NSError? {
-                print("The request failed. Error: \(error)")
-            } else if let paginatedOutput = task.result {
-                for item in paginatedOutput.items {
-                    let schools = item as? Schools
+        GIDSignIn.sharedInstance().clientID = "137184194492-5iokn36749o7gmlodjnv6gskddjen7p1.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        let facebookSignInBtn = LoginButton(readPermissions: [ .publicProfile ])
+        
+        facebookSignInBtn.frame = CGRect(x: view.bounds.width/2 - facebookSignInBtn.bounds.width/2, y: view.bounds.height - googleSignInBtn.bounds.height - facebookSignInBtn.bounds.height - 20-20, width: googleSignInBtn.bounds.width, height: googleSignInBtn.bounds.height)
+        
+        facebookSignInBtn.delegate = self
+        
+        view.addSubview(facebookSignInBtn)
+        
+        if let accessToken = AccessToken.current {
+            print(accessToken.userId)
+        }
+
+        
+
+    }
+    
+    
+    
+    // Present a view that prompts the user to sign in with Google
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if (error == nil) {
+            print(signIn.clientID)
+            
+            var di = [String:Any]()
+            
+            di = temp(t: "tieuhochanoi", di: di, id: signIn.clientID)
+            di = temp(t: "tieuhoctphcm", di: di, id: signIn.clientID)
+            di = temp(t: "thcshanoi", di: di, id: signIn.clientID)
+            di = temp(t: "thcstanbinh", di: di, id: signIn.clientID)
+            di = temp(t: "thpthanoi", di: di, id: signIn.clientID)
+            di = temp(t: "thpttphcm", di: di, id: signIn.clientID)
+            di = temp2(t: "dhcanuoc", di: di, id: signIn.clientID)
+   
+            self.ref.child("schools").setValue(di)
+        }
+       
+    }
+    
+    func temp(t:String,di:[String:Any],id:String) -> [String:Any]{
+        var di = di as? [String:Any]
+        
+        if let path = Bundle.main.path(forResource: t, ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let myStrings = data.components(separatedBy: .newlines)
+                
+                var name = ""
+                var address = ""
+                
+                var x = 0
+                
+                while(x+2 < myStrings.count){
+                    name = myStrings[x]
+                    x=x+1
+                    address = myStrings[x]
                     
-                    for schoolStr in (schools?._schools)!{
-                        let array = schoolStr.components(separatedBy: "&&&")
-                        
-                        let schoolVM = SchoolViewModel(name: array[0], address: array[1], type: array[2])
-                        self.schoolViewModels.append(schoolVM)
-                    }
+                    print(name)
+                    
+                    name = name.replacingOccurrences(of: ".", with: " ", options: .literal, range: nil)
+                    name = name.replacingOccurrences(of: "/", with: " ", options: .literal, range: nil)
+                    
+                    let dic = ["address":address,"type":"elementary","uid":id]
+                    
+                    di![name] = dic
+                    
+                    x=x+1
                 }
                 
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "LoadingToSelectSchoolTypeSegue", sender: self)
-                }
+            } catch {
+                print(error)
             }
-            return nil
-        })
-
+        }
+        
+        return di!
+    }
+    
+    func temp2(t:String,di:[String:Any],id:String) -> [String:Any]{
+        var di = di as? [String:Any]
+        
+        if let path = Bundle.main.path(forResource: t, ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let myStrings = data.components(separatedBy: .newlines)
+                
+                var name = ""
+                
+                var x = 0
+                
+                while(x+2 < myStrings.count){
+                    name = myStrings[x]
+                    
+                    name = name.replacingOccurrences(of: ".", with: " ", options: .literal, range: nil)
+                    name = name.replacingOccurrences(of: "/", with: " ", options: .literal, range: nil)
+                    
+                    print(name)
+                    
+                    let dic = ["address":"?","type":"elementary","uid":id]
+                    
+                    di![name] = dic
+                    
+                    x=x+1
+                }
+                
+            } catch {
+                print(error)
+            }
+        }
+        
+        return di!
+    }
+    
+    
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        print()
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print()
     }
 
 

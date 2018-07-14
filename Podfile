@@ -9,13 +9,17 @@ target 'TimBanCu' do
 
 
   pod 'ImageSlideshow'
-  pod 'AWSMobileClient'
-  pod 'AWSDynamoDB'
-  pod 'AWSFacebookSignIn'
-  pod 'AWSAuthUI'
-  pod 'AWSGoogleSignIn'
+
   pod 'GoogleSignIn'
-  pod 'AWSAuthCore'
+
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
 
   target 'TimBanCuTests' do

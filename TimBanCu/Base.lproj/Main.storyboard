@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,26 +27,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c0D-sX-N4F">
-                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-TP-ZFl" customClass="GIDSignInButton">
+                                <rect key="frame" x="94" y="547" width="187.5" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9JZ-Pe-0f3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="JqL-TP-ZFl" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="DFA-8d-0D9"/>
                             <constraint firstItem="ra4-Jz-41F" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="HM6-pM-Bax"/>
-                            <constraint firstItem="c0D-sX-N4F" firstAttribute="centerY" secondItem="IYm-Ok-mCR" secondAttribute="centerY" id="KER-Hf-BvE"/>
                             <constraint firstItem="ra4-Jz-41F" firstAttribute="top" secondItem="DoJ-JJ-y5G" secondAttribute="top" constant="100" id="Pxb-Jp-nn8"/>
-                            <constraint firstItem="c0D-sX-N4F" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="wUg-QW-bYT"/>
+                            <constraint firstItem="DoJ-JJ-y5G" firstAttribute="bottom" secondItem="JqL-TP-ZFl" secondAttribute="bottom" constant="20" id="XTb-hf-CCy"/>
+                            <constraint firstItem="JqL-TP-ZFl" firstAttribute="width" secondItem="IYm-Ok-mCR" secondAttribute="width" multiplier="1:2" id="yXT-6U-Y81"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DoJ-JJ-y5G"/>
                     </view>
                     <connections>
+                        <outlet property="googleSignInBtn" destination="JqL-TP-ZFl" id="Vnz-UD-Yme"/>
                         <segue destination="OzG-KN-tOI" kind="show" identifier="LoadingToSelectSchoolTypeSegue" id="s74-bk-ahi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiH-ED-d8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1618" y="130"/>
+            <point key="canvasLocation" x="-1618.4000000000001" y="129.98500749625188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hIh-Oh-INn">

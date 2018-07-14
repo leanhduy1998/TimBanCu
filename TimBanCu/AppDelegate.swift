@@ -7,22 +7,22 @@
 //
 
 import UIKit
-import AWSMobileClient
-import FBSDKCoreKit
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
-        
-        return AWSMobileClient.sharedInstance().interceptApplication(
-            application,
-            didFinishLaunchingWithOptions: launchOptions)//&&FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        FirebaseApp.configure()
+        return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

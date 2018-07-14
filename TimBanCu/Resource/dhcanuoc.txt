@@ -52,7 +52,7 @@ Trường ĐH Văn hoá Hà Nội
 Trường ĐH Vinh
 Trường ĐH Xây dựng Hà Nội
 Trường ĐH Y Hà Nội
-Trường ĐH Y Thái B&igrave;nh
+Trường ĐH Y Thái Bình
 Trường ĐH Y tế Công cộng
 Viện ĐH Mở Hà Nội
 Trường ĐH Dân lập Đông Đô
@@ -118,7 +118,7 @@ Trường ĐH Thể dục thể thao 2
 Trường ĐH Tiền Giang
 Trường ĐH Y Dược Cần Thơ
 Trường ĐH Y Dược TPHCM
-Trường ĐH Dân lập B&igrave;nh Dương
+Trường ĐH Dân lập Bình Dương
 Trường ĐH Dân lập Công nghệ Sài Gòn
 Trường ĐH Dân lập Duy Tân
 Trường ĐH Dân lập Hồng Bàng
@@ -150,6 +150,6 @@ Trường ĐH Quảng Nam
 Trường CĐ Sư phạm Quảng Trị
 Trường CĐ Sư phạm Thừa Thiên Huế
 Trường CĐ Dân lập công nghệ thông tin TPHCM
-Trường CĐ Dân lập kinh tế kỹ thuật B&igrave;nh Dương
+Trường CĐ Dân lập kinh tế kỹ thuật Bình Dương
 Trường CĐ Tư thục Đức Trí
 Học viện Công nghệ Bưu chính viễn thông TPHCM

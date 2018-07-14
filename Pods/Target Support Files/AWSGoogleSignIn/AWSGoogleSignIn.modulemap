@@ -1,6 +1,0 @@
-framework module AWSGoogleSignIn {
-  umbrella header "AWSGoogleSignIn-umbrella.h"
-
-  export *
-  module * { export * }
-}
