@@ -11,15 +11,11 @@ import UIKit
 
 extension SelectSchoolTypeViewController{
     func addNavigationBarShadow() {
-        let textAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1), NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.semibold)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
-        self.navigationController?.navigationBar.layer.shadowColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5).cgColor
-        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 5)
-        self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
-        self.navigationController?.navigationBar.layer.shadowRadius = 10.0
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.5)
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.5
+        self.navigationController?.navigationBar.layer.shadowRadius = 3
         self.navigationController?.navigationBar.layer.masksToBounds = false
-        self.navigationController?.navigationBar.addBorder(side: .Bottom, color: UIColor(red: 255/255, green: 179/255, blue: 0/255, alpha: 1.0), thickness: 1.5)
     }
 }
 
