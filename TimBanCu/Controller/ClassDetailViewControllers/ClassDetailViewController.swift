@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ClassDetailViewController: UIViewController {
 
@@ -16,27 +17,25 @@ class ClassDetailViewController: UIViewController {
     var noResultLabel = UILabel()
     var noResultAddNewClassBtn = UIButton()
     
+    let classesDetailRef = Database.database().reference().child("classes")
+    
+    var selectedSchool:School!
+    
+    var classDetails = [Class]()
+    var searchClassDetails = [Class]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNoResultLabelAndButton(topViewY: 0, topViewHeight: 20)
+        setupAlerts()
     }
     
-    @IBAction func addNewClassDetailBtnPressed(_ sender: Any) {
-        
-    }
-    
-    @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
+    @objc func addNewClassDetailBtnPressed(_ sender: UIButton?) {
         
         
         //self.present(addNewSchoolAlert, animated: true, completion: nil)
     }
     
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     /*
     // MARK: - Navigation
 

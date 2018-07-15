@@ -15,7 +15,7 @@ extension ClassDetailViewController{
         let y = topViewY + topViewHeight + 40
         
         noResultLabel.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 80)
-        noResultLabel.text = "Chưa có lớp. Bạn có muốn thêm lớp?                 Ví dụ: 10A11"
+        noResultLabel.text = "Chưa có lớp. Bạn có muốn thêm lớp? Ví dụ: 10A11"
         noResultLabel.numberOfLines = 2
         
         noResultAddNewClassBtn.frame = CGRect(x: 0, y: y + 80, width: view.frame.width, height: 40)

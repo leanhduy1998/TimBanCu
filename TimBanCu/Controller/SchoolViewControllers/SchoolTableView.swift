@@ -11,19 +11,19 @@ import UIKit
 
 extension SchoolViewController{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchSchoolVMs.count
+        return searchSchoolModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolTableViewCell") as? SchoolTableViewCell
-        cell?.schoolViewModel = searchSchoolVMs[indexPath.row]
+        cell?.schoolViewModel = SchoolViewModel(school: searchSchoolModels[indexPath.row])
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedSchoolVM = searchSchoolVMs[indexPath.row]
+        selectedSchool = searchSchoolModels[indexPath.row]
         
-        if(selectedSchoolVM.type == "university"){
+        if(selectedSchoolType == "dh"){
             
         }
         else{

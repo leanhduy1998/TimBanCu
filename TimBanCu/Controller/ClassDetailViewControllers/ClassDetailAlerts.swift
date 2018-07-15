@@ -23,38 +23,32 @@ extension ClassDetailViewController{
         addNewClassAlert.addTextField { (textField) in
             textField.placeholder = "Tên Lớp"
         }
-        /*
+        
         addNewClassAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewClassAlert] (_) in
             let textField = addNewClassAlert?.textFields![0] // Force unwrapping because we know it exists.
-            let schoolName = textField?.text
-            if(!(schoolName?.isEmpty)!){
-                let newSchool = School()
-                newSchool?._type = self.selectedScanStr
-                newSchool?._address = "?"
-                newSchool?._school = schoolName
-                self.dynamoDBObjectMapper.save(newSchool!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-                    if let error = task.error as? NSError {
-                        print("The request failed. Error: \(error)")
-                    } else {
+            let className = textField?.text
+            if(!(className?.isEmpty)!){
+                
+                let classModel = Class(className: className!, uid: AuthHelper.uid, schoolName: self.selectedSchool.name)
+
+                DispatchQueue.main.async {
+                    self.classesDetailRef.child(className!).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
+                        
                         DispatchQueue.main.async {
+                            self.schoolViewModels.append(school)
+                            
+                            self.searchSchoolModels.append(school)
+                            self.tableview.reloadData()
+                            self.updateTableviewVisibilityBasedOnSearchResult()
                             self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
                             
-                            
-                            let newSchoolVM = SchoolViewModel(name: (newSchool?._school)!, address: (newSchool?._address)!, type: (newSchool?._type)!)
-                            
-                            self.schoolViewModels.append(newSchoolVM)
-                            self.searchSchoolVMs.append(newSchoolVM)
-                            
-                            self.updateTableviewVisibilityBasedOnSearchResult()
-                            
-                            self.tableview.reloadData()
                         }
-                    }
-                    return nil
-                })
+                        
+                    })
+                }
             }
         }))
- */
+ 
     }
     
     private func setupAddNewSchoolCompletedAlert(){

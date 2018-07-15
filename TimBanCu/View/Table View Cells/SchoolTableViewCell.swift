@@ -33,7 +33,7 @@ class SchoolTableViewCell: UITableViewCell {
                 schoolAddress.text = schoolViewModel.address
             }
             
-            
+            /*
             if(schoolViewModel.image == nil){
                 if(schoolViewModel.type == scanType.elementary.rawValue){
                     imageview.image = #imageLiteral(resourceName: "elementary")
@@ -50,7 +50,7 @@ class SchoolTableViewCell: UITableViewCell {
             }
             else{
                 imageview.image = schoolViewModel.image
-            }
+            }*/
         }
     }
     

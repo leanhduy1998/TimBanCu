@@ -15,14 +15,14 @@ class SelectSchoolTypeViewController: UIViewController {
     
     var myStrings = [String]()
     
-    var schoolViewModels = [SchoolViewModel]()
+    var schoolModels = [School]()
     
     let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
     let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
     let thptQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
     let daihocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "dh")
     
-    var selectedTypeQuery:String!
+    var selectedSchoolType:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class SelectSchoolTypeViewController: UIViewController {
     }
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {
-        schoolViewModels.removeAll()
+        schoolModels.removeAll()
         
         tieuhocQueryRef.observeSingleEvent(of: .value) { (snapshot) in
             for snap in snapshot.children {
@@ -40,13 +40,13 @@ class SelectSchoolTypeViewController: UIViewController {
                 let address = value!["address"] as? String
                 let uid = value!["uid"] as? String
                 
-                let school = SchoolViewModel(name: name, address: address!, type: "th", uid: uid!)
+                let school = School(name: name, address: address!, type: "th", uid: uid!)
                 
-                self.schoolViewModels.append(school)
+                self.schoolModels.append(school)
             }
             
             DispatchQueue.main.async {
-                self.selectedTypeQuery = "th"
+                self.selectedSchoolType = "th"
                 self.performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
             }
         }
@@ -61,13 +61,13 @@ class SelectSchoolTypeViewController: UIViewController {
                 let address = value!["address"] as? String
                 let uid = value!["uid"] as? String
                 
-                let school = SchoolViewModel(name: name, address: address!, type: "thcs", uid: uid!)
+                let school = School(name: name, address: address!, type: "thcs", uid: uid!)
                 
-                self.schoolViewModels.append(school)
+                self.schoolModels.append(school)
             }
             
             DispatchQueue.main.async {
-                self.selectedTypeQuery = "thcs"
+                self.selectedSchoolType = "thcs"
                 self.performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
             }
         }
@@ -82,13 +82,13 @@ class SelectSchoolTypeViewController: UIViewController {
                 let address = value!["address"] as? String
                 let uid = value!["uid"] as? String
                 
-                let school = SchoolViewModel(name: name, address: address!, type: "thpt", uid: uid!)
+                let school = School(name: name, address: address!, type: "thpt", uid: uid!)
                 
-                self.schoolViewModels.append(school)
+                self.schoolModels.append(school)
             }
             
             DispatchQueue.main.async {
-                self.selectedTypeQuery = "thpt"
+                self.selectedSchoolType = "thpt"
                 self.performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
             }
         }
@@ -104,13 +104,13 @@ class SelectSchoolTypeViewController: UIViewController {
                 let address = value!["address"] as? String
                 let uid = value!["uid"] as? String
                 
-                let school = SchoolViewModel(name: name, address: address!, type: "dh", uid: uid!)
+                let school = School(name: name, address: address!, type: "dh", uid: uid!)
                 
-                self.schoolViewModels.append(school)
+                self.schoolModels.append(school)
             }
             
             DispatchQueue.main.async {
-                self.selectedTypeQuery = "dh"
+                self.selectedSchoolType = "dh"
                 self.performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
             }
         }
@@ -118,8 +118,8 @@ class SelectSchoolTypeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SchoolViewController{
-           destination.schoolViewModels = schoolViewModels
-            destination.selectedQueryType = selectedTypeQuery
+           destination.schoolViewModels = schoolModels
+            destination.selectedSchoolType = selectedSchoolType
         }
     }
 

@@ -18,8 +18,6 @@ import FirebaseDatabase
 
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
     
-    var schoolViewModels = [SchoolViewModel]()
-    
     var ref: DatabaseReference!
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
@@ -63,7 +61,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            print(signIn.clientID)
+            AuthHelper.uid = signIn.clientID
             performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
         }
        
@@ -72,7 +70,10 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        if let accessToken = AccessToken.current {
+            AuthHelper.uid = accessToken.userId
+            performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
@@ -88,8 +89,6 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         let navVC = segue.destination as? UINavigationController
         
         let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
-        
-        destination.schoolViewModels = schoolViewModels
     }
     
 
