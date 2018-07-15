@@ -8,20 +8,32 @@
 
 import UIKit
 
-class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
-    @IBOutlet weak var noResultView: UIView!
     
     var schoolViewModels = [SchoolViewModel]()
     var searchSchoolVMs = [SchoolViewModel]()
     
-    var selectedScanStr:String!
+    var selectedQueryType:String!
     var selectedSchoolVM:SchoolViewModel!
     
     var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
+    
+    
+    var noResultLabel = UILabel()
+    var noResultAddNewSchoolBtn = UIButton()
+    
+    let searchTFUnderline: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    var searchUnderlineHeightAnchor: NSLayoutConstraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +42,41 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         setupAlerts()
+        customizeSearchTF()
+        
+        tableview.isHidden = true
+        
+        setupNoResultLabelAndButton(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
     }
+    
+    
+    
+    
+    @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
+        if(selectedQueryType == "th"){
+            addNewSchoolAlert.title = "Thêm Trường Tiểu Học Mới"
+        }
+        else if(selectedQueryType == "thcs"){
+            addNewSchoolAlert.title = "Thêm Trường Trung Học Cơ Sở Mới"
+        }
+        else if(selectedQueryType == "thpt"){
+            addNewSchoolAlert.title = "Thêm Trường Trung Học Phổ Thông Mới"
+        }
+        else if(selectedQueryType == "dh"){
+            addNewSchoolAlert.title = "Thêm Trường Đại Học Mới"
+        }
+        
+        //self.present(addNewSchoolAlert, animated: true, completion: nil)
+    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        noResultView.isHidden = true
-        tableview.isHidden = false
+        updateTableviewVisibilityBasedOnSearchResult()
     }
     
-    func fetchData(){
-        self.searchSchoolVMs = self.schoolViewModels
-        self.tableview.reloadData()
-    }
     
-
     @objc func textFieldDidChange(_ textField: UITextField) {
         searchSchoolVMs.removeAll()
         
@@ -58,54 +91,30 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        setTableviewVisibilityBasedOnSearchResult()
+        updateTableviewVisibilityBasedOnSearchResult()
     }
     
-    func setTableviewVisibilityBasedOnSearchResult(){
-        if(searchSchoolVMs.count == 0){
-            noResultView.isHidden = false
-            tableview.isHidden = true
-        }
-        else{
-            noResultView.isHidden = true
-            tableview.isHidden = false
-            tableview.reloadData()
-        }
+    func fetchData(){
+        self.searchSchoolVMs = self.schoolViewModels
+        self.tableview.reloadData()
     }
     
-    
-    @IBAction func clearBtnPressed(_ sender: Any) {
-        searchTF.text = ""
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
         searchSchoolVMs = schoolViewModels
-        tableview.reloadData()
+        updateTableviewVisibilityBasedOnSearchResult()
+        return true
     }
     
-    @IBAction func addNewSchoolBtnPressed(_ sender: Any) {
-        if(selectedScanStr == "elementary"){
-            addNewSchoolAlert.title = "Thêm Trường Tiểu Học Mới"
-        }
-        else if(selectedScanStr == "secondary"){
-            addNewSchoolAlert.title = "Thêm Trường Trung Học Cơ Sở Mới"
-        }
-        else if(selectedScanStr == "highschool"){
-            addNewSchoolAlert.title = "Thêm Trường Trung Học Phổ Thông Mới"
-        }
-        else if(selectedScanStr == "university"){
-            addNewSchoolAlert.title = "Thêm Trường Đại Học Mới"
-        }
-        
-        self.present(addNewSchoolAlert, animated: true, completion: nil)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassViewController{
-            if(selectedSchoolVM.type == "elementary"){
+            if(selectedSchoolVM.type == "th"){
                 destination.classes = ["Lớp 1", "Lớp 2", "Lớp 3", "Lớp 4", "Lớp 5"]
             }
-            else if(selectedSchoolVM.type == "secondary"){
+            else if(selectedSchoolVM.type == "thcs"){
                 destination.classes = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9"]
             }
-            else if(selectedSchoolVM.type == "highschool"){
+            else if(selectedSchoolVM.type == "thpt"){
                 destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
             }
             destination.selectedSchoolVM = selectedSchoolVM

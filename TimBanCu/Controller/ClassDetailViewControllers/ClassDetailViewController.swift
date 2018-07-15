@@ -13,12 +13,21 @@ class ClassDetailViewController: UIViewController {
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
     var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
     
+    var noResultLabel = UILabel()
+    var noResultAddNewClassBtn = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func addNewClassDetailBtnPressed(_ sender: Any) {
         
+    }
+    
+    @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
+        
+        
+        //self.present(addNewSchoolAlert, animated: true, completion: nil)
     }
     
 

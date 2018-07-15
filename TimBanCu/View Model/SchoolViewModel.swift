@@ -14,16 +14,19 @@ class SchoolViewModel{
     var name:String!
     var address:String!
     var type:String!
+    var uid:String!
     
-    init(name:String,address:String,image:UIImage){
+    init(name:String,address:String,image:UIImage,uid:String){
         self.name = name
         self.address = address
         self.image = image
+        self.uid = uid
     }
     
-    init(name:String,address:String,type:String){
+    init(name:String,address:String,type:String,uid:String){
         self.name = name
         self.address = address
         self.type = type
+        self.uid = uid
     }
 }

@@ -45,7 +45,7 @@ extension ClassDetailViewController{
                             self.schoolViewModels.append(newSchoolVM)
                             self.searchSchoolVMs.append(newSchoolVM)
                             
-                            self.setTableviewVisibilityBasedOnSearchResult()
+                            self.updateTableviewVisibilityBasedOnSearchResult()
                             
                             self.tableview.reloadData()
                         }
