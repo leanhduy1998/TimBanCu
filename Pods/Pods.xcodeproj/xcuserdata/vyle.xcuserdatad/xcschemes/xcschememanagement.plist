@@ -7,7 +7,7 @@
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
@@ -39,30 +39,16 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-<<<<<<< HEAD
-		<key>FirebaseCore.xcscheme</key>
-=======
 		<key>FirebaseAuth.xcscheme</key>
->>>>>>> UI-Design
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-<<<<<<< HEAD
-		<key>FirebaseDatabase.xcscheme</key>
-=======
 		<key>FirebaseCore.xcscheme</key>
->>>>>>> UI-Design
 		<dict>
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
-<<<<<<< HEAD
-		<key>GTMOAuth2.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
-=======
 		<key>FirebaseDatabase.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -72,79 +58,46 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>12</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>12</integer>
-=======
 			<integer>13</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>10</integer>
-=======
 			<integer>11</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>ImageSlideshow.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>13</integer>
-=======
 			<integer>14</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>Pods-TimBanCu.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>16</integer>
-=======
 			<integer>17</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>Pods-TimBanCuTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>17</integer>
-=======
 			<integer>18</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>Pods-TimBanCuUITests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>18</integer>
-=======
 			<integer>19</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>leveldb-library.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>14</integer>
-=======
 			<integer>15</integer>
->>>>>>> UI-Design
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-<<<<<<< HEAD
-			<integer>15</integer>
-=======
 			<integer>16</integer>
->>>>>>> UI-Design
 		</dict>
 	</dict>
 </dict>

@@ -47,6 +47,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         fetchData()
         
+        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         setupAlerts()
