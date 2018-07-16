@@ -94,7 +94,16 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         if let accessToken = AccessToken.current {
             AuthHelper.uid = accessToken.userId
-            performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    // ...
+                    return
+                }
+                // User is signed in
+                self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+            }
+            
         }
     }
     
