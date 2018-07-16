@@ -487,6 +487,7 @@
                         <viewLayoutGuide key="safeArea" id="tfB-fI-hAt"/>
                     </view>
                     <connections>
+                        <outlet property="tableview" destination="fGv-rn-32V" id="URs-7l-667"/>
                         <segue destination="L0Q-5x-sEu" kind="show" identifier="ClassToClassDetailSegue" id="1Hz-A9-EJD"/>
                     </connections>
                 </viewController>

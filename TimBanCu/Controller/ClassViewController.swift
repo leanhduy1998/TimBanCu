@@ -10,11 +10,13 @@ import UIKit
 
 class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableview: UITableView!
     var classes: [String]!
     var selectedSchool:School!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableview.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
 
     }
 
