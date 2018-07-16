@@ -438,7 +438,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LỚP 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10Z-pI-1w3">
                                                     <rect key="frame" x="87.5" y="25" width="200" height="100"/>
-                                                    <color key="backgroundColor" red="1" green="0.59762912326388884" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="X0a-X3-g3b"/>
                                                         <constraint firstAttribute="height" constant="100" id="les-bB-M3S"/>
