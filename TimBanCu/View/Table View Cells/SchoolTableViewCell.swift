@@ -14,14 +14,6 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var schoolAddress: UILabel!
     @IBOutlet weak var imageview: UIImageView!
     
-    enum scanType :String{
-        case elementary
-        case secondary
-        case highschool
-        case university
-        case all
-    }
-    
     var schoolViewModel:SchoolViewModel! = nil {
         didSet{
             schoolName.text = schoolViewModel.name
@@ -33,7 +25,7 @@ class SchoolTableViewCell: UITableViewCell {
                 schoolAddress.text = schoolViewModel.address
             }
             
-            
+            /*
             if(schoolViewModel.image == nil){
                 if(schoolViewModel.type == scanType.elementary.rawValue){
                     imageview.image = #imageLiteral(resourceName: "elementary")
@@ -50,7 +42,7 @@ class SchoolTableViewCell: UITableViewCell {
             }
             else{
                 imageview.image = schoolViewModel.image
-            }
+            }*/
         }
     }
     
