@@ -14,7 +14,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
     
-    var schoolViewModels = [School]()
+    var schoolModels = [School]()
     var searchSchoolModels = [School]()
     
     var selectedSchoolType:String!
@@ -37,6 +37,11 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let schoolsRef = Database.database().reference().child("schools")
     
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    
+    let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
+    let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
+    let thptQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
+    let daihocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "dh")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,8 +77,50 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateTableviewVisibilityBasedOnSearchResult()
+        super.viewWillAppear(animated)g
+        fetchData()
+    }
+    
+    func fetchData(){
+        schoolModels.removeAll()
+        searchSchoolModels.removeAll()
+        
+        if(selectedSchoolType == "th"){
+            tieuhocQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
+        else if(selectedSchoolType == "thcs"){
+            thcsQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
+        else if(selectedSchoolType == "thpt"){
+            thptQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
+        else{
+            daihocQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
     }
     
     
@@ -81,11 +128,11 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchSchoolModels.removeAll()
         
         if(textField.text?.isEmpty)!{
-            searchSchoolModels = schoolViewModels
+            searchSchoolModels = schoolModels
             return
         }
         
-        for school in schoolViewModels{
+        for school in schoolModels{
             if school.name.lowercased().range(of:textField.text!.lowercased()) != nil {
                 searchSchoolModels.append(school)
             }
@@ -94,13 +141,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         updateTableviewVisibilityBasedOnSearchResult()
     }
     
-    func fetchData(){
-        self.searchSchoolModels = self.schoolViewModels
-        self.tableview.reloadData()
-    }
-    
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        searchSchoolModels = schoolViewModels
+        searchSchoolModels = schoolModels
         updateTableviewVisibilityBasedOnSearchResult()
         return true
     }

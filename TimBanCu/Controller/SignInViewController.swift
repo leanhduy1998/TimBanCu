@@ -15,6 +15,7 @@ import FacebookLogin
 
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
     
@@ -62,7 +63,20 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
             AuthHelper.uid = signIn.clientID
-            performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+            
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                           accessToken: authentication.accessToken)
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    // ...
+                    return
+                }
+                // User is signed in
+                 self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+            }
+            
+           
         }
        
     }

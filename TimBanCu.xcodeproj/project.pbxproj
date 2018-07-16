@@ -41,7 +41,10 @@
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
 		1CE24D0220FBE153008DE3FB /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* AuthHelper.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* School.swift */; };
-		1CE24D0720FC0690008DE3FB /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* Class.swift */; };
+		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
+		1CE24D0920FC0B08008DE3FB /* ClassDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0820FC0B08008DE3FB /* ClassDetailTableViewCell.swift */; };
+		1CE24D0B20FC1070008DE3FB /* ClassDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0A20FC1070008DE3FB /* ClassDetailViewModel.swift */; };
+		1CE24D0D20FC19A2008DE3FB /* SchoolQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
@@ -108,7 +111,10 @@
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
-		1CE24D0620FC0690008DE3FB /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
+		1CE24D0820FC0B08008DE3FB /* ClassDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTableViewCell.swift; sourceTree = "<group>"; };
+		1CE24D0A20FC1070008DE3FB /* ClassDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewModel.swift; sourceTree = "<group>"; };
+		1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolQuery.swift; sourceTree = "<group>"; };
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1CFB9C2320F134C600945819 /* SchoolViewController.swift */,
+				1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */,
 				1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */,
 				1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */,
 			);
@@ -171,6 +178,7 @@
 			children = (
 				1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */,
 				1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */,
+				1CE24D0820FC0B08008DE3FB /* ClassDetailTableViewCell.swift */,
 			);
 			path = "Table View Cells";
 			sourceTree = "<group>";
@@ -275,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE24D0420FBE6F8008DE3FB /* School.swift */,
-				1CE24D0620FC0690008DE3FB /* Class.swift */,
+				1CE24D0620FC0690008DE3FB /* ClassDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */,
+				1CE24D0A20FC1070008DE3FB /* ClassDetailViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -294,8 +303,8 @@
 				1C6D51FA20FACAE000F8F5D7 /* Table View Cells */,
 				1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */,
 				1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */,
-				1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */,
 				1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeViewExtension.swift */,
+				1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */,
 				1C6D51FF20FB9C9300F8F5D7 /* ClassDetailViewExtension.swift */,
 			);
 			path = View;
@@ -596,9 +605,12 @@
 				1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
+				1CE24D0B20FC1070008DE3FB /* ClassDetailViewModel.swift in Sources */,
 				1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */,
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
-				1CE24D0720FC0690008DE3FB /* Class.swift in Sources */,
+				1CE24D0D20FC19A2008DE3FB /* SchoolQuery.swift in Sources */,
+				1CE24D0920FC0B08008DE3FB /* ClassDetailTableViewCell.swift in Sources */,
+				1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,

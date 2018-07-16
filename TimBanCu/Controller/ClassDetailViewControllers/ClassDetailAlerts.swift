@@ -29,18 +29,19 @@ extension ClassDetailViewController{
             let className = textField?.text
             if(!(className?.isEmpty)!){
                 
-                let classModel = Class(className: className!, uid: AuthHelper.uid, schoolName: self.selectedSchool.name)
+                let classModel = ClassDetail(className: className!, uid: AuthHelper.uid, schoolName: self.selectedSchool.name)
 
                 DispatchQueue.main.async {
                     self.classesDetailRef.child(className!).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
                         
                         DispatchQueue.main.async {
-                            self.schoolViewModels.append(school)
                             
-                            self.searchSchoolModels.append(school)
+                            self.classDetails.append(classModel)
+                            
+                            self.searchClassDetails.append(classModel)
                             self.tableview.reloadData()
                             self.updateTableviewVisibilityBasedOnSearchResult()
-                            self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
+                            self.present(self.addNewClassAlert, animated: true, completion: nil)
                             
                         }
                         

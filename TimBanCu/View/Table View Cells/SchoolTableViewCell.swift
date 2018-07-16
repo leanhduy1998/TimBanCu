@@ -14,14 +14,6 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var schoolAddress: UILabel!
     @IBOutlet weak var imageview: UIImageView!
     
-    enum scanType :String{
-        case elementary
-        case secondary
-        case highschool
-        case university
-        case all
-    }
-    
     var schoolViewModel:SchoolViewModel! = nil {
         didSet{
             schoolName.text = schoolViewModel.name

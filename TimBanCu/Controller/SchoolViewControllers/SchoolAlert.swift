@@ -35,7 +35,7 @@ extension SchoolViewController{
                     self.schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
                         
                         DispatchQueue.main.async {
-                            self.schoolViewModels.append(school)
+                            self.schoolModels.append(school)
                             
                             self.searchSchoolModels.append(school)
                             self.tableview.reloadData()

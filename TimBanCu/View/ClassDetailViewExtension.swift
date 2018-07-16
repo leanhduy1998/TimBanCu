@@ -22,7 +22,7 @@ extension ClassDetailViewController{
         noResultAddNewClassBtn.setTitle("Thêm Lớp Mới", for: .normal)
         noResultAddNewClassBtn.setTitleColor(UIColor.blue, for: .normal)
         
-        noResultAddNewClassBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
+        noResultAddNewClassBtn.addTarget(self, action: #selector(self.addNewClassDetailBtnPressed(_:)), for: .touchUpInside)
         
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewClassBtn)
@@ -31,5 +31,19 @@ extension ClassDetailViewController{
         view.bringSubview(toFront: noResultAddNewClassBtn)
         
         view.layoutIfNeeded()
+    }
+    
+    func updateTableviewVisibilityBasedOnSearchResult(){
+        if(searchClassDetails.count == 0){
+            noResultLabel.isHidden = false
+            noResultAddNewClassBtn.isHidden = false
+            tableview.isHidden = true
+        }
+        else{
+            noResultLabel.isHidden = true
+            noResultAddNewClassBtn.isHidden = true
+            tableview.isHidden = false
+            tableview.reloadData()
+        }
     }
 }

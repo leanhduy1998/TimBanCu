@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Class{
+class ClassDetail{
     var className:String!
     var uid:String!
     var schoolName:String!
