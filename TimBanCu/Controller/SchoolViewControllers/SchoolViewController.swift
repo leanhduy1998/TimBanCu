@@ -77,7 +77,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)g
+        super.viewWillAppear(animated)
         fetchData()
     }
     
