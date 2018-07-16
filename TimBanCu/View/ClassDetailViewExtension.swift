@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ClassDetailViewController{
+extension ClassNameViewController{
     
     func setupNoResultLabelAndButton(topViewY:CGFloat, topViewHeight:CGFloat){
         view.addSubview(noResultLabel)

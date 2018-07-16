@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ClassDetailViewModel{
+class ClassNameViewModel{
     var className:String!
     
-    init(classDetail:ClassDetail){
+    init(classDetail:ClassName){
         self.className = classDetail.className
     }
 }

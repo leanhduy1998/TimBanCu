@@ -10,7 +10,7 @@
 		01F7AD756B4ABB210CAFF467 /* Pods_TimBanCu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4203691F03ED76B3F5BD22AE /* Pods_TimBanCu.framework */; };
 		1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */; };
 		1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */; };
-		1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */; };
+		1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */; };
 		1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* SignInViewController.swift */; };
 		1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8B20F962BB0041421F /* awsconfiguration.json */; };
 		1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */; };
@@ -29,7 +29,7 @@
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
 		1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */; };
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
-		1CAAAC6320F4428D00443225 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */; };
+		1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */; };
 		1CAD11B920F4FBBF00EC4B10 /* MajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */; };
 		1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */; };
 		1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */; };
@@ -41,9 +41,9 @@
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
 		1CE24D0220FBE153008DE3FB /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* AuthHelper.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* School.swift */; };
-		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
+		1CE24D0720FC0690008DE3FB /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassName.swift */; };
 		1CE24D0920FC0B08008DE3FB /* ClassDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0820FC0B08008DE3FB /* ClassDetailTableViewCell.swift */; };
-		1CE24D0B20FC1070008DE3FB /* ClassDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0A20FC1070008DE3FB /* ClassDetailViewModel.swift */; };
+		1CE24D0B20FC1070008DE3FB /* ClassNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0A20FC1070008DE3FB /* ClassNameViewModel.swift */; };
 		1CE24D0D20FC19A2008DE3FB /* SchoolQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
@@ -74,7 +74,7 @@
 		1277A282A2B7EF6C61B7E6A4 /* Pods-TimBanCuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuUITests/Pods-TimBanCuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C0A039B20F5163C00E105A9 /* SchoolAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolAlert.swift; sourceTree = "<group>"; };
 		1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
-		1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailAlerts.swift; sourceTree = "<group>"; };
+		1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameAlerts.swift; sourceTree = "<group>"; };
 		1C3ADA8320F6B6F80041421F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1C3ADA8B20F962BB0041421F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
-		1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewController.swift; sourceTree = "<group>"; };
 		1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorViewController.swift; sourceTree = "<group>"; };
 		1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhochanoi.txt; sourceTree = "<group>"; };
 		1CBF5C7420A8197B00B78E6A /* TimBanCu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimBanCu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,9 +111,9 @@
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* AuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
-		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
+		1CE24D0620FC0690008DE3FB /* ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
 		1CE24D0820FC0B08008DE3FB /* ClassDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTableViewCell.swift; sourceTree = "<group>"; };
-		1CE24D0A20FC1070008DE3FB /* ClassDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewModel.swift; sourceTree = "<group>"; };
+		1CE24D0A20FC1070008DE3FB /* ClassNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewModel.swift; sourceTree = "<group>"; };
 		1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolQuery.swift; sourceTree = "<group>"; };
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,13 +164,13 @@
 			path = SchoolViewControllers;
 			sourceTree = "<group>";
 		};
-		1C0A039F20F51BE200E105A9 /* ClassDetailViewControllers */ = {
+		1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1CAAAC6220F4428D00443225 /* ClassDetailViewController.swift */,
-				1C0A03A020F51BFF00E105A9 /* ClassDetailAlerts.swift */,
+				1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */,
+				1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */,
 			);
-			path = ClassDetailViewControllers;
+			path = ClassNameViewControllers;
 			sourceTree = "<group>";
 		};
 		1C6D51FA20FACAE000F8F5D7 /* Table View Cells */ = {
@@ -190,7 +190,7 @@
 				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
 				1C0A039A20F5162100E105A9 /* SchoolViewControllers */,
 				1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */,
-				1C0A039F20F51BE200E105A9 /* ClassDetailViewControllers */,
+				1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */,
 				1CAD11B820F4FBBF00EC4B10 /* MajorViewController.swift */,
 			);
 			path = Controller;
@@ -283,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE24D0420FBE6F8008DE3FB /* School.swift */,
-				1CE24D0620FC0690008DE3FB /* ClassDetail.swift */,
+				1CE24D0620FC0690008DE3FB /* ClassName.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */,
-				1CE24D0A20FC1070008DE3FB /* ClassDetailViewModel.swift */,
+				1CE24D0A20FC1070008DE3FB /* ClassNameViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -598,19 +598,19 @@
 				1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeViewExtension.swift in Sources */,
 				1C3ADA9220FABA360041421F /* Trash.swift in Sources */,
 				1C6D520020FB9C9300F8F5D7 /* ClassDetailViewExtension.swift in Sources */,
-				1CAAAC6320F4428D00443225 /* ClassDetailViewController.swift in Sources */,
+				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */,
 				1CAD11B920F4FBBF00EC4B10 /* MajorViewController.swift in Sources */,
 				1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
-				1CE24D0B20FC1070008DE3FB /* ClassDetailViewModel.swift in Sources */,
+				1CE24D0B20FC1070008DE3FB /* ClassNameViewModel.swift in Sources */,
 				1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */,
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
 				1CE24D0D20FC19A2008DE3FB /* SchoolQuery.swift in Sources */,
 				1CE24D0920FC0B08008DE3FB /* ClassDetailTableViewCell.swift in Sources */,
-				1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */,
+				1CE24D0720FC0690008DE3FB /* ClassName.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,
@@ -618,7 +618,7 @@
 				1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */,
 				1C6D51FC20FACCD100F8F5D7 /* SchoolViewExtension.swift in Sources */,
 				1CE24D0220FBE153008DE3FB /* AuthHelper.swift in Sources */,
-				1C0A03A120F51C0000E105A9 /* ClassDetailAlerts.swift in Sources */,
+				1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */,
 				1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

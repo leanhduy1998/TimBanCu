@@ -20,24 +20,21 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
+    var noResultLabel = UILabel()
+    var noResultAddNewSchoolBtn = UIButton()
+    
+    var searchTFUnderline: UIView! = nil
+    var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    
+    
+    //alert
+    
     var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
     var schoolAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm trường", preferredStyle: .alert)
     
-    
-    var noResultLabel = UILabel()
-    var noResultAddNewSchoolBtn = UIButton()
-    
-    let searchTFUnderline: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+    //database
     let schoolsRef = Database.database().reference().child("schools")
-    
-    var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
     let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
     let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")

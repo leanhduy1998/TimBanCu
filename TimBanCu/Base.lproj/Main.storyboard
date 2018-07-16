@@ -510,10 +510,10 @@
             </objects>
             <point key="canvasLocation" x="2238" y="2401"/>
         </scene>
-        <!--Class Detail View Controller-->
+        <!--Class Name View Controller-->
         <scene sceneID="PFi-RE-z0I">
             <objects>
-                <viewController id="L0Q-5x-sEu" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L0Q-5x-sEu" customClass="ClassNameViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbB-id-25O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -585,6 +585,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="L0Q-5x-sEu" id="ucT-tu-4Rx"/>
+                                    <outlet property="delegate" destination="L0Q-5x-sEu" id="4I5-Uu-P08"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -608,10 +612,10 @@
             </objects>
             <point key="canvasLocation" x="3249" y="1610"/>
         </scene>
-        <!--Class Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="3zR-B1-OBb">
             <objects>
-                <viewController id="0Ua-wx-Yxd" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Ua-wx-Yxd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GaK-7b-4ZG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

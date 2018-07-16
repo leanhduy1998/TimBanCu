@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-extension ClassDetailViewController{
+extension ClassNameViewController{
     func setupAlerts(){
-        setupAddNewSchoolAlert()
-        setupAddNewSchoolCompletedAlert()
+        setupAddNewClassDetailAlert()
+        setupAddNewClassDetailCompletedAlert()
     }
     
-    private func setupAddNewSchoolAlert(){
+    private func setupAddNewClassDetailAlert(){
         addNewClassAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addNewClassAlert] (_) in
             addNewClassAlert?.dismiss(animated: true, completion: nil)
         }))
@@ -29,19 +29,18 @@ extension ClassDetailViewController{
             let className = textField?.text
             if(!(className?.isEmpty)!){
                 
-                let classModel = ClassDetail(className: className!, uid: AuthHelper.uid, schoolName: self.selectedSchool.name)
+                let classModel = ClassName(classNumber: self.selectedClass, uid: AuthHelper.uid, schoolName: self.selectedSchool.name, className: className!.uppercased())
 
                 DispatchQueue.main.async {
-                    self.classesDetailRef.child(className!).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
+                    self.classesDetailRef.child(classModel.getObjectKey()).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
                         
                         DispatchQueue.main.async {
-                            
                             self.classDetails.append(classModel)
                             
                             self.searchClassDetails.append(classModel)
                             self.tableview.reloadData()
                             self.updateTableviewVisibilityBasedOnSearchResult()
-                            self.present(self.addNewClassAlert, animated: true, completion: nil)
+                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
                             
                         }
                         
@@ -52,7 +51,7 @@ extension ClassDetailViewController{
  
     }
     
-    private func setupAddNewSchoolCompletedAlert(){
+    private func setupAddNewClassDetailCompletedAlert(){
         addNewClassCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewClassCompletedAlert] (_) in
             addNewClassCompletedAlert?.dismiss(animated: true, completion: nil)
         }))

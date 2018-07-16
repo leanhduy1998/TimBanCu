@@ -15,7 +15,7 @@ class ClassDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var imageview: UIImageView!
     
     
-    var classDetailViewModel:ClassDetailViewModel! = nil {
+    var classDetailViewModel:ClassNameViewModel! = nil {
         didSet{
             classLabel.text = classDetailViewModel.className
         }

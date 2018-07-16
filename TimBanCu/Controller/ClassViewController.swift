@@ -13,6 +13,7 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableview: UITableView!
     var classes: [String]!
     var selectedSchool:School!
+    var selectedClass:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +33,18 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? ClassTableViewCell
+        
+        selectedClass = cell?.classLabel.text
+        
         performSegue(withIdentifier: "ClassToClassDetailSegue", sender: self)
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ClassDetailViewController{
+        if let destination = segue.destination as? ClassNameViewController{
             destination.selectedSchool = selectedSchool
+            destination.selectedClass = selectedClass
         }
     }
     

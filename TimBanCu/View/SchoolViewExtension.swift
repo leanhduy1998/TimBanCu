@@ -18,7 +18,6 @@ extension SchoolViewController{
         }, completion: nil)
     }
     
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             if textField.text == "" {
@@ -48,6 +47,13 @@ extension SchoolViewController{
     }
     
     func customizeSearchTF(){
+        searchTFUnderline = {
+            let view = UIView()
+            view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+        
         view.addSubview(searchTFUnderline)
         searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor).isActive = true
         searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
