@@ -31,13 +31,21 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         
+        googleSignInBtn.style = GIDSignInButtonStyle.wide
+        
         let facebookSignInBtn = LoginButton(readPermissions: [ .publicProfile ])
-        
-        facebookSignInBtn.frame = CGRect(x: view.bounds.width/2 - facebookSignInBtn.bounds.width/2, y: view.bounds.height - googleSignInBtn.bounds.height - facebookSignInBtn.bounds.height - 20-20, width: googleSignInBtn.bounds.width, height: googleSignInBtn.bounds.height)
-        
         facebookSignInBtn.delegate = self
+        facebookSignInBtn.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(facebookSignInBtn)
+        facebookSignInBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -20).isActive = true
+        facebookSignInBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        facebookSignInBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
+        facebookSignInBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+        
+        
+        
+        
         
         if let accessToken = AccessToken.current {
             print(accessToken.userId)

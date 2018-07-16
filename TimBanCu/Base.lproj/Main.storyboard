@@ -22,26 +22,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm bạn cũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-Jz-41F">
-                                <rect key="frame" x="127" y="120" width="120.5" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="111" y="120" width="154" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-TP-ZFl" customClass="GIDSignInButton">
-                                <rect key="frame" x="94" y="547" width="187.5" height="100"/>
+                                <rect key="frame" x="40" y="353.5" width="295" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="9JZ-Pe-0f3"/>
+                                    <constraint firstAttribute="height" constant="60" id="9JZ-Pe-0f3"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DoJ-JJ-y5G" firstAttribute="trailing" secondItem="JqL-TP-ZFl" secondAttribute="trailing" constant="40" id="7DQ-pF-Dza"/>
+                            <constraint firstItem="JqL-TP-ZFl" firstAttribute="centerY" secondItem="IYm-Ok-mCR" secondAttribute="centerY" constant="50" id="CoS-6p-g3R"/>
                             <constraint firstItem="JqL-TP-ZFl" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="DFA-8d-0D9"/>
                             <constraint firstItem="ra4-Jz-41F" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="HM6-pM-Bax"/>
                             <constraint firstItem="ra4-Jz-41F" firstAttribute="top" secondItem="DoJ-JJ-y5G" secondAttribute="top" constant="100" id="Pxb-Jp-nn8"/>
-                            <constraint firstItem="DoJ-JJ-y5G" firstAttribute="bottom" secondItem="JqL-TP-ZFl" secondAttribute="bottom" constant="20" id="XTb-hf-CCy"/>
-                            <constraint firstItem="JqL-TP-ZFl" firstAttribute="width" secondItem="IYm-Ok-mCR" secondAttribute="width" multiplier="1:2" id="yXT-6U-Y81"/>
+                            <constraint firstItem="JqL-TP-ZFl" firstAttribute="leading" secondItem="DoJ-JJ-y5G" secondAttribute="leading" constant="40" id="fQC-Io-wB2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DoJ-JJ-y5G"/>
                     </view>
@@ -63,9 +64,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="0.86666666670000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
@@ -414,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ls-mX-pf7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="1610"/>
+            <point key="canvasLocation" x="1273" y="1610"/>
         </scene>
         <!--Class View Controller-->
         <scene sceneID="qlC-wb-wBY">
@@ -426,7 +427,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-rn-32V">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassTableViewCell" rowHeight="150" id="5XS-Bi-qWQ" customClass="ClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
@@ -437,7 +438,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LỚP 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10Z-pI-1w3">
                                                     <rect key="frame" x="87.5" y="25" width="200" height="100"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.59762912326388884" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="X0a-X3-g3b"/>
                                                         <constraint firstAttribute="height" constant="100" id="les-bB-M3S"/>
@@ -452,6 +453,7 @@
                                                 <constraint firstItem="10Z-pI-1w3" firstAttribute="centerY" secondItem="ERb-wZ-tB6" secondAttribute="centerY" id="6Su-53-is2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="classLabel" destination="10Z-pI-1w3" id="Lgu-TU-5xe"/>
                                         </connections>

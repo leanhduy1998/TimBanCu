@@ -11,14 +11,12 @@ import UIKit
 
 extension SchoolViewController{
     
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
             self.searchUnderlineHeightAnchor?.constant = 2.5
         }, completion: nil)
     }
-    
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -28,6 +26,11 @@ extension SchoolViewController{
                 self.searchUnderlineHeightAnchor?.constant = 1.5
             }
         }, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     func updateTableviewVisibilityBasedOnSearchResult(){
@@ -47,9 +50,9 @@ extension SchoolViewController{
     func customizeSearchTF(){
         view.addSubview(searchTFUnderline)
         searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor).isActive = true
-        searchTFUnderline.widthAnchor.constraint(equalToConstant: searchTF.frame.size.width + 20).isActive = true
         searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
-        searchTFUnderline.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        searchTFUnderline.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        searchTFUnderline.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
         searchUnderlineHeightAnchor?.isActive = true
         searchTF.delegate = self
     }
