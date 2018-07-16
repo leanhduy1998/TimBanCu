@@ -14,6 +14,14 @@ extension SchoolViewController{
     func setupAlerts(){
         setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()
+        
+        setupSchoolAlreadyExistAlert()
+    }
+    
+    private func setupSchoolAlreadyExistAlert(){
+        schoolAlreadyExistAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak schoolAlreadyExistAlert] (_) in
+            self.schoolAlreadyExistAlert.dismiss(animated: true, completion: nil)
+        }))
     }
     
     private func setupAddNewSchoolAlert(){
@@ -34,15 +42,25 @@ extension SchoolViewController{
                 DispatchQueue.main.async {
                     self.schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
                         
-                        DispatchQueue.main.async {
-                            self.schoolModels.append(school)
-                            
-                            self.searchSchoolModels.append(school)
-                            self.tableview.reloadData()
-                            self.updateTableviewVisibilityBasedOnSearchResult()
-                            self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
-                            
+                        if(err == nil){
+                            DispatchQueue.main.async {
+                                self.schoolModels.append(school)
+                                
+                                self.searchSchoolModels.append(school)
+                                self.tableview.reloadData()
+                                self.updateTableviewVisibilityBasedOnSearchResult()
+                                self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
+                                
+                            }
                         }
+                        else{
+                            if(err?.localizedDescription == "Permission denied") {
+                                self.present(self.schoolAlreadyExistAlert, animated: true, completion: nil)
+
+                            }
+                        }
+                        
+                        
                         
                     })
                 }

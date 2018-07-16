@@ -42,16 +42,6 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         facebookSignInBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         facebookSignInBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         facebookSignInBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
-        
-        
-        
-        
-        
-        if let accessToken = AccessToken.current {
-            print(accessToken.userId)
-        }
-
-
     }
     
     
