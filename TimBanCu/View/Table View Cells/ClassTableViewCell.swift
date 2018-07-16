@@ -38,7 +38,6 @@ class ClassTableViewCell: UITableViewCell {
         container.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -60).isActive = true
         container.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
