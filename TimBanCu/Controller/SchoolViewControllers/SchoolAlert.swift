@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 extension SchoolViewController{
     func setupAlerts(){
@@ -28,30 +29,23 @@ extension SchoolViewController{
             let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
             if(!(schoolName?.isEmpty)!){
-               /* let newSchool = School()
-                newSchool?._type = self.selectedScanStr
-                newSchool?._address = "?"
-                newSchool?._school = schoolName
-                self.dynamoDBObjectMapper.save(newSchool!).continueWith(block: { (task:AWSTask<AnyObject>!) -> Any? in
-                    if let error = task.error as? NSError {
-                        print("The request failed. Error: \(error)")
-                    } else {
+                let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: AuthHelper.uid)
+               
+                DispatchQueue.main.async {
+                    self.schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
+                        
                         DispatchQueue.main.async {
+                            self.schoolModels.append(school)
+                            
+                            self.searchSchoolModels.append(school)
+                            self.tableview.reloadData()
+                            self.updateTableviewVisibilityBasedOnSearchResult()
                             self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
                             
-                            
-                            let newSchoolVM = SchoolViewModel(name: (newSchool?._school)!, address: (newSchool?._address)!, type: (newSchool?._type)!)
-                            
-                            self.schoolViewModels.append(newSchoolVM)
-                            self.searchSchoolVMs.append(newSchoolVM)
-                            
-                            self.updateTableviewVisibilityBasedOnSearchResult()
-                            
-                            self.tableview.reloadData()
                         }
-                    }
-                    return nil
-                })*/
+                        
+                    })
+                }
             }
         }))
     }

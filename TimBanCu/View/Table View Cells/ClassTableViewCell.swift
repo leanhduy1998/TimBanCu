@@ -14,7 +14,7 @@ class ClassTableViewCell: UITableViewCell {
     
     let container: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.yellow
+        view.backgroundColor = UIColor.white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
         view.layer.shadowOpacity = 0.6
@@ -28,11 +28,12 @@ class ClassTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        constraintContainer()
+        //constraintContainer()
     }
     
     func constraintContainer() {
         self.addSubview(container)
+        
         container.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
         container.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 60).isActive = true
         container.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -60).isActive = true

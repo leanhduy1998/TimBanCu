@@ -15,10 +15,9 @@ import FacebookLogin
 
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
-    
-    var schoolViewModels = [SchoolViewModel]()
     
     var ref: DatabaseReference!
     
@@ -71,8 +70,21 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            print(signIn.clientID)
-            performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+            AuthHelper.uid = signIn.clientID
+            
+            guard let authentication = user.authentication else { return }
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                           accessToken: authentication.accessToken)
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    // ...
+                    return
+                }
+                // User is signed in
+                 self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+            }
+            
+           
         }
        
     }
@@ -80,7 +92,10 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        if let accessToken = AccessToken.current {
+            AuthHelper.uid = accessToken.userId
+            performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
@@ -96,8 +111,6 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         let navVC = segue.destination as? UINavigationController
         
         let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
-        
-        destination.schoolViewModels = schoolViewModels
     }
     
 

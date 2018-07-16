@@ -7,36 +7,49 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class ClassDetailViewController: UIViewController {
-
+class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
     var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
     
     var noResultLabel = UILabel()
     var noResultAddNewClassBtn = UIButton()
     
+    let classesDetailRef = Database.database().reference().child("classes")
+    
+    var selectedSchool:School!
+    
+    var classDetails = [ClassDetail]()
+    var searchClassDetails = [ClassDetail]()
+    
+    @IBOutlet weak var tableview: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNoResultLabelAndButton(topViewY: 0, topViewHeight: 20)
+        setupAlerts()
     }
     
-    @IBAction func addNewClassDetailBtnPressed(_ sender: Any) {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchClassDetails.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassDetailTableViewCell") as? ClassDetailTableViewCell
+        cell?.classDetailViewModel = ClassDetailViewModel(classDetail: searchClassDetails[indexPath.row])
         
+        return cell!
     }
     
-    @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
+    @objc func addNewClassDetailBtnPressed(_ sender: UIButton?) {
         
         
         //self.present(addNewSchoolAlert, animated: true, completion: nil)
     }
     
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     /*
     // MARK: - Navigation
 

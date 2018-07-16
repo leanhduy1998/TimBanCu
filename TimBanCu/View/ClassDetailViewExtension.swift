@@ -15,14 +15,14 @@ extension ClassDetailViewController{
         let y = topViewY + topViewHeight + 40
         
         noResultLabel.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 80)
-        noResultLabel.text = "Chưa có lớp. Bạn có muốn thêm lớp?                 Ví dụ: 10A11"
+        noResultLabel.text = "Chưa có lớp. Bạn có muốn thêm lớp? Ví dụ: 10A11"
         noResultLabel.numberOfLines = 2
         
         noResultAddNewClassBtn.frame = CGRect(x: 0, y: y + 80, width: view.frame.width, height: 40)
         noResultAddNewClassBtn.setTitle("Thêm Lớp Mới", for: .normal)
         noResultAddNewClassBtn.setTitleColor(UIColor.blue, for: .normal)
         
-        noResultAddNewClassBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
+        noResultAddNewClassBtn.addTarget(self, action: #selector(self.addNewClassDetailBtnPressed(_:)), for: .touchUpInside)
         
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewClassBtn)
@@ -31,5 +31,19 @@ extension ClassDetailViewController{
         view.bringSubview(toFront: noResultAddNewClassBtn)
         
         view.layoutIfNeeded()
+    }
+    
+    func updateTableviewVisibilityBasedOnSearchResult(){
+        if(searchClassDetails.count == 0){
+            noResultLabel.isHidden = false
+            noResultAddNewClassBtn.isHidden = false
+            tableview.isHidden = true
+        }
+        else{
+            noResultLabel.isHidden = true
+            noResultAddNewClassBtn.isHidden = true
+            tableview.isHidden = false
+            tableview.reloadData()
+        }
     }
 }

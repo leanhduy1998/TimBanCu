@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
     
-    var schoolViewModels = [SchoolViewModel]()
-    var searchSchoolVMs = [SchoolViewModel]()
+    var schoolModels = [School]()
+    var searchSchoolModels = [School]()
     
-    var selectedQueryType:String!
-    var selectedSchoolVM:SchoolViewModel!
+    var selectedSchoolType:String!
+    var selectedSchool:School!
     
     var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
@@ -33,7 +34,14 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return view
     }()
     
+    let schoolsRef = Database.database().reference().child("schools")
+    
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    
+    let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
+    let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
+    let thptQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
+    let daihocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "dh")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,58 +57,92 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupNoResultLabelAndButton(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
     }
     
-    
-    
-    
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
-        if(selectedQueryType == "th"){
+        if(selectedSchoolType == "th"){
             addNewSchoolAlert.title = "Thêm Trường Tiểu Học Mới"
         }
-        else if(selectedQueryType == "thcs"){
+        else if(selectedSchoolType == "thcs"){
             addNewSchoolAlert.title = "Thêm Trường Trung Học Cơ Sở Mới"
         }
-        else if(selectedQueryType == "thpt"){
+        else if(selectedSchoolType == "thpt"){
             addNewSchoolAlert.title = "Thêm Trường Trung Học Phổ Thông Mới"
         }
-        else if(selectedQueryType == "dh"){
+        else if(selectedSchoolType == "dh"){
             addNewSchoolAlert.title = "Thêm Trường Đại Học Mới"
         }
         
-        //self.present(addNewSchoolAlert, animated: true, completion: nil)
+        self.present(addNewSchoolAlert, animated: true, completion: nil)
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateTableviewVisibilityBasedOnSearchResult()
+        super.viewWillAppear(animated)g
+        fetchData()
+    }
+    
+    func fetchData(){
+        schoolModels.removeAll()
+        searchSchoolModels.removeAll()
+        
+        if(selectedSchoolType == "th"){
+            tieuhocQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
+        else if(selectedSchoolType == "thcs"){
+            thcsQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
+        else if(selectedSchoolType == "thpt"){
+            thptQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
+        else{
+            daihocQuery {
+                DispatchQueue.main.async {
+                    self.searchSchoolModels = self.schoolModels
+                    self.tableview.reloadData()
+                    self.updateTableviewVisibilityBasedOnSearchResult()
+                }
+            }
+        }
     }
     
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        searchSchoolVMs.removeAll()
+        searchSchoolModels.removeAll()
         
         if(textField.text?.isEmpty)!{
-            searchSchoolVMs = schoolViewModels
+            searchSchoolModels = schoolModels
             return
         }
         
-        for school in schoolViewModels{
+        for school in schoolModels{
             if school.name.lowercased().range(of:textField.text!.lowercased()) != nil {
-                searchSchoolVMs.append(school)
+                searchSchoolModels.append(school)
             }
         }
         
         updateTableviewVisibilityBasedOnSearchResult()
     }
     
-    func fetchData(){
-        self.searchSchoolVMs = self.schoolViewModels
-        self.tableview.reloadData()
-    }
-    
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        searchSchoolVMs = schoolViewModels
+        searchSchoolModels = schoolModels
         updateTableviewVisibilityBasedOnSearchResult()
         return true
     }
@@ -108,16 +150,16 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassViewController{
-            if(selectedSchoolVM.type == "th"){
+            if(selectedSchoolType == "th"){
                 destination.classes = ["Lớp 1", "Lớp 2", "Lớp 3", "Lớp 4", "Lớp 5"]
             }
-            else if(selectedSchoolVM.type == "thcs"){
+            else if(selectedSchoolType == "thcs"){
                 destination.classes = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9"]
             }
-            else if(selectedSchoolVM.type == "thpt"){
+            else if(selectedSchoolType == "thpt"){
                 destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
             }
-            destination.selectedSchoolVM = selectedSchoolVM
+            destination.selectedSchool = selectedSchool
         }
     }
     

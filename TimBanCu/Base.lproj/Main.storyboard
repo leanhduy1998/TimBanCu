@@ -438,7 +438,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LỚP 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10Z-pI-1w3">
                                                     <rect key="frame" x="87.5" y="25" width="200" height="100"/>
-                                                    <color key="backgroundColor" red="1" green="0.59762912326388884" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="X0a-X3-g3b"/>
                                                         <constraint firstAttribute="height" constant="100" id="les-bB-M3S"/>
@@ -536,7 +536,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="POe-53-gtW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="100" id="POe-53-gtW" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="POe-53-gtW" id="y1K-j0-5cL">
@@ -544,19 +544,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10A1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ij-Sv-Kt5">
-                                                    <rect key="frame" x="15" y="11" width="345" height="78"/>
+                                                    <rect key="frame" x="100" y="11" width="260" height="78"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-q2-lhW">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="0Ea-7Q-K9O"/>
+                                                        <constraint firstAttribute="height" constant="60" id="FYP-Wr-MnZ"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="nRR-q2-lhW" firstAttribute="centerY" secondItem="y1K-j0-5cL" secondAttribute="centerY" id="7KG-Og-t1V"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8ij-Sv-Kt5" secondAttribute="trailing" id="9HE-G1-cKP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8ij-Sv-Kt5" secondAttribute="bottom" id="IOI-9z-5Ef"/>
-                                                <constraint firstItem="8ij-Sv-Kt5" firstAttribute="leading" secondItem="y1K-j0-5cL" secondAttribute="leadingMargin" id="adz-g8-g81"/>
+                                                <constraint firstItem="nRR-q2-lhW" firstAttribute="leading" secondItem="y1K-j0-5cL" secondAttribute="leading" constant="20" id="P9k-fr-kCU"/>
+                                                <constraint firstItem="8ij-Sv-Kt5" firstAttribute="leading" secondItem="nRR-q2-lhW" secondAttribute="trailing" constant="20" id="kn7-9L-Jfp"/>
                                                 <constraint firstItem="8ij-Sv-Kt5" firstAttribute="top" secondItem="y1K-j0-5cL" secondAttribute="topMargin" id="yid-Ew-711"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="classLabel" destination="8ij-Sv-Kt5" id="lg0-OV-Crq"/>
+                                            <outlet property="imageview" destination="nRR-q2-lhW" id="Dak-3l-ic2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -574,6 +587,7 @@
                         <viewLayoutGuide key="safeArea" id="JDi-G8-Umv"/>
                     </view>
                     <connections>
+                        <outlet property="tableview" destination="Aq1-bA-SrG" id="jQ7-d3-jN8"/>
                         <segue destination="0Ua-wx-Yxd" kind="show" id="nAk-Pn-Akz"/>
                     </connections>
                 </viewController>

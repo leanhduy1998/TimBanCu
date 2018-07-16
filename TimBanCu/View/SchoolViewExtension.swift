@@ -34,7 +34,7 @@ extension SchoolViewController{
     }
     
     func updateTableviewVisibilityBasedOnSearchResult(){
-        if(searchSchoolVMs.count == 0){
+        if(searchSchoolModels.count == 0){
             noResultLabel.isHidden = false
             noResultAddNewSchoolBtn.isHidden = false
             tableview.isHidden = true
