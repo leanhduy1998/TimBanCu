@@ -1,14 +1,30 @@
 //
-//  MajorViewController.swift
+//  ClassDetailViewController.swift
 //  TimBanCu
 //
-//  Created by Duy Le 2 on 7/10/18.
+//  Created by Duy Le 2 on 7/16/18.
 //  Copyright © 2018 Duy Le 2. All rights reserved.
 //
 
 import UIKit
 
-class MajorViewController: UIViewController {
+class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var tableview: UITableView!
+    
+    var students = [Student]()
+    var searchStudents = [Student]()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchStudents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassDetailTableViewCell") as? ClassDetailTableViewCell
+        return cell!
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

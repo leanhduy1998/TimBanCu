@@ -1,5 +1,5 @@
 //
-//  ClassDetailTableViewCell.swift
+//  SettingTableViewCell.swift
 //  TimBanCu
 //
 //  Created by Duy Le 2 on 7/16/18.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-class ClassDetailTableViewCell: UITableViewCell {
+class SettingTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var settingLabel: UILabel!
     
 
     override func awakeFromNib() {

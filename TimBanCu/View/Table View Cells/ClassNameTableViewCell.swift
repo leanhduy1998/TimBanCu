@@ -2,19 +2,25 @@
 //  ClassDetailTableViewCell.swift
 //  TimBanCu
 //
-//  Created by Duy Le 2 on 7/16/18.
+//  Created by Duy Le 2 on 7/15/18.
 //  Copyright © 2018 Duy Le 2. All rights reserved.
 //
 
 import UIKit
 
-class ClassDetailTableViewCell: UITableViewCell {
+class ClassNameTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var classLabel: UILabel!
     
     @IBOutlet weak var imageview: UIImageView!
     
-
+    
+    var classDetailViewModel:ClassNameViewModel! = nil {
+        didSet{
+            classLabel.text = classDetailViewModel.className
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
