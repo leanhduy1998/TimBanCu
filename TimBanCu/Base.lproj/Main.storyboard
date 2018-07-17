@@ -21,12 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm bạn cũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-Jz-41F">
-                                <rect key="frame" x="111" y="120" width="154" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-TP-ZFl" customClass="GIDSignInButton">
                                 <rect key="frame" x="40" y="353.5" width="295" height="60"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,8 +34,6 @@
                             <constraint firstItem="DoJ-JJ-y5G" firstAttribute="trailing" secondItem="JqL-TP-ZFl" secondAttribute="trailing" constant="40" id="7DQ-pF-Dza"/>
                             <constraint firstItem="JqL-TP-ZFl" firstAttribute="centerY" secondItem="IYm-Ok-mCR" secondAttribute="centerY" constant="50" id="CoS-6p-g3R"/>
                             <constraint firstItem="JqL-TP-ZFl" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="DFA-8d-0D9"/>
-                            <constraint firstItem="ra4-Jz-41F" firstAttribute="centerX" secondItem="IYm-Ok-mCR" secondAttribute="centerX" id="HM6-pM-Bax"/>
-                            <constraint firstItem="ra4-Jz-41F" firstAttribute="top" secondItem="DoJ-JJ-y5G" secondAttribute="top" constant="100" id="Pxb-Jp-nn8"/>
                             <constraint firstItem="JqL-TP-ZFl" firstAttribute="leading" secondItem="DoJ-JJ-y5G" secondAttribute="leading" constant="40" id="fQC-Io-wB2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DoJ-JJ-y5G"/>
