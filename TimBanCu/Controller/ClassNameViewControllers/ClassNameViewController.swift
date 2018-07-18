@@ -36,7 +36,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNoResultLabelAndButton(topViewY: 0, topViewHeight: 20)
+        setupNoResultLabelAndButton()
         setupAlerts()
     }
     

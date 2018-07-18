@@ -11,7 +11,7 @@ import UIKit
 
 extension ClassNameViewController{
     
-    func setupNoResultLabelAndButton(topViewY:CGFloat, topViewHeight:CGFloat){
+    func setupNoResultLabelAndButton(){
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewClassBtn)
 
