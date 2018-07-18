@@ -9,28 +9,39 @@
 import Foundation
 
 class Student{
-    var fullname:String!
-    var birthday:String!
+    var fullName:String!
+    var birthYear:String!
     var phoneNumber:String!
     var email:String!
     var imageUrls: [String]!
+    var uid:String!
     
-    //var enrolledIn:[String:[String:String]]
-  
-    
-    init(fullname:String,birthday:String,phoneNumber:String,email:String){
-        self.fullname = fullname
-        self.birthday = birthday
+    var enrolledIn:[String:[String:String]]
+  init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String){
+        self.fullName = fullname
+        self.birthYear = birthYear
         self.phoneNumber = phoneNumber
         self.email = email
         self.imageUrls = []
+        self.enrolledIn = [:]
+        self.uid = uid
     }
     
-    init(fullname:String,birthday:String,phoneNumber:String,email:String, imageUrls:[String]){
-        self.fullname = fullname
-        self.birthday = birthday
+    init(fullname:String,birthYear:String,phoneNumber:String,email:String, imageUrls:[String],uid:String){
+        self.fullName = fullname
+        self.birthYear = birthYear
         self.phoneNumber = phoneNumber
         self.email = email
         self.imageUrls = imageUrls
+        self.enrolledIn = [:]
+        self.uid = uid
+    }
+    
+    func getObjectValueAsDic() -> [String:Any]{
+        return ["fullName":fullName,"birthday":birthYear,"phoneNumber":phoneNumber,"email":email,"imageUrls":imageUrls,"enrolledIn":enrolledIn]
+    }
+    
+    func getOjectKey()-> String{
+        return uid
     }
 }

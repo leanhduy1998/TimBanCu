@@ -53,6 +53,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableview.isHidden = true
         
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
         setupNoResultLabelAndButton(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
     }
     

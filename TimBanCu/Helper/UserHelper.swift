@@ -1,5 +1,5 @@
 //
-//  AuthHelper.swift
+//  UserHelper.swift
 //  TimBanCu
 //
 //  Created by Duy Le 2 on 7/15/18.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class AuthHelper{
+class UserHelper{
     static var uid:String!
+    static var student:Student!
 }

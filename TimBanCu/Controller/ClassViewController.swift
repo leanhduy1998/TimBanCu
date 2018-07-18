@@ -44,7 +44,7 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassNameViewController{
             destination.selectedSchool = selectedSchool
-            destination.selectedClass = selectedClass
+            destination.selectedClassNumber = selectedClass
         }
     }
     

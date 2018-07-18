@@ -29,20 +29,18 @@ extension ClassNameViewController{
             let className = textField?.text
             if(!(className?.isEmpty)!){
                 
-                let classModel = ClassName(classNumber: self.selectedClass, uid: AuthHelper.uid, schoolName: self.selectedSchool.name, className: className!.uppercased())
+                let classModel = ClassName(classNumber: self.selectedClassNumber, uid: UserHelper.uid, schoolName: self.selectedSchool.name, className: className!.uppercased())
 
                 DispatchQueue.main.async {
                     self.classesDetailRef.child(classModel.getObjectKey()).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
                         
                         DispatchQueue.main.async {
-                            self.classDetails.append(classModel)
-                            
-                            self.searchClassDetails.append(classModel)
+                            self.classNames.append(classModel)
                             self.tableview.reloadData()
                             self.updateTableviewVisibilityBasedOnSearchResult()
                             self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
                             
-                        }
+                        }        
                         
                     })
                 }

@@ -12,9 +12,43 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var searchTF: UITextField!
+    
     
     var students = [Student]()
     var searchStudents = [Student]()
+    
+    
+    @IBOutlet weak var addYourselfBtn: UIButton!
+    
+   // var addYourselfAlert = UIAlertController(title: "Thêm Thông Tin Cá Nhân", message: "Thêm Thông Tin Để Bạn Cùng Lớp Dễ Liên Lạc Hơn!", preferredStyle: .alert)
+    
+    //no result
+    var noResultLabel = UILabel()
+    var noResultAddYourInfoBtn = UIButton()
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateTableviewVisibilityBasedOnSearchResult()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if(students.count != 0 && UserHelper.student==nil){
+            addYourselfBtn.isHidden = false
+        }
+        else{
+            addYourselfBtn.isHidden = true
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setupNoResultLabelAndButton(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
+        view.layoutIfNeeded()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchStudents.count
@@ -24,18 +58,13 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassDetailTableViewCell") as? ClassDetailTableViewCell
         return cell!
     }
+
+    @IBAction func addYourselfBtnPressed(_ sender: Any) {
+        if(UserHelper.student == nil){
+            
+        }
+    }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     /*

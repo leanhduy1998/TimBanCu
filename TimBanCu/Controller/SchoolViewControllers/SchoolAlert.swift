@@ -37,7 +37,7 @@ extension SchoolViewController{
             let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
             if(!(schoolName?.isEmpty)!){
-                let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: AuthHelper.uid)
+                let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: UserHelper.uid)
                
                 DispatchQueue.main.async {
                     self.schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in

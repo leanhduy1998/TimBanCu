@@ -106,7 +106,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            AuthHelper.uid = signIn.clientID
+            UserHelper.uid = signIn.clientID
             
             guard let authentication = user.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
@@ -129,7 +129,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         if let accessToken = AccessToken.current {
-            AuthHelper.uid = accessToken.userId
+            UserHelper.uid = accessToken.userId
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
                 if let error = error {
@@ -155,7 +155,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         
         let navVC = segue.destination as? UINavigationController
         
-        let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
+    //    let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
     }
     
 

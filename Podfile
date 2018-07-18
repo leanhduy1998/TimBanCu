@@ -22,6 +22,8 @@ target 'TimBanCu' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
 
+  pod 'DropDown'
+
 
   target 'TimBanCuTests' do
     inherit! :search_paths
