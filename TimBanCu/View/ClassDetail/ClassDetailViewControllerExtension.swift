@@ -24,7 +24,7 @@ extension ClassDetailViewController{
         noResultLabel.translatesAutoresizingMaskIntoConstraints = false
         
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 50).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 50).isActive = true
         noResultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         noResultLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: -40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
