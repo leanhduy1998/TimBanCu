@@ -21,8 +21,8 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     var classesDetailRef = Database.database().reference().child("classes")
     
     //no result
-    var noResultLabel = UILabel()
-    var noResultAddNewClassBtn = UIButton()
+    var noResultLabel = NoResultLabel(text: "Chưa có lớp. Bạn có muốn thêm lớp?               Ví dụ: 10A11")
+    var noResultAddNewClassBtn = NoResultButton(title: "Thêm Lớp Mới")
     
     //tableview
     var classDetails = [ClassName]()
@@ -74,7 +74,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassDetailTableViewCell") as? ClassNameTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNameTableViewCell") as? ClassNameTableViewCell
         cell?.classDetailViewModel = ClassNameViewModel(classDetail: searchClassDetails[indexPath.row])
         
         return cell!

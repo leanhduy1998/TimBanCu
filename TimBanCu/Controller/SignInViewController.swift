@@ -155,7 +155,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         
         let navVC = segue.destination as? UINavigationController
         
-        let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
+        //let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
     }
     
 
