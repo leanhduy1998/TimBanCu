@@ -10,7 +10,7 @@ import UIKit
 import DropDown
 import FirebaseDatabase
 
-class AddYourInfoViewController: UIViewController {
+class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var fullNameTF: UITextField!
     @IBOutlet weak var birthYearTF: UITextField!
@@ -19,14 +19,15 @@ class AddYourInfoViewController: UIViewController {
     
     @IBOutlet weak var phonePrivacyDropDownBtn: UIButton!
     
-    
     @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
+    
+    @IBOutlet weak var picturesStackView: UIStackView!
+    
     
     var phonePrivacyDropDown = DropDown()
     var emailPrivacyDropDown = DropDown()
     
-    
-
+    var userImages = [UIImage]()
     
     @IBOutlet weak var view1: UIView!
     
@@ -39,12 +40,16 @@ class AddYourInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        picturesStackView.subviews[0].removeFromSuperview()
+        
         phonePrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         emailPrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         
         privacyAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak privacyAlert] (_) in
             privacyAlert?.dismiss(animated: true, completion: nil)
         }))
+        
+        reloadPicturesStackView()
     }
     
     @IBAction func phoneDropDownBtnPressed(_ sender: Any) {
@@ -54,10 +59,6 @@ class AddYourInfoViewController: UIViewController {
     @IBAction func emailDropDownBtnPressed(_ sender: Any) {
         emailPrivacyDropDown.show()
     }
-    
-    
-    
-
     
     @IBAction func addInfoBtnPressed(_ sender: Any) {
         var privateDic = [String:Any]()
@@ -84,8 +85,52 @@ class AddYourInfoViewController: UIViewController {
             if(err == nil){
                 self.privateUserProfileRef.setValue(privateDic, withCompletionBlock: { (err2, ref2) in
                     
+                    DispatchQueue.main.async {
+                        UserHelper.student = Student(fullname: self.fullNameTF.text!, birthYear: self.birthYearTF.text!, phoneNumber: self.phoneTF.text!, email: self.emailTF.text!, uid: UserHelper.uid)
+                        
+                        self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
+                    }
+                    
                 })
             }
+        }
+    }
+    
+    
+    @IBAction func addPictureBtnPressed(_ sender: Any) {
+        var imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePickerController.allowsEditing = true
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerEditedImage] as? UIImage
+        userImages.append(image!)
+        
+        dismiss(animated: true, completion: nil)
+        
+        reloadPicturesStackView()
+    }
+    
+    func reloadPicturesStackView(){
+        if(userImages.count==0){
+            picturesStackView.isHidden = true
+        }
+        else{
+            picturesStackView.isHidden = false
+            
+            for image in userImages{
+                let imageview = UIImageView(image: image)
+                picturesStackView.addArrangedSubview(imageview)
+            }
+            
+            view.layoutIfNeeded()
+            picturesStackView.layoutIfNeeded()
         }
     }
     

@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
+    
+    @IBAction func unwindToClassDetailViewController(segue:UIStoryboardSegue) { }
     
     
     var students = [Student]()

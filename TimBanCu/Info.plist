@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Tìm Bạn Cũ cần cho phép xài thư viện hình ảnh của bạn</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Tìm Bạn Cũ cần cho phép xài thư viện hình ảnh của bạn</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -41,25 +45,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    
-    
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb1816918598394676</string>
-                <string>com.googleusercontent.apps.137184194492-5iokn36749o7gmlodjnv6gskddjen7p1</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>1816918598394676</string>
-    <key>FacebookDisplayName</key>
-    <string>TimBanCu</string>
-    
-    
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1816918598394676</string>
+				<string>com.googleusercontent.apps.137184194492-5iokn36749o7gmlodjnv6gskddjen7p1</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1816918598394676</string>
+	<key>FacebookDisplayName</key>
+	<string>TimBanCu</string>
 </dict>
-
-
 </plist>

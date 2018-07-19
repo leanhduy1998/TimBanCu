@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "setupNoResultLabelAndButton(topViewY:topViewHeight:)"
+            landmarkName = "setupNoResultLabelAndButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
