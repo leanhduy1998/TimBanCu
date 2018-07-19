@@ -17,8 +17,19 @@ class AddYourInfoViewController: UIViewController {
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     
-    @IBOutlet weak var phonePrivacyDropDown: DropDown!
-    @IBOutlet weak var emailPrivacyDropDown: DropDown!
+    @IBOutlet weak var phonePrivacyDropDownBtn: UIButton!
+    
+    
+    @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
+    
+    var phonePrivacyDropDown = DropDown()
+    var emailPrivacyDropDown = DropDown()
+    
+    
+
+    
+    @IBOutlet weak var view1: UIView!
+    
     
     var privacyAlert = UIAlertController(title: "Mức Công Khai Thông Tin", message: "Bạn có thể chọn chia sẻ thông tin của mình công khai hoặc chỉ mình bạn. Nếu không công khai, người dùng khác sẽ phải được sự đồng ý của bạn trước khi xem thông tin đó.", preferredStyle: .alert)
     
@@ -27,6 +38,7 @@ class AddYourInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         phonePrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         emailPrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         
@@ -34,6 +46,17 @@ class AddYourInfoViewController: UIViewController {
             privacyAlert?.dismiss(animated: true, completion: nil)
         }))
     }
+    
+    @IBAction func phoneDropDownBtnPressed(_ sender: Any) {
+        phonePrivacyDropDown.show()
+    }
+    
+    @IBAction func emailDropDownBtnPressed(_ sender: Any) {
+        emailPrivacyDropDown.show()
+    }
+    
+    
+    
 
     
     @IBAction func addInfoBtnPressed(_ sender: Any) {

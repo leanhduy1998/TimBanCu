@@ -23,24 +23,16 @@ extension ClassDetailViewController{
         noResultLabel.numberOfLines = 2
         noResultLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 50).isActive = true
-        noResultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-        noResultLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: -40).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        noResultLabel.frame = CGRect(x: 0, y: 40, width: view.bounds.width, height: 40)
         
         
+        noResultAddYourInfoBtn.frame = CGRect(x: 0, y: 80, width: view.bounds.width, height: 40)
         
-        noResultAddYourInfoBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultAddYourInfoBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
-        noResultAddYourInfoBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-        noResultAddYourInfoBtn.rightAnchor.constraint(equalTo: view.leftAnchor, constant: -40).isActive = true
-        noResultAddYourInfoBtn.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         
         noResultAddYourInfoBtn.setAttributedTitle(NSAttributedString(string: "Thêm Thông Tin", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: UIColor(red: 255/255, green: 158/255, blue: 0/255, alpha: 1.0)]), for: .normal)
         
-        noResultAddYourInfoBtn.addTarget(self, action: #selector(self.addYourselfBtnPressed(_:)), for: .touchUpInside)
+        noResultAddYourInfoBtn.addTarget(self, action: #selector(self.addYourInfoBtnPressed(_:)), for: .touchUpInside)
     }
     
     func updateTableviewVisibilityBasedOnSearchResult(){

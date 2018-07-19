@@ -65,6 +65,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    @objc func addYourInfoBtnPressed(_ sender: UIButton?) {
+        performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
+    }
+    
     
 
     /*

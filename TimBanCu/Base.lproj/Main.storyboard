@@ -880,10 +880,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXh-Fl-y5b" customClass="DropDown">
-                                                <rect key="frame" x="234" y="0.0" width="76" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbE-Uj-ywl">
                                                 <rect key="frame" x="315" y="5" width="20" height="20"/>
                                                 <constraints>
@@ -894,20 +890,27 @@
                                                     <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="G0O-J3-DI1"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-rl-SOQ">
+                                                <rect key="frame" x="234" y="0.0" width="76" height="30"/>
+                                                <state key="normal" title="Công Khai"/>
+                                                <connections>
+                                                    <action selector="phoneDropDownBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="dEu-ou-dEM"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="xbE-Uj-ywl" firstAttribute="top" secondItem="jNX-GP-Ma2" secondAttribute="top" constant="5" id="4Xh-Pd-a4m"/>
                                             <constraint firstAttribute="trailing" secondItem="xbE-Uj-ywl" secondAttribute="trailing" id="64I-R6-rcb"/>
-                                            <constraint firstItem="LXh-Fl-y5b" firstAttribute="top" secondItem="jNX-GP-Ma2" secondAttribute="top" id="6z8-Ic-vXg"/>
-                                            <constraint firstAttribute="bottom" secondItem="LXh-Fl-y5b" secondAttribute="bottom" id="8Ao-el-32u"/>
-                                            <constraint firstItem="LXh-Fl-y5b" firstAttribute="leading" secondItem="8SJ-Gf-5S5" secondAttribute="trailing" constant="5" id="BaP-Uo-qJw"/>
+                                            <constraint firstItem="Fio-rl-SOQ" firstAttribute="leading" secondItem="8SJ-Gf-5S5" secondAttribute="trailing" constant="5" id="Esu-X6-QRn"/>
+                                            <constraint firstItem="Fio-rl-SOQ" firstAttribute="top" secondItem="jNX-GP-Ma2" secondAttribute="top" id="UW5-nU-jrV"/>
                                             <constraint firstAttribute="bottom" secondItem="xbE-Uj-ywl" secondAttribute="bottom" constant="5" id="aFk-up-vhm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fio-rl-SOQ" secondAttribute="bottom" id="jr9-s7-w39"/>
                                             <constraint firstAttribute="height" constant="30" id="lxO-Rz-ZCT"/>
                                             <constraint firstItem="8SJ-Gf-5S5" firstAttribute="top" secondItem="jNX-GP-Ma2" secondAttribute="top" id="py6-tM-pfB"/>
                                             <constraint firstAttribute="bottom" secondItem="8SJ-Gf-5S5" secondAttribute="bottom" id="qaR-d9-VIM"/>
-                                            <constraint firstItem="LXh-Fl-y5b" firstAttribute="width" secondItem="8SJ-Gf-5S5" secondAttribute="width" multiplier="1:3" id="qzK-tc-gRA"/>
-                                            <constraint firstItem="xbE-Uj-ywl" firstAttribute="leading" secondItem="LXh-Fl-y5b" secondAttribute="trailing" constant="5" id="yIb-zT-bzh"/>
+                                            <constraint firstItem="Fio-rl-SOQ" firstAttribute="width" secondItem="8SJ-Gf-5S5" secondAttribute="width" multiplier="1:3" id="rdS-gw-5NS"/>
+                                            <constraint firstItem="xbE-Uj-ywl" firstAttribute="leading" secondItem="Fio-rl-SOQ" secondAttribute="trailing" constant="5" id="yTf-ZN-Rc8"/>
                                             <constraint firstItem="8SJ-Gf-5S5" firstAttribute="leading" secondItem="jNX-GP-Ma2" secondAttribute="leading" id="zBF-wX-W7P"/>
                                         </constraints>
                                     </view>
@@ -920,10 +923,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDV-tZ-Zv3" customClass="DropDown">
-                                                <rect key="frame" x="234" y="0.0" width="76" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q6-ob-R3P">
                                                 <rect key="frame" x="315" y="5" width="20" height="20"/>
                                                 <constraints>
@@ -934,21 +933,28 @@
                                                     <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="GhP-hB-g5O"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-Kt-Bs1">
+                                                <rect key="frame" x="234" y="0.0" width="76" height="30"/>
+                                                <state key="normal" title="Công Khai"/>
+                                                <connections>
+                                                    <action selector="emailDropDownBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="GbA-An-oOI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="fbe-lD-IKn" firstAttribute="top" secondItem="dkn-xe-66k" secondAttribute="top" id="3E6-O8-4dF"/>
                                             <constraint firstAttribute="bottom" secondItem="9q6-ob-R3P" secondAttribute="bottom" constant="5" id="8XN-yp-pjA"/>
-                                            <constraint firstItem="JDV-tZ-Zv3" firstAttribute="top" secondItem="dkn-xe-66k" secondAttribute="top" id="8vb-fU-vyy"/>
                                             <constraint firstItem="fbe-lD-IKn" firstAttribute="leading" secondItem="dkn-xe-66k" secondAttribute="leading" id="Etf-kR-pXP"/>
-                                            <constraint firstItem="JDV-tZ-Zv3" firstAttribute="leading" secondItem="fbe-lD-IKn" secondAttribute="trailing" constant="5" id="Fya-ux-5s2"/>
                                             <constraint firstAttribute="bottom" secondItem="fbe-lD-IKn" secondAttribute="bottom" id="JsT-Gy-ePe"/>
-                                            <constraint firstItem="JDV-tZ-Zv3" firstAttribute="width" secondItem="fbe-lD-IKn" secondAttribute="width" multiplier="1:3" id="Pvd-1T-3mv"/>
+                                            <constraint firstAttribute="bottom" secondItem="XMM-Kt-Bs1" secondAttribute="bottom" id="ff8-ZY-HmJ"/>
+                                            <constraint firstItem="XMM-Kt-Bs1" firstAttribute="leading" secondItem="fbe-lD-IKn" secondAttribute="trailing" constant="5" id="kat-wI-Mog"/>
+                                            <constraint firstItem="9q6-ob-R3P" firstAttribute="leading" secondItem="XMM-Kt-Bs1" secondAttribute="trailing" constant="5" id="oUX-lg-LD6"/>
                                             <constraint firstAttribute="height" constant="30" id="oe9-dW-FPS"/>
                                             <constraint firstItem="9q6-ob-R3P" firstAttribute="top" secondItem="dkn-xe-66k" secondAttribute="top" constant="5" id="pip-eg-okd"/>
-                                            <constraint firstAttribute="bottom" secondItem="JDV-tZ-Zv3" secondAttribute="bottom" id="uoZ-9n-4Xz"/>
+                                            <constraint firstItem="XMM-Kt-Bs1" firstAttribute="top" secondItem="dkn-xe-66k" secondAttribute="top" id="vxh-Ns-bkW"/>
                                             <constraint firstAttribute="trailing" secondItem="9q6-ob-R3P" secondAttribute="trailing" id="xot-JC-MX7"/>
-                                            <constraint firstItem="9q6-ob-R3P" firstAttribute="leading" secondItem="JDV-tZ-Zv3" secondAttribute="trailing" constant="5" id="yk4-rT-XE4"/>
+                                            <constraint firstItem="XMM-Kt-Bs1" firstAttribute="width" secondItem="fbe-lD-IKn" secondAttribute="width" multiplier="1:3" id="zZA-h3-Npr"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-Nk-j7W">
@@ -1019,11 +1025,12 @@
                     </view>
                     <connections>
                         <outlet property="birthYearTF" destination="L0g-yg-hMV" id="WDx-LT-8FC"/>
-                        <outlet property="emailPrivacyDropDown" destination="JDV-tZ-Zv3" id="x6K-f3-6ZU"/>
+                        <outlet property="emailPrivacyDropDownBtn" destination="XMM-Kt-Bs1" id="L18-Dl-pOb"/>
                         <outlet property="emailTF" destination="fbe-lD-IKn" id="r8J-uh-eSu"/>
                         <outlet property="fullNameTF" destination="6Wk-io-yJe" id="LJ1-IH-CoU"/>
-                        <outlet property="phonePrivacyDropDown" destination="LXh-Fl-y5b" id="tQt-Rp-OKo"/>
+                        <outlet property="phonePrivacyDropDownBtn" destination="Fio-rl-SOQ" id="y5T-PJ-S77"/>
                         <outlet property="phoneTF" destination="8SJ-Gf-5S5" id="hgy-JT-R6B"/>
+                        <outlet property="view1" destination="jNX-GP-Ma2" id="6bT-Ve-XqK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYX-d4-Wjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
