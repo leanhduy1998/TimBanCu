@@ -63,10 +63,11 @@ extension SchoolViewController{
         searchTF.delegate = self
     }
     
-    func setupNoResultLabelAndButton(topViewY:CGFloat, topViewHeight:CGFloat){
+    func setupNoResultLabelAndButton(){
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewSchoolBtn)
         
+<<<<<<< HEAD:TimBanCu/View/School/SchoolViewExtension.swift
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
         
@@ -81,10 +82,17 @@ extension SchoolViewController{
         noResultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         noResultLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: -40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+=======
+        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+>>>>>>> UI-Design:TimBanCu/View/SchoolViewExtension.swift
         
-        let y = topViewY + topViewHeight + 40
-        noResultAddNewSchoolBtn.frame = CGRect(x: 0, y: y + 80, width: view.frame.width, height: 40)
-        noResultAddNewSchoolBtn.setAttributedTitle(NSAttributedString(string: "Thêm Trường Mới", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: UIColor(red: 255/255, green: 158/255, blue: 0/255, alpha: 1.0)]), for: .normal)
+        noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
+        noResultAddNewSchoolBtn.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
+        noResultAddNewSchoolBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         noResultAddNewSchoolBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
     }

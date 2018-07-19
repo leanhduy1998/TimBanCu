@@ -20,8 +20,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
-    var noResultLabel = UILabel()
-    var noResultAddNewSchoolBtn = UIButton()
+    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên trường?")
+    var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
     var searchTFUnderline: UIView! = nil
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
@@ -58,6 +58,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLayoutSubviews() {
         setupNoResultLabelAndButton(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
+        setupNoResultLabelAndButton()
     }
     
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
