@@ -34,6 +34,9 @@
 		1C6D51FC20FACCD100F8F5D7 /* SchoolViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */; };
 		1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeViewExtension.swift */; };
 		1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */; };
+		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
+		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
+		1C900E3121025BAC0016DFDC /* EditImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E3021025BAC0016DFDC /* EditImageViewController.swift */; };
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
 		1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */; };
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
@@ -105,6 +108,9 @@
 		1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewExtension.swift; sourceTree = "<group>"; };
 		1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeViewExtension.swift; sourceTree = "<group>"; };
 		1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewExtension.swift; sourceTree = "<group>"; };
+		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
+		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
+		1C900E3021025BAC0016DFDC /* EditImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditImageViewController.swift; sourceTree = "<group>"; };
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */,
 				1C53F4F420FD408A00F4ACEB /* ClassDetailViewController.swift */,
 				1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */,
+				1C900E3021025BAC0016DFDC /* EditImageViewController.swift */,
 				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
 			);
 			path = Controller;
@@ -335,6 +342,8 @@
 		1CFB9C2820F1703300945819 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1C900E2D210141AA0016DFDC /* NoResultButton.swift */,
+				1C900E2C210141AA0016DFDC /* NoResultLabel.swift */,
 				1C278C8220FE311800CCB7C0 /* School */,
 				1C278C8320FE313A00CCB7C0 /* ClassName */,
 				1C278C8420FE315500CCB7C0 /* ClassDetail */,
@@ -634,8 +643,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */,
 				1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeViewExtension.swift in Sources */,
 				1C3ADA9220FABA360041421F /* Trash.swift in Sources */,
+				1C900E3121025BAC0016DFDC /* EditImageViewController.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C53F4FB20FD455D00F4ACEB /* SettingTableViewCell.swift in Sources */,
 				1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */,
@@ -654,6 +665,7 @@
 				1CE24D0920FC0B08008DE3FB /* ClassNameTableViewCell.swift in Sources */,
 				1CE24D0720FC0690008DE3FB /* ClassName.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
+				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
 				1C278C8120FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,

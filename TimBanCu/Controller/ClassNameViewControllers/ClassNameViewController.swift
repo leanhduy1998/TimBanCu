@@ -87,7 +87,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNameTableViewCell") as? ClassNameTableViewCell
         cell?.classDetailViewModel = ClassNameViewModel(classDetail: classNames[indexPath.row])
-        cell?.classDetailViewModel = ClassNameViewModel(classDetail: searchClassDetails[indexPath.row])
+   
         
         return cell!
     }

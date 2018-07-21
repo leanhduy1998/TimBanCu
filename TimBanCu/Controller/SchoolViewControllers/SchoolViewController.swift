@@ -57,7 +57,6 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewDidLayoutSubviews() {
-        setupNoResultLabelAndButton(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
         setupNoResultLabelAndButton()
     }
     

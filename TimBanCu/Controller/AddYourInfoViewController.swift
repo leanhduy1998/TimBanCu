@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 import FirebaseDatabase
+import ImageSlideshow
 
 class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -16,20 +17,23 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     @IBOutlet weak var birthYearTF: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
-    
     @IBOutlet weak var phonePrivacyDropDownBtn: UIButton!
-    
     @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
+    @IBOutlet weak var imageSlideShow: ImageSlideshow!
     
-    @IBOutlet weak var picturesStackView: UIStackView!
+    @IBOutlet weak var yearLabel: UILabel!
     
     
     var phonePrivacyDropDown = DropDown()
     var emailPrivacyDropDown = DropDown()
     
     var userImages = [UIImage]()
+    var userImageWithYear = [UIImage:Int]()
+    var selectedImage:UIImage!
     
     @IBOutlet weak var view1: UIView!
+    
+    var addImageYearAlert = UIAlertController(title: "Bạn Nên Thêm Năm Hình Này Được Chụp!", message: "Mọi người sẽ dễ nhận diện bạn hơn!", preferredStyle: .alert)
     
     
     var privacyAlert = UIAlertController(title: "Mức Công Khai Thông Tin", message: "Bạn có thể chọn chia sẻ thông tin của mình công khai hoặc chỉ mình bạn. Nếu không công khai, người dùng khác sẽ phải được sự đồng ý của bạn trước khi xem thông tin đó.", preferredStyle: .alert)
@@ -40,8 +44,6 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        picturesStackView.subviews[0].removeFromSuperview()
-        
         phonePrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         emailPrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         
@@ -49,7 +51,86 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
             privacyAlert?.dismiss(animated: true, completion: nil)
         }))
         
-        reloadPicturesStackView()
+        reloadImageSlideShow()
+        
+        let pageIndicator = UIPageControl()
+        imageSlideShow.pageIndicator = pageIndicator
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        imageSlideShow.addGestureRecognizer(gestureRecognizer)
+        
+        addImageYearAlert.addTextField { (textField) in
+            textField.placeholder = "Năm Hình Được Chụp"
+            textField.keyboardType = .numberPad
+        }
+        
+        addImageYearAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addImageYearAlert] (_) in
+            let textField = addImageYearAlert?.textFields![0] // Force unwrapping because we know it exists.
+            let year = Int((textField?.text)!)
+            self.userImageWithYear[self.selectedImage] = year
+            
+            self.reloadYearLabel(page: self.imageSlideShow.currentPage)
+        }))
+        
+        addImageYearAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addImageYearAlert] (_) in
+            
+        }))
+ 
+        imageSlideShow.currentPageChanged = { page in
+            
+            DispatchQueue.main.async {
+                self.reloadYearLabel(page: page)
+            }
+        }
+    }
+    
+    func reloadYearLabel(page:Int){
+        if(userImageWithYear[userImages[page]] == nil){
+            yearLabel.text = "Năm ?"
+        }
+        else{
+            yearLabel.text = "\(userImageWithYear[userImages[page]]!)"
+        }
+        view.layoutIfNeeded()
+    }
+    
+    @objc func didTap() {
+        if(userImageWithYear[userImages[imageSlideShow.currentPage]] == nil){
+            selectedImage = userImages[imageSlideShow.currentPage]
+            present(addImageYearAlert, animated: true, completion: nil)
+        }
+
+        imageSlideShow.presentFullScreenController(from: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateImageSlideShow(count: 0)
+        
+        
+        if(userImages.count>0){
+            if(self.userImageWithYear[self.userImages[imageSlideShow.currentPage]] == nil){
+                self.yearLabel.text = "?"
+            }
+            else{
+                self.yearLabel.text = "\(self.userImageWithYear[self.userImages[imageSlideShow.currentPage]]!)"
+            }
+            
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func animateImageSlideShow(count:Int){
+        if(count <= (userImages.count-1)){
+            let deadlineTime = DispatchTime.now() + .milliseconds(count*1000)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                self.imageSlideShow.setCurrentPage(count, animated: true)
+                self.animateImageSlideShow(count: count + 1)
+            }
+        }
+        else{
+            self.imageSlideShow.setCurrentPage(0, animated: true)
+        }
     }
     
     @IBAction func phoneDropDownBtnPressed(_ sender: Any) {
@@ -112,25 +193,35 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         let image = info[UIImagePickerControllerEditedImage] as? UIImage
         userImages.append(image!)
         
-        dismiss(animated: true, completion: nil)
+        selectedImage = image
         
-        reloadPicturesStackView()
-    }
-    
-    func reloadPicturesStackView(){
-        if(userImages.count==0){
-            picturesStackView.isHidden = true
-        }
-        else{
-            picturesStackView.isHidden = false
-            
-            for image in userImages{
-                let imageview = UIImageView(image: image)
-                picturesStackView.addArrangedSubview(imageview)
+        
+       
+        dismiss(animated: true) {
+            DispatchQueue.main.async {
+                self.reloadImageSlideShow()
+                self.present(self.addImageYearAlert, animated: true, completion: nil)
             }
             
-            view.layoutIfNeeded()
-            picturesStackView.layoutIfNeeded()
+        }
+    }
+    
+    func reloadImageSlideShow(){
+        if(userImages.count==0){
+            imageSlideShow.setImageInputs([
+                ImageSource(image: #imageLiteral(resourceName: "profile"))
+            ])
+        }
+        else{
+            var imageSources = [ImageSource]()
+            
+            for image in userImages{
+                imageSources.append(ImageSource(image: image))
+            }
+            
+            imageSlideShow.setImageInputs(imageSources)
+            
+            self.imageSlideShow.setCurrentPage(userImages.count-1, animated: true)
         }
     }
     

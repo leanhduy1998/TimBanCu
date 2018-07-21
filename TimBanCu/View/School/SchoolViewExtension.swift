@@ -67,7 +67,6 @@ extension SchoolViewController{
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewSchoolBtn)
         
-<<<<<<< HEAD:TimBanCu/View/School/SchoolViewExtension.swift
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
         
@@ -82,12 +81,11 @@ extension SchoolViewController{
         noResultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         noResultLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: -40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
-=======
+
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
->>>>>>> UI-Design:TimBanCu/View/SchoolViewExtension.swift
         
         noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
