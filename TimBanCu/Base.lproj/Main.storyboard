@@ -78,17 +78,17 @@
             <objects>
                 <viewController id="MnQ-u8-HPq" customClass="SelectSchoolTypeViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5p-DZ-eSO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nhf-Hl-TCd">
-                                <rect key="frame" x="20" y="60" width="335" height="402"/>
+                                <rect key="frame" x="20" y="60" width="335" height="369.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jkk-of-0JW">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="191"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="175"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-Ng-h4U" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="175"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5S-wc-uGJ" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
                                                         <rect key="frame" x="29" y="40" width="100" height="100"/>
@@ -106,13 +106,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xns-ln-A9o">
-                                                        <rect key="frame" x="8" y="160" width="141.5" height="21"/>
+                                                        <rect key="frame" x="8" y="160" width="141.5" height="5"/>
                                                         <state key="normal" title="Tiểu Học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-mb-DeF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="175"/>
                                                         <connections>
                                                             <action selector="tieuHocBtnPressed:" destination="MnQ-u8-HPq" eventType="touchUpInside" id="aYK-iH-O3r"/>
                                                         </connections>
@@ -135,10 +135,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-v2-azd" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="175"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-LE-hq9">
-                                                        <rect key="frame" x="8" y="160" width="141.5" height="21"/>
+                                                        <rect key="frame" x="8" y="160" width="141.5" height="5"/>
                                                         <state key="normal" title="Trung học cơ sở">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -159,7 +159,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-Q8-WR4">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="191"/>
+                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="175"/>
                                                         <connections>
                                                             <action selector="trunghoccosoBtnPressed:" destination="MnQ-u8-HPq" eventType="touchUpInside" id="kuJ-jJ-Yt8"/>
                                                         </connections>
@@ -184,10 +184,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GK2-T0-AXm">
-                                        <rect key="frame" x="0.0" y="211" width="335" height="191"/>
+                                        <rect key="frame" x="0.0" y="195" width="335" height="174.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQH-Al-Mu5" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="174.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-jJ-FoT" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
                                                         <rect key="frame" x="29" y="40" width="100" height="100"/>
@@ -205,14 +205,14 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WX-GR-zzx">
-                                                        <rect key="frame" x="8" y="160" width="141.5" height="21"/>
+                                                        <rect key="frame" x="8" y="160" width="141.5" height="4.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="Trung học phổ thông">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-37-QD6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="174.5"/>
                                                         <connections>
                                                             <action selector="trunghocphothongBtnPressed:" destination="MnQ-u8-HPq" eventType="touchUpInside" id="MpS-ge-obJ"/>
                                                         </connections>
@@ -235,7 +235,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-hV-Lbv" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="174.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJH-jV-zSA" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
                                                         <rect key="frame" x="29" y="40" width="100" height="100"/>
@@ -253,13 +253,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgJ-oy-uyp">
-                                                        <rect key="frame" x="8" y="160" width="141.5" height="21"/>
+                                                        <rect key="frame" x="8" y="160" width="141.5" height="4.5"/>
                                                         <state key="normal" title="Đai học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH3-Jy-K1g">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="191"/>
+                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="174.5"/>
                                                         <connections>
                                                             <action selector="daihocBtnPressed:" destination="MnQ-u8-HPq" eventType="touchUpInside" id="Aho-3U-QtU"/>
                                                         </connections>
@@ -296,8 +296,8 @@
                         <viewLayoutGuide key="safeArea" id="egx-Rd-5we"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Trang Chính" id="UlA-x7-6Xr"/>
-                    <navigationItem key="navigationItem" title="Chọn Loại Trường" id="ma1-F8-AUq">
-                        <barButtonItem key="backBarButtonItem" title="  " id="rQW-De-dsX"/>
+                    <navigationItem key="navigationItem" title="Chọn Loại Trường" id="knV-Ix-juY">
+                        <barButtonItem key="backBarButtonItem" title=" " id="UvR-NS-Fk1"/>
                     </navigationItem>
                     <connections>
                         <segue destination="MxZ-TI-ABJ" kind="show" identifier="SelectQueryToSchoolSegue" id="EZH-A0-8yp"/>
@@ -312,7 +312,7 @@
             <objects>
                 <viewController id="rp0-Iy-xJl" customClass="SettingViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yrA-QJ-gGG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pLJ-87-Kea">
@@ -360,15 +360,18 @@
             </objects>
             <point key="canvasLocation" x="302" y="2427"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Chọn Loại Trường-->
         <scene sceneID="lb0-ud-nEn">
             <objects>
                 <tabBarController id="cZk-61-rDc" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="MMe-a3-gD9"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bqk-OA-wS6">
+                    <navigationItem key="navigationItem" title="Chọn Loại Trường" id="MMe-a3-gD9">
+                        <barButtonItem key="backBarButtonItem" title=" " id="zSW-y1-J33"/>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bqk-OA-wS6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="MnQ-u8-HPq" kind="relationship" relationship="viewControllers" id="gBr-tp-0YS"/>
@@ -467,7 +470,7 @@
                         <viewLayoutGuide key="safeArea" id="njY-4O-6SS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tên Trường" id="pL5-H9-4ws">
-                        <barButtonItem key="backBarButtonItem" title="  " id="6QJ-fu-P3N"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="DFC-CN-uUV"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -483,7 +486,7 @@
             </objects>
             <point key="canvasLocation" x="1273" y="1610"/>
         </scene>
-        <!--Class View Controller-->
+        <!--Chọn Lớp-->
         <scene sceneID="qlC-wb-wBY">
             <objects>
                 <viewController id="fca-ua-7Ym" customClass="ClassViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
@@ -507,17 +510,16 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LỚP 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10Z-pI-1w3">
                                                             <rect key="frame" x="77" y="29.5" width="100" height="50"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="0tI-0c-dI9"/>
                                                                 <constraint firstAttribute="height" constant="50" id="beO-gq-lPZ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="1" green="0.4989315944648276" blue="0.33909750088919766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="10Z-pI-1w3" firstAttribute="centerY" secondItem="PZC-oY-L2y" secondAttribute="centerY" id="DWd-S8-oRb"/>
                                                         <constraint firstItem="10Z-pI-1w3" firstAttribute="centerX" secondItem="PZC-oY-L2y" secondAttribute="centerX" id="fsa-CH-c8t"/>
@@ -533,6 +535,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="cellBackground" destination="PZC-oY-L2y" id="aJK-am-E2a"/>
                                             <outlet property="classLabel" destination="10Z-pI-1w3" id="Lgu-TU-5xe"/>
                                         </connections>
                                     </tableViewCell>
@@ -552,6 +555,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tfB-fI-hAt"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Chọn Lớp" id="AtB-bG-Vm9">
+                        <barButtonItem key="backBarButtonItem" title=" " id="2vr-eo-ke4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="fGv-rn-32V" id="URs-7l-667"/>
                         <segue destination="L0Q-5x-sEu" kind="show" identifier="ClassToClassDetailSegue" id="1Hz-A9-EJD"/>
@@ -576,7 +582,7 @@
             </objects>
             <point key="canvasLocation" x="2238" y="2401"/>
         </scene>
-        <!--Class Name View Controller-->
+        <!--Tên Lớp-->
         <scene sceneID="PFi-RE-z0I">
             <objects>
                 <viewController id="L0Q-5x-sEu" customClass="ClassNameViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
@@ -584,7 +590,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-bA-SrG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-bA-SrG">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -592,7 +598,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="POe-53-gtW" id="y1K-j0-5cL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10A1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ij-Sv-Kt5">
@@ -601,7 +607,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-q2-lhW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-q2-lhW" customClass="CircleImageView" customModule="TimBanCu" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="0Ea-7Q-K9O"/>
@@ -639,6 +645,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JDi-G8-Umv"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tên Lớp" id="2Kg-Db-IcN">
+                        <barButtonItem key="backBarButtonItem" title=" " id="X3e-1x-eh6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="Aq1-bA-SrG" id="jQ7-d3-jN8"/>
                         <segue destination="0Ua-wx-Yxd" kind="show" id="nAk-Pn-Akz"/>
@@ -648,7 +657,7 @@
             </objects>
             <point key="canvasLocation" x="3249" y="1610"/>
         </scene>
-        <!--Class Detail View Controller-->
+        <!--Thành Viên-->
         <scene sceneID="3zR-B1-OBb">
             <objects>
                 <viewController id="0Ua-wx-Yxd" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
@@ -656,7 +665,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
                                 <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -664,7 +673,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2NF-ef-gED" id="c0E-8U-Wa2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lê Kỳ An" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rU3-9R-IBo">
@@ -673,7 +682,7 @@
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-9R-f32">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZVi-9R-f32" customClass="CircleImageView" customModule="TimBanCu" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="dMR-mr-JBq"/>
@@ -715,6 +724,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQe-H4-oWQ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Thành Viên" id="Sbs-X1-0hw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="i14-Md-twc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="kat-1D-gyg" id="vVA-71-lxi"/>
                         <segue destination="Pba-mN-D9k" kind="show" id="Odd-j8-hCV"/>
