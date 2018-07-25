@@ -105,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/ImageSlideshow/ImageSlideshow/Classes/Core/FullScreenSlideshowViewController.swift"
-            timestampString = "553812749.383589"
+            filePath = "TimBanCu/Controller/AddYourInfoViewController.swift"
+            timestampString = "554244427.837602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "removePic()"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "addInfoBtnPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

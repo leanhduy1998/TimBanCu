@@ -106,7 +106,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            UserHelper.uid = signIn.clientID
+            UserHelper.uid = Auth.auth().currentUser?.uid
             
             guard let authentication = user.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,

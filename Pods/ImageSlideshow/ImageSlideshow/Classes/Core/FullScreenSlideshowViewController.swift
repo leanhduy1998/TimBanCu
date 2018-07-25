@@ -22,7 +22,6 @@ open class FullScreenSlideshowViewController: UIViewController {
         return slideshow
     }()
     
-    open var removePicButton = UIButton()
 
     /// Close button 
     open var closeButton = UIButton()
@@ -67,13 +66,6 @@ open class FullScreenSlideshowViewController: UIViewController {
         closeButton.setImage(UIImage(named: "ic_cross_white", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
         closeButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
         view.addSubview(closeButton)
-        
-        removePicButton.setTitle("Remove Image", for: .normal)
-        removePicButton.setTitleColor(UIColor.white, for: .normal)
-        
-        removePicButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.removePic), for: UIControlEvents.touchUpInside)
-        view.addSubview(removePicButton)
-        
     }
 
     override open var prefersStatusBarHidden: Bool {
@@ -105,8 +97,7 @@ open class FullScreenSlideshowViewController: UIViewController {
             }
             
             closeButton.frame = closeButtonFrame ?? CGRect(x: max(10, safeAreaInsets.left), y: max(10, safeAreaInsets.top), width: 40, height: 40)
-            
-            removePicButton.frame = CGRect(x: ( safeAreaInsets.right - 10), y: max(10, safeAreaInsets.top), width: 80, height: 40)
+
         }
 
         slideshow.frame = view.frame
@@ -118,13 +109,6 @@ open class FullScreenSlideshowViewController: UIViewController {
             pageSelected(slideshow.currentPage)
         }
 
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func removePic() {
-        // if pageSelected closure set, send call it with current page
-        inputs?.remove(at: slideshow.currentPage)
-        
         dismiss(animated: true, completion: nil)
     }
 }

@@ -16,6 +16,7 @@ target 'TimBanCu' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
   pod 'FBSDKLoginKit'
   pod 'FacebookCore'
