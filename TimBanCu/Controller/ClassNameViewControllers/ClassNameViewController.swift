@@ -15,8 +15,6 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var selectedSchool:School!
     var selectedClassNumber: String!
-    
-    //
     var selectedClassName:ClassName!
     
     //database
@@ -73,7 +71,6 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             
             DispatchQueue.main.async {
-    
                 self.tableview.reloadData()
                 self.updateTableviewVisibilityBasedOnSearchResult()
             }
@@ -101,14 +98,13 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
         self.present(addNewClassAlert, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? ClassDetailViewController{
+            destination.selectedSchool = selectedSchool
+            destination.selectedClassNumber = selectedClassNumber
+            destination.selectedClassName = selectedClassName
+        }
     }
-    */
+    
 
 }

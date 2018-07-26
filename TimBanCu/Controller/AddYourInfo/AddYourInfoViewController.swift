@@ -37,6 +37,10 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
     let privateUserProfileRef = Database.database().reference().child("privateUserProfile")
     let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
+    
+    var selectedSchool:School!
+    var selectedClassNumber: String!
+    var selectedClassName:ClassName!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,16 +90,22 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
                 self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
             }
         })
+        
+        uploadUserInfoToSelectedClass()
+    }
+    
+    func uploadUserInfoToSelectedClass(){
+         Database.database().reference().child("students").child(selectedSchool.name).child(selectedClassNumber).child(selectedClassName.className).child(UserHelper.uid).setValue(UserHelper.student.fullName)
     }
     
     func uploadPublicData(imageFileNames:[String]){
         var publicDic = [String:Any]()
         
-        if(phonePrivacyDropDown.selectedItem == "Công Khai"){
+        if(phonePrivacyDropDownBtn.currentTitle == "Công Khai"){
             publicDic["phoneNumber"] = phoneTF.text
         }
         
-        if(emailPrivacyDropDown.selectedItem == "Công Khai"){
+        if(emailPrivacyDropDownBtn.currentTitle == "Công Khai"){
             publicDic["email"] = emailTF.text
         }
         
@@ -110,11 +120,11 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     func uploadPrivateData(){
         var privateDic = [String:Any]()
         
-        if(phonePrivacyDropDown.selectedItem == "Chỉ Riêng Tôi"){
+        if(phonePrivacyDropDownBtn.currentTitle == "Chỉ Riêng Tôi"){
             privateDic["phoneNumber"] = phoneTF.text
         }
         
-        if(emailPrivacyDropDown.selectedItem == "Chỉ Riêng Tôi"){
+        if(emailPrivacyDropDownBtn.currentTitle == "Chỉ Riêng Tôi"){
             privateDic["email"] = emailTF.text
         }
         
@@ -171,8 +181,6 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
             destination.yearOfUserImage = yearOfUserImage
         }
     }
-    
-
 }
 
 extension UIImage {

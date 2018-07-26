@@ -695,6 +695,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0Ua-wx-Yxd" id="jfk-4a-FHG"/>
+                                    <outlet property="delegate" destination="0Ua-wx-Yxd" id="5w6-nb-y3k"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tìm Học Sinh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-Al-kTv">
                                 <rect key="frame" x="5" y="69" width="365" height="30"/>
@@ -709,6 +713,9 @@
                                     <action selector="addYourselfBtnPressed:" destination="0Ua-wx-Yxd" eventType="touchUpInside" id="boQ-bm-9w9"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-UU-L0M">
+                                <rect key="frame" x="177.5" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -719,13 +726,16 @@
                             <constraint firstItem="2xj-Al-kTv" firstAttribute="top" secondItem="bQe-H4-oWQ" secondAttribute="top" constant="5" id="B1e-uv-reb"/>
                             <constraint firstItem="IqM-AJ-ZHj" firstAttribute="top" secondItem="kat-1D-gyg" secondAttribute="bottom" constant="20" id="Hut-bq-9bm"/>
                             <constraint firstItem="kat-1D-gyg" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" id="NV8-hU-Ejm"/>
+                            <constraint firstItem="ASQ-UU-L0M" firstAttribute="centerY" secondItem="GaK-7b-4ZG" secondAttribute="centerY" id="Rag-mh-qVr"/>
                             <constraint firstItem="IqM-AJ-ZHj" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="20" id="Yhg-0a-tNq"/>
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="kat-1D-gyg" secondAttribute="trailing" id="feU-Uu-hig"/>
                             <constraint firstItem="2xj-Al-kTv" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="5" id="hR9-I2-zJf"/>
+                            <constraint firstItem="ASQ-UU-L0M" firstAttribute="centerX" secondItem="GaK-7b-4ZG" secondAttribute="centerX" id="lqz-Ix-Mgs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQe-H4-oWQ"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ASQ-UU-L0M" id="dfk-mh-aiJ"/>
                         <outlet property="addYourselfBtn" destination="IqM-AJ-ZHj" id="e4m-9H-Xb7"/>
                         <outlet property="searchTF" destination="2xj-Al-kTv" id="NDo-K3-AOt"/>
                         <outlet property="tableview" destination="kat-1D-gyg" id="vVA-71-lxi"/>
