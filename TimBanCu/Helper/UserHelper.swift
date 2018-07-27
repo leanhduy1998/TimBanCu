@@ -17,6 +17,12 @@ class UserHelper{
         let student = Student()
         student.uid = uid
         Database.database().reference().child("publicUserProfile").child(uid).observeSingleEvent(of: .value, with: { (publicSS) in
+            
+            if(!publicSS.hasChildren()){
+                completionHandler(Student())
+            }
+            
+            
             for snap in publicSS.children{
                 let key = (snap as! DataSnapshot).key as! String
                 
@@ -48,7 +54,10 @@ class UserHelper{
             }
         })
         
-        Database.database().reference().child("privateUserProfile").child(uid).observeSingleEvent(of: .value, with: { (privateSS) in
+        Database.database().reference().child("privateUserProfile").observeSingleEvent(of: .value, with: { (privateSS) in
+            
+            print(privateSS)
+            
             for snap in privateSS.children{
                 let key = (snap as! DataSnapshot).key as! String
                 if(key == "phoneNumber"){

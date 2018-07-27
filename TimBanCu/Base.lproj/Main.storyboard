@@ -663,7 +663,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
-                                <rect key="frame" x="0.0" y="104" width="375" height="493"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="463"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="100" id="2NF-ef-gED" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -713,7 +713,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-AJ-ZHj">
-                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <rect key="frame" x="20" y="587" width="335" height="30"/>
                                 <state key="normal" title="Thêm Thông Tin Bản Thân"/>
                                 <connections>
                                     <action selector="addYourselfBtnPressed:" destination="0Ua-wx-Yxd" eventType="touchUpInside" id="boQ-bm-9w9"/>
@@ -722,26 +722,37 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-UU-L0M">
                                 <rect key="frame" x="177.5" y="323" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwq-kt-NPR">
+                                <rect key="frame" x="20" y="627" width="335" height="30"/>
+                                <state key="normal" title="Chat với Cả Lớp"/>
+                                <connections>
+                                    <segue destination="7BC-Pe-RkX" kind="show" id="cIt-t8-vdy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bQe-H4-oWQ" firstAttribute="bottom" secondItem="IqM-AJ-ZHj" secondAttribute="bottom" constant="20" id="1Vh-8j-2mB"/>
+                            <constraint firstItem="uwq-kt-NPR" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="20" id="2Xr-63-G26"/>
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="IqM-AJ-ZHj" secondAttribute="trailing" constant="20" id="39c-1h-8k8"/>
                             <constraint firstItem="kat-1D-gyg" firstAttribute="top" secondItem="2xj-Al-kTv" secondAttribute="bottom" constant="5" id="7f2-ku-av8"/>
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="2xj-Al-kTv" secondAttribute="trailing" constant="5" id="8NV-ur-2Pb"/>
                             <constraint firstItem="2xj-Al-kTv" firstAttribute="top" secondItem="bQe-H4-oWQ" secondAttribute="top" constant="5" id="B1e-uv-reb"/>
                             <constraint firstItem="IqM-AJ-ZHj" firstAttribute="top" secondItem="kat-1D-gyg" secondAttribute="bottom" constant="20" id="Hut-bq-9bm"/>
+                            <constraint firstItem="bQe-H4-oWQ" firstAttribute="bottom" secondItem="uwq-kt-NPR" secondAttribute="bottom" constant="10" id="JrC-FY-PDZ"/>
                             <constraint firstItem="kat-1D-gyg" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" id="NV8-hU-Ejm"/>
                             <constraint firstItem="ASQ-UU-L0M" firstAttribute="centerY" secondItem="GaK-7b-4ZG" secondAttribute="centerY" id="Rag-mh-qVr"/>
+                            <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="uwq-kt-NPR" secondAttribute="trailing" constant="20" id="X5R-pA-GQg"/>
                             <constraint firstItem="IqM-AJ-ZHj" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="20" id="Yhg-0a-tNq"/>
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="kat-1D-gyg" secondAttribute="trailing" id="feU-Uu-hig"/>
                             <constraint firstItem="2xj-Al-kTv" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="5" id="hR9-I2-zJf"/>
                             <constraint firstItem="ASQ-UU-L0M" firstAttribute="centerX" secondItem="GaK-7b-4ZG" secondAttribute="centerX" id="lqz-Ix-Mgs"/>
+                            <constraint firstItem="uwq-kt-NPR" firstAttribute="top" secondItem="IqM-AJ-ZHj" secondAttribute="bottom" constant="10" id="zxL-ul-D8t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQe-H4-oWQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Thành Viên" id="Sbs-X1-0hw">
                         <barButtonItem key="backBarButtonItem" title=" " id="i14-Md-twc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Tu2-eg-QWM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="ASQ-UU-L0M" id="dfk-mh-aiJ"/>
@@ -1050,6 +1061,21 @@
                 <exit id="czf-XK-NAM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5133.6000000000004" y="2443.6281859070468"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="XXC-U2-ifv">
+            <objects>
+                <viewController id="7BC-Pe-RkX" customClass="ChatViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VOm-lI-FAC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="L0f-V6-JMC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LE-fT-FNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4174" y="3113"/>
         </scene>
         <!--Image Detail View Controller-->
         <scene sceneID="Kau-Fn-r9Z">

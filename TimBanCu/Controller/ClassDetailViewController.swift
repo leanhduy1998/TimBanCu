@@ -48,7 +48,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func showAddYourInfoBtnIfYouAreNotInTheClass(){
-        if(UserHelper.uid == nil){
+        if(UserHelper.student == nil){
             addYourselfBtn.isHidden = false
             return
         }

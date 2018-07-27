@@ -24,7 +24,6 @@ target 'TimBanCu' do
   pod 'FacebookShare'
 
   pod 'DropDown'
-  pod 'Atlas'
 
 
   target 'TimBanCuTests' do

@@ -37,6 +37,8 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         setupGoogleButton()
         
         signInAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+       
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -124,7 +126,11 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func loadUserInfo(completionHandler: @escaping () -> Void){
         UserHelper.getStudentFromDatabase(uid: UserHelper.uid) { (student) in
-            UserHelper.student = student
+            
+            if(student.isStudentInfoCompleted()){
+                UserHelper.student = student
+            }
+        
             completionHandler()
         }
     }
