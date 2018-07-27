@@ -11,10 +11,12 @@ import UIKit
 class ClassTableViewCell: UITableViewCell {
     
     @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var cellBackground: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
