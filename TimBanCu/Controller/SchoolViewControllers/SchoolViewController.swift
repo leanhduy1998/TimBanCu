@@ -44,7 +44,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+       // tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         

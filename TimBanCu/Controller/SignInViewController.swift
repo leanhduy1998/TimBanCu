@@ -53,13 +53,15 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            UserHelper.uid = Auth.auth().currentUser?.uid
+            
             
             guard let authentication = user.authentication else { return }
+        
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                            accessToken: authentication.accessToken)
             firebaseSignIn(credential: credential) { (success) in
                 if(success){
+                    UserHelper.uid = Auth.auth().currentUser?.uid
                     DispatchQueue.main.async {
                         self.loadUserInfo {
                             DispatchQueue.main.async {
@@ -80,11 +82,12 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         
         if let accessToken = AccessToken.current {
-            UserHelper.uid = accessToken.userId
+            
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             
             firebaseSignIn(credential: credential) { (success) in
                 if(success){
+                    UserHelper.uid = accessToken.userId
                     DispatchQueue.main.async {
                         self.loadUserInfo {
                             DispatchQueue.main.async {

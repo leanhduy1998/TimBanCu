@@ -70,17 +70,12 @@ extension SchoolViewController{
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
         
-        noResultLabel.text = "n"
+        noResultLabel.text = ""
         noResultLabel.textColor = UIColor.darkGray
         noResultLabel.textAlignment = .center
         noResultLabel.numberOfLines = 2
         noResultLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 80).isActive = true
-        noResultLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-        noResultLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: -40).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
 
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true

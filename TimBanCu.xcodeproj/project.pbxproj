@@ -60,6 +60,7 @@
 		1CE24D0D20FC19A2008DE3FB /* SchoolQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */; };
 		1CF50FE2210A3BDD00346EF9 /* SignInExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE1210A3BDD00346EF9 /* SignInExtension.swift */; };
 		1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE3210A738F00346EF9 /* StudentDetailViewController.swift */; };
+		1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE5210B678100346EF9 /* CircleImageView.swift */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
@@ -145,6 +146,7 @@
 		1CE24D0C20FC19A2008DE3FB /* SchoolQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolQuery.swift; sourceTree = "<group>"; };
 		1CF50FE1210A3BDD00346EF9 /* SignInExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInExtension.swift; sourceTree = "<group>"; };
 		1CF50FE3210A738F00346EF9 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		1CF50FE5210B678100346EF9 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				1C900E2C210141AA0016DFDC /* NoResultLabel.swift */,
 				1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */,
 				1C53F4FA20FD455D00F4ACEB /* SettingTableViewCell.swift */,
+				1CF50FE5210B678100346EF9 /* CircleImageView.swift */,
 				1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */,
 				1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */,
 			);
@@ -679,6 +682,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */,
+				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
 				1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift in Sources */,
 				1C2E7371210916E7007EAE63 /* AddYourInfoExtension.swift in Sources */,
 				1C3ADA9220FABA360041421F /* Trash.swift in Sources */,

@@ -101,7 +101,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell!
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedStudent = searchStudents[indexPath.row]
         performSegue(withIdentifier: "ClassDetailToStudentDetail", sender: self)
