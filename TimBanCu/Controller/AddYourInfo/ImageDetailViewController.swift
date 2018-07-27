@@ -12,13 +12,12 @@ class ImageDetailViewController: UIViewController {
     
     
     @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var yearLabel: UILabel!
     
     var indexForDeletion:Int!
     
     var userImages = [UIImage]()
     var yearOfUserImage = [UIImage:Int]()
-    
-    @IBOutlet weak var yearLabel: UILabel!
     
     var editImageYearAlert = UIAlertController(title: "Sửa Năm Hình Này Được Chụp!", message: "", preferredStyle: .alert)
     

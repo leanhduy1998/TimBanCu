@@ -180,6 +180,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
             destination.userImages = userImages
             destination.yearOfUserImage = yearOfUserImage
         }
+
     }
 }
 

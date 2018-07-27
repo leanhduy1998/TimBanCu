@@ -31,12 +31,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var noResultLabel = UILabel()
     
     var studentInClassRef:DatabaseReference!
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var selectedStudent:Student!
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,98 +40,39 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         studentInClassRef = Database.database().reference().child("students").child(selectedSchool.name).child(selectedClassNumber).child(selectedClassName.className)
         
         startLoading()
-        reloadData {
+        fetchData {
             DispatchQueue.main.async {
-                self.searchStudents = self.students
-                self.tableview.reloadData()
-                self.stopLoading()
-                self.updateTableviewVisibilityBasedOnSearchResult()
+                self.reloadData()
             }
         }
-        
     }
     
-    func startLoading(){
-        tableview.isHidden = true
-        searchTF.isHidden = true
-        addYourselfBtn.isEnabled = true
-        activityIndicator.isHidden = false
+    func showAddYourInfoBtnIfYouAreNotInTheClass(){
+        if(UserHelper.uid == nil){
+            addYourselfBtn.isHidden = false
+            return
+        }
         
-        activityIndicator.startAnimating()
-    }
-    
-    func stopLoading(){
-        UIView.animate(withDuration: 1) {
-            self.tableview.isHidden = false
-            self.searchTF.isHidden = false
-            self.activityIndicator.isHidden = true
-            
-            if(self.students.count != 0 && UserHelper.student==nil){
-                self.addYourselfBtn.isHidden = false
-            }
-            else{
-                self.addYourselfBtn.isHidden = true
+        for student in students{
+            if(student.uid == UserHelper.uid){
+                addYourselfBtn.isHidden = true
             }
         }
-        activityIndicator.stopAnimating()
-    }
+    }    
     
-    func reloadData(completionHandler: @escaping () -> Void){
+    func fetchData(completionHandler: @escaping () -> Void){
         students.removeAll()
         searchStudents.removeAll()
         
         studentInClassRef.observeSingleEvent(of: .value) { (snapshot) in
             for snap in snapshot.children {
-                let uid = (snap as! DataSnapshot).key as! String
-                let fullname = (snap as! DataSnapshot).value as! String
-               
+                let uid = (snap as! DataSnapshot).key 
                 
-                let student = Student()
-                student.uid = uid
-                student.fullName = fullname
-                Database.database().reference().child("publicUserProfile").child(uid).observeSingleEvent(of: .value, with: { (publicSS) in
-                    for snap in publicSS.children{
-                        let key = (snap as! DataSnapshot).key as! String
-                        
-                        if(key == "birthYear"){
-                            let birthYear = (snap as! DataSnapshot).value as! String
-                            student.birthYear = birthYear
-                        }
-                        else if(key == "images"){
-                            let images = (snap as! DataSnapshot).value as! [String]
-                            
-                            student.imageUrls = images
-                        }
-                        else if(key == "phoneNumber"){
-                            let phoneNumber = (snap as! DataSnapshot).value as! String
-                            student.phoneNumber = phoneNumber
-                        }
-                        else if(key == "email"){
-                            let email = (snap as! DataSnapshot).value as! String
-                            student.email = email
-                        }
-                    }
+                UserHelper.getStudentFromDatabase(uid: uid, completionHandler: { (student) in
+                    self.students.append(student)
+                    self.searchStudents.append(student)
                     
-                    if(student.isStudentInfoCompleted()){
-                        self.students.append(student)
-                        completionHandler()
-                    }
-                })
-                
-                Database.database().reference().child("privateUserProfile").child(uid).observeSingleEvent(of: .value, with: { (privateSS) in
-                    for snap in privateSS.children{
-                        let key = (snap as! DataSnapshot).key as! String
-                        if(key == "phoneNumber"){
-                            let phoneNumber = (snap as! DataSnapshot).value as! String
-                            student.phoneNumber = phoneNumber
-                        }
-                        else if(key == "email"){
-                            let email = (snap as! DataSnapshot).value as! String
-                            student.email = email
-                        }
-                    }
-                    if(student.isStudentInfoCompleted()){
-                        self.students.append(student)
+                    if(self.students.count == snapshot.children.allObjects.count){
                         completionHandler()
                     }
                 })
@@ -143,9 +80,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        setupNoResultLabel(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
-        view.layoutIfNeeded()
+    func reloadData(){
+        self.searchStudents = self.students
+        self.tableview.reloadData()
+        self.stopLoading()
+        self.updateTableviewVisibilityBasedOnSearchResult()
+        self.showAddYourInfoBtnIfYouAreNotInTheClass()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -161,13 +101,25 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedStudent = searchStudents[indexPath.row]
+        performSegue(withIdentifier: "ClassDetailToStudentDetail", sender: self)
+    }
 
     @IBAction func addYourselfBtnPressed(_ sender: Any) {
         if(UserHelper.student == nil){
-            
+            performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
-            performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
+            Database.database().reference().child("students").child(selectedSchool.name).child(selectedClassNumber).child(selectedClassName.className).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
+                if(error == nil){
+                    DispatchQueue.main.async {
+                        self.students.append(UserHelper.student)
+                        self.reloadData()
+                    }
+                }
+            }
         }
     }
 
@@ -176,6 +128,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             destination.selectedSchool = selectedSchool
             destination.selectedClassNumber = selectedClassNumber
             destination.selectedClassName = selectedClassName
+        }
+        if let destination = segue.destination as? StudentDetailViewController{
+            destination.selectedStudent = selectedStudent 
         }
     }
 

@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension ClassDetailViewController{
+    override func viewDidLayoutSubviews() {
+        setupNoResultLabel(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
+        view.layoutIfNeeded()
+    }
+    
     func setupNoResultLabel(topViewY:CGFloat, topViewHeight:CGFloat){
         view.addSubview(noResultLabel)
         view.bringSubview(toFront: noResultLabel)
@@ -24,24 +29,31 @@ extension ClassDetailViewController{
         
     }
     
-    func hideNoResultLabelAndButton(){
-        noResultLabel.isHidden = true
-        addYourselfBtn.isHidden = true
-    }
-    func showNoResultLabelAndButton(){
-        noResultLabel.isHidden = false
-        addYourselfBtn.isHidden = false
-    }
-    
     func updateTableviewVisibilityBasedOnSearchResult(){
         if(searchStudents.count == 0){
-            showNoResultLabelAndButton()
+            noResultLabel.isHidden = false
             tableview.isHidden = true
         }
         else{
-            hideNoResultLabelAndButton()
+            noResultLabel.isHidden = true
             tableview.isHidden = false
-            tableview.reloadData()
         }
+    }
+    
+    func startLoading(){
+        tableview.isHidden = true
+        searchTF.isHidden = true
+        addYourselfBtn.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopLoading(){
+        UIView.animate(withDuration: 1) {
+            self.tableview.isHidden = false
+            self.searchTF.isHidden = false
+            self.activityIndicator.isHidden = true
+        }
+        activityIndicator.stopAnimating()
     }
 }

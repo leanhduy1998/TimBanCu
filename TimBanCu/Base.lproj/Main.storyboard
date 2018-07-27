@@ -739,7 +739,7 @@
                         <outlet property="addYourselfBtn" destination="IqM-AJ-ZHj" id="e4m-9H-Xb7"/>
                         <outlet property="searchTF" destination="2xj-Al-kTv" id="NDo-K3-AOt"/>
                         <outlet property="tableview" destination="kat-1D-gyg" id="vVA-71-lxi"/>
-                        <segue destination="Pba-mN-D9k" kind="show" id="Odd-j8-hCV"/>
+                        <segue destination="Pba-mN-D9k" kind="show" identifier="ClassDetailToStudentDetail" id="Odd-j8-hCV"/>
                         <segue destination="qXR-vQ-3Eo" kind="show" identifier="ClassDetailToAddYourInfoSegue" id="Dxp-NL-sv1"/>
                     </connections>
                 </viewController>
@@ -747,10 +747,10 @@
             </objects>
             <point key="canvasLocation" x="4173.6000000000004" y="1609.745127436282"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Detail View Controller-->
         <scene sceneID="8bB-1L-bxH">
             <objects>
-                <viewController id="Pba-mN-D9k" sceneMemberID="viewController">
+                <viewController id="Pba-mN-D9k" customClass="StudentDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwC-TQ-NDq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -853,6 +853,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jWe-uO-7kp"/>
                     </view>
+                    <connections>
+                        <outlet property="birthYearLabel" destination="V1w-uS-XDJ" id="nN3-f5-6od"/>
+                        <outlet property="emailLabel" destination="Bvq-qI-45r" id="cD8-rZ-uUN"/>
+                        <outlet property="imageSlideshow" destination="r2W-2l-3af" id="edo-Um-ZSv"/>
+                        <outlet property="nameLabel" destination="IAR-Sn-pQQ" id="osb-ZI-9IW"/>
+                        <outlet property="phoneLabel" destination="jD0-rp-DJT" id="GjW-xw-m2O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bse-wl-145" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

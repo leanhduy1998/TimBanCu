@@ -23,74 +23,21 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
     
-    let shimmerAppNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Tìm bạn cũ"
-        label.font = UIFont.systemFont(ofSize: 45, weight: .regular)
-        label.textColor = UIColor(red: 255/255, green: 158/255, blue: 0, alpha: 1.0)
-        label.textAlignment = .center
-        return label
-    }()
-
-    let appNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Tìm bạn cũ"
-        label.font = UIFont.systemFont(ofSize: 45, weight: .regular)
-        label.textColor = UIColor(red: 255/255, green: 158/255, blue: 0, alpha: 0.6)
-        label.textAlignment = .center
-        return label
-    }()
+    var signInAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     
-    func setupShimmeringText() {
-        view.addSubview(appNameLabel)
-        view.addSubview(shimmerAppNameLabel)
-        
-        appNameLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
-        shimmerAppNameLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = appNameLabel.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.0, 0.5, 1]
-        let angle = -60 * CGFloat.pi / 180
-        gradient.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
-        
-        shimmerAppNameLabel.layer.mask = gradient
-        
-        let animation = CABasicAnimation(keyPath: "transform.translation.x")
-        animation.duration = 2
-        animation.repeatCount = Float.infinity
-        animation.autoreverses = false
-        animation.fromValue = -view.frame.width
-        animation.toValue = view.frame.width
-        gradient.add(animation, forKey: "shimmerKey")
-    }
+    var shimmerAppNameLabel = UILabel()
+    let appNameLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupShimmeringText()
-        
         ref = Database.database().reference()
         
-        GIDSignIn.sharedInstance().clientID = "137184194492-5iokn36749o7gmlodjnv6gskddjen7p1.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
+        setupShimmeringText()
+        setupFacebookBtn()
+        setupGoogleButton()
         
-        googleSignInBtn.style = GIDSignInButtonStyle.wide
-        
-        let facebookSignInBtn = LoginButton(readPermissions: [ .publicProfile ])
-        facebookSignInBtn.delegate = self
-        facebookSignInBtn.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(facebookSignInBtn)
-        facebookSignInBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -20).isActive = true
-        facebookSignInBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        facebookSignInBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
-        facebookSignInBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+        signInAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
     }
-    
-    
     
     // Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,
@@ -111,52 +58,75 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             guard let authentication = user.authentication else { return }
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                            accessToken: authentication.accessToken)
-            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-                if let error = error {
-                    // ...
-                    return
+            firebaseSignIn(credential: credential) { (success) in
+                if(success){
+                    DispatchQueue.main.async {
+                        self.loadUserInfo {
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+                            }
+                        }
+                    }
                 }
-                // User is signed in
-                 self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
             }
-            
-           
         }
-       
+        else{
+            signInAlert.title = "Google Sign In Error"
+            signInAlert.message = error.localizedDescription
+            present(signInAlert, animated: true, completion: nil)
+        }
     }
     
-    
-    
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        
         if let accessToken = AccessToken.current {
             UserHelper.uid = accessToken.userId
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            
+            firebaseSignIn(credential: credential) { (success) in
+                if(success){
+                    DispatchQueue.main.async {
+                        self.loadUserInfo {
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        else{
+            signInAlert.title = "Facebook Sign In Error"
+            signInAlert.message = "Error"
+            present(signInAlert, animated: true, completion: nil)
+        }
+    }
+    
+    func firebaseSignIn(credential:AuthCredential, completionHandler: @escaping (_ success:Bool) -> Void){
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            DispatchQueue.main.async {
                 if let error = error {
-                    // ...
+                    self.signInAlert.title = "Sign In With Database Error"
+                    self.signInAlert.message = error.localizedDescription
+                    self.present(self.signInAlert, animated: true, completion: nil)
+                    completionHandler(false)
                     return
                 }
                 // User is signed in
-                self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+                completionHandler(true)
             }
-            
+        }
+    }
+    
+    func loadUserInfo(completionHandler: @escaping () -> Void){
+        UserHelper.getStudentFromDatabase(uid: UserHelper.uid) { (student) in
+            UserHelper.student = student
+            completionHandler()
         }
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print()
     }
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*if let destination = segue.destination as? SelectSchoolTypeViewController{
-            destination.schoolViewModels = schoolViewModels
-        }*/
-        
-        let navVC = segue.destination as? UINavigationController
-        
-    //    let destination = navVC?.viewControllers.first as! SelectSchoolTypeViewController
-    }
-    
-
 }
