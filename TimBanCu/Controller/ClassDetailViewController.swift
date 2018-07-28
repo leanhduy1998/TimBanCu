@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var addYourselfBtn: UIButton!
     @IBOutlet weak var tableview: UITableView!
@@ -19,6 +19,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func unwindToClassDetailViewController(segue:UIStoryboardSegue) { }
     
+    var searchTFUnderline: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     var students = [Student]()
     var searchStudents = [Student]()
@@ -33,6 +39,19 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var studentInClassRef:DatabaseReference!
     var selectedStudent:Student!
 
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
+    
+    var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    
+    override func viewDidLoad() {
+        customizeSearchTF()
+        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -98,6 +117,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let student = searchStudents[indexPath.row]
         
         cell?.nameLabel.text = student.fullName
+        cell?.selectedBackgroundView = customSelectionColorView
         
         return cell!
     }
