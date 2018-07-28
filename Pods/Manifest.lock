@@ -82,6 +82,9 @@ PODS:
   - ImageSlideshow (1.6.1):
     - ImageSlideshow/Core (= 1.6.1)
   - ImageSlideshow/Core (1.6.1)
+  - JSQMessagesViewController (7.3.5):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -101,6 +104,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - ImageSlideshow
+  - JSQMessagesViewController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -124,6 +128,8 @@ SPEC REPOS:
     - GTMOAuth2
     - GTMSessionFetcher
     - ImageSlideshow
+    - JSQMessagesViewController
+    - JSQSystemSoundPlayer
     - leveldb-library
     - nanopb
 
@@ -148,9 +154,11 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   ImageSlideshow: f0f33e1a20668e83d77f5fb7729e4ae4437c0759
+  JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 4fbf6645a7d6e23d3adfe8e44358bbc262eac3dd
+PODFILE CHECKSUM: b76b84b6a2118a0cb9dda56f445b0afb67fd28a4
 
 COCOAPODS: 1.5.2

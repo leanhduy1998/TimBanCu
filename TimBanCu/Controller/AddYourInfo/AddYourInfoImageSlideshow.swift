@@ -36,21 +36,7 @@ extension AddYourInfoViewController{
         performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let image = info[UIImagePickerControllerEditedImage] as? UIImage
-        userImages.append(image!)
-        
-        selectedImage = image
-        
-        dismiss(animated: true) {
-            DispatchQueue.main.async {
-                self.reloadImageSlideShow()
-                self.present(self.addImageYearAlert, animated: true, completion: nil)
-            }
-        }
-    }
+    
     
     func reloadImageSlideShow(){
         if(userImages.count==0){

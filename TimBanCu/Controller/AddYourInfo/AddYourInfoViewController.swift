@@ -38,9 +38,8 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     let privateUserProfileRef = Database.database().reference().child("privateUserProfile")
     let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
     
-    var selectedSchool:School!
-    var selectedClassNumber: String!
-    var selectedClassName:ClassName!
+
+    var classDetail:ClassDetail!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +48,9 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         setupAlerts()
         setupImageSlideShow()
         reloadImageSlideShow()
+        
+        let storage = Storage.storage()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +97,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     }
     
     func uploadUserInfoToSelectedClass(){
-         Database.database().reference().child("students").child(selectedSchool.name).child(selectedClassNumber).child(selectedClassName.className).child(UserHelper.uid).setValue(UserHelper.student.fullName)
+         Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName)
     }
     
     func uploadPublicData(imageFileNames:[String]){
@@ -159,16 +161,6 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         }
     }
     
-    
-    @IBAction func addPictureBtnPressed(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        imagePickerController.allowsEditing = true
-        
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
     @IBAction func showPrivacyAlertBtnPressed(_ sender: Any) {
         present(privacyAlert, animated: true, completion: nil)
     }
@@ -184,19 +176,4 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     }
 }
 
-extension UIImage {
-    enum JPEGQuality: CGFloat {
-        case lowest  = 0
-        case low     = 0.25
-        case medium  = 0.5
-        case high    = 0.75
-        case highest = 1
-    }
-    
-    /// Returns the data for the specified image in JPEG format.
-    /// If the image object’s underlying image data has been purged, calling this function forces that data to be reloaded into memory.
-    /// - returns: A data object containing the JPEG data, or nil if there was a problem generating the data. This function may return nil if the image has no data or if the underlying CGImageRef contains data in an unsupported bitmap format.
-    func jpeg(_ quality: JPEGQuality) -> Data? {
-        return UIImageJPEGRepresentation(self, quality.rawValue)
-    }
-}
+

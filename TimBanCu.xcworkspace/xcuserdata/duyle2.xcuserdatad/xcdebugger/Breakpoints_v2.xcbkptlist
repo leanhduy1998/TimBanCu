@@ -122,13 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/ChatViewController.swift"
-            timestampString = "554406988.5329061"
+            timestampString = "554482227.349072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "360"
+            endingLineNumber = "360">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,13 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/ChatViewController.swift"
-            timestampString = "554406988.533812"
+            timestampString = "554482227.349472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "numberOfSections(in:)"
-            landmarkType = "7">
+            startingLineNumber = "360"
+            endingLineNumber = "360">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,13 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/ChatViewController.swift"
-            timestampString = "554406988.5340739"
+            timestampString = "554482227.349748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
+            startingLineNumber = "360"
+            endingLineNumber = "360">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/SignInViewController.swift"
-            timestampString = "554409425.79215"
+            timestampString = "554482227.350017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -186,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/SignInViewController.swift"
-            timestampString = "554409425.792477"
+            timestampString = "554482227.350064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -202,7 +196,7 @@
                   moduleName = "TimBanCu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Controller/SignInViewController.swift"
-                  timestampString = "554409425.966948"
+                  timestampString = "554482227.415637"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -217,7 +211,7 @@
                   moduleName = "TimBanCu"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Controller/SignInViewController.swift"
-                  timestampString = "554409425.9687459"
+                  timestampString = "554482227.4173191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
@@ -234,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Helper/UserHelper.swift"
-            timestampString = "554409425.792683"
+            timestampString = "554482227.3501101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
