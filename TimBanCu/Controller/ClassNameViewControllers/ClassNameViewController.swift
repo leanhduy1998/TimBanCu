@@ -32,6 +32,11 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
     var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
     
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +89,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNameTableViewCell") as? ClassNameTableViewCell
         cell?.classDetailViewModel = ClassNameViewModel(classDetail: classNames[indexPath.row])
-   
+        cell?.selectedBackgroundView = customSelectionColorView
         
         return cell!
     }
