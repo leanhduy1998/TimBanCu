@@ -13,7 +13,7 @@ class Student{
     var birthYear:String!
     var phoneNumber:String!
     var email:String!
-    var imageUrls: [String]!
+    var imageUrls: [String:Int]!
     var uid:String!
     
     //var enrolledIn:[String:[String:String]]
@@ -22,12 +22,12 @@ class Student{
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber
         self.email = email
-        self.imageUrls = []
+        self.imageUrls = [:]
      //   self.enrolledIn = [:]
         self.uid = uid
     }
     
-    init(fullname:String,birthYear:String,phoneNumber:String,email:String, imageUrls:[String],uid:String){
+    init(fullname:String,birthYear:String,phoneNumber:String,email:String, imageUrls:[String:Int],uid:String){
         self.fullName = fullname
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber

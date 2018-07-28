@@ -22,20 +22,13 @@ extension ChatViewController{
                 return
             }
             
-            storageRef.getMetadata(completion: { (metadata, metadataErr) in
-                if let error = metadataErr {
-                    print("Error downloading metadata: \(error)")
-                    return
-                }
-                
-                mediaItem.image = UIImage.init(data: data!)
-                self.collectionView.reloadData()
-                
-                guard key != nil else {
-                    return
-                }
-                self.photoMessageMap.removeValue(forKey: key!)
-            })
+            mediaItem.image = UIImage.init(data: data!)
+            self.collectionView.reloadData()
+            
+            guard key != nil else {
+                return
+            }
+            self.photoMessageMap.removeValue(forKey: key!)
         }
     }
     

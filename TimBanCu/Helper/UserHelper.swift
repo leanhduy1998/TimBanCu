@@ -31,7 +31,7 @@ class UserHelper{
                     student.birthYear = birthYear
                 }
                 else if(key == "images"){
-                    let images = (snap as! DataSnapshot).value as! [String]
+                    let images = (snap as! DataSnapshot).value as! [String:Int]
                     
                     student.imageUrls = images
                 }

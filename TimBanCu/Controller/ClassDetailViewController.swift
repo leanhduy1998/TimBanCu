@@ -44,6 +44,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         startLoading()
         fetchData {
             DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
                 self.reloadData()
             }
         }
@@ -53,6 +54,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         chatBtn.isEnabled = false
         
         if(UserHelper.student == nil){
+            addYourselfBtn.isHidden = false
             addYourselfBtn.isHidden = false
             return
         }
@@ -81,6 +83,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
                         completionHandler()
                     }
                 })
+            }
+            
+            if(snapshot.children.allObjects.count == 0){
+                completionHandler()
             }
         }
     }
@@ -138,7 +144,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             destination.classDetail = selectedClassDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
-            destination.selectedStudent = selectedStudent 
+            destination.student = selectedStudent 
         }
         if let destination = segue.destination as? ChatViewController{
             destination.classDetail = selectedClassDetail
