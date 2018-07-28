@@ -74,12 +74,12 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
     @IBAction func addInfoBtnPressed(_ sender: Any) {
 
-        var filenames = [String]()
+        var filenames = [UIImage:String]()
         let time = Date().timeIntervalSince1970.binade
         
         for x in 0...(self.userImages.count-1){
-            let str = "\(Int(time)+x).jpg"
-            filenames.append(str)
+            let str = "\(String(Int(time)+x))"
+            filenames[userImages[x]] = str
         }
         
         uploadPublicData(imageFileNames: filenames)
@@ -100,7 +100,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
          Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName)
     }
     
-    func uploadPublicData(imageFileNames:[String]){
+    func uploadPublicData(imageFileNames:[UIImage:String]){
         var publicDic = [String:Any]()
         
         if(phonePrivacyDropDownBtn.currentTitle == "Công Khai"){
@@ -114,7 +114,13 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         publicDic["birthYear"] = birthYearTF.text
         publicDic["fullName"] = fullNameTF.text
         
-        publicDic["images"] = imageFileNames
+        var dic = [String:Int]()
+        
+        for image in userImages{
+            dic[imageFileNames[image]!] = yearOfUserImage[image]
+        }
+        
+        publicDic["images"] = dic
         
         publicUserProfileRef.child(UserHelper.uid).setValue(publicDic)
     }
@@ -133,17 +139,19 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         privateUserProfileRef.child(UserHelper.uid).setValue(privateDic)
     }
     
-    func uploadUserImages(imageFileNames:[String], completionHandler: @escaping () -> Void){
+    func uploadUserImages(imageFileNames:[UIImage:String], completionHandler: @escaping () -> Void){
         
         let storage = Storage.storage()
         
         var imageUploaded = 0
         
-        var x = 0
-        for name in imageFileNames{
-            let imageRef = storage.reference().child("users").child("\(UserHelper.uid!)/\(name)")
+  
+        
+        for image in userImages{
+            let name = imageFileNames[image]
+            let imageRef = storage.reference().child("users").child("\(UserHelper.uid!)/\(name!)")
             
-            let data = userImages[x].jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
+            let data = image.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
             
             let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
@@ -157,8 +165,10 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
                     completionHandler()
                 }
             }
-            x = x + 1
         }
+        
+        
+        
     }
     
     @IBAction func showPrivacyAlertBtnPressed(_ sender: Any) {
@@ -167,7 +177,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ImageDetailViewController{
+        if let destination = segue.destination as? ImageDetailInAddInfoViewController{
             destination.indexForDeletion = imageSlideShow.currentPage
             destination.userImages = userImages
             destination.yearOfUserImage = yearOfUserImage

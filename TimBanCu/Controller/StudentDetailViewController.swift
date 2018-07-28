@@ -8,6 +8,7 @@
 
 import UIKit
 import ImageSlideshow
+import FirebaseStorage
 
 class StudentDetailViewController: UIViewController {
     
@@ -18,37 +19,118 @@ class StudentDetailViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
-    var selectedStudent:Student!
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    
+    var student:Student!
+
+    var selectedImage:UIImage!
+    
+    var userImages = [UIImage]()
+    var yearOfUserImage = [UIImage:Int]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = selectedStudent.fullName
-        birthYearLabel.text = selectedStudent.birthYear
+        nameLabel.text = student.fullName
+        birthYearLabel.text = student.birthYear
         
-        if(selectedStudent.phoneNumber == nil){
+        if(student.phoneNumber == nil){
             phoneLabel.text = "Số Điện Thoại Này Không Được Công Khai."
         }
         else{
-            phoneLabel.text = selectedStudent.phoneNumber
+            phoneLabel.text = student.phoneNumber
         }
         
-        if(selectedStudent.email == nil){
+        if(student.email == nil){
             emailLabel.text = "Địa Chỉ Email Này Không Được Công Khai."
         }
         else{
-            emailLabel.text = selectedStudent.email
+            emailLabel.text = student.email
         }
         
+        setupimageSlideshow()
         
         
+        for(photoName,year) in student.imageUrls{
+            Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
+                
+                
+                DispatchQueue.main.async {
+                    let image = UIImage(data: imageData!)
+                    self.userImages.append(image!)
+                    self.yearOfUserImage[image!] = year
+                    
+                    self.reloadimageSlideshow()
+                    
+                    if(self.userImages.count == self.student.imageUrls.count){
+                        self.animateimageSlideshow(count: 0)
+                    }
+                }
+            }
+        }
+    }
+    
+    func reloadYearLabel(page:Int){
+        if(yearOfUserImage[userImages[page]] == nil){
+            yearLabel.text = "Năm ?"
+        }
+        else{
+            yearLabel.text = "\(yearOfUserImage[userImages[page]]!)"
+        }
+        view.layoutIfNeeded()
+    }
+    
+    func setupimageSlideshow(){
+        let pageIndicator = UIPageControl()
+        imageSlideshow.pageIndicator = pageIndicator
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        imageSlideshow.addGestureRecognizer(gestureRecognizer)
         
         
+        imageSlideshow.currentPageChanged = { page in
+            DispatchQueue.main.async {
+                self.reloadYearLabel(page: page)
+            }
+        }
+    }
+    
+    @objc func didTap() {
+        selectedImage = userImages[imageSlideshow.currentPage]
+        performSegue(withIdentifier: "StudentDetailToImageDetailSegue", sender: self)
+    }
+    
+    func reloadimageSlideshow(){
+        var imageSources = [ImageSource]()
+        
+        for image in userImages{
+            imageSources.append(ImageSource(image: image))
+        }
+        
+        imageSlideshow.setImageInputs(imageSources)
+        
+        self.imageSlideshow.setCurrentPage(0, animated: true)
+    }
+    
+    func animateimageSlideshow(count:Int){
+        if(count <= (userImages.count-1)){
+            let deadlineTime = DispatchTime.now() + .milliseconds(count*1000)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                self.imageSlideshow.setCurrentPage(count, animated: true)
+                self.animateimageSlideshow(count: count + 1)
+            }
+        }
+        else{
+            self.imageSlideshow.setCurrentPage(0, animated: true)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let destination = segue.destination as? ImageDetailViewController{
+            destination.image = selectedImage
+        }
     }
     
 
