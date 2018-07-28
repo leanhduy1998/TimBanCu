@@ -15,7 +15,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var selectedSchool:School!
     var selectedClassNumber: String!
-    var selectedClassName:ClassName!
+    var selectedClassName:ClassDetail!
     
     //database
     var schoolAllClassesDetailsQuery:DatabaseQuery!
@@ -26,7 +26,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     var noResultAddNewClassBtn = NoResultButton(title: "Thêm Lớp Mới")
     
     //tableview
-    var classNames = [ClassName]()
+    var classNames = [ClassDetail]()
     
     //alert
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
@@ -64,7 +64,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
                     let schoolName = value!["schoolName"] as! String
                     let className = value!["className"] as! String
                     
-                    let classDetailModel = ClassName(classNumber: classNumber, uid: uid, schoolName: schoolName, className: className)
+                    let classDetailModel = ClassDetail(classNumber: classNumber, uid: uid, schoolName: schoolName, className: className)
                     
                     self.classNames.append(classDetailModel)
                 }
@@ -100,9 +100,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
-            destination.selectedSchool = selectedSchool
-            destination.selectedClassNumber = selectedClassNumber
-            destination.selectedClassName = selectedClassName
+            destination.selectedClassDetail = selectedClassName
         }
     }
     

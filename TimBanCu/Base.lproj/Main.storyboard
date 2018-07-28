@@ -726,7 +726,7 @@
                                 <rect key="frame" x="20" y="627" width="335" height="30"/>
                                 <state key="normal" title="Chat với Cả Lớp"/>
                                 <connections>
-                                    <segue destination="7BC-Pe-RkX" kind="show" id="cIt-t8-vdy"/>
+                                    <action selector="chatBtnPressed:" destination="0Ua-wx-Yxd" eventType="touchUpInside" id="gfz-1W-AK6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -757,10 +757,12 @@
                     <connections>
                         <outlet property="activityIndicator" destination="ASQ-UU-L0M" id="dfk-mh-aiJ"/>
                         <outlet property="addYourselfBtn" destination="IqM-AJ-ZHj" id="e4m-9H-Xb7"/>
+                        <outlet property="chatBtn" destination="uwq-kt-NPR" id="QVk-HT-Ycu"/>
                         <outlet property="searchTF" destination="2xj-Al-kTv" id="NDo-K3-AOt"/>
                         <outlet property="tableview" destination="kat-1D-gyg" id="vVA-71-lxi"/>
                         <segue destination="Pba-mN-D9k" kind="show" identifier="ClassDetailToStudentDetail" id="Odd-j8-hCV"/>
                         <segue destination="qXR-vQ-3Eo" kind="show" identifier="ClassDetailToAddYourInfoSegue" id="Dxp-NL-sv1"/>
+                        <segue destination="7BC-Pe-RkX" kind="show" identifier="ClassDetailToChatSegue" id="7iH-Ed-slJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiD-4Y-A4j" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,6 +24,7 @@ target 'TimBanCu' do
   pod 'FacebookShare'
 
   pod 'DropDown'
+  pod 'JSQMessagesViewController'
 
 
   target 'TimBanCuTests' do

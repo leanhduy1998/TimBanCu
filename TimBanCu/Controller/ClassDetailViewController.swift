@@ -12,6 +12,9 @@ import FirebaseDatabase
 class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var addYourselfBtn: UIButton!
+    
+    @IBOutlet weak var chatBtn: UIButton!
+    
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
     
@@ -23,9 +26,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var students = [Student]()
     var searchStudents = [Student]()
     
-    var selectedSchool:School!
-    var selectedClassNumber: String!
-    var selectedClassName:ClassName!
+    var selectedClassDetail:ClassDetail!
 
     //no result
     var noResultLabel = UILabel()
@@ -36,8 +37,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         updateTableviewVisibilityBasedOnSearchResult()
-        studentInClassRef = Database.database().reference().child("students").child(selectedSchool.name).child(selectedClassNumber).child(selectedClassName.className)
+        studentInClassRef = Database.database().reference().child("students").child(selectedClassDetail.schoolName).child(selectedClassDetail.classNumber).child(selectedClassDetail.className)
         
         startLoading()
         fetchData {
@@ -48,6 +50,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func showAddYourInfoBtnIfYouAreNotInTheClass(){
+        chatBtn.isEnabled = false
+        
         if(UserHelper.student == nil){
             addYourselfBtn.isHidden = false
             return
@@ -56,6 +60,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         for student in students{
             if(student.uid == UserHelper.uid){
                 addYourselfBtn.isHidden = true
+                chatBtn.isEnabled = true
             }
         }
     }    
@@ -112,7 +117,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
-            Database.database().reference().child("students").child(selectedSchool.name).child(selectedClassNumber).child(selectedClassName.className).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
+            Database.database().reference().child("students").child(selectedClassDetail.schoolName).child(selectedClassDetail.classNumber).child(selectedClassDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
                 if(error == nil){
                     DispatchQueue.main.async {
                         self.students.append(UserHelper.student)
@@ -122,15 +127,21 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
+    
+    @IBAction func chatBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ClassDetailToChatSegue", sender: self)
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
-            destination.selectedSchool = selectedSchool
-            destination.selectedClassNumber = selectedClassNumber
-            destination.selectedClassName = selectedClassName
+            destination.classDetail = selectedClassDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
             destination.selectedStudent = selectedStudent 
+        }
+        if let destination = segue.destination as? ChatViewController{
+            destination.classDetail = selectedClassDetail
         }
     }
 

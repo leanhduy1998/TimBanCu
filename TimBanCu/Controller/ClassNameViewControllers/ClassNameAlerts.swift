@@ -29,7 +29,7 @@ extension ClassNameViewController{
             let className = textField?.text
             if(!(className?.isEmpty)!){
                 
-                let classModel = ClassName(classNumber: self.selectedClassNumber, uid: UserHelper.uid, schoolName: self.selectedSchool.name, className: className!.uppercased())
+                let classModel = ClassDetail(classNumber: self.selectedClassNumber, uid: UserHelper.uid, schoolName: self.selectedSchool.name, className: className!.uppercased())
 
                 DispatchQueue.main.async {
                     self.classesDetailRef.child(classModel.getObjectKey()).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in

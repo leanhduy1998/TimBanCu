@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ClassName{
+class ClassDetail{
     //class Detail: 10A11
     // class name: Lớp 10
     
