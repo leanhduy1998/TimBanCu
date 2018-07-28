@@ -17,6 +17,7 @@ extension SchoolViewController{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolTableViewCell") as? SchoolTableViewCell
         cell?.schoolViewModel = SchoolViewModel(school: searchSchoolModels[indexPath.row])
+        cell?.selectedBackgroundView = customSelectionColorView
         return cell!
     }
     

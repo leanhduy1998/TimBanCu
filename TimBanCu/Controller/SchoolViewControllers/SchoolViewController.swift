@@ -26,6 +26,11 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var searchTFUnderline: UIView! = nil
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
     
     //alert
     
@@ -44,7 +49,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         

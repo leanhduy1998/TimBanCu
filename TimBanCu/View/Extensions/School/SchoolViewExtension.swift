@@ -55,7 +55,7 @@ extension SchoolViewController{
         }()
         
         view.addSubview(searchTFUnderline)
-        searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor).isActive = true
+        searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
         searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
         searchTFUnderline.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         searchTFUnderline.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
