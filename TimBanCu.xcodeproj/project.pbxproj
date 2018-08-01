@@ -45,6 +45,7 @@
 		1C6D51FC20FACCD100F8F5D7 /* SchoolViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */; };
 		1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */; };
 		1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */; };
+		1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */; };
 		1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
@@ -135,6 +136,7 @@
 		1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewExtension.swift; sourceTree = "<group>"; };
 		1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeExtension.swift; sourceTree = "<group>"; };
 		1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewExtension.swift; sourceTree = "<group>"; };
+		1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeYourInfoViewController.swift; sourceTree = "<group>"; };
 		1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoImageDetailViewController.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				1C784B682110F85200647C40 /* StudentDetail */,
 				1C1A98FA210CBBC800D20079 /* Chat */,
 				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
+				1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */,
 				1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */,
 				1C2E7376210919A9007EAE63 /* AddYourInfoImageSlideshow.swift in Sources */,
+				1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,
 				1CF50FE2210A3BDD00346EF9 /* SignInExtension.swift in Sources */,
 				1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */,

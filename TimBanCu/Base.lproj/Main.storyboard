@@ -359,10 +359,28 @@
                         <viewLayoutGuide key="safeArea" id="BRC-Tb-6NS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Công Cụ" id="jhb-hU-CHr"/>
+                    <connections>
+                        <segue destination="s0a-sR-lmJ" kind="show" identifier="SettingsToChangeInfoSegue" id="tvF-dB-Dpd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqR-jX-Afb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="2427"/>
+            <point key="canvasLocation" x="-642" y="2498"/>
+        </scene>
+        <!--Change Your Info View Controller-->
+        <scene sceneID="Qb5-ws-zyO">
+            <objects>
+                <viewController id="s0a-sR-lmJ" customClass="ChangeYourInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQ2-GQ-UiB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ebs-Ue-QHA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F60-Ot-qPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="2498"/>
         </scene>
         <!--Chọn Loại Trường-->
         <scene sceneID="lb0-ud-nEn">

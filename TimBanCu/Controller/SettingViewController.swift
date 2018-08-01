@@ -51,6 +51,13 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
             
             dismiss(animated: true, completion: nil)
         }
+        else if(settings[indexPath.row] == "Sửa Thông Tin Cá Nhân"){
+            if(UserHelper.student == nil){
+                
+            }
+            
+            performSegue(withIdentifier: "SettingsToChangeInfoSegue", sender: self)
+        }
     }
     
 
