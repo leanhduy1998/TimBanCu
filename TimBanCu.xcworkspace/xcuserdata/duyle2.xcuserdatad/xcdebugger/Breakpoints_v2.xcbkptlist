@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/SignInViewController.swift"
-            timestampString = "554482227.350017"
+            timestampString = "554827574.153055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "loginButtonDidCompleteLogin(_:result:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -180,45 +180,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/SignInViewController.swift"
-            timestampString = "554482227.350064"
+            timestampString = "554827574.153119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "loginButtonDidCompleteLogin(_:result:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TimBanCu.SignInViewController.loginButtonDidCompleteLogin(FacebookLogin.LoginButton, result: FacebookLogin.LoginResult) -&gt; ()"
-                  moduleName = "TimBanCu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Controller/SignInViewController.swift"
-                  timestampString = "554509671.085716"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "309">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in TimBanCu.SignInViewController.loginButtonDidCompleteLogin(FacebookLogin.LoginButton, result: FacebookLogin.LoginResult) -&gt; ()"
-                  moduleName = "TimBanCu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Controller/SignInViewController.swift"
-                  timestampString = "554509671.08893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -227,13 +195,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TimBanCu/Helper/UserHelper.swift"
-            timestampString = "554509671.030939"
+            filePath = "TimBanCu/Controller/ImageDetailInAddInfoViewController.swift"
+            timestampString = "554760042.831996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "getStudentFromDatabase(uid:completionHandler:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

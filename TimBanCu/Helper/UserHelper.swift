@@ -14,6 +14,12 @@ class UserHelper{
     static var student:Student!
     
     static func getStudentFromDatabase(uid:String,completionHandler: @escaping (_ student:Student) -> Void){
+        
+        
+        getPublicData(uid: uid, completionHandler: completionHandler)
+    }
+    
+    private static func getPublicData(uid:String,completionHandler: @escaping (_ student:Student) -> Void){
         let student = Student()
         student.uid = uid
         Database.database().reference().child("publicUserProfile").child(uid).observeSingleEvent(of: .value, with: { (publicSS) in
@@ -21,7 +27,6 @@ class UserHelper{
             if(!publicSS.hasChildren()){
                 completionHandler(Student())
             }
-            
             
             for snap in publicSS.children{
                 let key = (snap as! DataSnapshot).key as! String
@@ -49,29 +54,33 @@ class UserHelper{
                 }
             }
             
-            if(student.isStudentInfoCompleted()){
-                completionHandler(student)
-            }
+            getPrivateData(student: student, completionHandler: completionHandler)
+            
         })
-        
-        Database.database().reference().child("privateUserProfile").observeSingleEvent(of: .value, with: { (privateSS) in
+    }
+    
+    private static func getPrivateData(student:Student,completionHandler: @escaping (_ student:Student) -> Void){
+        Database.database().reference().child("privateUserProfile").child(uid).observeSingleEvent(of: .value, with: { (privateSS) in
             
-            print(privateSS)
-            
-            for snap in privateSS.children{
-                let key = (snap as! DataSnapshot).key as! String
-                if(key == "phoneNumber"){
-                    let phoneNumber = (snap as! DataSnapshot).value as! String
-                    student.phoneNumber = phoneNumber
-                }
-                else if(key == "email"){
-                    let email = (snap as! DataSnapshot).value as! String
-                    student.email = email
-                }
-            }
-            if(student.isStudentInfoCompleted()){
+            if(!privateSS.hasChildren()){
                 completionHandler(student)
             }
+            else{
+                for snap in privateSS.children{
+                    let key = (snap as! DataSnapshot).key as! String
+                    if(key == "phoneNumber"){
+                        let phoneNumber = (snap as! DataSnapshot).value as! String
+                        student.phoneNumber = phoneNumber
+                    }
+                    else if(key == "email"){
+                        let email = (snap as! DataSnapshot).value as! String
+                        student.email = email
+                    }
+                }
+                
+                completionHandler(student)
+            }
+            
         })
     }
 }

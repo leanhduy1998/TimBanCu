@@ -5,6 +5,11 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - DKImagePickerController (3.8.1):
+    - DKImagePickerController/Camera (= 3.8.1)
+    - DKImagePickerController/ImageManager (= 3.8.1)
+  - DKImagePickerController/Camera (3.8.1)
+  - DKImagePickerController/ImageManager (3.8.1)
   - DropDown (2.3.2)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
@@ -93,6 +98,7 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
+  - DKImagePickerController
   - DropDown
   - FacebookCore
   - FacebookLogin
@@ -109,6 +115,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
+    - DKImagePickerController
     - DropDown
     - FacebookCore
     - FacebookLogin
@@ -135,6 +142,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  DKImagePickerController: 51ad6ee2ba05414bb741db54a72cd7f4fb178e34
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
@@ -159,6 +167,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: b76b84b6a2118a0cb9dda56f445b0afb67fd28a4
+PODFILE CHECKSUM: 6f7aa9033652aeccd86c9a5e6ee2b58bdbf806de
 
 COCOAPODS: 1.5.2

@@ -45,7 +45,7 @@
 		1C6D51FC20FACCD100F8F5D7 /* SchoolViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */; };
 		1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */; };
 		1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */; };
-		1C85E3202103F61200124FDA /* ImageDetailInAddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85E31F2103F61200124FDA /* ImageDetailInAddInfoViewController.swift */; };
+		1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
@@ -53,6 +53,7 @@
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
 		1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */; };
 		1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */; };
+		1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */; };
 		1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */; };
 		1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */; };
 		1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7B20A8197B00B78E6A /* Main.storyboard */; };
@@ -60,7 +61,7 @@
 		1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */; };
 		1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */; };
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
-		1CCA5CC6210D13FE00BF79B3 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA5CC5210D13FE00BF79B3 /* ImageDetailViewController.swift */; };
+		1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */; };
 		1CE24D0220FBE153008DE3FB /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* UserHelper.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* School.swift */; };
 		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
@@ -134,7 +135,7 @@
 		1C6D51FB20FACCD100F8F5D7 /* SchoolViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewExtension.swift; sourceTree = "<group>"; };
 		1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeExtension.swift; sourceTree = "<group>"; };
 		1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewExtension.swift; sourceTree = "<group>"; };
-		1C85E31F2103F61200124FDA /* ImageDetailInAddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailInAddInfoViewController.swift; sourceTree = "<group>"; };
+		1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoImageDetailViewController.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewController.swift; sourceTree = "<group>"; };
 		1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhochanoi.txt; sourceTree = "<group>"; };
+		1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImagesViewController.swift; sourceTree = "<group>"; };
 		1CBF5C7420A8197B00B78E6A /* TimBanCu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimBanCu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 		1CBF5C9320A8197C00B78E6A /* TimBanCuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimBanCuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimBanCuUITests.swift; sourceTree = "<group>"; };
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CCA5CC5210D13FE00BF79B3 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentImageDetailViewController.swift; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
@@ -281,26 +283,43 @@
 			isa = PBXGroup;
 			children = (
 				1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */,
+				1C784B672110F7D500647C40 /* AddYourInfoExtensions */,
+				1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */,
+			);
+			path = AddYourInfo;
+			sourceTree = "<group>";
+		};
+		1C784B672110F7D500647C40 /* AddYourInfoExtensions */ = {
+			isa = PBXGroup;
+			children = (
 				1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */,
 				1C2E737721091A3A007EAE63 /* AddYourInfoAlert.swift */,
 				1C1A98F8210CA9ED00D20079 /* AddYourInfoImage.swift */,
 			);
-			path = AddYourInfo;
+			path = AddYourInfoExtensions;
+			sourceTree = "<group>";
+		};
+		1C784B682110F85200647C40 /* StudentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1CF50FE3210A738F00346EF9 /* StudentDetailViewController.swift */,
+				1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */,
+			);
+			path = StudentDetail;
 			sourceTree = "<group>";
 		};
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1C3ADA8320F6B6F80041421F /* SignInViewController.swift */,
 				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
+				1C3ADA8320F6B6F80041421F /* SignInViewController.swift */,
 				1C0A039A20F5162100E105A9 /* SchoolViewControllers */,
 				1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */,
 				1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */,
 				1C53F4F420FD408A00F4ACEB /* ClassDetailViewController.swift */,
 				1C2E737421091990007EAE63 /* AddYourInfo */,
-				1C85E31F2103F61200124FDA /* ImageDetailInAddInfoViewController.swift */,
-				1CF50FE3210A738F00346EF9 /* StudentDetailViewController.swift */,
-				1CCA5CC5210D13FE00BF79B3 /* ImageDetailViewController.swift */,
+				1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */,
+				1C784B682110F85200647C40 /* StudentDetail */,
 				1C1A98FA210CBBC800D20079 /* Chat */,
 				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
 			);
@@ -669,6 +688,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimBanCu/Pods-TimBanCu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -688,6 +708,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -731,7 +752,7 @@
 				1C2E7376210919A9007EAE63 /* AddYourInfoImageSlideshow.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,
 				1CF50FE2210A3BDD00346EF9 /* SignInExtension.swift in Sources */,
-				1C85E3202103F61200124FDA /* ImageDetailInAddInfoViewController.swift in Sources */,
+				1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */,
 				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1C53F4F520FD408A00F4ACEB /* ClassDetailViewController.swift in Sources */,
@@ -754,8 +775,9 @@
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
+				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
 				1C2E737821091A3A007EAE63 /* AddYourInfoAlert.swift in Sources */,
-				1CCA5CC6210D13FE00BF79B3 /* ImageDetailViewController.swift in Sources */,
+				1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */,
 				1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */,
 				1C6D51FC20FACCD100F8F5D7 /* SchoolViewExtension.swift in Sources */,
 				1C53F4F920FD44D200F4ACEB /* SettingViewController.swift in Sources */,

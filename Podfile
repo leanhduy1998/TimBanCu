@@ -26,6 +26,8 @@ target 'TimBanCu' do
   pod 'DropDown'
   pod 'JSQMessagesViewController'
 
+  pod 'DKImagePickerController', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
+
 
   target 'TimBanCuTests' do
     inherit! :search_paths

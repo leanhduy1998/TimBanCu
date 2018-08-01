@@ -17,6 +17,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
     
     var ref: DatabaseReference!
@@ -30,6 +31,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = Database.database().reference()
         
         setupShimmeringText()
@@ -38,7 +40,6 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         
         signInAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         
-       
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -130,7 +131,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             if(student.isStudentInfoCompleted()){
                 UserHelper.student = student
             }
-        
+            
             completionHandler()
         }
     }

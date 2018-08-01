@@ -91,7 +91,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="175"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5S-wc-uGJ" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="17.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="17" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="i4m-gg-NFY"/>
@@ -99,14 +99,14 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elementary" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-c8-Gxu">
-                                                        <rect key="frame" x="59" y="47.5" width="40" height="40"/>
+                                                        <rect key="frame" x="59.5" y="47" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="LdX-Rd-qKX"/>
                                                             <constraint firstAttribute="width" constant="40" id="eWe-ge-GWk"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xns-ln-A9o">
-                                                        <rect key="frame" x="8" y="137.5" width="141.5" height="27.5"/>
+                                                        <rect key="frame" x="8" y="137" width="141.5" height="28"/>
                                                         <state key="normal" title="Tiểu Học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -138,13 +138,13 @@
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="175"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-LE-hq9">
-                                                        <rect key="frame" x="8" y="137.5" width="141.5" height="27.5"/>
+                                                        <rect key="frame" x="8" y="137" width="141.5" height="28"/>
                                                         <state key="normal" title="Trung học cơ sở">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97O-bR-YGu" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="17.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="17" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="MAb-P5-5Uf"/>
@@ -152,7 +152,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle" translatesAutoresizingMaskIntoConstraints="NO" id="1SP-lr-A44">
-                                                        <rect key="frame" x="59" y="47.5" width="40" height="40"/>
+                                                        <rect key="frame" x="59.5" y="47" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="jHv-Ls-daM"/>
                                                             <constraint firstAttribute="width" constant="40" id="ri4-J9-iQc"/>
@@ -190,7 +190,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="174.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-jJ-FoT" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="17" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="17" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="VG8-vQ-9Er"/>
@@ -198,7 +198,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle" translatesAutoresizingMaskIntoConstraints="NO" id="HgZ-Bc-qKv">
-                                                        <rect key="frame" x="59" y="47" width="40" height="40"/>
+                                                        <rect key="frame" x="59.5" y="47" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="Nnl-7c-Dkl"/>
                                                             <constraint firstAttribute="height" constant="40" id="rzz-RK-LnT"/>
@@ -238,7 +238,7 @@
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="174.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJH-jV-zSA" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="17" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="17" width="100" height="100"/>
                                                         <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="XaY-BO-XIN"/>
@@ -246,7 +246,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-yc-J8G">
-                                                        <rect key="frame" x="59" y="47" width="40" height="40"/>
+                                                        <rect key="frame" x="59.5" y="47" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="1DO-ku-qMj"/>
                                                             <constraint firstAttribute="width" constant="40" id="alb-Ex-Ndp"/>
@@ -327,7 +327,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoB-So-DKI">
-                                                    <rect key="frame" x="166" y="29" width="42" height="21"/>
+                                                    <rect key="frame" x="166.5" y="29" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -343,6 +343,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rp0-Iy-xJl" id="Atb-Zc-RWu"/>
+                                    <outlet property="delegate" destination="rp0-Iy-xJl" id="kyv-WF-GRL"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -728,7 +732,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-UU-L0M">
-                                <rect key="frame" x="177.5" y="323" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwq-kt-NPR">
                                 <rect key="frame" x="20" y="627" width="335" height="30"/>
@@ -806,7 +810,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-ZN-DIM">
-                                <rect key="frame" x="149" y="404" width="78.5" height="20.5"/>
+                                <rect key="frame" x="148.5" y="404" width="78.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gH2-QW-773"/>
                                 </constraints>
@@ -911,10 +915,10 @@
             </objects>
             <point key="canvasLocation" x="5133.6000000000004" y="1609.745127436282"/>
         </scene>
-        <!--Image Detail View Controller-->
+        <!--Student Image Detail View Controller-->
         <scene sceneID="93R-J4-bdN">
             <objects>
-                <viewController id="jpM-qc-IyM" customClass="ImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jpM-qc-IyM" customClass="StudentImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W0S-X9-HpU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1065,18 +1069,11 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="20" y="84" width="335" height="191.5"/>
+                                <rect key="frame" x="20" y="84" width="335" height="221.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-Nk-j7W">
-                                <rect key="frame" x="20" y="316" width="335" height="30"/>
-                                <state key="normal" title="Thêm Nhiều Hình Của Bạn"/>
-                                <connections>
-                                    <action selector="addPictureBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="dOx-eN-6NJ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDn-Vc-2hg">
-                                <rect key="frame" x="163.5" y="285.5" width="48.5" height="20.5"/>
+                                <rect key="frame" x="163.5" y="315.5" width="48.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1086,16 +1083,13 @@
                         <constraints>
                             <constraint firstItem="uh6-PM-d0O" firstAttribute="leading" secondItem="YxC-m2-ZNJ" secondAttribute="leading" constant="20" id="9Ux-Yh-63P"/>
                             <constraint firstItem="vDn-Vc-2hg" firstAttribute="top" secondItem="Mrf-fB-Nle" secondAttribute="bottom" constant="10" id="9qQ-94-ssW"/>
-                            <constraint firstItem="uh6-PM-d0O" firstAttribute="top" secondItem="rOe-Nk-j7W" secondAttribute="bottom" constant="10" id="DLG-gh-BZ2"/>
                             <constraint firstItem="YxC-m2-ZNJ" firstAttribute="bottom" secondItem="uh6-PM-d0O" secondAttribute="bottom" constant="20" id="Lh7-Kn-49T"/>
                             <constraint firstItem="Mrf-fB-Nle" firstAttribute="leading" secondItem="YxC-m2-ZNJ" secondAttribute="leading" constant="20" id="P1w-mc-p0O"/>
-                            <constraint firstItem="YxC-m2-ZNJ" firstAttribute="trailing" secondItem="rOe-Nk-j7W" secondAttribute="trailing" constant="20" id="ftA-fw-sig"/>
                             <constraint firstItem="YxC-m2-ZNJ" firstAttribute="trailing" secondItem="uh6-PM-d0O" secondAttribute="trailing" constant="20" id="gXh-K6-yUJ"/>
                             <constraint firstItem="vDn-Vc-2hg" firstAttribute="centerX" secondItem="GBj-44-A6P" secondAttribute="centerX" id="ha6-32-d23"/>
+                            <constraint firstItem="uh6-PM-d0O" firstAttribute="top" secondItem="vDn-Vc-2hg" secondAttribute="bottom" constant="20" id="mAZ-o3-svM"/>
                             <constraint firstItem="Mrf-fB-Nle" firstAttribute="top" secondItem="YxC-m2-ZNJ" secondAttribute="top" constant="20" id="qJh-FR-OP3"/>
-                            <constraint firstItem="rOe-Nk-j7W" firstAttribute="top" secondItem="vDn-Vc-2hg" secondAttribute="bottom" constant="10" id="qjU-1w-ch3"/>
                             <constraint firstItem="YxC-m2-ZNJ" firstAttribute="trailing" secondItem="Mrf-fB-Nle" secondAttribute="trailing" constant="20" id="rdy-k3-MoV"/>
-                            <constraint firstItem="rOe-Nk-j7W" firstAttribute="leading" secondItem="YxC-m2-ZNJ" secondAttribute="leading" constant="20" id="sFi-2K-zfc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YxC-m2-ZNJ"/>
                     </view>
@@ -1110,6 +1104,7 @@
                         <outlet property="yearLabel" destination="vDn-Vc-2hg" id="1JJ-h5-UO0"/>
                         <segue destination="czf-XK-NAM" kind="unwind" identifier="AddYourInfoToClassDetailSegue" unwindAction="unwindToClassDetailViewControllerWithSegue:" id="aHP-T0-vfo"/>
                         <segue destination="LmB-rK-hkQ" kind="show" identifier="AddYourInfoToImageDetail" id="Z9F-1r-sr2"/>
+                        <segue destination="dsF-1E-EKt" kind="show" identifier="AddYourInfoToAddImagesSegue" id="tOo-hj-d07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYX-d4-Wjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1132,10 +1127,10 @@
             </objects>
             <point key="canvasLocation" x="4174" y="3113"/>
         </scene>
-        <!--Image Detail In Add Info View Controller-->
+        <!--Add Info Image Detail View Controller-->
         <scene sceneID="Kau-Fn-r9Z">
             <objects>
-                <viewController id="LmB-rK-hkQ" customClass="ImageDetailInAddInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LmB-rK-hkQ" customClass="AddInfoImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEA-ZB-XK9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1162,7 +1157,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-hj-4Qn">
-                                <rect key="frame" x="149.5" y="636" width="75.5" height="21"/>
+                                <rect key="frame" x="150" y="636" width="75.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1192,7 +1187,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkm-r6-nMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hR4-5v-gQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6100" y="2443.6281859070468"/>
+            <point key="canvasLocation" x="6460" y="2353"/>
+        </scene>
+        <!--Add Images View Controller-->
+        <scene sceneID="j38-tR-xaS">
+            <objects>
+                <viewController id="dsF-1E-EKt" customClass="AddImagesViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KZn-iI-zH2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NIU-eh-Um6"/>
+                    </view>
+                    <connections>
+                        <segue destination="Fin-wa-YKK" kind="unwind" identifier="unwindToAddYourInfoControllerWithSegue" unwindAction="unwindToAddYourInfoControllerWithSegue:" id="gUq-Ra-LTE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-rF-zAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Fin-wa-YKK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6460" y="3113"/>
         </scene>
     </scenes>
     <resources>

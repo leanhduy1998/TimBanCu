@@ -48,20 +48,30 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         setupAlerts()
         setupImageSlideShow()
         reloadImageSlideShow()
-        
-        let storage = Storage.storage()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateImageSlideShow(count: 0)
         
+        if(userImages.count == 0){
+            userImages.append(#imageLiteral(resourceName: "add-user"))
+        }
         
-        if(userImages.count>0){
+        if(userImages.count>1){
            reloadYearLabel(page: imageSlideShow.currentPage)
         }
         reloadImageSlideShow()
+        
+        imageSlideShow.currentPageChanged = { page in
+            
+            if(page == self.userImages.count-1){
+                self.yearLabel.isHidden = true
+            }
+            else{
+                self.yearLabel.isHidden = false
+            }
+        }
     }
     
     @IBAction func phoneDropDownBtnPressed(_ sender: Any) {
@@ -76,6 +86,8 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
 
         var filenames = [UIImage:String]()
         let time = Date().timeIntervalSince1970.binade
+        
+        userImages.removeLast()
         
         for x in 0...(self.userImages.count-1){
             let str = "\(String(Int(time)+x))"
@@ -117,7 +129,12 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         var dic = [String:Int]()
         
         for image in userImages{
-            dic[imageFileNames[image]!] = yearOfUserImage[image]
+            if(yearOfUserImage[image] == nil){
+                dic[imageFileNames[image]!] = -1
+            }
+            else{
+                 dic[imageFileNames[image]!] = yearOfUserImage[image]
+            }
         }
         
         publicDic["images"] = dic
@@ -166,9 +183,6 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
                 }
             }
         }
-        
-        
-        
     }
     
     @IBAction func showPrivacyAlertBtnPressed(_ sender: Any) {
@@ -177,10 +191,13 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ImageDetailInAddInfoViewController{
+        if let destination = segue.destination as? AddInfoImageDetailViewController{
             destination.indexForDeletion = imageSlideShow.currentPage
             destination.userImages = userImages
             destination.yearOfUserImage = yearOfUserImage
+        }
+        if let destination = segue.destination as? AddImagesViewController{
+            destination.currentImages = userImages
         }
 
     }

@@ -8,6 +8,14 @@
 
 import UIKit
 
+import GoogleSignIn
+
+import FacebookCore
+import FacebookLogin
+
+import Firebase
+import FirebaseAuth
+
 class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     var settings = ["Sửa Thông Tin Cá Nhân","Đăng Xuất"]
@@ -26,6 +34,23 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as? SettingTableViewCell
         cell?.settingLabel.text = settings[indexPath.row]
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(settings[indexPath.row] == "Đăng Xuất"){
+            GIDSignIn.sharedInstance().signOut()
+            
+            let loginManager = LoginManager()
+            loginManager.logOut()
+
+            do {
+                try Auth.auth().signOut()
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+            
+            dismiss(animated: true, completion: nil)
+        }
     }
     
 
