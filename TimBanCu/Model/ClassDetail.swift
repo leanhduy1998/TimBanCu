@@ -16,6 +16,15 @@ class ClassDetail{
     var uid:String!
     var schoolName:String!
     var classNumber:String!
+    var classYear:String!
+    
+    init(classNumber:String,uid:String, schoolName:String, className:String,classYear:String){
+        self.classNumber = classNumber
+        self.uid = uid
+        self.schoolName = schoolName
+        self.className = className
+        self.classYear = classYear
+    }
     
     init(classNumber:String,uid:String, schoolName:String, className:String){
         self.classNumber = classNumber
@@ -29,6 +38,6 @@ class ClassDetail{
     }
     
     func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid,"classNumber":classNumber,"schoolName":schoolName,"className":className]
+        return ["uid":uid,"classNumber":classNumber,"schoolName":schoolName,"className":className,"classYear":classYear]
     }
 }

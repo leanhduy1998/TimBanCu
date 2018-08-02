@@ -41,7 +41,7 @@ extension ClassNameViewController{
     }
     
     func updateTableviewVisibilityBasedOnSearchResult(){
-        if(classNames.count == 0){
+        if(classDetails.count == 0){
             noResultLabel.isHidden = false
             noResultAddNewClassBtn.isHidden = false
             tableview.isHidden = true

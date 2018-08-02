@@ -13,9 +13,9 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableview: UITableView!
     
-    var selectedSchool:School!
-    var selectedClassNumber: String!
-    var selectedClassName:ClassDetail!
+    var school:School!
+    var classNumber: String!
+    var classDetail:ClassDetail!
     
     //database
     var schoolAllClassesDetailsQuery:DatabaseQuery!
@@ -26,7 +26,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     var noResultAddNewClassBtn = NoResultButton(title: "Thêm Lớp Mới")
     
     //tableview
-    var classNames = [ClassDetail]()
+    var classDetails = [ClassDetail]()
     
     //alert
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
@@ -55,23 +55,23 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func fetchData(){
-        classNames.removeAll()
+        classDetails.removeAll()
         
-        schoolAllClassesDetailsQuery = classesDetailRef.queryOrdered(byChild: "schoolName").queryEqual(toValue : selectedSchool.name)
+        schoolAllClassesDetailsQuery = classesDetailRef.queryOrdered(byChild: "schoolName").queryEqual(toValue : school.name)
         schoolAllClassesDetailsQuery.observeSingleEvent(of: .value) { (snapshot) in
             for snap in snapshot.children {
                 let value = (snap as! DataSnapshot).value as? [String:Any]
                 
                 let classNumber = value!["classNumber"] as! String
                 
-                if(classNumber == self.selectedClassNumber){
+                if(classNumber == self.classNumber){
                     let uid = value!["uid"] as! String
                     let schoolName = value!["schoolName"] as! String
                     let className = value!["className"] as! String
                     
                     let classDetailModel = ClassDetail(classNumber: classNumber, uid: uid, schoolName: schoolName, className: className)
                     
-                    self.classNames.append(classDetailModel)
+                    self.classDetails.append(classDetailModel)
                 }
             }
             
@@ -83,20 +83,20 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classNames.count
+        return classDetails.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNameTableViewCell") as? ClassNameTableViewCell
-        cell?.classDetailViewModel = ClassNameViewModel(classDetail: classNames[indexPath.row])
+        cell?.classDetailViewModel = ClassNameViewModel(classDetail: classDetails[indexPath.row])
         cell?.selectedBackgroundView = customSelectionColorView
         
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedClassName = classNames[indexPath.row]
-        performSegue(withIdentifier: "ClassNameToClassDetailSegue", sender: self)
+        classDetail = classDetails[indexPath.row]
+        performSegue(withIdentifier: "ClassNameToClassYear", sender: self)
     }
     
     @objc func addNewClassDetailBtnPressed(_ sender: UIButton?) {
@@ -104,8 +104,8 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ClassDetailViewController{
-            destination.selectedClassDetail = selectedClassName
+        if let destination = segue.destination as? ClassYearViewController{
+            destination.classDetail = classDetail
         }
     }
     

@@ -501,12 +501,173 @@
                         <outlet property="tableview" destination="8is-0m-uwS" id="Irv-7K-GZt"/>
                         <outlet property="view" destination="m1V-Kt-c2e" id="AkV-Ay-dPY"/>
                         <segue destination="fca-ua-7Ym" kind="show" identifier="schoolToClassSegue" id="oPt-Bs-nhp"/>
-                        <segue destination="C1b-Cy-wML" kind="show" id="GiZ-LZ-fZI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ls-mX-pf7" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1273" y="1610"/>
+        </scene>
+        <!--Tên Trường-->
+        <scene sceneID="hlS-7e-pHi">
+            <objects>
+                <viewController id="VKK-rM-WxU" customClass="SchoolViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oU7-zE-SoM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-GA-n35">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SchoolTableViewCell" rowHeight="100" id="ohx-ZB-RWl" customClass="SchoolTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ohx-ZB-RWl" id="SIg-xi-pjJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iNi-SD-JOL">
+                                                    <rect key="frame" x="90" y="15" width="270" height="69.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Nguyễn Thanh Tuyền" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-L0-9WA">
+                                                            <rect key="frame" x="23" y="0.0" width="224.5" height="40"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="13 Đống Đa Phường 2 Quận Tân Bình" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-dC-2Q6">
+                                                            <rect key="frame" x="30.5" y="40" width="209" height="29.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="EyM-0T-ORx">
+                                                    <rect key="frame" x="15" y="20" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Pby-AL-EQ5"/>
+                                                        <constraint firstAttribute="width" secondItem="EyM-0T-ORx" secondAttribute="height" multiplier="1:1" id="tDT-HN-mCF"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="iNi-SD-JOL" secondAttribute="trailing" constant="15" id="AoW-UF-1yY"/>
+                                                <constraint firstItem="iNi-SD-JOL" firstAttribute="leading" secondItem="EyM-0T-ORx" secondAttribute="trailing" constant="15" id="GNl-1z-ber"/>
+                                                <constraint firstItem="EyM-0T-ORx" firstAttribute="centerY" secondItem="SIg-xi-pjJ" secondAttribute="centerY" id="HTl-AY-zp6"/>
+                                                <constraint firstAttribute="bottom" secondItem="iNi-SD-JOL" secondAttribute="bottom" constant="15" id="hoI-Rp-UIe"/>
+                                                <constraint firstItem="iNi-SD-JOL" firstAttribute="top" secondItem="SIg-xi-pjJ" secondAttribute="top" constant="15" id="oNa-O4-fON"/>
+                                                <constraint firstItem="EyM-0T-ORx" firstAttribute="leading" secondItem="SIg-xi-pjJ" secondAttribute="leadingMargin" id="x5w-bI-DbH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageview" destination="EyM-0T-ORx" id="wl2-iI-w72"/>
+                                            <outlet property="schoolAddress" destination="cdV-dC-2Q6" id="TeV-X2-Qo0"/>
+                                            <outlet property="schoolName" destination="Lie-L0-9WA" id="M9I-7N-TGv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VKK-rM-WxU" id="CUo-VA-Xwz"/>
+                                    <outlet property="delegate" destination="VKK-rM-WxU" id="s0q-N9-s1a"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm Tên Trường (Có Dấu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXr-Qf-GY7">
+                                <rect key="frame" x="30" y="94" width="315" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="VlP-HU-yaI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="93K-ra-uMo" firstAttribute="trailing" secondItem="kXs-GA-n35" secondAttribute="trailing" id="2p2-jG-G2p"/>
+                            <constraint firstItem="93K-ra-uMo" firstAttribute="trailing" secondItem="MXr-Qf-GY7" secondAttribute="trailing" constant="30" id="Bcc-yP-Qfr"/>
+                            <constraint firstItem="MXr-Qf-GY7" firstAttribute="top" secondItem="93K-ra-uMo" secondAttribute="top" constant="30" id="QCk-j1-znp"/>
+                            <constraint firstItem="kXs-GA-n35" firstAttribute="leading" secondItem="93K-ra-uMo" secondAttribute="leading" id="V7E-27-Cac"/>
+                            <constraint firstItem="93K-ra-uMo" firstAttribute="bottom" secondItem="kXs-GA-n35" secondAttribute="bottom" id="rYd-Mq-Ha5"/>
+                            <constraint firstItem="MXr-Qf-GY7" firstAttribute="leading" secondItem="93K-ra-uMo" secondAttribute="leading" constant="30" id="tSS-CN-uQW"/>
+                            <constraint firstItem="kXs-GA-n35" firstAttribute="top" secondItem="MXr-Qf-GY7" secondAttribute="bottom" constant="10" id="wBC-cV-F2n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="93K-ra-uMo"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tên Trường" id="ufz-Nl-UrB">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fGK-8B-L6J"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchTF" destination="MXr-Qf-GY7" id="Rux-F2-bXF"/>
+                        <outlet property="tableview" destination="kXs-GA-n35" id="J1d-ev-S7K"/>
+                        <outlet property="view" destination="oU7-zE-SoM" id="kgk-bB-qBw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9p-sh-16C" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2238" y="2444"/>
+        </scene>
+        <!--Class Year View Controller-->
+        <scene sceneID="Fgs-5y-Lwy">
+            <objects>
+                <viewController id="B06-gw-SVi" customClass="ClassYearViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="szv-YH-82B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWp-TG-1zC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CJL-9i-MXJ" id="7Be-th-7fq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 1990" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l38-dN-TgJ">
+                                                    <rect key="frame" x="148" y="27" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="l38-dN-TgJ" firstAttribute="centerX" secondItem="7Be-th-7fq" secondAttribute="centerX" id="Kje-8n-gaq"/>
+                                                <constraint firstItem="l38-dN-TgJ" firstAttribute="centerY" secondItem="7Be-th-7fq" secondAttribute="centerY" id="kfS-Nq-Nhr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="yearLabel" destination="l38-dN-TgJ" id="v5e-by-9pG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="B06-gw-SVi" id="FPy-cB-UYQ"/>
+                                    <outlet property="delegate" destination="B06-gw-SVi" id="P2L-kT-RBE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OWp-TG-1zC" firstAttribute="leading" secondItem="Pjn-vq-FpG" secondAttribute="leading" id="65P-j1-2Md"/>
+                            <constraint firstItem="Pjn-vq-FpG" firstAttribute="trailing" secondItem="OWp-TG-1zC" secondAttribute="trailing" id="AvK-BF-Mze"/>
+                            <constraint firstItem="Pjn-vq-FpG" firstAttribute="bottom" secondItem="OWp-TG-1zC" secondAttribute="bottom" id="MTP-Fv-Apd"/>
+                            <constraint firstItem="OWp-TG-1zC" firstAttribute="top" secondItem="Pjn-vq-FpG" secondAttribute="top" id="gVX-ni-jyh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pjn-vq-FpG"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="OWp-TG-1zC" id="TvU-VL-ib4"/>
+                        <segue destination="0Ua-wx-Yxd" kind="show" identifier="ClassYearToClassDetailSegue" id="6lU-c4-lFJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Knf-Ah-ccH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4295" y="1610"/>
         </scene>
         <!--Chọn Lớp-->
         <scene sceneID="qlC-wb-wBY">
@@ -588,21 +749,6 @@
             </objects>
             <point key="canvasLocation" x="2237.5999999999999" y="1609.745127436282"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Kpb-G2-yZr">
-            <objects>
-                <viewController id="C1b-Cy-wML" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bmi-1l-LPA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="eyM-5t-jn2"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qa8-Ea-Odj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2238" y="2400"/>
-        </scene>
         <!--Tên Lớp-->
         <scene sceneID="PFi-RE-z0I">
             <objects>
@@ -671,7 +817,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="Aq1-bA-SrG" id="jQ7-d3-jN8"/>
-                        <segue destination="0Ua-wx-Yxd" kind="show" identifier="ClassNameToClassDetailSegue" id="nAk-Pn-Akz"/>
+                        <segue destination="B06-gw-SVi" kind="show" identifier="ClassNameToClassYear" id="4Ow-6o-u2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZh-Tf-SDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -800,7 +946,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiD-4Y-A4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4173.6000000000004" y="1609.745127436282"/>
+            <point key="canvasLocation" x="5570" y="1610"/>
         </scene>
         <!--Student Detail View Controller-->
         <scene sceneID="8bB-1L-bxH">
@@ -931,7 +1077,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bse-wl-145" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5133.6000000000004" y="1609.745127436282"/>
+            <point key="canvasLocation" x="6530" y="1610"/>
         </scene>
         <!--Student Image Detail View Controller-->
         <scene sceneID="93R-J4-bdN">
@@ -960,7 +1106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCY-2n-xsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6100" y="1610"/>
+            <point key="canvasLocation" x="7497" y="1610"/>
         </scene>
         <!--Add Your Info View Controller-->
         <scene sceneID="kXg-nW-OGY">
@@ -1128,7 +1274,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYX-d4-Wjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="czf-XK-NAM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5133.6000000000004" y="2443.6281859070468"/>
+            <point key="canvasLocation" x="6530" y="2444"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="XXC-U2-ifv">
@@ -1143,7 +1289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LE-fT-FNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4174" y="3113"/>
+            <point key="canvasLocation" x="5570" y="3113"/>
         </scene>
         <!--Add Info Image Detail View Controller-->
         <scene sceneID="Kau-Fn-r9Z">
@@ -1205,7 +1351,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkm-r6-nMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hR4-5v-gQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6460" y="2353"/>
+            <point key="canvasLocation" x="7857" y="2353"/>
         </scene>
         <!--Add Images View Controller-->
         <scene sceneID="j38-tR-xaS">
@@ -1224,7 +1370,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-rF-zAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Fin-wa-YKK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6460" y="3113"/>
+            <point key="canvasLocation" x="7857" y="3113"/>
         </scene>
     </scenes>
     <resources>

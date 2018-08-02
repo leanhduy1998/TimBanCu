@@ -46,6 +46,8 @@
 		1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */; };
 		1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */; };
 		1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */; };
+		1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E817211228C400D647D0 /* ClassYearViewController.swift */; };
+		1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */; };
 		1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
@@ -137,6 +139,8 @@
 		1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeExtension.swift; sourceTree = "<group>"; };
 		1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewExtension.swift; sourceTree = "<group>"; };
 		1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeYourInfoViewController.swift; sourceTree = "<group>"; };
+		1C83E817211228C400D647D0 /* ClassYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearViewController.swift; sourceTree = "<group>"; };
+		1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearTableViewCell.swift; sourceTree = "<group>"; };
 		1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoImageDetailViewController.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				1CF50FE1210A3BDD00346EF9 /* SignInExtension.swift */,
 				1C278C8220FE311800CCB7C0 /* School */,
 				1C278C8320FE313A00CCB7C0 /* ClassName */,
+				1C83E819211359DD00D647D0 /* ClassYear */,
 				1C278C8420FE315500CCB7C0 /* ClassDetail */,
 				1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */,
 				1C2E7370210916E7007EAE63 /* AddYourInfoExtension.swift */,
@@ -310,6 +315,14 @@
 			path = StudentDetail;
 			sourceTree = "<group>";
 		};
+		1C83E819211359DD00D647D0 /* ClassYear */ = {
+			isa = PBXGroup;
+			children = (
+				1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */,
+			);
+			path = ClassYear;
+			sourceTree = "<group>";
+		};
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +331,7 @@
 				1C0A039A20F5162100E105A9 /* SchoolViewControllers */,
 				1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */,
 				1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */,
+				1C83E817211228C400D647D0 /* ClassYearViewController.swift */,
 				1C53F4F420FD408A00F4ACEB /* ClassDetailViewController.swift */,
 				1C2E737421091990007EAE63 /* AddYourInfo */,
 				1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */,
@@ -747,10 +761,12 @@
 				1C2E7371210916E7007EAE63 /* AddYourInfoExtension.swift in Sources */,
 				1C3ADA9220FABA360041421F /* Trash.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
+				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
 				1C1A9906210CBFD700D20079 /* ChatMessage.swift in Sources */,
 				1C1A98FE210CBC7000D20079 /* ChatCollectionView.swift in Sources */,
 				1C53F4FB20FD455D00F4ACEB /* SettingTableViewCell.swift in Sources */,
 				1C6D520020FB9C9300F8F5D7 /* ClassNameViewExtension.swift in Sources */,
+				1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */,
 				1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */,
 				1C2E7376210919A9007EAE63 /* AddYourInfoImageSlideshow.swift in Sources */,
 				1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */,

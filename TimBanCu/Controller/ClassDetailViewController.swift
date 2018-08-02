@@ -32,7 +32,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var students = [Student]()
     var searchStudents = [Student]()
     
-    var selectedClassDetail:ClassDetail!
+    var classDetail:ClassDetail!
 
     //no result
     var noResultLabel = UILabel()
@@ -58,7 +58,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewWillAppear(animated)
         
         updateTableviewVisibilityBasedOnSearchResult()
-        studentInClassRef = Database.database().reference().child("students").child(selectedClassDetail.schoolName).child(selectedClassDetail.classNumber).child(selectedClassDetail.className)
+        studentInClassRef = Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(classDetail.classYear)
         
         startLoading()
         fetchData {
@@ -143,7 +143,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
-            Database.database().reference().child("students").child(selectedClassDetail.schoolName).child(selectedClassDetail.classNumber).child(selectedClassDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
+            Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
                 if(error == nil){
                     DispatchQueue.main.async {
                         self.students.append(UserHelper.student)
@@ -161,13 +161,13 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
-            destination.classDetail = selectedClassDetail
+            destination.classDetail = classDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
             destination.student = selectedStudent 
         }
         if let destination = segue.destination as? ChatViewController{
-            destination.classDetail = selectedClassDetail
+            destination.classDetail = classDetail
         }
     }
 
