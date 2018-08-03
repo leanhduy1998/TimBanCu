@@ -10,7 +10,34 @@ import Foundation
 import DropDown
 import UIKit
 
-extension AddYourInfoViewController{
+extension AddYourInfoViewController {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    func observeKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    @objc func keyboardShow() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.frame = CGRect(x: 0, y: -150, width: self.view.frame.width, height: self.view.frame.height)
+            
+            
+        }, completion: nil)
+    }
+    
+    @objc func keyboardHide() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.view.frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.height)! + 20, width: self.view.frame.width, height: self.view.frame.height)
+        }, completion: nil)
+    }
+    
     func setupPrivacyDropDowns(){
         phonePrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         emailPrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
