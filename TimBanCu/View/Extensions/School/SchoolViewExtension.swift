@@ -47,13 +47,6 @@ extension SchoolViewController{
     }
     
     func customizeSearchTF(){
-        searchTFUnderline = {
-            let view = UIView()
-            view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
-        
         view.addSubview(searchTFUnderline)
         searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
         searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
@@ -69,13 +62,6 @@ extension SchoolViewController{
         
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
-        
-        noResultLabel.text = ""
-        noResultLabel.textColor = UIColor.darkGray
-        noResultLabel.textAlignment = .center
-        noResultLabel.numberOfLines = 2
-        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
-        
 
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true

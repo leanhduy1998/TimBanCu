@@ -20,10 +20,16 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
-    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên trường?")
+    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?")
     var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
-    var searchTFUnderline: UIView! = nil
+    var searchTFUnderline: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
     let customSelectionColorView: UIView = {
@@ -58,8 +64,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         customizeSearchTF()
         
         tableview.isHidden = true
-        
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,6 +96,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
+        noResultLabel.isHidden = true
+        noResultAddNewSchoolBtn.isHidden = true
     }
     
     func fetchData(){
