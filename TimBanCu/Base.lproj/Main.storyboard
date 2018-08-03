@@ -501,16 +501,17 @@
                         <outlet property="tableview" destination="8is-0m-uwS" id="Irv-7K-GZt"/>
                         <outlet property="view" destination="m1V-Kt-c2e" id="AkV-Ay-dPY"/>
                         <segue destination="fca-ua-7Ym" kind="show" identifier="schoolToClassSegue" id="oPt-Bs-nhp"/>
+                        <segue destination="VKK-rM-WxU" kind="show" identifier="SchoolToMajorSegue" id="PDh-fw-Bf3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ls-mX-pf7" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1273" y="1610"/>
         </scene>
-        <!--Tên Trường-->
+        <!--Tên Khoa-->
         <scene sceneID="hlS-7e-pHi">
             <objects>
-                <viewController id="VKK-rM-WxU" customClass="SchoolViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VKK-rM-WxU" customClass="UniversityMajorViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oU7-zE-SoM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -519,60 +520,36 @@
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SchoolTableViewCell" rowHeight="100" id="ohx-ZB-RWl" customClass="SchoolTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" rowHeight="100" id="ohx-ZB-RWl" customClass="MajorTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ohx-ZB-RWl" id="SIg-xi-pjJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iNi-SD-JOL">
-                                                    <rect key="frame" x="90" y="15" width="270" height="69.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Nguyễn Thanh Tuyền" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-L0-9WA">
-                                                            <rect key="frame" x="23" y="0.0" width="224.5" height="40"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="13 Đống Đa Phường 2 Quận Tân Bình" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-dC-2Q6">
-                                                            <rect key="frame" x="30.5" y="40" width="209" height="29.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="EyM-0T-ORx">
-                                                    <rect key="frame" x="15" y="20" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="Pby-AL-EQ5"/>
-                                                        <constraint firstAttribute="width" secondItem="EyM-0T-ORx" secondAttribute="height" multiplier="1:1" id="tDT-HN-mCF"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoa Máy Tính" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-L0-9WA">
+                                                    <rect key="frame" x="130.5" y="40" width="114" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="iNi-SD-JOL" secondAttribute="trailing" constant="15" id="AoW-UF-1yY"/>
-                                                <constraint firstItem="iNi-SD-JOL" firstAttribute="leading" secondItem="EyM-0T-ORx" secondAttribute="trailing" constant="15" id="GNl-1z-ber"/>
-                                                <constraint firstItem="EyM-0T-ORx" firstAttribute="centerY" secondItem="SIg-xi-pjJ" secondAttribute="centerY" id="HTl-AY-zp6"/>
-                                                <constraint firstAttribute="bottom" secondItem="iNi-SD-JOL" secondAttribute="bottom" constant="15" id="hoI-Rp-UIe"/>
-                                                <constraint firstItem="iNi-SD-JOL" firstAttribute="top" secondItem="SIg-xi-pjJ" secondAttribute="top" constant="15" id="oNa-O4-fON"/>
-                                                <constraint firstItem="EyM-0T-ORx" firstAttribute="leading" secondItem="SIg-xi-pjJ" secondAttribute="leadingMargin" id="x5w-bI-DbH"/>
+                                                <constraint firstItem="Lie-L0-9WA" firstAttribute="centerY" secondItem="SIg-xi-pjJ" secondAttribute="centerY" id="agX-9O-jpi"/>
+                                                <constraint firstItem="Lie-L0-9WA" firstAttribute="centerX" secondItem="SIg-xi-pjJ" secondAttribute="centerX" id="lkh-Qx-8va"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageview" destination="EyM-0T-ORx" id="wl2-iI-w72"/>
-                                            <outlet property="schoolAddress" destination="cdV-dC-2Q6" id="TeV-X2-Qo0"/>
-                                            <outlet property="schoolName" destination="Lie-L0-9WA" id="M9I-7N-TGv"/>
+                                            <outlet property="majorLabel" destination="Lie-L0-9WA" id="dhB-NI-bPR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="VKK-rM-WxU" id="CUo-VA-Xwz"/>
-                                    <outlet property="delegate" destination="VKK-rM-WxU" id="s0q-N9-s1a"/>
+                                    <outlet property="dataSource" destination="VKK-rM-WxU" id="9b3-v9-8wg"/>
+                                    <outlet property="delegate" destination="VKK-rM-WxU" id="r4U-hP-9j5"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm Tên Trường (Có Dấu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXr-Qf-GY7">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm Tên Khoa (Có Dấu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXr-Qf-GY7">
                                 <rect key="frame" x="30" y="94" width="315" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="VlP-HU-yaI"/>
@@ -594,20 +571,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="93K-ra-uMo"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tên Trường" id="ufz-Nl-UrB">
+                    <navigationItem key="navigationItem" title="Tên Khoa" id="ufz-Nl-UrB">
                         <barButtonItem key="backBarButtonItem" title=" " id="fGK-8B-L6J"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="searchTF" destination="MXr-Qf-GY7" id="Rux-F2-bXF"/>
-                        <outlet property="tableview" destination="kXs-GA-n35" id="J1d-ev-S7K"/>
-                        <outlet property="view" destination="oU7-zE-SoM" id="kgk-bB-qBw"/>
+                        <outlet property="tableview" destination="kXs-GA-n35" id="1Ab-VP-qoL"/>
+                        <segue destination="B06-gw-SVi" kind="show" identifier="MajorToClassYearSegue" id="PUn-kT-WBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9p-sh-16C" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2238" y="2444"/>
+            <point key="canvasLocation" x="3249" y="2498"/>
         </scene>
         <!--Class Year View Controller-->
         <scene sceneID="Fgs-5y-Lwy">
@@ -1379,4 +1355,7 @@
         <image name="question" width="200" height="200"/>
         <image name="university" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PUn-kT-WBf"/>
+    </inferredMetricsTieBreakers>
 </document>

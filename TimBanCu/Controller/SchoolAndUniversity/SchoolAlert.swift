@@ -40,7 +40,8 @@ extension SchoolViewController{
                 let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: UserHelper.uid)
                
                 DispatchQueue.main.async {
-                    self.schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
+                    let schoolsRef = Database.database().reference().child("schools")
+                    schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
                         
                         if(err == nil){
                             DispatchQueue.main.async {

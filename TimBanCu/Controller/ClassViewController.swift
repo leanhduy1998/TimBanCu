@@ -12,7 +12,7 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableview: UITableView!
     var classes: [String]!
-    var selectedSchool:School!
+    var school:School!
     var selectedClass:String!
     
     override func viewDidLoad() {
@@ -43,7 +43,7 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassNameViewController{
-            destination.school = selectedSchool
+            destination.school = school
             destination.classNumber = selectedClass
         }
     }

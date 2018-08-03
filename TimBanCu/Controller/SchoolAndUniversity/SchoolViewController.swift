@@ -39,7 +39,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var schoolAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm trường", preferredStyle: .alert)
     
     //database
-    let schoolsRef = Database.database().reference().child("schools")
+    
     
     let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
     let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
@@ -168,7 +168,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             else if(selectedSchoolType == "thpt"){
                 destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
             }
-            destination.selectedSchool = selectedSchool
+            destination.school = selectedSchool
         }
     }
     

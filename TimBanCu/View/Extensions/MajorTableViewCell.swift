@@ -1,5 +1,5 @@
 //
-//  ClassYearTableViewCell.swift
+//  MajorTableViewCell.swift
 //  TimBanCu
 //
 //  Created by Duy Le 2 on 8/2/18.
@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ClassYearTableViewCell: UITableViewCell {
+class MajorTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var majorLabel: UILabel!
     
-    
+    var major:MajorDetail! = nil{
+        didSet{
+            majorLabel.text = major.majorName
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
