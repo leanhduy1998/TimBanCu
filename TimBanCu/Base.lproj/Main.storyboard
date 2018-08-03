@@ -594,7 +594,7 @@
             </objects>
             <point key="canvasLocation" x="3249" y="2498"/>
         </scene>
-        <!--Class Year View Controller-->
+        <!--Năm Học-->
         <scene sceneID="Fgs-5y-Lwy">
             <objects>
                 <viewController id="B06-gw-SVi" customClass="ClassYearViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
@@ -645,6 +645,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pjn-vq-FpG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Năm Học" id="aaF-AD-YmN">
+                        <barButtonItem key="backBarButtonItem" title=" " id="3ao-Js-ZCz"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="OWp-TG-1zC" id="TvU-VL-ib4"/>
                         <segue destination="0Ua-wx-Yxd" kind="show" identifier="ClassYearToClassDetailSegue" id="6lU-c4-lFJ"/>

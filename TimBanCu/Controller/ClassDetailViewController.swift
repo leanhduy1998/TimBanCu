@@ -35,7 +35,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var classDetail:ClassDetail!
 
     //no result
-    var noResultLabel = UILabel()
+    var noResultLabel = NoResultLabel(text: "Chưa có học sinh nào.\n Bạn có muốn thông tin của mình?")
     
     var studentInClassRef:DatabaseReference!
     var selectedStudent:Student!
@@ -56,6 +56,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noResultLabel.isHidden = true
         
         updateTableviewVisibilityBasedOnSearchResult()
         studentInClassRef = Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(classDetail.classYear)
@@ -67,6 +68,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 self.reloadData()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
     }
     
     func showAddYourInfoBtnIfYouAreNotInTheClass(){
