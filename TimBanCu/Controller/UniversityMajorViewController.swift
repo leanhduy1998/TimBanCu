@@ -18,6 +18,12 @@ class UniversityMajorViewController: UIViewController {
     var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
     var majorAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm trường", preferredStyle: .alert)
     
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
+    
     var school:School!
     
     var majors = [MajorDetail]()
@@ -25,9 +31,8 @@ class UniversityMajorViewController: UIViewController {
     
     var selectedMajor:MajorDetail!
     
+    
     @IBOutlet weak var tableview: UITableView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,13 +50,6 @@ class UniversityMajorViewController: UIViewController {
         
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewMajorBtn)
-        
-        noResultLabel.text = ""
-        noResultLabel.textColor = UIColor.darkGray
-        noResultLabel.textAlignment = .center
-        noResultLabel.numberOfLines = 2
-        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
@@ -167,7 +165,7 @@ extension UniversityMajorViewController:UITableViewDataSource,UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MajorTableViewCell") as! MajorTableViewCell
         cell.major = searchMajors[indexPath.row]
-        
+        cell.selectedBackgroundView = customSelectionColorView
         return cell
     }
     
