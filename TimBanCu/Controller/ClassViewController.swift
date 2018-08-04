@@ -17,7 +17,7 @@ class ClassViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableview.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
+        tableview.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
 
     }
 
