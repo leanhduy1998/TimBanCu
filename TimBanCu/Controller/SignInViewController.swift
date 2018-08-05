@@ -29,6 +29,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     var shimmerAppNameLabel = UILabel()
     let appNameLabel = UILabel()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

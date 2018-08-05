@@ -50,8 +50,8 @@ extension SignInViewController{
         view.addSubview(appNameLabel)
         view.addSubview(shimmerAppNameLabel)
         
-        appNameLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
-        shimmerAppNameLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 400)
+        appNameLabel.frame = CGRect(x: 0, y: -20, width: view.frame.width, height: 400)
+        shimmerAppNameLabel.frame = CGRect(x: 0, y: -20, width: view.frame.width, height: 400)
         
         let gradient = CAGradientLayer()
         gradient.frame = appNameLabel.bounds
