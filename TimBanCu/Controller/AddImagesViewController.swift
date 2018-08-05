@@ -30,7 +30,8 @@ class AddImagesViewController: UIViewController {
         
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             for asset in assets{
-                asset.fetchOriginalImage(true, completeBlock: { (image, something) in
+                
+                asset.fetchOriginalImage(completeBlock: { (image, something) in
                     
                     if(self.currentImages.count == 1){
                         self.currentImages.insert(image!, at: 0)

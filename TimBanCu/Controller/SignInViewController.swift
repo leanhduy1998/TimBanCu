@@ -17,8 +17,9 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-
-class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
+class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate, UITextFieldDelegate {
+    
+    
     
     var ref: DatabaseReference!
     
@@ -29,9 +30,19 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     var shimmerAppNameLabel = UILabel()
     let appNameLabel = UILabel()
 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
         
         ref = Database.database().reference()
         

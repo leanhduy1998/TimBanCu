@@ -35,35 +35,33 @@ extension SignInViewController{
     
     func setupShimmeringText() {
         shimmerAppNameLabel.text = "Tìm bạn cũ"
-        shimmerAppNameLabel.font = UIFont.systemFont(ofSize: 45, weight: .regular)
-        shimmerAppNameLabel.textColor = UIColor(red: 255/255, green: 158/255, blue: 0, alpha: 1.0)
+        shimmerAppNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 60)
+        shimmerAppNameLabel.textColor = UIColor(red: 255/255, green: 128/255, blue: 0, alpha: 1.0)
         shimmerAppNameLabel.textAlignment = .center
         
-        
         appNameLabel.text = "Tìm bạn cũ"
-        appNameLabel.font = UIFont.systemFont(ofSize: 45, weight: .regular)
-        appNameLabel.textColor = UIColor(red: 255/255, green: 158/255, blue: 0, alpha: 0.6)
+        appNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 60)
+        appNameLabel.textColor = UIColor(red: 255/255, green: 158/255, blue: 0, alpha: 1.0)
         appNameLabel.textAlignment = .center
-        
-        
         
         view.addSubview(appNameLabel)
         view.addSubview(shimmerAppNameLabel)
         
-        appNameLabel.frame = CGRect(x: 0, y: -20, width: view.frame.width, height: 400)
-        shimmerAppNameLabel.frame = CGRect(x: 0, y: -20, width: view.frame.width, height: 400)
+        appNameLabel.frame = CGRect(x: 0, y: 120, width: view.frame.width, height: 100)
+        shimmerAppNameLabel.frame = CGRect(x: 0, y: 120, width: view.frame.width, height: 100)
         
         let gradient = CAGradientLayer()
         gradient.frame = appNameLabel.bounds
         gradient.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
         gradient.locations = [0.0, 0.5, 1]
+        
         let angle = -60 * CGFloat.pi / 180
         gradient.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
-        
+
         shimmerAppNameLabel.layer.mask = gradient
-        
+
         let animation = CABasicAnimation(keyPath: "transform.translation.x")
-        animation.duration = 2
+        animation.duration = 3.5
         animation.repeatCount = Float.infinity
         animation.autoreverses = false
         animation.fromValue = -view.frame.width
