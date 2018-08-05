@@ -26,8 +26,8 @@ target 'TimBanCu' do
   pod 'DropDown'
   pod 'JSQMessagesViewController'
 
-  pod 'DKImagePickerController', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
-
+  pod 'DKImagePickerController', '~> 4.0.0-beta', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
+  pod 'lottie-ios'
 
   target 'TimBanCuTests' do
     inherit! :search_paths

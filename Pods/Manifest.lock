@@ -5,11 +5,39 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - DKImagePickerController (3.8.1):
-    - DKImagePickerController/Camera (= 3.8.1)
-    - DKImagePickerController/ImageManager (= 3.8.1)
-  - DKImagePickerController/Camera (3.8.1)
-  - DKImagePickerController/ImageManager (3.8.1)
+  - DKCamera (1.5.3)
+  - DKImagePickerController/Camera (4.0.0-beta2):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/Core (4.0.0-beta2):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.0.0-beta2)
+  - DKImagePickerController/InlineCamera (4.0.0-beta2):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoGallery (4.0.0-beta2):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.0.0-beta2)
+  - DKPhotoGallery (0.0.7):
+    - DKPhotoGallery/Core (= 0.0.7)
+    - DKPhotoGallery/Model (= 0.0.7)
+    - DKPhotoGallery/Preview (= 0.0.7)
+    - DKPhotoGallery/Resource (= 0.0.7)
+    - SDWebImage/GIF
+  - DKPhotoGallery/Core (0.0.7):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage/GIF
+  - DKPhotoGallery/Model (0.0.7):
+    - SDWebImage/GIF
+  - DKPhotoGallery/Preview (0.0.7):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage/GIF
+  - DKPhotoGallery/Resource (0.0.7):
+    - SDWebImage/GIF
   - DropDown (2.3.2)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
@@ -62,6 +90,7 @@ PODS:
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FLAnimatedImage (1.0.12)
   - GoogleSignIn (4.1.2):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -91,14 +120,21 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - leveldb-library (1.20)
+  - lottie-ios (2.5.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SDWebImage/Core (4.4.2)
+  - SDWebImage/GIF (4.4.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
 
 DEPENDENCIES:
-  - DKImagePickerController
+  - DKImagePickerController/Camera (~> 4.0.0-beta)
+  - DKImagePickerController/InlineCamera (~> 4.0.0-beta)
+  - DKImagePickerController/PhotoGallery (~> 4.0.0-beta)
   - DropDown
   - FacebookCore
   - FacebookLogin
@@ -111,11 +147,14 @@ DEPENDENCIES:
   - GoogleSignIn
   - ImageSlideshow
   - JSQMessagesViewController
+  - lottie-ios
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
+    - DKCamera
     - DKImagePickerController
+    - DKPhotoGallery
     - DropDown
     - FacebookCore
     - FacebookLogin
@@ -130,6 +169,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseInstanceID
     - FirebaseStorage
+    - FLAnimatedImage
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMOAuth2
@@ -138,11 +178,15 @@ SPEC REPOS:
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - leveldb-library
+    - lottie-ios
     - nanopb
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  DKImagePickerController: 51ad6ee2ba05414bb741db54a72cd7f4fb178e34
+  DKCamera: 6077537273ffac6288071fbbbbf57d57c62e6803
+  DKImagePickerController: 43789fb00974b13f26263cc1ee0de5c2e6c6390d
+  DKPhotoGallery: 7f07b6d8a47733fdd76856113c474456b92fc769
   DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
@@ -157,6 +201,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
@@ -165,8 +210,10 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 6f7aa9033652aeccd86c9a5e6ee2b58bdbf806de
+PODFILE CHECKSUM: 52704b5632e81fab399bd849f5e59e798a499038
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3
