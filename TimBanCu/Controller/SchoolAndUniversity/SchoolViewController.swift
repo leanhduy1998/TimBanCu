@@ -156,6 +156,20 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return true
     }
     
+    func updateTableviewVisibilityBasedOnSearchResult(){
+        if(searchSchoolModels.count == 0){
+            noResultLabel.isHidden = false
+            noResultAddNewSchoolBtn.isHidden = false
+            tableview.isHidden = true
+        }
+        else{
+            noResultLabel.isHidden = true
+            noResultAddNewSchoolBtn.isHidden = true
+            tableview.isHidden = false
+            tableview.reloadData()
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassViewController{
@@ -168,6 +182,9 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             else if(selectedSchoolType == "thpt"){
                 destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
             }
+            destination.school = selectedSchool
+        }
+        if let destination = segue.destination as? MajorViewController{
             destination.school = selectedSchool
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class MajorDetail{
     //class Detail: 10A11
@@ -30,12 +31,13 @@ class MajorDetail{
         self.majorName = majorName
     }
     
-    func getObjectKey()->String{
-        return "\(schoolName!) && \(majorName)"
+    private func getObjectValueAsDic() -> [String:Any]{
+        return ["uid":uid,"majorName":majorName]
     }
     
-    func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid,"schoolName":schoolName,"majorName":majorName,"majorYear":majorYear]
+    func writeMajorDetailToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
+        
+        Database.database().reference().child("classes").child(schoolName).child(majorYear).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
 }
 

@@ -32,20 +32,6 @@ extension SchoolViewController{
         return true
     }
     
-    func updateTableviewVisibilityBasedOnSearchResult(){
-        if(searchSchoolModels.count == 0){
-            noResultLabel.isHidden = false
-            noResultAddNewSchoolBtn.isHidden = false
-            tableview.isHidden = true
-        }
-        else{
-            noResultLabel.isHidden = true
-            noResultAddNewSchoolBtn.isHidden = true
-            tableview.isHidden = false
-            tableview.reloadData()
-        }
-    }
-    
     func customizeSearchTF(){
         searchTFUnderline = {
             let view = UIView()

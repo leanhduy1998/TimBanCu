@@ -14,11 +14,13 @@ class ClassYearViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     var classDetail:ClassDetail!
+    var majorDetail:MajorDetail!
+    
     var years = [String]()
     var selectedYear:String!
     
-    var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
-    let classAlreadyExistAlert = UIAlertController(title: "Lớp của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới", preferredStyle: .alert)
+    var addNewClassCompletedAlert:UIAlertController!
+    var classAlreadyExistAlert:UIAlertController!
     
     
     override func viewDidLoad() {
@@ -71,28 +73,32 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
         
         selectedYear = years[indexPath.row]
         
-        if(classDetail.classYear == "Năm ?"){
-            classDetail.classYear = selectedYear
-            
-            classDetail.writeClassDetailToDatabase { (err, ref) in
-                DispatchQueue.main.async {
-                    
-                    if(err == nil){
-                        self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                    }
-                    else{
-                        if(err?.localizedDescription == "Permission denied") {
-                            self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
+        if(classDetail != nil){
+            if(classDetail.classYear == "Năm ?"){
+                classDetail.classYear = selectedYear
+                
+                classDetail.writeClassDetailToDatabase { (err, ref) in
+                    DispatchQueue.main.async {
+                        
+                        if(err == nil){
+                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
+                        }
+                        else if(err?.localizedDescription == "Permission denied") {
+                                self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
+                            
                         }
                     }
-                    
-                    
                 }
             }
+            else{
+                performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+            }
         }
-        else{
-            performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+        else if(majorDetail != nil){
+            
         }
+        
+        
     }
     
 }

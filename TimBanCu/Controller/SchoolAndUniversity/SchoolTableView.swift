@@ -25,7 +25,7 @@ extension SchoolViewController{
         selectedSchool = searchSchoolModels[indexPath.row]
         
         if(selectedSchoolType == "dh"){
-            
+            performSegue(withIdentifier: "SchoolToMajorSegue", sender: self)
         }
         else{
             performSegue(withIdentifier: "schoolToClassSegue", sender: self)

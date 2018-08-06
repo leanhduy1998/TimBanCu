@@ -511,7 +511,7 @@
         <!--Tên Khoa-->
         <scene sceneID="hlS-7e-pHi">
             <objects>
-                <viewController id="VKK-rM-WxU" customClass="UniversityMajorViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VKK-rM-WxU" customClass="MajorViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oU7-zE-SoM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1356,6 +1356,6 @@
         <image name="university" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Ow-6o-u2i"/>
+        <segue reference="PUn-kT-WBf"/>
     </inferredMetricsTieBreakers>
 </document>

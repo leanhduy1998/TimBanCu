@@ -168,6 +168,34 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         performSegue(withIdentifier: "ClassDetailToChatSegue", sender: self)
     }
     
+    func updateTableviewVisibilityBasedOnSearchResult(){
+        if(searchStudents.count == 0){
+            noResultLabel.isHidden = false
+            tableview.isHidden = true
+        }
+        else{
+            noResultLabel.isHidden = true
+            tableview.isHidden = false
+        }
+    }
+    
+    func startLoading(){
+        tableview.isHidden = true
+        searchTF.isHidden = true
+        addYourselfBtn.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopLoading(){
+        UIView.animate(withDuration: 1) {
+            self.tableview.isHidden = false
+            self.searchTF.isHidden = false
+            self.activityIndicator.isHidden = true
+        }
+        activityIndicator.stopAnimating()
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
