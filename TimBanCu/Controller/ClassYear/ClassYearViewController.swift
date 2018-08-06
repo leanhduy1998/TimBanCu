@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ClassYearViewController: UIViewController {
-
-    var years = [String]()
     
     @IBOutlet weak var tableview: UITableView!
+    
     var classDetail:ClassDetail!
+    var years = [String]()
+    var selectedYear:String!
+    
+    var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
+    let classAlreadyExistAlert = UIAlertController(title: "Lớp của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới", preferredStyle: .alert)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
+        setupAlerts()
         tableview.reloadData()
     }
     
@@ -46,6 +52,7 @@ class ClassYearViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
             destination.classDetail = classDetail
+            destination.selectedYear = selectedYear
         }
     }
 }
@@ -61,8 +68,31 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        classDetail.classYear = years[indexPath.row]
-        performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+        
+        selectedYear = years[indexPath.row]
+        
+        if(classDetail.classYear == "Năm ?"){
+            classDetail.classYear = selectedYear
+            
+            classDetail.writeClassDetailToDatabase { (err, ref) in
+                DispatchQueue.main.async {
+                    
+                    if(err == nil){
+                        self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
+                    }
+                    else{
+                        if(err?.localizedDescription == "Permission denied") {
+                            self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
+                        }
+                    }
+                    
+                    
+                }
+            }
+        }
+        else{
+            performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+        }
     }
     
 }

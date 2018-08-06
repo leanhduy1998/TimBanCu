@@ -22,6 +22,28 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func unwindToClassDetailViewController(segue:UIStoryboardSegue) { }
     
+    
+    // backemd
+    
+    var students = [Student]()
+    var searchStudents = [Student]()
+    
+    var classDetail:ClassDetail!
+    var selectedStudent:Student!
+    
+    var selectedYear:String!
+
+    //no result
+    var noResultLabel = UILabel()
+    
+    
+    //ui
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
+    
     var searchTFUnderline: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
@@ -29,26 +51,14 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         return view
     }()
     
-    var students = [Student]()
-    var searchStudents = [Student]()
-    
-    var classDetail:ClassDetail!
-
-    //no result
-    var noResultLabel = UILabel()
-    
-    var studentInClassRef:DatabaseReference!
-    var selectedStudent:Student!
-
-    let customSelectionColorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
-        return view
-    }()
-    
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
+    // firebase
+    var studentInClassRef:DatabaseReference!
+    
     override func viewDidLoad() {
+        studentInClassRef = Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(selectedYear)
+        
         customizeSearchTF()
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
@@ -58,8 +68,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewWillAppear(animated)
         
         updateTableviewVisibilityBasedOnSearchResult()
-        studentInClassRef = Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(classDetail.classYear)
-        
+                
         startLoading()
         fetchData {
             DispatchQueue.main.async {
@@ -71,9 +80,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func showAddYourInfoBtnIfYouAreNotInTheClass(){
         chatBtn.isEnabled = false
+        addYourselfBtn.isHidden = false
+      
         
         if(UserHelper.student == nil){
-            addYourselfBtn.isHidden = false
             addYourselfBtn.isHidden = false
             return
         }
@@ -143,7 +153,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
-            Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
+            Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(classDetail.classYear).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
                 if(error == nil){
                     DispatchQueue.main.async {
                         self.students.append(UserHelper.student)

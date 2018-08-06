@@ -55,6 +55,7 @@
 		1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
+		1C9710442116698B00A140FE /* ClassYearAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9710432116698B00A140FE /* ClassYearAlert.swift */; };
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
 		1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */; };
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
@@ -152,6 +153,7 @@
 		1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoImageDetailViewController.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
+		1C9710432116698B00A140FE /* ClassYearAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearAlert.swift; sourceTree = "<group>"; };
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
@@ -332,6 +334,15 @@
 			path = ClassYear;
 			sourceTree = "<group>";
 		};
+		1C9710452116699000A140FE /* ClassYear */ = {
+			isa = PBXGroup;
+			children = (
+				1C83E817211228C400D647D0 /* ClassYearViewController.swift */,
+				1C9710432116698B00A140FE /* ClassYearAlert.swift */,
+			);
+			path = ClassYear;
+			sourceTree = "<group>";
+		};
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,7 +352,7 @@
 				1C83E81C2113879E00D647D0 /* UniversityMajorViewController.swift */,
 				1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */,
 				1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */,
-				1C83E817211228C400D647D0 /* ClassYearViewController.swift */,
+				1C9710452116699000A140FE /* ClassYear */,
 				1C53F4F420FD408A00F4ACEB /* ClassDetailViewController.swift */,
 				1C2E737421091990007EAE63 /* AddYourInfo */,
 				1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */,
@@ -824,6 +835,7 @@
 				1C1A98FC210CBBE400D20079 /* ChatImageFromDB.swift in Sources */,
 				1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */,
 				1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */,
+				1C9710442116698B00A140FE /* ClassYearAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

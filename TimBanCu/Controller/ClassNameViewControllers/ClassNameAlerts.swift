@@ -12,9 +12,8 @@ import UIKit
 extension ClassNameViewController{
     func setupAlerts(){
         setupAddNewClassDetailAlert()
-        setupAddNewClassDetailCompletedAlert()
     }
-    
+        
     private func setupAddNewClassDetailAlert(){
         addNewClassAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addNewClassAlert] (_) in
             addNewClassAlert?.dismiss(animated: true, completion: nil)
@@ -29,29 +28,33 @@ extension ClassNameViewController{
             let className = textField?.text
             if(!(className?.isEmpty)!){
                 
-                let classModel = ClassDetail(classNumber: self.classNumber, uid: UserHelper.uid, schoolName: self.school.name, className: className!.uppercased())
-
+                let classDetail = ClassDetail(classNumber: self.classNumber, uid: UserHelper.uid, schoolName: self.school.name, className: className!.uppercased())
+                self.selectedClassDetail = classDetail
+                
+                self.performSegue(withIdentifier: "ClassNameToClassYear", sender: self)
+                
+                /*
                 DispatchQueue.main.async {
-                    self.classesDetailRef.child(classModel.getObjectKey()).setValue(classModel.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
-                        
+                    classModel.writeClassDetailToDatabase(completionHandler: { (err, ref) in
                         DispatchQueue.main.async {
-                            self.classDetails.append(classModel)
-                            self.tableview.reloadData()
-                            self.updateTableviewVisibilityBasedOnSearchResult()
-                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                            
-                        }        
-                        
+                            if(err == nil){
+                                self.classDetails.append(classModel)
+                                self.tableview.reloadData()
+                                self.updateTableviewVisibilityBasedOnSearchResult()
+                                self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
+                                
+                                
+                            }
+                            else{
+                                if(err?.localizedDescription == "Permission denied") {
+                                    self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
+                                }
+                            }
+                        }
                     })
-                }
+                }*/
             }
         }))
  
-    }
-    
-    private func setupAddNewClassDetailCompletedAlert(){
-        addNewClassCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewClassCompletedAlert] (_) in
-            addNewClassCompletedAlert?.dismiss(animated: true, completion: nil)
-        }))
     }
 }

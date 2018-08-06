@@ -36,7 +36,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
-    var schoolAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm trường", preferredStyle: .alert)
+    let schoolAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm Trường Mới", preferredStyle: .alert)
     
     //database
     

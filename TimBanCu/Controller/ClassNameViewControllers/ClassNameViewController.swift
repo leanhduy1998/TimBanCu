@@ -15,11 +15,11 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var school:School!
     var classNumber: String!
-    var classDetail:ClassDetail!
+    var selectedClassDetail:ClassDetail!
     
     //database
     var schoolAllClassesDetailsQuery:DatabaseQuery!
-    var classesDetailRef = Database.database().reference().child("classes")
+    
     
     //no result
     var noResultLabel = NoResultLabel(text: "Chưa có lớp. Bạn có muốn thêm lớp?               Ví dụ: 10A11")
@@ -30,7 +30,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //alert
     var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
-    var addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
+    
     
     let customSelectionColorView: UIView = {
         let view = UIView()
@@ -57,7 +57,32 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     func fetchData(){
         classDetails.removeAll()
         
-        schoolAllClassesDetailsQuery = classesDetailRef.queryOrdered(byChild: "schoolName").queryEqual(toValue : school.name)
+         Database.database().reference().child("classes").child(school.name).child(classNumber).observeSingleEvent(of: .value) { (snapshot) in
+            
+            
+            for snap in snapshot.children{
+                print(snap)
+                
+                let className = (snap as! DataSnapshot).key as! String
+                
+                let classYearAndDic = (snap as! DataSnapshot).value as! [String:[String:String]]
+                
+                for(year,dic) in classYearAndDic{
+                    let uid = dic["uid"] as! String
+                    
+                    let classDetail = ClassDetail(classNumber: self.classNumber, uid: uid, schoolName: self.school.name, className: className, classYear: year)
+                    
+                     self.classDetails.append(classDetail)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+                self.updateTableviewVisibilityBasedOnSearchResult()
+            }
+        }
+        
+        /*schoolAllClassesDetailsQuery = classesDetailRef.queryOrdered(byChild: "schoolName").queryEqual(toValue : school.name)
         schoolAllClassesDetailsQuery.observeSingleEvent(of: .value) { (snapshot) in
             for snap in snapshot.children {
                 let value = (snap as! DataSnapshot).value as? [String:Any]
@@ -71,15 +96,12 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     let classDetailModel = ClassDetail(classNumber: classNumber, uid: uid, schoolName: schoolName, className: className)
                     
-                    self.classDetails.append(classDetailModel)
+         
                 }
             }
             
-            DispatchQueue.main.async {
-                self.tableview.reloadData()
-                self.updateTableviewVisibilityBasedOnSearchResult()
-            }
-        }
+         
+        }*/
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,7 +117,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        classDetail = classDetails[indexPath.row]
+        selectedClassDetail = classDetails[indexPath.row]
         performSegue(withIdentifier: "ClassNameToClassYear", sender: self)
     }
     
@@ -105,7 +127,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassYearViewController{
-            destination.classDetail = classDetail
+            destination.classDetail = selectedClassDetail
         }
     }
     

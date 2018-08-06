@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class ClassDetail{
     //class Detail: 10A11
@@ -16,7 +17,7 @@ class ClassDetail{
     var uid:String!
     var schoolName:String!
     var classNumber:String!
-    var classYear:String!
+    var classYear = "Năm ?"
     
     init(classNumber:String,uid:String, schoolName:String, className:String,classYear:String){
         self.classNumber = classNumber
@@ -33,11 +34,12 @@ class ClassDetail{
         self.className = className
     }
     
-    func getObjectKey()->String{
-        return "\(schoolName!) && \(className!)"
+    private func getObjectValueAsDic() -> [String:Any]{
+        return ["uid":uid,"classNumber":classNumber,"classYear":classYear]
     }
     
-    func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid,"classNumber":classNumber,"schoolName":schoolName,"className":className,"classYear":classYear]
+    func writeClassDetailToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
+        let classesDetailRef = Database.database().reference().child("classes")
+        classesDetailRef.child(schoolName).child(classNumber).child(className).child(classYear).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
 }
