@@ -23,12 +23,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqL-TP-ZFl" customClass="GIDSignInButton">
                                 <rect key="frame" x="40" y="318.5" width="295" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="9JZ-Pe-0f3"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-mN-ScL">
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friends" translatesAutoresizingMaskIntoConstraints="NO" id="Dea-mN-ScL">
                                 <rect key="frame" x="0.0" y="424.5" width="375" height="222.5"/>
                             </imageView>
                         </subviews>
@@ -303,7 +302,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egx-Rd-5we"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trang Chính" id="UlA-x7-6Xr"/>
+                    <tabBarItem key="tabBarItem" title="Trang Chính" image="homeDarkGray" selectedImage="homeRed" id="UlA-x7-6Xr">
+                        <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Chọn Loại Trường" id="knV-Ix-juY">
                         <barButtonItem key="backBarButtonItem" title=" " id="UvR-NS-Fk1"/>
                     </navigationItem>
@@ -366,7 +367,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BRC-Tb-6NS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Công Cụ" id="jhb-hU-CHr"/>
+                    <tabBarItem key="tabBarItem" title="Công Cụ" image="profileIcon25" selectedImage="userRed" id="jhb-hU-CHr">
+                        <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <connections>
                         <segue destination="s0a-sR-lmJ" kind="show" identifier="SettingsToChangeInfoSegue" id="tvF-dB-Dpd"/>
                     </connections>
@@ -397,18 +400,14 @@
                     <navigationItem key="navigationItem" title="Chọn Loại Trường" id="MMe-a3-gD9">
                         <barButtonItem key="backBarButtonItem" title=" " id="zSW-y1-J33"/>
                     </navigationItem>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bqk-OA-wS6">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bqk-OA-wS6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.85882352941176465" green="0.24313725490196078" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
-                                <color key="value" red="1" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.85882352941176465" green="0.24313725490196078" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -1401,9 +1400,13 @@
     <resources>
         <image name="elementary" width="512" height="512"/>
         <image name="friends" width="2000" height="1306"/>
+        <image name="homeDarkGray" width="25" height="25"/>
+        <image name="homeRed" width="25" height="25"/>
         <image name="middle" width="512" height="512"/>
+        <image name="profileIcon25" width="25" height="25"/>
         <image name="question" width="200" height="200"/>
         <image name="university" width="200" height="200"/>
+        <image name="userRed" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PUn-kT-WBf"/>

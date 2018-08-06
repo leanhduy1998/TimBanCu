@@ -19,7 +19,7 @@ extension SignInViewController{
         facebookSignInBtn.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(facebookSignInBtn)
-        facebookSignInBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -20).isActive = true
+        facebookSignInBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -10).isActive = true
         facebookSignInBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         facebookSignInBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         facebookSignInBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
@@ -35,20 +35,20 @@ extension SignInViewController{
     
     func setupShimmeringText() {
         shimmerAppNameLabel.text = "Tìm bạn cũ"
-        shimmerAppNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 60)
-        shimmerAppNameLabel.textColor = UIColor(red: 255/255, green: 128/255, blue: 0, alpha: 1.0)
+        shimmerAppNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
+        shimmerAppNameLabel.textColor = UIColor(red:0.88, green:0.20, blue:0.15, alpha: 1.0)
         shimmerAppNameLabel.textAlignment = .center
         
         appNameLabel.text = "Tìm bạn cũ"
-        appNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 60)
-        appNameLabel.textColor = UIColor(red: 255/255, green: 158/255, blue: 0, alpha: 1.0)
+        appNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
+        appNameLabel.textColor = UIColor(red:0.88, green:0.20, blue:0.15, alpha: 0.7)
         appNameLabel.textAlignment = .center
         
         view.addSubview(appNameLabel)
         view.addSubview(shimmerAppNameLabel)
         
-        appNameLabel.frame = CGRect(x: 0, y: 120, width: view.frame.width, height: 100)
-        shimmerAppNameLabel.frame = CGRect(x: 0, y: 120, width: view.frame.width, height: 100)
+        appNameLabel.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: 100)
+        shimmerAppNameLabel.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: 100)
         
         let gradient = CAGradientLayer()
         gradient.frame = appNameLabel.bounds

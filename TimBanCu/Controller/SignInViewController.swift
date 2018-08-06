@@ -34,15 +34,6 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
         
         ref = Database.database().reference()
         
