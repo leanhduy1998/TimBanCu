@@ -19,6 +19,7 @@ import FirebaseAuth
 class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     var settings = ["Sửa Thông Tin Cá Nhân","Đăng Xuất"]
+    var icons = ["edit", "signOut"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as? SettingTableViewCell
         cell?.settingLabel.text = settings[indexPath.row]
+        cell?.settingImage.image = UIImage(named: icons[indexPath.row])
         return cell!
     }
     

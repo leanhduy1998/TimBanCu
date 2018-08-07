@@ -36,12 +36,12 @@ extension SignInViewController{
     func setupShimmeringText() {
         shimmerAppNameLabel.text = "Tìm bạn cũ"
         shimmerAppNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
-        shimmerAppNameLabel.textColor = UIColor(red:0.88, green:0.20, blue:0.15, alpha: 1.0)
+        shimmerAppNameLabel.textColor = UIColor(red:0.88, green:0.15, blue:0.21, alpha:1.0)
         shimmerAppNameLabel.textAlignment = .center
         
         appNameLabel.text = "Tìm bạn cũ"
         appNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
-        appNameLabel.textColor = UIColor(red:0.88, green:0.20, blue:0.15, alpha: 0.7)
+        appNameLabel.textColor = UIColor(red:0.88, green:0.15, blue:0.21, alpha:0.8)
         appNameLabel.textAlignment = .center
         
         view.addSubview(appNameLabel)
