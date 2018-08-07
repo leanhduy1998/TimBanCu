@@ -13,7 +13,7 @@ extension SchoolViewController{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-            self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
+            self.searchTFUnderline.backgroundColor = themeColor.withAlphaComponent(0.7)
             self.searchUnderlineHeightAnchor?.constant = 2.5
         }, completion: nil)
     }
@@ -21,7 +21,7 @@ extension SchoolViewController{
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             if textField.text == "" {
-                self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5)
+                self.searchTFUnderline.backgroundColor = themeColor.withAlphaComponent(0.4)
                 self.searchUnderlineHeightAnchor?.constant = 1.5
             }
         }, completion: nil)
@@ -36,14 +36,27 @@ extension SchoolViewController{
         if(searchSchoolModels.count == 0){
             noResultLabel.isHidden = false
             noResultAddNewSchoolBtn.isHidden = false
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
             tableview.isHidden = true
         }
         else{
             noResultLabel.isHidden = true
             noResultAddNewSchoolBtn.isHidden = true
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
             tableview.isHidden = false
             tableview.reloadData()
+            
         }
+    }
+    
+    func setUpAnimatedEmoticon() {
+        view.addSubview(animatedEmoticon)
+        animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        animatedEmoticon.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     func customizeSearchTF(){
@@ -64,7 +77,7 @@ extension SchoolViewController{
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
 
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
         noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         

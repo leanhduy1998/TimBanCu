@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Lottie
 
 class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
 
@@ -25,7 +26,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var searchTFUnderline: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
+        view.backgroundColor = themeColor.withAlphaComponent(0.3)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -36,6 +37,14 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let view = UIView()
         view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
         return view
+    }()
+    
+    let animatedEmoticon: LOTAnimationView = {
+        let animation = LOTAnimationView(name: "empty_list")
+        animation.contentMode = .scaleAspectFill
+        animation.loopAnimation = true
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        return animation
     }()
     
     //alert
@@ -62,6 +71,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         setupAlerts()
         customizeSearchTF()
+        setUpAnimatedEmoticon()
         
         tableview.isHidden = true
     }
@@ -98,6 +108,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchData()
         noResultLabel.isHidden = true
         noResultAddNewSchoolBtn.isHidden = true
+        animatedEmoticon.isHidden = true
     }
     
     func fetchData(){
