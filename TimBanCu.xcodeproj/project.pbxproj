@@ -72,6 +72,7 @@
 		1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */; };
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
 		1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */; };
+		1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFACEC211A7CEE00429FA2 /* Colors.swift */; };
 		1CE24D0220FBE153008DE3FB /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* UserHelper.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* School.swift */; };
 		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
@@ -178,6 +179,7 @@
 		1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimBanCuUITests.swift; sourceTree = "<group>"; };
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentImageDetailViewController.swift; sourceTree = "<group>"; };
+		1CCFACEC211A7CEE00429FA2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			children = (
 				1C2E736F21091510007EAE63 /* Extensions */,
 				1C900E2D210141AA0016DFDC /* NoResultButton.swift */,
+				1CCFACEC211A7CEE00429FA2 /* Colors.swift */,
 				1C900E2C210141AA0016DFDC /* NoResultLabel.swift */,
 				1CF50FE5210B678100346EF9 /* CircleImageView.swift */,
 				1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */,
@@ -750,11 +753,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimBanCu/Pods-TimBanCu-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/DKCamera/DKCamera.framework",
 				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/DKPhotoGallery/DKPhotoGallery.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
@@ -764,17 +770,22 @@
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKCamera.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKPhotoGallery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
@@ -784,7 +795,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +817,7 @@
 				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
 				1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift in Sources */,
 				1C2E7371210916E7007EAE63 /* AddYourInfoExtension.swift in Sources */,
+				1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */,
 				1C3ADA9220FABA360041421F /* Trash.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,

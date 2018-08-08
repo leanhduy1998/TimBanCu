@@ -32,24 +32,6 @@ extension SchoolViewController{
         return true
     }
     
-    func updateTableviewVisibilityBasedOnSearchResult(){
-        if(searchSchoolModels.count == 0){
-            noResultLabel.isHidden = false
-            noResultAddNewSchoolBtn.isHidden = false
-            animatedEmoticon.isHidden = false
-            animatedEmoticon.play()
-            tableview.isHidden = true
-        }
-        else{
-            noResultLabel.isHidden = true
-            noResultAddNewSchoolBtn.isHidden = true
-            animatedEmoticon.isHidden = true
-            animatedEmoticon.stop()
-            tableview.isHidden = false
-            tableview.reloadData()
-            
-        }
-    }
     
     func setUpAnimatedEmoticon() {
         view.addSubview(animatedEmoticon)
