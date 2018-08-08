@@ -74,6 +74,9 @@
 		1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */; };
 		1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFACEC211A7CEE00429FA2 /* Colors.swift */; };
 		1CCFACF0211A820700429FA2 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACEF211A820700429FA2 /* empty_list.json */; };
+		1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF2211A836200429FA2 /* Butcherandblock.otf */; };
+		1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */; };
+		1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */; };
 		1CE24D0220FBE153008DE3FB /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* UserHelper.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* School.swift */; };
 		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
@@ -183,6 +186,9 @@
 		1CCFACEC211A7CEE00429FA2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButcherandBlockExtras1.otf; sourceTree = "<group>"; };
 		1CCFACEF211A820700429FA2 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
+		1CCFACF2211A836200429FA2 /* Butcherandblock.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherandblock.otf; sourceTree = "<group>"; };
+		1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FS Playlist Caps.otf"; sourceTree = "<group>"; };
+		1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShowcaseSans.ttf; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
@@ -405,6 +411,7 @@
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
 				1CCFACEF211A820700429FA2 /* empty_list.json */,
+				1CCFACF1211A836200429FA2 /* Fonts */,
 				1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */,
 				1C3ADA8B20F962BB0041421F /* awsconfiguration.json */,
 			);
@@ -468,6 +475,16 @@
 				1CBF5C9920A8197C00B78E6A /* Info.plist */,
 			);
 			path = TimBanCuUITests;
+			sourceTree = "<group>";
+		};
+		1CCFACF1211A836200429FA2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1CCFACF2211A836200429FA2 /* Butcherandblock.otf */,
+				1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */,
+				1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		1CE24D0020FBE142008DE3FB /* Helper */ = {
@@ -652,12 +669,15 @@
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
+				1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
 				1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */,
 				1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */,
+				1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
+				1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
