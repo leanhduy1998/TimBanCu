@@ -73,6 +73,7 @@
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
 		1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */; };
 		1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFACEC211A7CEE00429FA2 /* Colors.swift */; };
+		1CCFACF0211A820700429FA2 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACEF211A820700429FA2 /* empty_list.json */; };
 		1CE24D0220FBE153008DE3FB /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* UserHelper.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* School.swift */; };
 		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
@@ -181,6 +182,7 @@
 		1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentImageDetailViewController.swift; sourceTree = "<group>"; };
 		1CCFACEC211A7CEE00429FA2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButcherandBlockExtras1.otf; sourceTree = "<group>"; };
+		1CCFACEF211A820700429FA2 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */,
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
+				1CCFACEF211A820700429FA2 /* empty_list.json */,
 				1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */,
 				1C3ADA8B20F962BB0041421F /* awsconfiguration.json */,
 			);
@@ -645,6 +648,7 @@
 			files = (
 				1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */,
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
+				1CCFACF0211A820700429FA2 /* empty_list.json in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
