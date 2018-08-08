@@ -11,9 +11,15 @@ import UIKit
 
 extension ClassYearViewController{
     func setupAlerts(){
-        addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
         
-        classAlreadyExistAlert = UIAlertController(title: "Lớp của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới", preferredStyle: .alert)
+        if(classDetail != nil){
+            addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
+            classAlreadyExistAlert = UIAlertController(title: "Lớp của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới", preferredStyle: .alert)
+        }
+        else if(majorDetail != nil){
+            addNewClassCompletedAlert = UIAlertController(title: "Khoa của bạn đã được thêm!", message: "", preferredStyle: .alert)
+            classAlreadyExistAlert = UIAlertController(title: "Khoa của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới", preferredStyle: .alert)
+        }
         
         setupAddNewClassDetailCompletedAlert()
         setupClassAlreadyExistAlert()

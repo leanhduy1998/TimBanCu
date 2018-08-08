@@ -39,6 +39,9 @@ extension MajorViewController{
             if(!(majorName?.isEmpty)!){
                 let major = MajorDetail(uid: UserHelper.uid, schoolName: self.school.name, majorName: majorName!)
                 
+                self.selectedMajor = major
+                
+                self.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self)
                 
                 /*DispatchQueue.main.async {
                     

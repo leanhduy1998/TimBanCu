@@ -654,7 +654,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="OWp-TG-1zC" id="TvU-VL-ib4"/>
-                        <segue destination="0Ua-wx-Yxd" kind="show" identifier="ClassYearToClassDetailSegue" id="6lU-c4-lFJ"/>
+                        <segue destination="0Ua-wx-Yxd" kind="show" identifier="YearToClassDetailSegue" id="6lU-c4-lFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Knf-Ah-ccH" userLabel="First Responder" sceneMemberID="firstResponder"/>
