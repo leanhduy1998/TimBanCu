@@ -91,11 +91,29 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
                 }
             }
             else{
-                performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+                performSegue(withIdentifier: "YearToClassDetailSegue", sender: self)
             }
         }
         else if(majorDetail != nil){
-            
+            if(majorDetail.majorYear == "Năm ?"){
+                majorDetail.majorYear = selectedYear
+                
+                majorDetail.writeMajorDetailToDatabase { (err, ref) in
+                    DispatchQueue.main.async {
+                        
+                        if(err == nil){
+                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
+                        }
+                        else if(err?.localizedDescription == "Permission denied") {
+                            self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
+                            
+                        }
+                    }
+                }
+            }
+            else{
+                performSegue(withIdentifier: "YearToClassDetailSegue", sender: self)
+            }
         }
         
         

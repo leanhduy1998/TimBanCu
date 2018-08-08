@@ -29,6 +29,7 @@ class MajorDetail{
         self.uid = uid
         self.schoolName = schoolName
         self.majorName = majorName
+        self.majorYear = "Năm ?"
     }
     
     private func getObjectValueAsDic() -> [String:Any]{
