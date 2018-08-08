@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Lottie
 
 class ClassNameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -22,7 +23,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     var classesDetailRef = Database.database().reference().child("classes")
     
     //no result
-    var noResultLabel = NoResultLabel(text: "Chưa có lớp. Bạn có muốn thêm lớp?               Ví dụ: 10A11")
+    var noResultLabel = NoResultLabel(text: "Chưa có lớp. Bạn có muốn thêm lớp?\n Ví dụ: 10A11")
     var noResultAddNewClassBtn = NoResultButton(title: "Thêm Lớp Mới")
     
     //tableview
@@ -38,20 +39,27 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
         return view
     }()
     
+    let animatedEmoticon: LOTAnimationView = {
+        let animation = LOTAnimationView(name: "empty_list")
+        animation.contentMode = .scaleAspectFill
+        animation.loopAnimation = true
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        return animation
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpAnimatedEmoticon()
         setupNoResultLabelAndButton()
         setupAlerts()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        setupNoResultLabelAndButton()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
+        animatedEmoticon.isHidden = true
     }
     
     func fetchData(){
