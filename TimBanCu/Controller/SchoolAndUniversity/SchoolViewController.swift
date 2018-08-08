@@ -182,12 +182,16 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             noResultLabel.isHidden = false
             noResultAddNewSchoolBtn.isHidden = false
             tableview.isHidden = true
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
         }
         else{
             noResultLabel.isHidden = true
             noResultAddNewSchoolBtn.isHidden = true
             tableview.isHidden = false
             tableview.reloadData()
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
         }
     }
     

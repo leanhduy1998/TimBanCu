@@ -41,7 +41,7 @@ extension SignInViewController{
         
         appNameLabel.text = "Tìm bạn cũ"
         appNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
-        appNameLabel.textColor = themeColor.withAlphaComponent(0.85)
+        appNameLabel.textColor = themeColor.withAlphaComponent(0.8)
         appNameLabel.textAlignment = .center
         
         view.addSubview(appNameLabel)
