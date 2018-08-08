@@ -12,7 +12,7 @@ import FirebaseDatabase
 import ImageSlideshow
 import FirebaseStorage
 
-class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var fullNameTF: UITextField!
     @IBOutlet weak var birthYearTF: UITextField!
@@ -48,6 +48,12 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         setupAlerts()
         setupImageSlideShow()
         reloadImageSlideShow()
+        observeKeyboardNotifications()
+        
+        fullNameTF.delegate = self
+        phoneTF.delegate = self
+        emailTF.delegate = self
+        birthYearTF.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {

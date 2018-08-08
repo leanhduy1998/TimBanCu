@@ -12,7 +12,8 @@ class SettingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var settingLabel: UILabel!
     
-
+    @IBOutlet weak var settingImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

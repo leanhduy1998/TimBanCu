@@ -17,8 +17,9 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-
-class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate {
+class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate, UITextFieldDelegate {
+    
+    
     
     var ref: DatabaseReference!
     
@@ -28,6 +29,8 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     var shimmerAppNameLabel = UILabel()
     let appNameLabel = UILabel()
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

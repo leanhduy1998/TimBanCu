@@ -22,6 +22,11 @@ class ClassYearViewController: UIViewController {
     var addNewClassCompletedAlert:UIAlertController!
     var classAlreadyExistAlert:UIAlertController!
     
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +72,7 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassYearTableViewCell") as! ClassYearTableViewCell
         cell.yearLabel.text = years[indexPath.row]
+        cell.selectedBackgroundView? = customSelectionColorView
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

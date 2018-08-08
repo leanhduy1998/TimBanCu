@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Lottie
 
 class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
 
@@ -20,16 +21,30 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
-    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên trường?")
+    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?")
     var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
-    var searchTFUnderline: UIView! = nil
+    var searchTFUnderline: UIView = {
+        let view = UIView()
+        view.backgroundColor = themeColor.withAlphaComponent(0.3)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
     let customSelectionColorView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
         return view
+    }()
+    
+    let animatedEmoticon: LOTAnimationView = {
+        let animation = LOTAnimationView(name: "empty_list")
+        animation.contentMode = .scaleAspectFill
+        animation.loopAnimation = true
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        return animation
     }()
     
     //alert
@@ -56,10 +71,13 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         setupAlerts()
         customizeSearchTF()
+        setUpAnimatedEmoticon()
         
         tableview.isHidden = true
-        
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,6 +106,9 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
+        noResultLabel.isHidden = true
+        noResultAddNewSchoolBtn.isHidden = true
+        animatedEmoticon.isHidden = true
     }
     
     func fetchData(){

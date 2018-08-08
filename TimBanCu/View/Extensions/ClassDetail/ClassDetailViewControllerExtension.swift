@@ -50,14 +50,10 @@ extension ClassDetailViewController{
         view.addSubview(noResultLabel)
         view.bringSubview(toFront: noResultLabel)
         
-        noResultLabel.text = "Chưa có học sinh nào. Bạn có muốn thông tin của mình?"
-        noResultLabel.textColor = UIColor.darkGray
-        noResultLabel.textAlignment = .center
-        noResultLabel.numberOfLines = 2
-        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        noResultLabel.frame = CGRect(x: 0, y: 40, width: view.bounds.width, height: 40)
-        
+        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     

@@ -34,7 +34,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedYear:String!
 
     //no result
-    var noResultLabel = UILabel()
+    var noResultLabel = NoResultLabel(text: "Chưa có học sinh nào.\n Bạn có muốn thông tin của mình?")
     
     
     //ui
@@ -66,6 +66,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noResultLabel.isHidden = true
         
         updateTableviewVisibilityBasedOnSearchResult()
                 
@@ -76,6 +77,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 self.reloadData()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
     }
     
     func showAddYourInfoBtnIfYouAreNotInTheClass(){
