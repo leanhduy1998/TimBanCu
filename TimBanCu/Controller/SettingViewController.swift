@@ -20,6 +20,12 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     var settings = ["Sửa Thông Tin Cá Nhân","Đăng Xuất"]
     var icons = ["edit", "signOut"]
+    
+    let customSelectionColorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,7 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingTableViewCell") as? SettingTableViewCell
         cell?.settingLabel.text = settings[indexPath.row]
         cell?.settingImage.image = UIImage(named: icons[indexPath.row])
+        cell?.selectedBackgroundView? = customSelectionColorView
         return cell!
     }
     
