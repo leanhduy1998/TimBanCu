@@ -10,22 +10,23 @@ import Foundation
 import UIKit
 
 extension MajorViewController{
+    
+    func setUpAnimatedEmoticon() {
+        view.addSubview(animatedEmoticon)
+        animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        animatedEmoticon.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
     func setupNoResultLabelAndButton(){
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewMajorBtn)
         
-        view.bringSubview(toFront: noResultLabel)
-        view.bringSubview(toFront: noResultAddNewMajorBtn)
-        
-        noResultLabel.textColor = UIColor.darkGray
-        noResultLabel.textAlignment = .center
-        noResultLabel.numberOfLines = 0
-        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
-        
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
         noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        //noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         noResultAddNewMajorBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultAddNewMajorBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true

@@ -61,7 +61,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         animateImageSlideShow(count: 0)
         
         if(userImages.count == 0){
-            userImages.append(#imageLiteral(resourceName: "add-user"))
+            userImages.append(#imageLiteral(resourceName: "addImage"))
         }
         
         if(userImages.count>1){

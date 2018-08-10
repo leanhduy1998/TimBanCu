@@ -8,10 +8,11 @@
 
 import UIKit
 import FirebaseDatabase
+import Lottie
 
 class MajorViewController: UIViewController {
 
-    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên khoa mới? Ví Dụ: Khoa Kinh Tế")
+    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên khoa mới? \n Ví Dụ: Khoa Kinh Tế")
     var noResultAddNewMajorBtn = NoResultButton(title: "Thêm Khoa Mới")
     
     var addNewMajorAlert = UIAlertController(title: "Thêm Khoa Mới", message: "", preferredStyle: .alert)
@@ -25,24 +26,35 @@ class MajorViewController: UIViewController {
     
     var selectedMajor:MajorDetail!
     
+    let animatedEmoticon: LOTAnimationView = {
+        let animation = LOTAnimationView(name: "empty_list")
+        animation.contentMode = .scaleAspectFill
+        animation.loopAnimation = true
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        return animation
+    }()
+    
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAlerts()
-        
+        setUpAnimatedEmoticon()
+        setupNoResultLabelAndButton()
         updateTableviewVisibilityBasedOnSearchResult()
+        
     }
     
     func fetchData(){
         
     }
     
-    override func viewDidLayoutSubviews() {
-        setupNoResultLabelAndButton()
-    }
-
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        noResultLabel.isHidden = true
+//        noResultAddNewMajorBtn.isHidden = true
+//        animatedEmoticon.isHidden = true
+//    }
     
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
         self.present(addNewMajorAlert, animated: true, completion: nil)
@@ -54,12 +66,16 @@ class MajorViewController: UIViewController {
             noResultLabel.isHidden = false
             noResultAddNewMajorBtn.isHidden = false
             tableview.isHidden = true
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
         }
         else{
             noResultLabel.isHidden = true
             noResultAddNewMajorBtn.isHidden = true
             tableview.isHidden = false
             tableview.reloadData()
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
         }
     }
     

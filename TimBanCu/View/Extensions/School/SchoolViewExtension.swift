@@ -54,10 +54,6 @@ extension SchoolViewController{
     func setupNoResultLabelAndButton(){
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewSchoolBtn)
-        
-        view.bringSubview(toFront: noResultLabel)
-        view.bringSubview(toFront: noResultAddNewSchoolBtn)
-
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
         noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true

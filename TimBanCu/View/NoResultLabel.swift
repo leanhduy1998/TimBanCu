@@ -10,8 +10,6 @@ import UIKit
 
 class NoResultLabel: UILabel {
     
-    //"Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên trường?"
-    
     init(text: String) {
         super.init(frame: .zero)
         self.text = text
