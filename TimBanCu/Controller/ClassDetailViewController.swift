@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import Lottie
 
 class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
@@ -44,6 +45,14 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         return view
     }()
     
+    let animatedEmoticon: LOTAnimationView = {
+        let animation = LOTAnimationView(name: "empty_list")
+        animation.contentMode = .scaleAspectFill
+        animation.loopAnimation = true
+        animation.translatesAutoresizingMaskIntoConstraints = false
+        return animation
+    }()
+    
     var searchTFUnderline: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
@@ -60,6 +69,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         studentInClassRef = Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(selectedYear)
         
         customizeSearchTF()
+        setUpAnimatedEmoticon()
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
     }
@@ -67,6 +77,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         noResultLabel.isHidden = true
+        animatedEmoticon.isHidden = true
         
         updateTableviewVisibilityBasedOnSearchResult()
                 
@@ -177,10 +188,14 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if(searchStudents.count == 0){
             noResultLabel.isHidden = false
             tableview.isHidden = true
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
         }
         else{
             noResultLabel.isHidden = true
             tableview.isHidden = false
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
         }
     }
     
