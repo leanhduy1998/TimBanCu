@@ -81,7 +81,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if (self.isMovingFromParentViewController) {
             navigationController?.hero.isEnabled = true
-            navigationController?.hero.navigationAnimationType = .zoomOut
+            navigationController?.hero.navigationAnimationType = .fade
         } 
     }
     

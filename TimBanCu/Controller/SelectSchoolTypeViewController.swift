@@ -14,6 +14,7 @@ import Hero
 
 class SelectSchoolTypeViewController: UIViewController {
     
+    @IBOutlet weak var tieuHocButton: UIButton!
     var myStrings = [String]()
     var selectedSchoolType:String!
 
@@ -21,10 +22,10 @@ class SelectSchoolTypeViewController: UIViewController {
         super.viewDidLoad()
         addNavigationBarShadow()
     }
-    
+
     func presentNextViewController() {
         navigationController?.hero.isEnabled = true
-        navigationController?.hero.navigationAnimationType = .zoom
+        navigationController?.hero.navigationAnimationType = .fade
         performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
     }
     
@@ -52,6 +53,7 @@ class SelectSchoolTypeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SchoolViewController{
             destination.selectedSchoolType = selectedSchoolType
+            destination.view.hero.id = selectedSchoolType
         }
         
     }
