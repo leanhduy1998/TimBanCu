@@ -68,6 +68,10 @@
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="cZk-61-rDc" kind="relationship" relationship="rootViewController" id="kvG-Vu-YkR"/>
@@ -293,6 +297,9 @@
                     <navigationItem key="navigationItem" title="Chọn Loại Trường" id="knV-Ix-juY">
                         <barButtonItem key="backBarButtonItem" title=" " id="UvR-NS-Fk1"/>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="MxZ-TI-ABJ" kind="show" identifier="SelectQueryToSchoolSegue" id="EZH-A0-8yp"/>
                     </connections>
@@ -419,7 +426,7 @@
         <!--Tên Trường-->
         <scene sceneID="Cre-FJ-Kpu">
             <objects>
-                <viewController id="MxZ-TI-ABJ" customClass="SchoolViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SchoolViewController" id="MxZ-TI-ABJ" customClass="SchoolViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m1V-Kt-c2e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

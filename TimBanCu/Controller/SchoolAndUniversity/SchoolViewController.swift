@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Lottie
+import Hero
 
 class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
 
@@ -63,7 +64,6 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
@@ -78,6 +78,11 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillDisappear(_ animated: Bool) {
         view.endEditing(true)
+        
+        if (self.isMovingFromParentViewController) {
+            navigationController?.hero.isEnabled = true
+            navigationController?.hero.navigationAnimationType = .zoomOut
+        } 
     }
     
     override func viewDidLayoutSubviews() {

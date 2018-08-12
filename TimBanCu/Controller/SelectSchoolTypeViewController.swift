@@ -10,6 +10,7 @@ import UIKit
 
 import FacebookLogin
 import FirebaseDatabase
+import Hero
 
 class SelectSchoolTypeViewController: UIViewController {
     
@@ -21,31 +22,38 @@ class SelectSchoolTypeViewController: UIViewController {
         addNavigationBarShadow()
     }
     
+    func presentNextViewController() {
+        navigationController?.hero.isEnabled = true
+        navigationController?.hero.navigationAnimationType = .zoom
+        performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
+    }
+    
     @IBAction func tieuHocBtnPressed(_ sender: Any) {
         selectedSchoolType = "th"
-        performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
+        presentNextViewController()
     }
     
     @IBAction func trunghoccosoBtnPressed(_ sender: Any) {
         selectedSchoolType = "thcs"
-        performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
+        presentNextViewController()
     }
     
     @IBAction func trunghocphothongBtnPressed(_ sender: Any) {
         selectedSchoolType = "thpt"
-        performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
+        presentNextViewController()
     }
     
     
     @IBAction func daihocBtnPressed(_ sender: Any) {
         selectedSchoolType = "dh"
-        performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
+        presentNextViewController()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SchoolViewController{
             destination.selectedSchoolType = selectedSchoolType
         }
+        
     }
 
 
