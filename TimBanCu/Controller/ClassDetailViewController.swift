@@ -156,6 +156,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell?.nameLabel.text = student.fullName
         cell?.selectedBackgroundView = customSelectionColorView
         
+        cell?.nameLabel!.hero.id = "\(student.fullName)"
+        cell?.imageview!.hero.id = "\(student.fullName)image"
+        cell?.nameLabel!.hero.modifiers = [.arc]
+        cell?.imageview!.hero.modifiers = [.arc]
         return cell!
     }
 
@@ -222,11 +226,13 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             destination.classDetail = classDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
-            destination.student = selectedStudent 
+            destination.student = selectedStudent
         }
+        
         if let destination = segue.destination as? ChatViewController{
             destination.classDetail = classDetail
         }
+        
     }
 
 }
