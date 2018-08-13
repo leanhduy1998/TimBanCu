@@ -59,6 +59,8 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
+        noResultLabel.isHidden = true
+        noResultAddNewClassBtn.isHidden = true
         animatedEmoticon.isHidden = true
     }
     
