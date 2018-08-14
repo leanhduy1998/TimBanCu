@@ -43,6 +43,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DoJ-JJ-y5G"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="googleSignInBtn" destination="JqL-TP-ZFl" id="Vnz-UD-Yme"/>
                         <segue destination="boj-3L-Gwg" kind="show" identifier="SignInToSelectSchoolTypeSegue" id="19h-5u-zeO"/>
@@ -73,6 +76,9 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="cZk-61-rDc" kind="relationship" relationship="rootViewController" id="kvG-Vu-YkR"/>
                     </connections>
@@ -142,6 +148,10 @@
                                                     <constraint firstItem="uBh-mb-DeF" firstAttribute="leading" secondItem="Zhl-Ng-h4U" secondAttribute="leading" id="iOr-5f-TrD"/>
                                                     <constraint firstItem="XKU-c8-Gxu" firstAttribute="centerY" secondItem="m5S-wc-uGJ" secondAttribute="centerY" id="nKn-vn-wVv"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="animateFromSignIn"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-v2-azd" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="174.5"/>
@@ -190,6 +200,10 @@
                                                     <constraint firstAttribute="trailing" secondItem="jEU-LE-hq9" secondAttribute="trailing" constant="8" id="lpx-ES-D6b"/>
                                                     <constraint firstAttribute="trailing" secondItem="IpT-Q8-WR4" secondAttribute="trailing" id="nwD-NZ-eHp"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="animateFromSignIn"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -243,6 +257,10 @@
                                                     <constraint firstItem="8WX-GR-zzx" firstAttribute="top" secondItem="cWz-jJ-FoT" secondAttribute="bottom" constant="20" id="idO-mr-QoK"/>
                                                     <constraint firstItem="HgZ-Bc-qKv" firstAttribute="centerX" secondItem="cWz-jJ-FoT" secondAttribute="centerX" id="oxj-iJ-Sv2"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="animateFromSignIn"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-hV-Lbv" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="174.5"/>
@@ -291,13 +309,17 @@
                                                     <constraint firstItem="RYJ-yc-J8G" firstAttribute="centerX" secondItem="rJH-jV-zSA" secondAttribute="centerX" id="rUq-Do-Nct"/>
                                                     <constraint firstItem="sgJ-oy-uyp" firstAttribute="top" secondItem="rJH-jV-zSA" secondAttribute="bottom" constant="20" id="saE-aa-4qW"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="animateFromSignIn"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="egx-Rd-5we" firstAttribute="trailing" secondItem="Nhf-Hl-TCd" secondAttribute="trailing" constant="20" id="1Kz-dM-3jw"/>
                             <constraint firstItem="Nhf-Hl-TCd" firstAttribute="centerY" secondItem="t5p-DZ-eSO" secondAttribute="centerY" id="HLu-MO-J4P"/>
@@ -430,6 +452,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="MnQ-u8-HPq" kind="relationship" relationship="viewControllers" id="gBr-tp-0YS"/>
                         <segue destination="rp0-Iy-xJl" kind="relationship" relationship="viewControllers" id="5x5-MN-F0N"/>
@@ -449,8 +474,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8is-0m-uwS">
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
-                                <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="separatorColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SchoolTableViewCell" rowHeight="140" id="ro3-I2-MuB" customClass="SchoolTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -462,23 +487,26 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lb-FA-N92" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
                                                     <rect key="frame" x="10" y="10" width="355" height="119.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elementary" translatesAutoresizingMaskIntoConstraints="NO" id="L2e-kP-szF">
-                                                            <rect key="frame" x="10" y="0.0" width="100" height="119.5"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truongTranHungDao" translatesAutoresizingMaskIntoConstraints="NO" id="L2e-kP-szF" customClass="RoundedImageView" customModule="TimBanCu" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="130" height="119.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="qUX-rT-RqJ"/>
+                                                                <constraint firstAttribute="width" constant="130" id="qUX-rT-RqJ"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PbK-9F-IbV">
-                                                            <rect key="frame" x="120" y="15" width="220" height="89.5"/>
+                                                            <rect key="frame" x="140" y="5" width="200" height="109.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Nguyễn Thanh Tuyền" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGR-U5-iDG">
-                                                                    <rect key="frame" x="48" y="0.0" width="124.5" height="45"/>
+                                                                    <rect key="frame" x="38" y="0.0" width="124.5" height="55"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="13 Đống Đa Phường 2 Quận Tân Bình" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-UV-F5X">
-                                                                    <rect key="frame" x="24.5" y="45" width="171.5" height="44.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="13 Đống Đa Phường 2 Quận Tân Bình" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-UV-F5X">
+                                                                    <rect key="frame" x="14.5" y="55" width="171.5" height="54.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -489,18 +517,18 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="L2e-kP-szF" firstAttribute="centerY" secondItem="9Lb-FA-N92" secondAttribute="centerY" id="1IA-YZ-L7S"/>
-                                                        <constraint firstItem="PbK-9F-IbV" firstAttribute="top" secondItem="9Lb-FA-N92" secondAttribute="top" constant="15" id="6VI-Wp-KUv"/>
+                                                        <constraint firstItem="PbK-9F-IbV" firstAttribute="top" secondItem="9Lb-FA-N92" secondAttribute="top" constant="5" id="6VI-Wp-KUv"/>
                                                         <constraint firstItem="L2e-kP-szF" firstAttribute="top" secondItem="9Lb-FA-N92" secondAttribute="top" id="CrY-Tx-vdZ"/>
-                                                        <constraint firstItem="L2e-kP-szF" firstAttribute="leading" secondItem="9Lb-FA-N92" secondAttribute="leading" constant="10" id="NW6-pp-CdY"/>
+                                                        <constraint firstItem="L2e-kP-szF" firstAttribute="leading" secondItem="9Lb-FA-N92" secondAttribute="leading" id="NW6-pp-CdY"/>
                                                         <constraint firstItem="PbK-9F-IbV" firstAttribute="leading" secondItem="L2e-kP-szF" secondAttribute="trailing" constant="10" id="Vpf-gr-qfm"/>
                                                         <constraint firstAttribute="trailing" secondItem="PbK-9F-IbV" secondAttribute="trailing" constant="15" id="YUE-IA-a4R"/>
                                                         <constraint firstAttribute="bottom" secondItem="L2e-kP-szF" secondAttribute="bottom" id="gt1-o8-Ovn"/>
-                                                        <constraint firstAttribute="bottom" secondItem="PbK-9F-IbV" secondAttribute="bottom" constant="15" id="pSX-uK-UKg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="PbK-9F-IbV" secondAttribute="bottom" constant="5" id="pSX-uK-UKg"/>
                                                         <constraint firstItem="PbK-9F-IbV" firstAttribute="centerY" secondItem="9Lb-FA-N92" secondAttribute="centerY" id="pvK-3s-2io"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="9Lb-FA-N92" secondAttribute="trailing" constant="10" id="Gcd-UO-bnp"/>
                                                 <constraint firstItem="9Lb-FA-N92" firstAttribute="leading" secondItem="hgx-wT-4ZQ" secondAttribute="leading" constant="10" id="Pbk-Uf-ji1"/>
@@ -508,6 +536,7 @@
                                                 <constraint firstItem="9Lb-FA-N92" firstAttribute="top" secondItem="hgx-wT-4ZQ" secondAttribute="top" constant="10" id="pvF-h6-WUQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="imageview" destination="L2e-kP-szF" id="NQF-8c-6WT"/>
                                             <outlet property="schoolAddress" destination="rGY-UV-F5X" id="ozk-AE-giW"/>
@@ -530,7 +559,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="njY-4O-6SS" firstAttribute="trailing" secondItem="8is-0m-uwS" secondAttribute="trailing" id="0b4-bQ-33Z"/>
                             <constraint firstItem="8is-0m-uwS" firstAttribute="leading" secondItem="njY-4O-6SS" secondAttribute="leading" id="AeI-6F-gb2"/>
@@ -1480,6 +1509,7 @@
         <image name="phoneNumber" width="64" height="64"/>
         <image name="profileIcon25" width="25" height="25"/>
         <image name="signOut" width="64" height="64"/>
+        <image name="truongTranHungDao" width="720" height="320"/>
         <image name="university" width="64" height="64"/>
         <image name="userRed" width="25" height="25"/>
         <image name="village" width="64" height="64"/>

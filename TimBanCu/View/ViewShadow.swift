@@ -15,7 +15,7 @@ class ViewShadow: UIView {
         layer.shadowOpacity = 1
         layer.shadowRadius = 3
         layer.shadowOffset = CGSize(width: 0.0, height: 2)
-        layer.shadowColor = UIColor(red: 203/255, green: 203/255, blue: 203/255, alpha: 1.0).cgColor
+        layer.shadowColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 0.5).cgColor
     }
     
 }
