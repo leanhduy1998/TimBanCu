@@ -30,6 +30,7 @@ target 'TimBanCu' do
   pod 'DKImagePickerController', '~> 4.0.0-beta', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
   pod 'lottie-ios'
   pod 'Hero'
+  pod 'RevealingSplashView'
 
   target 'TimBanCuTests' do
     inherit! :search_paths

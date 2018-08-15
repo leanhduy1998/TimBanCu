@@ -11,14 +11,24 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 import GoogleSignIn
+import RevealingSplashView
 
 extension SignInViewController{
+    
+    func setUpSplashView() {
+        self.view.addSubview(revealingSplashView)
+        revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
+        revealingSplashView.startAnimation()
+    }
+    
     func setupFacebookBtn(){
         let facebookSignInBtn = LoginButton(readPermissions: [ .publicProfile ])
         facebookSignInBtn.delegate = self
         facebookSignInBtn.translatesAutoresizingMaskIntoConstraints = false
         
+        
         view.addSubview(facebookSignInBtn)
+        view.sendSubview(toBack: facebookSignInBtn)
         facebookSignInBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -10).isActive = true
         facebookSignInBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         facebookSignInBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true

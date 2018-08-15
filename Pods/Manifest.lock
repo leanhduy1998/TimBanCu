@@ -127,6 +127,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - RevealingSplashView (0.5.0)
   - SDWebImage/Core (4.4.1)
   - SDWebImage/GIF (4.4.1):
     - FLAnimatedImage (~> 1.0)
@@ -150,6 +151,7 @@ DEPENDENCIES:
   - ImageSlideshow
   - JSQMessagesViewController
   - lottie-ios
+  - RevealingSplashView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -183,6 +185,7 @@ SPEC REPOS:
     - leveldb-library
     - lottie-ios
     - nanopb
+    - RevealingSplashView
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -216,8 +219,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  RevealingSplashView: 0794eecad3a8983ac11a1fe474e9a9b51b926780
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
 
-PODFILE CHECKSUM: a6ff1dfe504bca7985b310528e167c5eeb93b710
+PODFILE CHECKSUM: 8c287a872165b1cc5e9556af8e05c8dc8e8b2bdf
 
 COCOAPODS: 1.5.3
