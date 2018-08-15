@@ -70,7 +70,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         setupAlerts()
-        customizeSearchTF()
+        //customizeSearchTF()
         setUpAnimatedEmoticon()
         
         tableview.isHidden = true

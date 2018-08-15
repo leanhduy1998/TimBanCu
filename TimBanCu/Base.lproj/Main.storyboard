@@ -473,7 +473,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8is-0m-uwS">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -549,25 +549,45 @@
                                     <outlet property="delegate" destination="MxZ-TI-ABJ" id="aHN-OP-1gm"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm Tên Trường (Có Dấu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lms-nl-ZbS">
-                                <rect key="frame" x="30" y="94" width="315" height="20"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnD-zs-GPr" customClass="CustomizeSearchView" customModule="TimBanCu" customModuleProvider="target">
+                                <rect key="frame" x="10" y="84" width="355" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm Tên Trường (Có Dấu)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lms-nl-ZbS">
+                                        <rect key="frame" x="40" y="0.0" width="310" height="40"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="DIl-aM-9dw">
+                                        <rect key="frame" x="5" y="7.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="c2e-2j-bqU"/>
+                                            <constraint firstAttribute="height" constant="25" id="gNT-O4-V4p"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="0qw-6v-zBn"/>
+                                    <constraint firstAttribute="trailing" secondItem="lms-nl-ZbS" secondAttribute="trailing" constant="5" id="ECG-wI-Ktu"/>
+                                    <constraint firstItem="lms-nl-ZbS" firstAttribute="leading" secondItem="DIl-aM-9dw" secondAttribute="trailing" constant="10" id="Iid-Rm-sML"/>
+                                    <constraint firstItem="DIl-aM-9dw" firstAttribute="leading" secondItem="gnD-zs-GPr" secondAttribute="leading" constant="5" id="LhU-2Q-EqM"/>
+                                    <constraint firstAttribute="height" constant="40" id="N8h-u8-IWa"/>
+                                    <constraint firstItem="lms-nl-ZbS" firstAttribute="top" secondItem="gnD-zs-GPr" secondAttribute="top" id="SRT-UM-wDl"/>
+                                    <constraint firstAttribute="bottom" secondItem="lms-nl-ZbS" secondAttribute="bottom" id="nzU-fk-eXa"/>
+                                    <constraint firstItem="DIl-aM-9dw" firstAttribute="centerY" secondItem="gnD-zs-GPr" secondAttribute="centerY" id="vwa-rp-yQj"/>
                                 </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="njY-4O-6SS" firstAttribute="trailing" secondItem="8is-0m-uwS" secondAttribute="trailing" id="0b4-bQ-33Z"/>
                             <constraint firstItem="8is-0m-uwS" firstAttribute="leading" secondItem="njY-4O-6SS" secondAttribute="leading" id="AeI-6F-gb2"/>
-                            <constraint firstItem="lms-nl-ZbS" firstAttribute="leading" secondItem="njY-4O-6SS" secondAttribute="leading" constant="30" id="SCv-mA-z9h"/>
+                            <constraint firstItem="gnD-zs-GPr" firstAttribute="leading" secondItem="njY-4O-6SS" secondAttribute="leading" constant="10" id="Vwe-DZ-Pzr"/>
                             <constraint firstItem="njY-4O-6SS" firstAttribute="bottom" secondItem="8is-0m-uwS" secondAttribute="bottom" id="cJT-ZY-IGF"/>
-                            <constraint firstItem="njY-4O-6SS" firstAttribute="trailing" secondItem="lms-nl-ZbS" secondAttribute="trailing" constant="30" id="f1u-I3-lhK"/>
-                            <constraint firstItem="8is-0m-uwS" firstAttribute="top" secondItem="lms-nl-ZbS" secondAttribute="bottom" constant="10" id="jOa-NZ-OBk"/>
-                            <constraint firstItem="lms-nl-ZbS" firstAttribute="top" secondItem="njY-4O-6SS" secondAttribute="top" constant="30" id="lVA-lH-5Mr"/>
+                            <constraint firstItem="gnD-zs-GPr" firstAttribute="top" secondItem="njY-4O-6SS" secondAttribute="top" constant="20" id="gJI-PN-l8u"/>
+                            <constraint firstItem="njY-4O-6SS" firstAttribute="trailing" secondItem="gnD-zs-GPr" secondAttribute="trailing" constant="10" id="wM7-3d-S8e"/>
+                            <constraint firstItem="8is-0m-uwS" firstAttribute="top" secondItem="gnD-zs-GPr" secondAttribute="bottom" constant="-5" id="yfR-JV-rZr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="njY-4O-6SS"/>
                         <userDefinedRuntimeAttributes>
@@ -592,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ls-mX-pf7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="1610"/>
+            <point key="canvasLocation" x="1272.8" y="1609.745127436282"/>
         </scene>
         <!--Tên Khoa-->
         <scene sceneID="hlS-7e-pHi">
@@ -1508,6 +1528,7 @@
         <image name="name" width="64" height="64"/>
         <image name="phoneNumber" width="64" height="64"/>
         <image name="profileIcon25" width="25" height="25"/>
+        <image name="search" width="50" height="50"/>
         <image name="signOut" width="64" height="64"/>
         <image name="truongTranHungDao" width="720" height="320"/>
         <image name="university" width="64" height="64"/>
