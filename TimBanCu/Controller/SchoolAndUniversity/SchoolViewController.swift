@@ -22,6 +22,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
+    var finishedLoadingInitialTableCells = false
+    
     var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?")
     var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
