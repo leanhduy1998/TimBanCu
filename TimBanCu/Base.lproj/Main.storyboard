@@ -329,7 +329,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egx-Rd-5we"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trang Chính" image="homeDarkGray" selectedImage="homeRed" id="UlA-x7-6Xr">
+                    <tabBarItem key="tabBarItem" title="Trang Chính" image="homeDarkGray" selectedImage="homeRed" springLoaded="YES" id="UlA-x7-6Xr">
                         <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Chọn Loại Trường" id="knV-Ix-juY">
