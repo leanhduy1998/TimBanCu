@@ -267,8 +267,18 @@
 			children = (
 				1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */,
 				1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */,
+				1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */,
 			);
 			path = ClassNameViewControllers;
+			sourceTree = "<group>";
+		};
+		1C1257382128C29D007FE4FF /* Select School */ = {
+			isa = PBXGroup;
+			children = (
+				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
+				1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */,
+			);
+			path = "Select School";
 			sourceTree = "<group>";
 		};
 		1C1A98FA210CBBC800D20079 /* Chat */ = {
@@ -280,21 +290,9 @@
 				1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */,
 				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
 				1C1A9905210CBFD700D20079 /* ChatMessageExtension.swift */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		1C2E736F21091510007EAE63 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */,
-				1C4BF8772117F1CA006A7FBE /* MajorExtension.swift */,
-				1C6D51FF20FB9C9300F8F5D7 /* ClassNameViewExtension.swift */,
-				1C278C8020FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift */,
-				1C2E7370210916E7007EAE63 /* AddYourInfoExtension.swift */,
 				1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */,
 			);
-			path = Extensions;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		1C2E737421091990007EAE63 /* AddYourInfo */ = {
@@ -303,6 +301,7 @@
 				1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */,
 				1C784B672110F7D500647C40 /* AddYourInfoExtensions */,
 				1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */,
+				1C2E7370210916E7007EAE63 /* AddYourInfoExtension.swift */,
 			);
 			path = AddYourInfo;
 			sourceTree = "<group>";
@@ -312,6 +311,7 @@
 			children = (
 				1C83E81C2113879E00D647D0 /* MajorViewController.swift */,
 				1C4BF8742117F06C006A7FBE /* MajorAlert.swift */,
+				1C4BF8772117F1CA006A7FBE /* MajorExtension.swift */,
 			);
 			path = "University Major";
 			sourceTree = "<group>";
@@ -381,8 +381,7 @@
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1C2E736F21091510007EAE63 /* Extensions */,
-				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
+				1C1257382128C29D007FE4FF /* Select School */,
 				1C98F66921288C3100EFD4EF /* Sign In */,
 				1C0A039A20F5162100E105A9 /* SchoolAndUniversity */,
 				1C4BF8732117F059006A7FBE /* University Major */,
@@ -493,6 +492,7 @@
 			children = (
 				1C53F4F420FD408A00F4ACEB /* ClassDetailViewController.swift */,
 				1CDBA7B62125082C002004F9 /* ClassDetailTableView.swift */,
+				1C278C8020FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift */,
 			);
 			path = "Class Detail";
 			sourceTree = "<group>";

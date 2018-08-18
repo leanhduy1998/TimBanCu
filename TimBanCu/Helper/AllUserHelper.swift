@@ -65,6 +65,7 @@ class AllUserHelper{
     }
     
     private static func getPrivateData(student:Student,completionHandler: @escaping (_ student:Student) -> Void){
+        
         Database.database().reference().child("privateUserProfile").child(student.uid).observeSingleEvent(of: .value, with: { (privateSS) in
             
             if(!privateSS.hasChildren()){
@@ -86,6 +87,12 @@ class AllUserHelper{
                 completionHandler(student)
             }
             
-        })
+            
+        }) { (err) in
+            if(err.localizedDescription == "Permission Denied"){
+                completionHandler(student)
+            }
+        }
+
     }
 }

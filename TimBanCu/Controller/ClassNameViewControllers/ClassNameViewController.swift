@@ -78,14 +78,9 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
             for snap in snapshot.children{
                 let className = (snap as! DataSnapshot).key as! String
                 
-                let classDic = (snap as! DataSnapshot).value as! [String:[String:String]]
+                let classDetail = ClassDetail(classNumber: self.classNumber, uid: "?", schoolName: self.school.name, className: className, classYear: "?")
                 
-                for(_,dic) in classDic{
-                    // there could be multiple class years
-                    let classDetail = ClassDetail(classNumber: self.classNumber, uid: "?", schoolName: self.school.name, className: className, classYear: "?")
-                    
-                     self.classDetails.append(classDetail)
-                }
+                self.classDetails.append(classDetail)
             }
             
             DispatchQueue.main.async {

@@ -62,21 +62,21 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
             
-            
+
             guard let authentication = user.authentication else { return }
         
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                           accessToken: authentication.accessToken)
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            
             firebaseSignIn(credential: credential) { (success) in
                 if(success){
                     let uid = Auth.auth().currentUser?.uid
-                    DispatchQueue.main.async {
-                        self.loadUserInfo(uid: uid!) {
-                            DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
-                            }
+                    
+                    self.loadUserInfo(uid: uid!) {
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
                         }
                     }
+                    
                 }
             }
         }
@@ -96,13 +96,13 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             firebaseSignIn(credential: credential) { (success) in
                 if(success){
                     let uid = accessToken.userId
-                    DispatchQueue.main.async {
-                        self.loadUserInfo(uid: uid!) {
-                            DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
-                            }
+                    
+                    self.loadUserInfo(uid: uid!) {
+                        DispatchQueue.main.async {
+                            self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
                         }
                     }
+                    
                 }
             }
 
@@ -133,9 +133,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     func loadUserInfo(uid:String, completionHandler: @escaping () -> Void){
         AllUserHelper.getAnyStudentFromDatabase(uid: uid) { (student) in
             
-            if(student.isStudentInfoCompleted()){
-                CurrentUserHelper.setStudent(student: student)
-            }
+            CurrentUserHelper.setStudent(student: student)
             
             completionHandler()
         }
