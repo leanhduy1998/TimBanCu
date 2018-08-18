@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import FirebaseStorage
+import Hero
 
 class StudentDetailViewController: UIViewController {
     
@@ -28,13 +29,17 @@ class StudentDetailViewController: UIViewController {
     
     var userImages = [UIImage]()
     var yearOfUserImage = [UIImage:Int]()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nameLabel.text = student.fullName
         birthYearLabel.text = student.birthYear
+        
+        nameLabel.hero.isEnabled = true
+        imageSlideshow.hero.isEnabled = true
+        nameLabel.hero.id = "\(student.fullName)"
+        imageSlideshow.hero.id = "\(student.fullName)image"
         
         if(student.phoneNumber == nil){
             phoneLabel.text = "Số Điện Thoại Này Không Được Công Khai."

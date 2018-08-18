@@ -25,6 +25,14 @@ extension ClassDetailViewController{
         searchTF.delegate = self
     }
     
+    func setUpAnimatedEmoticon() {
+        view.addSubview(animatedEmoticon)
+        animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        animatedEmoticon.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
@@ -51,7 +59,7 @@ extension ClassDetailViewController{
         view.bringSubview(toFront: noResultLabel)
         
         noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
         noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }

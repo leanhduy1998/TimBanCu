@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Lottie
+import Hero
 
 class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate {
 
@@ -21,7 +22,13 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
+<<<<<<< HEAD
     var noResultLabel = NoResultLabel(type: Type.School)
+=======
+    var finishedLoadingInitialTableCells = false
+    
+    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?")
+>>>>>>> UI-Design
     var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
     var searchTFUnderline: UIView = {
@@ -63,14 +70,13 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         setupAlerts()
-        customizeSearchTF()
+        //customizeSearchTF()
         setUpAnimatedEmoticon()
         
         tableview.isHidden = true
@@ -79,6 +85,11 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillDisappear(_ animated: Bool) {
         view.endEditing(true)
+        
+        if (self.isMovingFromParentViewController) {
+            navigationController?.hero.isEnabled = true
+            navigationController?.hero.navigationAnimationType = .fade
+        } 
     }
     
     override func viewDidLayoutSubviews() {
@@ -183,7 +194,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             noResultLabel.isHidden = false
             noResultAddNewSchoolBtn.isHidden = false
             tableview.isHidden = true
+<<<<<<< HEAD
             
+=======
+>>>>>>> UI-Design
             animatedEmoticon.isHidden = false
             animatedEmoticon.play()
         }
@@ -192,7 +206,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             noResultAddNewSchoolBtn.isHidden = true
             tableview.isHidden = false
             tableview.reloadData()
+<<<<<<< HEAD
             
+=======
+>>>>>>> UI-Design
             animatedEmoticon.isHidden = true
             animatedEmoticon.stop()
         }

@@ -54,11 +54,18 @@ extension SchoolViewController{
     func setupNoResultLabelAndButton(){
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewSchoolBtn)
+<<<<<<< HEAD:TimBanCu/Controller/SchoolAndUniversity/SchoolViewExtension.swift
         
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
 
         noResultLabel.setConstraints(view: view, animatedEmoticon: animatedEmoticon)
+=======
+        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
+        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+>>>>>>> UI-Design:TimBanCu/View/Extensions/School/SchoolViewExtension.swift
         
         noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true

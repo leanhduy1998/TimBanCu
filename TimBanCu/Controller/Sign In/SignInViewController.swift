@@ -17,6 +17,8 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+import RevealingSplashView
+
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate, UITextFieldDelegate {
     
     
@@ -30,19 +32,19 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     var shimmerAppNameLabel = UILabel()
     let appNameLabel = UILabel()
 
+    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo")!,iconInitialSize: CGSize(width: 140, height: 140), backgroundColor: UIColor(red:255/255, green:158/255, blue: 0 , alpha:1.0))
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ref = Database.database().reference()
         
+        setUpSplashView()
         setupShimmeringText()
         setupFacebookBtn()
         setupGoogleButton()
         
         signInAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        
     }
     
     // Present a view that prompts the user to sign in with Google
