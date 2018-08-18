@@ -23,12 +23,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func unwindToClassDetailViewController(segue:UIStoryboardSegue) { }
     
-<<<<<<< HEAD:TimBanCu/Controller/Class Detail/ClassDetailViewController.swift
+
     // segue from previous class
     var classDetail:ClassProtocol!
-=======
+
     var finishedLoadingInitialTableCells = false
->>>>>>> UI-Design:TimBanCu/Controller/ClassDetailViewController.swift
+
     
     // backend
     var students = [Student]()
@@ -86,13 +86,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-<<<<<<< HEAD:TimBanCu/Controller/Class Detail/ClassDetailViewController.swift
-        students.removeAll()
-        searchStudents.removeAll()
-=======
+
+       
+
         noResultLabel.isHidden = true
         animatedEmoticon.isHidden = true
->>>>>>> UI-Design:TimBanCu/Controller/ClassDetailViewController.swift
+
         
         startLoading()
         fetchData {
@@ -151,56 +150,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.showAddYourInfoBtnIfYouAreNotInTheClass()
     }
     
-    
-<<<<<<< HEAD:TimBanCu/Controller/Class Detail/ClassDetailViewController.swift
-=======
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassDetailTableViewCell") as? ClassDetailTableViewCell
-        
-        let student = searchStudents[indexPath.row]
-        
-        cell?.nameLabel.text = student.fullName
-        cell?.selectedBackgroundView = customSelectionColorView
-        
-        cell?.nameLabel!.hero.id = "\(student.fullName)"
-        cell?.imageview!.hero.id = "\(student.fullName)image"
-        cell?.nameLabel!.hero.modifiers = [.arc]
-        cell?.imageview!.hero.modifiers = [.arc]
-        return cell!
-    }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedStudent = searchStudents[indexPath.row]
-        performSegue(withIdentifier: "ClassDetailToStudentDetail", sender: self)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        var lastInitialDisplayableCell = false
-        
-        if searchStudents.count > 0 && !finishedLoadingInitialTableCells {
-            if let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows,
-                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
-                lastInitialDisplayableCell = true
-            }
-        }
-        
-        if !finishedLoadingInitialTableCells {
-            
-            if lastInitialDisplayableCell {
-                finishedLoadingInitialTableCells = true
-            }
-            cell.transform = CGAffineTransform(translationX: 0, y: tableview.rowHeight / 2)
-            cell.alpha = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-                cell.alpha = 1
-            }, completion: nil)
-        }
-        
-    }
->>>>>>> UI-Design:TimBanCu/Controller/ClassDetailViewController.swift
 
     @IBAction func addYourselfBtnPressed(_ sender: Any) {
         if(!CurrentUserHelper.hasEnoughDataInFireBase()){

@@ -26,6 +26,11 @@ extension ClassDetailViewController{
         
         cell.nameLabel.text = student.fullName
         cell.selectedBackgroundView = customSelectionColorView
+        
+        cell.nameLabel!.hero.id = "\(student.fullName)"
+        cell.imageview!.hero.id = "\(student.fullName)image"
+        cell.nameLabel!.hero.modifiers = [.arc]
+        cell.imageview!.hero.modifiers = [.arc]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

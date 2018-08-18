@@ -12,11 +12,9 @@ import Lottie
 
 class MajorViewController: UIViewController {
 
-<<<<<<< HEAD
+
     var noResultLabel = NoResultLabel(type: Type.University)
-=======
-    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên khoa mới? \n Ví Dụ: Khoa Kinh Tế")
->>>>>>> UI-Design
+
     var noResultAddNewMajorBtn = NoResultButton(title: "Thêm Khoa Mới")
     
     var addNewMajorAlert = UIAlertController(title: "Thêm Khoa Mới", message: "", preferredStyle: .alert)

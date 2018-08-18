@@ -22,13 +22,12 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
-<<<<<<< HEAD
+
     var noResultLabel = NoResultLabel(type: Type.School)
-=======
+
     var finishedLoadingInitialTableCells = false
     
-    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?")
->>>>>>> UI-Design
+ 
     var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
     var searchTFUnderline: UIView = {
@@ -194,10 +193,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             noResultLabel.isHidden = false
             noResultAddNewSchoolBtn.isHidden = false
             tableview.isHidden = true
-<<<<<<< HEAD
-            
-=======
->>>>>>> UI-Design
+
             animatedEmoticon.isHidden = false
             animatedEmoticon.play()
         }
@@ -206,10 +202,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             noResultAddNewSchoolBtn.isHidden = true
             tableview.isHidden = false
             tableview.reloadData()
-<<<<<<< HEAD
-            
-=======
->>>>>>> UI-Design
+
             animatedEmoticon.isHidden = true
             animatedEmoticon.stop()
         }

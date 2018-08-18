@@ -17,15 +17,12 @@ enum Type:String {
 
 class NoResultLabel: UILabel {
     
-<<<<<<< HEAD
+
     //"Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên trường?"
     
     
     
     init(type:Type) {
-=======
-    init(text: String) {
->>>>>>> UI-Design
         super.init(frame: .zero)
         
         switch(type){

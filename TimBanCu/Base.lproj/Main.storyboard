@@ -554,16 +554,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8is-0m-uwS">
-                                <rect key="frame" x="0.0" y="124" width="375" height="494"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-=======
+
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8is-0m-uwS">
                                 <rect key="frame" x="0.0" y="119" width="375" height="548"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
->>>>>>> UI-Design
+
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SchoolTableViewCell" rowHeight="140" id="ro3-I2-MuB" customClass="SchoolTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
@@ -686,13 +682,12 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="DFC-CN-uUV"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-<<<<<<< HEAD
-=======
+
                     <nil key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
->>>>>>> UI-Design
+
                     <connections>
                         <outlet property="searchTF" destination="lms-nl-ZbS" id="0eC-es-cmF"/>
                         <outlet property="tableview" destination="8is-0m-uwS" id="Irv-7K-GZt"/>
@@ -1021,16 +1016,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
-                                <rect key="frame" x="0.0" y="124" width="375" height="394"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-=======
+
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
                                 <rect key="frame" x="0.0" y="124" width="375" height="443"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
->>>>>>> UI-Design
+
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="80" id="2NF-ef-gED" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
@@ -1186,21 +1177,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ueu-cO-p3L">
-<<<<<<< HEAD
-                                <rect key="frame" x="30" y="434.5" width="315" height="133.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vy Le, 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-Sn-pQQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-tx-hem">
-                                        <rect key="frame" x="0.0" y="33.5" width="315" height="33.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NGÀY SINH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4s-mL-xPE">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="21.5"/>
-=======
+
                                 <rect key="frame" x="30" y="469.5" width="315" height="180"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-tx-hem">
@@ -1208,17 +1185,15 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NGÀY SINH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4s-mL-xPE">
                                                 <rect key="frame" x="0.0" y="0.0" width="80.5" height="30"/>
->>>>>>> UI-Design
+
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/03/2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1w-uS-XDJ">
-<<<<<<< HEAD
-                                                <rect key="frame" x="0.0" y="11.5" width="83.5" height="22"/>
-=======
+
                                                 <rect key="frame" x="0.0" y="30" width="83.5" height="30"/>
->>>>>>> UI-Design
+
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1226,13 +1201,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
-<<<<<<< HEAD
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="FId-GV-Apr">
-                                        <rect key="frame" x="0.0" y="67" width="315" height="33"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SỐ ĐIỆN THOAI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-pq-G49">
-                                                <rect key="frame" x="0.0" y="0.0" width="315" height="21.5"/>
-=======
+
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FId-GV-Apr">
                                         <rect key="frame" x="0.0" y="60" width="315" height="60"/>
                                         <subviews>
@@ -1244,11 +1213,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-rp-DJT">
-<<<<<<< HEAD
-                                                <rect key="frame" x="0.0" y="11.5" width="315" height="21.5"/>
-=======
+
                                                 <rect key="frame" x="0.0" y="30" width="315" height="30"/>
->>>>>>> UI-Design
+
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1256,29 +1223,21 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
-<<<<<<< HEAD
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-iQ-sSc">
-                                        <rect key="frame" x="0.0" y="100" width="315" height="33.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMh-cW-w8A">
-                                                <rect key="frame" x="0.0" y="0.0" width="315" height="22"/>
-=======
+
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-iQ-sSc">
                                         <rect key="frame" x="0.0" y="120" width="315" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMh-cW-w8A">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
->>>>>>> UI-Design
+
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lethaovy2001@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-qI-45r">
-<<<<<<< HEAD
-                                                <rect key="frame" x="0.0" y="12" width="315" height="21.5"/>
-=======
+
                                                 <rect key="frame" x="0.0" y="30" width="315" height="30"/>
->>>>>>> UI-Design
+
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1366,11 +1325,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDn-Vc-2hg">
-<<<<<<< HEAD
-                                <rect key="frame" x="167" y="303" width="41" height="20"/>
-=======
+
                                 <rect key="frame" x="167" y="356" width="41" height="20"/>
->>>>>>> UI-Design
+
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GXj-aA-mge"/>
                                 </constraints>
@@ -1379,37 +1336,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="ImageSlideshow" customModule="ImageSlideshow">
-<<<<<<< HEAD
-                                <rect key="frame" x="20" y="84" width="335" height="214"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uh6-PM-d0O">
-                                <rect key="frame" x="20" y="343" width="335" height="255"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Họ và Tên" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-io-yJe">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="JQj-ie-ck1"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Năm Sinh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-yg-hMV">
-                                        <rect key="frame" x="0.0" y="45" width="335" height="30"/>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNX-GP-Ma2">
-                                        <rect key="frame" x="0.0" y="90" width="335" height="30"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8SJ-Gf-5S5">
-                                                <rect key="frame" x="0.0" y="0.5" width="203" height="29.5"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-=======
+
                                 <rect key="frame" x="19.5" y="84" width="335.5" height="267"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -1449,15 +1376,11 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Năm Sinh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-yg-hMV">
                                                 <rect key="frame" x="50" y="0.0" width="285.5" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
->>>>>>> UI-Design
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-<<<<<<< HEAD
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbE-Uj-ywl">
-                                                <rect key="frame" x="315" y="5.5" width="20" height="20"/>
-=======
+
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5RO-Gs-2gC">
@@ -1465,7 +1388,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneNumber" translatesAutoresizingMaskIntoConstraints="NO" id="TLd-g5-7E3">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
->>>>>>> UI-Design
+
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="YJf-wX-5du"/>
                                                 </constraints>
@@ -1478,13 +1401,10 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-rl-SOQ">
-<<<<<<< HEAD
-                                                <rect key="frame" x="208.5" y="0.5" width="101.5" height="29.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-=======
+
                                                 <rect key="frame" x="221.5" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
->>>>>>> UI-Design
+
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -1500,28 +1420,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-<<<<<<< HEAD
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="xbE-Uj-ywl" firstAttribute="leading" secondItem="Fio-rl-SOQ" secondAttribute="trailing" constant="5" id="DPC-ZN-ZIn"/>
-                                            <constraint firstItem="Fio-rl-SOQ" firstAttribute="leading" secondItem="8SJ-Gf-5S5" secondAttribute="trailing" constant="5" id="Esu-X6-QRn"/>
-                                            <constraint firstItem="Fio-rl-SOQ" firstAttribute="top" secondItem="jNX-GP-Ma2" secondAttribute="top" id="UW5-nU-jrV"/>
-                                            <constraint firstItem="xbE-Uj-ywl" firstAttribute="centerY" secondItem="8SJ-Gf-5S5" secondAttribute="centerY" id="ccJ-7N-fTM"/>
-                                            <constraint firstAttribute="bottom" secondItem="Fio-rl-SOQ" secondAttribute="bottom" id="jr9-s7-w39"/>
-                                            <constraint firstAttribute="trailing" secondItem="xbE-Uj-ywl" secondAttribute="trailing" id="kwJ-eS-k3I"/>
-                                            <constraint firstItem="8SJ-Gf-5S5" firstAttribute="top" secondItem="jNX-GP-Ma2" secondAttribute="top" id="py6-tM-pfB"/>
-                                            <constraint firstAttribute="bottom" secondItem="8SJ-Gf-5S5" secondAttribute="bottom" id="qaR-d9-VIM"/>
-                                            <constraint firstItem="Fio-rl-SOQ" firstAttribute="width" secondItem="8SJ-Gf-5S5" secondAttribute="width" multiplier="1:2" id="rdS-gw-5NS"/>
-                                            <constraint firstItem="8SJ-Gf-5S5" firstAttribute="leading" secondItem="jNX-GP-Ma2" secondAttribute="leading" id="zBF-wX-W7P"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkn-xe-66k">
-                                        <rect key="frame" x="0.0" y="135" width="335" height="30"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-lD-IKn">
-                                                <rect key="frame" x="0.0" y="0.5" width="203" height="29.5"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-=======
+
                                     </stackView>
                                     <stackView opaque="NO" tag="5" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U2i-xw-XCr">
                                         <rect key="frame" x="0.0" y="165" width="335.5" height="40"/>
@@ -1535,31 +1434,16 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-lD-IKn">
                                                 <rect key="frame" x="50" y="0.0" width="161.5" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
->>>>>>> UI-Design
+
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
-<<<<<<< HEAD
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q6-ob-R3P">
-                                                <rect key="frame" x="315" y="5.5" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="TyC-63-Kic"/>
-                                                    <constraint firstAttribute="width" constant="20" id="ynI-sc-rMe"/>
-                                                </constraints>
-                                                <state key="normal" image="question"/>
-                                                <connections>
-                                                    <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="GhP-hB-g5O"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-Kt-Bs1">
-                                                <rect key="frame" x="208.5" y="0.5" width="101.5" height="29.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-=======
+
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-Kt-Bs1">
                                                 <rect key="frame" x="221.5" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
->>>>>>> UI-Design
+
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -1575,24 +1459,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-<<<<<<< HEAD
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="9q6-ob-R3P" firstAttribute="centerY" secondItem="fbe-lD-IKn" secondAttribute="centerY" id="2sC-WT-ibK"/>
-                                            <constraint firstItem="fbe-lD-IKn" firstAttribute="top" secondItem="dkn-xe-66k" secondAttribute="top" id="3E6-O8-4dF"/>
-                                            <constraint firstItem="fbe-lD-IKn" firstAttribute="leading" secondItem="dkn-xe-66k" secondAttribute="leading" id="Etf-kR-pXP"/>
-                                            <constraint firstAttribute="trailing" secondItem="9q6-ob-R3P" secondAttribute="trailing" id="JCS-Cb-Tvv"/>
-                                            <constraint firstAttribute="bottom" secondItem="fbe-lD-IKn" secondAttribute="bottom" id="JsT-Gy-ePe"/>
-                                            <constraint firstAttribute="bottom" secondItem="XMM-Kt-Bs1" secondAttribute="bottom" id="ff8-ZY-HmJ"/>
-                                            <constraint firstItem="XMM-Kt-Bs1" firstAttribute="leading" secondItem="fbe-lD-IKn" secondAttribute="trailing" constant="5" id="kat-wI-Mog"/>
-                                            <constraint firstItem="XMM-Kt-Bs1" firstAttribute="top" secondItem="dkn-xe-66k" secondAttribute="top" id="vxh-Ns-bkW"/>
-                                            <constraint firstItem="9q6-ob-R3P" firstAttribute="leading" secondItem="XMM-Kt-Bs1" secondAttribute="trailing" constant="5" id="zMZ-Tm-Fzu"/>
-                                            <constraint firstItem="XMM-Kt-Bs1" firstAttribute="width" secondItem="fbe-lD-IKn" secondAttribute="width" multiplier="1:2" id="zZA-h3-Npr"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có thể sửa thông tin cá nhân ở mục Công Cụ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu2-Hq-EEd">
-                                        <rect key="frame" x="0.0" y="180" width="335" height="30"/>
-=======
+
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -1601,17 +1468,15 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có thể sửa thông tin cá nhân ở mục Công Cụ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu2-Hq-EEd">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="16"/>
->>>>>>> UI-Design
+
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jw-eh-eN4">
-<<<<<<< HEAD
-                                        <rect key="frame" x="0.0" y="225" width="335" height="30"/>
-=======
+
                                         <rect key="frame" x="0.0" y="16" width="315" height="30"/>
->>>>>>> UI-Design
+
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Thêm Thông Tin Cá Nhân">
                                             <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1711,11 +1576,9 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-hj-4Qn">
-<<<<<<< HEAD
-                                <rect key="frame" x="150" y="587" width="75.5" height="21"/>
-=======
+
                                 <rect key="frame" x="150" y="636.5" width="75.5" height="20.5"/>
->>>>>>> UI-Design
+
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

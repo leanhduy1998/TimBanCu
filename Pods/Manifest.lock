@@ -113,6 +113,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
+  - Hero (1.2.0)
   - ImageSlideshow (1.6.1):
     - ImageSlideshow/Core (= 1.6.1)
   - ImageSlideshow/Core (1.6.1)
@@ -126,6 +127,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - RevealingSplashView (0.5.0)
   - SDWebImage/Core (4.4.1)
   - SDWebImage/GIF (4.4.1):
     - FLAnimatedImage (~> 1.0)
@@ -145,9 +147,11 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - GoogleSignIn
+  - Hero
   - ImageSlideshow
   - JSQMessagesViewController
   - lottie-ios
+  - RevealingSplashView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -174,12 +178,14 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - Hero
     - ImageSlideshow
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - leveldb-library
     - lottie-ios
     - nanopb
+    - RevealingSplashView
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -206,14 +212,16 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   ImageSlideshow: f0f33e1a20668e83d77f5fb7729e4ae4437c0759
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  RevealingSplashView: 0794eecad3a8983ac11a1fe474e9a9b51b926780
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
 
-PODFILE CHECKSUM: d3508e7f3170cb366b1f1964a576302ac86fa749
+PODFILE CHECKSUM: 8c287a872165b1cc5e9556af8e05c8dc8e8b2bdf
 
 COCOAPODS: 1.5.2
