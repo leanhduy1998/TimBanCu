@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class MajorViewController: UIViewController {
 
-    var noResultLabel = NoResultLabel(text: "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên khoa mới? Ví Dụ: Khoa Kinh Tế")
+    var noResultLabel = NoResultLabel(type: Type.University)
     var noResultAddNewMajorBtn = NoResultButton(title: "Thêm Khoa Mới")
     
     var addNewMajorAlert = UIAlertController(title: "Thêm Khoa Mới", message: "", preferredStyle: .alert)

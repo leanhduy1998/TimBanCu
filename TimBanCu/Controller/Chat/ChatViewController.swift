@@ -14,18 +14,17 @@ import FirebaseStorage
 
 class ChatViewController: JSQMessagesViewController {
 
-    var messages = [JSQMessage]()
-    
+    // from previous class
     var classDetail:ClassDetail!
     
-    var messageRef: DatabaseReference!
-    var newMessageRefHandle: DatabaseHandle!
-    var updatedMessageRefHandle: DatabaseHandle!
+    
+    // chat
+    var messages = [JSQMessage]()
     
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
-    var typingIndicatorRef: DatabaseReference!
+    
     var localTyping = false // 2
     var isTyping: Bool {
         get {
@@ -37,30 +36,43 @@ class ChatViewController: JSQMessagesViewController {
             userIsTypingRef.setValue(newValue)
         }
     }
-    var usersTypingQuery: DatabaseQuery!
+    
     let imageURLNotSetKey = "NOTSET"
     
     var photoMessageMap = [String: JSQPhotoMediaItem]()
     
+    // firebase
+    var messageRef: DatabaseReference!
+    var newMessageRefHandle: DatabaseHandle!
+    var updatedMessageRefHandle: DatabaseHandle!
+    var typingIndicatorRef: DatabaseReference!
+    var usersTypingQuery: DatabaseQuery!
     let storage = Storage.storage()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDBReference()
         
-        senderId = Auth.auth().currentUser?.uid
-        senderDisplayName = UserHelper.student.fullName
+        // the reason this method is here instead of init because the classDetail from the previous class wasn't passed to here yet
+        setupDBReference()
+        observeMessages()
+        observeTyping()
+        //
         
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-        
-        observeMessages()
-        observeTyping()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        senderId = CurrentUserHelper.getUid()
+        senderDisplayName = CurrentUserHelper.getFullname()
+    }
+    
+    
     func setupDBReference(){
-        messageRef = Database.database().reference().child("messages").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className)
-        typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className)
+        messageRef = Database.database().reference().child("messages").child(classDetail.getFirebasePathWithSchoolYear())
+        typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classDetail.getFirebasePathWithSchoolYear())
         
         usersTypingQuery = typingIndicatorRef!.queryOrderedByValue().queryEqual(toValue: true)
     }

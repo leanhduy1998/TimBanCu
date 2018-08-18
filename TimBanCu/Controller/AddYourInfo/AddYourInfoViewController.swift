@@ -38,7 +38,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     let privateUserProfileRef = Database.database().reference().child("privateUserProfile")
     let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
     
-
+    // from previous class
     var classDetail:ClassDetail!
 
     override func viewDidLoad() {
@@ -103,7 +103,9 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         uploadPublicData(imageFileNames: filenames)
         uploadPrivateData()
         
-        UserHelper.student = Student(fullname: self.fullNameTF.text!, birthYear: self.birthYearTF.text!, phoneNumber: self.phoneTF.text!, email: self.emailTF.text!, uid: UserHelper.uid)
+        
+        
+        updateCurrentStudentInfo()
         
         uploadUserImages(imageFileNames: filenames, completionHandler: {
             DispatchQueue.main.async {
@@ -114,8 +116,13 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         uploadUserInfoToSelectedClass()
     }
     
+    func updateCurrentStudentInfo(){
+        let student = Student(fullname: self.fullNameTF.text!, birthYear: self.birthYearTF.text!, phoneNumber: self.phoneTF.text!, email: self.emailTF.text!, uid: CurrentUserHelper.getUid())
+        CurrentUserHelper.setStudent(student: student)
+    }
+    
     func uploadUserInfoToSelectedClass(){
-         Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(UserHelper.uid).setValue(UserHelper.student.fullName)
+         Database.database().reference().child(classDetail.getFirebasePathWithSchoolYear()).child(CurrentUserHelper.getUid()).setValue(CurrentUserHelper.getFullname())
     }
     
     func uploadPublicData(imageFileNames:[UIImage:String]){
@@ -145,7 +152,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         
         publicDic["images"] = dic
         
-        publicUserProfileRef.child(UserHelper.uid).setValue(publicDic)
+        publicUserProfileRef.child(CurrentUserHelper.getUid()).setValue(publicDic)
     }
     
     func uploadPrivateData(){
@@ -159,7 +166,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
             privateDic["email"] = emailTF.text
         }
         
-        privateUserProfileRef.child(UserHelper.uid).setValue(privateDic)
+        privateUserProfileRef.child(CurrentUserHelper.getUid()).setValue(privateDic)
     }
     
     func uploadUserImages(imageFileNames:[UIImage:String], completionHandler: @escaping () -> Void){
@@ -172,7 +179,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         
         for image in userImages{
             let name = imageFileNames[image]
-            let imageRef = storage.reference().child("users").child("\(UserHelper.uid!)/\(name!)")
+            let imageRef = storage.reference().child("users").child("\(CurrentUserHelper.getUid())/\(name!)")
             
             let data = image.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
             

@@ -36,37 +36,37 @@ extension SchoolViewController{
         addNewSchoolAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewSchoolAlert] (_) in
             let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
+            
             if(!(schoolName?.isEmpty)!){
-                let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: UserHelper.uid)
-               
-                DispatchQueue.main.async {
-                    let schoolsRef = Database.database().reference().child("schools")
-                    schoolsRef.child(schoolName!).setValue(school.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
-                        
+                let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: CurrentUserHelper.getUid())
+                
+                self.addSchoolToDatabase(school: school, completionHandler: { (err, ref) in
+                    DispatchQueue.main.async {
                         if(err == nil){
-                            DispatchQueue.main.async {
-                                self.schoolModels.append(school)
-                                
-                                self.searchSchoolModels.append(school)
-                                self.tableview.reloadData()
-                                self.updateTableviewVisibilityBasedOnSearchResult()
-                                self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
-                                
-                            }
+                            self.addSchoolToLocal(school: school)
+                            self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
                         }
                         else{
                             if(err?.localizedDescription == "Permission denied") {
                                 self.present(self.schoolAlreadyExistAlert, animated: true, completion: nil)
-
                             }
                         }
-                        
-                        
-                        
-                    })
-                }
+                    }
+                    
+                })
             }
         }))
+    }
+    
+    func addSchoolToDatabase(school:School,completionHandler: @escaping (_ err:Error?, _ ref:DatabaseReference)->Void){
+        Database.database().reference().child("schools").child(school.name).setValue(school.getObjectValueAsDic(), withCompletionBlock: completionHandler)
+    }
+    
+    func addSchoolToLocal(school:School){
+        schoolModels.append(school)
+        searchSchoolModels.append(school)
+        tableview.reloadData()
+        updateTableviewVisibilityBasedOnSearchResult()
     }
     
     private func setupAddNewSchoolCompletedAlert(){

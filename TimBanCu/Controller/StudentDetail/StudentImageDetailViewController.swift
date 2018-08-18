@@ -16,6 +16,7 @@ class StudentImageDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageview.image = image
 
         // Do any additional setup after loading the view.
     }

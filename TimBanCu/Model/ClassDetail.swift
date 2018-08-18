@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-class ClassDetail{
+class ClassDetail: ClassProtocol{
     //class Detail: 10A11
     // class name: Lớp 10
     
@@ -18,6 +18,14 @@ class ClassDetail{
     var schoolName:String!
     var classNumber:String!
     var classYear = "Năm ?"
+    
+    init(classDic:[String:String]){
+        className = classDic["className"]
+        uid = classDic["uid"]
+        schoolName = classDic["schoolName"]
+        classNumber = classDic["classNumber"]
+        classYear = classDic["classYear"]!
+    }
     
     init(classNumber:String,uid:String, schoolName:String, className:String,classYear:String){
         self.classNumber = classNumber
@@ -34,12 +42,31 @@ class ClassDetail{
         self.className = className
     }
     
-    private func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid,"classNumber":classNumber,"classYear":classYear]
+    func convertToDictionary() -> [String:String]{
+        var dic = [String:String]()
+        dic["className"] = className
+        dic["uid"] = uid
+        dic["schoolName"] = schoolName
+        dic["classNumber"] = classNumber
+        dic["classYear"] = classYear
+        
+        return dic
     }
     
-    func writeClassDetailToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
+    private func getObjectValueAsDic() -> [String:Any]{
+        return ["uid":uid,"classNumber":classNumber]
+    }
+    
+    func getFirebasePathWithoutSchoolYear()->String{
+        return "\(schoolName!)/\(classNumber!)/\(className!)"
+    }
+    
+    func getFirebasePathWithSchoolYear()->String{
+        return "\(schoolName!)/\(classNumber!)/\(className!)/\(classYear)"
+    }
+    
+    func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
         let classesDetailRef = Database.database().reference().child("classes")
-        classesDetailRef.child(schoolName).child(classNumber).child(className).child(classYear).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
+        classesDetailRef.child(getFirebasePathWithSchoolYear()).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
 }

@@ -28,7 +28,7 @@ extension ClassNameViewController{
             let className = textField?.text
             if(!(className?.isEmpty)!){
                 
-                let classDetail = ClassDetail(classNumber: self.classNumber, uid: UserHelper.uid, schoolName: self.school.name, className: className!.uppercased())
+                let classDetail = ClassDetail(classNumber: self.classNumber, uid: CurrentUserHelper.getUid(), schoolName: self.school.name, className: className!.uppercased())
                 self.selectedClassDetail = classDetail
                 
                 self.performSegue(withIdentifier: "ClassNameToClassYear", sender: self)

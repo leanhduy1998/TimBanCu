@@ -9,5 +9,9 @@
 import Foundation
 
 class ClassDetailViewModel{
+    var studentName:String!
     
+    init(student:Student){
+        self.studentName = student.fullName
+    }
 }

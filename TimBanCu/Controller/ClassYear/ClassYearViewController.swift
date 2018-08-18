@@ -30,12 +30,17 @@ class ClassYearViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
+        
         setupAlerts()
         tableview.reloadData()
     }
     
-    func setupData(){
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupManualYears()
+    }
+    
+    func setupManualYears(){
         for firstTwoDigits in 19...21{
             for lastTwoDigits in 0...99{
                 var string = ""
@@ -56,73 +61,26 @@ class ClassYearViewController: UIViewController {
         }
     }
     
+    func classYearExist(completionHandler: @escaping (_ exist:Bool, _ uid:String) -> Void){
+        Database.database().reference().child("classes").child(classDetail.getFirebasePathWithoutSchoolYear()).child(selectedYear).observeSingleEvent(of: .value) { (snapshot) in
+            
+            let classValue = (snapshot as! DataSnapshot).value as? [String:String]
+            
+            if(classValue == nil){
+                completionHandler(false, "")
+            }
+            else{
+                let uid = classValue!["uid"]
+                completionHandler(true, uid!)
+            }
+            
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
             destination.classDetail = classDetail
-            destination.selectedYear = selectedYear
         }
     }
 }
 
-extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return years.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassYearTableViewCell") as! ClassYearTableViewCell
-        cell.yearLabel.text = years[indexPath.row]
-        cell.selectedBackgroundView? = customSelectionColorView
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        selectedYear = years[indexPath.row]
-        
-        if(classDetail != nil){
-            if(classDetail.classYear == "Năm ?"){
-                classDetail.classYear = selectedYear
-                
-                classDetail.writeClassDetailToDatabase { (err, ref) in
-                    DispatchQueue.main.async {
-                        
-                        if(err == nil){
-                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                        }
-                        else if(err?.localizedDescription == "Permission denied") {
-                                self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
-                            
-                        }
-                    }
-                }
-            }
-            else{
-                performSegue(withIdentifier: "YearToClassDetailSegue", sender: self)
-            }
-        }
-        else if(majorDetail != nil){
-            if(majorDetail.majorYear == "Năm ?"){
-                majorDetail.majorYear = selectedYear
-                
-                majorDetail.writeMajorDetailToDatabase { (err, ref) in
-                    DispatchQueue.main.async {
-                        
-                        if(err == nil){
-                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                        }
-                        else if(err?.localizedDescription == "Permission denied") {
-                            self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
-                            
-                        }
-                    }
-                }
-            }
-            else{
-                performSegue(withIdentifier: "YearToClassDetailSegue", sender: self)
-            }
-        }
-        
-        
-    }
-    
-}

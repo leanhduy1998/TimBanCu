@@ -1,23 +1,20 @@
 //
-//  UserHelper.swift
+//  AllUserHelper.swift
 //  TimBanCu
 //
-//  Created by Duy Le 2 on 7/15/18.
+//  Created by Duy Le 2 on 8/18/18.
 //  Copyright © 2018 Duy Le 2. All rights reserved.
 //
 
 import Foundation
 import FirebaseDatabase
 
-class UserHelper{
-    static var uid:String!
-    static var student:Student!
-    
-    static func getStudentFromDatabase(uid:String,completionHandler: @escaping (_ student:Student) -> Void){
-        
-        
+class AllUserHelper{
+    static func getAnyStudentFromDatabase(uid:String,completionHandler: @escaping (_ student:Student) -> Void){
         getPublicData(uid: uid, completionHandler: completionHandler)
     }
+    
+    
     
     private static func getPublicData(uid:String,completionHandler: @escaping (_ student:Student) -> Void){
         let student = Student()
@@ -52,6 +49,14 @@ class UserHelper{
                     let email = (snap as! DataSnapshot).value as! String
                     student.email = email
                 }
+                else if(key == "enrolledIn"){
+                    let classArray = (snap as! DataSnapshot).value as! [[String:String]]
+                    
+                    for classDic in classArray{
+                        let classDetail = ClassDetail(classDic: classDic)
+                        student.enrolledIn.append(classDetail)
+                    }
+                }
             }
             
             getPrivateData(student: student, completionHandler: completionHandler)
@@ -60,7 +65,7 @@ class UserHelper{
     }
     
     private static func getPrivateData(student:Student,completionHandler: @escaping (_ student:Student) -> Void){
-        Database.database().reference().child("privateUserProfile").child(uid).observeSingleEvent(of: .value, with: { (privateSS) in
+        Database.database().reference().child("privateUserProfile").child(student.uid).observeSingleEvent(of: .value, with: { (privateSS) in
             
             if(!privateSS.hasChildren()){
                 completionHandler(student)

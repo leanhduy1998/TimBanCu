@@ -14,8 +14,11 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tableview: UITableView!
     
+    // From previous class
     var school:School!
     var classNumber: String!
+    //
+    
     var selectedClassDetail:ClassDetail!
     
     //database
@@ -23,7 +26,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     //no result
-    var noResultLabel = NoResultLabel(text: "Chưa có lớp. Bạn có muốn thêm lớp?\n Ví dụ: 10A11")
+    var noResultLabel = NoResultLabel(type: Type.Class)
     var noResultAddNewClassBtn = NoResultButton(title: "Thêm Lớp Mới")
     
     //tableview
@@ -69,16 +72,13 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
             
             
             for snap in snapshot.children{
-                print(snap)
-                
                 let className = (snap as! DataSnapshot).key as! String
                 
-                let classYearAndDic = (snap as! DataSnapshot).value as! [String:[String:String]]
+                let classDic = (snap as! DataSnapshot).value as! [String:[String:String]]
                 
-                for(year,dic) in classYearAndDic{
-                    let uid = dic["uid"] as! String
-                    
-                    let classDetail = ClassDetail(classNumber: self.classNumber, uid: uid, schoolName: self.school.name, className: className, classYear: year)
+                for(_,dic) in classDic{
+                    // there could be multiple class years
+                    let classDetail = ClassDetail(classNumber: self.classNumber, uid: "?", schoolName: self.school.name, className: className, classYear: "?")
                     
                      self.classDetails.append(classDetail)
                 }
@@ -89,27 +89,6 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.updateTableviewVisibilityBasedOnSearchResult()
             }
         }
-        
-        /*schoolAllClassesDetailsQuery = classesDetailRef.queryOrdered(byChild: "schoolName").queryEqual(toValue : school.name)
-        schoolAllClassesDetailsQuery.observeSingleEvent(of: .value) { (snapshot) in
-            for snap in snapshot.children {
-                let value = (snap as! DataSnapshot).value as? [String:Any]
-                
-                let classNumber = value!["classNumber"] as! String
-                
-                if(classNumber == self.classNumber){
-                    let uid = value!["uid"] as! String
-                    let schoolName = value!["schoolName"] as! String
-                    let className = value!["className"] as! String
-                    
-                    let classDetailModel = ClassDetail(classNumber: classNumber, uid: uid, schoolName: schoolName, className: className)
-                    
-         
-                }
-            }
-            
-         
-        }*/
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

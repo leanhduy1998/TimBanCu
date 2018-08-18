@@ -37,7 +37,7 @@ extension SchoolViewController{
         view.addSubview(animatedEmoticon)
         animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         animatedEmoticon.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
+       animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
         animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
@@ -58,10 +58,7 @@ extension SchoolViewController{
         view.bringSubview(toFront: noResultLabel)
         view.bringSubview(toFront: noResultAddNewSchoolBtn)
 
-        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
-        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        noResultLabel.setConstraints(view: view, animatedEmoticon: animatedEmoticon)
         
         noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true

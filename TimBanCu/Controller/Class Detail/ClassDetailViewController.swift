@@ -22,20 +22,16 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func unwindToClassDetailViewController(segue:UIStoryboardSegue) { }
     
+    // segue from previous class
+    var classDetail:ClassProtocol!
     
-    // backemd
-    
+    // backend
     var students = [Student]()
     var searchStudents = [Student]()
-    
-    var classDetail:ClassDetail!
     var selectedStudent:Student!
     
-    var selectedYear:String!
-
     //no result
-    var noResultLabel = NoResultLabel(text: "Chưa có học sinh nào.\n Bạn có muốn thông tin của mình?")
-    
+    var noResultLabel = NoResultLabel(type: Type.Student)
     
     //ui
     let customSelectionColorView: UIView = {
@@ -54,22 +50,31 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
     // firebase
-    var studentInClassRef:DatabaseReference!
+    var classEnrollRef:DatabaseReference!
     
     override func viewDidLoad() {
-        studentInClassRef = Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(selectedYear)
-        
         customizeSearchTF()
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        
+        classEnrollRef = Database.database().reference().child("students").child(classDetail.getFirebasePathWithSchoolYear())
+        
+        updateTableviewVisibilityBasedOnSearchResult()
+        
+        noResultLabel.isHidden = true
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        noResultLabel.isHidden = true
+        students.removeAll()
+        searchStudents.removeAll()
         
-        updateTableviewVisibilityBasedOnSearchResult()
-                
         startLoading()
         fetchData {
             DispatchQueue.main.async {
@@ -86,15 +91,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func showAddYourInfoBtnIfYouAreNotInTheClass(){
         chatBtn.isEnabled = false
         addYourselfBtn.isHidden = false
-      
-        
-        if(UserHelper.student == nil){
-            addYourselfBtn.isHidden = false
-            return
-        }
         
         for student in students{
-            if(student.uid == UserHelper.uid){
+            if(student.uid == CurrentUserHelper.getUid()){
                 addYourselfBtn.isHidden = true
                 chatBtn.isEnabled = true
             }
@@ -105,11 +104,11 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         students.removeAll()
         searchStudents.removeAll()
         
-        studentInClassRef.observeSingleEvent(of: .value) { (snapshot) in
+        classEnrollRef.observeSingleEvent(of: .value) { (snapshot) in
             for snap in snapshot.children {
                 let uid = (snap as! DataSnapshot).key 
                 
-                UserHelper.getStudentFromDatabase(uid: uid, completionHandler: { (student) in
+                AllUserHelper.getAnyStudentFromDatabase(uid: uid, completionHandler: { (student) in
                     self.students.append(student)
                     self.searchStudents.append(student)
                     
@@ -133,40 +132,28 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.showAddYourInfoBtnIfYouAreNotInTheClass()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchStudents.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassDetailTableViewCell") as? ClassDetailTableViewCell
-        
-        let student = searchStudents[indexPath.row]
-        
-        cell?.nameLabel.text = student.fullName
-        cell?.selectedBackgroundView = customSelectionColorView
-        
-        return cell!
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedStudent = searchStudents[indexPath.row]
-        performSegue(withIdentifier: "ClassDetailToStudentDetail", sender: self)
-    }
 
     @IBAction func addYourselfBtnPressed(_ sender: Any) {
-        if(UserHelper.student == nil){
+        if(!CurrentUserHelper.hasEnoughDataInFireBase()){
             performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
-            Database.database().reference().child("students").child(classDetail.schoolName).child(classDetail.classNumber).child(classDetail.className).child(classDetail.classYear).child(UserHelper.uid).setValue(UserHelper.student.fullName) { (error, ref) in
-                if(error == nil){
-                    DispatchQueue.main.async {
-                        self.students.append(UserHelper.student)
-                        self.reloadData()
-                    }
+            enrollUserToClass()
+        }
+    }
+    
+    func enrollUserToClass(){
+        classEnrollRef.child(CurrentUserHelper.getUid()).setValue(CurrentUserHelper.getFullname()) { (error, ref) in
+            if(error == nil){
+                DispatchQueue.main.async {
+                    self.students.append(CurrentUserHelper.getStudent())
+                    self.reloadData()
                 }
             }
         }
+        
+        CurrentUserHelper.addEnrollment(classD: classDetail)
     }
     
     @IBAction func chatBtnPressed(_ sender: Any) {
@@ -204,13 +191,13 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
-            destination.classDetail = classDetail
+            destination.classDetail = classDetail as! ClassDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
             destination.student = selectedStudent 
         }
         if let destination = segue.destination as? ChatViewController{
-            destination.classDetail = classDetail
+            destination.classDetail = classDetail as! ClassDetail
         }
     }
 

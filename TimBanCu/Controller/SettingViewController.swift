@@ -54,8 +54,8 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
             dismiss(animated: true, completion: nil)
         }
         else if(settings[indexPath.row] == "Sửa Thông Tin Cá Nhân"){
-            if(UserHelper.student == nil){
-                
+            if(!CurrentUserHelper.hasEnoughDataInFireBase()){
+                print("No data to update")
             }
             
             performSegue(withIdentifier: "SettingsToChangeInfoSegue", sender: self)

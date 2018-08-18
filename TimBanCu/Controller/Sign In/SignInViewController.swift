@@ -67,9 +67,9 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
                                                            accessToken: authentication.accessToken)
             firebaseSignIn(credential: credential) { (success) in
                 if(success){
-                    UserHelper.uid = Auth.auth().currentUser?.uid
+                    let uid = Auth.auth().currentUser?.uid
                     DispatchQueue.main.async {
-                        self.loadUserInfo {
+                        self.loadUserInfo(uid: uid!) {
                             DispatchQueue.main.async {
                                 self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
                             }
@@ -93,9 +93,9 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             
             firebaseSignIn(credential: credential) { (success) in
                 if(success){
-                    UserHelper.uid = accessToken.userId
+                    let uid = accessToken.userId
                     DispatchQueue.main.async {
-                        self.loadUserInfo {
+                        self.loadUserInfo(uid: uid!) {
                             DispatchQueue.main.async {
                                 self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
                             }
@@ -128,11 +128,11 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         }
     }
     
-    func loadUserInfo(completionHandler: @escaping () -> Void){
-        UserHelper.getStudentFromDatabase(uid: UserHelper.uid) { (student) in
+    func loadUserInfo(uid:String, completionHandler: @escaping () -> Void){
+        AllUserHelper.getAnyStudentFromDatabase(uid: uid) { (student) in
             
             if(student.isStudentInfoCompleted()){
-                UserHelper.student = student
+                CurrentUserHelper.setStudent(student: student)
             }
             
             completionHandler()

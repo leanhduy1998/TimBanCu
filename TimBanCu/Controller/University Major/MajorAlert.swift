@@ -37,7 +37,7 @@ extension MajorViewController{
             let textField = addNewMajorAlert?.textFields![0] // Force unwrapping because we know it exists.
             let majorName = textField?.text
             if(!(majorName?.isEmpty)!){
-                let major = MajorDetail(uid: UserHelper.uid, schoolName: self.school.name, majorName: majorName!)
+                let major = MajorDetail(uid: CurrentUserHelper.getUid(), schoolName: self.school.name, majorName: majorName!)
                 
                 self.selectedMajor = major
                 

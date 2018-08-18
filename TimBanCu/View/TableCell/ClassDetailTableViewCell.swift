@@ -13,7 +13,12 @@ class ClassDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var imageview: UIImageView!
-    
+
+    var viewModel:ClassDetailViewModel? = nil {
+        didSet{
+            nameLabel.text = viewModel?.studentName
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
