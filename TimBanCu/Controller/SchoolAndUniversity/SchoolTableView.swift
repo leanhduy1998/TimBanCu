@@ -18,7 +18,6 @@ extension SchoolViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolTableViewCell") as? SchoolTableViewCell
 
         cell?.schoolViewModel = SchoolViewModel(school: searchSchoolModels[indexPath.row])
-        //cell?.selectedBackgroundView? = customSelectionColorView
         return cell!
     }
 
@@ -28,35 +27,17 @@ extension SchoolViewController{
         let cell = cell as! SchoolTableViewCell
         
         cell.schoolViewModel = SchoolViewModel(school: searchSchoolModels[indexPath.row])
-
-        //cell?.selectedBackgroundView? = customSelectionColorView
         
-        var lastInitialDisplayableCell = animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath)
+        let lastInitialDisplayableCell = tableview.animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath, model: searchSchoolModels, finishLoading: finishedLoadingInitialTableCells)
         
         if !finishedLoadingInitialTableCells {
-            
             if lastInitialDisplayableCell {
                 finishedLoadingInitialTableCells = true
             }
-            cell.transform = CGAffineTransform(translationX: 0, y: tableview.rowHeight / 2)
-            cell.alpha = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-                cell.alpha = 1
-            }, completion: nil)
+            tableview.animateCells(cell: cell, tableView: tableview, indexPath: indexPath)
         }
     }
-    
-    func animateOnlyBeginingCells(tableView:UITableView, indexPath:IndexPath) -> Bool{
-        if searchSchoolModels.count > 0 && !finishedLoadingInitialTableCells {
-            if let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows,
-                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
-                return true
-            }
-        }
-        return false
-    }
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedSchool = searchSchoolModels[indexPath.row]

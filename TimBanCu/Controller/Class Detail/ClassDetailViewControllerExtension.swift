@@ -23,7 +23,11 @@ extension ClassDetailViewController{
     }
     
     func setUpAnimatedEmoticon() {
+        animatedEmoticon.contentMode = .scaleAspectFill
+        animatedEmoticon.loopAnimation = true
+        animatedEmoticon.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(animatedEmoticon)
+        
         animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
         animatedEmoticon.heightAnchor.constraint(equalToConstant: 150).isActive = true
         animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true

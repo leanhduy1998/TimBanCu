@@ -12,7 +12,6 @@ import Lottie
 
 class MajorViewController: UIViewController {
 
-
     var noResultLabel = NoResultLabel(type: Type.University)
     var noResultAddNewMajorBtn = NoResultButton(type: Type.University)
     
@@ -24,16 +23,9 @@ class MajorViewController: UIViewController {
     
     var majors = [MajorDetail]()
     var searchMajors = [MajorDetail]()
-    
     var selectedMajor:MajorDetail!
     
-    let animatedEmoticon: LOTAnimationView = {
-        let animation = LOTAnimationView(name: "empty_list")
-        animation.contentMode = .scaleAspectFill
-        animation.loopAnimation = true
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        return animation
-    }()
+    let animatedEmoticon = LOTAnimationView(name: "empty_list")
     
     @IBOutlet weak var tableview: UITableView!
     

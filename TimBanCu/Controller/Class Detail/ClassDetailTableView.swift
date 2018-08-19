@@ -19,18 +19,29 @@ extension ClassDetailViewController{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cell = cell as! ClassDetailTableViewCell
-        
-        let student = searchStudents[indexPath.row]
-        
-        cell.nameLabel.text = student.fullName
-        cell.selectedBackgroundView = customSelectionColorView
-        
+    private func setUpHeroId(cell: ClassDetailTableViewCell, student: AnyObject) {
         cell.nameLabel!.hero.id = "\(student.fullName)"
         cell.imageview!.hero.id = "\(student.fullName)image"
         cell.nameLabel!.hero.modifiers = [.arc]
         cell.imageview!.hero.modifiers = [.arc]
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = cell as! ClassDetailTableViewCell
+        
+        let student = searchStudents[indexPath.row]
+        cell.nameLabel.text = student.fullName
+        cell.selectedBackgroundView = customSelectionColorView
+        setUpHeroId(cell: cell, student: student)
+        
+        let lastInitialDisplayableCell = tableview.animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath, model: searchStudents, finishLoading: finishedLoadingInitialTableCells)
+        
+        if !finishedLoadingInitialTableCells {
+            if lastInitialDisplayableCell {
+                finishedLoadingInitialTableCells = true
+            }
+            tableview.animateCells(cell: cell, tableView: tableview, indexPath: indexPath)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

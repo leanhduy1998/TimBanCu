@@ -37,4 +37,29 @@ extension UIView {
         }
         layer.addSublayer(border)
     }
+    
+    func animateCells(cell: UITableViewCell, tableView: UITableView, indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: 0, y: tableView.rowHeight / 2)
+        cell.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
+            cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            cell.alpha = 1
+        }, completion: nil)
+    }
+    
+    func animateOnlyBeginingCells(tableView: UITableView, indexPath: IndexPath, model: [AnyObject], finishLoading: Bool) -> Bool{
+        if model.count > 0 && !finishLoading {
+            if let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows,
+                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
+                return true
+            }
+        }
+        return false
+    }
+
+    
+    
+    
+    
 }

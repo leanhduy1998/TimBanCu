@@ -40,27 +40,11 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var noResultLabel = NoResultLabel(type: Type.Student)
     
     //ui
-    let customSelectionColorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
-        return view
-    }()
+    let customSelectionColorView = CustomSelectionColorView()
     
-    let animatedEmoticon: LOTAnimationView = {
-        let animation = LOTAnimationView(name: "empty_list")
-        animation.contentMode = .scaleAspectFill
-        animation.loopAnimation = true
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        return animation
-    }()
+    let animatedEmoticon = LOTAnimationView(name: "empty_list")
     
-    var searchTFUnderline: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+    var searchTFUnderline = UnderlineView()
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
     // firebase

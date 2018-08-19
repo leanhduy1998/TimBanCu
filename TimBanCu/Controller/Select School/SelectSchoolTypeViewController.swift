@@ -45,7 +45,6 @@ class SelectSchoolTypeViewController: UIViewController {
         presentNextViewController()
     }
     
-    
     @IBAction func daihocBtnPressed(_ sender: Any) {
         selectedSchoolType = "dh"
         presentNextViewController()

@@ -31,6 +31,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     var shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor)
     var appNameLabel:ShimmeringLabel! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
