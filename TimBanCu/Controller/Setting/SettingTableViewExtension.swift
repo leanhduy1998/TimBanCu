@@ -1,11 +1,12 @@
 //
-//  SettingViewController.swift
+//  SettingTableViewExtension.swift
 //  TimBanCu
 //
-//  Created by Duy Le 2 on 7/16/18.
+//  Created by Duy Le 2 on 8/19/18.
 //  Copyright © 2018 Duy Le 2. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 import GoogleSignIn
@@ -16,24 +17,7 @@ import FacebookLogin
 import Firebase
 import FirebaseAuth
 
-class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-    
-    var settings = ["Sửa Thông Tin Cá Nhân","Đăng Xuất"]
-    var icons = ["edit", "signOut"]
-    
-    var finishedLoadingInitialTableCells = false
-    
-    let customSelectionColorView = CustomSelectionColorView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addNavigationBarShadow()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        finishedLoadingInitialTableCells = false
-    }
-
+extension SettingViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settings.count
     }
@@ -52,7 +36,7 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
             
             let loginManager = LoginManager()
             loginManager.logOut()
-
+            
             do {
                 try Auth.auth().signOut()
             } catch let signOutError as NSError {
@@ -69,16 +53,4 @@ class SettingViewController: UIViewController, UITableViewDelegate,UITableViewDa
             performSegue(withIdentifier: "SettingsToChangeInfoSegue", sender: self)
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

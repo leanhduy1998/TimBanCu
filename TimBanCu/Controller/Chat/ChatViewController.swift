@@ -17,7 +17,6 @@ class ChatViewController: JSQMessagesViewController {
     // from previous class
     var classDetail:ClassDetail!
     
-    
     // chat
     var messages = [JSQMessage]()
     
@@ -52,7 +51,7 @@ class ChatViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // the reason this method is here instead of init because the classDetail from the previous class wasn't passed to here yet
         setupDBReference()
         observeMessages()
@@ -69,7 +68,7 @@ class ChatViewController: JSQMessagesViewController {
         senderDisplayName = CurrentUserHelper.getFullname()
     }
     
-    
+
     func setupDBReference(){
         messageRef = Database.database().reference().child("messages").child(classDetail.getFirebasePathWithSchoolYear())
         typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classDetail.getFirebasePathWithSchoolYear())

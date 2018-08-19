@@ -19,28 +19,25 @@ class AddInfoImageDetailViewController: UIViewController {
     var userImages = [UIImage]()
     var yearOfUserImage = [UIImage:Int]()
     
-    var editImageYearAlert = UIAlertController(title: "Sửa Năm Hình Này Được Chụp!", message: "", preferredStyle: .alert)
+    var editImageYearAlert:UIAlertController!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editImageYearAlert.addTextField { (textField) in
-            textField.placeholder = "Năm Hình Được Chụp"
-            textField.keyboardType = .numberPad
-        }
-        
-        editImageYearAlert.addAction(UIAlertAction(title: "Sửa Năm", style: .default, handler: { [weak editImageYearAlert] (_) in
-            let textField = editImageYearAlert?.textFields![0] // Force unwrapping because we know it exists.
-            let year = Int((textField?.text)!)
-            self.yearOfUserImage[self.userImages[self.indexForDeletion]] = year
-            self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
-        }))
+        setupAlert()
     }
     override func viewDidLayoutSubviews() {
+        setupImageView()
+        setupYearLabelText()
+    }
+    
+    func setupImageView(){
         let image = userImages[indexForDeletion]
-        
         imageview.image = image
-        
+    }
+    
+    func setupYearLabelText(){
+        let image = userImages[indexForDeletion]
         let year = yearOfUserImage[image]
         
         if(year == -1){
@@ -63,7 +60,6 @@ class AddInfoImageDetailViewController: UIViewController {
         }
         
         present(editImageYearAlert, animated: true, completion: nil)
-        
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {

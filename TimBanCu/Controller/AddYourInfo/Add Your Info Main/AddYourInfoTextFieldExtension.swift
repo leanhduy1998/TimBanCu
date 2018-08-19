@@ -1,17 +1,15 @@
 //
-//  AddYourInfoExtension.swift
+//  AddYourInfoTextFieldExtension.swift
 //  TimBanCu
 //
-//  Created by Duy Le 2 on 7/25/18.
+//  Created by Duy Le 2 on 8/19/18.
 //  Copyright © 2018 Duy Le 2. All rights reserved.
 //
 
 import Foundation
-import DropDown
 import UIKit
 
-extension AddYourInfoViewController {
-    
+extension AddYourInfoViewController{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
@@ -25,14 +23,13 @@ extension AddYourInfoViewController {
     }
     
     @objc func keyboardShow() {
-        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.frame = CGRect(x: 0, y: -150, width: self.view.frame.width, height: self.view.frame.height)
-
-
+            
+            
         }, completion: nil)
     }
-
+    
     @objc func keyboardHide() {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.view.frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.height)! + 20, width: self.view.frame.width, height: self.view.frame.height)
@@ -49,20 +46,5 @@ extension AddYourInfoViewController {
         emailPrivacyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.emailPrivacyDropDownBtn.setTitle(item, for: .normal)
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        phonePrivacyDropDown.anchorView = phonePrivacyDropDownBtn
-        emailPrivacyDropDown.anchorView = emailPrivacyDropDownBtn
-    }
-    
-    func reloadYearLabel(page:Int){
-        if(yearOfUserImage[userImages[page]] == nil){
-            yearLabel.text = "Năm ?"
-        }
-        else{
-            yearLabel.text = "\(yearOfUserImage[userImages[page]]!)"
-        }
-        view.layoutIfNeeded()
     }
 }

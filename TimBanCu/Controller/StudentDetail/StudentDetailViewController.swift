@@ -36,8 +36,7 @@ class StudentDetailViewController: UIViewController {
     
     func fetchStudentImages() {
         for(photoName,year) in student.imageUrls{
-            Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
-                
+        Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
                 
                 DispatchQueue.main.async {
                     let image = UIImage(data: imageData!)

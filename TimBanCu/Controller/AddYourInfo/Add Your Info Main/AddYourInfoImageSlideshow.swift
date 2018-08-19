@@ -22,6 +22,12 @@ extension AddYourInfoViewController{
         imageSlideShow.currentPageChanged = { page in
             DispatchQueue.main.async {
                 self.reloadYearLabel(page: page)
+                if(page == self.userImages.count-1){
+                    self.yearLabel.isHidden = true
+                }
+                else{
+                    self.yearLabel.isHidden = false
+                }
             }
         }
     }
@@ -29,25 +35,22 @@ extension AddYourInfoViewController{
     @objc func didTap() {
         if(userImages.count == 1){
             performSegue(withIdentifier: "AddYourInfoToAddImagesSegue", sender: self)
-            return
         }
-        
-        if(imageSlideShow.currentPage == userImages.count-1){
+        else if(imageSlideShow.currentPage == userImages.count-1){
             performSegue(withIdentifier: "AddYourInfoToAddImagesSegue", sender: self)
-            return
         }
-        
-        selectedImage = userImages[imageSlideShow.currentPage]
-        
-        if(yearOfUserImage[selectedImage] == nil){
-            present(addImageYearAlert, animated: true, completion: nil)
-            return
+        else{
+            selectedImage = userImages[imageSlideShow.currentPage]
+            
+            if(yearOfUserImage[selectedImage] == nil){
+                present(addImageYearAlert, animated: true, completion: nil)
+                return
+            }
+            else{
+                performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self)
+            }
         }
-        
-        performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self)
     }
-    
-    
     
     func reloadImageSlideShow(){
         if(userImages.count==0){
@@ -76,7 +79,7 @@ extension AddYourInfoViewController{
                 self.animateImageSlideShow(count: count + 1)
             }
         }
-        if(count == userImages.count){
+        else if(count == userImages.count){
             let deadlineTime = DispatchTime.now() + .milliseconds(count*500)
             DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
                 self.imageSlideShow.setCurrentPage(count, animated: true)

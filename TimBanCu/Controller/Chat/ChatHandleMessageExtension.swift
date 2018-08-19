@@ -18,6 +18,11 @@ extension ChatViewController{
     }
     
     func observeMessages() {
+        observeNewMessage()
+        observeForUpdatedMessage()
+    }
+    
+    private func observeNewMessage(){
         let messageQuery = messageRef.queryLimited(toLast:25)
         
         newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
@@ -45,7 +50,9 @@ extension ChatViewController{
                 print("Error! Could not decode message data")
             }
         })
-        
+    }
+    
+    private func observeForUpdatedMessage(){
         updatedMessageRefHandle = messageRef.observe(.childChanged, with: { (snapshot) in
             let key = snapshot.key
             let messageData = snapshot.value as! Dictionary<String, String>

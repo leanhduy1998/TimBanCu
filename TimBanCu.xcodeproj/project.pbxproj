@@ -12,16 +12,15 @@
 		1C0A039E20F516EF00E105A9 /* SchoolTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */; };
 		1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */; };
 		1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98F6210BB43700D20079 /* ChatViewController.swift */; };
-		1C1A98F9210CA9ED00D20079 /* AddYourInfoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98F8210CA9ED00D20079 /* AddYourInfoImage.swift */; };
+		1C1A98F9210CA9ED00D20079 /* AddYourInfoImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98F8210CA9ED00D20079 /* AddYourInfoImagePicker.swift */; };
 		1C1A98FC210CBBE400D20079 /* ChatImageFromDBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FB210CBBE400D20079 /* ChatImageFromDBExtension.swift */; };
 		1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */; };
 		1C1A9900210CBCB900D20079 /* ChatImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */; };
 		1C1A9902210CBE4300D20079 /* ChatViewControllerUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */; };
 		1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */; };
-		1C1A9906210CBFD700D20079 /* ChatMessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9905210CBFD700D20079 /* ChatMessageExtension.swift */; };
+		1C1A9906210CBFD700D20079 /* ChatHandleMessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */; };
 		1C278C8120FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278C8020FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift */; };
 		1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */; };
-		1C2E7371210916E7007EAE63 /* AddYourInfoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E7370210916E7007EAE63 /* AddYourInfoExtension.swift */; };
 		1C2E7376210919A9007EAE63 /* AddYourInfoImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */; };
 		1C2E737821091A3A007EAE63 /* AddYourInfoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E737721091A3A007EAE63 /* AddYourInfoAlert.swift */; };
 		1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* SignInViewController.swift */; };
@@ -62,6 +61,11 @@
 		1C8EC8772128E7170038ECB5 /* MajorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8762128E7170038ECB5 /* MajorTableView.swift */; };
 		1C8EC8792128EC9D0038ECB5 /* ClassDetailTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8782128EC9D0038ECB5 /* ClassDetailTextFieldExtension.swift */; };
 		1C8EC87B2128F3700038ECB5 /* ShimmeringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */; };
+		1C8EC87D2129E36F0038ECB5 /* AddYourInfoDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC87C2129E36F0038ECB5 /* AddYourInfoDropDown.swift */; };
+		1C8EC8802129E42D0038ECB5 /* AddYourInfoDataHandleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC87F2129E42D0038ECB5 /* AddYourInfoDataHandleExtension.swift */; };
+		1C8EC8822129E49C0038ECB5 /* AddYourInfoTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8812129E49C0038ECB5 /* AddYourInfoTextFieldExtension.swift */; };
+		1C8EC8852129E6EB0038ECB5 /* AddInfoImageDetailAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8842129E6EB0038ECB5 /* AddInfoImageDetailAlertExtension.swift */; };
+		1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
 		1C9710442116698B00A140FE /* ClassYearAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9710432116698B00A140FE /* ClassYearAlert.swift */; };
@@ -135,16 +139,15 @@
 		1C0A039D20F516EF00E105A9 /* SchoolTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableView.swift; sourceTree = "<group>"; };
 		1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameAlerts.swift; sourceTree = "<group>"; };
 		1C1A98F6210BB43700D20079 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		1C1A98F8210CA9ED00D20079 /* AddYourInfoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoImage.swift; sourceTree = "<group>"; };
+		1C1A98F8210CA9ED00D20079 /* AddYourInfoImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoImagePicker.swift; sourceTree = "<group>"; };
 		1C1A98FB210CBBE400D20079 /* ChatImageFromDBExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageFromDBExtension.swift; sourceTree = "<group>"; };
 		1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewExtension.swift; sourceTree = "<group>"; };
 		1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImagePickerExtension.swift; sourceTree = "<group>"; };
 		1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerUIExtension.swift; sourceTree = "<group>"; };
 		1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldExtension.swift; sourceTree = "<group>"; };
-		1C1A9905210CBFD700D20079 /* ChatMessageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageExtension.swift; sourceTree = "<group>"; };
+		1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHandleMessageExtension.swift; sourceTree = "<group>"; };
 		1C278C8020FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoViewController.swift; sourceTree = "<group>"; };
-		1C2E7370210916E7007EAE63 /* AddYourInfoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoExtension.swift; sourceTree = "<group>"; };
 		1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoImageSlideshow.swift; sourceTree = "<group>"; };
 		1C2E737721091A3A007EAE63 /* AddYourInfoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoAlert.swift; sourceTree = "<group>"; };
 		1C3ADA8320F6B6F80041421F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +188,11 @@
 		1C8EC8762128E7170038ECB5 /* MajorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableView.swift; sourceTree = "<group>"; };
 		1C8EC8782128EC9D0038ECB5 /* ClassDetailTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTextFieldExtension.swift; sourceTree = "<group>"; };
 		1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmeringLabel.swift; sourceTree = "<group>"; };
+		1C8EC87C2129E36F0038ECB5 /* AddYourInfoDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoDropDown.swift; sourceTree = "<group>"; };
+		1C8EC87F2129E42D0038ECB5 /* AddYourInfoDataHandleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoDataHandleExtension.swift; sourceTree = "<group>"; };
+		1C8EC8812129E49C0038ECB5 /* AddYourInfoTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoTextFieldExtension.swift; sourceTree = "<group>"; };
+		1C8EC8842129E6EB0038ECB5 /* AddInfoImageDetailAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoImageDetailAlertExtension.swift; sourceTree = "<group>"; };
+		1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewExtension.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
 		1C9710432116698B00A140FE /* ClassYearAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearAlert.swift; sourceTree = "<group>"; };
@@ -313,7 +321,7 @@
 				1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */,
 				1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */,
 				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
-				1C1A9905210CBFD700D20079 /* ChatMessageExtension.swift */,
+				1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */,
 				1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */,
 			);
 			path = Chat;
@@ -322,12 +330,9 @@
 		1C2E737421091990007EAE63 /* AddYourInfo */ = {
 			isa = PBXGroup;
 			children = (
-				1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */,
-				1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */,
-				1C2E737721091A3A007EAE63 /* AddYourInfoAlert.swift */,
-				1C1A98F8210CA9ED00D20079 /* AddYourInfoImage.swift */,
-				1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */,
-				1C2E7370210916E7007EAE63 /* AddYourInfoExtension.swift */,
+				1C8EC87E2129E3DB0038ECB5 /* Add Your Info Main */,
+				1C8EC8832129E6BF0038ECB5 /* Add Your Info Display Image */,
+				1C8EC8862129E8CB0038ECB5 /* Add Your Info Add Image */,
 			);
 			path = AddYourInfo;
 			sourceTree = "<group>";
@@ -350,6 +355,46 @@
 				1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */,
 			);
 			path = StudentDetail;
+			sourceTree = "<group>";
+		};
+		1C8EC87E2129E3DB0038ECB5 /* Add Your Info Main */ = {
+			isa = PBXGroup;
+			children = (
+				1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */,
+				1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */,
+				1C2E737721091A3A007EAE63 /* AddYourInfoAlert.swift */,
+				1C1A98F8210CA9ED00D20079 /* AddYourInfoImagePicker.swift */,
+				1C8EC87C2129E36F0038ECB5 /* AddYourInfoDropDown.swift */,
+				1C8EC87F2129E42D0038ECB5 /* AddYourInfoDataHandleExtension.swift */,
+				1C8EC8812129E49C0038ECB5 /* AddYourInfoTextFieldExtension.swift */,
+			);
+			path = "Add Your Info Main";
+			sourceTree = "<group>";
+		};
+		1C8EC8832129E6BF0038ECB5 /* Add Your Info Display Image */ = {
+			isa = PBXGroup;
+			children = (
+				1C85E31F2103F61200124FDA /* AddInfoImageDetailViewController.swift */,
+				1C8EC8842129E6EB0038ECB5 /* AddInfoImageDetailAlertExtension.swift */,
+			);
+			path = "Add Your Info Display Image";
+			sourceTree = "<group>";
+		};
+		1C8EC8862129E8CB0038ECB5 /* Add Your Info Add Image */ = {
+			isa = PBXGroup;
+			children = (
+				1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */,
+			);
+			path = "Add Your Info Add Image";
+			sourceTree = "<group>";
+		};
+		1C8EC8872129ED850038ECB5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
+				1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		1C9710452116699000A140FE /* ClassYear */ = {
@@ -407,11 +452,10 @@
 				1C9710452116699000A140FE /* ClassYear */,
 				1CDBA7B52125081B002004F9 /* Class Detail */,
 				1C2E737421091990007EAE63 /* AddYourInfo */,
-				1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */,
 				1C784B682110F85200647C40 /* StudentDetail */,
 				1C1A98FA210CBBC800D20079 /* Chat */,
 				1C98F6632128642900EFD4EF /* User Classes */,
-				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
+				1C8EC8872129ED850038ECB5 /* Setting */,
 				1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */,
 				38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */,
 			);
@@ -881,17 +925,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */,
-				1C1A98F9210CA9ED00D20079 /* AddYourInfoImage.swift in Sources */,
+				1C1A98F9210CA9ED00D20079 /* AddYourInfoImagePicker.swift in Sources */,
 				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
 				1C6D51FE20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift in Sources */,
-				1C2E7371210916E7007EAE63 /* AddYourInfoExtension.swift in Sources */,
 				1CDBA7B72125082C002004F9 /* ClassDetailTableView.swift in Sources */,
 				1C8EC86D2128C8E80038ECB5 /* RoundedImageView.swift in Sources */,
 				1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
 				38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */,
-				1C1A9906210CBFD700D20079 /* ChatMessageExtension.swift in Sources */,
+				1C1A9906210CBFD700D20079 /* ChatHandleMessageExtension.swift in Sources */,
 				1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */,
 				1C98F65D212840AE00EFD4EF /* AllUserHelper.swift in Sources */,
 				1C53F4FB20FD455D00F4ACEB /* SettingTableViewCell.swift in Sources */,
@@ -904,8 +947,10 @@
 				1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,
 				1CF50FE2210A3BDD00346EF9 /* SignInExtension.swift in Sources */,
+				1C8EC8802129E42D0038ECB5 /* AddYourInfoDataHandleExtension.swift in Sources */,
 				1C85E3202103F61200124FDA /* AddInfoImageDetailViewController.swift in Sources */,
 				1C98F6652128644000EFD4EF /* UserClassesTableView.swift in Sources */,
+				1C8EC8822129E49C0038ECB5 /* AddYourInfoTextFieldExtension.swift in Sources */,
 				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1C53F4F520FD408A00F4ACEB /* ClassDetailViewController.swift in Sources */,
@@ -935,6 +980,7 @@
 				1C4BF8782117F1CA006A7FBE /* MajorExtension.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlert.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
+				1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */,
 				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
 				1C2E737821091A3A007EAE63 /* AddYourInfoAlert.swift in Sources */,
 				1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */,
@@ -945,6 +991,8 @@
 				1C98F66821287CE300EFD4EF /* ClassProtocol.swift in Sources */,
 				1CE24D0220FBE153008DE3FB /* CurrentUserHelper.swift in Sources */,
 				1C1A9902210CBE4300D20079 /* ChatViewControllerUIExtension.swift in Sources */,
+				1C8EC8852129E6EB0038ECB5 /* AddInfoImageDetailAlertExtension.swift in Sources */,
+				1C8EC87D2129E36F0038ECB5 /* AddYourInfoDropDown.swift in Sources */,
 				1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */,
 				1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */,
 				1C98F6622128624D00EFD4EF /* ClassYearTableView.swift in Sources */,
