@@ -21,8 +21,6 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-    
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedYear = years[indexPath.row]

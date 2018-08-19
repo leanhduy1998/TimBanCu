@@ -18,7 +18,6 @@ extension ClassNameViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNameTableViewCell") as? ClassNameTableViewCell
         cell?.classDetailViewModel = ClassNameViewModel(classDetail: classDetails[indexPath.row])
         cell?.selectedBackgroundView = customSelectionColorView
-        
         return cell!
     }
     

@@ -18,7 +18,6 @@ extension SchoolViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolTableViewCell") as? SchoolTableViewCell
 
         cell?.schoolViewModel = SchoolViewModel(school: searchSchoolModels[indexPath.row])
-        //cell?.selectedBackgroundView? = customSelectionColorView
         return cell!
     }
 
@@ -28,10 +27,8 @@ extension SchoolViewController{
         let cell = cell as! SchoolTableViewCell
         
         cell.schoolViewModel = SchoolViewModel(school: searchSchoolModels[indexPath.row])
-
-        //cell?.selectedBackgroundView? = customSelectionColorView
         
-        var lastInitialDisplayableCell = animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath)
+        let lastInitialDisplayableCell = animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath)
         
         if !finishedLoadingInitialTableCells {
             

@@ -103,6 +103,8 @@
 		1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE5210B678100346EF9 /* CircleImageView.swift */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
+		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
+		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
 		D868AFE6657B257B7B9E556F /* Pods_TimBanCuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AB859161F1B93DF11EEFF /* Pods_TimBanCuUITests.framework */; };
 /* End PBXBuildFile section */
@@ -231,6 +233,8 @@
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
+		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		4203691F03ED76B3F5BD22AE /* Pods_TimBanCu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD024BC0784FAA968F67BBC /* Pods-TimBanCu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCu/Pods-TimBanCu.release.xcconfig"; sourceTree = "<group>"; };
 		6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -556,6 +560,8 @@
 				1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */,
 				1C8EC8702128CB490038ECB5 /* InfoAlert.swift */,
 				1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */,
+				38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */,
+				38CAE9D02129BD04005BE656 /* UnderlineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -881,6 +887,7 @@
 				1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
+				38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */,
 				1C1A9906210CBFD700D20079 /* ChatMessageExtension.swift in Sources */,
 				1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */,
 				1C98F65D212840AE00EFD4EF /* AllUserHelper.swift in Sources */,
@@ -942,6 +949,7 @@
 				1C8EC8772128E7170038ECB5 /* MajorTableView.swift in Sources */,
 				1C1A98FC210CBBE400D20079 /* ChatImageFromDBExtension.swift in Sources */,
 				1C8EC8792128EC9D0038ECB5 /* ClassDetailTextFieldExtension.swift in Sources */,
+				38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */,
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,
 				1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */,
 				1C98F65F21285D6800EFD4EF /* UserClassesViewModel.swift in Sources */,

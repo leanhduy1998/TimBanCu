@@ -37,20 +37,9 @@ class ClassNameViewController: UIViewController {
     //alert
     var addNewClassAlert: UIAlertController!
     
-    
-    let customSelectionColorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
-        return view
-    }()
-    
-    let animatedEmoticon: LOTAnimationView = {
-        let animation = LOTAnimationView(name: "empty_list")
-        animation.contentMode = .scaleAspectFill
-        animation.loopAnimation = true
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        return animation
-    }()
+    let customSelectionColorView = CustomSelectionColorView()
+
+    let animatedEmoticon = LOTAnimationView(name: "empty_list")
     
     override func viewDidLoad() {
         super.viewDidLoad()

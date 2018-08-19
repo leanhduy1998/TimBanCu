@@ -27,13 +27,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var noResultAddNewSchoolBtn = NoResultButton(type: Type.School)
 
     
-    let animatedEmoticon: LOTAnimationView = {
-        let animation = LOTAnimationView(name: "empty_list")
-        animation.contentMode = .scaleAspectFill
-        animation.loopAnimation = true
-        animation.translatesAutoresizingMaskIntoConstraints = false
-        return animation
-    }()
+    let animatedEmoticon = LOTAnimationView(name: "empty_list")
     
 
     //alert

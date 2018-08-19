@@ -21,11 +21,7 @@ class ClassYearViewController: UIViewController {
     var addNewClassCompletedAlert:UIAlertController!
     var classAlreadyExistAlert:UIAlertController!
     
-    let customSelectionColorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
-        return view
-    }()
+    let customSelectionColorView = CustomSelectionColorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
