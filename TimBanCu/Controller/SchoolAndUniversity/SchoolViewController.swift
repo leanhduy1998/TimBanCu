@@ -22,14 +22,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
+    //no result
     var noResultLabel = NoResultLabel(type: Type.School)
-
     var noResultAddNewSchoolBtn = NoResultButton(type: Type.School)
-
     
-    let animatedEmoticon = LOTAnimationView(name: "empty_list")
-    
-
     //alert
     var addNewSchoolAlert:UIAlertController!
     var addNewSchoolCompletedAlert:UIAlertController!
@@ -43,6 +39,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //ui
     var finishedLoadingInitialTableCells = false
+    let animatedEmoticon = LOTAnimationView(name: "empty_list")
     
     
     required init?(coder aDecoder: NSCoder) {
