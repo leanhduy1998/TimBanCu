@@ -10,11 +10,8 @@ import Foundation
 import UIKit
 
 extension ClassDetailViewController{
-    override func viewDidLayoutSubviews() {
-        setupNoResultLabel(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
-        view.layoutIfNeeded()
-    }
     
+    //MARK: SetUp
     func customizeSearchTF() {
         view.addSubview(searchTFUnderline)
         searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
@@ -33,6 +30,12 @@ extension ClassDetailViewController{
         animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
+    func setupNoResultLabel(){
+        view.addSubview(noResultLabel)
+        noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
+    }
+    
+    //MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
@@ -53,16 +56,5 @@ extension ClassDetailViewController{
         view.endEditing(true)
         return true
     }
-    
-    func setupNoResultLabel(topViewY:CGFloat, topViewHeight:CGFloat){
-        view.addSubview(noResultLabel)
-        view.bringSubview(toFront: noResultLabel)
-        
-        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
-        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
-    
     
 }

@@ -20,7 +20,7 @@ extension SchoolViewController{
         //cell?.selectedBackgroundView? = customSelectionColorView
         return cell!
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedSchool = searchSchoolModels[indexPath.row]
         

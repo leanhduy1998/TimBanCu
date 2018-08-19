@@ -14,8 +14,7 @@ class MajorViewController: UIViewController {
 
 
     var noResultLabel = NoResultLabel(type: Type.University)
-
-    var noResultAddNewMajorBtn = NoResultButton(title: "Thêm Khoa Mới")
+    var noResultAddNewMajorBtn = NoResultButton(type: Type.University)
     
     var addNewMajorAlert = UIAlertController(title: "Thêm Khoa Mới", message: "", preferredStyle: .alert)
     var addNewMajorCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
@@ -51,12 +50,12 @@ class MajorViewController: UIViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        noResultLabel.isHidden = true
-//        noResultAddNewMajorBtn.isHidden = true
-//        animatedEmoticon.isHidden = true
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        noResultLabel.isHidden = true
+        noResultAddNewMajorBtn.isHidden = true
+        animatedEmoticon.isHidden = true
+    }
     
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
         self.present(addNewMajorAlert, animated: true, completion: nil)

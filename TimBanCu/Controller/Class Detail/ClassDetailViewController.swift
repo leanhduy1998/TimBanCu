@@ -68,31 +68,22 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         customizeSearchTF()
         setUpAnimatedEmoticon()
+        setupNoResultLabel()
+        
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
         classEnrollRef = Database.database().reference().child("students").child(classDetail.getFirebasePathWithSchoolYear())
         
         updateTableviewVisibilityBasedOnSearchResult()
-        
-        noResultLabel.isHidden = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-       
-
         noResultLabel.isHidden = true
         animatedEmoticon.isHidden = true
 
-        
         startLoading()
         fetchData {
             DispatchQueue.main.async {

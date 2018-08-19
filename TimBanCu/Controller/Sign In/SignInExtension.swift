@@ -26,7 +26,6 @@ extension SignInViewController{
         facebookSignInBtn.delegate = self
         facebookSignInBtn.translatesAutoresizingMaskIntoConstraints = false
         
-        
         view.addSubview(facebookSignInBtn)
         view.sendSubview(toBack: facebookSignInBtn)
         facebookSignInBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -10).isActive = true
@@ -43,31 +42,16 @@ extension SignInViewController{
         googleSignInBtn.style = GIDSignInButtonStyle.wide
     }
     
-    func setupShimmeringText() {
-        shimmerAppNameLabel.text = "Tìm bạn cũ"
-        shimmerAppNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
-        shimmerAppNameLabel.textColor = themeColor
-        shimmerAppNameLabel.textAlignment = .center
-        
-        appNameLabel.text = "Tìm bạn cũ"
-        appNameLabel.font = UIFont(name: "FS-Playlist-Caps", size: 70)
-        appNameLabel.textColor = themeColor.withAlphaComponent(0.8)
-        appNameLabel.textAlignment = .center
-        
-        view.addSubview(appNameLabel)
+    func animateShimmeringText() {
         view.addSubview(shimmerAppNameLabel)
-        
-        appNameLabel.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: 100)
-        shimmerAppNameLabel.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: 100)
+        view.addSubview(appNameLabel)
         
         let gradient = CAGradientLayer()
         gradient.frame = appNameLabel.bounds
         gradient.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
         gradient.locations = [0.0, 0.5, 1]
-        
         let angle = -60 * CGFloat.pi / 180
         gradient.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
-
         shimmerAppNameLabel.layer.mask = gradient
 
         let animation = CABasicAnimation(keyPath: "transform.translation.x")

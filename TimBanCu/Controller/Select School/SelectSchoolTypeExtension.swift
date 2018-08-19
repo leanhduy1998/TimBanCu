@@ -26,7 +26,6 @@ extension UIView {
     }
     
     func addBorder(side: ViewSide, color: UIColor, thickness: CGFloat) {
-        
         let border = CALayer()
         border.backgroundColor = color.cgColor
         

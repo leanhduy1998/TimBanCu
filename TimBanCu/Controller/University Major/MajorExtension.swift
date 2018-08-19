@@ -23,16 +23,9 @@ extension MajorViewController{
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewMajorBtn)
         
-        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
-        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
         
-        noResultAddNewMajorBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultAddNewMajorBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
-        noResultAddNewMajorBtn.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        noResultAddNewMajorBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
+        noResultAddNewMajorBtn.setContraints(view: view, contraintTo: noResultLabel)
         noResultAddNewMajorBtn.addTarget(self, action: #selector(self.addNewMajorBtnPressed(_:)), for: .touchUpInside)
     }
 }

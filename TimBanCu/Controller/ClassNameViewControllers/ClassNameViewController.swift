@@ -29,7 +29,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //no result
     var noResultLabel = NoResultLabel(type: Type.Class)
-    var noResultAddNewClassBtn = NoResultButton(title: "Thêm Lớp Mới")
+    var noResultAddNewClassBtn = NoResultButton(type: Type.Class)
     
     //tableview
     var classDetails = [ClassDetail]()
