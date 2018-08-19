@@ -14,8 +14,7 @@ class MajorViewController: UIViewController {
 
 
     var noResultLabel = NoResultLabel(type: Type.University)
-
-    var noResultAddNewMajorBtn = NoResultButton(title: "Thêm Khoa Mới")
+    var noResultAddNewMajorBtn = NoResultButton(type: Type.University)
     
     var addNewMajorAlert:UIAlertController!
     var addNewMajorCompletedAlert: UIAlertController!
@@ -50,6 +49,16 @@ class MajorViewController: UIViewController {
         
     }
     
+<<<<<<< HEAD
+=======
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        noResultLabel.isHidden = true
+        noResultAddNewMajorBtn.isHidden = true
+        animatedEmoticon.isHidden = true
+    }
+    
+>>>>>>> UI-Design
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
         self.present(addNewMajorAlert, animated: true, completion: nil)
     }

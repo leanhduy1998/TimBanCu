@@ -15,16 +15,9 @@ extension ClassNameViewController{
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewClassBtn)
         
-        noResultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
-        noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-        noResultAddNewClassBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        noResultAddNewClassBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
-        noResultAddNewClassBtn.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        noResultAddNewClassBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
         
+        noResultAddNewClassBtn.setContraints(view: view, contraintTo: noResultLabel)
         noResultAddNewClassBtn.addTarget(self, action: #selector(self.addNewClassDetailBtnPressed(_:)), for: .touchUpInside)
     }
     

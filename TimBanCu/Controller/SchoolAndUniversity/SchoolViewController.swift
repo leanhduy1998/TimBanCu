@@ -22,8 +22,8 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var selectedSchoolType:String!
     var selectedSchool:School!
     
-
     var noResultLabel = NoResultLabel(type: Type.School)
+<<<<<<< HEAD
     var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
 
     var finishedLoadingInitialTableCells = false
@@ -42,6 +42,9 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         view.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0, alpha: 0.2)
         return view
     }()
+=======
+    var noResultAddNewSchoolBtn = NoResultButton(type: Type.School)
+>>>>>>> UI-Design
     
     let animatedEmoticon: LOTAnimationView = {
         let animation = LOTAnimationView(name: "empty_list")
@@ -51,6 +54,7 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return animation
     }()
     
+<<<<<<< HEAD
     //alert
     var addNewSchoolAlert:UIAlertController!
     var addNewSchoolCompletedAlert:UIAlertController!
@@ -67,21 +71,38 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.init(coder: aDecoder)
         setupSchoolFirebaseReferences()
     }
+=======
+    var finishedLoadingInitialTableCells = false
+    
+    //alert
+    var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+    var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
+    let schoolAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm Trường Mới", preferredStyle: .alert)
+    
+    
+    //database
+    let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
+    let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
+    let thptQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
+    let daihocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "dh")
+
+>>>>>>> UI-Design
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
-        tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
-        
-        searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
+        setUpTableView()
         setupAlerts()
-        //customizeSearchTF()
         setUpAnimatedEmoticon()
+        setupNoResultLabelAndButton()
         
+<<<<<<< HEAD
         setupNoResultLabelAndButton()
         
         updateItemsVisibilityBasedOnSearchResult()
+=======
+        searchTF.delegate = self
+        searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+>>>>>>> UI-Design
     }
     
     override func viewWillDisappear(_ animated: Bool) {

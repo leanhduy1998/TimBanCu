@@ -13,33 +13,53 @@ import Hero
 
 class StudentDetailViewController: UIViewController {
     
-    
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var birthYearLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    
     @IBOutlet weak var yearLabel: UILabel!
-    
     
     var student:Student!
 
     var selectedImage:UIImage!
-    
     var userImages = [UIImage]()
     var yearOfUserImage = [UIImage:Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nameLabel.text = student.fullName
-        birthYearLabel.text = student.birthYear
-        
+        setUpHeroId()
+        setUpStudentDetails()
+        setupimageSlideshow()
+        fetchStudentImages()
+    }
+    
+    func fetchStudentImages() {
+        for(photoName,year) in student.imageUrls{
+            Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
+                
+                
+                DispatchQueue.main.async {
+                    let image = UIImage(data: imageData!)
+                    self.userImages.append(image!)
+                    self.yearOfUserImage[image!] = year
+                    
+                    self.reloadimageSlideshow()
+                }
+            }
+        }
+    }
+    
+    func setUpHeroId() {
         nameLabel.hero.isEnabled = true
         imageSlideshow.hero.isEnabled = true
         nameLabel.hero.id = "\(student.fullName)"
         imageSlideshow.hero.id = "\(student.fullName)image"
+    }
+    
+    func setUpStudentDetails() {
+        nameLabel.text = student.fullName
+        birthYearLabel.text = student.birthYear
         
         if(student.phoneNumber == nil){
             phoneLabel.text = "Số Điện Thoại Này Không Được Công Khai."
@@ -53,23 +73,6 @@ class StudentDetailViewController: UIViewController {
         }
         else{
             emailLabel.text = student.email
-        }
-        
-        setupimageSlideshow()
-        
-        
-        for(photoName,year) in student.imageUrls{
-            Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
-                
-                
-                DispatchQueue.main.async {
-                    let image = UIImage(data: imageData!)
-                    self.userImages.append(image!)
-                    self.yearOfUserImage[image!] = year
-                    
-                    self.reloadimageSlideshow()
-                }
-            }
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 import FirebaseDatabase
 
 extension SchoolViewController{
+    
     func setupAlerts(){
         setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()

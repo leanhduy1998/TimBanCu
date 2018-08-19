@@ -16,15 +16,17 @@ enum Type:String {
 }
 
 class NoResultLabel: UILabel {
-    
 
-    //"Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên trường?"
-    
-    
-    
     init(type:Type) {
         super.init(frame: .zero)
-        
+        setUpText(type: type)
+        self.textColor = UIColor.darkGray
+        self.textAlignment = .center
+        self.numberOfLines = 3
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setUpText(type: Type) {
         switch(type){
         case .School:
             self.text = "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?"
@@ -40,17 +42,11 @@ class NoResultLabel: UILabel {
         default:
             break
         }
-
-        
-        self.textColor = UIColor.darkGray
-        self.textAlignment = .center
-        self.numberOfLines = 3
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setConstraints(view:UIView,animatedEmoticon:UIView){
+    func setConstraints(view: UIView, constraintTo: UIView){
         self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
+        self.topAnchor.constraint(equalTo: constraintTo.bottomAnchor, constant: 20).isActive = true
         self.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
         self.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }

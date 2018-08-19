@@ -10,11 +10,8 @@ import Foundation
 import UIKit
 
 extension ClassDetailViewController{
-    override func viewDidLayoutSubviews() {
-        setupNoResultLabel(topViewY: searchTF.bounds.origin.y, topViewHeight: searchTF.frame.height)
-        view.layoutIfNeeded()
-    }
     
+    //MARK: SetUp
     func customizeSearchTF() {
         view.addSubview(searchTFUnderline)
         searchTFUnderline.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
@@ -33,8 +30,24 @@ extension ClassDetailViewController{
         animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
+<<<<<<< HEAD
+=======
+    func setupNoResultLabel(){
+        view.addSubview(noResultLabel)
+        noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
+            self.searchUnderlineHeightAnchor?.constant = 2.5
+        }, completion: nil)
+    }
+>>>>>>> UI-Design
     
     
+<<<<<<< HEAD
     func setupNoResultLabel(topViewY:CGFloat, topViewHeight:CGFloat){
         view.addSubview(noResultLabel)
         view.bringSubview(toFront: noResultLabel)
@@ -78,4 +91,6 @@ extension ClassDetailViewController{
     }
     
     
+=======
+>>>>>>> UI-Design
 }

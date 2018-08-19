@@ -69,6 +69,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         customizeSearchTF()
         setUpAnimatedEmoticon()
+        setupNoResultLabel()
+        
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
@@ -76,11 +78,19 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         updateTableviewVisibilityBasedOnSearchResult()
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> UI-Design
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+<<<<<<< HEAD
+=======
+        noResultLabel.isHidden = true
+        animatedEmoticon.isHidden = true
+>>>>>>> UI-Design
 
         startLoading()
         fetchData {
