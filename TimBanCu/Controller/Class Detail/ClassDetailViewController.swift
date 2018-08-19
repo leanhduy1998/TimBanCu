@@ -77,6 +77,20 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         classEnrollRef = Database.database().reference().child("students").child(classProtocol.getFirebasePathWithSchoolYear())
         
         updateTableviewVisibilityBasedOnSearchResult()
+        
+        createCopyOfClassProtocol()
+    }
+    
+    // if the user goes back and forth between the screen, the same protocol will be used, thus same protocol for multiple class. Could have used struct, but in ClassYear we needed to change the year
+    func createCopyOfClassProtocol(){
+        if let classDetail = classProtocol as? ClassDetail{
+            let copy = ClassDetail(classNumber: classDetail.classNumber, uid: classDetail.uid, schoolName: classDetail.schoolName, className: classDetail.className, classYear: classDetail.year)
+            classProtocol = copy
+        }
+        if let majorDetail = classProtocol as? MajorDetail{
+            let copy = MajorDetail(uid: majorDetail.uid, schoolName: majorDetail.schoolName, majorName: majorDetail.majorName, majorYear: majorDetail.year)
+            classProtocol = copy
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

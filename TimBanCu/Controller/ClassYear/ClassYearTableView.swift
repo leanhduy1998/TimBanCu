@@ -31,6 +31,7 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
         checkIfClassYearExist(completionHandler: { exist, uidIfExist  in
             DispatchQueue.main.async {
                 if(!exist){
+                    self.classProtocol.year = self.selectedYear
                     self.classProtocol.uid = CurrentUserHelper.getUid()
                     self.writeToDatabaseThenShowCompleteAlert(classProtocol: self.classProtocol)
                 }

@@ -26,7 +26,9 @@ extension SchoolViewController{
     }
     
     private func setupAddNewSchoolAlert(){
-        let addSchoolAction = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewSchoolAlert] (_) in
+        addNewSchoolAlert = AskForInputAlert.getAlert(title: "", message: "", TFPlaceHolder: "Tên Trường")
+        
+        let action = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewSchoolAlert] (_) in
             let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
             
@@ -35,7 +37,7 @@ extension SchoolViewController{
             }
         })
         
-        addNewSchoolAlert = AskForInputAlert.getAlert(title: "", message: "", TFPlaceHolder: "Tên Trường", action: addSchoolAction)
+        addNewSchoolAlert.addAction(action)
     }
     
     private func setupAddNewSchoolCompletedAlert(){

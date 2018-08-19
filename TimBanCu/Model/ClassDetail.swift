@@ -64,7 +64,7 @@ class ClassDetail: ClassProtocol{
     }
     
     func getFirebasePathWithSchoolYear()->String{
-        return "\(schoolName!)/\(classNumber!)/\(className!)/\(year)"
+        return "\(schoolName!)/\(classNumber!)/\(className!)/\(year!)"
     }
     
     func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){

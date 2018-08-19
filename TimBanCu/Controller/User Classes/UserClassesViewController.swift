@@ -10,6 +10,9 @@ import UIKit
 
 class UserClassesViewController: UIViewController {
     
+    @IBOutlet weak var tableview: UITableView!
+    
+    
     var selectedClassDetail:ClassDetail!
 
     override func viewDidLoad() {
@@ -20,7 +23,7 @@ class UserClassesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        tableview.reloadData()
     }
 
 

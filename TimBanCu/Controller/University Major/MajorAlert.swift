@@ -26,7 +26,8 @@ extension MajorViewController{
     }
     
     private func setupAddNewMajorAlert(){
-        let addMajorAction = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewMajorAlert] (_) in
+        addNewMajorAlert = AskForInputAlert.getAlert(title: "Thêm Khoa Mới", message: "", TFPlaceHolder: "Tên Khoa")
+        let action = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewMajorAlert] (_) in
             let textField = addNewMajorAlert?.textFields![0] // Force unwrapping because we know it exists.
             let majorName = textField?.text
             if(!(majorName?.isEmpty)!){
@@ -37,8 +38,7 @@ extension MajorViewController{
                 self.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self)
             }
         })
-        
-        addNewMajorAlert = AskForInputAlert.getAlert(title: "Thêm Khoa Mới", message: "", TFPlaceHolder: "Tên Khoa", action: addMajorAction)
+        addNewMajorAlert.addAction(action)
     }
     
     private func setupAddNewMajorCompletedAlert(){

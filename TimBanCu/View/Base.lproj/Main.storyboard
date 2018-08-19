@@ -569,6 +569,7 @@
                     <tabBarItem key="tabBarItem" title="Lớp Của Bạn" id="Gde-uz-fqd"/>
                     <navigationItem key="navigationItem" id="OWQ-Rj-tZ9"/>
                     <connections>
+                        <outlet property="tableview" destination="rKs-KC-doa" id="HxK-i3-GNU"/>
                         <segue destination="0Ua-wx-Yxd" kind="show" identifier="UserClassesToClassDetailSegue" id="Yxf-fH-7mY"/>
                     </connections>
                 </viewController>
