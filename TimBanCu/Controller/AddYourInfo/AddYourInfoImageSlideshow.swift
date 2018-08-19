@@ -41,6 +41,7 @@ extension AddYourInfoViewController{
         
         if(yearOfUserImage[selectedImage] == nil){
             present(addImageYearAlert, animated: true, completion: nil)
+            return
         }
         
         performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self)

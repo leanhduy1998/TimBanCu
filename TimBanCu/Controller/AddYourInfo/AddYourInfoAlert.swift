@@ -23,6 +23,8 @@ extension AddYourInfoViewController{
     }
     
     func setupAddImageYearAlert(){
+        addImageYearAlert = UIAlertController(title: "Bạn Nên Thêm Năm Hình Này Được Chụp!", message: "Mọi người sẽ dễ nhận diện bạn hơn!", preferredStyle: .alert)
+        
         addImageYearAlert.addTextField { (textField) in
             textField.placeholder = "Năm Hình Được Chụp"
             textField.keyboardType = .numberPad

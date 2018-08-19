@@ -31,9 +31,8 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     var yearOfUserImage = [UIImage:Int]()
     var selectedImage:UIImage!
     
-    var addImageYearAlert = UIAlertController(title: "Bạn Nên Thêm Năm Hình Này Được Chụp!", message: "Mọi người sẽ dễ nhận diện bạn hơn!", preferredStyle: .alert)
-    
-    var privacyAlert = UIAlertController(title: "Mức Công Khai Thông Tin", message: "Bạn có thể chọn chia sẻ thông tin của mình công khai hoặc chỉ mình bạn. Nếu không công khai, người dùng khác sẽ phải được sự đồng ý của bạn trước khi xem thông tin đó.", preferredStyle: .alert)
+    var addImageYearAlert:UIAlertController!
+    var privacyAlert:UIAlertController!
     
     let privateUserProfileRef = Database.database().reference().child("privateUserProfile")
     let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
@@ -93,7 +92,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         var filenames = [UIImage:String]()
         let time = Date().timeIntervalSince1970.binade
         
-        userImages.removeLast()
+        removeThePlusIconPictureThatIsUsedToAddNewPicture()
         
         for x in 0...(self.userImages.count-1){
             let str = "\(String(Int(time)+x))"
@@ -103,17 +102,19 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         uploadPublicData(imageFileNames: filenames)
         uploadPrivateData()
         
-        
-        
         updateCurrentStudentInfo()
+        
+        uploadUserInfoToSelectedClass()
         
         uploadUserImages(imageFileNames: filenames, completionHandler: {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
             }
         })
-        
-        uploadUserInfoToSelectedClass()
+    }
+    
+    func removeThePlusIconPictureThatIsUsedToAddNewPicture(){
+        userImages.removeLast()
     }
     
     func updateCurrentStudentInfo(){

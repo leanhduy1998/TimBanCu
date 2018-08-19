@@ -26,9 +26,19 @@ class AddImagesViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         var fetchCount = 0
         
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            if(assets.count == 0){
+                self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
+                self.pickerController.dismiss()
+            }
+            
             for asset in assets{
                 
                 asset.fetchOriginalImage(completeBlock: { (image, something) in
@@ -43,10 +53,8 @@ class AddImagesViewController: UIViewController {
                     fetchCount = fetchCount + 1
                     
                     if(fetchCount == assets.count){
-                    
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
-                        }
+                        self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
+                        self.pickerController.dismiss()
                     }
                 })
             }
