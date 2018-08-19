@@ -33,26 +33,7 @@ extension ClassDetailViewController{
         animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-            self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
-            self.searchUnderlineHeightAnchor?.constant = 2.5
-        }, completion: nil)
-    }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-            if textField.text == "" {
-                self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5)
-                self.searchUnderlineHeightAnchor?.constant = 1.5
-            }
-        }, completion: nil)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        return true
-    }
     
     func setupNoResultLabel(topViewY:CGFloat, topViewHeight:CGFloat){
         view.addSubview(noResultLabel)
@@ -62,6 +43,38 @@ extension ClassDetailViewController{
         noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
         noResultLabel.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
         noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func updateTableviewVisibilityBasedOnSearchResult(){
+        if(searchStudents.count == 0){
+            noResultLabel.isHidden = false
+            tableview.isHidden = true
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
+        }
+        else{
+            noResultLabel.isHidden = true
+            tableview.isHidden = false
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
+        }
+    }
+    
+    func startLoading(){
+        tableview.isHidden = true
+        searchTF.isHidden = true
+        addYourselfBtn.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func stopLoading(){
+        UIView.animate(withDuration: 1) {
+            self.tableview.isHidden = false
+            self.searchTF.isHidden = false
+            self.activityIndicator.isHidden = true
+        }
+        activityIndicator.stopAnimating()
     }
     
     

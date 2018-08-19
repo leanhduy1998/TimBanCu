@@ -17,9 +17,9 @@ class MajorViewController: UIViewController {
 
     var noResultAddNewMajorBtn = NoResultButton(title: "Thêm Khoa Mới")
     
-    var addNewMajorAlert = UIAlertController(title: "Thêm Khoa Mới", message: "", preferredStyle: .alert)
-    var addNewMajorCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
-    var majorAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm trường", preferredStyle: .alert)
+    var addNewMajorAlert:UIAlertController!
+    var addNewMajorCompletedAlert: UIAlertController!
+    var majorAlreadyExistAlert: UIAlertController!
     
     var school:School!
     
@@ -44,67 +44,21 @@ class MajorViewController: UIViewController {
         setUpAnimatedEmoticon()
         setupNoResultLabelAndButton()
         updateTableviewVisibilityBasedOnSearchResult()
-        
     }
     
     func fetchData(){
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        noResultLabel.isHidden = true
-//        noResultAddNewMajorBtn.isHidden = true
-//        animatedEmoticon.isHidden = true
-//    }
-    
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
         self.present(addNewMajorAlert, animated: true, completion: nil)
     }
     
-    
-    func updateTableviewVisibilityBasedOnSearchResult(){
-        if(searchMajors.count == 0){
-            noResultLabel.isHidden = false
-            noResultAddNewMajorBtn.isHidden = false
-            tableview.isHidden = true
-            animatedEmoticon.isHidden = false
-            animatedEmoticon.play()
-        }
-        else{
-            noResultLabel.isHidden = true
-            noResultAddNewMajorBtn.isHidden = true
-            tableview.isHidden = false
-            tableview.reloadData()
-            animatedEmoticon.isHidden = true
-            animatedEmoticon.stop()
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassYearViewController{
-            destination.majorDetail = selectedMajor
+            destination.classProtocol = selectedMajor
         }
     }
     
 }
 
-extension MajorViewController:UITableViewDataSource,UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchMajors.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MajorTableViewCell") as! MajorTableViewCell
-        cell.major = searchMajors[indexPath.row]
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedMajor = searchMajors[indexPath.row]
-        performSegue(withIdentifier: "MajorToClassYearSegue", sender: self)
-    }
-    
-    
-}

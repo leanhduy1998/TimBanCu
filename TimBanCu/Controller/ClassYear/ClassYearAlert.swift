@@ -12,30 +12,54 @@ import UIKit
 extension ClassYearViewController{
     func setupAlerts(){
         
-        if(classDetail != nil){
-            addNewClassCompletedAlert = UIAlertController(title: "Lớp của bạn đã được thêm!", message: "", preferredStyle: .alert)
-            classAlreadyExistAlert = UIAlertController(title: "Lớp của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới", preferredStyle: .alert)
-        }
-        else if(majorDetail != nil){
-            addNewClassCompletedAlert = UIAlertController(title: "Khoa của bạn đã được thêm!", message: "", preferredStyle: .alert)
-            classAlreadyExistAlert = UIAlertController(title: "Khoa của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới", preferredStyle: .alert)
-        }
+        
+        
+        
+        
+        
+        
         
         setupAddNewClassDetailCompletedAlert()
         setupClassAlreadyExistAlert()
     }
     
-    private func setupAddNewClassDetailCompletedAlert(){
-        addNewClassCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewClassCompletedAlert] (_) in
+    private func setupAddNewClassCompleteAlert(){
+        var title:String!
+        var message = ""
+        
+        if(classProtocol is ClassDetail){
+            title = "Lớp của bạn đã được thêm!"
+        }
+        else{
+            title = "Khoa của bạn đã được thêm!"
+        }
+        
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewClassCompletedAlert] (_) in
             addNewClassCompletedAlert?.dismiss(animated: true, completion: nil)
             
             self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
-        }))
+        })
+        
+        addNewClassCompletedAlert = InfoAlert.getAlert(title: title, message: message, action: action)
+    }
+    private func setupClassAlreadyExistAlert(){
+        var title:String!
+        var message:String!
+        
+        if(classProtocol is ClassDetail){
+            title = "Lớp của bạn đã có trong danh sách!"
+            message = "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới"
+        }
+        else{
+            title = "Khoa của bạn đã có trong danh sách!"
+            message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
+        }
+        
+        classAlreadyExistAlert = InfoAlert.getAlert(title: title, message: message)
     }
     
-    private func setupClassAlreadyExistAlert(){
-        classAlreadyExistAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak classAlreadyExistAlert] (_) in
-            self.classAlreadyExistAlert.dismiss(animated: true, completion: nil)
-        }))
+    private func setupAddNewClassDetailCompletedAlert(){
+        
     }
+    
 }

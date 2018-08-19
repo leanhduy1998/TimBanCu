@@ -14,65 +14,32 @@ extension SchoolViewController{
     func setupAlerts(){
         setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()
-        
         setupSchoolAlreadyExistAlert()
     }
     
     private func setupSchoolAlreadyExistAlert(){
-        schoolAlreadyExistAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak schoolAlreadyExistAlert] (_) in
-            self.schoolAlreadyExistAlert.dismiss(animated: true, completion: nil)
-        }))
+        let title = "Trường của bạn đã có trong danh sách!"
+        let message = "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm Trường Mới"
+
+        schoolAlreadyExistAlert = InfoAlert.getAlert(title: title, message: message)
     }
     
     private func setupAddNewSchoolAlert(){
-        addNewSchoolAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addNewSchoolAlert] (_) in
-            addNewSchoolAlert?.dismiss(animated: true, completion: nil)
-        }))
-        
-        addNewSchoolAlert.addTextField { (textField) in
-            textField.placeholder = "Tên Trường"
-        }
-        
-        addNewSchoolAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewSchoolAlert] (_) in
+        let addSchoolAction = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewSchoolAlert] (_) in
             let textField = addNewSchoolAlert?.textFields![0] // Force unwrapping because we know it exists.
             let schoolName = textField?.text
             
             if(!(schoolName?.isEmpty)!){
-                let school = School(name: schoolName!, address: "?", type: self.selectedSchoolType, uid: CurrentUserHelper.getUid())
-                
-                self.addSchoolToDatabase(school: school, completionHandler: { (err, ref) in
-                    DispatchQueue.main.async {
-                        if(err == nil){
-                            self.addSchoolToLocal(school: school)
-                            self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
-                        }
-                        else{
-                            if(err?.localizedDescription == "Permission denied") {
-                                self.present(self.schoolAlreadyExistAlert, animated: true, completion: nil)
-                            }
-                        }
-                    }
-                    
-                })
+                self.addSchoolToSchoolList(schoolName: schoolName!)
             }
-        }))
-    }
-    
-    func addSchoolToDatabase(school:School,completionHandler: @escaping (_ err:Error?, _ ref:DatabaseReference)->Void){
-        Database.database().reference().child("schools").child(school.name).setValue(school.getObjectValueAsDic(), withCompletionBlock: completionHandler)
-    }
-    
-    func addSchoolToLocal(school:School){
-        schoolModels.append(school)
-        searchSchoolModels.append(school)
-        tableview.reloadData()
-        updateTableviewVisibilityBasedOnSearchResult()
+        })
+        
+        addNewSchoolAlert = AskForInputAlert.getAlert(title: "", message: "", TFPlaceHolder: "Tên Trường", action: addSchoolAction)
     }
     
     private func setupAddNewSchoolCompletedAlert(){
-        addNewSchoolCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewSchoolCompletedAlert] (_) in
-            addNewSchoolCompletedAlert?.dismiss(animated: true, completion: nil)
-        }))
+        let title = "Trường của bạn đã được thêm!"
+        addNewSchoolCompletedAlert = InfoAlert.getAlert(title: title, message: "")
     }
     
     

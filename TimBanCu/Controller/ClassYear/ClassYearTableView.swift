@@ -27,85 +27,31 @@ extension ClassYearViewController: UITableViewDelegate,UITableViewDataSource{
         
         selectedYear = years[indexPath.row]
         
-        if(classDetail != nil){
-            classYearExist(completionHandler: { classExist, uidIfExist  in
-                DispatchQueue.main.async {
-                    self.classDetail.classYear = self.selectedYear
-                    
-                    if(!classExist){
-                        self.classDetail.uid = CurrentUserHelper.getUid()
-                        
-                        self.classDetail.writeToDatabase { (err, ref) in
-                            DispatchQueue.main.async {
-                                
-                                if(err == nil){
-                                    self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                                }
-                                else if(err?.localizedDescription == "Permission denied") {
-                                    self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
-                                    
-                                }
-                            }
-                        }
-                    }
-                    else{
-                        self.classDetail.uid = uidIfExist
-                        self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
-                    }
+        
+        checkIfClassYearExist(completionHandler: { exist, uidIfExist  in
+            DispatchQueue.main.async {
+                if(!exist){
+                    self.classProtocol.uid = CurrentUserHelper.getUid()
+                    self.writeToDatabaseThenShowCompleteAlert(classProtocol: self.classProtocol)
                 }
-            })
-            
-        }
-        else if(majorDetail != nil){
-            classYearExist(completionHandler: { classExist, uidIfExist  in
-                DispatchQueue.main.async {
-                    self.classDetail.classYear = self.selectedYear
-                    
-                    if(!classExist){
-                        self.classDetail.uid = CurrentUserHelper.getUid()
-                        
-                        self.classDetail.writeToDatabase { (err, ref) in
-                            DispatchQueue.main.async {
-                                
-                                if(err == nil){
-                                    self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                                }
-                                else if(err?.localizedDescription == "Permission denied") {
-                                    self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
-                                    
-                                }
-                            }
-                        }
-                    }
-                    else{
-                        self.classDetail.uid = uidIfExist
-                        self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
-                    }
-                }
-            })
-            
-            
-            
-            
-            
-            if(majorDetail.majorYear == "Năm ?"){
-                majorDetail.majorYear = selectedYear
-                
-                majorDetail.writeToDatabase { (err, ref) in
-                    DispatchQueue.main.async {
-                        
-                        if(err == nil){
-                            self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
-                        }
-                        else if(err?.localizedDescription == "Permission denied") {
-                            self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
-                            
-                        }
-                    }
+                else{
+                    self.classProtocol.uid = uidIfExist
+                    self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
                 }
             }
-            else{
-                performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+        })
+    }
+    
+    private func writeToDatabaseThenShowCompleteAlert(classProtocol:ClassProtocol){
+        classProtocol.writeToDatabase { (err, ref) in
+            DispatchQueue.main.async {
+                if(err == nil){
+                    self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
+                }
+                else if(err?.localizedDescription == "Permission denied") {
+                    self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
+                    
+                }
             }
         }
     }

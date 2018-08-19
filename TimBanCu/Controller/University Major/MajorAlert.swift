@@ -19,21 +19,14 @@ extension MajorViewController{
     }
     
     private func setupMajorAlreadyExistAlert(){
-        majorAlreadyExistAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak majorAlreadyExistAlert] (_) in
-            self.majorAlreadyExistAlert.dismiss(animated: true, completion: nil)
-        }))
+        let title = "Khoa của bạn đã có trong danh sách!"
+        let message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
+
+        majorAlreadyExistAlert = InfoAlert.getAlert(title: title, message: message)
     }
     
     private func setupAddNewMajorAlert(){
-        addNewMajorAlert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak addNewMajorAlert] (_) in
-            addNewMajorAlert?.dismiss(animated: true, completion: nil)
-        }))
-        
-        addNewMajorAlert.addTextField { (textField) in
-            textField.placeholder = "Tên Khoa"
-        }
-        
-        addNewMajorAlert.addAction(UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewMajorAlert] (_) in
+        let addMajorAction = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewMajorAlert] (_) in
             let textField = addNewMajorAlert?.textFields![0] // Force unwrapping because we know it exists.
             let majorName = textField?.text
             if(!(majorName?.isEmpty)!){
@@ -42,39 +35,17 @@ extension MajorViewController{
                 self.selectedMajor = major
                 
                 self.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self)
-                
-                /*DispatchQueue.main.async {
-                    
-                    let schoolsRef = Database.database().reference().child("schools")
-                    schoolsRef.child(self.school.name!).setValue(major.getObjectValueAsDic(), withCompletionBlock: { (err, ref) in
-                        
-                        if(err == nil){
-                            DispatchQueue.main.async {
-                                self.majors.append(major)
-                                
-                                self.searchMajors.append(major)
-                                self.tableview.reloadData()
-                                self.updateTableviewVisibilityBasedOnSearchResult()
-                                self.present(self.addNewMajorCompletedAlert, animated: true, completion: nil)
-                                
-                            }
-                        }
-                        else{
-                            if(err?.localizedDescription == "Permission denied") {
-                                self.present(self.majorAlreadyExistAlert, animated: true, completion: nil)
-                                
-                            }
-                        }
-                    })
-                }*/
             }
-        }))
+        })
+        
+        addNewMajorAlert = AskForInputAlert.getAlert(title: "Thêm Khoa Mới", message: "", TFPlaceHolder: "Tên Khoa", action: addMajorAction)
     }
     
     private func setupAddNewMajorCompletedAlert(){
-        addNewMajorCompletedAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak addNewMajorCompletedAlert] (_) in
-            addNewMajorCompletedAlert?.dismiss(animated: true, completion: nil)
-        }))
+        let title = "Trường của bạn đã được thêm!"
+        let message = ""
+        
+        addNewMajorCompletedAlert = InfoAlert.getAlert(title: title, message: message)
     }
     
     

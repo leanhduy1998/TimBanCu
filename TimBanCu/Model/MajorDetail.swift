@@ -10,28 +10,26 @@ import Foundation
 import FirebaseDatabase
 
 class MajorDetail: ClassProtocol{
-    
-    
     //class Detail: 10A11
     // class name: Lớp 10
     
     var uid:String!
     var schoolName:String!
     var majorName:String!
-    var majorYear:String!
+    var year:String!
     
     init(uid:String, schoolName:String, majorName:String,majorYear:String){
         self.uid = uid
         self.schoolName = schoolName
         self.majorName = majorName
-        self.majorYear = majorYear
+        self.year = majorYear
     }
     
     init(uid:String, schoolName:String, majorName:String){
         self.uid = uid
         self.schoolName = schoolName
         self.majorName = majorName
-        self.majorYear = "Năm ?"
+        self.year = "Năm ?"
     }
     
     private func getObjectValueAsDic() -> [String:Any]{
@@ -39,7 +37,7 @@ class MajorDetail: ClassProtocol{
     }
     
     func getFirebasePathWithoutSchoolYear() -> String {
-        return "\(schoolName!)/\(majorName!)/\(majorYear!)"
+        return "\(schoolName!)/\(majorName!)/\(year!)"
     }
     
     func getFirebasePathWithSchoolYear() -> String {

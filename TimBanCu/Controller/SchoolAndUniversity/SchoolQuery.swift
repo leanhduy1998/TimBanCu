@@ -11,78 +11,53 @@ import UIKit
 import FirebaseDatabase
 
 extension SchoolViewController{
-    func tieuhocQuery(completionHandler: @escaping () -> Void) {
-        tieuhocQueryRef.observeSingleEvent(of: .value) { (snapshot) in
-            for snap in snapshot.children {
-                let value = (snap as! DataSnapshot).value as? [String:Any]
-                
-                let name = (snap as! DataSnapshot).key
-                let address = value!["address"] as? String
-                let uid = value!["uid"] as? String
-                
-                let school = School(name: name, address: address!, type: "th", uid: uid!)
-                
-                self.schoolModels.append(school)
-            }
-            completionHandler()
+    func setupSchoolFirebaseReferences(){
+        let schoolsRef = Database.database().reference().child("schools")
+        
+        tieuhocQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "th")
+        thcsQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
+        thptQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
+        daihocQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "dh")
+    }
+    
+    func tieuhocGetQuery(completionHandler: @escaping () -> Void) {
+        tieuhocQuery.observeSingleEvent(of: .value) { (snapshot) in
+            self.convertSnapshotToSchool(snapshot: snapshot, schoolType: "th", completionHandler: completionHandler)
         }
     }
     
-    func thcsQuery(completionHandler: @escaping () -> Void) {
-        thcsQueryRef.observeSingleEvent(of: .value) { (snapshot) in
-            for snap in snapshot.children {
-                let value = (snap as! DataSnapshot).value as? [String:Any]
-                
-                let name = (snap as! DataSnapshot).key
-                let address = value!["address"] as? String
-                let uid = value!["uid"] as? String
-                
-                let school = School(name: name, address: address!, type: "thcs", uid: uid!)
-                
-                self.schoolModels.append(school)
-            }
-            completionHandler()
+    func thcsGetQuery(completionHandler: @escaping () -> Void) {
+        thcsQuery.observeSingleEvent(of: .value) { (snapshot) in
+            self.convertSnapshotToSchool(snapshot: snapshot, schoolType: "thcs", completionHandler: completionHandler)
         }
     }
     
-    func thptQuery(completionHandler: @escaping () -> Void) {
-        thptQueryRef.observeSingleEvent(of: .value) { (snapshot) in
-            for snap in snapshot.children {
-                let value = (snap as! DataSnapshot).value as? [String:Any]
-                
-                let name = (snap as! DataSnapshot).key
-                let address = value!["address"] as? String
-                let uid = value!["uid"] as? String
-                
-                let school = School(name: name, address: address!, type: "thpt", uid: uid!)
-                
-                self.schoolModels.append(school)
-            }
+    func thptGetQuery(completionHandler: @escaping () -> Void) {
+        thptQuery.observeSingleEvent(of: .value) { (snapshot) in
+            self.convertSnapshotToSchool(snapshot: snapshot, schoolType: "thpt", completionHandler: completionHandler)
+        }
+    }
+    
+    func daihocGetQuery(completionHandler: @escaping () -> Void) {
+        daihocQuery.observeSingleEvent(of: .value) { (snapshot) in
+            self.convertSnapshotToSchool(snapshot: snapshot, schoolType: "dh", completionHandler: completionHandler)
+        }
+    }
+    
+    private func convertSnapshotToSchool(snapshot:DataSnapshot, schoolType:String, completionHandler: @escaping () -> Void){
+        
+        for snap in snapshot.children {
+            let value = (snap as! DataSnapshot).value as? [String:Any]
             
-            completionHandler()
-        }
-    }
-    
-    func daihocQuery(completionHandler: @escaping () -> Void) {
-        daihocQueryRef.observeSingleEvent(of: .value) { (snapshot) in
-            for snap in snapshot.children {
-                let value = (snap as! DataSnapshot).value as? [String:Any]
-                
-                let name = (snap as! DataSnapshot).key
-                let address = value!["address"] as? String
-                let uid = value!["uid"] as? String
-                
-                let school = School(name: name, address: address!, type: "dh", uid: uid!)
-                
-                self.schoolModels.append(school)
-            }
+            let name = (snap as! DataSnapshot).key
+            let address = value!["address"] as? String
+            let uid = value!["uid"] as? String
             
-            completionHandler()
+            let school = School(name: name, address: address!, type: schoolType, uid: uid!)
+            
+            self.schoolModels.append(school)
         }
+        
+        completionHandler()
     }
-    
-    
-    
-
-    
 }

@@ -11,28 +11,6 @@ import UIKit
 
 extension SchoolViewController{
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-            self.searchTFUnderline.backgroundColor = themeColor.withAlphaComponent(0.7)
-            self.searchUnderlineHeightAnchor?.constant = 2.5
-        }, completion: nil)
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-            if textField.text == "" {
-                self.searchTFUnderline.backgroundColor = themeColor.withAlphaComponent(0.4)
-                self.searchUnderlineHeightAnchor?.constant = 1.5
-            }
-        }, completion: nil)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        return true
-    }
-    
-    
     func setUpAnimatedEmoticon() {
         view.addSubview(animatedEmoticon)
         animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
@@ -68,6 +46,33 @@ extension SchoolViewController{
         noResultAddNewSchoolBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         noResultAddNewSchoolBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
+    }
+    
+    func updateUIFromData(){
+        DispatchQueue.main.async {
+            self.searchSchoolModels = self.schoolModels
+            self.tableview.reloadData()
+            self.updateItemsVisibilityBasedOnSearchResult()
+        }
+    }
+    
+    func updateItemsVisibilityBasedOnSearchResult(){
+        if(searchSchoolModels.count == 0){
+            noResultLabel.isHidden = false
+            noResultAddNewSchoolBtn.isHidden = false
+            tableview.isHidden = true
+            
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
+        }
+        else{
+            noResultLabel.isHidden = true
+            noResultAddNewSchoolBtn.isHidden = true
+            tableview.isHidden = false
+            
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
+        }
     }
     
 }

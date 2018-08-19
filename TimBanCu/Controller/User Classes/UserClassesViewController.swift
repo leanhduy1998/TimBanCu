@@ -26,7 +26,7 @@ class UserClassesViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
-            destination.classDetail = selectedClassDetail
+            destination.classProtocol = selectedClassDetail
         }
     }
     

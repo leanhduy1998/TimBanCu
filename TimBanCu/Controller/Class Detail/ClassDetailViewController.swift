@@ -25,7 +25,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
 
     // segue from previous class
-    var classDetail:ClassProtocol!
+    var classProtocol:ClassProtocol!
+    //
 
     var finishedLoadingInitialTableCells = false
 
@@ -71,33 +72,22 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
-        classEnrollRef = Database.database().reference().child("students").child(classDetail.getFirebasePathWithSchoolYear())
+        classEnrollRef = Database.database().reference().child("students").child(classProtocol.getFirebasePathWithSchoolYear())
         
         updateTableviewVisibilityBasedOnSearchResult()
-        
-        noResultLabel.isHidden = true
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-       
-
-        noResultLabel.isHidden = true
-        animatedEmoticon.isHidden = true
-
-        
         startLoading()
         fetchData {
             DispatchQueue.main.async {
                 self.activityIndicator.isHidden = true
                 self.reloadData()
+                self.stopLoading()
             }
         }
     }
@@ -145,7 +135,6 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func reloadData(){
         self.searchStudents = self.students
         self.tableview.reloadData()
-        self.stopLoading()
         self.updateTableviewVisibilityBasedOnSearchResult()
         self.showAddYourInfoBtnIfYouAreNotInTheClass()
     }
@@ -158,6 +147,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else{
             enrollUserToClass()
+            CurrentUserHelper.addEnrollment(classD: classProtocol)
         }
     }
     
@@ -170,57 +160,23 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         }
-        
-        CurrentUserHelper.addEnrollment(classD: classDetail)
     }
     
     @IBAction func chatBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "ClassDetailToChatSegue", sender: self)
     }
     
-    func updateTableviewVisibilityBasedOnSearchResult(){
-        if(searchStudents.count == 0){
-            noResultLabel.isHidden = false
-            tableview.isHidden = true
-            animatedEmoticon.isHidden = false
-            animatedEmoticon.play()
-        }
-        else{
-            noResultLabel.isHidden = true
-            tableview.isHidden = false
-            animatedEmoticon.isHidden = true
-            animatedEmoticon.stop()
-        }
-    }
-    
-    func startLoading(){
-        tableview.isHidden = true
-        searchTF.isHidden = true
-        addYourselfBtn.isHidden = true
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-    }
-    
-    func stopLoading(){
-        UIView.animate(withDuration: 1) {
-            self.tableview.isHidden = false
-            self.searchTF.isHidden = false
-            self.activityIndicator.isHidden = true
-        }
-        activityIndicator.stopAnimating()
-    }
-    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
-            destination.classDetail = classDetail as! ClassDetail
+            destination.classDetail = classProtocol as! ClassDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
             destination.student = selectedStudent
         }
         
         if let destination = segue.destination as? ChatViewController{
-            destination.classDetail = classDetail as! ClassDetail
+            destination.classDetail = classProtocol as! ClassDetail
         }
         
     }

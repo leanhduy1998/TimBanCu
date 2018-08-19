@@ -13,8 +13,7 @@ class ClassYearViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
-    var classDetail:ClassDetail!
-    var majorDetail:MajorDetail!
+    var classProtocol:ClassProtocol!
     
     var years = [String]()
     var selectedYear:String!
@@ -61,8 +60,9 @@ class ClassYearViewController: UIViewController {
         }
     }
     
-    func classYearExist(completionHandler: @escaping (_ exist:Bool, _ uid:String) -> Void){
-        Database.database().reference().child("classes").child(classDetail.getFirebasePathWithoutSchoolYear()).child(selectedYear).observeSingleEvent(of: .value) { (snapshot) in
+    func checkIfClassYearExist(completionHandler: @escaping (_ exist:Bool, _ uid:String) -> Void){
+        
+        Database.database().reference().child("classes").child(classProtocol.getFirebasePathWithoutSchoolYear()).child(selectedYear).observeSingleEvent(of: .value) { (snapshot) in
             
             let classValue = (snapshot as! DataSnapshot).value as? [String:String]
             
@@ -79,7 +79,7 @@ class ClassYearViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
-            destination.classDetail = classDetail
+            destination.classProtocol = classProtocol
         }
     }
 }

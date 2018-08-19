@@ -24,11 +24,9 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 
     var noResultLabel = NoResultLabel(type: Type.School)
+    var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
 
     var finishedLoadingInitialTableCells = false
-    
- 
-    var noResultAddNewSchoolBtn = NoResultButton(title: "Thêm Trường Mới")
     
     var searchTFUnderline: UIView = {
         let view = UIView()
@@ -54,19 +52,22 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }()
     
     //alert
-    
-    var addNewSchoolAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-    var addNewSchoolCompletedAlert = UIAlertController(title: "Trường của bạn đã được thêm!", message: "", preferredStyle: .alert)
-    let schoolAlreadyExistAlert = UIAlertController(title: "Trường của bạn đã có trong danh sách!", message: "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm Trường Mới", preferredStyle: .alert)
+    var addNewSchoolAlert:UIAlertController!
+    var addNewSchoolCompletedAlert:UIAlertController!
+    var schoolAlreadyExistAlert:UIAlertController!
     
     //database
+    var tieuhocQuery:DatabaseQuery!
+    var thcsQuery:DatabaseQuery!
+    var thptQuery:DatabaseQuery!
+    var daihocQuery:DatabaseQuery!
     
     
-    let tieuhocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "th")
-    let thcsQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
-    let thptQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
-    let daihocQueryRef = Database.database().reference().child("schools").queryOrdered(byChild: "type").queryEqual(toValue : "dh")
-
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupSchoolFirebaseReferences()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
@@ -78,9 +79,10 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //customizeSearchTF()
         setUpAnimatedEmoticon()
         
-        tableview.isHidden = true
+        setupNoResultLabelAndButton()
+        
+        updateItemsVisibilityBasedOnSearchResult()
     }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         view.endEditing(true)
@@ -89,10 +91,6 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             navigationController?.hero.isEnabled = true
             navigationController?.hero.navigationAnimationType = .fade
         } 
-    }
-    
-    override func viewDidLayoutSubviews() {
-        setupNoResultLabelAndButton()
     }
     
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
@@ -112,14 +110,9 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.present(addNewSchoolAlert, animated: true, completion: nil)
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
-        noResultLabel.isHidden = true
-        noResultAddNewSchoolBtn.isHidden = true
-        animatedEmoticon.isHidden = true
     }
     
     func fetchData(){
@@ -127,86 +120,56 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchSchoolModels.removeAll()
         
         if(selectedSchoolType == "th"){
-            tieuhocQuery {
-                DispatchQueue.main.async {
-                    self.searchSchoolModels = self.schoolModels
-                    self.tableview.reloadData()
-                    self.updateTableviewVisibilityBasedOnSearchResult()
-                }
+            tieuhocGetQuery {
+                self.updateUIFromData()
             }
         }
         else if(selectedSchoolType == "thcs"){
-            thcsQuery {
-                DispatchQueue.main.async {
-                    self.searchSchoolModels = self.schoolModels
-                    self.tableview.reloadData()
-                    self.updateTableviewVisibilityBasedOnSearchResult()
-                }
+            thcsGetQuery {
+                self.updateUIFromData()
             }
         }
         else if(selectedSchoolType == "thpt"){
-            thptQuery {
-                DispatchQueue.main.async {
-                    self.searchSchoolModels = self.schoolModels
-                    self.tableview.reloadData()
-                    self.updateTableviewVisibilityBasedOnSearchResult()
-                }
+            thptGetQuery {
+                self.updateUIFromData()
             }
         }
         else{
-            daihocQuery {
-                DispatchQueue.main.async {
-                    self.searchSchoolModels = self.schoolModels
-                    self.tableview.reloadData()
-                    self.updateTableviewVisibilityBasedOnSearchResult()
+            daihocGetQuery {
+                self.updateUIFromData()
+            }
+        }
+    }
+    
+    func addSchoolToSchoolList(schoolName:String){
+        let school = School(name: schoolName, address: "?", type: self.selectedSchoolType, uid: CurrentUserHelper.getUid())
+        
+        self.addSchoolToLocal(school: school)
+        
+        self.addSchoolToDatabase(school: school, completionHandler: { (err, ref) in
+            DispatchQueue.main.async {
+                if(err == nil){
+                    self.present(self.addNewSchoolCompletedAlert, animated: true, completion: nil)
+                }
+                else{
+                    if(err?.localizedDescription == "Permission denied") {
+                        self.present(self.schoolAlreadyExistAlert, animated: true, completion: nil)
+                    }
                 }
             }
-        }
+            
+        })
     }
     
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        searchSchoolModels.removeAll()
-        
-        if(textField.text?.isEmpty)!{
-            searchSchoolModels = schoolModels
-            return
-        }
-        
-        for school in schoolModels{
-            if school.name.lowercased().range(of:textField.text!.lowercased()) != nil {
-                searchSchoolModels.append(school)
-            }
-        }
-        
-        updateTableviewVisibilityBasedOnSearchResult()
+    private func addSchoolToDatabase(school:School,completionHandler: @escaping (_ err:Error?, _ ref:DatabaseReference)->Void){
+        Database.database().reference().child("schools").child(school.name).setValue(school.getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        searchSchoolModels = schoolModels
-        updateTableviewVisibilityBasedOnSearchResult()
-        return true
-    }
-    
-    func updateTableviewVisibilityBasedOnSearchResult(){
-        if(searchSchoolModels.count == 0){
-            noResultLabel.isHidden = false
-            noResultAddNewSchoolBtn.isHidden = false
-            tableview.isHidden = true
-
-            animatedEmoticon.isHidden = false
-            animatedEmoticon.play()
-        }
-        else{
-            noResultLabel.isHidden = true
-            noResultAddNewSchoolBtn.isHidden = true
-            tableview.isHidden = false
-            tableview.reloadData()
-
-            animatedEmoticon.isHidden = true
-            animatedEmoticon.stop()
-        }
-        
+    private func addSchoolToLocal(school:School){
+        schoolModels.append(school)
+        searchSchoolModels.append(school)
+        tableview.reloadData()
+        updateItemsVisibilityBasedOnSearchResult()
     }
     
     
@@ -227,6 +190,4 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
             destination.school = selectedSchool
         }
     }
-    
-
 }

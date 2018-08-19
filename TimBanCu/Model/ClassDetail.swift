@@ -10,6 +10,8 @@ import Foundation
 import FirebaseDatabase
 
 class ClassDetail: ClassProtocol{
+    
+    
     //class Detail: 10A11
     // class name: Lớp 10
     
@@ -17,14 +19,14 @@ class ClassDetail: ClassProtocol{
     var uid:String!
     var schoolName:String!
     var classNumber:String!
-    var classYear = "Năm ?"
+    var year: String! = "Năm ?"
     
     init(classDic:[String:String]){
         className = classDic["className"]
         uid = classDic["uid"]
         schoolName = classDic["schoolName"]
         classNumber = classDic["classNumber"]
-        classYear = classDic["classYear"]!
+        year = classDic["classYear"]!
     }
     
     init(classNumber:String,uid:String, schoolName:String, className:String,classYear:String){
@@ -32,7 +34,7 @@ class ClassDetail: ClassProtocol{
         self.uid = uid
         self.schoolName = schoolName
         self.className = className
-        self.classYear = classYear
+        self.year = classYear
     }
     
     init(classNumber:String,uid:String, schoolName:String, className:String){
@@ -48,7 +50,7 @@ class ClassDetail: ClassProtocol{
         dic["uid"] = uid
         dic["schoolName"] = schoolName
         dic["classNumber"] = classNumber
-        dic["classYear"] = classYear
+        dic["classYear"] = year
         
         return dic
     }
@@ -62,7 +64,7 @@ class ClassDetail: ClassProtocol{
     }
     
     func getFirebasePathWithSchoolYear()->String{
-        return "\(schoolName!)/\(classNumber!)/\(className!)/\(classYear)"
+        return "\(schoolName!)/\(classNumber!)/\(className!)/\(year)"
     }
     
     func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){

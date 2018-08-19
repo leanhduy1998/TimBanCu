@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import Lottie
 
-class ClassNameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClassNameViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -35,7 +35,7 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     var classDetails = [ClassDetail]()
     
     //alert
-    var addNewClassAlert = UIAlertController(title: "Thêm Lớp Mới", message: "", preferredStyle: .alert)
+    var addNewClassAlert: UIAlertController!
     
     
     let customSelectionColorView: UIView = {
@@ -54,19 +54,15 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpAnimatedEmoticon()
         setupNoResultLabelAndButton()
         setupAlerts()
-        
+        updateTableviewVisibilityBasedOnSearchResult()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
-        noResultLabel.isHidden = true
-        noResultAddNewClassBtn.isHidden = true
-        animatedEmoticon.isHidden = true
     }
     
     func fetchData(){
@@ -90,57 +86,13 @@ class ClassNameViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classDetails.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassNameTableViewCell") as? ClassNameTableViewCell
-        cell?.classDetailViewModel = ClassNameViewModel(classDetail: classDetails[indexPath.row])
-        cell?.selectedBackgroundView = customSelectionColorView
-        
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedClassDetail = classDetails[indexPath.row]
-        performSegue(withIdentifier: "ClassNameToClassYear", sender: self)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        var lastInitialDisplayableCell = false
-        
-        if classDetails.count > 0 && !finishedLoadingInitialTableCells {
-            if let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows,
-                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
-                lastInitialDisplayableCell = true
-            }
-        }
-        
-        if !finishedLoadingInitialTableCells {
-            
-            if lastInitialDisplayableCell {
-                finishedLoadingInitialTableCells = true
-            }
-            cell.transform = CGAffineTransform(translationX: 0, y: tableview.rowHeight / 2)
-            cell.alpha = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-                cell.alpha = 1
-            }, completion: nil)
-        }
-        
-    }
-    
     @objc func addNewClassDetailBtnPressed(_ sender: UIButton?) {
         self.present(addNewClassAlert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassYearViewController{
-            destination.classDetail = selectedClassDetail
+            destination.classProtocol = selectedClassDetail
         }
     }
     

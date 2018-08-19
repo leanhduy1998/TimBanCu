@@ -35,4 +35,22 @@ extension MajorViewController{
         
         noResultAddNewMajorBtn.addTarget(self, action: #selector(self.addNewMajorBtnPressed(_:)), for: .touchUpInside)
     }
+    
+    func updateTableviewVisibilityBasedOnSearchResult(){
+        if(searchMajors.count == 0){
+            noResultLabel.isHidden = false
+            noResultAddNewMajorBtn.isHidden = false
+            tableview.isHidden = true
+            animatedEmoticon.isHidden = false
+            animatedEmoticon.play()
+        }
+        else{
+            noResultLabel.isHidden = true
+            noResultAddNewMajorBtn.isHidden = true
+            tableview.isHidden = false
+            tableview.reloadData()
+            animatedEmoticon.isHidden = true
+            animatedEmoticon.stop()
+        }
+    }
 }

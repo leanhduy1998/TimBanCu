@@ -10,6 +10,9 @@ import Foundation
 import FirebaseDatabase
 
 protocol ClassProtocol{
+    var year:String! { get set }
+    var uid:String!{ get set }
+    
     func getFirebasePathWithoutSchoolYear()->String
     func getFirebasePathWithSchoolYear()->String
     func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void)
