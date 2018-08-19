@@ -29,7 +29,7 @@ extension ClassNameViewController{
         animatedEmoticon.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func updateTableviewVisibilityBasedOnSearchResult(){
+    func updateItemsVisibilityBasedOnSearchResult(){
         if(classDetails.count == 0){
             noResultLabel.isHidden = false
             noResultAddNewClassBtn.isHidden = false
@@ -47,4 +47,11 @@ extension ClassNameViewController{
             tableview.reloadData()
         }
     }
+    
+    func hideItemsWhileFetchResult(){
+        noResultLabel.isHidden = true
+        noResultAddNewClassBtn.isHidden = true
+        animatedEmoticon.isHidden = true
+    }
+    
 }

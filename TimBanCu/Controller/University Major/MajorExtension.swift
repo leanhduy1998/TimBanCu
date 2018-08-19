@@ -29,7 +29,7 @@ extension MajorViewController{
         noResultAddNewMajorBtn.addTarget(self, action: #selector(self.addNewMajorBtnPressed(_:)), for: .touchUpInside)
     }
     
-    func updateTableviewVisibilityBasedOnSearchResult(){
+    func updateItemsVisibilityBasedOnSearchResult(){
         if(searchMajors.count == 0){
             noResultLabel.isHidden = false
             noResultAddNewMajorBtn.isHidden = false
@@ -45,5 +45,11 @@ extension MajorViewController{
             animatedEmoticon.isHidden = true
             animatedEmoticon.stop()
         }
+    }
+    
+    func hideItemsWhileFetchingData(){
+        noResultLabel.isHidden = true
+        noResultAddNewMajorBtn.isHidden = true
+        animatedEmoticon.isHidden = true
     }
 }

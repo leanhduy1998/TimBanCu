@@ -42,23 +42,13 @@ class MajorViewController: UIViewController {
         setupAlerts()
         setUpAnimatedEmoticon()
         setupNoResultLabelAndButton()
-        updateTableviewVisibilityBasedOnSearchResult()
+        hideItemsWhileFetchingData()
     }
     
     func fetchData(){
         
     }
-    
-<<<<<<< HEAD
-=======
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        noResultLabel.isHidden = true
-        noResultAddNewMajorBtn.isHidden = true
-        animatedEmoticon.isHidden = true
-    }
-    
->>>>>>> UI-Design
+
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
         self.present(addNewMajorAlert, animated: true, completion: nil)
     }

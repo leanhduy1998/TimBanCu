@@ -48,17 +48,21 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="googleSignInBtn" destination="JqL-TP-ZFl" id="Vnz-UD-Yme"/>
-                        <segue destination="boj-3L-Gwg" kind="show" identifier="SignInToSelectSchoolTypeSegue" id="19h-5u-zeO"/>
+                        <segue destination="cZk-61-rDc" kind="show" identifier="SignInToSelectSchoolTypeSegue" id="5Eh-CB-2Rw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiH-ED-d8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2692" y="1609.745127436282"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Trang Chính-->
         <scene sceneID="pYe-CJ-ltI">
             <objects>
                 <navigationController id="boj-3L-Gwg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Trang Chính" image="homeDarkGray" selectedImage="homeRed" springLoaded="YES" id="5qW-eZ-6a4">
+                        <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3Sn-RP-TmU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -80,32 +84,102 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="cZk-61-rDc" kind="relationship" relationship="rootViewController" id="kvG-Vu-YkR"/>
+                        <segue destination="MnQ-u8-HPq" kind="relationship" relationship="rootViewController" id="BCA-Kg-O93"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4n-cq-5lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1655" y="1610"/>
+            <point key="canvasLocation" x="-783" y="1601"/>
+        </scene>
+        <!--Công Cụ-->
+        <scene sceneID="Ikm-v2-baR">
+            <objects>
+                <navigationController id="0d2-qv-V97" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Công Cụ" image="profileIcon25" selectedImage="userRed" id="vrv-Ff-q9H">
+                        <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="bhW-hZ-jhD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="rp0-Iy-xJl" kind="relationship" relationship="rootViewController" id="PZH-uT-Lcm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OCz-4J-G2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783" y="2568"/>
+        </scene>
+        <!--Lớp Của Bạn-->
+        <scene sceneID="RP8-4I-zQK">
+            <objects>
+                <navigationController id="N4t-Vg-lwr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lớp Của Bạn" id="KmS-AF-suU"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ByX-ac-0hx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="hPG-cp-ddJ" kind="relationship" relationship="rootViewController" id="mws-do-1rd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2pp-ch-5iz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783" y="3451"/>
         </scene>
         <!--Chọn Loại Trường-->
         <scene sceneID="5oZ-wO-5Cy">
             <objects>
                 <viewController storyboardIdentifier="SelectSchoolTypeViewController" id="MnQ-u8-HPq" customClass="SelectSchoolTypeViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t5p-DZ-eSO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nhf-Hl-TCd">
-                                <rect key="frame" x="20" y="92.5" width="335" height="369"/>
+                                <rect key="frame" x="20" y="100.5" width="335" height="402"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jkk-of-0JW">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="174.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="191"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-Ng-h4U" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="174.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5S-wc-uGJ" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29.5" y="17" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="26" width="100" height="100"/>
                                                         <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.25" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="i4m-gg-NFY"/>
@@ -113,17 +187,17 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elementary" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-c8-Gxu">
-                                                        <rect key="frame" x="47.5" y="35" width="64" height="64"/>
+                                                        <rect key="frame" x="47.5" y="44" width="64" height="64"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xns-ln-A9o">
-                                                        <rect key="frame" x="8" y="137" width="141.5" height="27.5"/>
+                                                        <rect key="frame" x="8" y="146" width="141.5" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Tiểu Học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-mb-DeF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="174.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="158" height="191"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="th"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
@@ -154,17 +228,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-v2-azd" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="174.5"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="191"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-LE-hq9">
-                                                        <rect key="frame" x="8" y="137" width="141.5" height="27.5"/>
+                                                        <rect key="frame" x="8" y="146" width="141.5" height="35"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Trung học cơ sở">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97O-bR-YGu" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29.5" y="17" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="26" width="100" height="100"/>
                                                         <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="0.25" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="MAb-P5-5Uf"/>
@@ -172,10 +246,10 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle" translatesAutoresizingMaskIntoConstraints="NO" id="1SP-lr-A44">
-                                                        <rect key="frame" x="47.5" y="35" width="64" height="64"/>
+                                                        <rect key="frame" x="47.5" y="44" width="64" height="64"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-Q8-WR4">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="174.5"/>
+                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="191"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="thcs"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
@@ -208,13 +282,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GK2-T0-AXm">
-                                        <rect key="frame" x="0.0" y="194.5" width="335" height="174.5"/>
+                                        <rect key="frame" x="0.0" y="211" width="335" height="191"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQH-Al-Mu5" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="174.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-jJ-FoT" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29.5" y="16.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="26" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="VG8-vQ-9Er"/>
@@ -222,17 +296,17 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="highSchool" translatesAutoresizingMaskIntoConstraints="NO" id="HgZ-Bc-qKv">
-                                                        <rect key="frame" x="47.5" y="34.5" width="64" height="64"/>
+                                                        <rect key="frame" x="47.5" y="44" width="64" height="64"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WX-GR-zzx">
-                                                        <rect key="frame" x="8" y="136.5" width="141.5" height="27.5"/>
+                                                        <rect key="frame" x="8" y="146" width="141.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <state key="normal" title="Trung học phổ thông">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-37-QD6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="174"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="190.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="thpt"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
@@ -263,10 +337,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-hV-Lbv" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="174.5"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="191"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJH-jV-zSA" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29.5" y="16.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29.5" y="26" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.59999999999999998" alpha="0.25" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="XaY-BO-XIN"/>
@@ -274,17 +348,17 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-yc-J8G">
-                                                        <rect key="frame" x="47.5" y="34.5" width="64" height="64"/>
+                                                        <rect key="frame" x="47.5" y="44" width="64" height="64"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgJ-oy-uyp">
-                                                        <rect key="frame" x="8" y="136.5" width="141.5" height="27.5"/>
+                                                        <rect key="frame" x="8" y="146" width="141.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Đại học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH3-Jy-K1g">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="174"/>
+                                                        <rect key="frame" x="-0.5" y="0.0" width="158" height="190.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="dh"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
@@ -351,7 +425,7 @@
             <objects>
                 <viewController id="rp0-Iy-xJl" customClass="SettingViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yrA-QJ-gGG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pLJ-87-Kea">
@@ -411,6 +485,7 @@
                     <tabBarItem key="tabBarItem" title="Công Cụ" image="profileIcon25" selectedImage="userRed" id="jhb-hU-CHr">
                         <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="9T9-ee-XDL"/>
                     <connections>
                         <segue destination="s0a-sR-lmJ" kind="show" identifier="SettingsToChangeInfoSegue" id="tvF-dB-Dpd"/>
                     </connections>
@@ -424,7 +499,7 @@
             <objects>
                 <viewController id="hPG-cp-ddJ" customClass="UserClassesViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88h-Dn-Gpp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rKs-KC-doa">
@@ -492,6 +567,7 @@
                         <viewLayoutGuide key="safeArea" id="Rr3-Mz-WAh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Lớp Của Bạn" id="Gde-uz-fqd"/>
+                    <navigationItem key="navigationItem" id="OWQ-Rj-tZ9"/>
                     <connections>
                         <segue destination="0Ua-wx-Yxd" kind="show" identifier="UserClassesToClassDetailSegue" id="Yxf-fH-7mY"/>
                     </connections>
@@ -526,7 +602,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.85882352941176465" green="0.24313725490196078" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.8784313725490196" green="0.14509803921568626" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -537,14 +613,14 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="MnQ-u8-HPq" kind="relationship" relationship="viewControllers" id="gBr-tp-0YS"/>
-                        <segue destination="rp0-Iy-xJl" kind="relationship" relationship="viewControllers" id="5x5-MN-F0N"/>
-                        <segue destination="hPG-cp-ddJ" kind="relationship" relationship="viewControllers" id="Gsm-Ed-BA8"/>
+                        <segue destination="boj-3L-Gwg" kind="relationship" relationship="viewControllers" id="lVY-pE-D89"/>
+                        <segue destination="0d2-qv-V97" kind="relationship" relationship="viewControllers" id="rtk-mj-hap"/>
+                        <segue destination="N4t-Vg-lwr" kind="relationship" relationship="viewControllers" id="48Y-Ga-U4J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6iN-Uk-4lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-642" y="1610"/>
+            <point key="canvasLocation" x="-1780" y="1610"/>
         </scene>
         <!--Tên Trường-->
         <scene sceneID="Cre-FJ-Kpu">
@@ -555,7 +631,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8is-0m-uwS">
-                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="499"/>
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -680,7 +756,6 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="DFC-CN-uUV"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -791,7 +866,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWp-TG-1zC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -854,7 +929,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fGv-rn-32V">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassTableViewCell" rowHeight="120" id="5XS-Bi-qWQ" customClass="ClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -938,7 +1013,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-bA-SrG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ClassNameTableViewCell" rowHeight="100" id="POe-53-gtW" customClass="ClassNameTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -1009,11 +1084,11 @@
             <objects>
                 <viewController id="0Ua-wx-Yxd" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GaK-7b-4ZG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
-                                <rect key="frame" x="0.0" y="124" width="375" height="443"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="394"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1060,7 +1135,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm Học Sinh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2xj-Al-kTv">
-                                <rect key="frame" x="30" y="94" width="315" height="20"/>
+                                <rect key="frame" x="30" y="30" width="315" height="20"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GnB-kT-xnB"/>
@@ -1070,7 +1145,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-AJ-ZHj">
-                                <rect key="frame" x="20" y="587" width="335" height="30"/>
+                                <rect key="frame" x="20" y="474" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Thêm Mình Vô Lớp">
                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1080,10 +1155,10 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-UU-L0M">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="291.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwq-kt-NPR">
-                                <rect key="frame" x="20" y="627" width="335" height="30"/>
+                                <rect key="frame" x="20" y="514" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Chat với Cả Lớp">
                                     <color key="titleColor" red="0.99215686274509807" green="0.61568627450980395" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1137,11 +1212,11 @@
             <objects>
                 <viewController storyboardIdentifier="StudentDetailViewController" id="Pba-mN-D9k" customClass="StudentDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwC-TQ-NDq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-2l-3af" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <color key="backgroundColor" red="0.96990669289999998" green="0.96990669289999998" blue="0.96990669289999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="6b9-hb-1Wm"/>
@@ -1152,7 +1227,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-ZN-DIM">
-                                <rect key="frame" x="154.5" y="369" width="66" height="20.5"/>
+                                <rect key="frame" x="154.5" y="305" width="66" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gH2-QW-773"/>
                                 </constraints>
@@ -1161,7 +1236,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vy Le, 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-Sn-pQQ">
-                                <rect key="frame" x="30" y="428" width="90.5" height="26.5"/>
+                                <rect key="frame" x="30" y="364" width="90.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1171,7 +1246,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ueu-cO-p3L">
-                                <rect key="frame" x="30" y="469.5" width="315" height="180"/>
+                                <rect key="frame" x="30" y="405.5" width="315" height="180"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-tx-hem">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
@@ -1274,11 +1349,11 @@
             <objects>
                 <viewController id="jpM-qc-IyM" customClass="StudentImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W0S-X9-HpU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yPn-Ui-eYw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1303,11 +1378,11 @@
             <objects>
                 <viewController id="qXR-vQ-3Eo" customClass="AddYourInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBj-44-A6P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDn-Vc-2hg">
-                                <rect key="frame" x="167" y="356" width="41" height="20"/>
+                                <rect key="frame" x="167" y="243" width="41" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GXj-aA-mge"/>
                                 </constraints>
@@ -1316,11 +1391,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="19.5" y="84" width="335.5" height="267"/>
+                                <rect key="frame" x="19.5" y="20" width="335.5" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uh6-PM-d0O">
-                                <rect key="frame" x="19.5" y="396" width="335.5" height="205"/>
+                                <rect key="frame" x="19.5" y="283" width="335.5" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyv-kU-lCc">
                                         <rect key="frame" x="0.0" y="0.0" width="335.5" height="40"/>
@@ -1434,7 +1509,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wo5-6v-x2y">
-                                <rect key="frame" x="30" y="611" width="315" height="46"/>
+                                <rect key="frame" x="30" y="498" width="315" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có thể sửa thông tin cá nhân ở mục Công Cụ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu2-Hq-EEd">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="16"/>
@@ -1497,7 +1572,7 @@
             <objects>
                 <viewController id="7BC-Pe-RkX" customClass="ChatViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VOm-lI-FAC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="L0f-V6-JMC"/>
@@ -1513,14 +1588,14 @@
             <objects>
                 <viewController id="LmB-rK-hkQ" customClass="AddInfoImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEA-ZB-XK9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-7h-NCO">
-                                <rect key="frame" x="0.0" y="114" width="375" height="512.5"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="463.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Spn-RZ-2IT">
-                                <rect key="frame" x="10" y="74" width="355" height="30"/>
+                                <rect key="frame" x="10" y="10" width="355" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3a-BZ-N7J">
                                         <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
@@ -1543,7 +1618,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-hj-4Qn">
-                                <rect key="frame" x="150" y="636.5" width="75.5" height="20.5"/>
+                                <rect key="frame" x="150" y="523.5" width="75.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1579,7 +1654,7 @@
             <objects>
                 <viewController id="dsF-1E-EKt" customClass="AddImagesViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KZn-iI-zH2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NIU-eh-Um6"/>
@@ -1617,7 +1692,7 @@
         <image name="village" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6lU-c4-lFJ"/>
+        <segue reference="Yxf-fH-7mY"/>
         <segue reference="4Ow-6o-u2i"/>
     </inferredMetricsTieBreakers>
 </document>

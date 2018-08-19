@@ -57,7 +57,7 @@ class ClassNameViewController: UIViewController {
         setUpAnimatedEmoticon()
         setupNoResultLabelAndButton()
         setupAlerts()
-        updateTableviewVisibilityBasedOnSearchResult()
+        hideItemsWhileFetchResult()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +81,7 @@ class ClassNameViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.tableview.reloadData()
-                self.updateTableviewVisibilityBasedOnSearchResult()
+                self.updateItemsVisibilityBasedOnSearchResult()
             }
         }
     }

@@ -78,19 +78,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         updateTableviewVisibilityBasedOnSearchResult()
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> UI-Design
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-<<<<<<< HEAD
-=======
-        noResultLabel.isHidden = true
-        animatedEmoticon.isHidden = true
->>>>>>> UI-Design
 
         startLoading()
         fetchData {

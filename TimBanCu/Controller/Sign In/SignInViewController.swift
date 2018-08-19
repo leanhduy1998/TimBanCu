@@ -27,13 +27,13 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     var signInAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
     
-    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo")!, iconInitialSize: CGSize(width: 140, height: 140), backgroundColor: UIColor(red:255/255, green:158/255, blue: 0, alpha:1.0))
+    var revealingSplashView: RevealingSplashView! = nil
     
-    let shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor)
-    let appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8))
-
+    var shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor)
+    var appNameLabel:ShimmeringLabel! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = Database.database().reference()
         
         setUpSplashView()

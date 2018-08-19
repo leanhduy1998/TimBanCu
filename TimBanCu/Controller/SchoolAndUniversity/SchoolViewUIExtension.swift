@@ -11,8 +11,7 @@ import UIKit
 
 extension SchoolViewController{
     
-<<<<<<< HEAD:TimBanCu/Controller/SchoolAndUniversity/SchoolViewUIExtension.swift
-=======
+
     func setUpTableView() {
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
@@ -24,7 +23,6 @@ extension SchoolViewController{
         return true
     }
     
->>>>>>> UI-Design:TimBanCu/Controller/SchoolAndUniversity/SchoolViewExtension.swift
     func setUpAnimatedEmoticon() {
         view.addSubview(animatedEmoticon)
         animatedEmoticon.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
@@ -68,6 +66,14 @@ extension SchoolViewController{
             animatedEmoticon.isHidden = true
             animatedEmoticon.stop()
         }
+    }
+    
+    func hideItemsWhileFetchingData(){
+        noResultLabel.isHidden = true
+        noResultAddNewSchoolBtn.isHidden = true
+        tableview.isHidden = false
+        
+        animatedEmoticon.isHidden = true
     }
     
 }

@@ -11,16 +11,8 @@ import UIKit
 
 extension ClassYearViewController{
     func setupAlerts(){
-        
-        
-        
-        
-        
-        
-        
-        
-        setupAddNewClassDetailCompletedAlert()
         setupClassAlreadyExistAlert()
+        setupAddNewClassCompleteAlert()
     }
     
     private func setupAddNewClassCompleteAlert(){
@@ -56,10 +48,6 @@ extension ClassYearViewController{
         }
         
         classAlreadyExistAlert = InfoAlert.getAlert(title: title, message: message)
-    }
-    
-    private func setupAddNewClassDetailCompletedAlert(){
-        
     }
     
 }
