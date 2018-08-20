@@ -21,6 +21,7 @@ class SelectSchoolTypeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarShadow()
+        
         self.tabBarController?.tabBar.isHidden = false
     }
 

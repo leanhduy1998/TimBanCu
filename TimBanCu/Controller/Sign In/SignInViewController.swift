@@ -29,8 +29,8 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     var revealingSplashView: RevealingSplashView! = nil
     
-    var shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor)
-    var appNameLabel:ShimmeringLabel! = nil
+    var shimmerAppNameLabel: ShimmeringLabel! = nil
+    var appNameLabel: ShimmeringLabel! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

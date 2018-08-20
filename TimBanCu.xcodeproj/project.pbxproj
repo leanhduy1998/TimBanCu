@@ -106,6 +106,7 @@
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
+		38D8D5172129DFA000E5E15E /* CustomizeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8D5162129DFA000E5E15E /* CustomizeSearchView.swift */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
 		D868AFE6657B257B7B9E556F /* Pods_TimBanCuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AB859161F1B93DF11EEFF /* Pods_TimBanCuUITests.framework */; };
 /* End PBXBuildFile section */
@@ -237,6 +238,7 @@
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		38D8D5162129DFA000E5E15E /* CustomizeSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeSearchView.swift; sourceTree = "<group>"; };
 		4203691F03ED76B3F5BD22AE /* Pods_TimBanCu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD024BC0784FAA968F67BBC /* Pods-TimBanCu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCu/Pods-TimBanCu.release.xcconfig"; sourceTree = "<group>"; };
 		6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -553,6 +555,7 @@
 				1CBF5C7B20A8197B00B78E6A /* Main.storyboard */,
 				1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */,
 				1C98F6662128667900EFD4EF /* TableCell */,
+				38D8D5162129DFA000E5E15E /* CustomizeSearchView.swift */,
 				1C900E2D210141AA0016DFDC /* NoResultButton.swift */,
 				1CCFACEC211A7CEE00429FA2 /* Colors.swift */,
 				1C900E2C210141AA0016DFDC /* NoResultLabel.swift */,
@@ -831,6 +834,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
@@ -858,6 +862,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
@@ -900,6 +905,7 @@
 				1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */,
 				1CDBA7B32124FBC4002004F9 /* UserClassTableViewCell.swift in Sources */,
 				1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */,
+				38D8D5172129DFA000E5E15E /* CustomizeSearchView.swift in Sources */,
 				1C2E7376210919A9007EAE63 /* AddYourInfoImageSlideshow.swift in Sources */,
 				1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,

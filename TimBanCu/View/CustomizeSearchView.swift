@@ -12,8 +12,8 @@ class CustomizeSearchView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 6
-        layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
+        layer.cornerRadius = 4
+        layer.borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
         layer.borderWidth = 1
     }
     

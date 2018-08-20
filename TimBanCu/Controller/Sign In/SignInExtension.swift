@@ -44,7 +44,8 @@ extension SignInViewController{
     }
     
     func animateShimmeringText() {
-        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8))
+        shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: view)
+        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8), view: view)
         
         view.addSubview(shimmerAppNameLabel)
         view.addSubview(appNameLabel)
