@@ -61,9 +61,6 @@
                 <navigationController id="boj-3L-Gwg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trang Chính" image="homeDarkGray" selectedImage="homeRed" springLoaded="YES" id="5qW-eZ-6a4">
                         <color key="badgeColor" red="0.85882352939999995" green="0.24313725489999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <connections>
-                            <outlet property="animation" destination="X4m-0R-fLf" id="6nG-LZ-wA2"/>
-                        </connections>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3Sn-RP-TmU">
@@ -91,13 +88,6 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4n-cq-5lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="X4m-0R-fLf" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                            <real key="value" value="0.40000000000000002"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="-783" y="1601"/>
         </scene>
@@ -420,9 +410,6 @@
                                 <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
-                        <connections>
-                            <outlet property="animation" destination="PpT-WZ-TMj" id="g8P-sg-DMY"/>
-                        </connections>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Chọn Loại Trường" id="knV-Ix-juY">
                         <barButtonItem key="backBarButtonItem" title=" " id="UvR-NS-Fk1"/>
@@ -435,13 +422,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOs-RK-tpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="PpT-WZ-TMj" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                            <real key="value" value="0.40000000000000002"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="301.60000000000002" y="1609.745127436282"/>
         </scene>
@@ -620,7 +600,7 @@
         <!--Chọn Loại Trường-->
         <scene sceneID="lb0-ud-nEn">
             <objects>
-                <tabBarController id="cZk-61-rDc" sceneMemberID="viewController">
+                <tabBarController id="cZk-61-rDc" customClass="CustomTabBarController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Chọn Loại Trường" id="MMe-a3-gD9">
                         <barButtonItem key="backBarButtonItem" title=" " id="zSW-y1-J33"/>
                     </navigationItem>

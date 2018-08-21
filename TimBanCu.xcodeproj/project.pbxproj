@@ -107,6 +107,7 @@
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
 		38D8D5172129DFA000E5E15E /* CustomizeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8D5162129DFA000E5E15E /* CustomizeSearchView.swift */; };
+		38D8D51F212B839900E5E15E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8D51E212B839900E5E15E /* CustomTabBarController.swift */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
 		D868AFE6657B257B7B9E556F /* Pods_TimBanCuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AB859161F1B93DF11EEFF /* Pods_TimBanCuUITests.framework */; };
 /* End PBXBuildFile section */
@@ -239,6 +240,7 @@
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		38D8D5162129DFA000E5E15E /* CustomizeSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizeSearchView.swift; sourceTree = "<group>"; };
+		38D8D51E212B839900E5E15E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		4203691F03ED76B3F5BD22AE /* Pods_TimBanCu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD024BC0784FAA968F67BBC /* Pods-TimBanCu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCu/Pods-TimBanCu.release.xcconfig"; sourceTree = "<group>"; };
 		6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -416,6 +418,7 @@
 				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
 				1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */,
 				38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */,
+				38D8D51E212B839900E5E15E /* CustomTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -917,6 +920,7 @@
 				1C53F4F520FD408A00F4ACEB /* ClassDetailViewController.swift in Sources */,
 				1C83E81D2113879E00D647D0 /* MajorViewController.swift in Sources */,
 				1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */,
+				38D8D51F212B839900E5E15E /* CustomTabBarController.swift in Sources */,
 				1C53F4F720FD422A00F4ACEB /* Student.swift in Sources */,
 				1C8EC8752128DD200038ECB5 /* ClassNameTableViewExtension.swift in Sources */,
 				1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */,
