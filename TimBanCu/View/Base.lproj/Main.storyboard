@@ -1418,7 +1418,7 @@
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -1535,6 +1535,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="7rf-Js-Njy"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1549,13 +1552,14 @@
                             <constraint firstItem="YxC-m2-ZNJ" firstAttribute="trailing" secondItem="wo5-6v-x2y" secondAttribute="trailing" constant="30" id="dKb-zT-t5Z"/>
                             <constraint firstItem="vDn-Vc-2hg" firstAttribute="bottom" secondItem="Mrf-fB-Nle" secondAttribute="bottom" constant="25" id="g5Q-R6-fFg"/>
                             <constraint firstItem="YxC-m2-ZNJ" firstAttribute="trailing" secondItem="uh6-PM-d0O" secondAttribute="trailing" constant="20" id="gXh-K6-yUJ"/>
-                            <constraint firstItem="Mrf-fB-Nle" firstAttribute="top" secondItem="YxC-m2-ZNJ" secondAttribute="top" constant="20" id="qJh-FR-OP3"/>
                             <constraint firstItem="YxC-m2-ZNJ" firstAttribute="trailing" secondItem="Mrf-fB-Nle" secondAttribute="trailing" constant="20" id="rdy-k3-MoV"/>
+                            <constraint firstItem="Mrf-fB-Nle" firstAttribute="top" secondItem="YxC-m2-ZNJ" secondAttribute="top" constant="20" id="ubZ-L6-lLd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YxC-m2-ZNJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Thêm Thông Tin Cá Nhân" id="Uhz-ym-CRw"/>
                     <connections>
+                        <outlet property="addInfoButtonBottomContraint" destination="OHE-OB-BiQ" id="a5q-F8-GfS"/>
                         <outlet property="birthYearTF" destination="L0g-yg-hMV" id="WDx-LT-8FC"/>
                         <outlet property="emailPrivacyDropDownBtn" destination="XMM-Kt-Bs1" id="L18-Dl-pOb"/>
                         <outlet property="emailTF" destination="fbe-lD-IKn" id="r8J-uh-eSu"/>

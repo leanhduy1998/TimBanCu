@@ -16,27 +16,41 @@ extension AddYourInfoViewController {
         view.endEditing(true)
         return true
     }
-    
+
     func observeKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    @objc func keyboardShow() {
+    func adjustingViewHeight(notification: NSNotification, show: Bool) {
+        var userInfo = notification.userInfo!
+        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let changeInHeight = keyboardFrame.height
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: -150, width: self.view.frame.width, height: self.view.frame.height)
-
-
-        }, completion: nil)
+        UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
+            if show && !self.keyboardIsShowing {
+                self.addInfoButtonBottomContraint.constant += changeInHeight
+                self.imageSlideShow.alpha = 0
+                self.yearLabel.alpha = 0
+                self.keyboardIsShowing = true
+            } else if !show {
+                self.addInfoButtonBottomContraint.constant = 15
+                self.imageSlideShow.alpha = 1
+                self.yearLabel.alpha = 1
+                self.keyboardIsShowing = false
+            }
+            self.view.layoutIfNeeded()
+        })
     }
-
-    @objc func keyboardHide() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.height)! + 20, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
+    
+    @objc func keyboardWillShow(notification:NSNotification) {
+        adjustingViewHeight(notification: notification, show: true)
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification) {
+        adjustingViewHeight(notification: notification, show: false)
     }
     
     func setupPrivacyDropDowns(){

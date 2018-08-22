@@ -39,10 +39,13 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
     // from previous class
     var classDetail:ClassDetail!
+    
+    var keyboardIsShowing = false
 
+    @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupPrivacyDropDowns()
         setupAlerts()
         setupImageSlideShow()
@@ -57,6 +60,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         animateImageSlideShow(count: 0)
         
         if(userImages.count == 0){
