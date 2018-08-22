@@ -65,6 +65,13 @@ extension AddYourInfoViewController {
         }
     }
     
+    func setUpSelectPhotoButton() {
+        view.addSubview(selectPhotoButton)
+        view.bringSubview(toFront: selectPhotoButton)
+        selectPhotoButton.setConstraints(yearLabel: yearLabel, image: imageSlideShow)
+        selectPhotoButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
+    }
+    
     override func viewWillLayoutSubviews() {
         phonePrivacyDropDown.anchorView = phonePrivacyDropDownBtn
         emailPrivacyDropDown.anchorView = emailPrivacyDropDownBtn

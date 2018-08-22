@@ -43,7 +43,7 @@ extension UIView {
         cell.transform = CGAffineTransform(translationX: 0, y: tableView.rowHeight / 2)
         cell.alpha = 0
         
-        UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.04 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
             cell.transform = CGAffineTransform(translationX: 0, y: 0)
             cell.alpha = 1
         }, completion: nil)

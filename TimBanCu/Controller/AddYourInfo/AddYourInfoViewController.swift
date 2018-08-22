@@ -24,6 +24,8 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     @IBOutlet weak var yearLabel: UILabel!
     @IBAction func unwindToAddYourInfoController(segue:UIStoryboardSegue) { }
     
+    let selectPhotoButton = SelectPhotoButton()
+    
     var phonePrivacyDropDown = DropDown()
     var emailPrivacyDropDown = DropDown()
     
@@ -49,6 +51,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         setupPrivacyDropDowns()
         setupAlerts()
         setupImageSlideShow()
+        setUpSelectPhotoButton()
         reloadImageSlideShow()
         observeKeyboardNotifications()
         
@@ -65,6 +68,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         
         if(userImages.count == 0){
             userImages.append(#imageLiteral(resourceName: "addImage"))
+            imageSlideShow.backgroundColor = themeColor
         }
         
         if(userImages.count>1){
