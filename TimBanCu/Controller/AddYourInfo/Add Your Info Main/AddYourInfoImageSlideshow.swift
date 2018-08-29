@@ -55,7 +55,7 @@ extension AddYourInfoViewController{
     func reloadImageSlideShow(){
         if(userImages.count==0){
             imageSlideShow.setImageInputs([
-                ImageSource(image: #imageLiteral(resourceName: "profile"))
+                ImageSource(image: #imageLiteral(resourceName: "addImage"))
                 ])
         }
         else{

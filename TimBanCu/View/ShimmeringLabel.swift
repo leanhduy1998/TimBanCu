@@ -10,8 +10,8 @@ import UIKit
 
 class ShimmeringLabel: UILabel {
     
-    init(textColor: UIColor) {
-        super.init(frame:  CGRect(x: 0, y: 100, width: 360, height: 100))
+    init(textColor: UIColor, view: UIView) {
+        super.init(frame:  CGRect(x: 0, y: 100, width: view.frame.width, height: 100))
         self.text = "Tìm bạn cũ"
         self.font = UIFont(name: "FS-Playlist-Caps", size: 70)
         self.textColor = textColor
