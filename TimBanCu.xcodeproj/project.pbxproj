@@ -43,6 +43,7 @@
 		1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF60A2136254E009174D2 /* SignInController.swift */; };
 		1C6CF60D21362AC3009174D2 /* SignInUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF60C21362AC3009174D2 /* SignInUIController.swift */; };
 		1C6CF60F21363042009174D2 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF60E21363042009174D2 /* UIState.swift */; };
+		1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */; };
 		1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */; };
 		1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */; };
 		1C6D51FC20FACCD100F8F5D7 /* SchoolViewUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51FB20FACCD100F8F5D7 /* SchoolViewUIExtension.swift */; };
@@ -175,6 +176,7 @@
 		1C6CF60A2136254E009174D2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		1C6CF60C21362AC3009174D2 /* SignInUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIController.swift; sourceTree = "<group>"; };
 		1C6CF60E21363042009174D2 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
+		1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeUIController.swift; sourceTree = "<group>"; };
 		1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShadow.swift; sourceTree = "<group>"; };
 		1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		1C6D51FB20FACCD100F8F5D7 /* SchoolViewUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewUIExtension.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			children = (
 				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
 				1C6D51FD20FADE5000F8F5D7 /* SelectSchoolTypeExtension.swift */,
+				1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */,
 			);
 			path = "Select School";
 			sourceTree = "<group>";
@@ -1157,6 +1160,7 @@
 				1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */,
 				1C1A9900210CBCB900D20079 /* ChatImagePickerExtension.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
+				1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */,
 				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
 				1C4BF8752117F06C006A7FBE /* MajorAlert.swift in Sources */,
 				1C278C8120FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift in Sources */,

@@ -15,7 +15,7 @@ import Hero
 class SelectSchoolTypeViewController: UIViewController {
     
     @IBOutlet weak var tieuHocButton: UIButton!
-    var myStrings = [String]()
+    
     var selectedSchoolType:String!
 
     override func viewDidLoad() {
@@ -55,7 +55,6 @@ class SelectSchoolTypeViewController: UIViewController {
             destination.selectedSchoolType = selectedSchoolType
             destination.view.hero.id = selectedSchoolType
         }
-        
     }
 
 
