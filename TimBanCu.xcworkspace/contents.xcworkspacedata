@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Detail.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ClassDetail.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ClassDetailTest.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ClassYearTest.swift">
+   </FileRef>
+   <FileRef
       location = "group:TimBanCu.xcodeproj">
    </FileRef>
    <FileRef

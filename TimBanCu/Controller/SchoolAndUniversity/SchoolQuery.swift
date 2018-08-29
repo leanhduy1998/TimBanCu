@@ -14,10 +14,12 @@ extension SchoolViewController{
     func setupSchoolFirebaseReferences(){
         let schoolsRef = Database.database().reference().child("schools")
         
-        tieuhocQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "th")
-        thcsQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "thcs")
-        thptQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "thpt")
-        daihocQuery = schoolsRef.queryOrdered(byChild: "type").queryEqual(toValue : "dh")
+        let queryOrderedByType = schoolsRef.queryOrdered(byChild: "type")
+        
+        tieuhocQuery = queryOrderedByType.queryEqual(toValue : "th")
+        thcsQuery = queryOrderedByType.queryEqual(toValue : "thcs")
+        thptQuery = queryOrderedByType.queryEqual(toValue : "thpt")
+        daihocQuery = queryOrderedByType.queryEqual(toValue : "dh")
     }
     
     func tieuhocGetQuery(completionHandler: @escaping () -> Void) {

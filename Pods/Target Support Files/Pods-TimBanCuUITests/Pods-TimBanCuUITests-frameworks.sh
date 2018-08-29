@@ -141,6 +141,59 @@ strip_invalid_archs() {
   STRIP_BINARY_RETVAL=1
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DKCamera/DKCamera.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DKPhotoGallery/DKPhotoGallery.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Hero/Hero.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DKCamera/DKCamera.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DKPhotoGallery/DKPhotoGallery.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Hero/Hero.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

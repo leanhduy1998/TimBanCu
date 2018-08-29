@@ -27,9 +27,6 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     // segue from previous class
     var classProtocol:ClassProtocol!
     //
-
-    var finishedLoadingInitialTableCells = false
-
     
     // backend
     var students = [Student]()
@@ -41,7 +38,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     //ui
     let customSelectionColorView = CustomSelectionColorView()
-    
+    var finishedLoadingInitialTableCells = false
     let animatedEmoticon = LOTAnimationView(name: "empty_list")
     
     var searchTFUnderline = UnderlineView()

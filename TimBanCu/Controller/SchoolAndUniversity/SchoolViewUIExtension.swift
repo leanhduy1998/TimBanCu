@@ -25,6 +25,7 @@ extension SchoolViewController{
     }
     
     func setUpAnimatedEmoticon() {
+        animatedEmoticon = LOTAnimationView(name: "empty_list")
         animatedEmoticon.contentMode = .scaleAspectFill
         animatedEmoticon.loopAnimation = true
         animatedEmoticon.translatesAutoresizingMaskIntoConstraints = false

@@ -25,39 +25,29 @@ class ClassYearViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupManualYears()
         setupAlerts()
         tableview.reloadData()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupManualYears()
-    }
-    
     func setupManualYears(){
-        for firstTwoDigits in 19...21{
-            for lastTwoDigits in 0...99{
-                var string = ""
-                
-                string.append("Năm ")
-                string.append("\(firstTwoDigits)")
-                if(lastTwoDigits<10){
-                    string.append("0")
-                }
-                string.append("\(lastTwoDigits)")
-                
-                if(string == "Năm 2019"){
-                    return
-                }
-                
-                years.append(string)
-            }
+        let date = Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        
+        let allowedFurthestYear = year - 80
+        
+        var index = year
+        
+        while(index >= allowedFurthestYear){
+            let string = "Năm \(index)"
+            years.append(string)
+            
+            index = index - 1
         }
     }
     
     func checkIfClassYearExist(completionHandler: @escaping (_ exist:Bool, _ uid:String) -> Void){
-        
         Database.database().reference().child("classes").child(classProtocol.getFirebasePathWithoutSchoolYear()).child(selectedYear).observeSingleEvent(of: .value) { (snapshot) in
             
             let classValue = (snapshot as! DataSnapshot).value as? [String:String]

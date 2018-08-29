@@ -39,17 +39,14 @@ class SchoolViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //ui
     var finishedLoadingInitialTableCells = false
-    let animatedEmoticon = LOTAnimationView(name: "empty_list")
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupSchoolFirebaseReferences()
-    }
-
+    var animatedEmoticon:LOTAnimationView!
+    let emojiName = "empty_list"
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSchoolFirebaseReferences()
+        
         setUpTableView()
         setupAlerts()
         setUpAnimatedEmoticon()

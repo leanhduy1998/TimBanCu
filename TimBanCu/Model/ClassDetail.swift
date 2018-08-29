@@ -56,7 +56,7 @@ class ClassDetail: ClassProtocol{
     }
     
     private func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid,"classNumber":classNumber]
+        return ["uid":uid]
     }
     
     func getFirebasePathWithoutSchoolYear()->String{

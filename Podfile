@@ -9,24 +9,17 @@ target 'TimBanCu' do
 
 
   pod 'ImageSlideshow'
-
   pod 'GoogleSignIn'
-
-
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
-
   pod 'FBSDKLoginKit'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
-
   pod 'DropDown'
   pod 'JSQMessagesViewController'
-
-
   pod 'DKImagePickerController', '~> 4.0.0-beta', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
   pod 'lottie-ios'
   pod 'Hero'
@@ -34,12 +27,48 @@ target 'TimBanCu' do
 
   target 'TimBanCuTests' do
     inherit! :search_paths
+
     # Pods for testing
+    pod 'ImageSlideshow'
+  pod 'GoogleSignIn'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  pod 'DropDown'
+  pod 'JSQMessagesViewController'
+  pod 'DKImagePickerController', '~> 4.0.0-beta', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
+  pod 'lottie-ios'
+  pod 'Hero'
+  pod 'RevealingSplashView'
+
   end
 
   target 'TimBanCuUITests' do
     inherit! :search_paths
+
     # Pods for testing
+    pod 'ImageSlideshow'
+  pod 'GoogleSignIn'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  pod 'DropDown'
+  pod 'JSQMessagesViewController'
+  pod 'DKImagePickerController', '~> 4.0.0-beta', :subspecs => ['PhotoGallery', 'Camera', 'InlineCamera']
+  pod 'lottie-ios'
+  pod 'Hero'
+  pod 'RevealingSplashView'
+
   end
 
 end

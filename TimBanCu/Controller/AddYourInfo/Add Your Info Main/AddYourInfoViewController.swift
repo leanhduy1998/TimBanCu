@@ -122,6 +122,7 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         view.layoutIfNeeded()
     }
     
+    // test
     private func removeThePlusIconPictureThatIsUsedToAddNewPicture(){
         userImages.removeLast()
     }

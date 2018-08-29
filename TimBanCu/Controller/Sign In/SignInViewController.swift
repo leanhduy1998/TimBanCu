@@ -21,28 +21,21 @@ import RevealingSplashView
 
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate, UITextFieldDelegate {
     
-    var ref: DatabaseReference!
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
     
-    var signInAlert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-    
-    var revealingSplashView: RevealingSplashView! = nil
-    
-    var shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor)
-    var appNameLabel:ShimmeringLabel! = nil
+    var signInController: SignInController!
+    var signInUIController:SignInUIController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference()
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
         
-        setUpSplashView()
-        setupFacebookBtn()
-        setupGoogleButton()
-        animateShimmeringText()
+        signInUIController = SignInUIController(viewController: self, facebookBtn: LoginButton(readPermissions: [ .publicProfile ]), googleBtn: googleSignInBtn)
+        signInController = SignInController()
         
-        signInAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -57,87 +50,40 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         self.dismiss(animated: true, completion: nil)
     }
     
+    // sign in with google
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            
-
             guard let authentication = user.authentication else { return }
         
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
             
-            firebaseSignIn(credential: credential) { (success) in
-                if(success){
-                    let uid = Auth.auth().currentUser?.uid
-                    
-                    self.loadUserInfo(uid: uid!) {
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
-                        }
-                    }
-                    
-                }
+            signInController.signIn(credential: credential) { (state) in
+                self.signInUIController.state = state
             }
         }
         else{
-            signInAlert.title = "Google Sign In Error"
-            signInAlert.message = error.localizedDescription
-            present(signInAlert, animated: true, completion: nil)
+            self.signInUIController.state = .Failure(error.localizedDescription)
         }
     }
     
+    //sign in with facebook
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         
         if let accessToken = AccessToken.current {
             
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             
-            firebaseSignIn(credential: credential) { (success) in
-                if(success){
-                    let uid = accessToken.userId
-                    
-                    self.loadUserInfo(uid: uid!) {
-                        DispatchQueue.main.async {
-                            self.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
-                        }
-                    }
-                    
-                }
+            signInController.signIn(credential: credential) { (state) in
+                self.signInUIController.state = state
             }
 
         }
         else{
-            signInAlert.title = "Facebook Sign In Error"
-            signInAlert.message = "Error"
-            present(signInAlert, animated: true, completion: nil)
+            self.signInUIController.state = .Failure("Lỗi Đăng Nhập Facebook")
         }
     }
-    
-    func firebaseSignIn(credential:AuthCredential, completionHandler: @escaping (_ success:Bool) -> Void){
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            DispatchQueue.main.async {
-                if let error = error {
-                    self.signInAlert.title = "Sign In With Database Error"
-                    self.signInAlert.message = error.localizedDescription
-                    self.present(self.signInAlert, animated: true, completion: nil)
-                    completionHandler(false)
-                    return
-                }
-                // User is signed in
-                completionHandler(true)
-            }
-        }
-    }
-    
-    func loadUserInfo(uid:String, completionHandler: @escaping () -> Void){
-        AllUserHelper.getAnyStudentFromDatabase(uid: uid) { (student) in
-            
-            CurrentUserHelper.setStudent(student: student)
-            
-            completionHandler()
-        }
-    }
-    
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print()
     }
+
 }
