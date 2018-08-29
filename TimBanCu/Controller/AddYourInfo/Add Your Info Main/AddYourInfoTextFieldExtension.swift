@@ -21,18 +21,7 @@ extension AddYourInfoViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    @objc func keyboardShow() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: -150, width: self.view.frame.width, height: self.view.frame.height)
-            
-            
-        }, completion: nil)
-    }
-    
-    @objc func keyboardHide() {
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.frame = CGRect(x: 0, y: (self.navigationController?.navigationBar.frame.height)! + 20, width: self.view.frame.width, height: self.view.frame.height)
-        }, completion: nil)
+   
     func adjustingViewHeight(notification: NSNotification, show: Bool) {
         var userInfo = notification.userInfo!
         let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
@@ -86,14 +75,5 @@ extension AddYourInfoViewController{
         phonePrivacyDropDown.anchorView = phonePrivacyDropDownBtn
         emailPrivacyDropDown.anchorView = emailPrivacyDropDownBtn
     }
-    
-    func reloadYearLabel(page:Int){
-        if(yearOfUserImage[userImages[page]] == nil){
-            yearLabel.text = "Năm ?"
-        }
-        else{
-            yearLabel.text = "\(yearOfUserImage[userImages[page]]!)"
-        }
-        view.layoutIfNeeded()
-    }
 }
+

@@ -40,6 +40,11 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     // from previous class
     var classDetail:ClassDetail!
     
+    var keyboardIsShowing = false
+    
+    @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
+    let selectPhotoButton = SelectPhotoButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,11 +80,6 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         if(userImages.count>1){
             reloadYearLabel(page: imageSlideShow.currentPage)
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        phonePrivacyDropDown.anchorView = phonePrivacyDropDownBtn
-        emailPrivacyDropDown.anchorView = emailPrivacyDropDownBtn
     }
     
     

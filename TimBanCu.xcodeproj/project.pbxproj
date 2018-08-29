@@ -19,6 +19,7 @@
 		1C1A9902210CBE4300D20079 /* ChatViewControllerUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */; };
 		1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */; };
 		1C1A9906210CBFD700D20079 /* ChatHandleMessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */; };
+		1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */; };
 		1C278C8120FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278C8020FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift */; };
 		1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */; };
 		1C2E7376210919A9007EAE63 /* AddYourInfoImageSlideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */; };
@@ -152,6 +153,7 @@
 		1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerUIExtension.swift; sourceTree = "<group>"; };
 		1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldExtension.swift; sourceTree = "<group>"; };
 		1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHandleMessageExtension.swift; sourceTree = "<group>"; };
+		1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		1C278C8020FE306C00CCB7C0 /* ClassDetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewControllerExtension.swift; sourceTree = "<group>"; };
 		1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoViewController.swift; sourceTree = "<group>"; };
 		1C2E7375210919A9007EAE63 /* AddYourInfoImageSlideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoImageSlideshow.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 				1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */,
 				1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */,
 				1C8EC8702128CB490038ECB5 /* InfoAlert.swift */,
+				1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */,
 				1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */,
 				38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */,
 				38CAE9D02129BD04005BE656 /* UnderlineView.swift */,
@@ -1150,6 +1153,7 @@
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
 				1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */,
 				1CE24D0B20FC1070008DE3FB /* ClassNameViewModel.swift in Sources */,
+				1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */,
 				1C6CF60F21363042009174D2 /* UIState.swift in Sources */,
 				1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */,
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,

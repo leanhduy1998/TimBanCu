@@ -26,7 +26,7 @@ class SignInUIController{
     
     
     var revealingSplashView: RevealingSplashView! = nil
-    var shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor)
+    var shimmerAppNameLabel: ShimmeringLabel! = nil
     var appNameLabel:ShimmeringLabel! = nil
     
     var facebookBtn:LoginButton!
@@ -70,7 +70,9 @@ class SignInUIController{
     }
     
     func animateShimmeringText() {
-        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8))
+        
+        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8),view:controller.view)
+        shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: controller.view)
         
         controller.view.addSubview(shimmerAppNameLabel)
         controller.view.addSubview(appNameLabel)
