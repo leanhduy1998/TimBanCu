@@ -20,6 +20,8 @@ import FirebaseAuth
 import RevealingSplashView
 
 class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate, UITextFieldDelegate {
+
+    
     
     var ref: DatabaseReference!
     
