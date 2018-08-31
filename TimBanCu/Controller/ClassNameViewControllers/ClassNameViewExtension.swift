@@ -15,7 +15,7 @@ extension ClassNameViewController{
         view.addSubview(noResultLabel)
         view.addSubview(noResultAddNewClassBtn)
         
-        noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
+    //    noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
         
         noResultAddNewClassBtn.setContraints(view: view, contraintTo: noResultLabel)
         noResultAddNewClassBtn.addTarget(self, action: #selector(self.addNewClassDetailBtnPressed(_:)), for: .touchUpInside)

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-class SchoolAlertTool{
+class SchoolAlerts{
     
     var viewcontroller:UIViewController!
     var schoolType:SchoolType!
@@ -21,26 +21,20 @@ class SchoolAlertTool{
     var schoolAlreadyExistAlert:InfoAlert!
     
     
-    var handler: ((UIAlertAction) -> Void)!
+    var addNewSchoolHandler: () -> ()
     
-    init(viewcontroller:UIViewController, schoolType:SchoolType){
+    init(viewcontroller:UIViewController, schoolType:SchoolType,addNewSchoolHandler: @escaping () -> ()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
+        self.addNewSchoolHandler = addNewSchoolHandler
         
         setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()
         setupSchoolAlreadyExistAlert()
     }
     
-    func showAddNewSchoolAlert(handler: @escaping ((UIAlertAction) -> Void)){
-        if(handler == nil){
-            self.handler = handler
-            addNewSchoolAlert.addAction(actionTitle: "Thêm", handler: handler)
-        }
-        else{
-            self.handler = handler
-        }
-    
+  
+    func showAddNewSchoolAlert(){
         addNewSchoolAlert.show(viewcontroller: viewcontroller)
     }
     
@@ -84,6 +78,11 @@ class SchoolAlertTool{
         }
         
         addNewSchoolAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Trường")
+       // addNewSchoolAlert.addAction(actionTitle: "Thêm", handler: addNewSchoolHandler)
+        
+        addNewSchoolAlert.addAction(actionTitle: "Thêm") { (_) in
+            self.addNewSchoolHandler()
+        }
     }
     
     private func setupAddNewSchoolCompletedAlert(){

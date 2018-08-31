@@ -30,6 +30,8 @@ class MajorAlerts{
     
     func showAddNewMajorAlert(handler: @escaping ((UIAlertAction) -> Void)){
         self.handler = handler
+        addNewMajorAlert.addAction(actionTitle: "Thêm", handler: handler)
+        
         addNewMajorAlert.show(viewcontroller: viewcontroller)
     }
     
@@ -55,7 +57,6 @@ class MajorAlerts{
     private func setupAddNewMajorAlert(){
         let title = "Thêm Khoa Mới"
         addNewMajorAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Khoa")
-        addNewMajorAlert.addAction(actionTitle: "Thêm", handler: handler)
     }
     
     private func setupAddNewMajorCompletedAlert(){

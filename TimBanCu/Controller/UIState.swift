@@ -12,4 +12,5 @@ enum UIState {
     case Loading
     case Success()
     case Failure(String)
+    case AddingNewData
 }

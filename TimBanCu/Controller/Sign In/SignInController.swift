@@ -41,7 +41,7 @@ final class SignInController{
         }
     }
     
-    func signIn(credential:AuthCredential, completionHandler: @escaping (_ state:UIState) -> Void){
+    func signIn(credential:AuthCredential, completionHandler: @escaping (_ uiState:UIState) -> Void){
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             DispatchQueue.main.async {
                 if let error = error {

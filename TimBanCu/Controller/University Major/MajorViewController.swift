@@ -11,34 +11,31 @@ import FirebaseDatabase
 import Lottie
 
 class MajorViewController: UIViewController {
-
-    var noResultLabel = NoResultLabel(type: NoResultType.University)
-    var noResultAddNewMajorBtn = NoResultButton(type: NoResultType.University)
     
     var school:School!
-    
-    var majors = [MajorDetail]()
-    var searchMajors = [MajorDetail]()
     var selectedMajor:MajorDetail!
     
-    let animatedEmoticon = LOTAnimationView(name: "empty_list")
+
+    @IBOutlet weak var searchTF: UITextField!
     
     @IBOutlet weak var tableview: UITableView!
     
     var uiController: MajorUIController!
+    var controller:MajorController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uiController = MajorUIController(viewcontroller: self)
-
-        setUpAnimatedEmoticon()
-        setupNoResultLabelAndButton()
-        hideItemsWhileFetchingData()
+        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF)
+        controller = MajorController(school: school)
     }
     
-    func fetchData(){
-        
+    func getAllDataFetched()->[MajorDetail]{
+        return controller.majors
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        uiController.moveToNextControllerAnimation()
     }
 
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {

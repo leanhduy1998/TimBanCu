@@ -15,7 +15,7 @@ final class SchoolUIController{
     private var viewcontroller:SchoolViewController!
     private var schoolType:SchoolType!
     var tableview:UITableView!
-    private var alertTool:SchoolAlertTool!
+    private var alerts:SchoolAlerts!
     private var noResultView:NoResultView!
     private var searchTF:UITextField!
     
@@ -24,21 +24,41 @@ final class SchoolUIController{
     
     var tableViewTool: GenericTableViewTool<School, SchoolTableViewCell>!
     
-    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField){
+    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolBtnPressedHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
         self.tableview = tableview
         self.searchTF = searchTF
-        alertTool = SchoolAlertTool(viewcontroller: viewcontroller, schoolType: schoolType)
         
-        tableview.isHidden = true
+        
+        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) {
+            addNewSchoolBtnPressedHandler(self.alerts.addNewSchoolAlert.getTextFieldInput())
+        }
+        
+        
         setUpTableView()
         setHeroId()
         
+        noResultView = NoResultView(type: .School, addNewSchoolBtnPressedHandler: {
+            self.showAddNewSchoolAlert(completionHandler: { (newSchool) in
+                addNewSchoolBtnPressedHandler(newSchool)
+            })
+        })
         
         
-        noResultView = NoResultView(type: .School)
+        noResultView.translatesAutoresizingMaskIntoConstraints = false
         
+        viewcontroller.view.addSubview(noResultView)
+        viewcontroller.view.bringSubview(toFront: noResultView)
+        
+        
+        //noResultView.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
+        noResultView.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 20).isActive = true
+        noResultView.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
+        noResultView.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: 20).isActive = true
+        noResultView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        noResultView.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
+    
         
         tableViewTool = GenericTableViewTool(tableview: tableview, items: searchSchoolModels) { (cell, school) in
             cell.schoolViewModel = SchoolViewModel(school: school)
@@ -54,13 +74,10 @@ final class SchoolUIController{
                 viewcontroller.performSegue(withIdentifier: "schoolToClassSegue", sender: viewcontroller)
             }
         }
-        
-        
-        
-        let textfieldSetter = TextFieldDelegateSetter(viewcontroller: viewcontroller, textField: searchTF) { (newString) in
-            self.filterVisibleSchools(filter: newString, allSchools: viewcontroller.getAllDataFetched())
-        }
     }
+    
+    
+    
     
     var state:UIState = .Loading{
         willSet(newState){
@@ -94,12 +111,26 @@ final class SchoolUIController{
             break
         case (.Loading, .Failure(let errorStr)):
             if(errorStr == "Permission denied") {
-                alertTool.showSchoolAlreadyExistAlert()
+                alerts.showSchoolAlreadyExistAlert()
             }
             else{
-                alertTool.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
+                alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
             break
+        case (.AddingNewData, .Success()):
+            alerts.showAddNewSchoolCompletedAlert()
+            filterVisibleSchools(filter: searchTF.text!, allSchools: searchSchoolModels)
+            break
+        case (.AddingNewData, .Failure(let errorStr)):
+            if(errorStr == "Permission denied") {
+                alerts.showSchoolAlreadyExistAlert()
+            }
+            else{
+                alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
+            }
+            break
+        case (.Success(), .AddingNewData): break
+        case (.AddingNewData, .AddingNewData): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -113,11 +144,8 @@ final class SchoolUIController{
     }
     
     func showAddNewSchoolAlert(completionHandler: @escaping (_ userInput:String)->Void){
-        let handler: (UIAlertAction) -> Void = { _ in
-            completionHandler(self.alertTool.addNewSchoolAlert.getTextFieldInput())
-        }
-        
-        alertTool.showAddNewSchoolAlert(handler: handler)
+        state = .AddingNewData
+        alerts.showAddNewSchoolAlert()
     }
     
     
@@ -125,7 +153,7 @@ final class SchoolUIController{
         tableViewTool.items = searchSchoolModels
         tableview.reloadData()
         
-        if(tableview.numberOfSections == 0){
+        if(searchSchoolModels.count == 0){
             noResultView.isHidden = false
             tableview.isHidden = true
         }

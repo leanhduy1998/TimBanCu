@@ -24,7 +24,7 @@ final class SchoolController{
     private func getSchoolTypeAsString() -> String{
         switch(schoolType){
         case .Elementary:
-            return "tieuhoc"
+            return "th"
         case .MiddleSchool:
             return "thcs"
         case .HighSchool:
@@ -72,6 +72,7 @@ final class SchoolController{
         Database.database().reference().child("schools").child(school.name).setValue(school.getObjectValueAsDic()) { (err, ref) in
             
             if(err == nil){
+                self.schoolModels.append(school)
                 completionHandler(.Success())
             }
             else{

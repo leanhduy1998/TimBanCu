@@ -37,11 +37,11 @@ class MajorDetail: ClassProtocol{
     }
     
     func getFirebasePathWithoutSchoolYear() -> String {
-        return "\(schoolName!)/\(majorName!)/\(year!)"
+        return "\(schoolName!)/\(majorName!)"
     }
     
     func getFirebasePathWithSchoolYear() -> String {
-        return "\(schoolName!)/\(majorName!)"
+        return "\(schoolName!)/\(majorName!)/\(year!)"
     }
     
     

@@ -11,7 +11,7 @@ import FirebaseDatabase
 import Lottie
 import Hero
 
-class SchoolViewController: UIViewController {
+class SchoolViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
@@ -25,8 +25,34 @@ class SchoolViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF)
+       // uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF, addNewSchoolBtnPressedHandler: <#(String) -> ()#>)
+        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF) { (newSchoolIfNotInList) in
+            self.controller.addNewSchool(schoolName: newSchoolIfNotInList, completionHandler: { (uiState) in
+                self.uiController.searchSchoolModels = self.controller.schoolModels
+                self.uiController.state = uiState
+            })
+        }
+        
         controller = SchoolController(schoolType: schoolType)
+        
+        searchTF.delegate = self
+        searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        uiController.filterVisibleSchools(filter: textField.text!, allSchools: getAllDataFetched())
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        uiController.filterVisibleSchools(filter: "", allSchools: getAllDataFetched())
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     func getAllDataFetched()->[School]{
@@ -37,15 +63,7 @@ class SchoolViewController: UIViewController {
         uiController.moveToNextControllerAnimation()
     }
     
-    @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
-        uiController.showAddNewSchoolAlert { (inputedSchoolName) in
-            if(!(inputedSchoolName.isEmpty)){
-                self.controller.addNewSchool(schoolName: inputedSchoolName, completionHandler: { (uiState) in
-                    self.uiController.state = uiState
-                })
-            }
-        }
-    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

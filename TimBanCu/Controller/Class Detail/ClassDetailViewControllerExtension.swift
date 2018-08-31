@@ -68,7 +68,7 @@ extension ClassDetailViewController{
 
     func setupNoResultLabel(){
         view.addSubview(noResultLabel)
-        noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
+   //     noResultLabel.setConstraints(view: view, constraintTo: animatedEmoticon)
     }
     
     //MARK: UITextFieldDelegate

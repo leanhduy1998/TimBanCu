@@ -8,14 +8,17 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 class NoResultView:UIView{
     
     
     var noResultLabel:NoResultLabel!
     var noResultAddNewSchoolBtn:NoResultButton!
-    private var animatedEmoticon:AnimatedEmoticon!
+    private var animatedEmoticon:LOTAnimationView!
     private let emojiName = "empty_list"
+    
+    var addBtnPressedHandler: ()->()
     
     override var isHidden: Bool {
         get{
@@ -28,24 +31,59 @@ class NoResultView:UIView{
                 animatedEmoticon.stop()
             }
             else{
-                animatedEmoticon.play()
+                if(!animatedEmoticon.isAnimationPlaying){
+                    animatedEmoticon.play()
+                }
             }
         }
     }
     
-    init(type:NoResultType){
+    init(type:NoResultType,addNewSchoolBtnPressedHandler: @escaping ()->()){
+        
+        self.addBtnPressedHandler = addNewSchoolBtnPressedHandler
         super.init(frame: CGRect.zero)
+        
+        
+        
         noResultLabel = NoResultLabel(type: NoResultType.School)
+        
+        
         noResultAddNewSchoolBtn = NoResultButton(type: NoResultType.School)
         
         self.addSubview(noResultLabel)
         self.addSubview(noResultAddNewSchoolBtn)
         
-        animatedEmoticon = AnimatedEmoticon(view: self)
-        noResultLabel.setConstraints(view: self, constraintTo: animatedEmoticon)
-        noResultAddNewSchoolBtn.setContraints(view: self, contraintTo: noResultLabel)
         
-     //   noResultAddNewSchoolBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
+        
+        animatedEmoticon = LOTAnimationView(name: "empty_list")
+        animatedEmoticon.contentMode = .scaleAspectFill
+        animatedEmoticon.loopAnimation = true
+        animatedEmoticon.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(animatedEmoticon)
+        
+        animatedEmoticon.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        animatedEmoticon.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        animatedEmoticon.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
+        noResultLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
+        noResultLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+
+        noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
+        noResultAddNewSchoolBtn.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        noResultAddNewSchoolBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
+
+        
+        noResultAddNewSchoolBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
+    }
+    
+    @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
+        addBtnPressedHandler()
     }
     
     required init?(coder aDecoder: NSCoder) {

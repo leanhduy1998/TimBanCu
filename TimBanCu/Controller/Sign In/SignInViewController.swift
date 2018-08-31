@@ -58,6 +58,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
             
             signInController.signIn(credential: credential) { (state) in
+                self.signInController.state = state
                 self.signInUIController.state = state
             }
         }
@@ -74,6 +75,7 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             
             signInController.signIn(credential: credential) { (state) in
+                self.signInController.state = state
                 self.signInUIController.state = state
             }
 

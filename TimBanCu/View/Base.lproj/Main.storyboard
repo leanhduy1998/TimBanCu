@@ -855,6 +855,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="searchTF" destination="MXr-Qf-GY7" id="vie-ng-7Qs"/>
                         <outlet property="tableview" destination="kXs-GA-n35" id="1Ab-VP-qoL"/>
                         <segue destination="B06-gw-SVi" kind="show" identifier="MajorToClassYearSegue" id="PUn-kT-WBf"/>
                     </connections>
@@ -872,7 +873,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWp-TG-1zC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -1679,6 +1680,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yxf-fH-7mY"/>
-        <segue reference="4Ow-6o-u2i"/>
+        <segue reference="PUn-kT-WBf"/>
     </inferredMetricsTieBreakers>
 </document>
