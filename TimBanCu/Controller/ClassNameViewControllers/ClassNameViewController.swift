@@ -28,8 +28,8 @@ class ClassNameViewController: UIViewController {
     
     
     //no result
-    var noResultLabel = NoResultLabel(type: Type.Class)
-    var noResultAddNewClassBtn = NoResultButton(type: Type.Class)
+    var noResultLabel = NoResultLabel(type: NoResultType.Class)
+    var noResultAddNewClassBtn = NoResultButton(type: NoResultType.Class)
     
     //tableview
     var classDetails = [ClassDetail]()

@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIViewController {
-    
     func addNavigationBarShadow() {
         self.navigationController?.navigationBar.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.5)
@@ -17,7 +16,6 @@ extension UIViewController {
         self.navigationController?.navigationBar.layer.shadowRadius = 3
         self.navigationController?.navigationBar.layer.masksToBounds = false
     }
-    
 }
 
 extension UIView {

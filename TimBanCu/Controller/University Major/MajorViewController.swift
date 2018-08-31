@@ -12,12 +12,8 @@ import Lottie
 
 class MajorViewController: UIViewController {
 
-    var noResultLabel = NoResultLabel(type: Type.University)
-    var noResultAddNewMajorBtn = NoResultButton(type: Type.University)
-    
-    var addNewMajorAlert:UIAlertController!
-    var addNewMajorCompletedAlert: UIAlertController!
-    var majorAlreadyExistAlert: UIAlertController!
+    var noResultLabel = NoResultLabel(type: NoResultType.University)
+    var noResultAddNewMajorBtn = NoResultButton(type: NoResultType.University)
     
     var school:School!
     
@@ -29,9 +25,13 @@ class MajorViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
+    var uiController: MajorUIController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAlerts()
+        
+        uiController = MajorUIController(viewcontroller: self)
+
         setUpAnimatedEmoticon()
         setupNoResultLabelAndButton()
         hideItemsWhileFetchingData()
@@ -42,7 +42,15 @@ class MajorViewController: UIViewController {
     }
 
     @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
-        self.present(addNewMajorAlert, animated: true, completion: nil)
+        uiController.showAddNewMajorAlert { (inputedMajorName) in
+            if(!(inputedMajorName.isEmpty)){
+                let major = MajorDetail(uid: CurrentUserHelper.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
+                
+                self.selectedMajor = major
+                
+                self.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self)
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

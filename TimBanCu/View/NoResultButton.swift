@@ -10,7 +10,7 @@ import UIKit
 
 class NoResultButton: UIButton {
     
-    init(type: Type) {
+    init(type: NoResultType) {
         super.init(frame: .zero)
         let title = setUpText(type: type)
         self.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: themeColor]), for: .normal)
@@ -25,7 +25,7 @@ class NoResultButton: UIButton {
         self.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
-    private func setUpText(type: Type) -> String {
+    private func setUpText(type: NoResultType) -> String {
         var title: String
         switch(type){
         case .School:

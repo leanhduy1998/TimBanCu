@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Type:String {
+enum NoResultType:String {
     case School
     case University
     case Class
@@ -17,7 +17,7 @@ enum Type:String {
 
 class NoResultLabel: UILabel {
 
-    init(type:Type) {
+    init(type:NoResultType) {
         super.init(frame: .zero)
         setUpText(type: type)
         self.textColor = UIColor.darkGray
@@ -26,7 +26,7 @@ class NoResultLabel: UILabel {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private func setUpText(type: Type) {
+    private func setUpText(type: NoResultType) {
         switch(type){
         case .School:
             self.text = "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?"

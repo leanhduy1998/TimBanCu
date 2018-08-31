@@ -15,7 +15,7 @@ extension ClassNameViewController{
     }
         
     private func setupAddNewClassDetailAlert(){
-        addNewClassAlert = AskForInputAlert.getAlert(title: "Thêm Lớp Mới", message: "", TFPlaceHolder: "Tên Lớp")
+       // addNewClassAlert = AskForInputAlert.getAlert(title: "Thêm Lớp Mới", message: "", TFPlaceHolder: "Tên Lớp")
         
         let action = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewClassAlert] (_) in
             let textField = addNewClassAlert?.textFields![0] // Force unwrapping because we know it exists.

@@ -14,6 +14,8 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var schoolAddress: UILabel!
     @IBOutlet weak var imageview: UIImageView!
     
+    
+    
     var schoolViewModel:SchoolViewModel! = nil {
         didSet{
             schoolName.text = schoolViewModel.name

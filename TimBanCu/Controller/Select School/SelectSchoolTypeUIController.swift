@@ -7,7 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
-class SelectSchoolTypeUIController{
+final class SelectSchoolTypeUIController{
+    var viewcontroller:UIViewController!
+    
+    init(viewcontroller:UIViewController){
+        self.viewcontroller = viewcontroller
+        viewcontroller.addNavigationBarShadow()
+        viewcontroller.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func presentNextViewController() {
+        viewcontroller.navigationController?.hero.isEnabled = true
+        viewcontroller.navigationController?.hero.navigationAnimationType = .fade
+        viewcontroller.performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: viewcontroller)
+    }
+    
+    func setHeroId(selectedSchoolType:SchoolType){
+        
+    }
     
 }

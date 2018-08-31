@@ -19,7 +19,7 @@ extension AddYourInfoViewController{
         let title = "Mức Công Khai Thông Tin"
         let message = "Bạn có thể chọn chia sẻ thông tin của mình công khai hoặc chỉ mình bạn. Nếu không công khai, người dùng khác sẽ phải được sự đồng ý của bạn trước khi xem thông tin đó."
         
-        privacyAlert = InfoAlert.getAlert(title: title, message: message)
+       // privacyAlert = InfoAlert.getAlert(title: title, message: message)
     }
     
     func setupAddImageYearAlert(){

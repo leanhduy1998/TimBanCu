@@ -199,7 +199,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-mb-DeF">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="191"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="th"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="elementary"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -251,7 +251,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-Q8-WR4">
                                                         <rect key="frame" x="-0.5" y="0.0" width="158" height="191"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="thcs"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="middleSchool"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -308,7 +308,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-37-QD6">
                                                         <rect key="frame" x="0.0" y="0.0" width="157" height="190.5"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="thpt"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="highSchool"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -360,7 +360,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH3-Jy-K1g">
                                                         <rect key="frame" x="-0.5" y="0.0" width="158" height="190.5"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="dh"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="university"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="durationMatchLongest"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>

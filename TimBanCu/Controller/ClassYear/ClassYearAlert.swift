@@ -32,7 +32,7 @@ extension ClassYearViewController{
             self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
         })
         
-        addNewClassCompletedAlert = InfoAlert.getAlert(title: title, message: message, action: action)
+       // addNewClassCompletedAlert = InfoAlert.getAlert(title: title, message: message, action: action)
     }
     private func setupClassAlreadyExistAlert(){
         var title:String!
@@ -47,7 +47,7 @@ extension ClassYearViewController{
             message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
         }
         
-        classAlreadyExistAlert = InfoAlert.getAlert(title: title, message: message)
+     //   classAlreadyExistAlert = InfoAlert.getAlert(title: title, message: message)
     }
     
 }

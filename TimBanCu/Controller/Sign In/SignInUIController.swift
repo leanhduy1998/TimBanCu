@@ -13,7 +13,7 @@ import FacebookCore
 import FacebookLogin
 import GoogleSignIn
 
-class SignInUIController{
+final class SignInUIController{
     
     var state: UIState = .Loading {
         willSet(newState) {
@@ -32,6 +32,8 @@ class SignInUIController{
     var facebookBtn:LoginButton!
     var googleBtn:GIDSignInButton!
     
+    var errorAlert:InfoAlert!
+    
     
     init(viewController: UIViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
         self.controller = viewController
@@ -41,35 +43,38 @@ class SignInUIController{
         animateShimmeringText()
         setupFacebookBtn()
         setupGoogleButton()
+        
+        errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "")
     }
     
-    func update(newState: UIState) {
+    private func update(newState: UIState) {
         switch(state, newState) {
             
         case (.Loading, .Success( _ )): goToHome()
         case (.Loading, .Failure(let errorStr)): createErrorAlert(errorStr: errorStr)
+        case (.Success( _ ), .Success( _ )):break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
     }
     
-    func createErrorAlert(errorStr:String){
-        let alert = InfoAlert.getAlert(title: "Đăng Nhập Không Thành Công", message: errorStr)
-        controller.present(alert, animated: true, completion: nil)
+    private func createErrorAlert(errorStr:String){
+        errorAlert.changeMessage(message: errorStr)
+        errorAlert.show(viewcontroller: controller)
     }
     
-    func goToHome(){
+    private func goToHome(){
         controller.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
     }
     
-    func setUpSplashView() {
+    private func setUpSplashView() {
         revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo")!, iconInitialSize: CGSize(width: 140, height: 140), backgroundColor: UIColor(red:255/255, green:158/255, blue: 0, alpha:1.0))
         controller.view.addSubview(revealingSplashView)
         revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
         revealingSplashView.startAnimation()
     }
     
-    func animateShimmeringText() {
+    private func animateShimmeringText() {
         
         appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8),view:controller.view)
         shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: controller.view)
@@ -94,7 +99,7 @@ class SignInUIController{
         gradient.add(animation, forKey: "shimmerKey")
     }
     
-    func setupFacebookBtn(){
+    private func setupFacebookBtn(){
         facebookBtn.translatesAutoresizingMaskIntoConstraints = false
         
         controller.view.addSubview(facebookBtn)
@@ -105,8 +110,7 @@ class SignInUIController{
         facebookBtn.rightAnchor.constraint(equalTo: controller.view.rightAnchor, constant: -40).isActive = true
     }
     
-    func setupGoogleButton(){
-        
+    private func setupGoogleButton(){
         googleBtn.style = GIDSignInButtonStyle.wide
     }
     

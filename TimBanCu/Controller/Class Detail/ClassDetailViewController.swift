@@ -34,7 +34,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedStudent:Student!
     
     //no result
-    var noResultLabel = NoResultLabel(type: Type.Student)
+    var noResultLabel = NoResultLabel(type: NoResultType.Student)
     
     //ui
     let customSelectionColorView = CustomSelectionColorView()
