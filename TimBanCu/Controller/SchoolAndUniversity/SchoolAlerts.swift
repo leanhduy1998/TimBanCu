@@ -21,12 +21,12 @@ class SchoolAlerts{
     var schoolAlreadyExistAlert:InfoAlert!
     
     
-    var addNewSchoolHandler: () -> ()
+    var addNewSchoolCompleteHandler: () -> ()
     
     init(viewcontroller:UIViewController, schoolType:SchoolType,addNewSchoolHandler: @escaping () -> ()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
-        self.addNewSchoolHandler = addNewSchoolHandler
+        self.addNewSchoolCompleteHandler = addNewSchoolHandler
         
         setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()
@@ -78,15 +78,13 @@ class SchoolAlerts{
         }
         
         addNewSchoolAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Trường")
-       // addNewSchoolAlert.addAction(actionTitle: "Thêm", handler: addNewSchoolHandler)
-        
         addNewSchoolAlert.addAction(actionTitle: "Thêm") { (_) in
-            self.addNewSchoolHandler()
+            self.addNewSchoolCompleteHandler()
         }
     }
     
     private func setupAddNewSchoolCompletedAlert(){
-        let title = "Trường của bạn đã được thêm!"
-        addNewSchoolCompletedAlert = InfoAlert(title: title, message: "")
+        let title = "Bước 1: Thêm Trường Thành Công!"
+        addNewSchoolCompletedAlert = InfoAlert(title: title, message: "Bước 2: Thêm năm học của bạn")
     }
 }

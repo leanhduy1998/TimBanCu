@@ -20,15 +20,35 @@ class MajorUIController{
     
     var tableViewTool: GenericTableViewTool<MajorDetail, MajorTableViewCell>!
     
-    init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField){
+    init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField,addNewMajorHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
-        alerts = MajorAlerts(viewcontroller: viewcontroller)
+        alerts = MajorAlerts(viewcontroller: viewcontroller) {
+            //add new major complete handler
+            addNewMajorHandler(self.alerts.addNewMajorAlert.getTextFieldInput())
+        }
         
         self.tableview = tableview
         self.searchTF = searchTF
         
         setUpTableView()
-      ///  noResultView = NoResultView(type: .University)
+        noResultView = NoResultView(type: .University) {
+            // add new major handler
+            self.showAddNewMajorAlert(completionHandler: addNewMajorHandler)
+        }
+        
+        noResultView.translatesAutoresizingMaskIntoConstraints = false
+        noResultView.isHidden = true
+        
+        viewcontroller.view.addSubview(noResultView)
+        viewcontroller.view.bringSubview(toFront: noResultView)
+        
+        
+        //noResultView.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
+        noResultView.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 20).isActive = true
+        noResultView.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
+        noResultView.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: 20).isActive = true
+        noResultView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        noResultView.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
         
         
         tableViewTool = GenericTableViewTool(tableview: tableview, items: searchMajors) { (cell, major) in
@@ -40,12 +60,6 @@ class MajorUIController{
             
             viewcontroller.performSegue(withIdentifier: "MajorToClassYearSegue", sender: viewcontroller)
         }
-        
-        
-        /*
-        TextFieldDelegateSetter(viewcontroller: viewcontroller, textField: searchTF) { (newString) in
-            self.filterVisibleSchools(filter: newString, allMajors: viewcontroller.getAllDataFetched())
-        }*/
     }
     
     var state:UIState = .Loading{
@@ -59,27 +73,35 @@ class MajorUIController{
         
         if(filter.isEmpty){
             searchMajors = allMajors
-            return
         }
-        
-        for major in allMajors{
-            
-            if major.majorName.lowercased().range(of:filter.lowercased()) != nil {
-                searchMajors.append(major)
+        else{
+            for major in allMajors{
+                
+                if major.majorName.lowercased().range(of:filter.lowercased()) != nil {
+                    searchMajors.append(major)
+                }
             }
         }
+        
+        
         
         reloadTableViewAndUpdateUI()
     }
     
     private func update(newState: UIState) {
         switch(state, newState) {
-            
         case (.Loading, .Loading): loadLoadingView()
         case (.Loading, .Success()):
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
+            alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
+            break
+        case (.AddingNewData, .Success()):
+            alerts.showAddNewMajorCompletedAlert()
+            filterVisibleSchools(filter: searchTF.text!, allMajors: searchMajors)
+            break
+        case (.AddingNewData, .Failure(let errorStr)):
             if(errorStr == "Permission denied") {
                 alerts.showMajorAlreadyExistAlert()
             }
@@ -87,6 +109,8 @@ class MajorUIController{
                 alerts.showAlert(title: "Không Thể Thêm Khoa", message: errorStr)
             }
             break
+        case (.Success(), .AddingNewData): break
+        case (.AddingNewData, .AddingNewData): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -99,20 +123,11 @@ class MajorUIController{
         //TODO
     }
     
-    func showAddNewSchoolAlert(completionHandler: @escaping (_ userInput:String)->Void){
-        let handler: (UIAlertAction) -> Void = { _ in
-            completionHandler(self.alerts.addNewMajorAlert.getTextFieldInput())
-        }
-        
-        alerts.showAddNewMajorAlert(handler: handler)
-    }
-    
-    
     private func reloadTableViewAndUpdateUI(){
         tableViewTool.items = searchMajors
         tableview.reloadData()
         
-        if(tableview.numberOfSections == 0){
+        if(searchMajors.count == 0){
             noResultView.isHidden = false
             tableview.isHidden = true
         }
@@ -137,10 +152,7 @@ class MajorUIController{
     }
     
     func showAddNewMajorAlert(completionHandler: @escaping (_ userInput:String)->Void){
-        let handler: (UIAlertAction) -> Void = { _ in
-            completionHandler(self.alerts.addNewMajorAlert.getTextFieldInput())
-        }
-        
-        alerts.showAddNewMajorAlert(handler: handler)
+        state = .AddingNewData
+        alerts.showAddNewMajorAlert()
     }
 }

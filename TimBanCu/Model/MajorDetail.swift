@@ -46,7 +46,6 @@ class MajorDetail: ClassProtocol{
     
     
     func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
-        
         Database.database().reference().child("classes").child(getFirebasePathWithSchoolYear()).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
 }

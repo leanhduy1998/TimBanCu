@@ -14,23 +14,33 @@ final class MajorController{
     var school:School!
     
     private var queryTool:SchoolQueryTool!
+    private var viewcontroller:MajorViewController!
     
-    init(school:School){
+    init(viewcontroller:MajorViewController, school:School){
         self.school = school
+        self.viewcontroller = viewcontroller
     }
     
   
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
         Database.database().reference().child("classes").child(school.name).observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot)
+            
+            for snap in snapshot.children{
+                print(snap)
+            }
+            
+            completionHandler(.Success())
+            
         }) { (err) in
             completionHandler(.Failure(err.localizedDescription))
         }
     }
     
-    func addNewMajor(name:String,completionHandler: @escaping (_ state:UIState)->Void){
-      //  let major = MajorDetail(uid: CurrentUserHelper.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
+    func addNewMajor(inputedMajorName:String,completionHandler: @escaping (_ state:UIState)->Void){
+        let major = MajorDetail(uid: CurrentUserHelper.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
+        majors.append(major)
         
-     //   self.selectedMajor = major
+        viewcontroller.selectedMajor = major
+        completionHandler(.Success())
     }
 }

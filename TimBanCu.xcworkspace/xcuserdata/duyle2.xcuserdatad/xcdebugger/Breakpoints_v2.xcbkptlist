@@ -308,28 +308,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/Generic Table View/GenericTableViewTool.swift"
-            timestampString = "557450086.758007"
+            timestampString = "557514386.657187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "init(tableview:items:configure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TimBanCu/Controller/University Major/MajorController.swift"
-            timestampString = "557450086.758103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "fetchData(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

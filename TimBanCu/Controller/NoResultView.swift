@@ -18,7 +18,7 @@ class NoResultView:UIView{
     private var animatedEmoticon:LOTAnimationView!
     private let emojiName = "empty_list"
     
-    var addBtnPressedHandler: ()->()
+    var addBtnHandler: ()->()
     
     override var isHidden: Bool {
         get{
@@ -38,17 +38,13 @@ class NoResultView:UIView{
         }
     }
     
-    init(type:NoResultType,addNewSchoolBtnPressedHandler: @escaping ()->()){
+    init(type:NoResultType,addBtnHandler: @escaping ()->()){
         
-        self.addBtnPressedHandler = addNewSchoolBtnPressedHandler
+        self.addBtnHandler = addBtnHandler
         super.init(frame: CGRect.zero)
         
-        
-        
-        noResultLabel = NoResultLabel(type: NoResultType.School)
-        
-        
-        noResultAddNewSchoolBtn = NoResultButton(type: NoResultType.School)
+        noResultLabel = NoResultLabel(type: type)
+        noResultAddNewSchoolBtn = NoResultButton(type: type)
         
         self.addSubview(noResultLabel)
         self.addSubview(noResultAddNewSchoolBtn)
@@ -83,7 +79,7 @@ class NoResultView:UIView{
     }
     
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
-        addBtnPressedHandler()
+        addBtnHandler()
     }
     
     required init?(coder aDecoder: NSCoder) {

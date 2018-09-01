@@ -18,20 +18,20 @@ class MajorAlerts{
     var majorAlreadyExistAlert:InfoAlert!
     
     
-    var handler: ((UIAlertAction) -> Void)!
+    var addNewMajorCompleteHandler: () -> ()
     
-    init(viewcontroller:UIViewController){
+    init(viewcontroller:UIViewController,addNewMajorHandler: @escaping () -> ()){
+        
+        
         self.viewcontroller = viewcontroller
+        self.addNewMajorCompleteHandler = addNewMajorHandler
   
         setupAddNewMajorAlert()
         setupAddNewMajorCompletedAlert()
         setupMajorAlreadyExistAlert()
     }
     
-    func showAddNewMajorAlert(handler: @escaping ((UIAlertAction) -> Void)){
-        self.handler = handler
-        addNewMajorAlert.addAction(actionTitle: "Thêm", handler: handler)
-        
+    func showAddNewMajorAlert(){
         addNewMajorAlert.show(viewcontroller: viewcontroller)
     }
     
@@ -57,10 +57,14 @@ class MajorAlerts{
     private func setupAddNewMajorAlert(){
         let title = "Thêm Khoa Mới"
         addNewMajorAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Khoa")
+
+        addNewMajorAlert.addAction(actionTitle: "Thêm") { (_) in
+            self.addNewMajorCompleteHandler()
+        }
     }
     
     private func setupAddNewMajorCompletedAlert(){
-        let title = "Khoa của bạn đã được thêm!"
-        addNewMajorCompletedAlert = InfoAlert(title: title, message: "")
+        let title = "Bước 1: Thêm Khoa Thành Công!"
+        addNewMajorCompletedAlert = InfoAlert(title: title, message: "Bước 2: Thêm năm học của bạn")
     }
 }

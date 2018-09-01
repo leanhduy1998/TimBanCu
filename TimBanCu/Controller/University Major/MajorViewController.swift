@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import Lottie
 
-class MajorViewController: UIViewController {
+class MajorViewController: UIViewController,UITextFieldDelegate {
     
     var school:School!
     var selectedMajor:MajorDetail!
@@ -26,8 +26,39 @@ class MajorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF)
-        controller = MajorController(school: school)
+        controller = MajorController(viewcontroller: self, school: school)
+        
+        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF) { (newMajorIfNotInList) in
+            self.controller.addNewMajor(inputedMajorName: newMajorIfNotInList, completionHandler: { (uiState) in
+                self.uiController.searchMajors = self.controller.majors
+                self.uiController.state = uiState
+            })
+        }
+        
+        searchTF.delegate = self
+        searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        controller.fetchData { (uiState) in
+            self.uiController.searchMajors = self.controller.majors
+            self.uiController.state = uiState
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        uiController.filterVisibleSchools(filter: textField.text!, allMajors: getAllDataFetched())
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        uiController.filterVisibleSchools(filter: "", allMajors: getAllDataFetched())
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     func getAllDataFetched()->[MajorDetail]{

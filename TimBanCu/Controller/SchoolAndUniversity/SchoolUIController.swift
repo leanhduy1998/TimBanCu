@@ -24,7 +24,7 @@ final class SchoolUIController{
     
     var tableViewTool: GenericTableViewTool<School, SchoolTableViewCell>!
     
-    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolBtnPressedHandler: @escaping (String)->()){
+    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
         self.tableview = tableview
@@ -32,16 +32,18 @@ final class SchoolUIController{
         
         
         alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) {
-            addNewSchoolBtnPressedHandler(self.alerts.addNewSchoolAlert.getTextFieldInput())
+            //add new school complete handler
+            addNewSchoolHandler(self.alerts.addNewSchoolAlert.getTextFieldInput())
         }
         
         
         setUpTableView()
         setHeroId()
         
-        noResultView = NoResultView(type: .School, addNewSchoolBtnPressedHandler: {
+        noResultView = NoResultView(type: .School, addBtnHandler: {
+            // add new school handler
             self.showAddNewSchoolAlert(completionHandler: { (newSchool) in
-                addNewSchoolBtnPressedHandler(newSchool)
+                addNewSchoolHandler(newSchool)
             })
         })
         
@@ -90,15 +92,14 @@ final class SchoolUIController{
         
         if(filter.isEmpty){
             searchSchoolModels = allSchools
-            return
         }
-        
-        for school in allSchools{
-            if school.name.lowercased().range(of:filter.lowercased()) != nil {
-                searchSchoolModels.append(school)
+        else{
+            for school in allSchools{
+                if school.name.lowercased().range(of:filter.lowercased()) != nil {
+                    searchSchoolModels.append(school)
+                }
             }
         }
-        
         reloadTableViewAndUpdateUI()
     }
     
@@ -110,12 +111,7 @@ final class SchoolUIController{
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
-            if(errorStr == "Permission denied") {
-                alerts.showSchoolAlreadyExistAlert()
-            }
-            else{
-                alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
-            }
+            alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             break
         case (.AddingNewData, .Success()):
             alerts.showAddNewSchoolCompletedAlert()
@@ -129,6 +125,7 @@ final class SchoolUIController{
                 alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
             break
+        case (.Success(), .Loading): break
         case (.Success(), .AddingNewData): break
         case (.AddingNewData, .AddingNewData): break
             
