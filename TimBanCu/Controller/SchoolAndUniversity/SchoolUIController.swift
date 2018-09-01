@@ -53,15 +53,11 @@ final class SchoolUIController{
         viewcontroller.view.addSubview(noResultView)
         viewcontroller.view.bringSubview(toFront: noResultView)
         
-        
-        //noResultView.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
-        noResultView.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 20).isActive = true
+        noResultView.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 20).isActive = true
         noResultView.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
-        noResultView.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: 20).isActive = true
+        noResultView.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
         noResultView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        noResultView.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
     
-        
         tableViewTool = GenericTableViewTool(tableview: tableview, items: searchSchoolModels) { (cell, school) in
             cell.schoolViewModel = SchoolViewModel(school: school)
         }

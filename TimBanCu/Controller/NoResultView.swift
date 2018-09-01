@@ -49,8 +49,6 @@ class NoResultView:UIView{
         self.addSubview(noResultLabel)
         self.addSubview(noResultAddNewSchoolBtn)
         
-        
-        
         animatedEmoticon = LOTAnimationView(name: "empty_list")
         animatedEmoticon.contentMode = .scaleAspectFill
         animatedEmoticon.loopAnimation = true
@@ -62,18 +60,15 @@ class NoResultView:UIView{
         animatedEmoticon.widthAnchor.constraint(equalToConstant: 150).isActive = true
         animatedEmoticon.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
-        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
-        noResultLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
-        noResultLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
+        noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor).isActive = true
+        noResultLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        noResultLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
 
         noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
+        noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor).isActive = true
         noResultAddNewSchoolBtn.widthAnchor.constraint(equalToConstant: 300).isActive = true
         noResultAddNewSchoolBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
-
         
         noResultAddNewSchoolBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
     }
