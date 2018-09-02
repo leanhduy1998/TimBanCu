@@ -23,7 +23,6 @@ class MajorUIController{
     init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField,addNewMajorHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
         alerts = MajorAlerts(viewcontroller: viewcontroller) {
-            //add new major complete handler
             addNewMajorHandler(self.alerts.addNewMajorAlert.getTextFieldInput())
         }
         
@@ -31,9 +30,9 @@ class MajorUIController{
         self.searchTF = searchTF
         
         setUpTableView()
-        noResultView = NoResultView(type: .University) {
-            // add new major handler
-            self.showAddNewMajorAlert(completionHandler: addNewMajorHandler)
+      
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .University) {
+            self.showAddNewMajorAlert()
         }
         
         noResultView.translatesAutoresizingMaskIntoConstraints = false
@@ -151,7 +150,7 @@ class MajorUIController{
         }
     }
     
-    func showAddNewMajorAlert(completionHandler: @escaping (_ userInput:String)->Void){
+    func showAddNewMajorAlert(){
         state = .AddingNewData
         alerts.showAddNewMajorAlert()
     }

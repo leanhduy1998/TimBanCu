@@ -8,12 +8,7 @@
 
 import UIKit
 
-enum NoResultType:String {
-    case School
-    case University
-    case Class
-    case Student
-}
+
 
 class NoResultLabel: UILabel {
 

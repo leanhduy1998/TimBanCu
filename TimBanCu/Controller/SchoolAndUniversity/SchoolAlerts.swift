@@ -12,8 +12,8 @@ import FirebaseDatabase
 
 class SchoolAlerts{
     
-    var viewcontroller:UIViewController!
-    var schoolType:SchoolType!
+    private var viewcontroller:UIViewController!
+    private var schoolType:SchoolType!
     
     
     var addNewSchoolAlert:AskForInputAlert!
@@ -21,9 +21,9 @@ class SchoolAlerts{
     var schoolAlreadyExistAlert:InfoAlert!
     
     
-    var addNewSchoolCompleteHandler: () -> ()
+    var addNewSchoolCompleteHandler: (String) -> ()
     
-    init(viewcontroller:UIViewController, schoolType:SchoolType,addNewSchoolHandler: @escaping () -> ()){
+    init(viewcontroller:UIViewController, schoolType:SchoolType,addNewSchoolHandler: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
         self.addNewSchoolCompleteHandler = addNewSchoolHandler
@@ -79,12 +79,12 @@ class SchoolAlerts{
         
         addNewSchoolAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Trường")
         addNewSchoolAlert.addAction(actionTitle: "Thêm") { (_) in
-            self.addNewSchoolCompleteHandler()
+            self.addNewSchoolCompleteHandler(self.addNewSchoolAlert.getTextFieldInput())
         }
     }
     
     private func setupAddNewSchoolCompletedAlert(){
-        let title = "Bước 1: Thêm Trường Thành Công!"
-        addNewSchoolCompletedAlert = InfoAlert(title: title, message: "Bước 2: Thêm năm học của bạn")
+        let title = "Thêm Trường Thành Công!"
+        addNewSchoolCompletedAlert = InfoAlert(title: title, message: "Bước Tiếp Theo: Chọn Lớp của bạn")
     }
 }

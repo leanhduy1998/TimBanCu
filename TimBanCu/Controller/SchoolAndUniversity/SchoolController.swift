@@ -81,6 +81,5 @@ final class SchoolController{
                 completionHandler(.Failure(errorStr))
             }
         }
-        
     }
 }

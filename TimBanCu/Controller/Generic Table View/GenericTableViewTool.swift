@@ -29,9 +29,7 @@ class GenericTableViewTool<Item,Cell:UITableViewCell>: NSObject, UITableViewDele
         
         self.items = items
         reuseIdentifier = String(describing: Cell.self)
-        
-        //self.tableview.register(Cell.self, forCellReuseIdentifier: reuseIdentifier)
-        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,16 +55,27 @@ class GenericTableViewTool<Item,Cell:UITableViewCell>: NSObject, UITableViewDele
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        let lastInitialDisplayableCell = tableView.animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath, model: items as! [AnyObject], finishLoading: finishedLoadingInitialTableCells)
-        
-        
-        
-        if !finishedLoadingInitialTableCells {
-            if lastInitialDisplayableCell {
-                finishedLoadingInitialTableCells = true
+        DispatchQueue.main.async {
+            self.animateCells(cell: cell, tableView: self.tableview, indexPath: indexPath)
+            let lastInitialDisplayableCell = tableView.animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath, model: self.items! as [AnyObject], finishLoading: self.finishedLoadingInitialTableCells)
+            
+            if !self.finishedLoadingInitialTableCells {
+                if lastInitialDisplayableCell {
+                    self.finishedLoadingInitialTableCells = true
+                }
+                self.animateCells(cell: cell, tableView: self.tableview, indexPath: indexPath)
             }
-            tableview.animateCells(cell: cell, tableView: tableview, indexPath: indexPath)
         }
+    }
+    
+    private func animateCells(cell: UITableViewCell, tableView: UITableView, indexPath: IndexPath) {
+        cell.transform = CGAffineTransform(translationX: 0, y: tableView.rowHeight / 2)
+        cell.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, delay: 0.04 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
+            cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            cell.alpha = 1
+        }, completion: nil)
     }
 
 }

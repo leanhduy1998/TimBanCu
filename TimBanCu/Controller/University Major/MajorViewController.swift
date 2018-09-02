@@ -68,18 +68,6 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         uiController.moveToNextControllerAnimation()
     }
-
-    @objc func addNewMajorBtnPressed(_ sender: UIButton?) {
-        uiController.showAddNewMajorAlert { (inputedMajorName) in
-            if(!(inputedMajorName.isEmpty)){
-                let major = MajorDetail(uid: CurrentUserHelper.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
-                
-                self.selectedMajor = major
-                
-                self.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self)
-            }
-        }
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassYearViewController{

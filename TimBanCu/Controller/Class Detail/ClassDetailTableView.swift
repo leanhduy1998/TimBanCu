@@ -40,7 +40,7 @@ extension ClassDetailViewController{
             if lastInitialDisplayableCell {
                 finishedLoadingInitialTableCells = true
             }
-            tableview.animateCells(cell: cell, tableView: tableview, indexPath: indexPath)
+         //   tableview.animateCells(cell: cell, tableView: tableview, indexPath: indexPath)
         }
     }
     

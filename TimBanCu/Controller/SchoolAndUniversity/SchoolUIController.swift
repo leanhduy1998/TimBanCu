@@ -31,22 +31,16 @@ final class SchoolUIController{
         self.searchTF = searchTF
         
         
-        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) {
-            //add new school complete handler
-            addNewSchoolHandler(self.alerts.addNewSchoolAlert.getTextFieldInput())
+        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { (addedSchool) in
+             addNewSchoolHandler(addedSchool)
         }
-        
         
         setUpTableView()
         setHeroId()
         
-        noResultView = NoResultView(type: .School, addBtnHandler: {
-            // add new school handler
-            self.showAddNewSchoolAlert(completionHandler: { (newSchool) in
-                addNewSchoolHandler(newSchool)
-            })
-        })
-        
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .School) {
+            self.showAddNewSchoolAlert()
+        }
         
         noResultView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -54,12 +48,7 @@ final class SchoolUIController{
         viewcontroller.view.bringSubview(toFront: noResultView)
         
         
-        //noResultView.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
-        noResultView.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 20).isActive = true
-        noResultView.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
-        noResultView.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: 20).isActive = true
-        noResultView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        noResultView.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
+        
     
         
         tableViewTool = GenericTableViewTool(tableview: tableview, items: searchSchoolModels) { (cell, school) in
@@ -87,25 +76,9 @@ final class SchoolUIController{
         }
     }
     
-    func filterVisibleSchools(filter:String, allSchools:[School]){
-        searchSchoolModels.removeAll()
-        
-        if(filter.isEmpty){
-            searchSchoolModels = allSchools
-        }
-        else{
-            for school in allSchools{
-                if school.name.lowercased().range(of:filter.lowercased()) != nil {
-                    searchSchoolModels.append(school)
-                }
-            }
-        }
-        reloadTableViewAndUpdateUI()
-    }
-    
     private func update(newState: UIState) {
         switch(state, newState) {
-        
+            
         case (.Loading, .Loading): loadLoadingView()
         case (.Loading, .Success()):
             reloadTableViewAndUpdateUI()
@@ -133,6 +106,24 @@ final class SchoolUIController{
         }
     }
     
+    func filterVisibleSchools(filter:String, allSchools:[School]){
+        searchSchoolModels.removeAll()
+        
+        if(filter.isEmpty){
+            searchSchoolModels = allSchools
+        }
+        else{
+            for school in allSchools{
+                if school.name.lowercased().range(of:filter.lowercased()) != nil {
+                    searchSchoolModels.append(school)
+                }
+            }
+        }
+        reloadTableViewAndUpdateUI()
+    }
+    
+    
+    
     
     private func loadLoadingView(){
         noResultView.isHidden = true
@@ -140,7 +131,7 @@ final class SchoolUIController{
         //TODO
     }
     
-    func showAddNewSchoolAlert(completionHandler: @escaping (_ userInput:String)->Void){
+    func showAddNewSchoolAlert(){
         state = .AddingNewData
         alerts.showAddNewSchoolAlert()
     }

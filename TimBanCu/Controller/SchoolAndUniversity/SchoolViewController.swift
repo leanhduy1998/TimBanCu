@@ -34,8 +34,6 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
             })
         }
         
-        
-        
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }

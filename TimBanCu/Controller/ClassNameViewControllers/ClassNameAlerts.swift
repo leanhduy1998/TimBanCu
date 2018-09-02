@@ -9,28 +9,55 @@
 import Foundation
 import UIKit
 
-extension ClassNameViewController{
-    func setupAlerts(){
-        setupAddNewClassDetailAlert()
+class ClassNameAlerts{
+    
+    private var viewcontroller:UIViewController!
+    private var addNewClassAlert:AskForInputAlert!
+    private var addNewClassCompleteAlert:InfoAlert!
+    private var classAlreadyExistAlert:InfoAlert!
+    private var addNewClassHandler: (String) -> ()
+    
+    init(viewcontroller:UIViewController,addNewClassHandler: @escaping (String) -> ()){
+        self.viewcontroller = viewcontroller
+        self.addNewClassHandler = addNewClassHandler
+        setupAddNewClassNameAlert()
+        setupClassAlreadyExistAlert()
+        setupAddNewClassNameCompletedAlert()
+    }
+    
+    func showAddNewClassNameAlert(){
+        addNewClassAlert.show(viewcontroller: viewcontroller)
+    }
+    func showAddNewClassNameComplete(){
+        addNewClassCompleteAlert.show(viewcontroller: viewcontroller)
+    }
+    
+    func showClassAlreadyExistAlert(){
+        classAlreadyExistAlert.show(viewcontroller: viewcontroller)
+    }
+    
+    func showAlert(title:String,message:String){
+        let alert = InfoAlert(title: title, message: message)
+        alert.show(viewcontroller: viewcontroller)
     }
         
-    private func setupAddNewClassDetailAlert(){
-       // addNewClassAlert = AskForInputAlert.getAlert(title: "Thêm Lớp Mới", message: "", TFPlaceHolder: "Tên Lớp")
+    private func setupAddNewClassNameAlert(){
+        addNewClassAlert = AskForInputAlert(title: "Thêm Lớp Mới", message: "", textFieldPlaceHolder: "Tên Lớp")
+        addNewClassAlert.addAction(actionTitle: "Thêm") { (_) in
+            self.addNewClassHandler(self.addNewClassAlert.getTextFieldInput())
+        }
+    }
+    
+    private func setupClassAlreadyExistAlert(){
+        let title = "Lớp của bạn đã có trong danh sách!"
+        let message = "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới"
         
-        let action = UIAlertAction(title: "Thêm", style: .default, handler: { [weak addNewClassAlert] (_) in
-            let textField = addNewClassAlert?.textFields![0] // Force unwrapping because we know it exists.
-            let className = textField?.text
-            if(!(className?.isEmpty)!){
-                
-                let classDetail = ClassDetail(classNumber: self.classNumber, uid: CurrentUserHelper.getUid(), schoolName: self.school.name, className: className!.uppercased())
-                self.selectedClassDetail = classDetail
-                
-                self.performSegue(withIdentifier: "ClassNameToClassYear", sender: self)
-                
-            }
-        })
-        
-        addNewClassAlert.addAction(action)
- 
+        classAlreadyExistAlert = InfoAlert(title: title, message: message)
+    }
+    
+    private func setupAddNewClassNameCompletedAlert(){
+        let title = "Thêm Lớp Thành Công!"
+        let message = "Bước Tiếp Theo: Chọn Năm Học Của Bạn"
+        addNewClassCompleteAlert = InfoAlert(title: title, message: message)
     }
 }

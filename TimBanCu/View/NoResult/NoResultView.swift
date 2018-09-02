@@ -38,7 +38,7 @@ class NoResultView:UIView{
         }
     }
     
-    init(type:NoResultType,addBtnHandler: @escaping ()->()){
+    init(viewcontroller:UIViewController,searchTF:UITextField,type:NoResultType,addBtnHandler: @escaping ()->()){
         
         self.addBtnHandler = addBtnHandler
         super.init(frame: CGRect.zero)
@@ -76,6 +76,15 @@ class NoResultView:UIView{
 
         
         noResultAddNewSchoolBtn.addTarget(self, action: #selector(self.addNewSchoolBtnPressed(_:)), for: .touchUpInside)
+        
+        
+        viewcontroller.view.addSubview(self)
+     //   self.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 20).isActive = true
+        self.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
+        self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: 20).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        self.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
     }
     
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {

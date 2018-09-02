@@ -10,9 +10,10 @@ import UIKit
 import FirebaseDatabase
 import Lottie
 
-class ClassNameViewController: UIViewController {
+class ClassNameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var searchTF: UITextField!
     
     // From previous class
     var school:School!
@@ -21,62 +22,48 @@ class ClassNameViewController: UIViewController {
     
     var selectedClassDetail:ClassDetail!
     
-    var finishedLoadingInitialTableCells = false
-    
-    //database
-    var schoolAllClassesDetailsQuery:DatabaseQuery!
-    
-    
-    //no result
-    var noResultLabel = NoResultLabel(type: NoResultType.Class)
-    var noResultAddNewClassBtn = NoResultButton(type: NoResultType.Class)
-    
-    //tableview
-    var classDetails = [ClassDetail]()
-    
-    //alert
-    var addNewClassAlert: UIAlertController!
-    
-    let customSelectionColorView = CustomSelectionColorView()
-
-    let animatedEmoticon = LOTAnimationView(name: "empty_list")
+    var uiController:ClassNameUIController!
+    var controller:ClassNameController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpAnimatedEmoticon()
-        setupNoResultLabelAndButton()
-        setupAlerts()
-        hideItemsWhileFetchResult()
+        
+        uiController = ClassNameUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, addNewClassNameHandler: { (addedClassName) in
+            
+            self.controller.addNewClass(className: addedClassName, completionHandler: { (uistate) in
+                self.uiController.searchClassDetails = self.controller.classDetails
+                self.uiController.state = uistate
+            })
+        })
+        
+        controller = ClassNameController(viewcontroller: self, school: school, classNumber: classNumber)
+        
+        searchTF.delegate = self
+        searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        uiController.filterVisibleClassName(filter: "", allClassDetails: controller.classDetails)
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchData()
-    }
-    
-    func fetchData(){
-        classDetails.removeAll()
-        
-         Database.database().reference().child("classes").child(school.name).child(classNumber).observeSingleEvent(of: .value) { (snapshot) in
-            
-            
-            for snap in snapshot.children{
-                let className = (snap as! DataSnapshot).key as! String
-                
-                let classDetail = ClassDetail(classNumber: self.classNumber, uid: "?", schoolName: self.school.name, className: className, classYear: "?")
-                
-                self.classDetails.append(classDetail)
-            }
-            
-            DispatchQueue.main.async {
-                self.tableview.reloadData()
-                self.updateItemsVisibilityBasedOnSearchResult()
-            }
+        controller.fetchData { (uistate) in
+            self.uiController.searchClassDetails = self.controller.classDetails
+            self.uiController.state = uistate
         }
-    }
-    
-    @objc func addNewClassDetailBtnPressed(_ sender: UIButton?) {
-        self.present(addNewClassAlert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
