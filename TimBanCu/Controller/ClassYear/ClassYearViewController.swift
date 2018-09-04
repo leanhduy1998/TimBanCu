@@ -18,48 +18,39 @@ class ClassYearViewController: UIViewController {
     var years = [String]()
     var selectedYear:String!
     
-    var addNewClassCompletedAlert:UIAlertController!
-    var classAlreadyExistAlert:UIAlertController!
-    
-    let customSelectionColorView = CustomSelectionColorView()
+    var uiController:ClassYearUIController!
+    var controller:ClassYearController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupManualYears()
-        setupAlerts()
-        tableview.reloadData()
-    }
-    
-    func setupManualYears(){
-        let date = Date()
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
         
-        let allowedFurthestYear = year - 80
+        controller = ClassYearController()
         
-        var index = year
-        
-        while(index >= allowedFurthestYear){
-            let string = "Năm \(index)"
-            years.append(string)
+        uiController = ClassYearUIController(viewcontroller: self, tableview: tableview, years: controller.years, classProtocol: classProtocol) { (selectedYear) in
             
-            index = index - 1
+            //didSelectYear
+            self.selectedYear = selectedYear
+            self.handleSelectedYear()
         }
     }
     
-    func checkIfClassYearExist(completionHandler: @escaping (_ exist:Bool, _ uid:String) -> Void){
-        Database.database().reference().child("classes").child(classProtocol.getFirebasePathWithoutSchoolYear()).child(selectedYear).observeSingleEvent(of: .value) { (snapshot) in
+    func handleSelectedYear(){
+        controller.checkIfClassYearExist(selectedYear: selectedYear, classProtocol: classProtocol) { (exist, uidIfExist) in
             
-            let classValue = (snapshot as! DataSnapshot).value as? [String:String]
-            
-            if(classValue == nil){
-                completionHandler(false, "")
+            if(!exist){
+                self.classProtocol.year = self.selectedYear
+                self.classProtocol.uid = CurrentUserHelper.getUid()
+                
+                self.controller.writeToDatabaseThenShowCompleteAlert(classProtocol: self.classProtocol, completionHandler: { (uistate) in
+                    self.uiController.state = uistate
+                })
             }
             else{
-                let uid = classValue!["uid"]
-                completionHandler(true, uid!)
+                self.classProtocol.uid = uidIfExist
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+                }
             }
-            
         }
     }
     

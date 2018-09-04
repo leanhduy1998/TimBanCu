@@ -13,11 +13,17 @@ import UIKit
 class InfoAlert{
     
     var alert: UIAlertController!
+    var showAlertCompleteHandler: (()->Void)?
     
+
     init(title:String,message:String){
         alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak alert] (_) in
             alert?.dismiss(animated: true, completion: nil)
+            if(self.showAlertCompleteHandler != nil){
+                self.showAlertCompleteHandler!()
+            }
+    
         }))
     }
     
@@ -26,6 +32,10 @@ class InfoAlert{
     }
     
     func show(viewcontroller:UIViewController){
+        viewcontroller.present(alert, animated: true, completion: nil)
+    }
+    func show(viewcontroller:UIViewController,showAlertCompleteHandler: (()->Void)?){
+        self.showAlertCompleteHandler = showAlertCompleteHandler
         viewcontroller.present(alert, animated: true, completion: nil)
     }
     

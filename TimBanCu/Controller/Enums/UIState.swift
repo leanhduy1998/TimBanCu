@@ -13,4 +13,5 @@ enum UIState {
     case Success()
     case Failure(String)
     case AddingNewData
+    case ChoosingData
 }
