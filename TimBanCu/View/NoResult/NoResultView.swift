@@ -93,7 +93,7 @@ class NoResultView:UIView{
     
     private func setNoResultBtnConStraints(){
         noResultAddNewSchoolBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor, constant: 20).isActive = true
+        noResultAddNewSchoolBtn.topAnchor.constraint(equalTo: noResultLabel.bottomAnchor).isActive = true
         noResultAddNewSchoolBtn.widthAnchor.constraint(equalToConstant: 300).isActive = true
         noResultAddNewSchoolBtn.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
