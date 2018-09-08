@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class NoResultLabel: UILabel {
 
     init(type:NoResultType) {

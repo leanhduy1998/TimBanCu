@@ -84,11 +84,10 @@ class NoResultView:UIView{
     }
     
     private func setNoResultLabelConstraints(){
-        noResultLabel.translatesAutoresizingMaskIntoConstraints = false
-        noResultLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         noResultLabel.topAnchor.constraint(equalTo: animatedEmoticon.bottomAnchor, constant: 20).isActive = true
-        noResultLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        noResultLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        noResultLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        noResultLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        noResultLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
     private func setNoResultBtnConStraints(){
@@ -99,12 +98,12 @@ class NoResultView:UIView{
     }
     
     private func setSelfConstraints(){
-        self.topAnchor.constraint(equalTo: searchTF.topAnchor, constant: 20).isActive = true
+        self.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 20).isActive = true
         self.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
-        self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: 20).isActive = true
+        self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
         self.heightAnchor.constraint(equalToConstant: 300).isActive = true
         self.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
-        self.translatesAutoresizingMaskIntoConstraints = false
+        //self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {
