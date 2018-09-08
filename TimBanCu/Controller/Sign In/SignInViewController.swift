@@ -33,8 +33,8 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        signInUIController = SignInUIController(viewController: self, facebookBtn: LoginButton(readPermissions: [ .publicProfile ]), googleBtn: googleSignInBtn)
-        signInController = SignInController()
+        self.signInUIController = SignInUIController(viewController: self, facebookBtn: LoginButton(readPermissions: [ .publicProfile ]), googleBtn: googleSignInBtn)
+        self.signInController = SignInController()
         
     }
     

@@ -15,15 +15,12 @@ class ClassViewController: UIViewController {
     var school:School!
     var selectedClass:String!
     
-    var tableviewTool:GenericTableViewTool<String, ClassTableViewCell>!
-    
-    var finishedLoadingInitialTableCells = false
-    
+    private var tableviewTool:GenericTableView<String, ClassTableViewCell>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableviewTool = GenericTableViewTool(tableview: tableview, items: classes) { (cell, classStr) in
+        tableviewTool = GenericTableView(tableview: tableview, items: classes) { (cell, classStr) in
             cell.classLabel.text = classStr
         }
         

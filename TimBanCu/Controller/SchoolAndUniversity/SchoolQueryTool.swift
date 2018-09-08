@@ -13,12 +13,12 @@ import FirebaseDatabase
 
 final class SchoolQueryTool{
     
-    var tieuhocQuery:DatabaseQuery!
-    var thcsQuery:DatabaseQuery!
-    var thptQuery:DatabaseQuery!
-    var daihocQuery:DatabaseQuery!
+    private var tieuhocQuery:DatabaseQuery!
+    private var thcsQuery:DatabaseQuery!
+    private var thptQuery:DatabaseQuery!
+    private var daihocQuery:DatabaseQuery!
     
-    var schoolType: SchoolType!
+    private var schoolType: SchoolType!
     
     init(schoolType: SchoolType){
         self.schoolType = schoolType

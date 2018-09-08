@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class ClassNameUIController{
-    private var viewcontroller:ClassNameViewController!
+    private weak var viewcontroller:ClassNameViewController!
     private var alerts: ClassNameAlerts!
     private var noResultView: NoResultView!
     
-    private var tableview:UITableView!
-    private var searchTF:UITextField!
-    private var genericTableView : GenericTableViewTool<ClassDetail, ClassNameTableViewCell>!
+    private weak var tableview:UITableView!
+    private weak var searchTF:UITextField!
+    private var genericTableView : GenericTableView<ClassDetail, ClassNameTableViewCell>!
     private let customSelectionColorView = CustomSelectionColorView()
     
     var searchClassDetails = [ClassDetail]()
@@ -25,6 +25,8 @@ class ClassNameUIController{
         self.viewcontroller = viewcontroller
         self.tableview = tableview
         self.searchTF = searchTF
+        
+        
         
         alerts = ClassNameAlerts(viewcontroller: viewcontroller, addNewClassHandler: { (addedClassName) in
             addNewClassNameHandler(addedClassName)
@@ -40,7 +42,7 @@ class ClassNameUIController{
         viewcontroller.view.addSubview(noResultView)
         noResultView.isHidden = true
         
-        genericTableView = GenericTableViewTool(tableview: tableview, items: searchClassDetails, configure: { (cell, classDetail) in
+        genericTableView = GenericTableView(tableview: tableview, items: searchClassDetails, configure: { (cell, classDetail) in
             
             cell.classDetailViewModel = ClassNameViewModel(classDetail: classDetail)
             cell.selectedBackgroundView = self.customSelectionColorView
@@ -50,6 +52,9 @@ class ClassNameUIController{
             viewcontroller.selectedClassDetail = classDetail
             viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: viewcontroller)
         }
+        
+        let searchTFUnderline = UnderlineView(searchTF: searchTF, viewcontroller: viewcontroller)
+        
     }
     
     var state:UIState = .Loading{
@@ -61,7 +66,7 @@ class ClassNameUIController{
     private func update(newState: UIState) {
         switch(state, newState) {
             
-        case (.Loading, .Loading): loadLoadingView()
+        case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
             reloadTableViewAndUpdateUI()
             break
@@ -106,7 +111,7 @@ class ClassNameUIController{
         reloadTableViewAndUpdateUI()
     }
     
-    private func loadLoadingView(){
+    private func showLoading(){
         noResultView.isHidden = true
         tableview.isHidden = false
         //TODO
@@ -130,11 +135,6 @@ class ClassNameUIController{
             noResultView.isHidden = true
             tableview.isHidden = false
         }
-    }
-    
-    private func setUpTableView() {
-        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
-        tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
     }
     
 }

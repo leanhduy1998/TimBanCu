@@ -18,7 +18,7 @@ class SelectSchoolTypeViewController: UIViewController {
     
     var selectedSchoolType:SchoolType!
     
-    var uiController: SelectSchoolTypeUIController!
+    private var uiController: SelectSchoolTypeUIController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

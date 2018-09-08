@@ -12,8 +12,8 @@ import FirebaseDatabase
 class ClassNameController{
     var classDetails = [ClassDetail]()
     private var school:School!
-    var classNumber: String!
-    var viewcontroller:ClassNameViewController!
+    private var classNumber: String!
+    private weak var viewcontroller:ClassNameViewController!
     
     init(viewcontroller:ClassNameViewController,school:School,classNumber: String){
         self.school = school
@@ -28,7 +28,7 @@ class ClassNameController{
             
             
             for snap in snapshot.children{
-                let className = (snap as! DataSnapshot).key as! String
+                let className = (snap as! DataSnapshot).key
                 
                 let classDetail = ClassDetail(classNumber: self.classNumber, uid: "?", schoolName: self.school.name, className: className, classYear: "?")
                 
@@ -36,13 +36,6 @@ class ClassNameController{
             }
             
             completionHandler(.Success())
-            
-            /*
-            
-            DispatchQueue.main.async {
-                self.tableview.reloadData()
-                self.updateItemsVisibilityBasedOnSearchResult()
-            }*/
         }
     }
     

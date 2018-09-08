@@ -12,17 +12,16 @@ import Lottie
 
 final class SchoolUIController{
     
-    private var viewcontroller:SchoolViewController!
+    private weak var viewcontroller:SchoolViewController!
     private var schoolType:SchoolType!
-    var tableview:UITableView!
+    private weak var tableview:UITableView!
     private var alerts:SchoolAlerts!
     private var noResultView:NoResultView!
     private var searchTF:UITextField!
     
 
     var searchSchoolModels = [School]()
-    
-    var tableViewTool: GenericTableViewTool<School, SchoolTableViewCell>!
+    private var tableViewTool: GenericTableView<School, SchoolTableViewCell>!
     
     init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
@@ -35,7 +34,6 @@ final class SchoolUIController{
              addNewSchoolHandler(addedSchool)
         }
         
-        setUpTableView()
         setHeroId()
         
         noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .School) {
@@ -51,7 +49,7 @@ final class SchoolUIController{
         
     
         
-        tableViewTool = GenericTableViewTool(tableview: tableview, items: searchSchoolModels) { (cell, school) in
+        tableViewTool = GenericTableView(tableview: tableview, items: searchSchoolModels) { (cell, school) in
             cell.schoolViewModel = SchoolViewModel(school: school)
         }
         
@@ -65,6 +63,8 @@ final class SchoolUIController{
                 viewcontroller.performSegue(withIdentifier: "schoolToClassSegue", sender: viewcontroller)
             }
         }
+        
+        let searchTFUnderline = UnderlineView(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     
@@ -79,7 +79,7 @@ final class SchoolUIController{
     private func update(newState: UIState) {
         switch(state, newState) {
             
-        case (.Loading, .Loading): loadLoadingView()
+        case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
             reloadTableViewAndUpdateUI()
             break
@@ -125,7 +125,7 @@ final class SchoolUIController{
     
     
     
-    private func loadLoadingView(){
+    private func showLoading(){
         noResultView.isHidden = true
         tableview.isHidden = false
         //TODO
@@ -149,11 +149,6 @@ final class SchoolUIController{
             noResultView.isHidden = true
             tableview.isHidden = false
         }
-    }
-    
-    private func setUpTableView() {
-        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
-        tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
     }
     
     private func setHeroId(){

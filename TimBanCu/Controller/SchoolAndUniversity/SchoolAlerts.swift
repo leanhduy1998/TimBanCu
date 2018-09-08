@@ -10,18 +10,18 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-class SchoolAlerts{
+final class SchoolAlerts{
     
-    private var viewcontroller:UIViewController!
+    private weak var viewcontroller:UIViewController!
     private var schoolType:SchoolType!
     
     
-    var addNewSchoolAlert:AskForInputAlert!
-    var addNewSchoolCompletedAlert:InfoAlert!
-    var schoolAlreadyExistAlert:InfoAlert!
+    private var addNewSchoolAlert:AskForInputAlert!
+    private var addNewSchoolCompletedAlert:InfoAlert!
+    private var schoolAlreadyExistAlert:InfoAlert!
     
     
-    var addNewSchoolCompleteHandler: (String) -> ()
+    private var addNewSchoolCompleteHandler: (String) -> ()
     
     init(viewcontroller:UIViewController, schoolType:SchoolType,addNewSchoolHandler: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller

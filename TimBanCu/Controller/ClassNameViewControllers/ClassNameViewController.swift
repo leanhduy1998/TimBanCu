@@ -18,12 +18,11 @@ class ClassNameViewController: UIViewController, UITextFieldDelegate {
     // From previous class
     var school:School!
     var classNumber: String!
-    //
     
     var selectedClassDetail:ClassDetail!
     
-    var uiController:ClassNameUIController!
-    var controller:ClassNameController!
+    private var uiController:ClassNameUIController!
+    private var controller:ClassNameController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

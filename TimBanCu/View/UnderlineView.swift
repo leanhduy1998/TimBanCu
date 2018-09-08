@@ -16,6 +16,21 @@ class UnderlineView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
+    init(searchTF:UITextField,viewcontroller:UIViewController){
+        super.init(frame:.zero)
+        
+        viewcontroller.view.addSubview(self)
+        
+        self.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
+        
+        self.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
+        self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
+    }
+    
+    func setupConstraints(searchTF:UITextField,viewcontroller:UIViewController){
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

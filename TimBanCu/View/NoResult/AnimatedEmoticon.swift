@@ -16,8 +16,6 @@ final class AnimatedEmoticon:LOTAnimationView{
     
     
     init(view:UIView) {
-        
-        
         super.init(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         self.setAnimation(named: emojiName)
         

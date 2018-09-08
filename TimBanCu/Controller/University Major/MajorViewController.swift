@@ -11,14 +11,12 @@ import FirebaseDatabase
 import Lottie
 
 class MajorViewController: UIViewController,UITextFieldDelegate {
+
+    @IBOutlet weak var searchTF: UITextField!
+    @IBOutlet weak var tableview: UITableView!
     
     var school:School!
     var selectedMajor:MajorDetail!
-    
-
-    @IBOutlet weak var searchTF: UITextField!
-    
-    @IBOutlet weak var tableview: UITableView!
     
     var uiController: MajorUIController!
     var controller:MajorController!

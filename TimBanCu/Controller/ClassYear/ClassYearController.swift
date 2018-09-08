@@ -37,15 +37,10 @@ final class ClassYearController{
             DispatchQueue.main.async {
                 if(err == nil){
                     completionHandler(.Success())
-                    //self.present(self.addNewClassCompletedAlert, animated: true, completion: nil)
                 }
                 else{
                     completionHandler(.Failure((err?.localizedDescription)!))
                 }
-                /*else if(err?.localizedDescription == "Permission denied") {
-                    self.present(self.classAlreadyExistAlert, animated: true, completion: nil)
-                    
-                }*/
             }
         }
     }

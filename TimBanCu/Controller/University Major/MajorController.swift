@@ -14,7 +14,7 @@ final class MajorController{
     var school:School!
     
     private var queryTool:SchoolQueryTool!
-    private var viewcontroller:MajorViewController!
+    private weak var viewcontroller:MajorViewController!
     
     init(viewcontroller:MajorViewController, school:School){
         self.school = school

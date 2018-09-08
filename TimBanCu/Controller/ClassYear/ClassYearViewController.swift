@@ -14,12 +14,10 @@ class ClassYearViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     var classProtocol:ClassProtocol!
-    
-    var years = [String]()
     var selectedYear:String!
     
-    var uiController:ClassYearUIController!
-    var controller:ClassYearController!
+    private var uiController:ClassYearUIController!
+    private var controller:ClassYearController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

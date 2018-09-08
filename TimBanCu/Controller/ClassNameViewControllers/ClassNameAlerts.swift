@@ -11,7 +11,7 @@ import UIKit
 
 class ClassNameAlerts{
     
-    private var viewcontroller:UIViewController!
+    private weak var viewcontroller:UIViewController!
     private var addNewClassAlert:AskForInputAlert!
     private var addNewClassCompleteAlert:InfoAlert!
     private var classAlreadyExistAlert:InfoAlert!

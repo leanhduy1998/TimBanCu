@@ -21,22 +21,20 @@ final class SignInUIController{
         }
     }
     
-    var controller:UIViewController!
+    private weak var viewcontroller:SignInViewController!
+    
+    private var revealingSplashView: RevealingSplashView! = nil
+    private var shimmerAppNameLabel: ShimmeringLabel! = nil
+    private var appNameLabel:ShimmeringLabel! = nil
+    
+    private var facebookBtn:LoginButton!
+    private var googleBtn:GIDSignInButton!
+    
+    private var errorAlert:InfoAlert!
     
     
-    
-    var revealingSplashView: RevealingSplashView! = nil
-    var shimmerAppNameLabel: ShimmeringLabel! = nil
-    var appNameLabel:ShimmeringLabel! = nil
-    
-    var facebookBtn:LoginButton!
-    var googleBtn:GIDSignInButton!
-    
-    var errorAlert:InfoAlert!
-    
-    
-    init(viewController: UIViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
-        self.controller = viewController
+    init(viewController: SignInViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
+        self.viewcontroller = viewController
         self.facebookBtn = facebookBtn
         self.googleBtn = googleBtn
         setUpSplashView()
@@ -60,27 +58,27 @@ final class SignInUIController{
     
     private func createErrorAlert(errorStr:String){
         errorAlert.changeMessage(message: errorStr)
-        errorAlert.show(viewcontroller: controller)
+        errorAlert.show(viewcontroller: viewcontroller)
     }
     
     private func goToHome(){
-        controller.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        viewcontroller.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
     }
     
     private func setUpSplashView() {
         revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo")!, iconInitialSize: CGSize(width: 140, height: 140), backgroundColor: UIColor(red:255/255, green:158/255, blue: 0, alpha:1.0))
-        controller.view.addSubview(revealingSplashView)
-        revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
-        revealingSplashView.startAnimation()
+        viewcontroller.view.addSubview(revealingSplashView!)
+        revealingSplashView?.animationType = SplashAnimationType.popAndZoomOut
+        revealingSplashView?.startAnimation()
     }
     
     private func animateShimmeringText() {
         
-        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8),view:controller.view)
-        shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: controller.view)
+        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8),view:viewcontroller.view)
+        shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: viewcontroller.view)
         
-        controller.view.addSubview(shimmerAppNameLabel)
-        controller.view.addSubview(appNameLabel)
+        viewcontroller.view.addSubview(shimmerAppNameLabel)
+        viewcontroller.view.addSubview(appNameLabel)
         
         let gradient = CAGradientLayer()
         gradient.frame = appNameLabel.bounds
@@ -94,20 +92,20 @@ final class SignInUIController{
         animation.duration = 3.5
         animation.repeatCount = Float.infinity
         animation.autoreverses = false
-        animation.fromValue = -controller.view.frame.width
-        animation.toValue = controller.view.frame.width
+        animation.fromValue = -viewcontroller.view.frame.width
+        animation.toValue = viewcontroller.view.frame.width
         gradient.add(animation, forKey: "shimmerKey")
     }
     
     private func setupFacebookBtn(){
         facebookBtn.translatesAutoresizingMaskIntoConstraints = false
         
-        controller.view.addSubview(facebookBtn)
-        controller.view.sendSubview(toBack: facebookBtn)
+        viewcontroller.view.addSubview(facebookBtn)
+        viewcontroller.view.sendSubview(toBack: facebookBtn)
         facebookBtn.bottomAnchor.constraint(equalTo: googleBtn.topAnchor, constant: -10).isActive = true
         facebookBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        facebookBtn.leftAnchor.constraint(equalTo: controller.view.leftAnchor, constant: 40).isActive = true
-        facebookBtn.rightAnchor.constraint(equalTo: controller.view.rightAnchor, constant: -40).isActive = true
+        facebookBtn.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 40).isActive = true
+        facebookBtn.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -40).isActive = true
     }
     
     private func setupGoogleButton(){

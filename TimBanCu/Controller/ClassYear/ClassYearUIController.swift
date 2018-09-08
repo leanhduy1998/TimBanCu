@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class ClassYearUIController{
-    var viewcontroller:ClassYearViewController!
-    private var genericTableView:GenericTableViewTool<String, ClassYearTableViewCell>!
+    private weak var viewcontroller:ClassYearViewController!
+    private var genericTableView:GenericTableView<String, ClassYearTableViewCell>!
     private let customSelectionColorView = CustomSelectionColorView()
     private var alerts:ClassYearAlerts!
     
@@ -20,7 +20,7 @@ class ClassYearUIController{
         
         self.viewcontroller = viewcontroller
         
-        genericTableView = GenericTableViewTool(tableview: tableview, items: years, configure: { (cell, year) in
+        genericTableView = GenericTableView(tableview: tableview, items: years, configure: { (cell, year) in
             cell.yearLabel.text = year
             cell.selectedBackgroundView? = self.customSelectionColorView
         })

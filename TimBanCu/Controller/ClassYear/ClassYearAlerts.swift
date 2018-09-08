@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ClassYearAlerts{
-    private var viewcontroller:ClassYearViewController!
+    private weak var viewcontroller:ClassYearViewController!
     private var addNewClassCompletedAlert:InfoAlert!
     private var classAlreadyExistAlert:InfoAlert!
     private var classProtocol:ClassProtocol!

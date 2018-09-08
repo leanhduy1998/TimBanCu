@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 final class SelectSchoolTypeUIController{
-    var viewcontroller:UIViewController!
+    private weak var viewcontroller:UIViewController!
     
     init(viewcontroller:UIViewController){
         self.viewcontroller = viewcontroller

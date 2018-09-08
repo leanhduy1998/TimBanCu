@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GenericTableViewTool<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate,UITableViewDataSource{
+class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate,UITableViewDataSource{
     var items: [Item]!
     var configure: (Cell, Item) -> ()
     var reuseIdentifier:String!
@@ -25,6 +25,9 @@ class GenericTableViewTool<Item,Cell:UITableViewCell>: NSObject, UITableViewDele
         self.tableview = tableview
         self.tableview.delegate = self
         self.tableview.dataSource = self
+        
+        tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
+        tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
         
         self.items = items
