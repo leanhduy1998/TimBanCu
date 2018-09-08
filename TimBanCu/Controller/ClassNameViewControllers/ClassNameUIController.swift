@@ -53,8 +53,9 @@ class ClassNameUIController{
             viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: viewcontroller)
         }
         
-        let searchTFUnderline = UnderlineView(searchTF: searchTF, viewcontroller: viewcontroller)
-        
+        let searchTFUnderline = UnderlineView()
+        viewcontroller.view.addSubview(searchTFUnderline)
+        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     var state:UIState = .Loading{

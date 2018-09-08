@@ -16,19 +16,11 @@ class UnderlineView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    init(searchTF:UITextField,viewcontroller:UIViewController){
-        super.init(frame:.zero)
-        
-        viewcontroller.view.addSubview(self)
-        
+    func setupConstraints(searchTF:UITextField,viewcontroller:UIViewController){
         self.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
-        
         self.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
         self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
-    }
-    
-    func setupConstraints(searchTF:UITextField,viewcontroller:UIViewController){
-        
+        self.heightAnchor.constraint(equalToConstant: 2).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {

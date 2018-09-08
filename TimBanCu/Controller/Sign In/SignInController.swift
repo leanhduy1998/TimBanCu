@@ -30,6 +30,7 @@ final class SignInController{
         switch(state, newState) {
             
         case (.Loading, .Success()): loadUserInfo()
+        case (.Success(), .Success()): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }

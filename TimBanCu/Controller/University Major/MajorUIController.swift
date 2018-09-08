@@ -47,8 +47,6 @@ class MajorUIController{
             
             viewcontroller.performSegue(withIdentifier: "MajorToClassYearSegue", sender: viewcontroller)
         }
-        
-        let searchTFUnderline = UnderlineView(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     var state:UIState = .Loading{

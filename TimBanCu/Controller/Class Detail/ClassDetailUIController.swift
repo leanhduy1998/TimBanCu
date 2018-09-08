@@ -21,6 +21,8 @@ class ClassDetailUIController{
     private var addYourselfBtn:UIButton!
     fileprivate var chatBtn:UIButton!
     
+    fileprivate let searchTFUnderline = UnderlineView()
+    
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
     var searchStudents = [Student]()
@@ -48,6 +50,7 @@ class ClassDetailUIController{
         
         setupGenericTableView()
         setupTextFieldHandlers()
+        setupTextFieldUnderline()
     }
     
     
@@ -144,16 +147,20 @@ class ClassDetailUIController{
 
 // TextField
 extension ClassDetailUIController{
-    fileprivate func setupTextFieldHandlers(){
-        let searchTFUnderline = UnderlineView(searchTF: searchTF, viewcontroller: viewcontroller)
+    fileprivate func setupTextFieldUnderline(){
+        viewcontroller.view.addSubview(searchTFUnderline)
+        viewcontroller.view.bringSubview(toFront: searchTFUnderline)
+        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
         
         searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
         searchUnderlineHeightAnchor?.isActive = true
-        
+    }
+    
+    fileprivate func setupTextFieldHandlers(){
         textFieldDidBeginEditing = {
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                    searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
+                    self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
                     self.searchUnderlineHeightAnchor?.constant = 2.5
                 }, completion: nil)
             }
@@ -162,7 +169,7 @@ extension ClassDetailUIController{
         textFieldDidEndEditing = {
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 if self.searchTF.text == "" {
-                    searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5)
+                    self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5)
                     self.searchUnderlineHeightAnchor?.constant = 1.5
                 }
             }, completion: nil)

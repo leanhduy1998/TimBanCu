@@ -47,8 +47,6 @@ final class SchoolUIController{
         
         
         
-    
-        
         tableViewTool = GenericTableView(tableview: tableview, items: searchSchoolModels) { (cell, school) in
             cell.schoolViewModel = SchoolViewModel(school: school)
         }
@@ -63,8 +61,6 @@ final class SchoolUIController{
                 viewcontroller.performSegue(withIdentifier: "schoolToClassSegue", sender: viewcontroller)
             }
         }
-        
-        let searchTFUnderline = UnderlineView(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     
