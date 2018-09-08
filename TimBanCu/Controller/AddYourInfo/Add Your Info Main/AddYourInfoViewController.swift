@@ -84,19 +84,27 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     
     
     @IBAction func addInfoBtnPressed(_ sender: Any) {
-        removeThePlusIconPictureThatIsUsedToAddNewPicture()
+        if(userImages.count <= 1){
+            let alert = InfoAlert(title: "Thiếu Hình Cá Nhân", message: "Bạn hãy thêm ít nhất 1 hình cá nhân. Bạn có thể thêm nhiều hình tại nhiều năm khác nhau để các bạn khác dễ nhận diện.")
+            alert.show(viewcontroller: self)
+        }
+        else{
+            removeThePlusIconPictureThatIsUsedToAddNewPicture()
+            
+            let imageAndName = getNameForImage()
+            
+            uploadPublicData(imageFileNames: imageAndName)
+            uploadPrivateData()
+            updateCurrentStudentInfo()
+            uploadUserInfoToSelectedClass()
+            uploadUserImages(imageFileNames: imageAndName, completionHandler: {
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
+                }
+            })
+        }
         
-        let imageAndName = getNameForImage()
         
-        uploadPublicData(imageFileNames: imageAndName)
-        uploadPrivateData()
-        updateCurrentStudentInfo()
-        uploadUserInfoToSelectedClass()
-        uploadUserImages(imageFileNames: imageAndName, completionHandler: {
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
-            }
-        })
     }
     
     private func getNameForImage() -> [UIImage:String]{

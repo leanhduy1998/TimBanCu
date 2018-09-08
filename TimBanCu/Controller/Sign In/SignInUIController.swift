@@ -43,6 +43,17 @@ final class SignInUIController{
         setupGoogleButton()
         
         errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "")
+        
+        setupCloseKeyboardWhenTouchScreenListener()
+    }
+    
+    private func setupCloseKeyboardWhenTouchScreenListener(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        viewcontroller.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        viewcontroller.view.endEditing(true)
     }
     
     private func update(newState: UIState) {

@@ -42,7 +42,7 @@ class ClassDetailUIController{
         self.activityIndicator = activityIndicator
         self.addYourselfBtn = addYourselfBtn
         self.chatBtn = chatBtn
-        
+        self.tableview = tableview
         
     
         noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: {})
@@ -51,6 +51,17 @@ class ClassDetailUIController{
         setupGenericTableView()
         setupTextFieldHandlers()
         setupTextFieldUnderline()
+        
+        setupCloseKeyboardWhenTouchScreenListener()
+    }
+    
+    private func setupCloseKeyboardWhenTouchScreenListener(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        viewcontroller.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        viewcontroller.view.endEditing(true)
     }
     
     
@@ -79,6 +90,7 @@ class ClassDetailUIController{
             showAddYourInfoBtnIfYouAreNotInTheClass()
             break
         case (.Success(), .AddingNewData): break
+        case (.Success(), .Success()): break
         case (.AddingNewData, .AddingNewData): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
@@ -152,7 +164,7 @@ extension ClassDetailUIController{
         viewcontroller.view.bringSubview(toFront: searchTFUnderline)
         searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
         
-        searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
+      //  searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
         searchUnderlineHeightAnchor?.isActive = true
     }
     
