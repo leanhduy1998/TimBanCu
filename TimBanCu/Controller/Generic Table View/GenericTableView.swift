@@ -59,8 +59,7 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         DispatchQueue.main.async {
-            self.animateCells(cell: cell, tableView: self.tableview, indexPath: indexPath)
-            let lastInitialDisplayableCell = tableView.animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath, model: self.items! as [AnyObject], finishLoading: self.finishedLoadingInitialTableCells)
+            let lastInitialDisplayableCell = self.animateOnlyBeginingCells(indexPath: indexPath, finishLoading: self.finishedLoadingInitialTableCells)
             
             if !self.finishedLoadingInitialTableCells {
                 if lastInitialDisplayableCell {
@@ -71,11 +70,21 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
         }
     }
     
+    private func animateOnlyBeginingCells(indexPath: IndexPath, finishLoading: Bool) -> Bool{
+        if items.count > 0 && !finishLoading {
+            if let indexPathsForVisibleRows = tableview.indexPathsForVisibleRows,
+                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
+                return true
+            }
+        }
+        return false
+    }
+    
     private func animateCells(cell: UITableViewCell, tableView: UITableView, indexPath: IndexPath) {
         cell.transform = CGAffineTransform(translationX: 0, y: tableView.rowHeight / 2)
         cell.alpha = 0
         
-        UIView.animate(withDuration: 0.5, delay: 0.04 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
             cell.transform = CGAffineTransform(translationX: 0, y: 0)
             cell.alpha = 1
         }, completion: nil)
