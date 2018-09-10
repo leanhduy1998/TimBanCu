@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-class CurrentUserHelper{
+class CurrentUser{
     private static var student:Student!
     
     static func hasEnoughDataInFireBase() -> Bool {

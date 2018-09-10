@@ -32,23 +32,13 @@ class ClassDetailViewController: UIViewController {
     private var controller:ClassDetailController!
     
     override func viewDidLoad() {
-        uiController = ClassDetailUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, activityIndicator: activityIndicator, addYourselfBtn: addYourselfBtn, chatBtn: chatBtn)
+        uiController = ClassDetailUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, activityIndicator: activityIndicator, addYourselfBtn: addYourselfBtn, chatBtn: chatBtn, noResultViewAddBtnClosure: {
+            
+            self.addYourselfBtn.sendActions(for: .touchUpInside)
+            
+        })
         
         controller = ClassDetailController(classProtocol: classProtocol)
-        
-        createCopyOfClassProtocol()
-    }
-    
-    // if the user goes back and forth between the screen, the same protocol will be used, thus same protocol for multiple class. Could have used struct, but in ClassYear we needed to change the year
-    func createCopyOfClassProtocol(){
-        if let classDetail = classProtocol as? ClassDetail{
-            let copy = ClassDetail(classNumber: classDetail.classNumber, uid: classDetail.uid, schoolName: classDetail.schoolName, className: classDetail.className, classYear: classDetail.year)
-            classProtocol = copy
-        }
-        if let majorDetail = classProtocol as? MajorDetail{
-            let copy = MajorDetail(uid: majorDetail.uid, schoolName: majorDetail.schoolName, majorName: majorDetail.majorName, majorYear: majorDetail.year)
-            classProtocol = copy
-        }
     }
     
     
@@ -69,29 +59,31 @@ class ClassDetailViewController: UIViewController {
     
     func youAreInClass() -> Bool{
         for student in controller.students{
-            if(student.uid == CurrentUserHelper.getUid()){
+            if(student.uid == CurrentUser.getUid()){
                 return true
             }
         }
         return false
     }
     
+    func getAllStudents()->[Student]{
+        return controller.students
+    }
+    
 
     @IBAction func addYourselfBtnPressed(_ sender: Any) {
-        if(!CurrentUserHelper.hasEnoughDataInFireBase()){
+        if(!CurrentUser.hasEnoughDataInFireBase()){
             performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
             controller.enrollUserToClass { (uiState) in
                 if case .Success() = uiState {
-                    CurrentUserHelper.addEnrollment(classD: self.classProtocol)
+                    CurrentUser.addEnrollment(classD: self.classProtocol)
                 }
                 self.uiController.state = uiState
             }
         }
     }
-    
-    
     
     @IBAction func chatBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "ClassDetailToChatSegue", sender: self)
@@ -117,11 +109,11 @@ class ClassDetailViewController: UIViewController {
 //MARK: UITextFieldDelegate
 extension ClassDetailViewController:UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        uiController.textFieldDidBeginEditing!()
+        uiController.searchTFDidChange()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        uiController.textFieldDidBeginEditing!()
+        uiController.searchTFDidEndEditing()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

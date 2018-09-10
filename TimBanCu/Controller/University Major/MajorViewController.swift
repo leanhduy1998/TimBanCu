@@ -18,20 +18,22 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     var school:School!
     var selectedMajor:MajorDetail!
     
-    var uiController: MajorUIController!
-    var controller:MajorController!
+    private var uiController: MajorUIController!
+    private var controller:MajorController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         controller = MajorController(viewcontroller: self, school: school)
         
-        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF) { (newMajorIfNotInList) in
+        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF, addNewMajorHandler: { newMajorIfNotInList in
+            
             self.controller.addNewMajor(inputedMajorName: newMajorIfNotInList, completionHandler: { (uiState) in
                 self.uiController.searchMajors = self.controller.majors
                 self.uiController.state = uiState
             })
-        }
+            
+        })
         
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)

@@ -12,59 +12,31 @@ import Lottie
 
 final class SchoolUIController{
     
-    private weak var viewcontroller:SchoolViewController!
+    fileprivate weak var viewcontroller:SchoolViewController!
     private var schoolType:SchoolType!
-    private weak var tableview:UITableView!
-    private var alerts:SchoolAlerts!
-    private var noResultView:NoResultView!
+    fileprivate weak var tableview:UITableView!
+    fileprivate var alerts:SchoolAlerts!
+    fileprivate var noResultView:NoResultView!
     private var searchTF:UITextField!
+    fileprivate var addNewSchoolClosure: (String)->()
     
 
     var searchSchoolModels = [School]()
-    private var tableViewTool: GenericTableView<School, SchoolTableViewCell>!
+    private var genericTableView: GenericTableView<School, SchoolTableViewCell>!
     
-    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolHandler: @escaping (String)->()){
+    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolClosure: @escaping (String)->()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
         self.tableview = tableview
         self.searchTF = searchTF
+        self.addNewSchoolClosure = addNewSchoolClosure
         
-        
-        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { (addedSchool) in
-             addNewSchoolHandler(addedSchool)
-        }
-        
+        setupAlerts()
         setHeroId()
         
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .School) {
-            self.showAddNewSchoolAlert()
-        }
-        
-        noResultView.translatesAutoresizingMaskIntoConstraints = false
-        
-        viewcontroller.view.addSubview(noResultView)
-        viewcontroller.view.bringSubview(toFront: noResultView)
-        
-        
-        
-        tableViewTool = GenericTableView(tableview: tableview, items: searchSchoolModels) { (cell, school) in
-            cell.schoolViewModel = SchoolViewModel(school: school)
-        }
-        
-        tableViewTool.didSelect = { school in
-            viewcontroller.selectedSchool = school
-            
-            if(self.schoolType == .University){
-                viewcontroller.performSegue(withIdentifier: "SchoolToMajorSegue", sender: viewcontroller)
-            }
-            else{
-                viewcontroller.performSegue(withIdentifier: "schoolToClassSegue", sender: viewcontroller)
-            }
-        }
+        setupNoResultView()
+        setupGenericTableView()
     }
-    
-    
-    
     
     var state:UIState = .Loading{
         willSet(newState){
@@ -134,7 +106,7 @@ final class SchoolUIController{
     
     
     private func reloadTableViewAndUpdateUI(){
-        tableViewTool.items = searchSchoolModels
+        genericTableView.items = searchSchoolModels
         tableview.reloadData()
         
         if(searchSchoolModels.count == 0){
@@ -174,5 +146,44 @@ final class SchoolUIController{
             viewcontroller.navigationController?.hero.navigationAnimationType = .fade
         }
     }
-    
+}
+
+// Table View
+extension SchoolUIController{
+    fileprivate func setupGenericTableView(){
+        tableview.isHidden = true
+        genericTableView = GenericTableView(tableview: tableview, items: searchSchoolModels) { (cell, school) in
+            cell.schoolViewModel = SchoolViewModel(school: school)
+        }
+        
+        genericTableView.didSelect = { school in
+            self.viewcontroller.selectedSchool = school
+            
+            if(self.schoolType == .University){
+                self.viewcontroller.performSegue(withIdentifier: "SchoolToMajorSegue", sender: self.viewcontroller)
+            }
+            else{
+                self.viewcontroller.performSegue(withIdentifier: "schoolToClassSegue", sender: self.viewcontroller)
+            }
+        }
+    }
+}
+
+// Other UI Setup
+extension SchoolUIController{
+    fileprivate func setupNoResultView(){
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .School) {
+            self.showAddNewSchoolAlert()
+        }
+        
+        noResultView.translatesAutoresizingMaskIntoConstraints = false
+        
+        viewcontroller.view.addSubview(noResultView)
+        viewcontroller.view.bringSubview(toFront: noResultView)
+    }
+    fileprivate func setupAlerts(){
+        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { (addedSchool) in
+            self.addNewSchoolClosure(addedSchool)
+        }
+    }
 }

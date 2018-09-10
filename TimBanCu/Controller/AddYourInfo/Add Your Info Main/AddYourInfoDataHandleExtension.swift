@@ -11,12 +11,12 @@ import Firebase
 
 extension AddYourInfoViewController{
     func updateCurrentStudentInfo(){
-        let student = Student(fullname: self.fullNameTF.text!, birthYear: self.birthYearTF.text!, phoneNumber: self.phoneTF.text!, email: self.emailTF.text!, uid: CurrentUserHelper.getUid())
-        CurrentUserHelper.setStudent(student: student)
+        let student = Student(fullname: self.fullNameTF.text!, birthYear: self.birthYearTF.text!, phoneNumber: self.phoneTF.text!, email: self.emailTF.text!, uid: CurrentUser.getUid())
+        CurrentUser.setStudent(student: student)
     }
     
     func uploadUserInfoToSelectedClass(){
-        Database.database().reference().child(classDetail.getFirebasePathWithSchoolYear()).child(CurrentUserHelper.getUid()).setValue(CurrentUserHelper.getFullname())
+        Database.database().reference().child(classDetail.getFirebasePathWithSchoolYear()).child(CurrentUser.getUid()).setValue(CurrentUser.getFullname())
     }
     
     func uploadPublicData(imageFileNames:[UIImage:String]){
@@ -46,7 +46,7 @@ extension AddYourInfoViewController{
         
         publicDic["images"] = dic
         
-        publicUserProfileRef.child(CurrentUserHelper.getUid()).setValue(publicDic)
+        publicUserProfileRef.child(CurrentUser.getUid()).setValue(publicDic)
     }
     
     func uploadPrivateData(){
@@ -60,7 +60,7 @@ extension AddYourInfoViewController{
             privateDic["email"] = emailTF.text
         }
         
-        privateUserProfileRef.child(CurrentUserHelper.getUid()).setValue(privateDic)
+        privateUserProfileRef.child(CurrentUser.getUid()).setValue(privateDic)
     }
     
     func uploadUserImages(imageFileNames:[UIImage:String], completionHandler: @escaping () -> Void){
@@ -71,7 +71,7 @@ extension AddYourInfoViewController{
         
         for image in userImages{
             let name = imageFileNames[image]
-            let imageRef = storage.reference().child("users").child("\(CurrentUserHelper.getUid())/\(name!)")
+            let imageRef = storage.reference().child("users").child("\(CurrentUser.getUid())/\(name!)")
             
             let data = image.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
             

@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import Lottie
 
-class ClassNameViewController: UIViewController, UITextFieldDelegate {
+class ClassNameViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
@@ -21,8 +21,8 @@ class ClassNameViewController: UIViewController, UITextFieldDelegate {
     
     var selectedClassDetail:ClassDetail!
     
-    private var uiController:ClassNameUIController!
-    private var controller:ClassNameController!
+    fileprivate var uiController:ClassNameUIController!
+    fileprivate var controller:ClassNameController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,19 +43,9 @@ class ClassNameViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
-    }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        uiController.filterVisibleClassName(filter: "", allClassDetails: controller.classDetails)
-        return true
-    }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        return true
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -72,4 +62,29 @@ class ClassNameViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+}
+
+//MARK: UITextFieldDelegate
+extension ClassNameViewController:UITextFieldDelegate{
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        uiController.searchTFDidBeginEditing(allClassDetails: controller.classDetails)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        uiController.searchTFDidEndEditing(allClassDetails: controller.classDetails)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        uiController.filterVisibleClassName(filter: "", allClassDetails: controller.classDetails)
+        return true
+    }
 }

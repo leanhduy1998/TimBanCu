@@ -11,7 +11,7 @@ import UIKit
 
 extension UserClassesViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CurrentUserHelper.getEnrolledClasses().count
+        return CurrentUser.getEnrolledClasses().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -21,7 +21,7 @@ extension UserClassesViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let classDetail = CurrentUserHelper.getEnrolledClasses()[indexPath.row]
+        let classDetail = CurrentUser.getEnrolledClasses()[indexPath.row]
         
         let cell = cell as! UserClassTableViewCell
         
@@ -30,7 +30,7 @@ extension UserClassesViewController: UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedClassDetail = CurrentUserHelper.getEnrolledClasses()[indexPath.row]
+        selectedClassDetail = CurrentUser.getEnrolledClasses()[indexPath.row]
         performSegue(withIdentifier: "UserClassesToClassDetailSegue", sender: self)
     }
 }

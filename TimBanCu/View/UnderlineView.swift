@@ -10,10 +10,35 @@ import UIKit
 
 class UnderlineView: UIView {
     
+    var textFieldDidBeginEditing: (()->())!
+    var textFieldDidEndEditing: ((UITextField)->())!
+    var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         self.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        searchUnderlineHeightAnchor?.constant = 1.5
+        searchUnderlineHeightAnchor?.isActive = true
+        
+        textFieldDidBeginEditing = {
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    self.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
+                    self.searchUnderlineHeightAnchor?.constant = 2.5
+                }, completion: nil)
+            }
+        }
+        
+        textFieldDidEndEditing = { searchTF in
+            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                if searchTF.text == "" {
+                    self.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5)
+                    self.searchUnderlineHeightAnchor?.constant = 1.5
+                }
+            }, completion: nil)
+        }
     }
     
     func setupConstraints(searchTF:UITextField,viewcontroller:UIViewController){

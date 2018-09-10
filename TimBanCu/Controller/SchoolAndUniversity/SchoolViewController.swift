@@ -26,13 +26,15 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         
         controller = SchoolController(schoolType: schoolType)
-       
-        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF) { (newSchoolIfNotInList) in
+        
+        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF, addNewSchoolClosure: {newSchoolIfNotInList in
+            
             self.controller.addNewSchool(schoolName: newSchoolIfNotInList, completionHandler: { (uiState) in
                 self.uiController.searchSchoolModels = self.controller.schoolModels
                 self.uiController.state = uiState
             })
-        }
+            
+        })
         
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)

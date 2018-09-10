@@ -37,7 +37,7 @@ final class MajorController{
     }
     
     func addNewMajor(inputedMajorName:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let major = MajorDetail(uid: CurrentUserHelper.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
+        let major = MajorDetail(uid: CurrentUser.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
         majors.append(major)
         
         viewcontroller.selectedMajor = major

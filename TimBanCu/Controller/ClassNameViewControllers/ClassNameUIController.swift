@@ -10,52 +10,32 @@ import Foundation
 import UIKit
 
 class ClassNameUIController{
-    private weak var viewcontroller:ClassNameViewController!
+    fileprivate weak var viewcontroller:ClassNameViewController!
     private var alerts: ClassNameAlerts!
     private var noResultView: NoResultView!
     
-    private weak var tableview:UITableView!
-    private weak var searchTF:UITextField!
+    private var tableview:UITableView!
+    private var searchTF:UITextField!
     private var genericTableView : GenericTableView<ClassDetail, ClassNameTableViewCell>!
     private let customSelectionColorView = CustomSelectionColorView()
     
     var searchClassDetails = [ClassDetail]()
     
+    fileprivate var searchTFUnderline:UnderlineView!
+    fileprivate var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    
+    fileprivate var addNewClassNameHandler: (String) -> ()
+    
     init(viewcontroller:ClassNameViewController,searchTF:UITextField,tableview:UITableView,addNewClassNameHandler: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller
         self.tableview = tableview
         self.searchTF = searchTF
+        self.addNewClassNameHandler = addNewClassNameHandler
         
-        
-        
-        alerts = ClassNameAlerts(viewcontroller: viewcontroller, addNewClassHandler: { (addedClassName) in
-            addNewClassNameHandler(addedClassName)
-        })
-        
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
-            self.showAddNewClassNameAlert()
-        }
-        noResultView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        
-        viewcontroller.view.addSubview(noResultView)
-        noResultView.isHidden = true
-        
-        genericTableView = GenericTableView(tableview: tableview, items: searchClassDetails, configure: { (cell, classDetail) in
-            
-            cell.classDetailViewModel = ClassNameViewModel(classDetail: classDetail)
-            cell.selectedBackgroundView = self.customSelectionColorView
-        })
-        
-        genericTableView.didSelect = { classDetail in
-            viewcontroller.selectedClassDetail = classDetail
-            viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: viewcontroller)
-        }
-        
-        let searchTFUnderline = UnderlineView()
-        viewcontroller.view.addSubview(searchTFUnderline)
-        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
+        setupAlerts()
+        setupNoResultView()
+        setupGenericTableView()
+        setupTextFieldUnderline()
     }
     
     var state:UIState = .Loading{
@@ -122,9 +102,60 @@ class ClassNameUIController{
         state = .AddingNewData
         alerts.showAddNewClassNameAlert()
     }
+}
+
+// Other UI setup
+extension ClassNameUIController{
+    fileprivate func setupNoResultView(){
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
+            self.showAddNewClassNameAlert()
+        }
+        noResultView.translatesAutoresizingMaskIntoConstraints = false
+        viewcontroller.view.addSubview(noResultView)
+        noResultView.isHidden = true
+    }
     
+    fileprivate func setupAlerts(){
+        alerts = ClassNameAlerts(viewcontroller: viewcontroller, addNewClassHandler: { (addedClassName) in
+            self.addNewClassNameHandler(addedClassName)
+        })
+    }
+}
+
+// TextField
+extension ClassNameUIController{
+    fileprivate func setupTextFieldUnderline(){
+        searchTFUnderline = UnderlineView()
+        viewcontroller.view.addSubview(searchTFUnderline)
+        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
+    }
     
-    private func reloadTableViewAndUpdateUI(){
+    func searchTFDidBeginEditing(allClassDetails:[ClassDetail]){
+        filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
+        searchTFUnderline.textFieldDidBeginEditing()
+    }
+    func searchTFDidEndEditing(allClassDetails:[ClassDetail]){
+        filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
+        searchTFUnderline.textFieldDidEndEditing(searchTF)
+    }
+}
+
+// TableView
+extension ClassNameUIController{
+    fileprivate func setupGenericTableView(){
+        genericTableView = GenericTableView(tableview: tableview, items: searchClassDetails, configure: { (cell, classDetail) in
+            
+            cell.classDetailViewModel = ClassNameViewModel(classDetail: classDetail)
+            cell.selectedBackgroundView = self.customSelectionColorView
+        })
+        
+        genericTableView.didSelect = { classDetail in
+            self.viewcontroller.selectedClassDetail = classDetail
+            self.viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: self.viewcontroller)
+        }
+    }
+    
+    fileprivate func reloadTableViewAndUpdateUI(){
         genericTableView.items = searchClassDetails
         tableview.reloadData()
         
@@ -137,5 +168,4 @@ class ClassNameUIController{
             tableview.isHidden = false
         }
     }
-    
 }

@@ -11,10 +11,25 @@ import FirebaseDatabase
 
 class ClassDetailController{
     var students = [Student]()
-    var classEnrollRef:DatabaseReference!
+    private var classEnrollRef:DatabaseReference!
+    private var classProtocol:ClassProtocol!
     
     init(classProtocol:ClassProtocol){
+        self.classProtocol = classProtocol
         classEnrollRef = Database.database().reference().child("students").child(classProtocol.getFirebasePathWithSchoolYear())
+        createCopyOfClassProtocol()
+    }
+    
+    // if the user goes back and forth between the screen, the same protocol will be used, thus same protocol for multiple class. Could have used struct, but in ClassYear we needed to change the year
+    private func createCopyOfClassProtocol(){
+        if let classDetail = classProtocol as? ClassDetail{
+            let copy = ClassDetail(classNumber: classDetail.classNumber, uid: classDetail.uid, schoolName: classDetail.schoolName, className: classDetail.className, classYear: classDetail.year)
+            classProtocol = copy
+        }
+        if let majorDetail = classProtocol as? MajorDetail{
+            let copy = MajorDetail(uid: majorDetail.uid, schoolName: majorDetail.schoolName, majorName: majorDetail.majorName, majorYear: majorDetail.year)
+            classProtocol = copy
+        }
     }
     
     func fetchData(completionHandler: @escaping (_ uiState:UIState) -> Void){
@@ -44,9 +59,9 @@ class ClassDetailController{
     }
     
     func enrollUserToClass(completionHandler: @escaping (_ uiState:UIState) -> Void){
-        classEnrollRef.child(CurrentUserHelper.getUid()).setValue(CurrentUserHelper.getFullname()) { (error, ref) in
+        classEnrollRef.child(CurrentUser.getUid()).setValue(CurrentUser.getFullname()) { (error, ref) in
             if(error == nil){
-                self.students.append(CurrentUserHelper.getStudent())
+                self.students.append(CurrentUser.getStudent())
                 completionHandler(.Success())
             }
             else{

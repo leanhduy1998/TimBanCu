@@ -38,7 +38,7 @@ final class SignInController{
     
     func loadUserInfo(){
         AllUserHelper.getAnyStudentFromDatabase(uid: uid) { (student) in
-            CurrentUserHelper.setStudent(student: student)
+            CurrentUser.setStudent(student: student)
         }
     }
     

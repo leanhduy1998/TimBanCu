@@ -46,7 +46,7 @@ extension SettingViewController:UITableViewDelegate,UITableViewDataSource{
             dismiss(animated: true, completion: nil)
         }
         else if(settings[indexPath.row] == "Sửa Thông Tin Cá Nhân"){
-            if(!CurrentUserHelper.hasEnoughDataInFireBase()){
+            if(!CurrentUser.hasEnoughDataInFireBase()){
                 print("No data to update")
             }
             

@@ -18,13 +18,11 @@ class MajorAlerts{
     var majorAlreadyExistAlert:InfoAlert!
     
     
-    var addNewMajorCompleteHandler: () -> ()
+    var addNewMajorBtnPressedClosure: (String) -> ()
     
-    init(viewcontroller:UIViewController,addNewMajorHandler: @escaping () -> ()){
-        
-        
+    init(viewcontroller:UIViewController,addNewMajorBtnPressedClosure: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller
-        self.addNewMajorCompleteHandler = addNewMajorHandler
+        self.addNewMajorBtnPressedClosure = addNewMajorBtnPressedClosure
   
         setupAddNewMajorAlert()
         setupAddNewMajorCompletedAlert()
@@ -59,7 +57,7 @@ class MajorAlerts{
         addNewMajorAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Khoa")
 
         addNewMajorAlert.addAction(actionTitle: "Thêm") { (_) in
-            self.addNewMajorCompleteHandler()
+            self.addNewMajorBtnPressedClosure(self.addNewMajorAlert.getTextFieldInput())
         }
     }
     

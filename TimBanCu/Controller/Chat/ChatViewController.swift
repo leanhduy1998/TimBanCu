@@ -64,8 +64,8 @@ class ChatViewController: JSQMessagesViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        senderId = CurrentUserHelper.getUid()
-        senderDisplayName = CurrentUserHelper.getFullname()
+        senderId = CurrentUser.getUid()
+        senderDisplayName = CurrentUser.getFullname()
     }
     
 

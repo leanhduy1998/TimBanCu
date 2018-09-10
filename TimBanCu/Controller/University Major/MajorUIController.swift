@@ -11,42 +11,25 @@ import UIKit
 
 class MajorUIController{
     private weak var viewcontroller:MajorViewController!
-    private var alerts :MajorAlerts!
+    fileprivate var alerts :MajorAlerts!
     private weak var tableview:UITableView!
     private var noResultView:NoResultView!
     private var searchTF:UITextField!
     
     var searchMajors = [MajorDetail]()
+    fileprivate var addNewMajorHandler: (String)->()
     
-    var tableViewTool: GenericTableView<MajorDetail, MajorTableViewCell>!
+    fileprivate var tableViewTool: GenericTableView<MajorDetail, MajorTableViewCell>!
     
     init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField,addNewMajorHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
-        alerts = MajorAlerts(viewcontroller: viewcontroller) {
-            addNewMajorHandler(self.alerts.addNewMajorAlert.getTextFieldInput())
-        }
-        
         self.tableview = tableview
         self.searchTF = searchTF
-      
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .University) {
-            self.showAddNewMajorAlert()
-        }
+        self.addNewMajorHandler = addNewMajorHandler
         
-        noResultView.isHidden = true
-        
-        viewcontroller.view.addSubview(noResultView)
-        viewcontroller.view.bringSubview(toFront: noResultView)
-        
-        tableViewTool = GenericTableView(tableview: tableview, items: searchMajors) { (cell, major) in
-            cell.major = major
-        }
-        
-        tableViewTool.didSelect = { major in
-            viewcontroller.selectedMajor = major
-            
-            viewcontroller.performSegue(withIdentifier: "MajorToClassYearSegue", sender: viewcontroller)
-        }
+        setupAlerts()
+        setupNoResultView()
+        setupGenericTableView()
     }
     
     var state:UIState = .Loading{
@@ -136,5 +119,38 @@ class MajorUIController{
     func showAddNewMajorAlert(){
         state = .AddingNewData
         alerts.showAddNewMajorAlert()
+    }
+}
+
+// TableView
+
+extension MajorUIController{
+    fileprivate func setupGenericTableView(){
+        tableViewTool = GenericTableView(tableview: tableview, items: searchMajors) { (cell, major) in
+            cell.major = major
+        }
+        
+        tableViewTool.didSelect = { major in
+            self.viewcontroller.selectedMajor = major
+            
+            self.viewcontroller.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self.viewcontroller)
+        }
+    }
+}
+
+// Other UI Setup
+extension MajorUIController{
+    fileprivate func setupAlerts(){
+        alerts = MajorAlerts(viewcontroller: viewcontroller, addNewMajorBtnPressedClosure: addNewMajorHandler)
+    }
+    fileprivate func setupNoResultView(){
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .University) {
+            self.showAddNewMajorAlert()
+        }
+        
+        noResultView.isHidden = true
+        
+        viewcontroller.view.addSubview(noResultView)
+        viewcontroller.view.bringSubview(toFront: noResultView)
     }
 }

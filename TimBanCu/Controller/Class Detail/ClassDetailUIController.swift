@@ -21,14 +21,10 @@ class ClassDetailUIController{
     private var addYourselfBtn:UIButton!
     fileprivate var chatBtn:UIButton!
     
-    fileprivate let searchTFUnderline = UnderlineView()
-    
-    var searchUnderlineHeightAnchor: NSLayoutConstraint?
+    fileprivate var searchTFUnderline:UnderlineView!
+    fileprivate var noResultViewAddBtnClosure: ()->()
     
     var searchStudents = [Student]()
-    
-    var textFieldDidBeginEditing: (()->())?
-    var textFieldDidEndEditing: (()->())?
     
     var state:UIState = .Loading{
         willSet(newState){
@@ -36,22 +32,22 @@ class ClassDetailUIController{
         }
     }
     
-    init(viewcontroller:ClassDetailViewController,searchTF:UITextField,tableview:UITableView,activityIndicator: UIActivityIndicatorView,addYourselfBtn:UIButton,chatBtn:UIButton){
+    init(viewcontroller:ClassDetailViewController,searchTF:UITextField,tableview:UITableView,activityIndicator: UIActivityIndicatorView,addYourselfBtn:UIButton,chatBtn:UIButton,noResultViewAddBtnClosure: @escaping ()->()){
         self.viewcontroller = viewcontroller
         self.searchTF = searchTF
         self.activityIndicator = activityIndicator
         self.addYourselfBtn = addYourselfBtn
         self.chatBtn = chatBtn
         self.tableview = tableview
+        self.noResultViewAddBtnClosure = noResultViewAddBtnClosure
         
-    
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: {})
-        alerts = ClassDetailAlerts(viewcontroller: viewcontroller)
+        chatBtn.isHidden = true
+        addYourselfBtn.isHidden = true
         
+        setupNoResultView()
+        setupAlerts()
         setupGenericTableView()
-        setupTextFieldHandlers()
         setupTextFieldUnderline()
-        
         setupCloseKeyboardWhenTouchScreenListener()
     }
     
@@ -72,6 +68,7 @@ class ClassDetailUIController{
         case (.Loading, .Success()):
             stopLoading()
             showAddYourInfoBtnIfYouAreNotInTheClass()
+            showNoResultViewIfThereIsNoStudent()
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
@@ -88,6 +85,7 @@ class ClassDetailUIController{
         case (.Success, .Loading):
             showLoading()
             showAddYourInfoBtnIfYouAreNotInTheClass()
+            showNoResultViewIfThereIsNoStudent()
             break
         case (.Success(), .AddingNewData): break
         case (.Success(), .Success()): break
@@ -144,49 +142,67 @@ class ClassDetailUIController{
         }
     }
     
+    
+    // TODO: write unit test for case where if NoResultView is showing, addInfoBtn and chat should be hiding and vice versa
+    
     private func showAddYourInfoBtnIfYouAreNotInTheClass(){
         chatBtn.isEnabled = false
         addYourselfBtn.isHidden = false
         
-        if(viewcontroller.youAreInClass()){
+        if(viewcontroller.getAllStudents().count == 0){
+            addYourselfBtn.isHidden = true
+            chatBtn.isHidden = true
+        }
+        else if(viewcontroller.youAreInClass()){
             addYourselfBtn.isHidden = true
             chatBtn.isEnabled = true
         }
     }
     
-   
+    private func showNoResultViewIfThereIsNoStudent(){
+        if(viewcontroller.getAllStudents().count == 0){
+            noResultView.isHidden = false
+        }
+        else{
+            noResultView.isHidden = true
+        }
+    }
+}
+
+// Other UI Setup
+extension ClassDetailUIController{
+    fileprivate func setupNoResultView(){
+        
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: noResultViewAddBtnClosure)
+        noResultView.isHidden = true
+    }
+    fileprivate func setupAlerts(){
+        alerts = ClassDetailAlerts(viewcontroller: viewcontroller)
+    }
 }
 
 // TextField
 extension ClassDetailUIController{
+   /* @objc func textFieldDidChange(_ textField: UITextField) {
+        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
+    }*/
+    
     fileprivate func setupTextFieldUnderline(){
+        
+        searchTFUnderline = UnderlineView()
+        
         viewcontroller.view.addSubview(searchTFUnderline)
         viewcontroller.view.bringSubview(toFront: searchTFUnderline)
         searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
-        
-      //  searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
-        searchUnderlineHeightAnchor?.isActive = true
     }
     
-    fileprivate func setupTextFieldHandlers(){
-        textFieldDidBeginEditing = {
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                    self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0)
-                    self.searchUnderlineHeightAnchor?.constant = 2.5
-                }, completion: nil)
-            }
-        }
-        
-        textFieldDidEndEditing = {
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                if self.searchTF.text == "" {
-                    self.searchTFUnderline.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 0.5)
-                    self.searchUnderlineHeightAnchor?.constant = 1.5
-                }
-            }, completion: nil)
-        }
+    func searchTFDidChange(){
+        searchTFUnderline.textFieldDidBeginEditing()
     }
+    func searchTFDidEndEditing(){
+        searchTFUnderline.textFieldDidEndEditing(searchTF)
+    }
+    
 }
 
 //Generic TableView

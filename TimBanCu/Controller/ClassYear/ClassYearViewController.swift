@@ -37,7 +37,7 @@ class ClassYearViewController: UIViewController {
             
             if(!exist){
                 self.classProtocol.year = self.selectedYear
-                self.classProtocol.uid = CurrentUserHelper.getUid()
+                self.classProtocol.uid = CurrentUser.getUid()
                 
                 self.controller.writeToDatabaseThenShowCompleteAlert(classProtocol: self.classProtocol, completionHandler: { (uistate) in
                     self.uiController.state = uistate

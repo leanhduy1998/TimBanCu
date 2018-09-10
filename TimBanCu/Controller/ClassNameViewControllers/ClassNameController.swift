@@ -40,7 +40,7 @@ class ClassNameController{
     }
     
     func addNewClass(className:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let classDetail = ClassDetail(classNumber: self.classNumber, uid: CurrentUserHelper.getUid(), schoolName: self.school.name, className: className.uppercased())
+        let classDetail = ClassDetail(classNumber: self.classNumber, uid: CurrentUser.getUid(), schoolName: self.school.name, className: className.uppercased())
         classDetails.append(classDetail)
         viewcontroller.selectedClassDetail = classDetail
         completionHandler(.Success())
