@@ -16,7 +16,7 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     var didSelect: (Item) -> () = { _ in }
     
     var tableview: UITableView!
-    var finishedLoadingInitialTableCells = false
+    var finishAnimateCells = false
     
     init(tableview:UITableView, items: [Item], configure: @escaping (Cell, Item) -> ()) {
         self.configure = configure
@@ -58,26 +58,22 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+        var animateLastCell = false
+        
         DispatchQueue.main.async {
-            let lastInitialDisplayableCell = self.animateOnlyBeginingCells(indexPath: indexPath, finishLoading: self.finishedLoadingInitialTableCells)
             
-            if !self.finishedLoadingInitialTableCells {
-                if lastInitialDisplayableCell {
-                    self.finishedLoadingInitialTableCells = true
+            if !self.finishAnimateCells {
+                if let indexPathsForVisibleRows = self.tableview.indexPathsForVisibleRows,
+                    let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
+                    animateLastCell = true
+                }
+                
+                if animateLastCell {
+                    self.finishAnimateCells = true
                 }
                 self.animateCells(cell: cell, tableView: self.tableview, indexPath: indexPath)
             }
         }
-    }
-    
-    private func animateOnlyBeginingCells(indexPath: IndexPath, finishLoading: Bool) -> Bool{
-        if items.count > 0 && !finishLoading {
-            if let indexPathsForVisibleRows = tableview.indexPathsForVisibleRows,
-                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
-                return true
-            }
-        }
-        return false
     }
     
     private func animateCells(cell: UITableViewCell, tableView: UITableView, indexPath: IndexPath) {
