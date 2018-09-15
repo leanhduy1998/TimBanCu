@@ -10,22 +10,52 @@ import UIKit
 
 class UnderlineView: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        self.backgroundColor = UIColor(red: 255/255, green: 204/255, blue: 0/255, alpha: 1.0).withAlphaComponent(0.5)
+    var underlineState: UnderlineState!
+    private var lineHeight: NSLayoutConstraint?
+    private var searchTF: UITextField!
+    private weak var viewcontroller: UIViewController!
+    
+    init(viewcontroller: UIViewController, searchTF: UITextField) {
+        super.init(frame: CGRect.zero)
+        viewcontroller.view.addSubview(self)
+        
+        self.searchTF = searchTF
+        self.viewcontroller = viewcontroller
+        
+        self.backgroundColor = themeColor.withAlphaComponent(0.5)
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        setupConstraints()
     }
     
-    func setupConstraints(searchTF:UITextField,viewcontroller:UIViewController){
-        self.topAnchor.constraint(equalTo: searchTF.bottomAnchor, constant: 8).isActive = true
+    private func setupConstraints(){
+        self.topAnchor.constraint(equalTo: searchTF.bottomAnchor).isActive = true
         self.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
         self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        lineHeight = self.heightAnchor.constraint(equalToConstant: 1.5)
+        lineHeight?.isActive = true
+    }
+    
+    func underline() {
+        switch underlineState {
+        case .showUnderline:
+            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                self.lineHeight?.constant = 2.5
+                self.backgroundColor = themeColor
+            }, completion: nil)
+            break
+        case .hideUnderline:
+            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                self.lineHeight?.constant = 1.5
+                self.backgroundColor = themeColor.withAlphaComponent(0.5)
+            }, completion: nil)
+        default:
+            break
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
 }

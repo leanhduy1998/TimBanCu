@@ -21,7 +21,7 @@ class ClassDetailUIController{
     private var addYourselfBtn:UIButton!
     fileprivate var chatBtn:UIButton!
     
-    fileprivate let searchTFUnderline = UnderlineView()
+    private let searchTFUnderline: UnderlineView!
     
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
     
@@ -47,6 +47,8 @@ class ClassDetailUIController{
     
         noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: {})
         alerts = ClassDetailAlerts(viewcontroller: viewcontroller)
+        searchTFUnderline = UnderlineView(viewcontroller: viewcontroller, searchTF: searchTF)
+        viewcontroller.view.addSubview(searchTFUnderline)
         
         setupGenericTableView()
         setupTextFieldHandlers()
@@ -150,7 +152,6 @@ extension ClassDetailUIController{
     fileprivate func setupTextFieldUnderline(){
         viewcontroller.view.addSubview(searchTFUnderline)
         viewcontroller.view.bringSubview(toFront: searchTFUnderline)
-        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
         
         searchUnderlineHeightAnchor = searchTFUnderline.heightAnchor.constraint(equalToConstant: 1.5)
         searchUnderlineHeightAnchor?.isActive = true

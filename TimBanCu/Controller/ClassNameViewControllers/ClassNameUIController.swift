@@ -13,6 +13,7 @@ class ClassNameUIController{
     private weak var viewcontroller:ClassNameViewController!
     private var alerts: ClassNameAlerts!
     private var noResultView: NoResultView!
+    var searchTFUnderline: UnderlineView!
     
     private weak var tableview:UITableView!
     private weak var searchTF:UITextField!
@@ -26,19 +27,18 @@ class ClassNameUIController{
         self.tableview = tableview
         self.searchTF = searchTF
         
-        
-        
         alerts = ClassNameAlerts(viewcontroller: viewcontroller, addNewClassHandler: { (addedClassName) in
             addNewClassNameHandler(addedClassName)
         })
+        
+        searchTFUnderline = UnderlineView(viewcontroller: viewcontroller, searchTF: searchTF)
+        searchTFUnderline.translatesAutoresizingMaskIntoConstraints = false
+        viewcontroller.view.addSubview(searchTFUnderline)
         
         noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
             self.showAddNewClassNameAlert()
         }
         noResultView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        
         viewcontroller.view.addSubview(noResultView)
         noResultView.isHidden = true
         
@@ -52,10 +52,6 @@ class ClassNameUIController{
             viewcontroller.selectedClassDetail = classDetail
             viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: viewcontroller)
         }
-        
-        let searchTFUnderline = UnderlineView()
-        viewcontroller.view.addSubview(searchTFUnderline)
-        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     var state:UIState = .Loading{

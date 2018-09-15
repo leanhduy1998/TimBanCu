@@ -20,6 +20,7 @@ class ClassNameViewController: UIViewController, UITextFieldDelegate {
     var classNumber: String!
     
     var selectedClassDetail:ClassDetail!
+    var underlineState: UnderlineState!
     
     private var uiController:ClassNameUIController!
     private var controller:ClassNameController!
@@ -40,8 +41,18 @@ class ClassNameViewController: UIViewController, UITextFieldDelegate {
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.uiController.searchTFUnderline.underlineState = .showUnderline
+        self.uiController.searchTFUnderline.underline()
+    }
     
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text == "" {
+            self.uiController.searchTFUnderline.underlineState = .hideUnderline
+            self.uiController.searchTFUnderline.underline()
+        }
+    }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
