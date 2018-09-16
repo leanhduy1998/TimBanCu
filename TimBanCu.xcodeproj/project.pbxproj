@@ -83,9 +83,7 @@
 		1CCA5CC6210D13FE00BF79B3 /* StudentImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */; };
 		1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFACEC211A7CEE00429FA2 /* Colors.swift */; };
 		1CCFACF0211A820700429FA2 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACEF211A820700429FA2 /* empty_list.json */; };
-		1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF2211A836200429FA2 /* Butcherandblock.otf */; };
 		1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */; };
-		1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */; };
 		1CD72FE6213736CA00105ACE /* SchoolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FE5213736CA00105ACE /* SchoolType.swift */; };
 		1CD72FE82137380A00105ACE /* SchoolUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FE72137380A00105ACE /* SchoolUIController.swift */; };
 		1CD72FEA21373CDF00105ACE /* AnimatedEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FE921373CDF00105ACE /* AnimatedEmoticon.swift */; };
@@ -231,11 +229,8 @@
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CCA5CC5210D13FE00BF79B3 /* StudentImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentImageDetailViewController.swift; sourceTree = "<group>"; };
 		1CCFACEC211A7CEE00429FA2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButcherandBlockExtras1.otf; sourceTree = "<group>"; };
 		1CCFACEF211A820700429FA2 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
-		1CCFACF2211A836200429FA2 /* Butcherandblock.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherandblock.otf; sourceTree = "<group>"; };
 		1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FS Playlist Caps.otf"; sourceTree = "<group>"; };
-		1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShowcaseSans.ttf; sourceTree = "<group>"; };
 		1CD72FE5213736CA00105ACE /* SchoolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolType.swift; sourceTree = "<group>"; };
 		1CD72FE72137380A00105ACE /* SchoolUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolUIController.swift; sourceTree = "<group>"; };
 		1CD72FE921373CDF00105ACE /* AnimatedEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedEmoticon.swift; sourceTree = "<group>"; };
@@ -510,14 +505,8 @@
 				1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */,
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
-				1CCFACEF211A820700429FA2 /* empty_list.json */,
-				38F2B9CC21457E54001A21C0 /* loading...json */,
-				38F2B9CB21457E53001A21C0 /* trail_loading.json */,
-				38F2B9CF21458049001A21C0 /* movingBus.json */,
-				38F2B9D12145821B001A21C0 /* biking_is_cool.json */,
-				38F2B9D22145821B001A21C0 /* bikingishard.json */,
+				384F487A214DF2FF003B23A6 /* LottieAnimation */,
 				1CCFACF1211A836200429FA2 /* Fonts */,
-				1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */,
 				1C3ADA8B20F962BB0041421F /* awsconfiguration.json */,
 			);
 			path = Resource;
@@ -581,9 +570,7 @@
 		1CCFACF1211A836200429FA2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1CCFACF2211A836200429FA2 /* Butcherandblock.otf */,
 				1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */,
-				1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -691,6 +678,19 @@
 				38CAE9D02129BD04005BE656 /* UnderlineView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		384F487A214DF2FF003B23A6 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				1CCFACEF211A820700429FA2 /* empty_list.json */,
+				38F2B9CC21457E54001A21C0 /* loading...json */,
+				38F2B9CB21457E53001A21C0 /* trail_loading.json */,
+				38F2B9CF21458049001A21C0 /* movingBus.json */,
+				38F2B9D12145821B001A21C0 /* biking_is_cool.json */,
+				38F2B9D22145821B001A21C0 /* bikingishard.json */,
+			);
+			path = LottieAnimation;
 			sourceTree = "<group>";
 		};
 		E343F45EB883F33D68910D4B /* Pods */ = {
@@ -841,12 +841,10 @@
 				1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */,
 				1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */,
 				38F2B9CE21457E54001A21C0 /* loading...json in Resources */,
-				1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */,
 				38F2B9CD21457E54001A21C0 /* trail_loading.json in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
-				1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
 				38F2B9D32145821C001A21C0 /* biking_is_cool.json in Resources */,
 				38F2B9D021458049001A21C0 /* movingBus.json in Resources */,

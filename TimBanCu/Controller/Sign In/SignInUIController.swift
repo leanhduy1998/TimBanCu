@@ -26,22 +26,24 @@ final class SignInUIController{
     private var revealingSplashView: RevealingSplashView! = nil
     private var shimmerAppNameLabel: ShimmeringLabel! = nil
     private var appNameLabel:ShimmeringLabel! = nil
+    private var appNameStackView: UIStackView!
     
     private var facebookBtn:LoginButton!
     private var googleBtn:GIDSignInButton!
     
     private var errorAlert:InfoAlert!
     
-    
     init(viewController: SignInViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
         self.viewcontroller = viewController
         self.facebookBtn = facebookBtn
         self.googleBtn = googleBtn
+        
         setUpSplashView()
-        animateShimmeringText()
+        setUpAppNameStackView()
         setupFacebookBtn()
         setupGoogleButton()
         
+        Timer.scheduledTimer(timeInterval: TimeInterval(2.0), target: self, selector: #selector(animateAppName), userInfo: nil, repeats: false)
         errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "")
     }
     
@@ -72,29 +74,59 @@ final class SignInUIController{
         revealingSplashView?.startAnimation()
     }
     
-    private func animateShimmeringText() {
+    private func setUpAppNameStackView() {
+        appNameStackView = UIStackView()
+        appNameStackView.axis = .horizontal
+        appNameStackView.distribution = .fillProportionally
+        appNameStackView.alignment = .center
+        appNameStackView.spacing = 1.0
+        appNameStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8),view:viewcontroller.view)
-        shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: viewcontroller.view)
+        viewcontroller.view.addSubview(appNameStackView)
+        viewcontroller.view.sendSubview(toBack: appNameStackView)
         
-        viewcontroller.view.addSubview(shimmerAppNameLabel)
-        viewcontroller.view.addSubview(appNameLabel)
+        appNameStackView.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
+        appNameStackView.topAnchor.constraint(equalTo: viewcontroller.view.topAnchor, constant: 120).isActive = true
+        appNameStackView.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width)
+        appNameStackView.heightAnchor.constraint(equalToConstant: 100)
+    }
+    
+    @objc private func animateAppName() {
+        let appName = "Tìm Bạn Cũ"
+        var charInAppName = [String]()
+        var charInAppNameLabel = [UILabel]()
         
-        let gradient = CAGradientLayer()
-        gradient.frame = appNameLabel.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.0, 0.5, 1]
-        let angle = -60 * CGFloat.pi / 180
-        gradient.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
-        shimmerAppNameLabel.layer.mask = gradient
+        for character in appName {
+            charInAppName.append(String(character))
+        }
         
-        let animation = CABasicAnimation(keyPath: "transform.translation.x")
-        animation.duration = 3.5
-        animation.repeatCount = Float.infinity
-        animation.autoreverses = false
-        animation.fromValue = -viewcontroller.view.frame.width
-        animation.toValue = viewcontroller.view.frame.width
-        gradient.add(animation, forKey: "shimmerKey")
+        for i in 0..<charInAppName.count {
+            charInAppNameLabel.append(UILabel())
+            appNameStackView.addArrangedSubview(charInAppNameLabel[i])
+            
+            setUpAppNameLabel(label: charInAppNameLabel[i], text: charInAppName[i])
+            animateSingleCharOfAppName(singleCharLabel: charInAppNameLabel[i], index: i)
+        }
+    }
+    
+    private func setUpAppNameLabel(label: UILabel, text: String) {
+        label.textColor = themeColor
+        label.text = text
+        //charInAppNameLabel[index].font = UIFont.systemFont(ofSize: 50)
+        label.font = UIFont(name: "FS-Playlist-Caps", size: 70)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = themeColor
+        label.textAlignment = .center
+    }
+    
+    private func animateSingleCharOfAppName(singleCharLabel: UILabel, index: Int) {
+        singleCharLabel.transform = CGAffineTransform(translationX: 0, y: 10)
+        singleCharLabel.alpha = 0
+        
+        UIView.animate(withDuration: 0.6, delay: 0.05 * Double(index), options: [.curveEaseInOut], animations: {
+            singleCharLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+            singleCharLabel.alpha = 1
+        }, completion: nil)
     }
     
     private func setupFacebookBtn(){
