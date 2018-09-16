@@ -20,7 +20,7 @@ class ClassDetailController{
         createCopyOfClassProtocol()
     }
     
-    // if the user goes back and forth between the screen, the same protocol will be used, thus same protocol for multiple class. Could have used struct, but in ClassYear we needed to change the year
+    // if the user goes back and forth between the screen, the same protocol will be used, thus same protocol for multiple class like school and major. So we create a copy so major and school won't get mixed up. Could have used struct, but in ClassYear we needed to change the year
     private func createCopyOfClassProtocol(){
         if let classDetail = classProtocol as? ClassDetail{
             let copy = ClassDetail(classNumber: classDetail.classNumber, uid: classDetail.uid, schoolName: classDetail.schoolName, className: classDetail.className, classYear: classDetail.year)

@@ -23,6 +23,7 @@ class ClassDetailUIController{
     
     fileprivate var searchTFUnderline:UnderlineView!
     fileprivate var noResultViewAddBtnClosure: ()->()
+    fileprivate var keyboardHelper:KeyboardHelper!
     
     var searchStudents = [Student]()
     
@@ -48,19 +49,8 @@ class ClassDetailUIController{
         setupAlerts()
         setupGenericTableView()
         setupTextFieldUnderline()
-        setupCloseKeyboardWhenTouchScreenListener()
+        setupKeyboard()
     }
-    
-    private func setupCloseKeyboardWhenTouchScreenListener(){
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        viewcontroller.view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        viewcontroller.view.endEditing(true)
-    }
-    
-    
     
     private func update(newState: UIState) {
         switch(state, newState) {
@@ -169,13 +159,8 @@ class ClassDetailUIController{
     }
 }
 
-// Other UI Setup
+//Alerts
 extension ClassDetailUIController{
-    fileprivate func setupNoResultView(){
-        
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: noResultViewAddBtnClosure)
-        noResultView.isHidden = true
-    }
     fileprivate func setupAlerts(){
         alerts = ClassDetailAlerts(viewcontroller: viewcontroller)
     }
@@ -226,5 +211,18 @@ extension ClassDetailUIController{
             self.viewcontroller.selectedStudent = student
             self.viewcontroller.performSegue(withIdentifier: "ClassDetailToStudentDetail", sender: self.viewcontroller)
         }
+    }
+}
+
+// Other UI Setup
+extension ClassDetailUIController{
+    fileprivate func setupNoResultView(){
+        
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: noResultViewAddBtnClosure)
+        noResultView.isHidden = true
+    }
+    
+    fileprivate func setupKeyboard(){
+        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
 }

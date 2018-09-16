@@ -58,7 +58,7 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        DispatchQueue.main.async {
+        /*DispatchQueue.main.async {
             self.animateCells(cell: cell, tableView: self.tableview, indexPath: indexPath)
             let lastInitialDisplayableCell = tableView.animateOnlyBeginingCells(tableView: tableView, indexPath: indexPath, model: self.items! as [AnyObject], finishLoading: self.finishedLoadingInitialTableCells)
             
@@ -68,7 +68,7 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
                 }
                 self.animateCells(cell: cell, tableView: self.tableview, indexPath: indexPath)
             }
-        }
+        }*/
     }
     
     private func animateCells(cell: UITableViewCell, tableView: UITableView, indexPath: IndexPath) {

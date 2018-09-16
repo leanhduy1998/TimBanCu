@@ -33,7 +33,8 @@ final class ClassYearController{
     }
     
     func writeToDatabaseThenShowCompleteAlert(classProtocol:ClassProtocol,completionHandler: @escaping (_ state:UIState)->Void){
-        classProtocol.writeToDatabase { (err, ref) in
+        
+        FirebaseHelper.writeToDatabase(model: classProtocol) { (err, ref) in
             DispatchQueue.main.async {
                 if(err == nil){
                     completionHandler(.Success())
@@ -50,11 +51,11 @@ final class ClassYearController{
         let calendar = Calendar.current
         let year = calendar.component(.year, from: date)
         
-        let allowedFurthestYear = year - 80
+        let allowedLowestYear = year - 80
         
         var index = year
         
-        while(index >= allowedFurthestYear){
+        while(index >= allowedLowestYear){
             let string = "Năm \(index)"
             years.append(string)
             

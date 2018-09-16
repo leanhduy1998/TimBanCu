@@ -54,21 +54,12 @@ class ClassDetail: ClassProtocol{
         
         return dic
     }
-    
-    private func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid]
-    }
-    
+        
     func getFirebasePathWithoutSchoolYear()->String{
         return "\(schoolName!)/\(classNumber!)/\(className!)"
     }
     
     func getFirebasePathWithSchoolYear()->String{
         return "\(schoolName!)/\(classNumber!)/\(className!)/\(year!)"
-    }
-    
-    func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
-        let classesDetailRef = Database.database().reference().child("classes")
-        classesDetailRef.child(getFirebasePathWithSchoolYear()).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
 }

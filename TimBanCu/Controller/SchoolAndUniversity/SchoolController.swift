@@ -69,7 +69,7 @@ final class SchoolController{
     func addNewSchool(schoolName:String,completionHandler: @escaping (_ state:UIState)->Void){
         let school = School(name: schoolName, address: "?", type: getSchoolTypeAsString(), uid: CurrentUser.getUid())
         
-        Database.database().reference().child("schools").child(school.name).setValue(school.getObjectValueAsDic()) { (err, ref) in
+        Database.database().reference().child("schools").child(school.name).setValue(FirebaseHelper.getModelAsDic(model: school)) { (err, ref) in
             
             if(err == nil){
                 self.schoolModels.append(school)

@@ -1431,7 +1431,7 @@
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="Slideshow" customModule="TimBanCu" customModuleProvider="target">
                                 <rect key="frame" x="19.5" y="84" width="335.5" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -1569,6 +1569,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Thêm Thông Tin Cá Nhân" id="Uhz-ym-CRw"/>
                     <connections>
+                        <outlet property="addInfoBtn" destination="7jw-eh-eN4" id="TFH-NO-c9P"/>
                         <outlet property="addInfoButtonBottomContraint" destination="OHE-OB-BiQ" id="a5q-F8-GfS"/>
                         <outlet property="birthYearTF" destination="L0g-yg-hMV" id="WDx-LT-8FC"/>
                         <outlet property="emailPrivacyDropDownBtn" destination="XMM-Kt-Bs1" id="L18-Dl-pOb"/>
@@ -1580,7 +1581,7 @@
                         <outlet property="yearLabel" destination="vDn-Vc-2hg" id="1JJ-h5-UO0"/>
                         <segue destination="czf-XK-NAM" kind="unwind" identifier="AddYourInfoToClassDetailSegue" unwindAction="unwindToClassDetailViewControllerWithSegue:" id="aHP-T0-vfo"/>
                         <segue destination="LmB-rK-hkQ" kind="show" identifier="AddYourInfoToImageDetail" id="Z9F-1r-sr2"/>
-                        <segue destination="dsF-1E-EKt" kind="show" identifier="AddYourInfoToAddImagesSegue" id="tOo-hj-d07"/>
+                        <segue destination="tBf-Ts-F6c" kind="show" identifier="AddYourInfoToUpdateYearSegue" id="jrt-Tv-crs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYX-d4-Wjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1670,24 +1671,83 @@
             </objects>
             <point key="canvasLocation" x="7857" y="2353"/>
         </scene>
-        <!--Add Images View Controller-->
-        <scene sceneID="j38-tR-xaS">
+        <!--Update Image Year View Controller-->
+        <scene sceneID="Vyw-wk-iQr">
             <objects>
-                <viewController id="dsF-1E-EKt" customClass="AddImagesViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KZn-iI-zH2">
+                <viewController id="tBf-Ts-F6c" customClass="UpdateImageYearViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YN8-JA-ClY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm Hình Được Chụp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEk-V9-Z5A">
+                                <rect key="frame" x="20" y="84" width="335" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Wn6-Go-nfD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-CR-veA">
+                                <rect key="frame" x="20" y="568" width="335" height="30"/>
+                                <state key="normal" title="Cập Nhập Năm"/>
+                                <connections>
+                                    <action selector="updateBtnPressed:" destination="tBf-Ts-F6c" eventType="touchUpInside" id="2sH-ij-385"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Năm" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-dc-Kwi">
+                                <rect key="frame" x="137.5" y="518" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GCd-JN-x9p"/>
+                                    <constraint firstAttribute="height" constant="30" id="flZ-o3-vwI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="coU-wn-74e">
+                                <rect key="frame" x="20" y="128" width="335" height="289"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hình có năm sẽ giúp các thành viên khác dễ nhận diện hơn (Ví dụ: Đây là hình của bạn năm 1990 khi bạn học lớp 1)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-Ip-A4W">
+                                <rect key="frame" x="20" y="437" width="335" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NIU-eh-Um6"/>
+                        <constraints>
+                            <constraint firstItem="e8n-dc-Kwi" firstAttribute="centerX" secondItem="YN8-JA-ClY" secondAttribute="centerX" id="4tH-l1-Hit"/>
+                            <constraint firstItem="43N-77-KUw" firstAttribute="trailing" secondItem="KEk-V9-Z5A" secondAttribute="trailing" constant="20" id="ETI-92-VXf"/>
+                            <constraint firstItem="bOg-CR-veA" firstAttribute="leading" secondItem="43N-77-KUw" secondAttribute="leading" constant="20" id="IPZ-0q-r0H"/>
+                            <constraint firstItem="coU-wn-74e" firstAttribute="leading" secondItem="43N-77-KUw" secondAttribute="leading" constant="20" id="J0y-Gg-EtL"/>
+                            <constraint firstItem="coU-wn-74e" firstAttribute="top" secondItem="KEk-V9-Z5A" secondAttribute="bottom" constant="20" id="Ofu-cf-zqi"/>
+                            <constraint firstItem="1IF-Ip-A4W" firstAttribute="top" secondItem="coU-wn-74e" secondAttribute="bottom" constant="20" id="X7K-0r-nGz"/>
+                            <constraint firstItem="43N-77-KUw" firstAttribute="trailing" secondItem="1IF-Ip-A4W" secondAttribute="trailing" constant="20" id="XPT-FU-PoM"/>
+                            <constraint firstItem="1IF-Ip-A4W" firstAttribute="leading" secondItem="43N-77-KUw" secondAttribute="leading" constant="20" id="ZIK-1a-NYj"/>
+                            <constraint firstItem="43N-77-KUw" firstAttribute="trailing" secondItem="coU-wn-74e" secondAttribute="trailing" constant="20" id="bbs-6w-FbB"/>
+                            <constraint firstItem="e8n-dc-Kwi" firstAttribute="top" secondItem="1IF-Ip-A4W" secondAttribute="bottom" constant="20" id="fMV-LM-Whs"/>
+                            <constraint firstItem="bOg-CR-veA" firstAttribute="top" secondItem="e8n-dc-Kwi" secondAttribute="bottom" constant="20" id="h1l-bD-o4e"/>
+                            <constraint firstItem="1IF-Ip-A4W" firstAttribute="leading" secondItem="43N-77-KUw" secondAttribute="leading" constant="20" id="hTO-sP-lxF"/>
+                            <constraint firstItem="43N-77-KUw" firstAttribute="trailing" secondItem="bOg-CR-veA" secondAttribute="trailing" constant="20" id="hZf-VQ-f3L"/>
+                            <constraint firstItem="KEk-V9-Z5A" firstAttribute="leading" secondItem="43N-77-KUw" secondAttribute="leading" constant="20" id="pKi-uf-LE1"/>
+                            <constraint firstItem="43N-77-KUw" firstAttribute="trailing" secondItem="1IF-Ip-A4W" secondAttribute="trailing" constant="20" id="sXl-tO-N9b"/>
+                            <constraint firstItem="43N-77-KUw" firstAttribute="bottom" secondItem="bOg-CR-veA" secondAttribute="bottom" constant="20" id="xOZ-9o-XJh"/>
+                            <constraint firstItem="KEk-V9-Z5A" firstAttribute="top" secondItem="43N-77-KUw" secondAttribute="top" constant="20" id="yqn-s8-xRd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="43N-77-KUw"/>
                     </view>
                     <connections>
-                        <segue destination="Fin-wa-YKK" kind="unwind" identifier="unwindToAddYourInfoControllerWithSegue" unwindAction="unwindToAddYourInfoControllerWithSegue:" id="gUq-Ra-LTE"/>
+                        <outlet property="imageview" destination="coU-wn-74e" id="c7H-i1-r9l"/>
+                        <outlet property="updateBtn" destination="bOg-CR-veA" id="p8M-ZP-apm"/>
+                        <outlet property="yearTF" destination="e8n-dc-Kwi" id="UoT-Ac-PvG"/>
+                        <segue destination="h5G-Dr-WYR" kind="unwind" identifier="UpdateImageYearToAddYourInfoControllerSegue" unwindAction="unwindToAddYourInfoControllerWithSegue:" id="TZV-mK-UIR"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-rF-zAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Fin-wa-YKK" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85t-EB-6Rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="h5G-Dr-WYR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7857" y="3113"/>
+            <point key="canvasLocation" x="7857" y="3144"/>
         </scene>
     </scenes>
     <resources>

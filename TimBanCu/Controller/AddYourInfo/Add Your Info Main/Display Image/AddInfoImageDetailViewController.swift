@@ -16,9 +16,7 @@ class AddInfoImageDetailViewController: UIViewController {
     
     var indexForDeletion:Int!
     
-    var userImages = [UIImage]()
-    var yearOfUserImage = [UIImage:Int]()
-    
+    var userImages = [Image]()
     var editImageYearAlert:UIAlertController!
     
     
@@ -33,37 +31,34 @@ class AddInfoImageDetailViewController: UIViewController {
     
     func setupImageView(){
         let image = userImages[indexForDeletion]
-        imageview.image = image
+        imageview.image = image.image
     }
     
     func setupYearLabelText(){
         let image = userImages[indexForDeletion]
-        let year = yearOfUserImage[image]
         
-        if(year == -1){
+        if(image.year == nil){
             yearLabel.text = "Không Rõ Năm"
         }
         else{
-            yearLabel.text = "Năm \(year!)"
+            yearLabel.text = "Năm \(image.year!)"
         }
     }
     
     
     @IBAction func changeYearButtonPressed(_ sender: Any) {
-        let year = yearOfUserImage[userImages[indexForDeletion]]
-        
-        if(year == -1){
+        let image = userImages[indexForDeletion]
+        if(image.year == nil){
             editImageYearAlert.message = "Không Rõ Năm"
         }
         else{
-            editImageYearAlert.message = "Năm Hiện Tại: \(year!)"
+            editImageYearAlert.message = "Năm Hiện Tại: \(image.year!)"
         }
         
         present(editImageYearAlert, animated: true, completion: nil)
     }
     
     @IBAction func deleteBtnPressed(_ sender: Any) {
-        yearOfUserImage[userImages[indexForDeletion]] = nil
         userImages.remove(at: indexForDeletion)
         performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
     }
@@ -71,9 +66,6 @@ class AddInfoImageDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
             destination.userImages = userImages
-            destination.yearOfUserImage = yearOfUserImage
         }
     }
-    
-
 }

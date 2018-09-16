@@ -23,8 +23,8 @@ class ClassNameUIController{
     
     fileprivate var searchTFUnderline:UnderlineView!
     fileprivate var searchUnderlineHeightAnchor: NSLayoutConstraint?
-    
     fileprivate var addNewClassNameHandler: (String) -> ()
+    fileprivate var keyboardHelper:KeyboardHelper!
     
     init(viewcontroller:ClassNameViewController,searchTF:UITextField,tableview:UITableView,addNewClassNameHandler: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller
@@ -36,6 +36,7 @@ class ClassNameUIController{
         setupNoResultView()
         setupGenericTableView()
         setupTextFieldUnderline()
+        setupKeyboard()
     }
     
     var state:UIState = .Loading{
@@ -49,9 +50,11 @@ class ClassNameUIController{
             
         case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
+            hideLoading()
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
+            hideLoading()
             alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             break
         case (.AddingNewData, .Success()):
@@ -66,7 +69,7 @@ class ClassNameUIController{
                 alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
             break
-        case (.Success(), .Loading): break
+        case (.Success(), .Loading): showLoading()
         case (.Success(), .AddingNewData): break
         case (.AddingNewData, .AddingNewData): break
         case (.Success(), .Success()): break
@@ -94,31 +97,27 @@ class ClassNameUIController{
     
     private func showLoading(){
         noResultView.isHidden = true
-        tableview.isHidden = false
+        tableview.isHidden = true
         //TODO
     }
     
-    func showAddNewClassNameAlert(){
-        state = .AddingNewData
-        alerts.showAddNewClassNameAlert()
-    }
-}
-
-// Other UI setup
-extension ClassNameUIController{
-    fileprivate func setupNoResultView(){
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
-            self.showAddNewClassNameAlert()
-        }
-        noResultView.translatesAutoresizingMaskIntoConstraints = false
-        viewcontroller.view.addSubview(noResultView)
-        noResultView.isHidden = true
+    private func hideLoading(){
+        // TODO
     }
     
+    
+}
+
+// Alerts
+extension ClassNameUIController{
     fileprivate func setupAlerts(){
         alerts = ClassNameAlerts(viewcontroller: viewcontroller, addNewClassHandler: { (addedClassName) in
             self.addNewClassNameHandler(addedClassName)
         })
+    }
+    func showAddNewClassNameAlert(){
+        state = .AddingNewData
+        alerts.showAddNewClassNameAlert()
     }
 }
 
@@ -167,5 +166,20 @@ extension ClassNameUIController{
             noResultView.isHidden = true
             tableview.isHidden = false
         }
+    }
+}
+
+// Other UI setup
+extension ClassNameUIController{
+    fileprivate func setupNoResultView(){
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
+            self.showAddNewClassNameAlert()
+        }
+        noResultView.translatesAutoresizingMaskIntoConstraints = false
+        viewcontroller.view.addSubview(noResultView)
+        noResultView.isHidden = true
+    }
+    fileprivate func setupKeyboard(){
+        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
 }

@@ -41,12 +41,6 @@ class ClassNameViewController: UIViewController {
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
-    
-    
-    
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         controller.fetchData { (uistate) in
@@ -60,8 +54,6 @@ class ClassNameViewController: UIViewController {
             destination.classProtocol = selectedClassDetail
         }
     }
-    
-
 }
 
 //MARK: UITextFieldDelegate

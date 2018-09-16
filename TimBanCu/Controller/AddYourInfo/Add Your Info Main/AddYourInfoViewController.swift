@@ -11,8 +11,9 @@ import DropDown
 import FirebaseDatabase
 import ImageSlideshow
 import FirebaseStorage
+import DKImagePickerController
 
-class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class AddYourInfoViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var fullNameTF: UITextField!
     @IBOutlet weak var birthYearTF: UITextField!
@@ -20,125 +21,131 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var phonePrivacyDropDownBtn: UIButton!
     @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
-    @IBOutlet weak var imageSlideShow: ImageSlideshow!
+    @IBOutlet weak var imageSlideShow: Slideshow!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var addInfoBtn: UIButton!
+    
+    @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
     @IBAction func unwindToAddYourInfoController(segue:UIStoryboardSegue) { }
     
-    var phonePrivacyDropDown = DropDown()
-    var emailPrivacyDropDown = DropDown()
     
-    var userImages = [UIImage]()
-    var yearOfUserImage = [UIImage:Int]()
-    var selectedImage:UIImage!
+    private var controller:AddYourInfoController!
+    private var uiController:AddYourInfoUIController!
     
-    var addImageYearAlert:UIAlertController!
-    var privacyAlert:UIAlertController!
-    
-    var privateUserProfileRef:DatabaseReference!
-    var publicUserProfileRef:DatabaseReference!
+    private var slideshowDidTapOnImageAtIndex:(Int)->() = {_ in }
+    private var imagePickerDidSelectAssets:([DKAsset])->() = {_ in }
     
     // from previous class
     var classDetail:ClassDetail!
     
+    // this class
+    var userImages = [Image]()
+    var imageForSegue:Image!
     var keyboardIsShowing = false
-    
-    @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
-    let selectPhotoButton = SelectPhotoButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupPrivacyDropDowns()
-        setupAlerts()
-        setupImageSlideShow()
-        reloadImageSlideShow()
-        observeKeyboardNotifications()
-        
-        setupUserImages()
-        setupImageSlideShow()
+
+        setupClosures()
+    
+        controller = AddYourInfoController(viewcontroller: self, classDetail: classDetail)
+        uiController = AddYourInfoUIController(viewcontroller: self, slideshowDidTapOnImageAtIndex: slideshowDidTapOnImageAtIndex, imagePickerDidSelectAssets: imagePickerDidSelectAssets)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupFirebaseReference()
+    private func setupClosures(){
+        slideshowDidTapOnImageAtIndex = { (tappedImageIndex) in
+            // user tapped on add new image button
+            if(tappedImageIndex > self.userImages.count-1){
+                self.uiController.showPickerController()
+            }
+            else{
+                let image = self.userImages[tappedImageIndex]
+                
+                if(image.year == nil){
+                    self.imageForSegue = image
+                    self.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self)
+                }
+                else{
+                    self.performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self)
+                }
+            }
+        }
+        
+        imagePickerDidSelectAssets = { (assets: [DKAsset]) in
+            var fetchCount = 0
+            let currentTime = Int(Date().timeIntervalSince1970.binade)
+            
+            if(assets.count == 0){
+                self.uiController.hidePickerController()
+            }
+            
+            for asset in assets{
+                if(asset.fileName == nil){
+                    asset.fetchOriginalImage(completeBlock: { (uiimage, something) in
+                        
+                        let imageName = "\((currentTime + fetchCount))"
+                        asset.fileName = imageName
+                        
+                        let image = Image(image: uiimage!, imageName: imageName)
+                        
+                        self.userImages.append(image)
+                        
+                        fetchCount = fetchCount + 1
+                        
+                        if(fetchCount == assets.count){
+                            self.uiController.hidePickerController()
+                            self.uiController.reloadSlideShow()
+                        }
+                    })
+                }
+                else{
+                    fetchCount = fetchCount + 1
+                }
+            }
+        }
     }
     
-    private func setupFirebaseReference(){
-        privateUserProfileRef = Database.database().reference().child("privateUserProfile")
-        publicUserProfileRef = Database.database().reference().child("publicUserProfile")
+    override func viewWillLayoutSubviews() {
+        uiController.viewDidLayoutSubview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animateImageSlideShow(count: 0)
+        uiController.reloadSlideShow()
     }
     
-    func setupUserImages(){
-        if(userImages.count == 0){
-            userImages.append(#imageLiteral(resourceName: "addImage"))
-        }
-        if(userImages.count>1){
-            reloadYearLabel(page: imageSlideShow.currentPage)
-        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        uiController.animateSlideShow()
+    }
+    
+    @IBAction func phoneDropDownBtnPressed(_ sender: Any) {
+        uiController.showPhonePrivacyDownDown()
+    }
+    
+    @IBAction func emailDropDownBtnPressed(_ sender: Any) {
+        uiController.showEmailPrivacyDownDown()
     }
     
     
     @IBAction func addInfoBtnPressed(_ sender: Any) {
-        if(userImages.count <= 1){
-            let alert = InfoAlert(title: "Thiếu Hình Cá Nhân", message: "Bạn hãy thêm ít nhất 1 hình cá nhân. Bạn có thể thêm nhiều hình tại nhiều năm khác nhau để các bạn khác dễ nhận diện.")
-            alert.show(viewcontroller: self)
+        if(userImages.count == 0){
+            uiController.showNoProfileImageAlert()
         }
-        else{
-            removeThePlusIconPictureThatIsUsedToAddNewPicture()
-            
-            let imageAndName = getNameForImage()
-            
-            uploadPublicData(imageFileNames: imageAndName)
-            uploadPrivateData()
-            updateCurrentStudentInfo()
-            uploadUserInfoToSelectedClass()
-            uploadUserImages(imageFileNames: imageAndName, completionHandler: {
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
-                }
+        else{            
+            controller.updateUserInfo(images: userImages, completeUploadClosure: {
+                self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
             })
         }
-        
-        
     }
     
-    private func getNameForImage() -> [UIImage:String]{
-        let time = Date().timeIntervalSince1970.binade
-        
-        var imageAndName = [UIImage:String]()
-        
-        for x in 0...(self.userImages.count-1){
-            let str = "\(String(Int(time)+x))"
-            imageAndName[userImages[x]] = str
-        }
-        
-        return imageAndName
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
-    
-    func reloadYearLabel(page:Int){
-        if(yearOfUserImage[userImages[page]] == nil){
-            yearLabel.text = "Năm ?"
-        }
-        else{
-            yearLabel.text = "\(yearOfUserImage[userImages[page]]!)"
-        }
-        view.layoutIfNeeded()
-    }
-    
-    // test
-    private func removeThePlusIconPictureThatIsUsedToAddNewPicture(){
-        userImages.removeLast()
-    }
-    
-    
-    
+
     @IBAction func showPrivacyAlertBtnPressed(_ sender: Any) {
-        present(privacyAlert, animated: true, completion: nil)
+        uiController.showPrivacyAlert()
     }
     
 
@@ -146,13 +153,17 @@ class AddYourInfoViewController: UIViewController,UIImagePickerControllerDelegat
         if let destination = segue.destination as? AddInfoImageDetailViewController{
             destination.indexForDeletion = imageSlideShow.currentPage
             destination.userImages = userImages
-            destination.yearOfUserImage = yearOfUserImage
         }
         if let destination = segue.destination as? AddImagesViewController{
             destination.currentImages = userImages
         }
+        if let destination = segue.destination as? UpdateImageYearViewController{
+            destination.selectedImage = imageForSegue
+        }
 
     }
 }
+
+//
 
 

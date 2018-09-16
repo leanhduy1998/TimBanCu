@@ -32,21 +32,12 @@ class MajorDetail: ClassProtocol{
         self.year = "Năm ?"
     }
     
-    private func getObjectValueAsDic() -> [String:Any]{
-        return ["uid":uid]
-    }
-    
     func getFirebasePathWithoutSchoolYear() -> String {
         return "\(schoolName!)/\(majorName!)"
     }
     
     func getFirebasePathWithSchoolYear() -> String {
         return "\(schoolName!)/\(majorName!)/\(year!)"
-    }
-    
-    
-    func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void){
-        Database.database().reference().child("classes").child(getFirebasePathWithSchoolYear()).setValue(getObjectValueAsDic(), withCompletionBlock: completionHandler)
     }
 }
 

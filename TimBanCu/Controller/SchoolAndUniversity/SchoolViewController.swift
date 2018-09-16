@@ -41,23 +41,18 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
     }
     
     
-    
     @objc func textFieldDidChange(_ textField: UITextField) {
-        uiController.filterVisibleSchools(filter: textField.text!, allSchools: getAllDataFetched())
+        uiController.filterVisibleSchools(filter: textField.text!, allSchools: controller.schoolModels)
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        uiController.filterVisibleSchools(filter: "", allSchools: getAllDataFetched())
+        uiController.filterVisibleSchools(filter: "", allSchools: controller.schoolModels)
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
-    }
-    
-    func getAllDataFetched()->[School]{
-        return controller.schoolModels
     }
     
     override func viewWillDisappear(_ animated: Bool) {

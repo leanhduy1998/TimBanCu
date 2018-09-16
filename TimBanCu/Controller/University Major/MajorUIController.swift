@@ -18,8 +18,8 @@ class MajorUIController{
     
     var searchMajors = [MajorDetail]()
     fileprivate var addNewMajorHandler: (String)->()
-    
     fileprivate var tableViewTool: GenericTableView<MajorDetail, MajorTableViewCell>!
+    fileprivate var keyboardHelper:KeyboardHelper!
     
     init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField,addNewMajorHandler: @escaping (String)->()){
         self.viewcontroller = viewcontroller
@@ -30,6 +30,7 @@ class MajorUIController{
         setupAlerts()
         setupNoResultView()
         setupGenericTableView()
+        setupKeyboard()
     }
     
     var state:UIState = .Loading{
@@ -52,9 +53,6 @@ class MajorUIController{
                 }
             }
         }
-        
-        
-        
         reloadTableViewAndUpdateUI()
     }
     
@@ -62,9 +60,11 @@ class MajorUIController{
         switch(state, newState) {
         case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
+            hideLoading()
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
+            hideLoading()
             alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             break
         case (.AddingNewData, .Success()):
@@ -89,8 +89,12 @@ class MajorUIController{
     
     private func showLoading(){
         noResultView.isHidden = true
-        tableview.isHidden = false
+        tableview.isHidden = true
         //TODO
+    }
+    
+    private func hideLoading(){
+        // TODO
     }
     
     private func reloadTableViewAndUpdateUI(){
@@ -152,5 +156,8 @@ extension MajorUIController{
         
         viewcontroller.view.addSubview(noResultView)
         viewcontroller.view.bringSubview(toFront: noResultView)
+    }
+    fileprivate func setupKeyboard(){
+        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
 }

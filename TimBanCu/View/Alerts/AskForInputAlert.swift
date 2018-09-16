@@ -27,6 +27,10 @@ class AskForInputAlert{
         }
     }
     
+    func setTextFieldKeyboardType(type:UIKeyboardType){
+        textField.keyboardType = type
+    }
+    
     func show(viewcontroller:UIViewController){
         viewcontroller.present(alert, animated: true, completion: nil)
     }

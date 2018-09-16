@@ -23,8 +23,7 @@ class StudentDetailViewController: UIViewController {
     var student:Student!
 
     var selectedImage:UIImage!
-    var userImages = [UIImage]()
-    var yearOfUserImage = [UIImage:Int]()
+    var userImages = [Image]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +38,9 @@ class StudentDetailViewController: UIViewController {
         Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
                 
                 DispatchQueue.main.async {
-                    let image = UIImage(data: imageData!)
-                    self.userImages.append(image!)
-                    self.yearOfUserImage[image!] = year
-                    
+                    let uiimage = UIImage(data: imageData!)
+                    let image = Image(image: uiimage!, year: year)
+              //      self.userImages.append(image!)
                     self.reloadimageSlideshow()
                 }
             }
@@ -76,13 +74,13 @@ class StudentDetailViewController: UIViewController {
     }
     
     func reloadYearLabel(page:Int){
-        if(yearOfUserImage[userImages[page]] == -1){
+        /*if(yearOfUserImage[userImages[page]] == -1){
             yearLabel.text = "Năm ?"
         }
         else{
             yearLabel.text = "\(yearOfUserImage[userImages[page]]!)"
         }
-        view.layoutIfNeeded()
+        view.layoutIfNeeded()*/
     }
     
     func setupimageSlideshow(){
@@ -94,14 +92,12 @@ class StudentDetailViewController: UIViewController {
         
         
         imageSlideshow.currentPageChanged = { page in
-            DispatchQueue.main.async {
-                self.reloadYearLabel(page: page)
-            }
+            self.reloadYearLabel(page: page)
         }
     }
     
     @objc func didTap() {
-        selectedImage = userImages[imageSlideshow.currentPage]
+        //selectedImage = userImages[imageSlideshow.currentPage]
         performSegue(withIdentifier: "StudentDetailToImageDetailSegue", sender: self)
     }
     
@@ -109,7 +105,7 @@ class StudentDetailViewController: UIViewController {
         var imageSources = [ImageSource]()
         
         for image in userImages{
-            imageSources.append(ImageSource(image: image))
+        //    imageSources.append(ImageSource(image: image))
         }
         
         imageSlideshow.setImageInputs(imageSources)

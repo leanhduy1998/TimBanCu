@@ -23,8 +23,8 @@ extension AddInfoImageDetailViewController{
         
         editImageYearAlert.addAction(UIAlertAction(title: "Sửa Năm", style: .default, handler: { [weak editImageYearAlert] (_) in
             let textField = editImageYearAlert?.textFields![0] // Force unwrapping because we know it exists.
-            let year = Int((textField?.text)!)
-            self.yearOfUserImage[self.userImages[self.indexForDeletion]] = year
+            let year = textField?.text
+            self.userImages[self.indexForDeletion].year = year
             self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
         }))
     }

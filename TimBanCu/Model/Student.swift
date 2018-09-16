@@ -13,7 +13,7 @@ class Student{
     var birthYear:String!
     var phoneNumber:String!
     var email:String!
-    var imageUrls: [String:Int]!
+    var imageUrls: [String:String]!
     var uid:String!
     
     var enrolledIn:[ClassDetail]!
@@ -34,6 +34,16 @@ class Student{
         self.imageUrls = [:]
         self.enrolledIn = enrolledIn
         self.uid = uid
+    }
+    
+    init(userData:UserData){
+        self.fullName = userData.fullname
+        self.birthYear = userData.birthday
+        self.phoneNumber = userData.phoneNumber
+        self.email = userData.email
+        self.imageUrls = [:]
+        self.enrolledIn = []
+        self.uid =  userData.uid
     }
     
     
@@ -71,10 +81,6 @@ class Student{
             return false
         }
         return true
-    }
-    
-    func getObjectValueAsDic() -> [String:Any]{
-        return ["fullName":fullName,"birthday":birthYear,"phoneNumber":phoneNumber,"email":email,"imageUrls":imageUrls,"enrolledIn":enrolledIn]
     }
     
     func getOjectKey()-> String{

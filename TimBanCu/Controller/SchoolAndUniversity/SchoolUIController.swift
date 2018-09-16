@@ -19,7 +19,7 @@ final class SchoolUIController{
     fileprivate var noResultView:NoResultView!
     private var searchTF:UITextField!
     fileprivate var addNewSchoolClosure: (String)->()
-    
+    fileprivate var keyboardHelper:KeyboardHelper!
 
     var searchSchoolModels = [School]()
     private var genericTableView: GenericTableView<School, SchoolTableViewCell>!
@@ -36,6 +36,7 @@ final class SchoolUIController{
         
         setupNoResultView()
         setupGenericTableView()
+        setupKeyboard()
     }
     
     var state:UIState = .Loading{
@@ -66,7 +67,7 @@ final class SchoolUIController{
                 alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
             break
-        case (.Success(), .Loading): break
+        case (.Success(), .Loading): showLoading()
         case (.Success(), .AddingNewData): break
         case (.AddingNewData, .AddingNewData): break
             
@@ -95,14 +96,11 @@ final class SchoolUIController{
     
     private func showLoading(){
         noResultView.isHidden = true
-        tableview.isHidden = false
+        tableview.isHidden = true
         //TODO
     }
     
-    func showAddNewSchoolAlert(){
-        state = .AddingNewData
-        alerts.showAddNewSchoolAlert()
-    }
+    
     
     
     private func reloadTableViewAndUpdateUI(){
@@ -169,6 +167,20 @@ extension SchoolUIController{
     }
 }
 
+// Alerts
+extension SchoolUIController{
+    fileprivate func setupAlerts(){
+        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { (addedSchool) in
+            self.addNewSchoolClosure(addedSchool)
+        }
+    }
+    
+    func showAddNewSchoolAlert(){
+        state = .AddingNewData
+        alerts.showAddNewSchoolAlert()
+    }
+}
+
 // Other UI Setup
 extension SchoolUIController{
     fileprivate func setupNoResultView(){
@@ -181,9 +193,8 @@ extension SchoolUIController{
         viewcontroller.view.addSubview(noResultView)
         viewcontroller.view.bringSubview(toFront: noResultView)
     }
-    fileprivate func setupAlerts(){
-        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { (addedSchool) in
-            self.addNewSchoolClosure(addedSchool)
-        }
+    
+    fileprivate func setupKeyboard(){
+        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
 }

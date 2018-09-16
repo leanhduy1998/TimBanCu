@@ -29,10 +29,4 @@ class School{
         self.type = type
         self.uid = uid
     }
-    
-    func getObjectValueAsDic() -> [String:Any]{
-        // name should be the key instead of value
-        let dic:[String:Any] = ["type":type,"address":address,"uid":uid]
-        return dic
-    }
 }

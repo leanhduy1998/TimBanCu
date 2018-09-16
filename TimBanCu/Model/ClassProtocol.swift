@@ -15,5 +15,4 @@ protocol ClassProtocol{
     
     func getFirebasePathWithoutSchoolYear()->String
     func getFirebasePathWithSchoolYear()->String
-    func writeToDatabase(completionHandler: @escaping (_ err:Error?,_ ref:DatabaseReference) -> Void)
 }
