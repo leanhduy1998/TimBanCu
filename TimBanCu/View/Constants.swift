@@ -8,6 +8,7 @@
 
 import UIKit
 
-let themeColor = UIColor(red: 1, green: 158/255, blue: 0, alpha: 1.0)
+let PRIMARY_COLOR = UIColor(red: 1, green: 158/255, blue: 0, alpha: 1.0)
 
-// UIColor(red: 224/255, green: 37/255, blue: 54/255, alpha: 1.0)
+let APP_NAME = "Tìm Bạn Cũ"
+let APP_LOGO_FONT = "FSNokioBold"

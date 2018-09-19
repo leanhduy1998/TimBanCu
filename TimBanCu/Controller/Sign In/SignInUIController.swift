@@ -79,7 +79,7 @@ final class SignInUIController{
         appNameStackView.axis = .horizontal
         appNameStackView.distribution = .fillProportionally
         appNameStackView.alignment = .center
-        appNameStackView.spacing = 1.0
+        appNameStackView.spacing = 0
         appNameStackView.translatesAutoresizingMaskIntoConstraints = false
         
         viewcontroller.view.addSubview(appNameStackView)
@@ -92,7 +92,7 @@ final class SignInUIController{
     }
     
     @objc private func animateAppName() {
-        let appName = "Tìm Bạn Cũ"
+        let appName = APP_NAME
         var charInAppName = [String]()
         var charInAppNameLabel = [UILabel]()
         
@@ -110,12 +110,13 @@ final class SignInUIController{
     }
     
     private func setUpAppNameLabel(label: UILabel, text: String) {
-        label.textColor = themeColor
+        label.textColor = PRIMARY_COLOR
         label.text = text
         //charInAppNameLabel[index].font = UIFont.systemFont(ofSize: 50)
-        label.font = UIFont(name: "FS-Playlist-Caps", size: 70)
+        //label.font = UIFont(name: "FS-Playlist-Caps", size: 70)
+        label.font = UIFont(name: "FSNokioBold", size: 60)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = themeColor
+        label.textColor = PRIMARY_COLOR
         label.textAlignment = .center
     }
     
