@@ -80,16 +80,16 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
         if let destination = segue.destination as? ClassViewController{
             
             switch(schoolType){
-            case .Elementary:
+            case .Elementary?:
                 destination.classes = ["Lớp 1", "Lớp 2", "Lớp 3", "Lớp 4", "Lớp 5"]
                 break
-            case .MiddleSchool:
+            case .MiddleSchool?:
                 destination.classes = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9"]
                 break
-            case .HighSchool:
+            case .HighSchool?:
                 destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
                 break
-            case .University:
+            case .University?:
                 break
             default:
                 break

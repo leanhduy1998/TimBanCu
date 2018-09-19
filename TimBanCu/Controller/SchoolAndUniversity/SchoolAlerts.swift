@@ -61,16 +61,16 @@ final class SchoolAlerts{
         var title:String!
         
         switch(schoolType){
-        case .Elementary:
+        case .Elementary?:
             title = "Thêm Trường Tiểu Học Mới"
             break
-        case .MiddleSchool:
+        case .MiddleSchool?:
             title = "Thêm Trường Trung Học Cơ Sở Mới"
             break
-        case .HighSchool:
+        case .HighSchool?:
             title = "Thêm Trường Trung Học Phổ Thông Mới"
             break
-        case .University:
+        case .University?:
             title = "Thêm Trường Đại Học Mới"
             break
         default:

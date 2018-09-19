@@ -38,13 +38,13 @@ class UnderlineView: UIView {
     
     func underline() {
         switch underlineState {
-        case .showUnderline:
+        case .showUnderline?:
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 self.lineHeight?.constant = 2.5
                 self.backgroundColor = themeColor
             }, completion: nil)
             break
-        case .hideUnderline:
+        case .hideUnderline?:
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 self.lineHeight?.constant = 1.5
                 self.backgroundColor = themeColor.withAlphaComponent(0.5)

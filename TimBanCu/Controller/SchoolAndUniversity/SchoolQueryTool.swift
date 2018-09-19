@@ -42,16 +42,16 @@ final class SchoolQueryTool{
         var query:DatabaseQuery!
         
         switch(schoolType){
-        case .Elementary:
+        case .Elementary?:
             query = tieuhocQuery
             break
-        case .MiddleSchool:
+        case .MiddleSchool?:
             query = thcsQuery
             break
-        case .HighSchool:
+        case .HighSchool?:
             query = thptQuery
             break
-        case .University:
+        case .University?:
             query = daihocQuery
             break
             

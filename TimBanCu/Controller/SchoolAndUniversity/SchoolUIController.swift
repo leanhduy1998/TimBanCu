@@ -149,16 +149,16 @@ final class SchoolUIController{
     
     private func setHeroId(){
         switch(schoolType){
-        case .Elementary:
+        case .Elementary?:
             viewcontroller.view.hero.id = "elementary"
             break
-        case .MiddleSchool:
+        case .MiddleSchool?:
             viewcontroller.view.hero.id = "middleSchool"
             break
-        case .HighSchool:
+        case .HighSchool?:
             viewcontroller.view.hero.id = "highSchool"
             break
-        case .Elementary:
+        case .Elementary?:
             viewcontroller.view.hero.id = "elementary"
             break
         default:

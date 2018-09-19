@@ -61,8 +61,6 @@
 	<string>TimBanCu</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>ShowcaseSans.ttf</string>
-		<string>Butcherandblock.otf</string>
 		<string>FS Playlist Caps.otf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>

@@ -23,13 +23,13 @@ final class SchoolController{
     
     private func getSchoolTypeAsString() -> String{
         switch(schoolType){
-        case .Elementary:
+        case .Elementary?:
             return "th"
-        case .MiddleSchool:
+        case .MiddleSchool?:
             return "thcs"
-        case .HighSchool:
+        case .HighSchool?:
             return "thpt"
-        case .University:
+        case .University?:
             return "dh"
         default:
             return ""
