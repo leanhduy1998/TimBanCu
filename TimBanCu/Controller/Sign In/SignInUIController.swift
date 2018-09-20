@@ -92,7 +92,7 @@ final class SignInUIController{
     }
     
     @objc private func animateAppName() {
-        let appName = APP_NAME
+        let appName = Constants.App.name
         var charInAppName = [String]()
         var charInAppNameLabel = [UILabel]()
         
@@ -110,13 +110,10 @@ final class SignInUIController{
     }
     
     private func setUpAppNameLabel(label: UILabel, text: String) {
-        label.textColor = PRIMARY_COLOR
         label.text = text
-        //charInAppNameLabel[index].font = UIFont.systemFont(ofSize: 50)
-        //label.font = UIFont(name: "FS-Playlist-Caps", size: 70)
-        label.font = UIFont(name: "FSNokioBold", size: 60)
+        label.font = UIFont(name: Constants.App.font, size: 60)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = PRIMARY_COLOR
+        label.textColor = Constants.AppColor.primaryColor
         label.textAlignment = .center
     }
     

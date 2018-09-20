@@ -8,7 +8,15 @@
 
 import UIKit
 
-let PRIMARY_COLOR = UIColor(red: 1, green: 158/255, blue: 0, alpha: 1.0)
-
-let APP_NAME = "Tìm Bạn Cũ"
-let APP_LOGO_FONT = "FSNokioBold"
+struct Constants {
+    struct App {
+        static let name = "Tìm Bạn Cũ"
+        static let font = "FSNokioBold"
+    }
+    
+    struct AppColor {
+        static let primaryColor = UIColor(red: 1, green: 158/255, blue: 0, alpha: 1.0)
+        static let lighterPrimaryColor = UIColor(red: 1, green: 158/255, blue: 0, alpha: 0.5)
+    }
+    
+}

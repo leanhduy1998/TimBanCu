@@ -22,7 +22,7 @@ class UnderlineView: UIView {
         self.searchTF = searchTF
         self.viewcontroller = viewcontroller
         
-        self.backgroundColor = themeColor.withAlphaComponent(0.5)
+        self.backgroundColor = Constants.AppColor.lighterPrimaryColor 
         self.translatesAutoresizingMaskIntoConstraints = false
         
         setupConstraints()
@@ -41,13 +41,13 @@ class UnderlineView: UIView {
         case .showUnderline?:
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 self.lineHeight?.constant = 2.5
-                self.backgroundColor = themeColor
+                self.backgroundColor = Constants.AppColor.primaryColor
             }, completion: nil)
             break
         case .hideUnderline?:
             UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 self.lineHeight?.constant = 1.5
-                self.backgroundColor = themeColor.withAlphaComponent(0.5)
+                self.backgroundColor = Constants.AppColor.lighterPrimaryColor
             }, completion: nil)
         default:
             break
