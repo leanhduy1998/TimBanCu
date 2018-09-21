@@ -116,6 +116,7 @@
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
 		3833F5D021527D1600840447 /* FSNokioBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3833F5CF21527D1600840447 /* FSNokioBold.otf */; };
+		3833F5D22155A21400840447 /* AnimateAppName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F5D12155A21400840447 /* AnimateAppName.swift */; };
 		384F4871214C5B47003B23A6 /* UnderlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F4870214C5B47003B23A6 /* UnderlineState.swift */; };
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
@@ -265,6 +266,7 @@
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3833F5CF21527D1600840447 /* FSNokioBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FSNokioBold.otf; sourceTree = "<group>"; };
+		3833F5D12155A21400840447 /* AnimateAppName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateAppName.swift; sourceTree = "<group>"; };
 		384F4870214C5B47003B23A6 /* UnderlineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineState.swift; sourceTree = "<group>"; };
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 				1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */,
 				38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */,
 				38CAE9D02129BD04005BE656 /* UnderlineView.swift */,
+				3833F5D12155A21400840447 /* AnimateAppName.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1201,6 +1204,7 @@
 				1C83E8232113CCED00D647D0 /* MajorViewModel.swift in Sources */,
 				1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */,
 				1CDBA7B32124FBC4002004F9 /* UserClassTableViewCell.swift in Sources */,
+				3833F5D22155A21400840447 /* AnimateAppName.swift in Sources */,
 				1CD730032138AB1500105ACE /* MajorUIController.swift in Sources */,
 				1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */,
 				1C6CF60D21362AC3009174D2 /* SignInUIController.swift in Sources */,
