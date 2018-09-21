@@ -12,11 +12,17 @@ struct Constants {
     struct App {
         static let name = "Tìm Bạn Cũ"
         static let font = "FSNokioBold"
+        static let fontSize: CGFloat = 60.0
     }
     
     struct AppColor {
         static let primaryColor = UIColor(red: 1, green: 158/255, blue: 0, alpha: 1.0)
-        static let lighterPrimaryColor = UIColor(red: 1, green: 158/255, blue: 0, alpha: 0.5)
+        static let darkPrimaryColor = UIColor(red: 255/255, green: 117/255, blue: 0, alpha: 1.0)
+    }
+    
+    struct UnderlineColor {
+        static let showUnderline = AppColor.primaryColor
+        static let hideUnderline = AppColor.primaryColor.withAlphaComponent(0.6)
     }
     
 }

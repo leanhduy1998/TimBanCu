@@ -11,9 +11,9 @@ import UIKit
 class ShimmeringLabel: UILabel {
     
     init(textColor: UIColor, view: UIView) {
-        super.init(frame:  CGRect(x: 0, y: 100, width: view.frame.width, height: 100))
+        super.init(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 100))
         self.text = Constants.App.name
-        self.font = UIFont(name: "FS-Playlist-Caps", size: 70)
+        self.font = UIFont(name: Constants.App.font, size: Constants.App.fontSize)
         self.textColor = textColor
         self.textAlignment = .center
     }
