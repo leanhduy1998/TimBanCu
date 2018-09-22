@@ -35,8 +35,10 @@ class ClassYearViewController: UIViewController {
     func handleSelectedYear(){
         controller.checkIfClassYearExist(selectedYear: selectedYear, classProtocol: classProtocol) { (exist, uidIfExist) in
             
+            self.classProtocol.year = self.selectedYear
+            
             if(!exist){
-                self.classProtocol.year = self.selectedYear
+                
                 self.classProtocol.uid = CurrentUser.getUid()
                 
                 self.controller.writeToDatabaseThenShowCompleteAlert(classProtocol: self.classProtocol, completionHandler: { (uistate) in
@@ -45,6 +47,8 @@ class ClassYearViewController: UIViewController {
             }
             else{
                 self.classProtocol.uid = uidIfExist
+                
+                
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
                 }

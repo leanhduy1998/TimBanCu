@@ -56,7 +56,7 @@ final class ClassYearController{
         var index = year
         
         while(index >= allowedLowestYear){
-            let string = "Năm \(index)"
+            let string = "\(index)"
             years.append(string)
             
             index = index - 1

@@ -13,7 +13,7 @@ class Student{
     var birthYear:String!
     var phoneNumber:String!
     var email:String!
-    var imageUrls: [String:String]!
+    var images: [Image]!
     var uid:String!
     
     var enrolledIn:[ClassDetail]!
@@ -22,7 +22,7 @@ class Student{
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber
         self.email = email
-        self.imageUrls = [:]
+        self.images = []
         self.enrolledIn = []
         self.uid = uid
     }
@@ -31,7 +31,7 @@ class Student{
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber
         self.email = email
-        self.imageUrls = [:]
+        self.images = []
         self.enrolledIn = enrolledIn
         self.uid = uid
     }
@@ -41,7 +41,7 @@ class Student{
         self.birthYear = userData.birthday
         self.phoneNumber = userData.phoneNumber
         self.email = userData.email
-        self.imageUrls = [:]
+        self.images = []
         self.enrolledIn = []
         self.uid =  userData.uid
     }
@@ -53,7 +53,7 @@ class Student{
         self.birthYear = nil
         self.phoneNumber = nil
         self.email = nil
-        self.imageUrls = nil
+        self.images = []
         self.enrolledIn = []
         self.uid = nil
     }
@@ -71,10 +71,10 @@ class Student{
         if(email == nil){
             return false
         }
-        if(imageUrls == nil){
+        /*if(imageUrls == nil){
             return false
         }
-        /*if(enrolledIn == nil){
+        if(enrolledIn == nil){
             return false
         }*/
         if(uid == nil){

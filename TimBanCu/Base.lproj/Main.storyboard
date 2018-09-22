@@ -1378,41 +1378,12 @@
                         <outlet property="nameLabel" destination="IAR-Sn-pQQ" id="osb-ZI-9IW"/>
                         <outlet property="phoneLabel" destination="jD0-rp-DJT" id="GjW-xw-m2O"/>
                         <outlet property="yearLabel" destination="3gF-ZN-DIM" id="kbE-dB-wsF"/>
-                        <segue destination="jpM-qc-IyM" kind="show" identifier="StudentDetailToImageDetailSegue" id="eeq-ey-e6x"/>
+                        <segue destination="LmB-rK-hkQ" kind="show" identifier="StudentDetailToUserImageSegue" id="Zn4-6w-hsp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bse-wl-145" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6528.8000000000002" y="1609.745127436282"/>
-        </scene>
-        <!--Student Image Detail View Controller-->
-        <scene sceneID="93R-J4-bdN">
-            <objects>
-                <viewController id="jpM-qc-IyM" customClass="StudentImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W0S-X9-HpU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yPn-Ui-eYw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="yPn-Ui-eYw" firstAttribute="leading" secondItem="joY-jX-mEa" secondAttribute="leading" id="FNk-oE-OoN"/>
-                            <constraint firstItem="joY-jX-mEa" firstAttribute="trailing" secondItem="yPn-Ui-eYw" secondAttribute="trailing" id="RSb-Ft-SpQ"/>
-                            <constraint firstItem="joY-jX-mEa" firstAttribute="bottom" secondItem="yPn-Ui-eYw" secondAttribute="bottom" id="TLk-Iy-8mq"/>
-                            <constraint firstItem="yPn-Ui-eYw" firstAttribute="top" secondItem="joY-jX-mEa" secondAttribute="top" id="dVF-M1-eAF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="joY-jX-mEa"/>
-                    </view>
-                    <connections>
-                        <outlet property="imageview" destination="yPn-Ui-eYw" id="jaf-Le-mjH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PCY-2n-xsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7497" y="1610"/>
         </scene>
         <!--Thêm Thông Tin Cá Nhân-->
         <scene sceneID="kXg-nW-OGY">
@@ -1605,40 +1576,28 @@
             </objects>
             <point key="canvasLocation" x="5570" y="3113"/>
         </scene>
-        <!--Add Info Image Detail View Controller-->
+        <!--User Image View Controller-->
         <scene sceneID="Kau-Fn-r9Z">
             <objects>
-                <viewController id="LmB-rK-hkQ" customClass="AddInfoImageDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LmB-rK-hkQ" customClass="UserImageViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEA-ZB-XK9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-Zn-xef">
+                                <rect key="frame" x="335" y="74" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="41u-zd-gbc"/>
+                                    <constraint firstAttribute="height" constant="30" id="jHW-sS-PLy"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="3dots"/>
+                                <connections>
+                                    <action selector="optionBtnPressed:" destination="LmB-rK-hkQ" eventType="touchUpInside" id="1Se-v1-ZrA"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-7h-NCO">
-                                <rect key="frame" x="0.0" y="114" width="375" height="463.5"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="443.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Spn-RZ-2IT">
-                                <rect key="frame" x="10" y="74" width="355" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3a-BZ-N7J">
-                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
-                                        <state key="normal" title="Sửa Năm Của Hình">
-                                            <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="changeYearButtonPressed:" destination="LmB-rK-hkQ" eventType="touchUpInside" id="XXr-9C-r7C"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m67-cF-O8I">
-                                        <rect key="frame" x="177.5" y="0.0" width="177.5" height="30"/>
-                                        <state key="normal" title="Xoá Hình">
-                                            <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deleteBtnPressed:" destination="LmB-rK-hkQ" eventType="touchUpInside" id="YNj-UE-ZLL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-hj-4Qn">
                                 <rect key="frame" x="150" y="587.5" width="75.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1646,30 +1605,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cRT-7h-NCO" firstAttribute="top" secondItem="Spn-RZ-2IT" secondAttribute="bottom" constant="10" id="AxW-2v-9Bu"/>
+                            <constraint firstAttribute="trailing" secondItem="hyT-Zn-xef" secondAttribute="trailing" constant="10" id="3WJ-Vd-MAs"/>
                             <constraint firstItem="6cK-hj-4Qn" firstAttribute="centerX" secondItem="SEA-ZB-XK9" secondAttribute="centerX" id="JRE-tc-6yX"/>
-                            <constraint firstItem="6cK-hj-4Qn" firstAttribute="top" secondItem="cRT-7h-NCO" secondAttribute="bottom" constant="10" id="KkU-Zc-DOd"/>
-                            <constraint firstItem="Spn-RZ-2IT" firstAttribute="top" secondItem="qWB-0t-FXa" secondAttribute="top" constant="10" id="XQc-W7-9au"/>
-                            <constraint firstItem="qWB-0t-FXa" firstAttribute="trailing" secondItem="Spn-RZ-2IT" secondAttribute="trailing" constant="10" id="Z7t-Uo-eQb"/>
+                            <constraint firstItem="6cK-hj-4Qn" firstAttribute="top" secondItem="cRT-7h-NCO" secondAttribute="bottom" constant="20" id="KkU-Zc-DOd"/>
+                            <constraint firstItem="hyT-Zn-xef" firstAttribute="top" secondItem="qWB-0t-FXa" secondAttribute="top" constant="10" id="YWw-JB-4tq"/>
                             <constraint firstItem="qWB-0t-FXa" firstAttribute="bottom" secondItem="6cK-hj-4Qn" secondAttribute="bottom" constant="10" id="ZFk-1p-HjZ"/>
                             <constraint firstItem="cRT-7h-NCO" firstAttribute="leading" secondItem="qWB-0t-FXa" secondAttribute="leading" id="aV7-0n-Qcf"/>
-                            <constraint firstItem="Spn-RZ-2IT" firstAttribute="leading" secondItem="qWB-0t-FXa" secondAttribute="leading" constant="10" id="d3S-dU-GG3"/>
                             <constraint firstItem="cRT-7h-NCO" firstAttribute="trailing" secondItem="qWB-0t-FXa" secondAttribute="trailing" id="pcK-Un-41V"/>
+                            <constraint firstItem="cRT-7h-NCO" firstAttribute="top" secondItem="hyT-Zn-xef" secondAttribute="bottom" constant="20" id="v1K-zQ-p7X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qWB-0t-FXa"/>
                     </view>
                     <connections>
                         <outlet property="imageview" destination="cRT-7h-NCO" id="ftx-Dm-8Ii"/>
+                        <outlet property="optionBtn" destination="hyT-Zn-xef" id="e7l-Gk-1bV"/>
                         <outlet property="yearLabel" destination="6cK-hj-4Qn" id="eg2-vk-dPk"/>
                         <segue destination="hR4-5v-gQA" kind="unwind" identifier="unwindToAddYourInfoControllerWithSegue" unwindAction="unwindToAddYourInfoControllerWithSegue:" id="WZ9-v7-AyF"/>
+                        <segue destination="tBf-Ts-F6c" kind="show" identifier="UserImageToUpdateYearSegue" id="5hT-Vf-XNn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rkm-r6-nMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hR4-5v-gQA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7857" y="2353"/>
+            <point key="canvasLocation" x="7856.8000000000002" y="2352.7736131934034"/>
         </scene>
         <!--Update Image Year View Controller-->
         <scene sceneID="Vyw-wk-iQr">
@@ -1751,6 +1711,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="3dots" width="200" height="200"/>
         <image name="Cover" width="1208" height="1199"/>
         <image name="classListGrey" width="25" height="25"/>
         <image name="classListRed" width="25" height="25"/>
@@ -1772,6 +1733,8 @@
         <image name="village" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5hT-Vf-XNn"/>
+        <segue reference="Zn4-6w-hsp"/>
         <segue reference="6lU-c4-lFJ"/>
         <segue reference="4Ow-6o-u2i"/>
     </inferredMetricsTieBreakers>

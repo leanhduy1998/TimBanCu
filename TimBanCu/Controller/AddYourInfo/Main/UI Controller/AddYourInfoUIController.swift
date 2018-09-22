@@ -27,8 +27,8 @@ class AddYourInfoUIController{
     fileprivate var keyboardHelper:KeyboardHelper!
     fileprivate var pickerController:ImagePicker!
     
-    fileprivate var slideshowDidTapOnImageAtIndex:(Int)->()
-    fileprivate var imagePickerDidSelectAssets:([DKAsset])->()
+    fileprivate var slideshowDidTapOnImageAtIndex:IndexOfImageClosure!
+    fileprivate var imagePickerDidSelectAssets:ImageAssetSelectionClosure!
     
     fileprivate var fullNameTF:UITextField!
     fileprivate var birthYearTF:UITextField!

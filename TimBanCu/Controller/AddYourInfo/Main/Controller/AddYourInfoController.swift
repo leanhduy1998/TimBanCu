@@ -47,7 +47,13 @@ class AddYourInfoController{
         updateLocalCurrentStudent()
         uploadDataToFirebaseDatabase(images: images)
         uploadUserImagesToFirebaseStorage(images: images, completionHandler: completeUploadClosure)
+        updateCurrentStudentInfo()
         
+    }
+    
+    fileprivate func updateCurrentStudentInfo(){
+        let student = Student(fullname: userData.fullname, birthYear: userData.birthday, phoneNumber: userData.phoneNumber, email: userData.email, uid: CurrentUser.getUid())
+        CurrentUser.setStudent(student: student)
     }
 }
 
@@ -115,7 +121,7 @@ extension AddYourInfoController{
             let name = image.imageName
             let imageRef = storage.reference().child("users").child("\(CurrentUser.getUid())/\(name!)")
             
-            let data = image.image.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
+            let data = image.image?.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
             
             let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {

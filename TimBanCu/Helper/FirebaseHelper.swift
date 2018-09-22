@@ -23,8 +23,15 @@ class FirebaseHelper{
         else if let model = model as? MajorDetail{
             return ["uid":model.uid]
         }
+            
+        // write test case that if uiimage is nil, error
         else if let model = model as? Student{
-            return ["fullName":model.fullName,"birthday":model.birthYear,"phoneNumber":model.phoneNumber,"email":model.email,"imageUrls":model.imageUrls,"enrolledIn":model.enrolledIn]
+            var imageNameAndYear = [String:String]()
+            for image in model.images{
+                imageNameAndYear[image.imageName] = image.year
+            }
+            
+            return ["fullName":model.fullName,"birthday":model.birthYear,"phoneNumber":model.phoneNumber,"email":model.email,"imageUrls":imageNameAndYear,"enrolledIn":model.enrolledIn]
         }
         
         return [:]

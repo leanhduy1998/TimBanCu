@@ -31,11 +31,6 @@ class AddImagesViewController: UIViewController {
             
             let currentTime = Int(Date().timeIntervalSince1970.binade)
             
-            var currentImagesSet = NSMutableSet()
-            for image in self.currentImages{
-                currentImagesSet.add(image.dkasset)
-            }
-            
             for asset in assets{
                 asset.fetchOriginalImage(completeBlock: { (uiimage, something) in
                     

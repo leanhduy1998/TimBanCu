@@ -33,9 +33,16 @@ class AllUserHelper{
                     student.birthYear = birthYear
                 }
                 else if(key == "images"){
-                    let images = (snap as! DataSnapshot).value as! [String:String]
+                    let imagesNameAndYear = (snap as! DataSnapshot).value as! [String:String]
                     
-                    student.imageUrls = images
+                    var images = [Image]()
+                    
+                    for (name,year) in imagesNameAndYear{
+                        let image = Image(year: year, imageName: name)
+                        images.append(image)
+                    }
+                    
+                    student.images = images
                 }
                 else if(key == "phoneNumber"){
                     let phoneNumber = (snap as! DataSnapshot).value as! String

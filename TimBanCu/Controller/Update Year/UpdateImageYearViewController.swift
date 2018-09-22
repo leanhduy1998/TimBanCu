@@ -22,6 +22,7 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
     
     private var uiController:UpdateImageYearUIController!
     
+    //TODO: write test case to make sure all items needed are passed from segue
     override func viewDidLoad() {
         super.viewDidLoad()
         imageview.image = selectedImage.image
@@ -56,7 +57,8 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         }
         else{
             selectedImage.year = yearTF.text
-            performSegue(withIdentifier: "UpdateImageYearToAddYourInfoControllerSegue", sender: self)
+            navigationController?.popViewController(animated: true)
+            //performSegue(withIdentifier: "UpdateImageYearToAddYourInfoControllerSegue", sender: self)
         }
     }
     

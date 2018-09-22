@@ -45,7 +45,7 @@ class Slideshow:ImageSlideshow{
         var imageSources = [ImageSource]()
         
         for x in 0...(userImages.count-1){
-            imageSources.append(ImageSource(image: userImages[x].image))
+            imageSources.append(ImageSource(image: userImages[x].image!))
         }
         
         self.setImageInputs(imageSources)

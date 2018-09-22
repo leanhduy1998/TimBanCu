@@ -33,13 +33,13 @@ class ClassDetailUIController{
         }
     }
     
-    init(viewcontroller:ClassDetailViewController,searchTF:UITextField,tableview:UITableView,activityIndicator: UIActivityIndicatorView,addYourselfBtn:UIButton,chatBtn:UIButton,noResultViewAddBtnClosure: @escaping ()->()){
+    init(viewcontroller:ClassDetailViewController,noResultViewAddBtnClosure: @escaping ()->()){
         self.viewcontroller = viewcontroller
-        self.searchTF = searchTF
-        self.activityIndicator = activityIndicator
-        self.addYourselfBtn = addYourselfBtn
-        self.chatBtn = chatBtn
-        self.tableview = tableview
+        self.searchTF = viewcontroller.searchTF
+        self.activityIndicator = viewcontroller.activityIndicator
+        self.addYourselfBtn = viewcontroller.addYourselfBtn
+        self.chatBtn = viewcontroller.chatBtn
+        self.tableview = viewcontroller.tableview
         self.noResultViewAddBtnClosure = noResultViewAddBtnClosure
         
         chatBtn.isHidden = true
@@ -78,7 +78,13 @@ class ClassDetailUIController{
             showNoResultViewIfThereIsNoStudent()
             break
         case (.Success(), .AddingNewData): break
-        case (.Success(), .Success()): break
+        case (.Success(), .Success()):
+            reloadTableViewAndUpdateUI()
+            break
+        case (.Success(), .Failure(let errStr)):
+            reloadTableViewAndUpdateUI()
+            alerts.showGeneralErrorAlert(message: errStr)
+            break
         case (.AddingNewData, .AddingNewData): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
@@ -205,6 +211,11 @@ extension ClassDetailUIController{
             cell.imageview!.hero.id = "\(student.fullName)image"
             cell.nameLabel!.hero.modifiers = [.arc]
             cell.imageview!.hero.modifiers = [.arc]
+            
+            //TODO: unit test for when there is no image
+            if(student.images[0].image != nil){
+                cell.imageview.image = student.images[0].image
+            }
         })
         
         genericTableView.didSelect = { student in

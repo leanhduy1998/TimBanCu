@@ -22,100 +22,30 @@ class StudentDetailViewController: UIViewController {
     
     var student:Student!
 
-    var selectedImage:UIImage!
+    var selectedImage:Image!
     var userImages = [Image]()
+    
+    
+    private var uiController: StudentDetailUIController!
+    private var controller:StudentDetailController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpHeroId()
-        setUpStudentDetails()
-        setupimageSlideshow()
-        fetchStudentImages()
-    }
-    
-    func fetchStudentImages() {
-        for(photoName,year) in student.imageUrls{
-        Storage.storage().reference().child("users").child(student.uid).child(photoName).getData(maxSize: INT64_MAX) { (imageData, error) in
-                
-                DispatchQueue.main.async {
-                    let uiimage = UIImage(data: imageData!)
-                    let image = Image(image: uiimage!, year: year)
-              //      self.userImages.append(image!)
-                    self.reloadimageSlideshow()
-                }
-            }
-        }
-    }
-    
-    func setUpHeroId() {
-        nameLabel.hero.isEnabled = true
-        imageSlideshow.hero.isEnabled = true
-        nameLabel.hero.id = "\(student.fullName)"
-        imageSlideshow.hero.id = "\(student.fullName)image"
-    }
-    
-    func setUpStudentDetails() {
-        nameLabel.text = student.fullName
-        birthYearLabel.text = student.birthYear
         
-        if(student.phoneNumber == nil){
-            phoneLabel.text = "Số Điện Thoại Này Không Được Công Khai."
-        }
-        else{
-            phoneLabel.text = student.phoneNumber
-        }
+        userImages = CurrentUser.getStudent().images
         
-        if(student.email == nil){
-            emailLabel.text = "Địa Chỉ Email Này Không Được Công Khai."
+        uiController = StudentDetailUIController(viewcontroller: self)
+        controller = StudentDetailController(viewcontroller: self)
+       
+        controller.fetchStudentImages { (uiState) in
+            self.uiController.state = uiState
         }
-        else{
-            emailLabel.text = student.email
-        }
-    }
-    
-    func reloadYearLabel(page:Int){
-        /*if(yearOfUserImage[userImages[page]] == -1){
-            yearLabel.text = "Năm ?"
-        }
-        else{
-            yearLabel.text = "\(yearOfUserImage[userImages[page]]!)"
-        }
-        view.layoutIfNeeded()*/
-    }
-    
-    func setupimageSlideshow(){
-        let pageIndicator = UIPageControl()
-        imageSlideshow.pageIndicator = pageIndicator
-        
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
-        imageSlideshow.addGestureRecognizer(gestureRecognizer)
-        
-        
-        imageSlideshow.currentPageChanged = { page in
-            self.reloadYearLabel(page: page)
-        }
-    }
-    
-    @objc func didTap() {
-        //selectedImage = userImages[imageSlideshow.currentPage]
-        performSegue(withIdentifier: "StudentDetailToImageDetailSegue", sender: self)
-    }
-    
-    func reloadimageSlideshow(){
-        var imageSources = [ImageSource]()
-        
-        for image in userImages{
-        //    imageSources.append(ImageSource(image: image))
-        }
-        
-        imageSlideshow.setImageInputs(imageSources)
-        
-        self.imageSlideshow.setCurrentPage(0, animated: true)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? StudentImageDetailViewController{
+        if let destination = segue.destination as? UserImageViewController{
             destination.image = selectedImage
+            destination.userImages = userImages
         }
     }
     

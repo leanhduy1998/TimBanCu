@@ -32,8 +32,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     private var controller:AddYourInfoController!
     private var uiController:AddYourInfoUIController!
     
-    private var slideshowDidTapOnImageAtIndex:(Int)->() = {_ in }
-    private var imagePickerDidSelectAssets:([DKAsset])->() = {_ in }
+    private var slideshowDidTapOnImageAtIndex:IndexOfImageClosure!
+    private var imagePickerDidSelectAssets:ImageAssetSelectionClosure!
     
     // from previous class
     var classDetail:ClassDetail!
@@ -150,8 +150,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? AddInfoImageDetailViewController{
-            destination.indexForDeletion = imageSlideShow.currentPage
+        if let destination = segue.destination as? UserImageViewController{
+            destination.image = userImages[imageSlideShow.currentPage]
             destination.userImages = userImages
         }
         if let destination = segue.destination as? AddImagesViewController{

@@ -13,7 +13,7 @@ import DKImagePickerController
 class Image{
     var imageName:String!
     var year:String?
-    var image:UIImage!
+    var image:UIImage?
     var dkasset: DKAsset?
     
     init(image:UIImage){
@@ -23,9 +23,27 @@ class Image{
         self.image = image
         self.imageName = imageName
     }
-    init(image:UIImage, year:String){
+    init(image:UIImage, year:String?){
         self.image = image
         self.year = year
+        if(year == "-1"){
+            self.year = nil
+        }
+    }
+    init(image:UIImage, year:String?,imageName:String){
+        self.image = image
+        self.year = year
+        self.imageName = imageName
+        if(year == "-1"){
+            self.year = nil
+        }
+    }
+    init(year:String?,imageName:String){
+        self.year = year
+        self.imageName = imageName
+        if(year == "-1"){
+            self.year = nil
+        }
     }
 }
 

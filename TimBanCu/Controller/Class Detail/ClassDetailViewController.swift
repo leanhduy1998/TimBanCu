@@ -31,24 +31,32 @@ class ClassDetailViewController: UIViewController {
     private var uiController:ClassDetailUIController!
     private var controller:ClassDetailController!
     
+    private var noResultViewAddBtnClosure:()->() = {}
+    
     override func viewDidLoad() {
-        uiController = ClassDetailUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, activityIndicator: activityIndicator, addYourselfBtn: addYourselfBtn, chatBtn: chatBtn, noResultViewAddBtnClosure: {
-            
-            self.addYourselfBtn.sendActions(for: .touchUpInside)
-            
-        })
-        
+        setupClosure()
+        uiController = ClassDetailUIController(viewcontroller: self, noResultViewAddBtnClosure: noResultViewAddBtnClosure)
         controller = ClassDetailController(classProtocol: classProtocol)
+    }
+    
+    func setupClosure(){
+        noResultViewAddBtnClosure =  {
+            self.addYourselfBtn.sendActions(for: .touchUpInside)
+        }
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        controller.fetchData { (uiState) in
+        controller.fetchStudents { (uiState) in
             DispatchQueue.main.async {
                 self.uiController.searchStudents = self.controller.students
                 self.uiController.state = uiState
+                
+                self.controller.fetchStudentsImages(completionHandler: { (uiState2) in
+                    self.uiController.state = uiState2
+                })
             }
         }
     }
@@ -80,6 +88,7 @@ class ClassDetailViewController: UIViewController {
                 if case .Success() = uiState {
                     CurrentUser.addEnrollment(classD: self.classProtocol)
                 }
+                self.uiController.searchStudents = self.controller.students
                 self.uiController.state = uiState
             }
         }
