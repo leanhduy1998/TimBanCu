@@ -142,7 +142,7 @@ class ClassDetailUIController{
     // TODO: write unit test for case where if NoResultView is showing, addInfoBtn and chat should be hiding and vice versa
     
     private func showAddYourInfoBtnIfYouAreNotInTheClass(){
-        chatBtn.isEnabled = false
+        chatBtn.isHidden = false
         addYourselfBtn.isHidden = false
         
         if(viewcontroller.getAllStudents().count == 0){

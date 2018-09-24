@@ -11,12 +11,8 @@
 		1C0A039C20F5163C00E105A9 /* SchoolAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A039B20F5163C00E105A9 /* SchoolAlerts.swift */; };
 		1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */; };
 		1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98F6210BB43700D20079 /* ChatViewController.swift */; };
-		1C1A98FC210CBBE400D20079 /* ChatImageFromDBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FB210CBBE400D20079 /* ChatImageFromDBExtension.swift */; };
 		1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */; };
-		1C1A9900210CBCB900D20079 /* ChatImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */; };
-		1C1A9902210CBE4300D20079 /* ChatViewControllerUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */; };
 		1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */; };
-		1C1A9906210CBFD700D20079 /* ChatHandleMessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */; };
 		1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */; };
 		1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */; };
 		1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */; };
@@ -84,6 +80,9 @@
 		1CAB79652152945D00F21264 /* PreviousClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB79642152945D00F21264 /* PreviousClass.swift */; };
 		1CAB79672152B17000F21264 /* StudentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB79662152B17000F21264 /* StudentDetailController.swift */; };
 		1CAB79692152B91300F21264 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB79682152B91300F21264 /* Cache.swift */; };
+		1CAB796B2155D61300F21264 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB796A2155D61300F21264 /* ChatController.swift */; };
+		1CAB796D2155D72E00F21264 /* ChatUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB796C2155D72E00F21264 /* ChatUIController.swift */; };
+		1CAB796F2155DFDC00F21264 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAB796E2155DFDC00F21264 /* Status.swift */; };
 		1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */; };
 		1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */; };
 		1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */; };
@@ -160,12 +159,8 @@
 		1C0A039B20F5163C00E105A9 /* SchoolAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolAlerts.swift; sourceTree = "<group>"; };
 		1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameAlerts.swift; sourceTree = "<group>"; };
 		1C1A98F6210BB43700D20079 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		1C1A98FB210CBBE400D20079 /* ChatImageFromDBExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageFromDBExtension.swift; sourceTree = "<group>"; };
 		1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewExtension.swift; sourceTree = "<group>"; };
-		1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImagePickerExtension.swift; sourceTree = "<group>"; };
-		1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewControllerUIExtension.swift; sourceTree = "<group>"; };
 		1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldExtension.swift; sourceTree = "<group>"; };
-		1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHandleMessageExtension.swift; sourceTree = "<group>"; };
 		1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoViewController.swift; sourceTree = "<group>"; };
 		1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoAlerts.swift; sourceTree = "<group>"; };
@@ -233,6 +228,9 @@
 		1CAB79642152945D00F21264 /* PreviousClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousClass.swift; sourceTree = "<group>"; };
 		1CAB79662152B17000F21264 /* StudentDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailController.swift; sourceTree = "<group>"; };
 		1CAB79682152B91300F21264 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		1CAB796A2155D61300F21264 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		1CAB796C2155D72E00F21264 /* ChatUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUIController.swift; sourceTree = "<group>"; };
+		1CAB796E2155DFDC00F21264 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		1CB5F32F20E3202500876F80 /* tieuhochanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhochanoi.txt; sourceTree = "<group>"; };
 		1CBC0FBA210D3FE500DBFBE8 /* AddImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImagesViewController.swift; sourceTree = "<group>"; };
 		1CBF5C7420A8197B00B78E6A /* TimBanCu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimBanCu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,12 +358,10 @@
 			isa = PBXGroup;
 			children = (
 				1C1A98F6210BB43700D20079 /* ChatViewController.swift */,
-				1C1A98FB210CBBE400D20079 /* ChatImageFromDBExtension.swift */,
+				1CAB796C2155D72E00F21264 /* ChatUIController.swift */,
+				1CAB796A2155D61300F21264 /* ChatController.swift */,
 				1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */,
-				1C1A98FF210CBCB900D20079 /* ChatImagePickerExtension.swift */,
 				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
-				1C1A9905210CBFD700D20079 /* ChatHandleMessageExtension.swift */,
-				1C1A9901210CBE4300D20079 /* ChatViewControllerUIExtension.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -660,6 +656,7 @@
 				1CD72FED213747E100105ACE /* QueryState.swift */,
 				1CAB796021508B0000F21264 /* ImageAction.swift */,
 				1CAB79642152945D00F21264 /* PreviousClass.swift */,
+				1CAB796E2155DFDC00F21264 /* Status.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1231,10 +1228,10 @@
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
 				38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */,
-				1C1A9906210CBFD700D20079 /* ChatHandleMessageExtension.swift in Sources */,
 				1CAB79672152B17000F21264 /* StudentDetailController.swift in Sources */,
 				1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */,
 				1C98F65D212840AE00EFD4EF /* AllUserHelper.swift in Sources */,
+				1CAB796D2155D72E00F21264 /* ChatUIController.swift in Sources */,
 				1C53F4FB20FD455D00F4ACEB /* SettingTableViewCell.swift in Sources */,
 				1C83E8232113CCED00D647D0 /* MajorViewModel.swift in Sources */,
 				1CAB795B214F35EE00F21264 /* StudentDetailUIController.swift in Sources */,
@@ -1280,7 +1277,6 @@
 				1C83E8252113D3FD00D647D0 /* MajorTableViewCell.swift in Sources */,
 				1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */,
 				1CD73013213C37BF00105ACE /* ClassNameController.swift in Sources */,
-				1C1A9900210CBCB900D20079 /* ChatImagePickerExtension.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */,
 				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
@@ -1303,22 +1299,22 @@
 				1CE24D0520FBE6F8008DE3FB /* School.swift in Sources */,
 				1C53F4F920FD44D200F4ACEB /* SettingViewController.swift in Sources */,
 				1C83E82121138F4400D647D0 /* MajorDetail.swift in Sources */,
+				1CAB796F2155DFDC00F21264 /* Status.swift in Sources */,
 				1C4B6C47214C01D700BDF724 /* UpdateImageYearUIController.swift in Sources */,
 				1C98F66821287CE300EFD4EF /* ClassProtocol.swift in Sources */,
 				1C4B6C3A2148AF2100BDF724 /* Slideshow.swift in Sources */,
 				1CD730012138906400105ACE /* GenericTableView.swift in Sources */,
 				1CE24D0220FBE153008DE3FB /* CurrentUser.swift in Sources */,
+				1CAB796B2155D61300F21264 /* ChatController.swift in Sources */,
 				1CD72FE6213736CA00105ACE /* SchoolType.swift in Sources */,
 				1CD730072138B85400105ACE /* AddYourInfoUIController.swift in Sources */,
 				1C4B6C49214C02B600BDF724 /* UpdateImageYearAlerts.swift in Sources */,
-				1C1A9902210CBE4300D20079 /* ChatViewControllerUIExtension.swift in Sources */,
 				1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */,
 				1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */,
 				1C4B6C382148A14700BDF724 /* Image.swift in Sources */,
 				1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */,
 				1CD73015213CB4D200105ACE /* ClassYearUIController.swift in Sources */,
 				38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */,
-				1C1A98FC210CBBE400D20079 /* ChatImageFromDBExtension.swift in Sources */,
 				38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */,
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,
 				1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */,

@@ -15,7 +15,7 @@ import FirebaseStorage
 class ChatViewController: JSQMessagesViewController {
 
     // from previous class
-    var classDetail:ClassDetail!
+    var classDetail:ClassProtocol!
     
     // chat
     var messages = [JSQMessage]()
@@ -31,60 +31,50 @@ class ChatViewController: JSQMessagesViewController {
         }
         set {
             localTyping = newValue
-            let userIsTypingRef = typingIndicatorRef.child(senderId)
-            userIsTypingRef.setValue(newValue)
+            controller.updateUserTypingStatusToFB(typing: newValue)
         }
     }
     
-    let imageURLNotSetKey = "NOTSET"
     
-    var photoMessageMap = [String: JSQPhotoMediaItem]()
+    func setupOutgoingBubble() -> JSQMessagesBubbleImage {
+        let bubbleImageFactory = JSQMessagesBubbleImageFactory()
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+    }
     
-    // firebase
-    var messageRef: DatabaseReference!
-    var newMessageRefHandle: DatabaseHandle!
-    var updatedMessageRefHandle: DatabaseHandle!
-    var typingIndicatorRef: DatabaseReference!
-    var usersTypingQuery: DatabaseQuery!
-    let storage = Storage.storage()
+    func setupIncomingBubble() -> JSQMessagesBubbleImage {
+        let bubbleImageFactory = JSQMessagesBubbleImageFactory()
+        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+    }
+    
+    
+    private var uiController:ChatUIController!
+    private var controller:ChatController!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // the reason this method is here instead of init because the classDetail from the previous class wasn't passed to here yet
-        setupDBReference()
-        observeMessages()
-        observeTyping()
-        //
         
-        collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        uiController = ChatUIController(viewcontroller: self, didFinishPickingImage: {uiimage in
+            self.controller.uploadImageToStorage(image: uiimage, completionHandler: { uploadStatus in
+                
+            })
+        })
+        controller = ChatController(viewcontroller: self)
+        
         senderId = CurrentUser.getUid()
         senderDisplayName = CurrentUser.getFullname()
-    }
-    
 
-    func setupDBReference(){
-        messageRef = Database.database().reference().child("messages").child(classDetail.getFirebasePathWithSchoolYear())
-        typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classDetail.getFirebasePathWithSchoolYear())
+        // the reason this method is here instead of init because the classDetail from the previous class wasn't passed to here yet
+        controller.observeMessages()
+        controller.observeTyping()
+        //
         
-        usersTypingQuery = typingIndicatorRef!.queryOrderedByValue().queryEqual(toValue: true)
+        
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let itemRef = messageRef.childByAutoId()
-        let messageItem = [
-            "senderId": senderId!,
-            "senderName": senderDisplayName!,
-            "text": text!,
-            ]
         
-        itemRef.setValue(messageItem)
+        controller.uploadMessageToFB(text: text, senderId: senderId, senderDisplayName: senderDisplayName)
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         
@@ -94,24 +84,11 @@ class ChatViewController: JSQMessagesViewController {
     
     
     override func didPressAccessoryButton(_ sender: UIButton) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        imagePickerController.allowsEditing = true
-        
-        present(imagePickerController, animated: true, completion: nil)
+        uiController.showImagePickerController()
     }
     
-    
-    
     deinit {
-        if let refHandle = newMessageRefHandle {
-            messageRef.removeObserver(withHandle: refHandle)
-        }
-        
-        if let refHandle = updatedMessageRefHandle {
-            messageRef.removeObserver(withHandle: refHandle)
-        }
+        controller.removeAllObservers()
     }
 
 }
