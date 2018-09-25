@@ -22,7 +22,7 @@ final class SchoolController{
     }
     
     private func getSchoolTypeAsString() -> String{
-        switch(schoolType){
+        switch(schoolType!){
         case .Elementary:
             return "th"
         case .MiddleSchool:
@@ -31,8 +31,6 @@ final class SchoolController{
             return "thpt"
         case .University:
             return "dh"
-        default:
-            return ""
         }
     }
     

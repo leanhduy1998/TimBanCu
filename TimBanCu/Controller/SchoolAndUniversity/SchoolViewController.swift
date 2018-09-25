@@ -76,7 +76,7 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassViewController{
             
-            switch(schoolType){
+            switch(schoolType!){
             case .Elementary:
                 destination.classes = ["Lớp 1", "Lớp 2", "Lớp 3", "Lớp 4", "Lớp 5"]
                 break
@@ -87,8 +87,6 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
                 destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
                 break
             case .University:
-                break
-            default:
                 break
             }
             

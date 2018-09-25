@@ -73,7 +73,7 @@ extension AddYourInfoController{
         var publicDic = [String:Any]()
         var privateDic = [String:Any]()
         
-        switch(userData.phonePrivacy){
+        switch(userData.phonePrivacy!){
         case .Public:
             publicDic["phoneNumber"] = userData.phoneNumber
             break
@@ -82,7 +82,7 @@ extension AddYourInfoController{
             break
         }
         
-        switch(userData.emailPrivacy){
+        switch(userData.emailPrivacy!){
         case .Public:
             publicDic["email"] = userData.email
             break

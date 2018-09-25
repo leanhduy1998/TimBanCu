@@ -34,8 +34,6 @@ class NoResultLabel: UILabel {
             break
         case .Student:
             self.text = "Chưa có học sinh nào.\n Bạn có muốn thông tin của mình?"
-        default:
-            break
         }
     }
     

@@ -60,7 +60,7 @@ final class SchoolAlerts{
     private func setupAddNewSchoolAlert(){
         var title:String!
         
-        switch(schoolType){
+        switch(schoolType!){
         case .Elementary:
             title = "Thêm Trường Tiểu Học Mới"
             break
@@ -72,8 +72,6 @@ final class SchoolAlerts{
             break
         case .University:
             title = "Thêm Trường Đại Học Mới"
-            break
-        default:
             break
         }
         

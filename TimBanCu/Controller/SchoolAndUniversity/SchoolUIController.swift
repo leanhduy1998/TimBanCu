@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Lottie
 
-final class SchoolUIController{
+class SchoolUIController{
     
     fileprivate weak var viewcontroller:SchoolViewController!
     private var schoolType:SchoolType!
@@ -118,7 +118,7 @@ final class SchoolUIController{
     }
     
     private func setHeroId(){
-        switch(schoolType){
+        switch(schoolType!){
         case .Elementary:
             viewcontroller.view.hero.id = "elementary"
             break
@@ -128,10 +128,8 @@ final class SchoolUIController{
         case .HighSchool:
             viewcontroller.view.hero.id = "highSchool"
             break
-        case .Elementary:
-            viewcontroller.view.hero.id = "elementary"
-            break
-        default:
+        case .University:
+            viewcontroller.view.hero.id = "university"
             break
         }
     }
@@ -145,7 +143,7 @@ final class SchoolUIController{
         }
     }
 }
-
+    
 // Table View
 extension SchoolUIController{
     fileprivate func setupGenericTableView(){

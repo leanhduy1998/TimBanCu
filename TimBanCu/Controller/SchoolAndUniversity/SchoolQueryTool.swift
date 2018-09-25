@@ -41,7 +41,7 @@ final class SchoolQueryTool{
         
         var query:DatabaseQuery!
         
-        switch(schoolType){
+        switch(schoolType!){
         case .Elementary:
             query = tieuhocQuery
             break
@@ -54,9 +54,7 @@ final class SchoolQueryTool{
         case .University:
             query = daihocQuery
             break
-            
-        default:
-            break
+
         }
         
         query.observeSingleEvent(of: .value, with: { (snapshot) in

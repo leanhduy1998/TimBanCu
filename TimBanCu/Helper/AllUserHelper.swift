@@ -26,7 +26,7 @@ class AllUserHelper{
             }
             
             for snap in publicSS.children{
-                let key = (snap as! DataSnapshot).key as! String
+                let key = (snap as! DataSnapshot).key 
                 
                 if(key == "birthYear"){
                     let birthYear = (snap as! DataSnapshot).value as! String
@@ -80,7 +80,7 @@ class AllUserHelper{
             }
             else{
                 for snap in privateSS.children{
-                    let key = (snap as! DataSnapshot).key as! String
+                    let key = (snap as! DataSnapshot).key
                     if(key == "phoneNumber"){
                         let phoneNumber = (snap as! DataSnapshot).value as! String
                         student.phoneNumber = phoneNumber
