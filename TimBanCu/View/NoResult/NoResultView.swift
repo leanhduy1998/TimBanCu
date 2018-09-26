@@ -103,7 +103,7 @@ class NoResultView:UIView{
         self.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
         self.heightAnchor.constraint(equalToConstant: 300).isActive = true
         self.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width).isActive = true
-        //self.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     @objc func addNewSchoolBtnPressed(_ sender: UIButton?) {

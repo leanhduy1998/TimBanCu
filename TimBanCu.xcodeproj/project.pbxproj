@@ -14,6 +14,15 @@
 		1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */; };
 		1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */; };
 		1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */; };
+		1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4B9F215B1061002E4807 /* Constants.swift */; };
+		1C1D4BA2215B10B7002E4807 /* UnderlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */; };
+		1C1D4BA4215B1100002E4807 /* AnimateAppName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA3215B1100002E4807 /* AnimateAppName.swift */; };
+		1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA6215B11BA002E4807 /* bikingishard.json */; };
+		1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */; };
+		1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA8215B11BA002E4807 /* empty_list.json */; };
+		1C1D4BAF215B11BA002E4807 /* loading...json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA9215B11BA002E4807 /* loading...json */; };
+		1C1D4BB0215B11BA002E4807 /* movingBus.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BAA215B11BA002E4807 /* movingBus.json */; };
+		1C1D4BB1215B11BA002E4807 /* trail_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BAB215B11BA002E4807 /* trail_loading.json */; };
 		1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */; };
 		1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */; };
 		1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* SignInViewController.swift */; };
@@ -92,8 +101,6 @@
 		1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */; };
 		1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */; };
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
-		1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFACEC211A7CEE00429FA2 /* Colors.swift */; };
-		1CCFACF0211A820700429FA2 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACEF211A820700429FA2 /* empty_list.json */; };
 		1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF2211A836200429FA2 /* Butcherandblock.otf */; };
 		1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */; };
 		1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */; };
@@ -162,6 +169,16 @@
 		1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewExtension.swift; sourceTree = "<group>"; };
 		1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldExtension.swift; sourceTree = "<group>"; };
 		1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
+		1C1D4B9F215B1061002E4807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TimBanCu/View/Constants.swift; sourceTree = SOURCE_ROOT; };
+		1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineState.swift; sourceTree = "<group>"; };
+		1C1D4BA3215B1100002E4807 /* AnimateAppName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAppName.swift; sourceTree = "<group>"; };
+		1C1D4BA6215B11BA002E4807 /* bikingishard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bikingishard.json; sourceTree = "<group>"; };
+		1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = biking_is_cool.json; sourceTree = "<group>"; };
+		1C1D4BA8215B11BA002E4807 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
+		1C1D4BA9215B11BA002E4807 /* loading...json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading...json; sourceTree = "<group>"; };
+		1C1D4BAA215B11BA002E4807 /* movingBus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movingBus.json; sourceTree = "<group>"; };
+		1C1D4BAB215B11BA002E4807 /* trail_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail_loading.json; sourceTree = "<group>"; };
+		1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FSNokioBold.otf; sourceTree = "<group>"; };
 		1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoViewController.swift; sourceTree = "<group>"; };
 		1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoAlerts.swift; sourceTree = "<group>"; };
 		1C3ADA8320F6B6F80041421F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -246,9 +263,7 @@
 		1CBF5C9320A8197C00B78E6A /* TimBanCuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimBanCuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimBanCuUITests.swift; sourceTree = "<group>"; };
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CCFACEC211A7CEE00429FA2 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButcherandBlockExtras1.otf; sourceTree = "<group>"; };
-		1CCFACEF211A820700429FA2 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
 		1CCFACF2211A836200429FA2 /* Butcherandblock.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherandblock.otf; sourceTree = "<group>"; };
 		1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FS Playlist Caps.otf"; sourceTree = "<group>"; };
 		1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShowcaseSans.ttf; sourceTree = "<group>"; };
@@ -364,6 +379,19 @@
 				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		1C1D4BA5215B11BA002E4807 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				1C1D4BA6215B11BA002E4807 /* bikingishard.json */,
+				1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */,
+				1C1D4BA8215B11BA002E4807 /* empty_list.json */,
+				1C1D4BA9215B11BA002E4807 /* loading...json */,
+				1C1D4BAA215B11BA002E4807 /* movingBus.json */,
+				1C1D4BAB215B11BA002E4807 /* trail_loading.json */,
+			);
+			path = LottieAnimation;
 			sourceTree = "<group>";
 		};
 		1C2E737421091990007EAE63 /* AddYourInfo */ = {
@@ -544,7 +572,7 @@
 				1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */,
 				1C5365BD20E6D952000F7FB2 /* thpthanoi.txt */,
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
-				1CCFACEF211A820700429FA2 /* empty_list.json */,
+				1C1D4BA5215B11BA002E4807 /* LottieAnimation */,
 				1CCFACF1211A836200429FA2 /* Fonts */,
 				1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */,
 				1C3ADA8B20F962BB0041421F /* awsconfiguration.json */,
@@ -614,6 +642,7 @@
 			children = (
 				1CCFACF2211A836200429FA2 /* Butcherandblock.otf */,
 				1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */,
+				1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */,
 				1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */,
 			);
 			path = Fonts;
@@ -651,6 +680,7 @@
 			isa = PBXGroup;
 			children = (
 				1CD72FE5213736CA00105ACE /* SchoolType.swift */,
+				1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */,
 				1CD7300E213B143B00105ACE /* NoResultType.swift */,
 				1C6CF60E21363042009174D2 /* UIState.swift */,
 				1CD72FED213747E100105ACE /* QueryState.swift */,
@@ -717,7 +747,8 @@
 				1CD73011213B1C2400105ACE /* Alerts */,
 				1CD73010213B1C1100105ACE /* NoResult */,
 				1C98F6662128667900EFD4EF /* TableCell */,
-				1CCFACEC211A7CEE00429FA2 /* Colors.swift */,
+				1C1D4B9F215B1061002E4807 /* Constants.swift */,
+				1C1D4BA3215B1100002E4807 /* AnimateAppName.swift */,
 				1C8EC86C2128C8E80038ECB5 /* RoundedImageView.swift */,
 				1CF50FE5210B678100346EF9 /* CircleImageView.swift */,
 				1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */,
@@ -870,18 +901,23 @@
 			files = (
 				1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */,
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
-				1CCFACF0211A820700429FA2 /* empty_list.json in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
 				1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
+				1C1D4BAF215B11BA002E4807 /* loading...json in Resources */,
 				1C5365BC20E6D034000F7FB2 /* thcstanbinh.txt in Resources */,
+				1C1D4BB0215B11BA002E4807 /* movingBus.json in Resources */,
 				1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */,
 				1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
+				1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */,
+				1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */,
+				1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
+				1C1D4BB1215B11BA002E4807 /* trail_loading.json in Resources */,
 				1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
 			);
@@ -1224,7 +1260,6 @@
 				1CD730052138AB8100105ACE /* MajorAlerts.swift in Sources */,
 				1C4B6C332148541B00BDF724 /* UserData.swift in Sources */,
 				1C8EC86D2128C8E80038ECB5 /* RoundedImageView.swift in Sources */,
-				1CCFACED211A7CEF00429FA2 /* Colors.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
 				38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */,
@@ -1260,6 +1295,7 @@
 				1C4B6C44214B432C00BDF724 /* UpdateImageYearViewController.swift in Sources */,
 				1C4B6C2F21484CEE00BDF724 /* AddYourInfoController.swift in Sources */,
 				1CAB79692152B91300F21264 /* Cache.swift in Sources */,
+				1C1D4BA2215B10B7002E4807 /* UnderlineState.swift in Sources */,
 				1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */,
 				1C8EC8732128CBD80038ECB5 /* AskForInputAlert.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
@@ -1292,6 +1328,7 @@
 				1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */,
 				1CD72FEE213747E100105ACE /* QueryState.swift in Sources */,
 				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
+				1C1D4BA4215B1100002E4807 /* AnimateAppName.swift in Sources */,
 				1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */,
 				1CD7301C213F285500105ACE /* ClassDetailController.swift in Sources */,
 				1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */,
@@ -1320,6 +1357,7 @@
 				1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */,
 				1CD7301A213F1D2C00105ACE /* ClassDetailUIController.swift in Sources */,
 				1C98F65F21285D6800EFD4EF /* UserClassesViewModel.swift in Sources */,
+				1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */,
 				1CD73018213CBEDF00105ACE /* ClassYearController.swift in Sources */,
 				1C9710442116698B00A140FE /* ClassYearAlerts.swift in Sources */,
 			);

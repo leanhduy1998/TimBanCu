@@ -184,7 +184,6 @@ extension ClassDetailUIController{
         
         viewcontroller.view.addSubview(searchTFUnderline)
         viewcontroller.view.bringSubview(toFront: searchTFUnderline)
-        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     func searchTFDidChange(){

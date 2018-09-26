@@ -126,7 +126,6 @@ extension ClassNameUIController{
     fileprivate func setupTextFieldUnderline(){
         searchTFUnderline = UnderlineView()
         viewcontroller.view.addSubview(searchTFUnderline)
-        searchTFUnderline.setupConstraints(searchTF: searchTF, viewcontroller: viewcontroller)
     }
     
     func searchTFDidBeginEditing(allClassDetails:[ClassDetail]){

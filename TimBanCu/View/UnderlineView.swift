@@ -10,7 +10,7 @@ import UIKit
 
 class UnderlineView: UIView {
     
-<<<<<<< HEAD
+
     var textFieldDidBeginEditing: (()->())!
     var textFieldDidEndEditing: ((UITextField)->())!
     var searchUnderlineHeightAnchor: NSLayoutConstraint?
@@ -40,6 +40,8 @@ class UnderlineView: UIView {
                 }
             }, completion: nil)
         }
+    }
+    
     var underlineState: UnderlineState!
     private var lineHeight: NSLayoutConstraint?
     private var searchTF: UITextField!
