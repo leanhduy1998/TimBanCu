@@ -20,6 +20,7 @@ class ClassNameViewController: UIViewController {
     var classNumber: String!
     
     var selectedClassDetail:ClassDetail!
+    var underlineState: UnderlineState!
     
     fileprivate var uiController:ClassNameUIController!
     fileprivate var controller:ClassNameController!

@@ -24,21 +24,21 @@ final class SignInUIController{
     private weak var viewcontroller:SignInViewController!
     
     private var revealingSplashView: RevealingSplashView! = nil
-    private var shimmerAppNameLabel: ShimmeringLabel! = nil
-    private var appNameLabel:ShimmeringLabel! = nil
     
     private var facebookBtn:LoginButton!
     private var googleBtn:GIDSignInButton!
     
     private var errorAlert:InfoAlert!
-    
+    private var animateAppName: AnimateAppName!
     
     init(viewController: SignInViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
         self.viewcontroller = viewController
         self.facebookBtn = facebookBtn
         self.googleBtn = googleBtn
+        
+        self.animateAppName = AnimateAppName(viewController: viewcontroller)
+        
         setUpSplashView()
-        animateShimmeringText()
         setupFacebookBtn()
         setupGoogleButton()
         
@@ -72,36 +72,11 @@ final class SignInUIController{
         revealingSplashView?.startAnimation()
     }
     
-    private func animateShimmeringText() {
-        
-        appNameLabel = ShimmeringLabel(textColor: themeColor.withAlphaComponent(0.8),view:viewcontroller.view)
-        shimmerAppNameLabel = ShimmeringLabel(textColor: themeColor, view: viewcontroller.view)
-        
-        viewcontroller.view.addSubview(shimmerAppNameLabel)
-        viewcontroller.view.addSubview(appNameLabel)
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = appNameLabel.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.0, 0.5, 1]
-        let angle = -60 * CGFloat.pi / 180
-        gradient.transform = CATransform3DMakeRotation(angle, 0, 0, 1)
-        shimmerAppNameLabel.layer.mask = gradient
-        
-        let animation = CABasicAnimation(keyPath: "transform.translation.x")
-        animation.duration = 3.5
-        animation.repeatCount = Float.infinity
-        animation.autoreverses = false
-        animation.fromValue = -viewcontroller.view.frame.width
-        animation.toValue = viewcontroller.view.frame.width
-        gradient.add(animation, forKey: "shimmerKey")
-    }
-    
     private func setupFacebookBtn(){
-        facebookBtn.translatesAutoresizingMaskIntoConstraints = false
-        
         viewcontroller.view.addSubview(facebookBtn)
         viewcontroller.view.sendSubview(toBack: facebookBtn)
+        
+        facebookBtn.translatesAutoresizingMaskIntoConstraints = false
         facebookBtn.bottomAnchor.constraint(equalTo: googleBtn.topAnchor, constant: -10).isActive = true
         facebookBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         facebookBtn.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 40).isActive = true

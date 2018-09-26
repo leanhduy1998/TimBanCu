@@ -13,7 +13,7 @@ class NoResultButton: UIButton {
     init(type: NoResultType) {
         super.init(frame: .zero)
         let title = setUpText(type: type)
-        self.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: themeColor]), for: .normal)
+        self.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: Constants.AppColor.primaryColor]), for: .normal)
         
         self.translatesAutoresizingMaskIntoConstraints = false
     }

@@ -36,19 +36,5 @@ extension UIView {
         }
         layer.addSublayer(border)
     }
-    
-    
-    
-    func animateOnlyBeginingCells(tableView: UITableView, indexPath: IndexPath, model: [AnyObject], finishLoading: Bool) -> Bool{
-        if model.count > 0 && !finishLoading {
-            if let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows,
-                let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
-                return true
-            }
-        }
-        return false
-    }
-
-
 }
 
