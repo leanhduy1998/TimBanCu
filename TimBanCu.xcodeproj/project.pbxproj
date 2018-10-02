@@ -138,6 +138,7 @@
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
+		38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */; };
 		6325AE7E10B116C45626D6CB /* Pods_TimBanCuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33A95542DA078ED459341A /* Pods_TimBanCuTests.framework */; };
 		D868AFE6657B257B7B9E556F /* Pods_TimBanCuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6AB859161F1B93DF11EEFF /* Pods_TimBanCuUITests.framework */; };
 /* End PBXBuildFile section */
@@ -913,6 +914,7 @@
 				1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */,
+				38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */,
 				1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */,
 				1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,

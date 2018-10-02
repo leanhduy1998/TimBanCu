@@ -41,6 +41,7 @@ class ClassDetailUIController{
         self.chatBtn = viewcontroller.chatBtn
         self.tableview = viewcontroller.tableview
         self.noResultViewAddBtnClosure = noResultViewAddBtnClosure
+        self.searchTFUnderline = UnderlineView(viewcontroller: viewcontroller, searchTF: searchTF)
         
         chatBtn.isHidden = true
         addYourselfBtn.isHidden = true
@@ -48,7 +49,6 @@ class ClassDetailUIController{
         setupNoResultView()
         setupAlerts()
         setupGenericTableView()
-        setupTextFieldUnderline()
         setupKeyboard()
     }
     
@@ -177,14 +177,6 @@ extension ClassDetailUIController{
    /* @objc func textFieldDidChange(_ textField: UITextField) {
         uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
     }*/
-    
-    fileprivate func setupTextFieldUnderline(){
-        
-        searchTFUnderline = UnderlineView()
-        
-        viewcontroller.view.addSubview(searchTFUnderline)
-        viewcontroller.view.bringSubview(toFront: searchTFUnderline)
-    }
     
     func searchTFDidChange(){
         searchTFUnderline.textFieldDidBeginEditing()
