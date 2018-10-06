@@ -170,6 +170,9 @@ extension ClassDetailUIController{
     fileprivate func setupAlerts(){
         alerts = ClassDetailAlerts(viewcontroller: viewcontroller)
     }
+    func showErrorAlert(errMsg:String){
+        alerts.showGeneralErrorAlert(message: errMsg)
+    }
 }
 
 // TextField

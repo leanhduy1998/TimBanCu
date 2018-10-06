@@ -14,86 +14,153 @@ class AddYourInfoController{
     fileprivate var privateUserProfileRef:DatabaseReference!
     fileprivate var publicUserProfileRef:DatabaseReference!
     
-    fileprivate var classDetail:ClassDetail!
+    fileprivate var classProtocol:ClassProtocol!
     fileprivate var userData:UserData!
     
     fileprivate weak var viewcontroller:AddYourInfoViewController!
     
-    init(viewcontroller:AddYourInfoViewController,classDetail:ClassDetail){
-        self.classDetail = classDetail
+    init(viewcontroller:AddYourInfoViewController){
         self.viewcontroller = viewcontroller
-        
+        self.classProtocol = viewcontroller.classProtocol
         setupFirebaseReference()
     }
     
-    private func setupFirebaseReference(){
-        privateUserProfileRef = Database.database().reference().child("privateUserProfile")
-        publicUserProfileRef = Database.database().reference().child("publicUserProfile")
-    }
-    
     // TODO: Write unit test to make sure all the strings are not empty
-    func updateUserInfo(images:[Image], completeUploadClosure:@escaping ()->Void){
+    func updateUserInfo(images:[Image], completeUploadClosure:@escaping (_ uistate:UIState)->Void){
         
-        let fullname = viewcontroller.fullNameTF.text
-        let birthYear = viewcontroller.birthYearTF.text
-        let phoneNumber = viewcontroller.phoneTF.text
-        let email = viewcontroller.emailTF.text
-        let phonePrivacy = viewcontroller.phonePrivacyDropDownBtn.currentTitle
-        let emailPrivacy = viewcontroller.emailPrivacyDropDownBtn.currentTitle
-        
-        let userData = UserData(phoneNumber: phoneNumber!, email: email!, birthday: birthYear!, fullname: fullname!, phonePrivacyType: phonePrivacy!, emailPrivacyType: emailPrivacy!, uid: CurrentUser.getUid())
-        self.userData = userData
+        setUserData()
         
         updateLocalCurrentStudent()
-        uploadDataToFirebaseDatabase(images: images)
-        uploadUserImagesToFirebaseStorage(images: images, completionHandler: completeUploadClosure)
         updateCurrentStudentInfo()
         
+        var finishUploadingImagesToStorage = false
+        var finishUploadingDataToDatabase = false
+        var finishEnrollUserToClass = false
+        
+        uploadDataToFirebaseDatabase(images: images) { (status) in
+            switch(status){
+            case .Success():
+                finishUploadingDataToDatabase = true
+                if(finishUploadingImagesToStorage && finishEnrollUserToClass){
+                    completeUploadClosure(.Success())
+                }
+                break
+            case .Failed(let errMsg):
+                completeUploadClosure(.Failure(errMsg))
+                break
+            }
+        }
+        
+        
+        uploadUserImagesToFirebaseStorage(images: images) { (status) in
+            switch(status){
+            case .Success():
+                finishUploadingImagesToStorage = true
+                if(finishUploadingDataToDatabase && finishEnrollUserToClass){
+                    completeUploadClosure(.Success())
+                }
+                break
+            case .Failed(let errMsg):
+                completeUploadClosure(.Failure(errMsg))
+                break
+            }
+        }
+        
+        enrollUserIntoClass { (status) in
+            switch(status){
+            case .Success():
+                finishEnrollUserToClass = true
+                if(finishUploadingDataToDatabase && finishUploadingImagesToStorage){
+                    completeUploadClosure(.Success())
+                }
+                break
+            case .Failed(let errMsg):
+                completeUploadClosure(.Failure(errMsg))
+                break
+            }
+        }
+    }
+    
+    private func enrollUserIntoClass(completionHandler: @escaping (_ status:Status)->()){
+        let classEnrollRef = Database.database().reference().child("students").child(classProtocol.getFirebasePathWithSchoolYear())
+        classEnrollRef.child(CurrentUser.getUid()).setValue(CurrentUser.getFullname()) { (error, ref) in
+            if(error == nil){
+                completionHandler(.Success())
+            }
+            else{
+                completionHandler(.Failed((error?.localizedDescription)!))
+            }
+        }
     }
     
     fileprivate func updateCurrentStudentInfo(){
         let student = Student(fullname: userData.fullname, birthYear: userData.birthday, phoneNumber: userData.phoneNumber, email: userData.email, uid: CurrentUser.getUid())
         CurrentUser.setStudent(student: student)
     }
-}
-
-extension AddYourInfoController{
+    
     fileprivate func updateLocalCurrentStudent(){
         let student = Student(userData: userData)
         CurrentUser.setStudent(student: student)
     }
-    
+}
+
+// Firebase Database
+extension AddYourInfoController{
     fileprivate func uploadUserInfoToSelectedClass(){
-        Database.database().reference().child(classDetail.getFirebasePathWithSchoolYear()).child(CurrentUser.getUid()).setValue(CurrentUser.getFullname())
+        Database.database().reference().child(classProtocol.getFirebasePathWithSchoolYear()).child(CurrentUser.getUid()).setValue(CurrentUser.getFullname())
     }
     
- 
+    private func uploadDataToFirebaseDatabase(images:[Image], completionHandler: @escaping (_ status:Status)->()){
+        let publicDic = getPublicDataForUpload(images: images)
+        let privateDic = getPrivateDataForUpload()
+        
+        publicUserProfileRef.child(CurrentUser.getUid()).setValue(publicDic) { (publicErr, _) in
+            if(publicErr == nil){
+                self.privateUserProfileRef.child(CurrentUser.getUid()).setValue(privateDic, withCompletionBlock: { (privateErr, _) in
+                    
+                    
+                    if(privateErr == nil){
+                        completionHandler(.Success())
+                    }
+                    else{
+                        completionHandler(.Failed(privateErr.debugDescription))
+                    }
+                    
+                })
+            }
+            else{
+                completionHandler(.Failed(publicErr.debugDescription))
+            }
+        }
+    }
     
-    private func uploadDataToFirebaseDatabase(images:[Image]){
+    private func getPublicDataForUpload(images:[Image]) -> [String:Any]{
         var publicDic = [String:Any]()
-        var privateDic = [String:Any]()
-        
-        switch(userData.phonePrivacy!){
-        case .Public:
+        if userData.phonePrivacy == PrivacyType.Public{
             publicDic["phoneNumber"] = userData.phoneNumber
-            break
-        default:
-            privateDic["phoneNumber"] = userData.phoneNumber
-            break
         }
-        
-        switch(userData.emailPrivacy!){
-        case .Public:
+        if userData.emailPrivacy == PrivacyType.Public{
             publicDic["email"] = userData.email
-            break
-        default:
-            privateDic["email"] = userData.email
-            break
         }
-        
         publicDic["birthYear"] = userData.birthday
         publicDic["fullName"] = userData.fullname
+        publicDic["images"] = getImageNameAndYearDictionary(images: images)
         
+        return publicDic
+    }
+    
+    private func getPrivateDataForUpload() -> [String:Any]{
+        var privateDic = [String:Any]()
+        if userData.phonePrivacy == PrivacyType.Private{
+            privateDic["phoneNumber"] = userData.phoneNumber
+        }
+        if userData.emailPrivacy == PrivacyType.Private{
+            privateDic["email"] = userData.email
+        }
+        return privateDic
+    }
+    
+    private func getImageNameAndYearDictionary(images:[Image]) -> [String:String]{
         var dic = [String:String]()
         
         for image in images{
@@ -104,14 +171,13 @@ extension AddYourInfoController{
                 dic[image.imageName] = image.year
             }
         }
-        
-        publicDic["images"] = dic
-        
-        publicUserProfileRef.child(CurrentUser.getUid()).setValue(publicDic)
-        privateUserProfileRef.child(CurrentUser.getUid()).setValue(privateDic)
+        return dic
     }
-    
-    private func uploadUserImagesToFirebaseStorage(images:[Image], completionHandler: @escaping () -> Void){
+}
+
+//Firebase Storage
+extension AddYourInfoController{
+    fileprivate func uploadUserImagesToFirebaseStorage(images:[Image], completionHandler: @escaping (_ status:Status) -> Void){
         
         let storage = Storage.storage()
         
@@ -126,15 +192,35 @@ extension AddYourInfoController{
             let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
                     // Uh-oh, an error occurred!
-                    print()
+                    completionHandler(.Failed(error.debugDescription))
                     return
                 }
                 imageUploaded = imageUploaded + 1
                 
                 if(imageUploaded == images.count){
-                    completionHandler()
+                    completionHandler(.Success())
                 }
             }
         }
+    }
+}
+
+// Setup
+extension AddYourInfoController{
+    private func setupFirebaseReference(){
+        privateUserProfileRef = Database.database().reference().child("privateUserProfile")
+        publicUserProfileRef = Database.database().reference().child("publicUserProfile")
+    }
+    
+    private func setUserData(){
+        let fullname = viewcontroller.fullNameTF.text
+        let birthYear = viewcontroller.birthYearTF.text
+        let phoneNumber = viewcontroller.phoneTF.text
+        let email = viewcontroller.emailTF.text
+        let phonePrivacy = viewcontroller.phonePrivacyDropDownBtn.currentTitle
+        let emailPrivacy = viewcontroller.emailPrivacyDropDownBtn.currentTitle
+        
+        let userData = UserData(phoneNumber: phoneNumber!, email: email!, birthday: birthYear!, fullname: fullname!, phonePrivacyType: phonePrivacy!, emailPrivacyType: emailPrivacy!, uid: CurrentUser.getUid())
+        self.userData = userData
     }
 }

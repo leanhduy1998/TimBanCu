@@ -15,12 +15,14 @@ class AddYourInfoAlerts{
     private var addImageYearAlert:AskForInputAlert!
     private var privacyAlert:InfoAlert!
     private var noProfileImageAlert:InfoAlert!
+    private var uploadErrorAlert:InfoAlert!
     
     init(viewcontroller:UIViewController){
         self.viewcontroller = viewcontroller
         setupAddImageYearAlert()
         setupPrivacyAlert()
         setupNoProfileImageAlert()
+        setupUploadErrorAlert()
     }
     
     func showPrivacyAlert(){
@@ -31,6 +33,17 @@ class AddYourInfoAlerts{
     }
     func showNoProfileImageAlert(){
         noProfileImageAlert.show(viewcontroller: viewcontroller)
+    }
+    func showUploadErrorAlert(errMsg:String){
+        uploadErrorAlert.changeMessage(message: errMsg)
+        uploadErrorAlert.show(viewcontroller: viewcontroller)
+    }
+    
+    private func setupUploadErrorAlert(){
+        let title = "Lỗi Cập Nhật Thông Tin"
+        let mesage = "Bạn Vui Lòng Thử Lại"
+        
+        uploadErrorAlert = InfoAlert(title: title, message: mesage)
     }
     
     private func setupNoProfileImageAlert(){

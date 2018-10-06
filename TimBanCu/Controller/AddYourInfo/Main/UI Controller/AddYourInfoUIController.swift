@@ -188,6 +188,9 @@ extension AddYourInfoUIController{
     func showNoProfileImageAlert(){
         alerts.showNoProfileImageAlert()
     }
+    func showUploadErrorAlert(errMsg:String){
+        alerts.showUploadErrorAlert(errMsg: errMsg)
+    }
 }
 
 // Keyboard

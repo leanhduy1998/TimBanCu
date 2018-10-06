@@ -35,7 +35,7 @@ class AddImagesViewController: UIViewController {
                 asset.fetchOriginalImage(completeBlock: { (uiimage, something) in
                     
                     let imageName = "\((currentTime + fetchCount))"
-                    let image = Image(image: uiimage!, imageName: imageName)
+                    let image = Image(image: uiimage!, imageName: imageName, uid:CurrentUser.getUid())
                     
                     self.currentImages.append(image)
                     
@@ -45,16 +45,10 @@ class AddImagesViewController: UIViewController {
                         //self.pickerController.dismiss()
                         self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
                         self.pickerController.done()
-                        
                     }
                 })
             }
         }
-        //pickerController.acti
-      //  pickerController.setSelectedAssets(assets: selectedAssets)
-       // pickerController.select(assets: selectedAssets)
-
-  
         pickerController.assetType = .allPhotos
         pickerController.sourceType = .photo
     }

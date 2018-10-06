@@ -81,15 +81,26 @@ class ClassDetailViewController: UIViewController {
 
     @IBAction func addYourselfBtnPressed(_ sender: Any) {
         if(!CurrentUser.hasEnoughDataInFireBase()){
-            performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
+            self.performSegue(withIdentifier: "ClassDetailToAddYourInfoSegue", sender: self)
         }
         else{
-            controller.enrollUserToClass { (uiState) in
-                if case .Success() = uiState {
-                    CurrentUser.addEnrollment(classD: self.classProtocol)
-                }
+            enrollUserToThisClass()
+        }
+    }
+    
+    func enrollUserToThisClass(){
+        controller.enrollUserToClass { (uiState) in
+            switch(uiState){
+            case .Success():
+                CurrentUser.addEnrollment(classD: self.classProtocol)
                 self.uiController.searchStudents = self.controller.students
                 self.uiController.state = uiState
+                break
+            case .Failure(let errMsg):
+                self.uiController.showErrorAlert(errMsg: errMsg)
+                break
+            default:
+                break
             }
         }
     }
@@ -101,7 +112,7 @@ class ClassDetailViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
-            destination.classDetail = classProtocol as? ClassDetail
+            destination.classProtocol = classProtocol as? ClassDetail
         }
         if let destination = segue.destination as? StudentDetailViewController{
             destination.student = selectedStudent

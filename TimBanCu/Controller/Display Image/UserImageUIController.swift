@@ -16,6 +16,7 @@ class UserImageUIController{
     private var yearLabel:UILabel!
     private var image:Image!
     private var imageview:UIImageView!
+    private weak var optionBtn:UIButton!
     
     private var selectionClosure:SelectionClosure!
     
@@ -31,6 +32,7 @@ class UserImageUIController{
         self.image = viewcontroller.image
         self.imageview = viewcontroller.imageview
         self.selectionClosure = selectionClosure
+        self.optionBtn = viewcontroller.optionBtn
         
         setupOptionDropdown()
         reloadYearLabelText()
@@ -74,8 +76,17 @@ class UserImageUIController{
 // DropDown
 extension UserImageUIController{
     fileprivate func setupOptionDropdown(){
-        optionDropDown.anchorView = viewcontroller.optionBtn
-        optionDropDown.dataSource = ["Sửa Năm Hình","Xoá Hình"]
-        optionDropDown.selectionAction = selectionClosure
+        if(image.uid != CurrentUser.getUid()){
+            optionDropDown.isHidden = true
+            optionBtn.isHidden = true
+        }
+        else{
+            optionDropDown.isHidden = false
+            optionBtn.isHidden = false
+            
+            optionDropDown.anchorView = viewcontroller.optionBtn
+            optionDropDown.dataSource = ["Sửa Năm Hình","Xoá Hình"]
+            optionDropDown.selectionAction = selectionClosure
+        }
     }
 }

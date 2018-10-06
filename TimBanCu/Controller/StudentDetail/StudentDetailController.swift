@@ -36,7 +36,7 @@ class StudentDetailController{
                         if(error == nil){
                             let uiimage = UIImage(data: imageData!)
 
-                            let newImage = Image(image: uiimage!, year: image.year, imageName:image.imageName)
+                            let newImage = Image(image: uiimage!, year: image.year, imageName:image.imageName, uid:self.student.uid)
                             self.viewcontroller.userImages.append(newImage)
                             
                             count += 1

@@ -15,30 +15,35 @@ class Image{
     var year:String?
     var image:UIImage?
     var dkasset: DKAsset?
+    var uid:String!
     
-    init(image:UIImage){
+    init(image:UIImage, uid:String){
         self.image = image
+        self.uid = uid
     }
-    init(image:UIImage, imageName:String){
+    init(image:UIImage, imageName:String,uid:String){
         self.image = image
         self.imageName = imageName
+        self.uid = uid
     }
-    init(image:UIImage, year:String?){
+    init(image:UIImage, year:String?,uid:String){
         self.image = image
         self.year = year
         if(year == "-1"){
             self.year = nil
         }
+        self.uid = uid
     }
-    init(image:UIImage, year:String?,imageName:String){
+    init(image:UIImage, year:String?,imageName:String,uid:String){
         self.image = image
         self.year = year
         self.imageName = imageName
         if(year == "-1"){
             self.year = nil
         }
+        self.uid = uid
     }
-    init(year:String?,imageName:String){
+    init(year:String?,imageName:String,uid:String){
         self.year = year
         self.imageName = imageName
         if(year == "-1"){

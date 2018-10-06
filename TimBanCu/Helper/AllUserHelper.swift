@@ -38,7 +38,7 @@ class AllUserHelper{
                     var images = [Image]()
                     
                     for (name,year) in imagesNameAndYear{
-                        let image = Image(year: year, imageName: name)
+                        let image = Image(year: year, imageName: name, uid:uid)
                         images.append(image)
                     }
                     

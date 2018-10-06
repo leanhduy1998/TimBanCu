@@ -36,7 +36,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     private var imagePickerDidSelectAssets:ImageAssetSelectionClosure!
     
     // from previous class
-    var classDetail:ClassDetail!
+    var classProtocol:ClassProtocol!
     
     // this class
     var userImages = [Image]()
@@ -48,7 +48,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
 
         setupClosures()
     
-        controller = AddYourInfoController(viewcontroller: self, classDetail: classDetail)
+        controller = AddYourInfoController(viewcontroller: self)
         uiController = AddYourInfoUIController(viewcontroller: self, slideshowDidTapOnImageAtIndex: slideshowDidTapOnImageAtIndex, imagePickerDidSelectAssets: imagePickerDidSelectAssets)
     }
     
@@ -86,7 +86,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                         let imageName = "\((currentTime + fetchCount))"
                         asset.fileName = imageName
                         
-                        let image = Image(image: uiimage!, imageName: imageName)
+                        let image = Image(image: uiimage!, imageName: imageName, uid:CurrentUser.getUid())
                         
                         self.userImages.append(image)
                         
@@ -133,8 +133,19 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
             uiController.showNoProfileImageAlert()
         }
         else{            
-            controller.updateUserInfo(images: userImages, completeUploadClosure: {
-                self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
+            controller.updateUserInfo(images: userImages, completeUploadClosure: {uiState in
+                
+                switch(uiState){
+                case .Success():
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
+                    }
+                    break
+                case .Failure(let errMsg):
+                    self.uiController.showUploadErrorAlert(errMsg: errMsg)
+                default:
+                    break
+                }
             })
         }
     }
