@@ -16,7 +16,7 @@ class Student{
     var images: [Image]!
     var uid:String!
     
-    var enrolledIn:[ClassDetail]!
+    var enrolledIn:[ClassProtocol]!
     init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String){
         self.fullName = fullname
         self.birthYear = birthYear
@@ -85,5 +85,14 @@ class Student{
     
     func getOjectKey()-> String{
         return uid
+    }
+    
+    func getModelAsDictionary() -> [String:Any]{
+        var imageNameAndYear = [String:String]()
+        for image in images{
+            imageNameAndYear[image.imageName] = image.year
+        }
+        
+        return ["fullName":fullName,"birthday":birthYear,"phoneNumber":phoneNumber,"email":email,"imageUrls":imageNameAndYear,"enrolledIn":enrolledIn]
     }
 }

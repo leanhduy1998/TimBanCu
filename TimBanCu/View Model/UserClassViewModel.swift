@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserClassesViewModel {
+class UserClassViewModel {
     var className:String!
     var schoolName:String!
     var classYear:String!

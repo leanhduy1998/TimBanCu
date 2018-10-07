@@ -39,5 +39,8 @@ class MajorDetail: ClassProtocol{
     func getFirebasePathWithSchoolYear() -> String {
         return "\(schoolName!)/\(majorName!)/\(year!)"
     }
+    func getModelAsDictionary() -> [String : Any] {
+        return ["uid":uid]
+    }
 }
 

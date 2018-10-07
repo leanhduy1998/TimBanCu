@@ -49,6 +49,7 @@ class Image{
         if(year == "-1"){
             self.year = nil
         }
+        self.uid = uid
     }
 }
 

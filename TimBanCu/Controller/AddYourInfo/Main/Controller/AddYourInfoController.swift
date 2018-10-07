@@ -82,13 +82,16 @@ class AddYourInfoController{
     }
     
     private func enrollUserIntoClass(completionHandler: @escaping (_ status:Status)->()){
-        let classEnrollRef = Database.database().reference().child("students").child(classProtocol.getFirebasePathWithSchoolYear())
-        classEnrollRef.child(CurrentUser.getUid()).setValue(CurrentUser.getFullname()) { (error, ref) in
-            if(error == nil){
+        CurrentUser.addEnrollment(classProtocol: classProtocol) { (uiState) in
+            switch(uiState){
+            case .Success():
                 completionHandler(.Success())
-            }
-            else{
-                completionHandler(.Failed((error?.localizedDescription)!))
+                break
+            case .Failure(let errMsg):
+                completionHandler(.Failed(errMsg))
+                break
+            default:
+                break
             }
         }
     }

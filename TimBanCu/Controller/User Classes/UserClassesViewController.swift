@@ -13,11 +13,13 @@ class UserClassesViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     
-    var selectedClassDetail:ClassDetail!
+    var selectedClassProtocol:ClassProtocol!
+    var uiController: UserClassesUIController!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNavigationBarShadow()
+        uiController = UserClassesUIController(viewcontroller: self)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +30,7 @@ class UserClassesViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
-            destination.classProtocol = selectedClassDetail
+            destination.classProtocol = selectedClassProtocol
         }
     }
     

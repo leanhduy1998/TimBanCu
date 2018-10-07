@@ -29,4 +29,9 @@ class School{
         self.type = type
         self.uid = uid
     }
+    
+    func getModelAsDictionary() -> [String:Any]{
+        let dic:[String:Any] = ["type":type,"address":address,"uid":uid]
+        return dic
+    }
 }

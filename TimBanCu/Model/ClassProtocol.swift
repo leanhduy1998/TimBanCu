@@ -15,4 +15,5 @@ protocol ClassProtocol{
     
     func getFirebasePathWithoutSchoolYear()->String
     func getFirebasePathWithSchoolYear()->String
+    func getModelAsDictionary()->[String:Any]
 }

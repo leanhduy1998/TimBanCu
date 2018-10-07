@@ -89,16 +89,4 @@ class ClassDetailController{
             }
         }
     }
-    
-    func enrollUserToClass(completionHandler: @escaping (_ uiState:UIState) -> Void){
-        classEnrollRef.child(CurrentUser.getUid()).setValue(CurrentUser.getFullname()) { (error, ref) in
-            if(error == nil){
-                self.students.append(CurrentUser.getStudent())
-                completionHandler(.Success())
-            }
-            else{
-                completionHandler(.Failure((error?.localizedDescription)!))
-            }
-        }
-    }
 }

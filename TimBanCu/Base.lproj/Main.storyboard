@@ -551,6 +551,50 @@
                                             <outlet property="schoolName" destination="h7T-d0-JqL" id="iMX-3U-21Q"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserUniversityTableViewCell" rowHeight="132" id="TDg-TL-fWw" customClass="UserUniversityTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="132"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TDg-TL-fWw" id="7XN-5C-bX6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vUG-vX-00T">
+                                                    <rect key="frame" x="10" y="10" width="355" height="111.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoa Máy Tính" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-P9-EP3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="37"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Đại Học Nông Nghiệp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-SO-Dvd">
+                                                            <rect key="frame" x="0.0" y="37" width="355" height="37.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roK-Hd-i8O">
+                                                            <rect key="frame" x="0.0" y="74.5" width="355" height="37"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="vUG-vX-00T" secondAttribute="bottom" constant="10" id="BRf-y7-DAX"/>
+                                                <constraint firstAttribute="trailing" secondItem="vUG-vX-00T" secondAttribute="trailing" constant="10" id="HSd-vj-HiP"/>
+                                                <constraint firstItem="vUG-vX-00T" firstAttribute="top" secondItem="7XN-5C-bX6" secondAttribute="top" constant="10" id="LPM-9T-DQq"/>
+                                                <constraint firstItem="vUG-vX-00T" firstAttribute="leading" secondItem="7XN-5C-bX6" secondAttribute="leading" constant="10" id="V4T-Df-jh0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="classYearLabel" destination="roK-Hd-i8O" id="Qst-Mf-TnR"/>
+                                            <outlet property="majorLabel" destination="dpD-P9-EP3" id="LeP-AM-Utt"/>
+                                            <outlet property="schoolNameLabel" destination="uDl-SO-Dvd" id="cGb-LO-Hcl"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="hPG-cp-ddJ" id="JCZ-m1-L3h"/>
@@ -861,7 +905,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9p-sh-16C" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3248.8000000000002" y="2497.6011994003002"/>
+            <point key="canvasLocation" x="3231" y="2498"/>
         </scene>
         <!--Năm Học-->
         <scene sceneID="Fgs-5y-Lwy">
@@ -872,7 +916,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWp-TG-1zC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -1402,7 +1446,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="Slideshow" customModule="TimBanCu" customModuleProvider="target">
-                                <rect key="frame" x="19.5" y="84" width="335.5" height="218"/>
+                                <rect key="frame" x="20" y="20" width="335" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uh6-PM-d0O">
@@ -1584,7 +1628,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-Zn-xef">
-                                <rect key="frame" x="335" y="74" width="30" height="30"/>
+                                <rect key="frame" x="335" y="10" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="41u-zd-gbc"/>
                                     <constraint firstAttribute="height" constant="30" id="jHW-sS-PLy"/>
@@ -1595,7 +1639,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-7h-NCO">
-                                <rect key="frame" x="0.0" y="124" width="375" height="443.5"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="443.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-hj-4Qn">
                                 <rect key="frame" x="150" y="523.5" width="75.5" height="20.5"/>
@@ -1635,11 +1679,11 @@
             <objects>
                 <viewController id="tBf-Ts-F6c" customClass="UpdateImageYearViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YN8-JA-ClY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm Hình Được Chụp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEk-V9-Z5A">
-                                <rect key="frame" x="20" y="84" width="335" height="24"/>
+                                <rect key="frame" x="20" y="20" width="335" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Wn6-Go-nfD"/>
                                 </constraints>
@@ -1648,14 +1692,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-CR-veA">
-                                <rect key="frame" x="20" y="568" width="335" height="30"/>
+                                <rect key="frame" x="20" y="504" width="335" height="30"/>
                                 <state key="normal" title="Cập Nhập Năm"/>
                                 <connections>
                                     <action selector="updateBtnPressed:" destination="tBf-Ts-F6c" eventType="touchUpInside" id="2sH-ij-385"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Năm" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-dc-Kwi">
-                                <rect key="frame" x="137.5" y="518" width="100" height="30"/>
+                                <rect key="frame" x="137.5" y="454" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GCd-JN-x9p"/>
                                     <constraint firstAttribute="height" constant="30" id="flZ-o3-vwI"/>
@@ -1665,10 +1709,10 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="coU-wn-74e">
-                                <rect key="frame" x="20" y="128" width="335" height="289"/>
+                                <rect key="frame" x="20" y="64" width="335" height="289"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hình có năm sẽ giúp các thành viên khác dễ nhận diện hơn (Ví dụ: Đây là hình của bạn năm 1990 khi bạn học lớp 1)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-Ip-A4W">
-                                <rect key="frame" x="20" y="437" width="335" height="61"/>
+                                <rect key="frame" x="20" y="373" width="335" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1735,7 +1779,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="5hT-Vf-XNn"/>
         <segue reference="Zn4-6w-hsp"/>
-        <segue reference="6lU-c4-lFJ"/>
-        <segue reference="4Ow-6o-u2i"/>
+        <segue reference="Yxf-fH-7mY"/>
+        <segue reference="PUn-kT-WBf"/>
     </inferredMetricsTieBreakers>
 </document>

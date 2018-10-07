@@ -58,8 +58,8 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        var animateLastCell = false
         DispatchQueue.main.async {
+            var animateLastCell = false
             
             if !self.finishAnimateCells {
                 if let indexPathsForVisibleRows = self.tableview.indexPathsForVisibleRows,let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {

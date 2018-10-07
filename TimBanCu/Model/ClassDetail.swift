@@ -12,6 +12,8 @@ import FirebaseDatabase
 class ClassDetail: ClassProtocol{
     
     
+    
+    
     //class Detail: 10A11
     // class name: Lớp 10
     
@@ -44,7 +46,7 @@ class ClassDetail: ClassProtocol{
         self.className = className
     }
     
-    func convertToDictionary() -> [String:String]{
+    func getModelAsDictionary() -> [String:Any]{
         var dic = [String:String]()
         dic["className"] = className
         dic["uid"] = uid
@@ -61,5 +63,11 @@ class ClassDetail: ClassProtocol{
     
     func getFirebasePathWithSchoolYear()->String{
         return "\(schoolName!)/\(classNumber!)/\(className!)/\(year!)"
+    }
+    
+    
+    
+    func getUidAsDictionary() -> [String : Any] {
+        return ["uid":uid]
     }
 }

@@ -11,16 +11,14 @@ import UIKit
 class UserClassTableViewCell: UITableViewCell {
     
     @IBOutlet weak var className: UILabel!
-    
     @IBOutlet weak var schoolName: UILabel!
-    
     @IBOutlet weak var classYear: UILabel!
     
-    var userClassesViewModel:UserClassesViewModel! = nil {
+    var viewModel:UserClassViewModel! = nil {
         didSet{
-            className.text = userClassesViewModel.className
-            schoolName.text  = userClassesViewModel.schoolName
-            classYear.text = userClassesViewModel.classYear
+            className.text = viewModel.className
+            schoolName.text  = viewModel.schoolName
+            classYear.text = viewModel.classYear
         }
         
     }

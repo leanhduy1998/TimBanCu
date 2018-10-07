@@ -12,7 +12,7 @@ import UIKit
 class ClassDetailUIController{
     
     private var noResultView:NoResultView!
-    private var viewcontroller:ClassDetailViewController!
+    private weak var viewcontroller:ClassDetailViewController!
     private var searchTF:UITextField!
     private var genericTableView:GenericTableView<Student, ClassDetailTableViewCell>!
     private var tableview:UITableView!
@@ -217,6 +217,9 @@ extension ClassDetailUIController{
             //TODO: unit test for when there is no image
             if(student.images[0].image != nil){
                 cell.imageview.image = student.images[0].image
+            }
+            else{
+                // loading
             }
         })
         

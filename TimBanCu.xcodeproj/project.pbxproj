@@ -68,15 +68,17 @@
 		1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8702128CB490038ECB5 /* InfoAlert.swift */; };
 		1C8EC8732128CBD80038ECB5 /* AskForInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */; };
 		1C8EC87B2128F3700038ECB5 /* ShimmeringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */; };
-		1C8EC8802129E42D0038ECB5 /* AddYourInfoUploadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC87F2129E42D0038ECB5 /* AddYourInfoUploadData.swift */; };
 		1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
 		1C9710442116698B00A140FE /* ClassYearAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9710432116698B00A140FE /* ClassYearAlerts.swift */; };
 		1C98F65D212840AE00EFD4EF /* AllUserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98F65C212840AE00EFD4EF /* AllUserHelper.swift */; };
-		1C98F65F21285D6800EFD4EF /* UserClassesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98F65E21285D6800EFD4EF /* UserClassesViewModel.swift */; };
-		1C98F6652128644000EFD4EF /* UserClassesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98F6642128644000EFD4EF /* UserClassesTableView.swift */; };
+		1C98F65F21285D6800EFD4EF /* UserClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98F65E21285D6800EFD4EF /* UserClassViewModel.swift */; };
 		1C98F66821287CE300EFD4EF /* ClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C98F66721287CE300EFD4EF /* ClassProtocol.swift */; };
+		1CA536352169B51E00FCF0FF /* UserUniversityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA536342169B51E00FCF0FF /* UserUniversityTableViewCell.swift */; };
+		1CA536372169B64000FCF0FF /* UserUniversityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA536362169B64000FCF0FF /* UserUniversityViewModel.swift */; };
+		1CA536392169B72B00FCF0FF /* UserClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA536382169B72B00FCF0FF /* UserClassesController.swift */; };
+		1CA5363B2169B89D00FCF0FF /* UserClassesUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5363A2169B89D00FCF0FF /* UserClassesUIController.swift */; };
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
 		1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */; };
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
@@ -224,15 +226,17 @@
 		1C8EC8702128CB490038ECB5 /* InfoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlert.swift; sourceTree = "<group>"; };
 		1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForInputAlert.swift; sourceTree = "<group>"; };
 		1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmeringLabel.swift; sourceTree = "<group>"; };
-		1C8EC87F2129E42D0038ECB5 /* AddYourInfoUploadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoUploadData.swift; sourceTree = "<group>"; };
 		1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewExtension.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
 		1C9710432116698B00A140FE /* ClassYearAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearAlerts.swift; sourceTree = "<group>"; };
 		1C98F65C212840AE00EFD4EF /* AllUserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserHelper.swift; sourceTree = "<group>"; };
-		1C98F65E21285D6800EFD4EF /* UserClassesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesViewModel.swift; sourceTree = "<group>"; };
-		1C98F6642128644000EFD4EF /* UserClassesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesTableView.swift; sourceTree = "<group>"; };
+		1C98F65E21285D6800EFD4EF /* UserClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassViewModel.swift; sourceTree = "<group>"; };
 		1C98F66721287CE300EFD4EF /* ClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProtocol.swift; sourceTree = "<group>"; };
+		1CA536342169B51E00FCF0FF /* UserUniversityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUniversityTableViewCell.swift; sourceTree = "<group>"; };
+		1CA536362169B64000FCF0FF /* UserUniversityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUniversityViewModel.swift; sourceTree = "<group>"; };
+		1CA536382169B72B00FCF0FF /* UserClassesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesController.swift; sourceTree = "<group>"; };
+		1CA5363A2169B89D00FCF0FF /* UserClassesUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesUIController.swift; sourceTree = "<group>"; };
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
@@ -407,7 +411,6 @@
 			isa = PBXGroup;
 			children = (
 				1C4B6C2E21484CEE00BDF724 /* AddYourInfoController.swift */,
-				1C8EC87F2129E42D0038ECB5 /* AddYourInfoUploadData.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -504,7 +507,8 @@
 			isa = PBXGroup;
 			children = (
 				1CDBA7B02124FAD5002004F9 /* UserClassesViewController.swift */,
-				1C98F6642128644000EFD4EF /* UserClassesTableView.swift */,
+				1CA536382169B72B00FCF0FF /* UserClassesController.swift */,
+				1CA5363A2169B89D00FCF0FF /* UserClassesUIController.swift */,
 			);
 			path = "User Classes";
 			sourceTree = "<group>";
@@ -519,6 +523,7 @@
 				1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */,
 				1C53F4FC20FD496100F4ACEB /* ClassDetailTableViewCell.swift */,
 				1CDBA7B22124FBC4002004F9 /* UserClassTableViewCell.swift */,
+				1CA536342169B51E00FCF0FF /* UserUniversityTableViewCell.swift */,
 				1C53F4FA20FD455D00F4ACEB /* SettingTableViewCell.swift */,
 			);
 			path = TableCell;
@@ -736,7 +741,8 @@
 				1CE24D0A20FC1070008DE3FB /* ClassNameViewModel.swift */,
 				1C53F4FE20FD4BA400F4ACEB /* ClassDetailViewModel.swift */,
 				1C83E8222113CCED00D647D0 /* MajorViewModel.swift */,
-				1C98F65E21285D6800EFD4EF /* UserClassesViewModel.swift */,
+				1C98F65E21285D6800EFD4EF /* UserClassViewModel.swift */,
+				1CA536362169B64000FCF0FF /* UserUniversityViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1256,6 +1262,7 @@
 				1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */,
 				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
 				1CAB796321509B0E00F21264 /* UserImageController.swift in Sources */,
+				1CA536392169B72B00FCF0FF /* UserClassesController.swift in Sources */,
 				1C4B6C3C214A7BCE00BDF724 /* FirebaseHelper.swift in Sources */,
 				1CD730052138AB8100105ACE /* MajorAlerts.swift in Sources */,
 				1C4B6C332148541B00BDF724 /* UserData.swift in Sources */,
@@ -1277,11 +1284,9 @@
 				1C6CF60D21362AC3009174D2 /* SignInUIController.swift in Sources */,
 				1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,
-				1C8EC8802129E42D0038ECB5 /* AddYourInfoUploadData.swift in Sources */,
 				1C85E3202103F61200124FDA /* UserImageViewController.swift in Sources */,
 				1C4B6C4B214C562E00BDF724 /* KeyboardHelper.swift in Sources */,
 				1CD7300D213B093B00105ACE /* ClassNameUIController.swift in Sources */,
-				1C98F6652128644000EFD4EF /* UserClassesTableView.swift in Sources */,
 				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1CD7301E213F33E700105ACE /* ClassDetailAlerts.swift in Sources */,
@@ -1317,6 +1322,7 @@
 				1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */,
 				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
 				1CD72FE82137380A00105ACE /* SchoolUIController.swift in Sources */,
+				1CA536352169B51E00FCF0FF /* UserUniversityTableViewCell.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */,
 				1CAB795D2150507A00F21264 /* UserImageUIController.swift in Sources */,
 				1CAB79652152945D00F21264 /* PreviousClass.swift in Sources */,
@@ -1327,6 +1333,7 @@
 				1C4B6C4D214C94FD00BDF724 /* ImagePicker.swift in Sources */,
 				1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */,
 				1CD72FEE213747E100105ACE /* QueryState.swift in Sources */,
+				1CA5363B2169B89D00FCF0FF /* UserClassesUIController.swift in Sources */,
 				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
 				1C1D4BA4215B1100002E4807 /* AnimateAppName.swift in Sources */,
 				1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */,
@@ -1356,7 +1363,8 @@
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,
 				1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */,
 				1CD7301A213F1D2C00105ACE /* ClassDetailUIController.swift in Sources */,
-				1C98F65F21285D6800EFD4EF /* UserClassesViewModel.swift in Sources */,
+				1C98F65F21285D6800EFD4EF /* UserClassViewModel.swift in Sources */,
+				1CA536372169B64000FCF0FF /* UserUniversityViewModel.swift in Sources */,
 				1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */,
 				1CD73018213CBEDF00105ACE /* ClassYearController.swift in Sources */,
 				1C9710442116698B00A140FE /* ClassYearAlerts.swift in Sources */,

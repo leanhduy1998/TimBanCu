@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class CurrentUser{
     private static var student:Student!
+    private static let ref = Database.database().reference()
     
     static func hasEnoughDataInFireBase() -> Bool {
         if(student.isStudentInfoCompleted()){
@@ -19,34 +20,61 @@ class CurrentUser{
         return false
     }
     
-    static func addEnrollment(classD: ClassProtocol){
-        if let classDetail = classD as? ClassDetail{
-            addEnrollment(classDetail: classDetail)
-        }
-    }
-    
-    private static func addEnrollment(classDetail:ClassDetail){
+    static func addEnrollment(classProtocol: ClassProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
         if(student == nil || !student.isStudentInfoCompleted()){
             print("Does not have enough data to update!")
         }
         else{
-            student.enrolledIn.append(classDetail)
-            updateStudentEnrollmentToFirebase()
+            student.enrolledIn.append(classProtocol)
+            updateStudentEnrollmentToFirebase(classProtocol: classProtocol, completionHandler: completionHandler)
+        }
+    }
+
+    
+    static func getEnrolledClasses()-> [ClassProtocol]{
+        if(student == nil){
+            return []
+        }
+        else{
+            return student.enrolledIn
         }
     }
     
-    static func getEnrolledClasses()-> [ClassDetail]{
-        return student.enrolledIn
-    }
-    
-    static func updateStudentEnrollmentToFirebase(){
+    private static func updateStudentEnrollmentToFirebase(classProtocol: ClassProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
         // do this because firebase can't save ClassDetail
         var enrollDics = [[String:String]]()
         
-        for classDetail in student.enrolledIn{
-            enrollDics.append(classDetail.convertToDictionary())
+        for classProtocol in student.enrolledIn{
+            enrollDics.append(classProtocol.getModelAsDictionary() as! [String : String])
         }
-        Database.database().reference().child("publicUserProfile").child(student.uid).child("enrolledIn").setValue(enrollDics)
+        
+        var finishUpdatePublicUserProfile = false
+        var finishUpdateStudentList = false
+        
+        ref.child("publicUserProfile/\(student.uid!)/enrolledIn").setValue(enrollDics) { (error, _) in
+            
+            if(error == nil){
+                finishUpdatePublicUserProfile = true
+                if(finishUpdateStudentList){
+                    completionHandler(.Success())
+                }
+            }
+            else{
+                completionHandler(.Failure((error?.localizedDescription)!))
+            }
+        }
+        
+        ref.child("students/\(classProtocol.getFirebasePathWithSchoolYear())/\(CurrentUser.getUid())").setValue(CurrentUser.getFullname()) { (error, ref) in
+            if(error == nil){
+                finishUpdateStudentList = true
+                if(finishUpdatePublicUserProfile){
+                    completionHandler(.Success())
+                }
+            }
+            else{
+                completionHandler(.Failure((error?.localizedDescription)!))
+            }
+        }
     }
 
     

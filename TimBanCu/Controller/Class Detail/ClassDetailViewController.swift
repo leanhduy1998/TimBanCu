@@ -89,10 +89,9 @@ class ClassDetailViewController: UIViewController {
     }
     
     func enrollUserToThisClass(){
-        controller.enrollUserToClass { (uiState) in
+        CurrentUser.addEnrollment(classProtocol: self.classProtocol) { (uiState) in
             switch(uiState){
             case .Success():
-                CurrentUser.addEnrollment(classD: self.classProtocol)
                 self.uiController.searchStudents = self.controller.students
                 self.uiController.state = uiState
                 break
