@@ -31,11 +31,11 @@ class ClassNameUIController{
         self.tableview = tableview
         self.searchTF = searchTF
         self.addNewClassNameHandler = addNewClassNameHandler
+        self.searchTFUnderline = UnderlineView(viewcontroller: viewcontroller, searchTF: searchTF)
         
         setupAlerts()
         setupNoResultView()
         setupGenericTableView()
-        setupTextFieldUnderline()
         setupKeyboard()
     }
     
@@ -123,10 +123,6 @@ extension ClassNameUIController{
 
 // TextField
 extension ClassNameUIController{
-    fileprivate func setupTextFieldUnderline(){
-        searchTFUnderline = UnderlineView()
-        viewcontroller.view.addSubview(searchTFUnderline)
-    }
     
     func searchTFDidBeginEditing(allClassDetails:[ClassDetail]){
         filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
