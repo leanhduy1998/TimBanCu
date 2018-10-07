@@ -12,6 +12,7 @@ import GoogleSignIn
 
 import FacebookCore
 import FacebookLogin
+import FBSDKLoginKit
 
 import Firebase
 import FirebaseDatabase
@@ -33,9 +34,25 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        self.signInUIController = SignInUIController(viewController: self, facebookBtn: LoginButton(readPermissions: [ .publicProfile ]), googleBtn: googleSignInBtn)
+        let fbLoginBtn = LoginButton(readPermissions: [ .publicProfile ])
+        fbLoginBtn.delegate = self
+        
+        self.signInUIController = SignInUIController(viewController: self, facebookBtn: fbLoginBtn, googleBtn: googleSignInBtn)
         self.signInController = SignInController()
         
+        if let accessToken = AccessToken.current {
+            // User is logged in, use 'accessToken' here.
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+            
+            signInController.signIn(credential: credential) { (state) in
+                self.signInController.state = state
+                self.signInUIController.state = state
+            }
+        }
+        GIDSignIn.sharedInstance()?.signInSilently()
+        
+        //GIDSignIn.sharedInstance()?.signIn()
+
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -84,6 +101,9 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
             self.signInUIController.state = .Failure("Lỗi Đăng Nhập Facebook")
         }
     }
+    
+  
+    
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print()
     }

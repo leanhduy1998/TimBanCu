@@ -14,14 +14,13 @@ open class FullScreenSlideshowViewController: UIViewController {
         let slideshow = ImageSlideshow()
         slideshow.zoomEnabled = true
         slideshow.contentScaleMode = UIViewContentMode.scaleAspectFit
-        slideshow.pageControlPosition = PageControlPosition.insideScrollView
+        slideshow.pageIndicatorPosition = PageIndicatorPosition(horizontal: .center, vertical: .bottom)
         // turns off the timer
         slideshow.slideshowInterval = 0
         slideshow.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
 
         return slideshow
     }()
-    
 
     /// Close button 
     open var closeButton = UIButton()
@@ -97,7 +96,6 @@ open class FullScreenSlideshowViewController: UIViewController {
             }
             
             closeButton.frame = closeButtonFrame ?? CGRect(x: max(10, safeAreaInsets.left), y: max(10, safeAreaInsets.top), width: 40, height: 40)
-
         }
 
         slideshow.frame = view.frame

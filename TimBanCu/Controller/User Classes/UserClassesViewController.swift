@@ -33,6 +33,4 @@ class UserClassesViewController: UIViewController {
             destination.classProtocol = selectedClassProtocol
         }
     }
-    
-
 }

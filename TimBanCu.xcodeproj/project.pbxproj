@@ -486,8 +486,8 @@
 		1C8EC8872129ED850038ECB5 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
-				1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */,
+				1CA5363C216A825500FCF0FF /* Main */,
+				1CA5363D216A827F00FCF0FF /* Change Info */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -539,6 +539,23 @@
 			path = "Sign In";
 			sourceTree = "<group>";
 		};
+		1CA5363C216A825500FCF0FF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
+				1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1CA5363D216A827F00FCF0FF /* Change Info */ = {
+			isa = PBXGroup;
+			children = (
+				1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */,
+			);
+			path = "Change Info";
+			sourceTree = "<group>";
+		};
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,8 +576,6 @@
 				1C1A98FA210CBBC800D20079 /* Chat */,
 				1C98F6632128642900EFD4EF /* User Classes */,
 				1C8EC8872129ED850038ECB5 /* Setting */,
-				1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */,
-				38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -765,6 +780,7 @@
 				38CAE9D02129BD04005BE656 /* UnderlineView.swift */,
 				1C4B6C392148AF2100BDF724 /* Slideshow.swift */,
 				1C4B6C4C214C94FD00BDF724 /* ImagePicker.swift */,
+				38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

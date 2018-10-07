@@ -39,8 +39,8 @@ open class DKAssetGroupDetailVC: UIViewController,
         let button = UIButton()
 		
         #if swift(>=4.0)
-        let globalTitleColor = UINavigationBar.appearance().titleTextAttributes?[NSAttributedStringKey.foregroundColor] as? UIColor
-        let globalTitleFont = UINavigationBar.appearance().titleTextAttributes?[NSAttributedStringKey.font] as? UIFont
+        let globalTitleColor = UINavigationBar.appearance().titleTextAttributes?[NSAttributedString.Key.foregroundColor] as? UIColor
+        let globalTitleFont = UINavigationBar.appearance().titleTextAttributes?[NSAttributedString.Key.font] as? UIFont
         #else
         let globalTitleColor = UINavigationBar.appearance().titleTextAttributes?[NSForegroundColorAttributeName] as? UIColor
         let globalTitleFont = UINavigationBar.appearance().titleTextAttributes?[NSFontAttributeName] as? UIFont
@@ -594,9 +594,7 @@ open class DKAssetGroupDetailVC: UIViewController,
     }
     
     func imagePickerControllerDidDeselect(assets: [DKAsset]) {
-        if assets.count > 1 {
-            self.collectionView.reloadData()
-        } else {
+        self.collectionView.performBatchUpdates({
             for indexPathForVisible in self.collectionView.indexPathsForVisibleItems {
                 if let cell = (self.collectionView.cellForItem(at: indexPathForVisible) as? DKAssetGroupDetailBaseCell),
                     let asset = cell.asset, cell.isSelected {
@@ -607,7 +605,7 @@ open class DKAssetGroupDetailVC: UIViewController,
                     }
                 }
             }
-        }
+        }, completion: nil)
     }
     
 	// MARK: - DKImageGroupDataManagerObserver

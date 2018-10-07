@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Model/Student.swift"
-            timestampString = "560628134.184181"
+            timestampString = "560638852.893555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/Class Detail/ClassDetailUIController.swift"
-            timestampString = "560628134.184356"
+            timestampString = "560638852.893671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TimBanCu/Controller/Sign In/SignInViewController.swift"
-            timestampString = "560628134.184786"
+            filePath = "Pods/DropDown/DropDown/helpers/DPDUIView+Extension.swift"
+            timestampString = "560638852.8940901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "loginButtonDidCompleteLogin(_:result:)"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "visibleWindow()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/Sign In/SignInViewController.swift"
-            timestampString = "560628134.185083"
+            timestampString = "560638852.894145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "loginButtonDidLogOut(_:)"
-            landmarkType = "7">
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "SignInViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

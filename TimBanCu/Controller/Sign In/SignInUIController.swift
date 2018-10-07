@@ -12,6 +12,7 @@ import RevealingSplashView
 import FacebookCore
 import FacebookLogin
 import GoogleSignIn
+import FBSDKLoginKit
 
 final class SignInUIController{
     
@@ -51,6 +52,9 @@ final class SignInUIController{
         case (.Loading, .Success( _ )): goToHome()
         case (.Loading, .Failure(let errorStr)): createErrorAlert(errorStr: errorStr)
         case (.Success( _ ), .Success( _ )):break
+            
+        // after login silently failed, aka, when the user is not log in google account
+        case (.Failure, .Success): goToHome()
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }

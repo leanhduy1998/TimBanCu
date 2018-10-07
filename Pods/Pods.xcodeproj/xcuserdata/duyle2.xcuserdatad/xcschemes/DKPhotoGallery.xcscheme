@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1EF0E80C4F0024127E9E8535247EBD80"
+               BlueprintIdentifier = "DDCF88E7F6E96C9431DB0AE77853E517"
                BlueprintName = "DKPhotoGallery"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "DKPhotoGallery.framework">
