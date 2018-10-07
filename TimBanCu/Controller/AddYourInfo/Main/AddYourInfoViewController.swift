@@ -129,17 +129,11 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
         uiController.showEmailPrivacyDownDown()
     }
     
-    
-    private var blackFilter: UIView!
-    
     @IBAction func addInfoBtnPressed(_ sender: Any) {
         if(userImages.count == 0){
             uiController.showNoProfileImageAlert()
         }
         else {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.blackFilter = BlackFilterBackground(viewcontroller: self)
-            }, completion: nil)
             loadingAnimation = LoadingAnimation(viewcontroller: self)
             
             controller.updateUserInfo(images: userImages, completeUploadClosure: {

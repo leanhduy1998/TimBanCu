@@ -17,6 +17,7 @@ class LoadingAnimation: UIView {
     private let animationName = "biking_is_cool"
     
     private var loadingLabel: UILabel!
+    private var blackFilter: BlackFilterBackground!
     
     init(viewcontroller: UIViewController) {
         super.init(frame: CGRect.zero)
@@ -24,6 +25,10 @@ class LoadingAnimation: UIView {
         self.viewcontroller = viewcontroller
         viewcontroller.view.addSubview(self)
         viewcontroller.view.bringSubview(toFront: self)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blackFilter = BlackFilterBackground(viewcontroller: viewcontroller)
+        }, completion: nil)
         
         setUpSelf()
         setSelfConstraints()
