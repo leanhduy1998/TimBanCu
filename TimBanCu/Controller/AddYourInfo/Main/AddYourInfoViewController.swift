@@ -35,6 +35,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     private var slideshowDidTapOnImageAtIndex:IndexOfImageClosure!
     private var imagePickerDidSelectAssets:ImageAssetSelectionClosure!
     
+    private var loadingAnimation: LoadingAnimation!
+    
     // from previous class
     var classDetail:ClassDetail!
     
@@ -128,11 +130,18 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     }
     
     
+    private var blackFilter: UIView!
+    
     @IBAction func addInfoBtnPressed(_ sender: Any) {
         if(userImages.count == 0){
             uiController.showNoProfileImageAlert()
         }
-        else{            
+        else {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.blackFilter = BlackFilterBackground(viewcontroller: self)
+            }, completion: nil)
+            loadingAnimation = LoadingAnimation(viewcontroller: self)
+            
             controller.updateUserInfo(images: userImages, completeUploadClosure: {
                 self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
             })

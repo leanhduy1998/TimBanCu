@@ -69,7 +69,7 @@ class NoResultView:UIView{
     }
     
     private func setupAnimatedEmoticon(){
-        animatedEmoticon = LOTAnimationView(name: "empty_list")
+        animatedEmoticon = LOTAnimationView(name: emojiName)
         animatedEmoticon.contentMode = .scaleAspectFill
         animatedEmoticon.loopAnimation = true
         animatedEmoticon.translatesAutoresizingMaskIntoConstraints = false
