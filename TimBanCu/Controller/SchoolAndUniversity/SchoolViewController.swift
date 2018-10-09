@@ -27,11 +27,11 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
         
         controller = SchoolController(schoolType: schoolType)
         
-        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF, addNewSchoolClosure: {newSchoolIfNotInList in
+        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF, addNewSchoolClosure: { [weak self] newSchoolIfNotInList in
             
-            self.controller.addNewSchool(schoolName: newSchoolIfNotInList, completionHandler: { (uiState) in
-                self.uiController.searchSchoolModels = self.controller.schoolModels
-                self.uiController.state = uiState
+            self?.controller.addNewSchool(schoolName: newSchoolIfNotInList, completionHandler: { [weak self] (uiState) in
+                self?.uiController.searchSchoolModels = (self?.controller.schoolModels)!
+                self?.uiController.state = uiState
             })
             
         })
@@ -66,9 +66,9 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
      
         uiController.state = .Loading
 
-        controller.fetchData { (uiState) in
-            self.uiController.searchSchoolModels = self.controller.schoolModels
-            self.uiController.state = uiState
+        controller.fetchData { [weak self] (uiState) in
+            self?.uiController.searchSchoolModels = (self?.controller.schoolModels)!
+            self?.uiController.state = uiState
         }
     }
     

@@ -76,8 +76,8 @@ final class SchoolAlerts{
         }
         
         addNewSchoolAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Trường")
-        addNewSchoolAlert.addAction(actionTitle: "Thêm") { (_) in
-            self.addNewSchoolCompleteHandler(self.addNewSchoolAlert.getTextFieldInput())
+        addNewSchoolAlert.addAction(actionTitle: "Thêm") { [weak self] (_) in
+            self?.addNewSchoolCompleteHandler((self?.addNewSchoolAlert.getTextFieldInput())!)
         }
     }
     

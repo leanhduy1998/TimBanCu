@@ -35,6 +35,8 @@ class AddYourInfoUIController{
     fileprivate var phoneTF:UITextField!
     fileprivate var emailTF:UITextField!
     
+    fileprivate var loadingAnimation:LoadingAnimation!
+    
     init(viewcontroller:AddYourInfoViewController, slideshowDidTapOnImageAtIndex:@escaping (Int)->(), imagePickerDidSelectAssets:@escaping ([DKAsset])->()){
         self.viewcontroller = viewcontroller
         self.yearLabel = viewcontroller.yearLabel
@@ -57,6 +59,8 @@ class AddYourInfoUIController{
         
         observeTextFields()
         updateAddInfoBtnStatus()
+        
+        setupLoadingAnimation()
     }
     
     func viewDidLayoutSubview(){
@@ -85,7 +89,7 @@ class AddYourInfoUIController{
     }
 }
 
-//TextField
+// MARK: TextField
 extension AddYourInfoUIController{
     private func observeTextFields(){
         fullNameTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -111,7 +115,7 @@ extension AddYourInfoUIController{
     }
 }
 
-// Image Picker
+// MARK:Image Picker
 extension AddYourInfoUIController{
     fileprivate func setupImagePicker(){
         pickerController = ImagePicker(viewcontroller: viewcontroller)
@@ -127,7 +131,7 @@ extension AddYourInfoUIController{
     }
 }
 
-//SlideShow
+// MARK:SlideShow
 
 extension AddYourInfoUIController{
     fileprivate func setupSlideShow(){
@@ -156,7 +160,7 @@ extension AddYourInfoUIController{
     }
 }
 
-// DropDown
+// MARK:DropDown
 extension AddYourInfoUIController{
     fileprivate func setupPrivacyDropDowns(){
         phonePrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
@@ -177,7 +181,7 @@ extension AddYourInfoUIController{
     }
 }
 
-// Alerts
+// MARK:Alerts
 extension AddYourInfoUIController{
     fileprivate func setupAlerts(){
         alerts = AddYourInfoAlerts(viewcontroller: viewcontroller)
@@ -193,7 +197,7 @@ extension AddYourInfoUIController{
     }
 }
 
-// Keyboard
+// MARK:Keyboard
 extension AddYourInfoUIController{
     fileprivate func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: { notification in
@@ -226,5 +230,18 @@ extension AddYourInfoUIController{
             }
             self.viewcontroller.view.layoutIfNeeded()
         })
+    }
+}
+
+// MARK:Loading Animation
+extension AddYourInfoUIController{
+    fileprivate func setupLoadingAnimation(){
+        loadingAnimation = LoadingAnimation(viewcontroller: viewcontroller)
+        loadingAnimation.isHidden = true
+    }
+    
+    func playLoadingAnimation(){
+        loadingAnimation.isHidden = false
+        loadingAnimation.playAnimation()
     }
 }

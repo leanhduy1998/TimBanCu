@@ -168,8 +168,8 @@ extension SchoolUIController{
 // Alerts
 extension SchoolUIController{
     fileprivate func setupAlerts(){
-        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { (addedSchool) in
-            self.addNewSchoolClosure(addedSchool)
+        alerts = SchoolAlerts(viewcontroller: viewcontroller, schoolType: schoolType) { [weak self] (addedSchool) in
+            self?.addNewSchoolClosure(addedSchool)
         }
     }
     
@@ -182,8 +182,8 @@ extension SchoolUIController{
 // Other UI Setup
 extension SchoolUIController{
     fileprivate func setupNoResultView(){
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .School) {
-            self.showAddNewSchoolAlert()
+        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .School) { [weak self] in
+            self?.showAddNewSchoolAlert()
         }
         
         noResultView.translatesAutoresizingMaskIntoConstraints = false

@@ -26,10 +26,6 @@ class LoadingAnimation: UIView {
         viewcontroller.view.addSubview(self)
         viewcontroller.view.bringSubview(toFront: self)
         
-        UIView.animate(withDuration: 0.5, animations: {
-            self.blackFilter = BlackFilterBackground(viewcontroller: viewcontroller)
-        }, completion: nil)
-        
         setUpSelf()
         setSelfConstraints()
         
@@ -60,10 +56,16 @@ class LoadingAnimation: UIView {
     private func setupAnimation(){
         animation = LOTAnimationView(name: animationName)
         animation.contentMode = .scaleAspectFill
-        animation.play()
         animation.loopAnimation = true
         animation.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(animation)
+    }
+    
+    func playAnimation(){
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blackFilter = BlackFilterBackground(viewcontroller: self.viewcontroller)
+        }, completion: nil)
+        animation.play()
     }
     
     private func setupAnimationnConstraints(){

@@ -49,13 +49,13 @@ class ClassDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        controller.fetchStudents { (uiState) in
+        controller.fetchStudents { [weak self] (uiState) in
             DispatchQueue.main.async {
-                self.uiController.searchStudents = self.controller.students
-                self.uiController.state = uiState
+                self?.uiController.searchStudents = (self?.controller.students)!
+                self?.uiController.state = uiState
                 
-                self.controller.fetchStudentsImages(completionHandler: { (uiState2) in
-                    self.uiController.state = uiState2
+                self?.controller.fetchStudentsImages(completionHandler: { [weak self ](uiState2) in
+                    self?.uiController.state = uiState2
                 })
             }
         }

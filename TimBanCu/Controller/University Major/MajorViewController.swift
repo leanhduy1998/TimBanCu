@@ -26,11 +26,11 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
         
         controller = MajorController(viewcontroller: self, school: school)
         
-        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF, addNewMajorHandler: { newMajorIfNotInList in
+        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF, addNewMajorHandler: { [weak self] newMajorIfNotInList in
             
-            self.controller.addNewMajor(inputedMajorName: newMajorIfNotInList, completionHandler: { (uiState) in
-                self.uiController.searchMajors = self.controller.majors
-                self.uiController.state = uiState
+            self?.controller.addNewMajor(inputedMajorName: newMajorIfNotInList, completionHandler: { (uiState) in
+                self?.uiController.searchMajors = (self?.controller.majors)!
+                self?.uiController.state = uiState
             })
             
         })
@@ -41,9 +41,9 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        controller.fetchData { (uiState) in
-            self.uiController.searchMajors = self.controller.majors
-            self.uiController.state = uiState
+        controller.fetchData { [weak self] (uiState) in
+            self?.uiController.searchMajors = (self?.controller.majors)!
+            self?.uiController.state = uiState
         }
     }
     

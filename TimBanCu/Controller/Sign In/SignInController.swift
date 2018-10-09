@@ -43,13 +43,13 @@ final class SignInController{
     }
     
     func signIn(credential:AuthCredential, completionHandler: @escaping (_ uiState:UIState) -> Void){
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+        Auth.auth().signInAndRetrieveData(with: credential) { [weak self] (authResult, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completionHandler(.Failure(error.localizedDescription))
                 }
                 
-                self.uid = Auth.auth().currentUser?.uid
+                self?.uid = Auth.auth().currentUser?.uid
                 // User is signed in
                 completionHandler(.Success())
             }

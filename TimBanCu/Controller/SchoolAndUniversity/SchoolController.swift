@@ -36,10 +36,10 @@ final class SchoolController{
     
  
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
-        queryTool.getData { (queryState) in
+        queryTool.getData { [weak self] (queryState) in
             switch(queryState){
             case .Success(let snapshot):
-                self.schoolModels.removeAll()
+                self?.schoolModels.removeAll()
                 
                 for snap in snapshot.children {
                     let value = (snap as! DataSnapshot).value as? [String:Any]
@@ -48,9 +48,9 @@ final class SchoolController{
                     let address = value!["address"] as? String
                     let uid = value!["uid"] as? String
                     
-                    let school = School(name: name, address: address!, type: self.getSchoolTypeAsString(), uid: uid!)
+                    let school = School(name: name, address: address!, type: (self?.getSchoolTypeAsString())!, uid: uid!)
                     
-                    self.schoolModels.append(school)
+                    self?.schoolModels.append(school)
                 }
                                 
                 completionHandler(.Success())
@@ -67,9 +67,9 @@ final class SchoolController{
     func addNewSchool(schoolName:String,completionHandler: @escaping (_ state:UIState)->Void){
         let school = School(name: schoolName, address: "?", type: getSchoolTypeAsString(), uid: CurrentUser.getUid())
         
-        FirebaseHelper.writeToDatabase(model: school) { (err, _) in
+        FirebaseHelper.writeToDatabase(model: school) { [weak self] (err, _) in
             if(err == nil){
-                self.schoolModels.append(school)
+                self?.schoolModels.append(school)
                 completionHandler(.Success())
             }
             else{

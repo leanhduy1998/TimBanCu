@@ -133,7 +133,9 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
         if(userImages.count == 0){
             uiController.showNoProfileImageAlert()
         }
-        else{            
+        else{
+            uiController.playLoadingAnimation()
+            
             controller.updateUserInfo(images: userImages, completeUploadClosure: {uiState in
                 
                 switch(uiState){
@@ -147,11 +149,6 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                 default:
                     break
                 }
-        else {
-            loadingAnimation = LoadingAnimation(viewcontroller: self)
-            
-            controller.updateUserInfo(images: userImages, completeUploadClosure: {
-                self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
             })
         }
     }
