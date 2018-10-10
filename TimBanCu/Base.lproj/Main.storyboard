@@ -1227,9 +1227,6 @@
                                     <action selector="addYourselfBtnPressed:" destination="0Ua-wx-Yxd" eventType="touchUpInside" id="boQ-bm-9w9"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ASQ-UU-L0M">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwq-kt-NPR">
                                 <rect key="frame" x="20" y="578" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -1281,12 +1278,10 @@
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="bottom" secondItem="uwq-kt-NPR" secondAttribute="bottom" constant="10" id="JrC-FY-PDZ"/>
                             <constraint firstItem="kat-1D-gyg" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" id="NV8-hU-Ejm"/>
                             <constraint firstItem="EMR-Jf-mY2" firstAttribute="top" secondItem="bQe-H4-oWQ" secondAttribute="top" constant="10" id="OQZ-2D-Gj5"/>
-                            <constraint firstItem="ASQ-UU-L0M" firstAttribute="centerY" secondItem="GaK-7b-4ZG" secondAttribute="centerY" id="Rag-mh-qVr"/>
                             <constraint firstItem="EMR-Jf-mY2" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="20" id="WQU-Bo-AxR"/>
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="uwq-kt-NPR" secondAttribute="trailing" constant="20" id="X5R-pA-GQg"/>
                             <constraint firstItem="IqM-AJ-ZHj" firstAttribute="leading" secondItem="bQe-H4-oWQ" secondAttribute="leading" constant="20" id="Yhg-0a-tNq"/>
                             <constraint firstItem="bQe-H4-oWQ" firstAttribute="trailing" secondItem="kat-1D-gyg" secondAttribute="trailing" id="feU-Uu-hig"/>
-                            <constraint firstItem="ASQ-UU-L0M" firstAttribute="centerX" secondItem="GaK-7b-4ZG" secondAttribute="centerX" id="lqz-Ix-Mgs"/>
                             <constraint firstItem="uwq-kt-NPR" firstAttribute="top" secondItem="IqM-AJ-ZHj" secondAttribute="bottom" constant="10" id="zxL-ul-D8t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bQe-H4-oWQ"/>
@@ -1296,7 +1291,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Tu2-eg-QWM"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="ASQ-UU-L0M" id="dfk-mh-aiJ"/>
                         <outlet property="addYourselfBtn" destination="IqM-AJ-ZHj" id="e4m-9H-Xb7"/>
                         <outlet property="chatBtn" destination="uwq-kt-NPR" id="QVk-HT-Ycu"/>
                         <outlet property="searchTF" destination="D8Q-db-zA8" id="thQ-6r-02r"/>

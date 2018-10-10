@@ -16,10 +16,10 @@ class ClassDetailUIController{
     private var searchTF:UITextField!
     private var genericTableView:GenericTableView<Student, ClassDetailTableViewCell>!
     private var tableview:UITableView!
-    private var activityIndicator: UIActivityIndicatorView!
     private var alerts: ClassDetailAlerts!
     private var addYourselfBtn:UIButton!
     fileprivate var chatBtn:UIButton!
+    fileprivate var loadingAnimation:LoadingAnimation!
     
     fileprivate var searchTFUnderline:UnderlineView!
     fileprivate var noResultViewAddBtnClosure: ()->()
@@ -36,7 +36,6 @@ class ClassDetailUIController{
     init(viewcontroller:ClassDetailViewController,noResultViewAddBtnClosure: @escaping ()->()){
         self.viewcontroller = viewcontroller
         self.searchTF = viewcontroller.searchTF
-        self.activityIndicator = viewcontroller.activityIndicator
         self.addYourselfBtn = viewcontroller.addYourselfBtn
         self.chatBtn = viewcontroller.chatBtn
         self.tableview = viewcontroller.tableview
@@ -50,19 +49,20 @@ class ClassDetailUIController{
         setupAlerts()
         setupGenericTableView()
         setupKeyboard()
+        setupLoadingAnimation()
     }
     
     private func update(newState: UIState) {
         switch(state, newState) {
         case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
-            stopLoading()
+            stopLoadingAnimation()
             showAddYourInfoBtnIfYouAreNotInTheClass()
             showNoResultViewIfThereIsNoStudent()
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
-            stopLoading()
+            stopLoadingAnimation()
             alerts.showGeneralErrorAlert(message: errorStr)
             break
         case (.AddingNewData, .Success()):
@@ -108,19 +108,7 @@ class ClassDetailUIController{
         
         reloadTableViewAndUpdateUI()
     }
-    
-    private func showLoading(){
-        noResultView.isHidden = true
-        tableview.isHidden = false
-        addYourselfBtn.isHidden = true
-        activityIndicator.isHidden = false
-        activityIndicator.startAnimating()
-        //TODO
-    }
-    private func stopLoading(){
-        self.activityIndicator.isHidden = true
-        self.activityIndicator.stopAnimating()
-    }
+
     
     private func reloadTableViewAndUpdateUI(){
         genericTableView.items = searchStudents
@@ -233,4 +221,30 @@ extension ClassDetailUIController{
     fileprivate func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
+}
+
+//MARK: Loading Animation
+extension ClassDetailUIController {
+    fileprivate func setupLoadingAnimation(){
+        loadingAnimation = LoadingAnimation(viewcontroller: viewcontroller)
+        loadingAnimation.isHidden = true
+    }
+    
+    func playLoadingAnimation(){
+        loadingAnimation.isHidden = false
+        loadingAnimation.playAnimation()
+    }
+    
+    func stopLoadingAnimation() {
+        loadingAnimation.isHidden = true
+        loadingAnimation.stopAnimation()
+    }
+    
+    private func showLoading(){
+        noResultView.isHidden = true
+        tableview.isHidden = false
+        addYourselfBtn.isHidden = true
+        self.playLoadingAnimation()
+    }
+    
 }

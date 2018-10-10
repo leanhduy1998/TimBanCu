@@ -117,8 +117,7 @@ class MajorUIController{
     }
 }
 
-// TableView
-
+//MARK: TableView
 extension MajorUIController{
     fileprivate func setupGenericTableView(){
         tableViewTool = GenericTableView(tableview: tableview, items: searchMajors) { (cell, major) in
@@ -133,7 +132,7 @@ extension MajorUIController{
     }
 }
 
-// Other UI Setup
+// MARK: Other UI Setup
 extension MajorUIController{
     fileprivate func setupAlerts(){
         alerts = MajorAlerts(viewcontroller: viewcontroller, addNewMajorBtnPressedClosure: addNewMajorHandler)
@@ -153,6 +152,7 @@ extension MajorUIController{
     }
 }
 
+//MARK: Loading Animation
 extension MajorUIController {
     fileprivate func setupLoadingAnimation(){
         loadingAnimation = LoadingAnimation(viewcontroller: viewcontroller)
