@@ -43,7 +43,7 @@ final class SignInUIController{
         setupFacebookBtn()
         setupGoogleButton()
         
-        errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "")
+        errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "", successAnimation: false)
     }
 
     private func update(newState: UIState) {

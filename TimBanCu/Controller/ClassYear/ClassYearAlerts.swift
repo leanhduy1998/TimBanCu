@@ -40,7 +40,7 @@ class ClassYearAlerts{
     }
     
     func showAlert(title:String,message:String){
-        let generalAlert = InfoAlert(title: title, message: message)
+        let generalAlert = InfoAlert(title: title, message: message, successAnimation: true)
         generalAlert.show(viewcontroller: viewcontroller)
     }
     
@@ -57,7 +57,7 @@ class ClassYearAlerts{
         
         let message = "Bước Tiếp Theo: Thêm Bạn Vào Danh Sách"
         
-        addNewClassCompletedAlert = InfoAlert(title: title, message: message)
+        addNewClassCompletedAlert = InfoAlert(title: title, message: message, successAnimation: true)
     }
     private func setupClassAlreadyExistAlert(){
         var title:String!
@@ -71,7 +71,7 @@ class ClassYearAlerts{
             title = "Khoa của bạn đã có trong danh sách!"
             message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
         }
-        classAlreadyExistAlert = InfoAlert(title: title, message: message)
+        classAlreadyExistAlert = InfoAlert(title: title, message: message, successAnimation: false)
     }
     
 }

@@ -137,6 +137,7 @@
 		1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE5210B678100346EF9 /* CircleImageView.swift */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
+		3869265A216DD07B00D7780F /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 38692659216DD07B00D7780F /* success.json */; };
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
@@ -306,6 +307,7 @@
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38692659216DD07B00D7780F /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 		1C1D4BA5215B11BA002E4807 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				38692659216DD07B00D7780F /* success.json */,
 				1C1D4BA6215B11BA002E4807 /* bikingishard.json */,
 				1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */,
 				1C1D4BA8215B11BA002E4807 /* empty_list.json */,
@@ -939,6 +942,7 @@
 				1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */,
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
+				3869265A216DD07B00D7780F /* success.json in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
 				1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */,

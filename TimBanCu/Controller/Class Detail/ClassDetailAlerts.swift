@@ -11,8 +11,8 @@ import UIKit
 
 class ClassDetailAlerts{
     private var viewcontroller:UIViewController!
-    private var generalErrorAlert = InfoAlert(title: "Lỗi Kết Nối", message: "")
-    private var addYourInfoCompleteAlert = InfoAlert(title: "Thêm Bạn Vào Danh Sách Thành Công", message: "")
+    private var generalErrorAlert = InfoAlert(title: "Lỗi Kết Nối", message: "", successAnimation: false)
+    private var addYourInfoCompleteAlert = InfoAlert(title: "Thêm Bạn Vào Danh Sách Thành Công", message: "", successAnimation: true)
     
     init(viewcontroller:UIViewController){
         self.viewcontroller = viewcontroller

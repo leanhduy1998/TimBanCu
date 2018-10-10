@@ -33,13 +33,13 @@ class UpdateImageYearAlerts{
         let title = "Năm Quá Xa So Với Hiện Tại"
         let message = "Bạn Vui Lòng Điền Năm Gần Với Hiện Tại Hơn!"
         
-        yearOutOfLowerBoundAlert = InfoAlert(title: title, message: message)
+        yearOutOfLowerBoundAlert = InfoAlert(title: title, message: message, successAnimation: false)
     }
     
     private func setupYearIsInTheFutureAlert(){
         let title = "Năm Học Ở Trong Tương Lai"
         let message = "Bạn Vui Lòng Điền Năm Ở Trong Quá Khứ Hoặc Ở Hiện Tại"
         
-        yearIsInTheFutureAlert = InfoAlert(title: title, message: message)
+        yearIsInTheFutureAlert = InfoAlert(title: title, message: message, successAnimation: false)
     }
 }
