@@ -62,10 +62,13 @@ class LoadingAnimation: UIView {
     }
     
     func playAnimation(){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.blackFilter = BlackFilterBackground(viewcontroller: self.viewcontroller)
-        }, completion: nil)
+        self.blackFilter = BlackFilterBackground(viewcontroller: self.viewcontroller)
         animation.play()
+    }
+    
+    func stopAnimation() {
+        blackFilter.removeFromSuperview()
+        animation.stop()
     }
     
     private func setupAnimationnConstraints(){

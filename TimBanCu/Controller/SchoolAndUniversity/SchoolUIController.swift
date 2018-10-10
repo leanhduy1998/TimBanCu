@@ -20,6 +20,7 @@ class SchoolUIController{
     private var searchTF:UITextField!
     fileprivate var addNewSchoolClosure: (String)->()
     fileprivate var keyboardHelper:KeyboardHelper!
+    fileprivate var loadingAnimation:LoadingAnimation!
 
     var searchSchoolModels = [School]()
     private var genericTableView: GenericTableView<School, SchoolTableViewCell>!
@@ -37,6 +38,7 @@ class SchoolUIController{
         setupNoResultView()
         setupGenericTableView()
         setupKeyboard()
+        setupLoadingAnimation()
     }
     
     var state:UIState = .Loading{
@@ -51,6 +53,7 @@ class SchoolUIController{
         case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
             reloadTableViewAndUpdateUI()
+            stopLoadingAnimation()
             break
         case (.Loading, .Failure(let errorStr)):
             alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
@@ -90,18 +93,6 @@ class SchoolUIController{
         }
         reloadTableViewAndUpdateUI()
     }
-    
-    
-    
-    
-    private func showLoading(){
-        noResultView.isHidden = true
-        tableview.isHidden = true
-        //TODO
-    }
-    
-    
-    
     
     private func reloadTableViewAndUpdateUI(){
         genericTableView.items = searchSchoolModels
@@ -194,5 +185,29 @@ extension SchoolUIController{
     
     fileprivate func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
+    }
+}
+
+//MARK: Loading Animation
+extension SchoolUIController {
+    fileprivate func setupLoadingAnimation(){
+        loadingAnimation = LoadingAnimation(viewcontroller: viewcontroller)
+        loadingAnimation.isHidden = true
+    }
+    
+    func playLoadingAnimation(){
+        loadingAnimation.isHidden = false
+        loadingAnimation.playAnimation()
+    }
+    
+    func stopLoadingAnimation() {
+        loadingAnimation.isHidden = true
+        loadingAnimation.stopAnimation()
+    }
+    
+    private func showLoading(){
+        noResultView.isHidden = true
+        tableview.isHidden = true
+        self.playLoadingAnimation()
     }
 }

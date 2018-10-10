@@ -16,7 +16,7 @@ class BlackFilterBackground: UIView {
         super.init(frame: .zero)
         self.viewcontroller = viewcontroller
         viewcontroller.view.addSubview(self)
-        viewcontroller.view.bringSubview(toFront: self)
+        viewcontroller.view.sendSubview(toBack: self)
         
         setUpSelf()
         setSelfConstraints()
