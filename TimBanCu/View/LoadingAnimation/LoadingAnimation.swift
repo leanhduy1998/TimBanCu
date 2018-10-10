@@ -67,7 +67,9 @@ class LoadingAnimation: UIView {
     }
     
     func stopAnimation() {
-        blackFilter.removeFromSuperview()
+        if blackFilter != nil {
+            blackFilter.removeFromSuperview()
+        }
         animation.stop()
     }
     
