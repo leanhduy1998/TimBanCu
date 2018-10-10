@@ -37,7 +37,7 @@ class ClassNameAlerts{
     }
     
     func showAlert(title:String,message:String){
-        let alert = InfoAlert(title: title, message: message, successAnimation: true)
+        let alert = InfoAlert(title: title, message: message, alertType: .Error)
         alert.show(viewcontroller: viewcontroller)
     }
         
@@ -52,12 +52,12 @@ class ClassNameAlerts{
         let title = "Lớp của bạn đã có trong danh sách!"
         let message = "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới"
         
-        classAlreadyExistAlert = InfoAlert(title: title, message: message, successAnimation: false)
+        classAlreadyExistAlert = InfoAlert(title: title, message: message, alertType: .AlreadyExist)
     }
     
     private func setupAddNewClassNameCompletedAlert(){
         let title = "Thêm Lớp Thành Công!"
         let message = "Bước Tiếp Theo: Chọn Năm Học Của Bạn"
-        addNewClassCompleteAlert = InfoAlert(title: title, message: message, successAnimation: true)
+        addNewClassCompleteAlert = InfoAlert(title: title, message: message, alertType: .Success)
     }
 }

@@ -48,7 +48,7 @@ class UserImageUIController{
         case (.DoNothing,.Failure(let errStr)):
             let title = "Lỗi Kết Nối"
             let message =  errStr
-            let alert = InfoAlert(title: title, message: message, successAnimation: false)
+            let alert = InfoAlert(title: title, message: message, alertType: .Error)
             alert.show(viewcontroller: viewcontroller)
             break
 

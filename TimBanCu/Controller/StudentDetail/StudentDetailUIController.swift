@@ -21,7 +21,7 @@ class StudentDetailUIController{
     private var imageSlideshow: ImageSlideshow!
     private var student:Student!
     
-    private let generalErrorAlert = InfoAlert(title: "Lỗi Kết Nối", message: "", successAnimation: false)
+    private let generalErrorAlert = InfoAlert(title: "Lỗi Kết Nối", message: "", alertType: .Error)
     
     var state:UIState = .Loading{
         willSet(newState){

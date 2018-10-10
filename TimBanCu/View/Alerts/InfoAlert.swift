@@ -18,11 +18,10 @@ class InfoAlert{
     
     private var animation:LOTAnimationView!
     private var animationName: String!
-    private var successAnimation: Bool!
+    private var animationHeight: CGFloat!
+    private var alertType: AlertType!
 
-    init(title:String,message:String,successAnimation: Bool){
-        self.successAnimation = successAnimation
-        
+    init(title:String,message:String, alertType: AlertType){
         alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak alert] (_) in
             alert?.dismiss(animated: true, completion: nil)
@@ -30,35 +29,61 @@ class InfoAlert{
                 self.showAlertCompleteHandler!()
             }
         }))
+        self.alertType = alertType
         
         let height:NSLayoutConstraint = NSLayoutConstraint(item: alert.view, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: 300)
         alert.view.addConstraint(height)
         
+        setUpAnimationName()
         setUpAnimation()
-        setupAnimationnConstraints()
+        setupAnimationConstraints()
     }
     
-    private func setUpAnimationName() {
-        if successAnimation {
+    private func setUpAnimationName(){
+        switch(alertType!){
+        case .Success:
             animationName = "success"
-        } else {
+            animationHeight = 100
+            break
+        case .Error:
             animationName = "bikingishard"
+            animationHeight = 120
+            break
+        case .AlreadyExist:
+            animationName = "yearError"
+            animationHeight = 150
+            break
+        case .Info:
+            animationName = "info"
+            animationHeight = 150
+            break
+        case .YearIsInTheFuture:
+            animationName = "yearError"
+            animationHeight = 150
+            break
+        case .YearOutOfLowerBound:
+            animationName = "yearError"
+            animationHeight = 150
+            break
+        case .MissingImage:
+            animationName = "postcard"
+            animationHeight = 250
+            break
         }
-        
     }
     
     private func setUpAnimation() {
         animation = LOTAnimationView(name: animationName)
-        animation.contentMode = .scaleAspectFill
+        animation.contentMode = .scaleAspectFit
         animation.loopAnimation = true
         animation.play()
         animation.translatesAutoresizingMaskIntoConstraints = false
         alert.view.addSubview(animation)
     }
     
-    private func setupAnimationnConstraints(){
-        animation.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        animation.widthAnchor.constraint(equalToConstant: 200).isActive = true
+    private func setupAnimationConstraints(){
+        animation.heightAnchor.constraint(equalToConstant: animationHeight).isActive = true
+        animation.widthAnchor.constraint(equalToConstant: 250).isActive = true
         animation.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor).isActive = true
         animation.centerYAnchor.constraint(equalTo: alert.view.centerYAnchor).isActive = true
     }

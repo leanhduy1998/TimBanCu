@@ -43,20 +43,20 @@ class AddYourInfoAlerts{
         let title = "Lỗi Cập Nhật Thông Tin"
         let mesage = "Bạn Vui Lòng Thử Lại"
         
-        uploadErrorAlert = InfoAlert(title: title, message: mesage, successAnimation: false)
+        uploadErrorAlert = InfoAlert(title: title, message: mesage, alertType: .Error)
     }
     
     private func setupNoProfileImageAlert(){
         let title = "Thiếu Hình Cá Nhân"
         let message = "Bạn hãy thêm ít nhất 1 hình cá nhân. Bạn có thể thêm nhiều hình tại nhiều năm khác nhau để các bạn khác dễ nhận diện."
         
-        noProfileImageAlert = InfoAlert(title: title, message: message, successAnimation: false)
+        noProfileImageAlert = InfoAlert(title: title, message: message, alertType: .MissingImage)
     }
     
     private func setupPrivacyAlert(){
         let title = "Mức Công Khai Thông Tin"
         let message = "Bạn có thể chọn chia sẻ thông tin của mình công khai hoặc chỉ mình bạn. Nếu không công khai, người dùng khác sẽ phải được sự đồng ý của bạn trước khi xem thông tin đó."
-        privacyAlert = InfoAlert(title: title, message: message, successAnimation: false)
+        privacyAlert = InfoAlert(title: title, message: message, alertType: .Info)
     }
     
     private func setupAddImageYearAlert(){

@@ -41,7 +41,7 @@ class MajorAlerts{
     }
     
     func showAlert(title:String,message:String){
-        let alert = InfoAlert(title: title, message: message, successAnimation: true)
+        let alert = InfoAlert(title: title, message: message, alertType: .Error)
         alert.show(viewcontroller: viewcontroller)
     }
     
@@ -49,7 +49,7 @@ class MajorAlerts{
         let title = "Khoa của bạn đã có trong danh sách!"
         let message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
         
-        majorAlreadyExistAlert = InfoAlert(title: title, message: message, successAnimation: false)
+        majorAlreadyExistAlert = InfoAlert(title: title, message: message, alertType: .AlreadyExist)
     }
     
     private func setupAddNewMajorAlert(){
@@ -63,6 +63,6 @@ class MajorAlerts{
     
     private func setupAddNewMajorCompletedAlert(){
         let title = "Bước 1: Thêm Khoa Thành Công!"
-        addNewMajorCompletedAlert = InfoAlert(title: title, message: "Bước 2: Thêm năm học của bạn", successAnimation: true)
+        addNewMajorCompletedAlert = InfoAlert(title: title, message: "Bước 2: Thêm năm học của bạn", alertType: .Success)
     }
 }

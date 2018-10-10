@@ -46,7 +46,7 @@ final class SchoolAlerts{
     }
     
     func showAlert(title:String,message:String){
-        let alert = InfoAlert(title: title, message: message, successAnimation: true)
+        let alert = InfoAlert(title: title, message: message, alertType: .Error)
         alert.show(viewcontroller: viewcontroller)
     }
     
@@ -54,7 +54,7 @@ final class SchoolAlerts{
         let title = "Trường của bạn đã có trong danh sách!"
         let message = "Vui Lòng Chọn Trường Trong Danh Sách Chúng Tôi Hoặc Thêm Trường Mới"
 
-        schoolAlreadyExistAlert = InfoAlert(title: title, message: message, successAnimation: false)
+        schoolAlreadyExistAlert = InfoAlert(title: title, message: message, alertType: .AlreadyExist)
     }
     
     private func setupAddNewSchoolAlert(){
@@ -83,6 +83,6 @@ final class SchoolAlerts{
     
     private func setupAddNewSchoolCompletedAlert(){
         let title = "Thêm Trường Thành Công!"
-        addNewSchoolCompletedAlert = InfoAlert(title: title, message: "Bước Tiếp Theo: Chọn Lớp của bạn", successAnimation: true)
+        addNewSchoolCompletedAlert = InfoAlert(title: title, message: "Bước Tiếp Theo: Chọn Lớp của bạn", alertType: .Success)
     }
 }
