@@ -16,4 +16,5 @@ protocol ClassProtocol{
     func getFirebasePathWithoutSchoolYear()->String
     func getFirebasePathWithSchoolYear()->String
     func getModelAsDictionary()->[String:Any]
+    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void)
 }

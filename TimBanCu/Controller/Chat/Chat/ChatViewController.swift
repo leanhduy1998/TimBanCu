@@ -16,6 +16,7 @@ class ChatViewController: JSQMessagesViewController {
 
     // from previous class
     var classDetail:ClassProtocol!
+    var students:[Student]!
     
     // chat
     var messages = [JSQMessage]()
@@ -87,8 +88,18 @@ class ChatViewController: JSQMessagesViewController {
         uiController.showImagePickerController()
     }
     
+    @IBAction func reportBtnPressed(_ sender: Any) {
+    }
+    
+    
     deinit {
         controller.removeAllObservers()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ReportUserViewController{
+            destination.students = students
+        }
     }
 
 }

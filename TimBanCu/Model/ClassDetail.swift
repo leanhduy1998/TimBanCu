@@ -70,4 +70,9 @@ class ClassDetail: ClassProtocol{
     func getUidAsDictionary() -> [String : Any] {
         return ["uid":uid]
     }
+    
+    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
+        
+        Database.database().reference().child("classes/\(schoolName!)/\(classNumber!)/\(className!)/\(year!)").setValue(getUidAsDictionary(), withCompletionBlock: completionHandler)
+    }
 }

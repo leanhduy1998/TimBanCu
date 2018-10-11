@@ -34,7 +34,7 @@ final class ClassYearController{
     
     func writeToDatabaseThenShowCompleteAlert(classProtocol:ClassProtocol,completionHandler: @escaping (_ state:UIState)->Void){
         
-        FirebaseHelper.writeToDatabase(model: classProtocol) { (err, ref) in
+        classProtocol.writeToDatabase { (err, ref) in
             DispatchQueue.main.async {
                 if(err == nil){
                     completionHandler(.Success())

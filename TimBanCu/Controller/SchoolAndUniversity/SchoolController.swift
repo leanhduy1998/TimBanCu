@@ -67,7 +67,7 @@ final class SchoolController{
     func addNewSchool(schoolName:String,completionHandler: @escaping (_ state:UIState)->Void){
         let school = School(name: schoolName, address: "?", type: getSchoolTypeAsString(), uid: CurrentUser.getUid())
         
-        FirebaseHelper.writeToDatabase(model: school) { [weak self] (err, _) in
+        school.writeToDatabase { [weak self] (err, _) in
             if(err == nil){
                 self?.schoolModels.append(school)
                 completionHandler(.Success())

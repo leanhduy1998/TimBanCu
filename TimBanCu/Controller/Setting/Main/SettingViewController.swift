@@ -7,25 +7,37 @@
 //
 
 import UIKit
+import GoogleSignIn
 
+import FacebookCore
+import FacebookLogin
 
+import Firebase
+import FirebaseAuth
 
 class SettingViewController: UIViewController {
     
-    var settings = ["Sửa Thông Tin Cá Nhân","Đăng Xuất"]
-    var icons = ["edit", "signOut"]
+    @IBOutlet weak var tableview: UITableView!
     
-    var finishedLoadingInitialTableCells = false
-    
-    let customSelectionColorView = CustomSelectionColorView()
+    private var uiController:SettingUIController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addNavigationBarShadow()
+        uiController = SettingUIController(viewcontroller: self)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        finishedLoadingInitialTableCells = false
+    func signOut(){
+        GIDSignIn.sharedInstance().signOut()
+        
+        let loginManager = LoginManager()
+        loginManager.logOut()
+        
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
-    
 }

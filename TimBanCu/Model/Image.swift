@@ -51,6 +51,10 @@ class Image{
         }
         self.uid = uid
     }
+    
+    func fetchImagefromFirebaseStorage(){
+        
+    }
 }
 
 extension UIImage {

@@ -48,7 +48,11 @@ class ClassDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchAndReloadStudentList()
         
+    }
+    
+    private func fetchAndReloadStudentList(){
         controller.fetchStudents { [weak self] (uiState) in
             DispatchQueue.main.async {
                 self?.uiController.searchStudents = (self?.controller.students)!
@@ -85,6 +89,7 @@ class ClassDetailViewController: UIViewController {
         }
         else{
             enrollUserToThisClass()
+            fetchAndReloadStudentList()
         }
     }
     
@@ -119,6 +124,7 @@ class ClassDetailViewController: UIViewController {
         
         if let destination = segue.destination as? ChatViewController{
             destination.classDetail = classProtocol as! ClassDetail
+            destination.students = controller.students
         }
         
     }

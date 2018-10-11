@@ -8,12 +8,26 @@
 
 import UIKit
 
-class ChangeYourInfoViewController: UIViewController {
-
+class UpdateUserInfoViewController: UIViewController {
+    
+    @IBOutlet weak var fullNameTF: UITextField!
+    @IBOutlet weak var birthYearTF: UITextField!
+    @IBOutlet weak var phoneNumberTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var yearLabel: UILabel!
+    
+    @IBOutlet weak var phonePrivacyDropDownBtn: UIButton!
+    @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
+    @IBOutlet weak var imageSlideShow: Slideshow!
+    @IBOutlet weak var updateInfoBtn: UIButton!
+    
+    @IBOutlet weak var updateInfoButtonBottomContraint: NSLayoutConstraint!
+    
+    private var uiController:UpdateUserInfoUIController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(CurrentUser.getStudent().images.count)
     }
 
     override func didReceiveMemoryWarning() {

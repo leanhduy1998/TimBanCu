@@ -42,5 +42,10 @@ class MajorDetail: ClassProtocol{
     func getModelAsDictionary() -> [String : Any] {
         return ["uid":uid]
     }
+    
+    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
+        
+        Database.database().reference().child("classes/\(schoolName!)/\(majorName!)/\(year!)").setValue(getModelAsDictionary(), withCompletionBlock: completionHandler)
+    }
 }
 

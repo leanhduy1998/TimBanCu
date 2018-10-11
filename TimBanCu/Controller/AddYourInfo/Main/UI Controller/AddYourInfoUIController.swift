@@ -83,7 +83,6 @@ class AddYourInfoUIController{
                     self.yearLabel.text = "\(self.viewcontroller.userImages[page].year!)"
                 }
             }
-            
             self.viewcontroller.view.layoutIfNeeded()
         }
     }

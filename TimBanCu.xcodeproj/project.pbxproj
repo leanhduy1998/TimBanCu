@@ -32,7 +32,6 @@
 		1C4B6C332148541B00BDF724 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C322148541B00BDF724 /* UserData.swift */; };
 		1C4B6C382148A14700BDF724 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C372148A14700BDF724 /* Image.swift */; };
 		1C4B6C3A2148AF2100BDF724 /* Slideshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C392148AF2100BDF724 /* Slideshow.swift */; };
-		1C4B6C3C214A7BCE00BDF724 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C3B214A7BCE00BDF724 /* FirebaseHelper.swift */; };
 		1C4B6C44214B432C00BDF724 /* UpdateImageYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C43214B432C00BDF724 /* UpdateImageYearViewController.swift */; };
 		1C4B6C47214C01D700BDF724 /* UpdateImageYearUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C46214C01D700BDF724 /* UpdateImageYearUIController.swift */; };
 		1C4B6C49214C02B600BDF724 /* UpdateImageYearAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C48214C02B600BDF724 /* UpdateImageYearAlerts.swift */; };
@@ -56,7 +55,7 @@
 		1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */; };
 		1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */; };
 		1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */; };
-		1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */; };
+		1C83E8162112053D00D647D0 /* UpdateUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8152112053C00D647D0 /* UpdateUserInfoViewController.swift */; };
 		1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E817211228C400D647D0 /* ClassYearViewController.swift */; };
 		1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */; };
 		1C83E81D2113879E00D647D0 /* MajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E81C2113879E00D647D0 /* MajorViewController.swift */; };
@@ -68,7 +67,6 @@
 		1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8702128CB490038ECB5 /* InfoAlert.swift */; };
 		1C8EC8732128CBD80038ECB5 /* AskForInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */; };
 		1C8EC87B2128F3700038ECB5 /* ShimmeringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */; };
-		1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */; };
 		1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2C210141AA0016DFDC /* NoResultLabel.swift */; };
 		1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C900E2D210141AA0016DFDC /* NoResultButton.swift */; };
 		1C9710442116698B00A140FE /* ClassYearAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9710432116698B00A140FE /* ClassYearAlerts.swift */; };
@@ -79,6 +77,16 @@
 		1CA536372169B64000FCF0FF /* UserUniversityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA536362169B64000FCF0FF /* UserUniversityViewModel.swift */; };
 		1CA536392169B72B00FCF0FF /* UserClassesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA536382169B72B00FCF0FF /* UserClassesController.swift */; };
 		1CA5363B2169B89D00FCF0FF /* UserClassesUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5363A2169B89D00FCF0FF /* UserClassesUIController.swift */; };
+		1CA5363F216D37FD00FCF0FF /* UpdateUserInfoUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5363E216D37FD00FCF0FF /* UpdateUserInfoUIController.swift */; };
+		1CA53642216D38A100FCF0FF /* NoUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53641216D38A100FCF0FF /* NoUserInfoViewController.swift */; };
+		1CA53644216D429900FCF0FF /* SettingUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53643216D429900FCF0FF /* SettingUIController.swift */; };
+		1CA53649216E535F00FCF0FF /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53648216E535F00FCF0FF /* Setting.swift */; };
+		1CA5364B216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5364A216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift */; };
+		1CA5364F216EB66300FCF0FF /* ReportUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA5364E216EB66300FCF0FF /* ReportUserViewController.swift */; };
+		1CA53651216EB67D00FCF0FF /* ReportReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53650216EB67D00FCF0FF /* ReportReasonViewController.swift */; };
+		1CA53653216EBDBA00FCF0FF /* ReportUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53652216EBDBA00FCF0FF /* ReportUserTableViewCell.swift */; };
+		1CA53655216EDF9300FCF0FF /* ReportReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53654216EDF9300FCF0FF /* ReportReason.swift */; };
+		1CA53657216EE62400FCF0FF /* ConfirmationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA53656216EE62400FCF0FF /* ConfirmationAlert.swift */; };
 		1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */; };
 		1CAAAC5F20F3E6C700443225 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */; };
 		1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */; };
@@ -193,7 +201,6 @@
 		1C4B6C322148541B00BDF724 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		1C4B6C372148A14700BDF724 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		1C4B6C392148AF2100BDF724 /* Slideshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slideshow.swift; sourceTree = "<group>"; };
-		1C4B6C3B214A7BCE00BDF724 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		1C4B6C43214B432C00BDF724 /* UpdateImageYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageYearViewController.swift; sourceTree = "<group>"; };
 		1C4B6C46214C01D700BDF724 /* UpdateImageYearUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageYearUIController.swift; sourceTree = "<group>"; };
 		1C4B6C48214C02B600BDF724 /* UpdateImageYearAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageYearAlerts.swift; sourceTree = "<group>"; };
@@ -217,7 +224,7 @@
 		1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeUIController.swift; sourceTree = "<group>"; };
 		1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShadow.swift; sourceTree = "<group>"; };
 		1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeYourInfoViewController.swift; sourceTree = "<group>"; };
+		1C83E8152112053C00D647D0 /* UpdateUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoViewController.swift; sourceTree = "<group>"; };
 		1C83E817211228C400D647D0 /* ClassYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearViewController.swift; sourceTree = "<group>"; };
 		1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearTableViewCell.swift; sourceTree = "<group>"; };
 		1C83E81C2113879E00D647D0 /* MajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +236,6 @@
 		1C8EC8702128CB490038ECB5 /* InfoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlert.swift; sourceTree = "<group>"; };
 		1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForInputAlert.swift; sourceTree = "<group>"; };
 		1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmeringLabel.swift; sourceTree = "<group>"; };
-		1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewExtension.swift; sourceTree = "<group>"; };
 		1C900E2C210141AA0016DFDC /* NoResultLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultLabel.swift; sourceTree = "<group>"; };
 		1C900E2D210141AA0016DFDC /* NoResultButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoResultButton.swift; sourceTree = "<group>"; };
 		1C9710432116698B00A140FE /* ClassYearAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearAlerts.swift; sourceTree = "<group>"; };
@@ -240,6 +246,17 @@
 		1CA536362169B64000FCF0FF /* UserUniversityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUniversityViewModel.swift; sourceTree = "<group>"; };
 		1CA536382169B72B00FCF0FF /* UserClassesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesController.swift; sourceTree = "<group>"; };
 		1CA5363A2169B89D00FCF0FF /* UserClassesUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesUIController.swift; sourceTree = "<group>"; };
+		1CA5363E216D37FD00FCF0FF /* UpdateUserInfoUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoUIController.swift; sourceTree = "<group>"; };
+		1CA53641216D38A100FCF0FF /* NoUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUserInfoViewController.swift; sourceTree = "<group>"; };
+		1CA53643216D429900FCF0FF /* SettingUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUIController.swift; sourceTree = "<group>"; };
+		1CA53647216E52B600FCF0FF /* ButcherandBlockExtras1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButcherandBlockExtras1.otf; sourceTree = "<group>"; };
+		1CA53648216E535F00FCF0FF /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		1CA5364A216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonTableViewCell.swift; sourceTree = "<group>"; };
+		1CA5364E216EB66300FCF0FF /* ReportUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserViewController.swift; sourceTree = "<group>"; };
+		1CA53650216EB67D00FCF0FF /* ReportReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonViewController.swift; sourceTree = "<group>"; };
+		1CA53652216EBDBA00FCF0FF /* ReportUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserTableViewCell.swift; sourceTree = "<group>"; };
+		1CA53654216EDF9300FCF0FF /* ReportReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReason.swift; sourceTree = "<group>"; };
+		1CA53656216EE62400FCF0FF /* ConfirmationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAlert.swift; sourceTree = "<group>"; };
 		1CAAAC5A20F3C64300443225 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		1CAAAC5E20F3E6C700443225 /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		1CAAAC6020F3E79000443225 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
@@ -270,7 +287,6 @@
 		1CBF5C9320A8197C00B78E6A /* TimBanCuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimBanCuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimBanCuUITests.swift; sourceTree = "<group>"; };
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ButcherandBlockExtras1.otf; sourceTree = "<group>"; };
 		1CCFACF2211A836200429FA2 /* Butcherandblock.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherandblock.otf; sourceTree = "<group>"; };
 		1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FS Playlist Caps.otf"; sourceTree = "<group>"; };
 		1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShowcaseSans.ttf; sourceTree = "<group>"; };
@@ -381,11 +397,8 @@
 		1C1A98FA210CBBC800D20079 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				1C1A98F6210BB43700D20079 /* ChatViewController.swift */,
-				1CAB796C2155D72E00F21264 /* ChatUIController.swift */,
-				1CAB796A2155D61300F21264 /* ChatController.swift */,
-				1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */,
-				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
+				1CA5364C216EB63200FCF0FF /* Chat */,
+				1CA5364D216EB64200FCF0FF /* Report */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -492,7 +505,8 @@
 			isa = PBXGroup;
 			children = (
 				1CA5363C216A825500FCF0FF /* Main */,
-				1CA5363D216A827F00FCF0FF /* Change Info */,
+				1CA5363D216A827F00FCF0FF /* Update User Info */,
+				1CA53640216D388000FCF0FF /* No User Info */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -530,6 +544,8 @@
 				1CDBA7B22124FBC4002004F9 /* UserClassTableViewCell.swift */,
 				1CA536342169B51E00FCF0FF /* UserUniversityTableViewCell.swift */,
 				1C53F4FA20FD455D00F4ACEB /* SettingTableViewCell.swift */,
+				1CA53652216EBDBA00FCF0FF /* ReportUserTableViewCell.swift */,
+				1CA5364A216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -548,24 +564,52 @@
 			isa = PBXGroup;
 			children = (
 				1C53F4F820FD44D200F4ACEB /* SettingViewController.swift */,
-				1C8EC888212A29650038ECB5 /* SettingTableViewExtension.swift */,
+				1CA53643216D429900FCF0FF /* SettingUIController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		1CA5363D216A827F00FCF0FF /* Change Info */ = {
+		1CA5363D216A827F00FCF0FF /* Update User Info */ = {
 			isa = PBXGroup;
 			children = (
-				1C83E8152112053C00D647D0 /* ChangeYourInfoViewController.swift */,
+				1C83E8152112053C00D647D0 /* UpdateUserInfoViewController.swift */,
+				1CA5363E216D37FD00FCF0FF /* UpdateUserInfoUIController.swift */,
 			);
-			path = "Change Info";
+			path = "Update User Info";
+			sourceTree = "<group>";
+		};
+		1CA53640216D388000FCF0FF /* No User Info */ = {
+			isa = PBXGroup;
+			children = (
+				1CA53641216D38A100FCF0FF /* NoUserInfoViewController.swift */,
+			);
+			path = "No User Info";
+			sourceTree = "<group>";
+		};
+		1CA5364C216EB63200FCF0FF /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1C1A98F6210BB43700D20079 /* ChatViewController.swift */,
+				1CAB796C2155D72E00F21264 /* ChatUIController.swift */,
+				1CAB796A2155D61300F21264 /* ChatController.swift */,
+				1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */,
+				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		1CA5364D216EB64200FCF0FF /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				1CA5364E216EB66300FCF0FF /* ReportUserViewController.swift */,
+				1CA53650216EB67D00FCF0FF /* ReportReasonViewController.swift */,
+			);
+			path = Report;
 			sourceTree = "<group>";
 		};
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1CD73016213CB53F00105ACE /* Enums */,
-				1CD72FF92138767C00105ACE /* Generic Table View */,
 				1C98F66921288C3100EFD4EF /* Sign In */,
 				1C1257382128C29D007FE4FF /* Select School */,
 				1C0A039A20F5162100E105A9 /* SchoolAndUniversity */,
@@ -599,7 +643,6 @@
 				1C5365BF20E7F384000F7FB2 /* dhcanuoc.txt */,
 				1C1D4BA5215B11BA002E4807 /* LottieAnimation */,
 				1CCFACF1211A836200429FA2 /* Fonts */,
-				1CCFACEE211A81A700429FA2 /* ButcherandBlockExtras1.otf */,
 				1C3ADA8B20F962BB0041421F /* awsconfiguration.json */,
 			);
 			path = Resource;
@@ -638,6 +681,7 @@
 				1CFB9C2820F1703300945819 /* View */,
 				1CFB9C2520F15A6F00945819 /* View Model */,
 				1CAAAC5C20F3CA6E00443225 /* Controller */,
+				1CD73016213CB53F00105ACE /* Enums */,
 				1CE24D0020FBE142008DE3FB /* Helper */,
 				1CBF5C8320A8197C00B78E6A /* Info.plist */,
 			);
@@ -667,18 +711,11 @@
 			children = (
 				1CCFACF2211A836200429FA2 /* Butcherandblock.otf */,
 				1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */,
+				1CA53647216E52B600FCF0FF /* ButcherandBlockExtras1.otf */,
 				1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */,
 				1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		1CD72FF92138767C00105ACE /* Generic Table View */ = {
-			isa = PBXGroup;
-			children = (
-				1CD730002138906400105ACE /* GenericTableView.swift */,
-			);
-			path = "Generic Table View";
 			sourceTree = "<group>";
 		};
 		1CD73010213B1C1100105ACE /* NoResult */ = {
@@ -697,6 +734,7 @@
 			children = (
 				1C8EC8722128CBD80038ECB5 /* AskForInputAlert.swift */,
 				1C8EC8702128CB490038ECB5 /* InfoAlert.swift */,
+				1CA53656216EE62400FCF0FF /* ConfirmationAlert.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -730,10 +768,10 @@
 		1CE24D0020FBE142008DE3FB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1CD730002138906400105ACE /* GenericTableView.swift */,
 				1CAB795E2150660400F21264 /* Closures.swift */,
 				1CE24D0120FBE153008DE3FB /* CurrentUser.swift */,
 				1C98F65C212840AE00EFD4EF /* AllUserHelper.swift */,
-				1C4B6C3B214A7BCE00BDF724 /* FirebaseHelper.swift */,
 				1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */,
 				1CAB79682152B91300F21264 /* Cache.swift */,
 			);
@@ -750,6 +788,8 @@
 				1C53F4F620FD422A00F4ACEB /* Student.swift */,
 				1C4B6C322148541B00BDF724 /* UserData.swift */,
 				1C4B6C372148A14700BDF724 /* Image.swift */,
+				1CA53648216E535F00FCF0FF /* Setting.swift */,
+				1CA53654216EDF9300FCF0FF /* ReportReason.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1295,9 +1335,9 @@
 				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
 				1CAB796321509B0E00F21264 /* UserImageController.swift in Sources */,
 				1CA536392169B72B00FCF0FF /* UserClassesController.swift in Sources */,
-				1C4B6C3C214A7BCE00BDF724 /* FirebaseHelper.swift in Sources */,
 				1CD730052138AB8100105ACE /* MajorAlerts.swift in Sources */,
 				1C4B6C332148541B00BDF724 /* UserData.swift in Sources */,
+				1CA53642216D38A100FCF0FF /* NoUserInfoViewController.swift in Sources */,
 				1C8EC86D2128C8E80038ECB5 /* RoundedImageView.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
@@ -1313,14 +1353,16 @@
 				1CDBA7B32124FBC4002004F9 /* UserClassTableViewCell.swift in Sources */,
 				1CD730032138AB1500105ACE /* MajorUIController.swift in Sources */,
 				1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */,
+				1CA5363F216D37FD00FCF0FF /* UpdateUserInfoUIController.swift in Sources */,
 				38EF89CC216A77BB000B05D5 /* BlackFilterBackground.swift in Sources */,
 				1C6CF60D21362AC3009174D2 /* SignInUIController.swift in Sources */,
-				1C83E8162112053D00D647D0 /* ChangeYourInfoViewController.swift in Sources */,
+				1C83E8162112053D00D647D0 /* UpdateUserInfoViewController.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,
 				1C85E3202103F61200124FDA /* UserImageViewController.swift in Sources */,
 				1C4B6C4B214C562E00BDF724 /* KeyboardHelper.swift in Sources */,
 				1CD7300D213B093B00105ACE /* ClassNameUIController.swift in Sources */,
 				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
+				1CA53655216EDF9300FCF0FF /* ReportReason.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1CD7301E213F33E700105ACE /* ClassDetailAlerts.swift in Sources */,
 				1CD72FEC213743AD00105ACE /* SchoolController.swift in Sources */,
@@ -1335,6 +1377,7 @@
 				1CAB79692152B91300F21264 /* Cache.swift in Sources */,
 				1C1D4BA2215B10B7002E4807 /* UnderlineState.swift in Sources */,
 				1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */,
+				1CA53644216D429900FCF0FF /* SettingUIController.swift in Sources */,
 				1C8EC8732128CBD80038ECB5 /* AskForInputAlert.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
@@ -1343,6 +1386,7 @@
 				1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */,
 				1C6CF60F21363042009174D2 /* UIState.swift in Sources */,
 				1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */,
+				1CA53653216EBDBA00FCF0FF /* ReportUserTableViewCell.swift in Sources */,
 				1CAB796121508B0000F21264 /* ImageAction.swift in Sources */,
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
 				1CE24D0D20FC19A2008DE3FB /* SchoolQueryTool.swift in Sources */,
@@ -1353,6 +1397,7 @@
 				1CD73013213C37BF00105ACE /* ClassNameController.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */,
+				1CA53651216EB67D00FCF0FF /* ReportReasonViewController.swift in Sources */,
 				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
 				1CD72FE82137380A00105ACE /* SchoolUIController.swift in Sources */,
 				1CA536352169B51E00FCF0FF /* UserUniversityTableViewCell.swift in Sources */,
@@ -1363,8 +1408,8 @@
 				1C0A039C20F5163C00E105A9 /* SchoolAlerts.swift in Sources */,
 				1CAB795F2150660400F21264 /* Closures.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
+				1CA53649216E535F00FCF0FF /* Setting.swift in Sources */,
 				1C4B6C4D214C94FD00BDF724 /* ImagePicker.swift in Sources */,
-				1C8EC889212A29650038ECB5 /* SettingTableViewExtension.swift in Sources */,
 				1CD72FEE213747E100105ACE /* QueryState.swift in Sources */,
 				1CA5363B2169B89D00FCF0FF /* UserClassesUIController.swift in Sources */,
 				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
@@ -1388,10 +1433,12 @@
 				1CD730072138B85400105ACE /* AddYourInfoUIController.swift in Sources */,
 				1C4B6C49214C02B600BDF724 /* UpdateImageYearAlerts.swift in Sources */,
 				1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */,
+				1CA5364B216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift in Sources */,
 				1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */,
 				1C4B6C382148A14700BDF724 /* Image.swift in Sources */,
 				1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */,
 				1CD73015213CB4D200105ACE /* ClassYearUIController.swift in Sources */,
+				1CA53657216EE62400FCF0FF /* ConfirmationAlert.swift in Sources */,
 				38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */,
 				38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */,
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,
@@ -1401,6 +1448,7 @@
 				1CA536372169B64000FCF0FF /* UserUniversityViewModel.swift in Sources */,
 				1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */,
 				1CD73018213CBEDF00105ACE /* ClassYearController.swift in Sources */,
+				1CA5364F216EB66300FCF0FF /* ReportUserViewController.swift in Sources */,
 				1C9710442116698B00A140FE /* ClassYearAlerts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1585,7 +1633,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Duy-Le.TimBanCu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1604,7 +1652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Duy-Le.TimBanCu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

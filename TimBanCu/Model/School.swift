@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class School{
     //var imageUrl:String
@@ -33,5 +34,10 @@ class School{
     func getModelAsDictionary() -> [String:Any]{
         let dic:[String:Any] = ["type":type,"address":address,"uid":uid]
         return dic
+    }
+    
+    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
+        
+        Database.database().reference().child("schools").child(name).setValue(getModelAsDictionary(), withCompletionBlock: completionHandler)
     }
 }
