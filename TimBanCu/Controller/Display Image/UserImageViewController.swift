@@ -24,28 +24,28 @@ class UserImageViewController: UIViewController {
     private var uiController:UserImageUIController!
     private var controller:UserImageController!
     
-    var previousClass:PreviousClass!
+    private enum ImageAction:String{
+        case DeleteImage = "Xoá Hình",ChangeImageYear = "Sửa Năm Hình"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupClosure()
-        setPreviousClass()
 
         uiController = UserImageUIController(viewcontroller: self, selectionClosure: optionSelectedClosure)
         controller = UserImageController(viewcontroller: self)
     }
     
-    private func setPreviousClass(){
-        let viewControllers = navigationController?.viewControllers
-        let previousController = viewControllers![(navigationController?.viewControllers.count)!-2]
+    
+    func previousClassIsStudentDetailViewController()->Bool{
+        let viewcontrollers = navigationController?.viewControllers
+        let previousClass = viewcontrollers![(viewcontrollers?.count)!-2]
         
-        if(previousController is StudentDetailViewController){
-            previousClass = .StudentDetailViewController
+        if previousClass is StudentDetailViewController{
+            return true
         }
-        else{
-            previousClass = .AddImagesViewController
-        }
+        return false
     }
     
     override func viewWillAppear(_ animated: Bool) {

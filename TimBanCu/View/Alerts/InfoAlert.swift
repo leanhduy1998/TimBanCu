@@ -19,9 +19,9 @@ class InfoAlert{
     private var animation:LOTAnimationView!
     private var animationName: String!
     private var animationHeight: CGFloat!
-    private var alertType: AlertType!
+    private var alertType: AlertAnimationType!
 
-    init(title:String,message:String, alertType: AlertType){
+    init(title:String,message:String, alertType: AlertAnimationType){
         alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { [weak alert] (_) in
             alert?.dismiss(animated: true, completion: nil)

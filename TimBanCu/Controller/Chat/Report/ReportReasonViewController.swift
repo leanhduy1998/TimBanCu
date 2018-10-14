@@ -23,8 +23,8 @@ class ReportReasonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reportCompleteAlert = InfoAlert(title: "Báo Cáo Thành Công", message: "Người dùng đã bị ghi vào danh sách báo cáo của chúng tôi")
-        reportFailedAlert = InfoAlert(title: "Báo Cáo Thất Bại", message: "Bạn vui lòng thử lại")
+        reportCompleteAlert = InfoAlert(title: "Báo Cáo Thành Công", message: "Người dùng đã bị ghi vào danh sách báo cáo của chúng tôi", alertType: .Success)
+        reportFailedAlert = InfoAlert(title: "Báo Cáo Thất Bại", message: "Bạn vui lòng thử lại", alertType: .Error)
         
         genericTableView = GenericTableView(tableview: tableview, items: ReportReason.getAllReason()) { (cell, reason) in
             cell.reasonLabel.text = reason.getString()

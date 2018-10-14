@@ -29,7 +29,10 @@ class UserImageController{
         let imageName = userImages[getImageIndex()].imageName
         userImages.remove(at: getImageIndex())
         
-        if case.StudentDetailViewController? = viewcontroller.previousClass{
+        
+        
+        
+        if(viewcontroller.previousClassIsStudentDetailViewController()){
             ref.child("publicUserProfile/\(CurrentUser.getUid())/images/\(imageName!)").removeValue { (dbErr, _) in
                 
                 if(dbErr != nil){
@@ -49,6 +52,8 @@ class UserImageController{
             }
         }
     }
+    
+    
     
     private func getImageIndex()->Int{
         var index = 0
