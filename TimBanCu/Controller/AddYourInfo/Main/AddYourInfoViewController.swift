@@ -153,6 +153,26 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
         }
     }
     
+    private func allFieldsAreFilled() -> Bool{
+        if((fullNameTF.text?.isEmpty)!){
+            return false
+        }
+        if((birthYearTF.text?.isEmpty)!){
+            return false
+        }
+        if((phoneTF.text?.isEmpty)!){
+            return false
+        }
+        if((emailTF.text?.isEmpty)!){
+            return false
+        }
+        if((yearLabel.text?.isEmpty)!){
+            return false
+        }
+        
+        return true
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true

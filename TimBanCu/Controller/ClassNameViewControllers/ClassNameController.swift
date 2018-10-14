@@ -21,6 +21,16 @@ class ClassNameController{
         self.viewcontroller = viewcontroller
     }
     
+    func classExist(className:String) -> Bool{
+        let className = className.uppercased()
+        for classDetail in classDetails{
+            if(className == classDetail.className){
+                return true
+            }
+        }
+        return false
+    }
+    
     func fetchData(completionHandler: @escaping (UIState) -> ()){
         classDetails.removeAll()
         

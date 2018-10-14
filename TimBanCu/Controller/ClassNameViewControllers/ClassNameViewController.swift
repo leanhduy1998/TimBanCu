@@ -30,13 +30,18 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uiController = ClassNameUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, addNewClassNameHandler: { (addedClassName) in
+        uiController = ClassNameUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, addNewClassNameHandler: { [weak self] (addedClassName) in
             
-            self.controller.addNewClass(className: addedClassName, completionHandler: { [weak self] (uistate) in
-                self?.uiController.searchClassDetails = self!.controller.classDetails
-                self?.uiController.state = uistate
-                self?.state = .AddingClass
-            })
+            if(self!.controller.classExist(className: addedClassName)){
+                self!.uiController.showClassAlreadyExistAlert()
+            }
+            else{
+                self!.controller.addNewClass(className: addedClassName, completionHandler: { [weak self] (uistate) in
+                    self?.uiController.searchClassDetails = self!.controller.classDetails
+                    self?.uiController.state = uistate
+                    self?.state = .AddingClass
+                })
+            }
         })
         
         controller = ClassNameController(viewcontroller: self, school: school, classNumber: classNumber)

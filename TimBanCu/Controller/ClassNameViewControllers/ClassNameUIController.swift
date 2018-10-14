@@ -122,6 +122,9 @@ extension ClassNameUIController{
     func showCancelAddingClassAlert(){
         alerts.showCancelAddingClassAlert()
     }
+    func showClassAlreadyExistAlert(){
+        alerts.showClassAlreadyExistAlert()
+    }
 }
 
 // TextField
