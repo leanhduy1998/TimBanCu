@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import Lottie
 
-class ClassNameViewController: UIViewController {
+class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
@@ -25,14 +25,17 @@ class ClassNameViewController: UIViewController {
     fileprivate var uiController:ClassNameUIController!
     fileprivate var controller:ClassNameController!
     
+    var state:ClassNameState = .NotAddingClass
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         uiController = ClassNameUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, addNewClassNameHandler: { (addedClassName) in
             
-            self.controller.addNewClass(className: addedClassName, completionHandler: { (uistate) in
-                self.uiController.searchClassDetails = self.controller.classDetails
-                self.uiController.state = uistate
+            self.controller.addNewClass(className: addedClassName, completionHandler: { [weak self] (uistate) in
+                self?.uiController.searchClassDetails = self!.controller.classDetails
+                self?.uiController.state = uistate
+                self?.state = .AddingClass
             })
         })
         
@@ -40,7 +43,26 @@ class ClassNameViewController: UIViewController {
         
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        let backBTN = UIBarButtonItem(image: UIImage(named: "back"),
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(backBtnPressed(_:)))
+        navigationItem.leftBarButtonItem = backBTN
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
+    
+    @objc func backBtnPressed(_ sender: UIBarButtonItem){
+        switch(state){
+        case .AddingClass:
+            uiController.showCancelAddingClassAlert()
+        case .NotAddingClass:
+            navigationController!.popViewController(animated: true)
+        }
+    }
+    
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,6 +71,7 @@ class ClassNameViewController: UIViewController {
             self.uiController.state = uistate
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassYearViewController{

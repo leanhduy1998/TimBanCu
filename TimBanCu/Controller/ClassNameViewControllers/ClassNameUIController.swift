@@ -119,6 +119,9 @@ extension ClassNameUIController{
         state = .AddingNewData
         alerts.showAddNewClassNameAlert()
     }
+    func showCancelAddingClassAlert(){
+        alerts.showCancelAddingClassAlert()
+    }
 }
 
 // TextField

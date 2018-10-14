@@ -14,11 +14,21 @@ class ReportUserViewController: UIViewController {
     
     var students:[Student]!
     var selectedStudent:Student!
+    
+    private var genericTableView:GenericTableView<Student,ReportUserTableViewCell>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var studentIndex = 0
+        for student in students{
+            if(student.uid == CurrentUser.getUid()){
+                students.remove(at: studentIndex)
+            }
+            studentIndex = studentIndex + 1
+        }
 
-        let genericTableView:GenericTableView<Student,ReportUserTableViewCell> = GenericTableView(tableview: tableview, items: students) { (cell, student) in
+        genericTableView = GenericTableView(tableview: tableview, items: students) { (cell, student) in
             cell.nameLabel.text = student.fullName
         }
         

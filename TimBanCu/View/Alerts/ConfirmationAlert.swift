@@ -7,4 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
+class  ConfirmationAlert{    
+    let alert:UIAlertController!
+    
+    init(title:String,message:String, confirmed:@escaping ()->()){
+        alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Đồng Ý", style: .default, handler: { (_) in
+            confirmed()
+        }))
+        alert.addAction(UIAlertAction(title: "Huỷ", style: .cancel, handler: { [weak self] (_) in
+            self!.alert.dismiss(animated: true, completion: nil)
+        }))
+    }
+    
+    func showAlert(viewcontroller:UIViewController){
+        viewcontroller.present(alert, animated: true, completion: nil)
+    }
+}

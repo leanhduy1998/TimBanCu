@@ -25,6 +25,8 @@
 		1C1D4BB1215B11BA002E4807 /* trail_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BAB215B11BA002E4807 /* trail_loading.json */; };
 		1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */; };
 		1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */; };
+		1C3500B52172F7A100C6BF82 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */; };
+		1C3500B721738FBB00C6BF82 /* ClassNameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3500B621738FBB00C6BF82 /* ClassNameState.swift */; };
 		1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8320F6B6F80041421F /* SignInViewController.swift */; };
 		1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8B20F962BB0041421F /* awsconfiguration.json */; };
 		1C3ADA9020FA40730041421F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */; };
@@ -194,6 +196,8 @@
 		1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FSNokioBold.otf; sourceTree = "<group>"; };
 		1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoViewController.swift; sourceTree = "<group>"; };
 		1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoAlerts.swift; sourceTree = "<group>"; };
+		1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		1C3500B621738FBB00C6BF82 /* ClassNameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameState.swift; sourceTree = "<group>"; };
 		1C3ADA8320F6B6F80041421F /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1C3ADA8B20F962BB0041421F /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		1C3ADA8F20FA40720041421F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 				1CD7300C213B093B00105ACE /* ClassNameUIController.swift */,
 				1CD73012213C37BF00105ACE /* ClassNameController.swift */,
 				1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */,
+				1C3500B621738FBB00C6BF82 /* ClassNameState.swift */,
 			);
 			path = ClassNameViewControllers;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 		1CAAAC5C20F3CA6E00443225 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */,
 				1C98F66921288C3100EFD4EF /* Sign In */,
 				1C1257382128C29D007FE4FF /* Select School */,
 				1C0A039A20F5162100E105A9 /* SchoolAndUniversity */,
@@ -1347,6 +1353,7 @@
 				1C98F65D212840AE00EFD4EF /* AllUserHelper.swift in Sources */,
 				1CAB796D2155D72E00F21264 /* ChatUIController.swift in Sources */,
 				1C53F4FB20FD455D00F4ACEB /* SettingTableViewCell.swift in Sources */,
+				1C3500B721738FBB00C6BF82 /* ClassNameState.swift in Sources */,
 				1C83E8232113CCED00D647D0 /* MajorViewModel.swift in Sources */,
 				1CAB795B214F35EE00F21264 /* StudentDetailUIController.swift in Sources */,
 				1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */,
@@ -1439,6 +1446,7 @@
 				1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */,
 				1CD73015213CB4D200105ACE /* ClassYearUIController.swift in Sources */,
 				1CA53657216EE62400FCF0FF /* ConfirmationAlert.swift in Sources */,
+				1C3500B52172F7A100C6BF82 /* MainNavigationViewController.swift in Sources */,
 				38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */,
 				38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */,
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,

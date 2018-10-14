@@ -40,8 +40,6 @@ class NoResultButton: UIButton {
         case .Student:
             title = "Thêm Thông Tin Của Mình"
             break
-        default:
-            break
         }
         return title
     }

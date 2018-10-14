@@ -88,10 +88,6 @@ class ChatViewController: JSQMessagesViewController {
         uiController.showImagePickerController()
     }
     
-    @IBAction func reportBtnPressed(_ sender: Any) {
-    }
-    
-    
     deinit {
         controller.removeAllObservers()
     }

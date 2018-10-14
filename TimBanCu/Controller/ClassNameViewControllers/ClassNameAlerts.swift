@@ -15,6 +15,7 @@ class ClassNameAlerts{
     private var addNewClassAlert:AskForInputAlert!
     private var addNewClassCompleteAlert:InfoAlert!
     private var classAlreadyExistAlert:InfoAlert!
+    private var cancelAddingClassAlert:ConfirmationAlert!
     private var addNewClassHandler: (String) -> ()
     
     init(viewcontroller:UIViewController,addNewClassHandler: @escaping (String) -> ()){
@@ -23,6 +24,7 @@ class ClassNameAlerts{
         setupAddNewClassNameAlert()
         setupClassAlreadyExistAlert()
         setupAddNewClassNameCompletedAlert()
+        setupCancelAddingClassAlert()
     }
     
     func showAddNewClassNameAlert(){
@@ -34,6 +36,10 @@ class ClassNameAlerts{
     
     func showClassAlreadyExistAlert(){
         classAlreadyExistAlert.show(viewcontroller: viewcontroller)
+    }
+    
+    func showCancelAddingClassAlert(){
+        cancelAddingClassAlert.showAlert(viewcontroller: viewcontroller)
     }
     
     func showAlert(title:String,message:String){
@@ -59,5 +65,14 @@ class ClassNameAlerts{
         let title = "Thêm Lớp Thành Công!"
         let message = "Bước Tiếp Theo: Chọn Năm Học Của Bạn"
         addNewClassCompleteAlert = InfoAlert(title: title, message: message)
+    }
+    
+    private func setupCancelAddingClassAlert(){
+        cancelAddingClassAlert = ConfirmationAlert(title: "Bạn Có Muốn Huỷ Thêm Lớp?", message: "Lớp sẽ không được lưu vào hệ thống của chúng tôi") {
+            DispatchQueue.main.async { [weak self] in
+                self!.viewcontroller.navigationController!.popViewController(animated: true)
+                
+            }
+        }
     }
 }
