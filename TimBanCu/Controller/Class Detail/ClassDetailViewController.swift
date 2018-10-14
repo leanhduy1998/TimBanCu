@@ -18,8 +18,6 @@ class ClassDetailViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     @IBAction func unwindToClassDetailViewController(segue:UIStoryboardSegue) { }
     
 

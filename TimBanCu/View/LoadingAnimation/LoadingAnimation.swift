@@ -36,21 +36,27 @@ class LoadingAnimation: UIView {
         setUpLoadingLabelConstraints()
     }
     
-    private func setUpLoadingLabel() {
-        loadingLabel = UILabel()
-        loadingLabel.text = "Loading..."
-        loadingLabel.textAlignment = .center
-        loadingLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(loadingLabel)
-        
+    //MARK: Animation
+    func playAnimation(){
+        self.blackFilter = BlackFilterBackground(viewcontroller: self.viewcontroller)
+        animation.play()
     }
     
-    private func setUpLoadingLabelConstraints() {
-        loadingLabel.bottomAnchor.constraint(equalTo: animation.topAnchor, constant: 15).isActive = true
-        loadingLabel.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
-        loadingLabel.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
-        loadingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
+    func stopAnimation() {
+        if blackFilter != nil {
+            blackFilter.removeFromSuperview()
+        }
+        animation.stop()
+    }
+    
+    //MARK: Set ups
+    private func setUpSelf() {
+        self.backgroundColor = UIColor.white
+        self.layer.cornerRadius = 30
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 3
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2)
+        self.layer.shadowColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 0.5).cgColor
     }
     
     private func setupAnimation(){
@@ -61,13 +67,15 @@ class LoadingAnimation: UIView {
         self.addSubview(animation)
     }
     
-    func playAnimation(){
-        UIView.animate(withDuration: 0.5, animations: {
-            self.blackFilter = BlackFilterBackground(viewcontroller: self.viewcontroller)
-        }, completion: nil)
-        animation.play()
+    private func setUpLoadingLabel() {
+        loadingLabel = UILabel()
+        loadingLabel.text = "Loading..."
+        loadingLabel.textAlignment = .center
+        loadingLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(loadingLabel)
     }
     
+    //MARK: Constraints
     private func setupAnimationnConstraints(){
         animation.heightAnchor.constraint(equalToConstant: 150).isActive = true
         animation.widthAnchor.constraint(equalToConstant: 150).isActive = true
@@ -83,14 +91,13 @@ class LoadingAnimation: UIView {
         self.heightAnchor.constraint(equalToConstant: viewcontroller.view.frame.width / 2).isActive = true
     }
     
-    private func setUpSelf() {
-        self.backgroundColor = UIColor.white
-        self.layer.cornerRadius = 30
-        self.layer.shadowOpacity = 1
-        self.layer.shadowRadius = 3
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 2)
-        self.layer.shadowColor = UIColor(red: 153/255, green: 153/255, blue: 153/255, alpha: 0.5).cgColor
+    private func setUpLoadingLabelConstraints() {
+        loadingLabel.bottomAnchor.constraint(equalTo: animation.topAnchor, constant: 15).isActive = true
+        loadingLabel.leftAnchor.constraint(equalTo: viewcontroller.view.leftAnchor, constant: 20).isActive = true
+        loadingLabel.rightAnchor.constraint(equalTo: viewcontroller.view.rightAnchor, constant: -20).isActive = true
+        loadingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

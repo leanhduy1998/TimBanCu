@@ -147,6 +147,11 @@
 		1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE5210B678100346EF9 /* CircleImageView.swift */; };
 		1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2320F134C600945819 /* SchoolViewController.swift */; };
 		1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */; };
+		38089548216E8B4E00ACAB15 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38089547216E8B4E00ACAB15 /* AlertType.swift */; };
+		3808954A216E988300ACAB15 /* postcard.json in Resources */ = {isa = PBXBuildFile; fileRef = 38089549216E988300ACAB15 /* postcard.json */; };
+		3808954D216E9A1700ACAB15 /* yearError.json in Resources */ = {isa = PBXBuildFile; fileRef = 3808954B216E9A1500ACAB15 /* yearError.json */; };
+		3808954E216E9A1700ACAB15 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 3808954C216E9A1600ACAB15 /* info.json */; };
+		3869265A216DD07B00D7780F /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 38692659216DD07B00D7780F /* success.json */; };
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
@@ -326,6 +331,11 @@
 		1CFB9C2320F134C600945819 /* SchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewController.swift; sourceTree = "<group>"; };
 		1CFB9C2620F1702B00945819 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		1E095FF72F300CC3150459DF /* Pods-TimBanCuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimBanCuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimBanCuTests/Pods-TimBanCuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38089547216E8B4E00ACAB15 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
+		38089549216E988300ACAB15 /* postcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = postcard.json; sourceTree = "<group>"; };
+		3808954B216E9A1500ACAB15 /* yearError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yearError.json; sourceTree = "<group>"; };
+		3808954C216E9A1600ACAB15 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
+		38692659216DD07B00D7780F /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -411,6 +421,10 @@
 		1C1D4BA5215B11BA002E4807 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				38089549216E988300ACAB15 /* postcard.json */,
+				38692659216DD07B00D7780F /* success.json */,
+				3808954C216E9A1600ACAB15 /* info.json */,
+				3808954B216E9A1500ACAB15 /* yearError.json */,
 				1C1D4BA6215B11BA002E4807 /* bikingishard.json */,
 				1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */,
 				1C1D4BA8215B11BA002E4807 /* empty_list.json */,
@@ -756,6 +770,7 @@
 				1CAB796021508B0000F21264 /* ImageAction.swift */,
 				1CAB79642152945D00F21264 /* PreviousClass.swift */,
 				1CAB796E2155DFDC00F21264 /* Status.swift */,
+				38089547216E8B4E00ACAB15 /* AlertType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -985,6 +1000,7 @@
 				1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */,
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
+				3869265A216DD07B00D7780F /* success.json in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
 				1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */,
@@ -997,11 +1013,14 @@
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */,
 				38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */,
+				3808954D216E9A1700ACAB15 /* yearError.json in Resources */,
 				1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */,
 				1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */,
+				3808954E216E9A1700ACAB15 /* info.json in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
 				1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */,
 				1C1D4BB1215B11BA002E4807 /* trail_loading.json in Resources */,
+				3808954A216E988300ACAB15 /* postcard.json in Resources */,
 				1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
 			);
@@ -1358,6 +1377,7 @@
 				1CAB795B214F35EE00F21264 /* StudentDetailUIController.swift in Sources */,
 				1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */,
 				1CDBA7B32124FBC4002004F9 /* UserClassTableViewCell.swift in Sources */,
+				38089548216E8B4E00ACAB15 /* AlertType.swift in Sources */,
 				1CD730032138AB1500105ACE /* MajorUIController.swift in Sources */,
 				1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */,
 				1CA5363F216D37FD00FCF0FF /* UpdateUserInfoUIController.swift in Sources */,

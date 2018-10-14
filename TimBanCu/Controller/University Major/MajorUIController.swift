@@ -15,6 +15,7 @@ class MajorUIController{
     private weak var tableview:UITableView!
     private var noResultView:NoResultView!
     private var searchTF:UITextField!
+    fileprivate var loadingAnimation:LoadingAnimation!
     
     var searchMajors = [MajorDetail]()
     fileprivate var addNewMajorHandler: (String)->()
@@ -31,6 +32,7 @@ class MajorUIController{
         setupNoResultView()
         setupGenericTableView()
         setupKeyboard()
+        setupLoadingAnimation()
     }
     
     var state:UIState = .Loading{
@@ -60,11 +62,11 @@ class MajorUIController{
         switch(state, newState) {
         case (.Loading, .Loading): showLoading()
         case (.Loading, .Success()):
-            hideLoading()
+            stopLoadingAnimation()
             reloadTableViewAndUpdateUI()
             break
         case (.Loading, .Failure(let errorStr)):
-            hideLoading()
+            stopLoadingAnimation()
             alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             break
         case (.AddingNewData, .Success()):
@@ -84,17 +86,6 @@ class MajorUIController{
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
-    }
-    
-    
-    private func showLoading(){
-        noResultView.isHidden = true
-        tableview.isHidden = true
-        //TODO
-    }
-    
-    private func hideLoading(){
-        // TODO
     }
     
     private func reloadTableViewAndUpdateUI(){
@@ -126,8 +117,7 @@ class MajorUIController{
     }
 }
 
-// TableView
-
+//MARK: TableView
 extension MajorUIController{
     fileprivate func setupGenericTableView(){
         tableViewTool = GenericTableView(tableview: tableview, items: searchMajors) { (cell, major) in
@@ -142,7 +132,7 @@ extension MajorUIController{
     }
 }
 
-// Other UI Setup
+// MARK: Other UI Setup
 extension MajorUIController{
     fileprivate func setupAlerts(){
         alerts = MajorAlerts(viewcontroller: viewcontroller, addNewMajorBtnPressedClosure: addNewMajorHandler)
@@ -160,4 +150,29 @@ extension MajorUIController{
     fileprivate func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
+}
+
+//MARK: Loading Animation
+extension MajorUIController {
+    fileprivate func setupLoadingAnimation(){
+        loadingAnimation = LoadingAnimation(viewcontroller: viewcontroller)
+        loadingAnimation.isHidden = true
+    }
+    
+    func playLoadingAnimation(){
+        loadingAnimation.isHidden = false
+        loadingAnimation.playAnimation()
+    }
+    
+    func stopLoadingAnimation() {
+        loadingAnimation.isHidden = true
+        loadingAnimation.stopAnimation()
+    }
+    
+    private func showLoading(){
+        noResultView.isHidden = true
+        tableview.isHidden = true
+        self.playLoadingAnimation()
+    }
+    
 }
