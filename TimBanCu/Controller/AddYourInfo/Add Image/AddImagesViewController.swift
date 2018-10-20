@@ -22,29 +22,29 @@ class AddImagesViewController: UIViewController {
         
         pickerController.showsCancelButton = true
         
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+        pickerController.didSelectAssets = { [weak self] (assets: [DKAsset]) in
             if(assets.count == 0){
-                self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
-                self.pickerController.dismiss()
+                self!.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
+                self!.pickerController.dismiss()
             }
             
             
             let currentTime = Int(Date().timeIntervalSince1970.binade)
             
             for asset in assets{
-                asset.fetchOriginalImage(completeBlock: { (uiimage, something) in
+                asset.fetchOriginalImage(completeBlock: { [weak self] (uiimage, something) in
                     
                     let imageName = "\((currentTime + fetchCount))"
                     let image = Image(image: uiimage!, imageName: imageName, uid:CurrentUser.getUid())
                     
-                    self.currentImages.append(image)
+                    self!.currentImages.append(image)
                     
                     fetchCount = fetchCount + 1
                     
                     if(fetchCount == assets.count){
                         //self.pickerController.dismiss()
-                        self.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self)
-                        self.pickerController.done()
+                        self!.performSegue(withIdentifier: "unwindToAddYourInfoControllerWithSegue", sender: self!)
+                        self!.pickerController.done()
                     }
                 })
             }

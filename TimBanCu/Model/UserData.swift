@@ -13,24 +13,15 @@ enum PrivacyType{
     case Private
 }
 
-struct UserData{
+class UserData{
+    let phonePrivacy:PrivacyType
+    let emailPrivacy:PrivacyType
+    let student:Student
+    let images:[Image]
     
-    var phoneNumber:String!
-    var email:String!
-    var birthday:String!
-    var fullname:String!
-    
-    var imageNameAndYearDic:[String:Int]!
-    var phonePrivacy:PrivacyType!
-    var emailPrivacy:PrivacyType!
-    var uid:String!
-    
-    init(phoneNumber:String,email:String,birthday:String,fullname:String,phonePrivacyType:String,emailPrivacyType:String,uid:String){
-        self.phoneNumber = phoneNumber
-        self.email = email
-        self.birthday = birthday
-        self.fullname = fullname
-        self.uid = uid
+    init(student:Student,phonePrivacyType:String,emailPrivacyType:String, images:[Image]){
+        self.student = student
+        self.images = images
         
         if(phonePrivacyType == "Công Khai"){
             self.phonePrivacy = .Public
@@ -46,6 +37,46 @@ struct UserData{
             self.emailPrivacy = .Private
         }
         
+    }
+    
+    func getPublicDataForUpload() -> [String:Any]{
+        var publicDic = [String:Any]()
+        if phonePrivacy == PrivacyType.Public{
+            publicDic["phoneNumber"] = student.phoneNumber
+        }
+        if emailPrivacy == PrivacyType.Public{
+            publicDic["email"] = student.email
+        }
+        publicDic["birthYear"] = student.birthYear
+        publicDic["fullName"] = student.fullName
+        publicDic["images"] = getImageNameAndYearDictionary()
+        
+        return publicDic
+    }
+    
+    func getPrivateDataForUpload() -> [String:Any]{
+        var privateDic = [String:Any]()
+        if phonePrivacy == PrivacyType.Private{
+            privateDic["phoneNumber"] = student.phoneNumber
+        }
+        if emailPrivacy == PrivacyType.Private{
+            privateDic["email"] = student.email
+        }
+        return privateDic
+    }
+    
+    private func getImageNameAndYearDictionary() -> [String:String]{
+        var dic = [String:String]()
+        
+        for image in images{
+            if(image.year == nil){
+                dic[image.imageName] = "-1"
+            }
+            else{
+                dic[image.imageName] = image.year
+            }
+        }
+        return dic
     }
     
     

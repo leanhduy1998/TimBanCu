@@ -14,7 +14,7 @@ class AddYourInfoController{
     fileprivate var privateUserProfileRef:DatabaseReference!
     fileprivate var publicUserProfileRef:DatabaseReference!
     
-    fileprivate var classProtocol:ClassProtocol!
+    fileprivate let classProtocol:ClassProtocol
     fileprivate var userData:UserData!
     
     fileprivate weak var viewcontroller:AddYourInfoViewController!
@@ -28,7 +28,7 @@ class AddYourInfoController{
     // TODO: Write unit test to make sure all the strings are not empty
     func updateUserInfo(images:[Image], completeUploadClosure:@escaping (_ uistate:UIState)->Void){
         
-        setUserData()
+        setUserData(images: images)
         
         updateLocalCurrentStudent()
         updateCurrentStudentInfo()
@@ -97,13 +97,11 @@ class AddYourInfoController{
     }
     
     fileprivate func updateCurrentStudentInfo(){
-        let student = Student(fullname: userData.fullname, birthYear: userData.birthday, phoneNumber: userData.phoneNumber, email: userData.email, uid: CurrentUser.getUid())
-        CurrentUser.setStudent(student: student)
+        CurrentUser.setStudent(student: userData.student)
     }
     
     fileprivate func updateLocalCurrentStudent(){
-        let student = Student(userData: userData)
-        CurrentUser.setStudent(student: student)
+        CurrentUser.setStudent(student: userData.student)
     }
 }
 
@@ -114,8 +112,8 @@ extension AddYourInfoController{
     }
     
     private func uploadDataToFirebaseDatabase(images:[Image], completionHandler: @escaping (_ status:Status)->()){
-        let publicDic = getPublicDataForUpload(images: images)
-        let privateDic = getPrivateDataForUpload()
+        let publicDic = userData.getPublicDataForUpload()
+        let privateDic = userData.getPrivateDataForUpload()
         
         publicUserProfileRef.child(CurrentUser.getUid()).setValue(publicDic) { (publicErr, _) in
             if(publicErr == nil){
@@ -137,45 +135,7 @@ extension AddYourInfoController{
         }
     }
     
-    private func getPublicDataForUpload(images:[Image]) -> [String:Any]{
-        var publicDic = [String:Any]()
-        if userData.phonePrivacy == PrivacyType.Public{
-            publicDic["phoneNumber"] = userData.phoneNumber
-        }
-        if userData.emailPrivacy == PrivacyType.Public{
-            publicDic["email"] = userData.email
-        }
-        publicDic["birthYear"] = userData.birthday
-        publicDic["fullName"] = userData.fullname
-        publicDic["images"] = getImageNameAndYearDictionary(images: images)
-        
-        return publicDic
-    }
     
-    private func getPrivateDataForUpload() -> [String:Any]{
-        var privateDic = [String:Any]()
-        if userData.phonePrivacy == PrivacyType.Private{
-            privateDic["phoneNumber"] = userData.phoneNumber
-        }
-        if userData.emailPrivacy == PrivacyType.Private{
-            privateDic["email"] = userData.email
-        }
-        return privateDic
-    }
-    
-    private func getImageNameAndYearDictionary(images:[Image]) -> [String:String]{
-        var dic = [String:String]()
-        
-        for image in images{
-            if(image.year == nil){
-                dic[image.imageName] = "-1"
-            }
-            else{
-                dic[image.imageName] = image.year
-            }
-        }
-        return dic
-    }
 }
 
 //Firebase Storage
@@ -215,7 +175,7 @@ extension AddYourInfoController{
         publicUserProfileRef = Database.database().reference().child("publicUserProfile")
     }
     
-    private func setUserData(){
+    private func setUserData(images:[Image]){
         let fullname = viewcontroller.fullNameTF.text
         let birthYear = viewcontroller.birthYearTF.text
         let phoneNumber = viewcontroller.phoneTF.text
@@ -223,7 +183,9 @@ extension AddYourInfoController{
         let phonePrivacy = viewcontroller.phonePrivacyDropDownBtn.currentTitle
         let emailPrivacy = viewcontroller.emailPrivacyDropDownBtn.currentTitle
         
-        let userData = UserData(phoneNumber: phoneNumber!, email: email!, birthday: birthYear!, fullname: fullname!, phonePrivacyType: phonePrivacy!, emailPrivacyType: emailPrivacy!, uid: CurrentUser.getUid())
+        let student = Student(fullname: fullname!, birthYear: birthYear!, phoneNumber: phoneNumber!, email: email!, uid: CurrentUser.getUid())
+        
+        let userData = UserData(student: student, phonePrivacyType: phonePrivacy!, emailPrivacyType: emailPrivacy!, images: images)
         self.userData = userData
     }
 }

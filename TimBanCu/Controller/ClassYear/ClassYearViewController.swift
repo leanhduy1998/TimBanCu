@@ -24,33 +24,31 @@ class ClassYearViewController: UIViewController {
         
         controller = ClassYearController()
         
-        uiController = ClassYearUIController(viewcontroller: self, tableview: tableview, years: controller.years, classProtocol: classProtocol) { (selectedYear) in
+        uiController = ClassYearUIController(viewcontroller: self, tableview: tableview, years: controller.years, classProtocol: classProtocol) { [weak self] (selectedYear) in
             
             //didSelectYear
-            self.selectedYear = selectedYear
-            self.handleSelectedYear()
+            self!.selectedYear = selectedYear
+            self!.handleSelectedYear()
         }
     }
     
     func handleSelectedYear(){
-        controller.checkIfClassYearExist(selectedYear: selectedYear, classProtocol: classProtocol) { (exist, uidIfExist) in
+        controller.checkIfClassYearExist(selectedYear: selectedYear, classProtocol: classProtocol) { [weak self] (exist, uidIfExist) in
             
-            self.classProtocol.year = self.selectedYear
+            self!.classProtocol.year = self!.selectedYear
             
             if(!exist){
+                self!.classProtocol.uid = CurrentUser.getUid()
                 
-                self.classProtocol.uid = CurrentUser.getUid()
-                
-                self.controller.writeToDatabaseThenShowCompleteAlert(classProtocol: self.classProtocol, completionHandler: { (uistate) in
-                    self.uiController.state = uistate
+                self!.controller.writeToDatabaseThenShowCompleteAlert(classProtocol: self!.classProtocol, completionHandler: { (uistate) in
+                    self!.uiController.state = uistate
                 })
             }
             else{
-                self.classProtocol.uid = uidIfExist
-                
+                self!.classProtocol.uid = uidIfExist
                 
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self)
+                    self!.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self!)
                 }
             }
         }

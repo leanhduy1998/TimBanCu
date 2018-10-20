@@ -49,8 +49,8 @@ class ClassNameAlerts{
         
     private func setupAddNewClassNameAlert(){
         addNewClassAlert = AskForInputAlert(title: "Thêm Lớp Mới", message: "", textFieldPlaceHolder: "Tên Lớp")
-        addNewClassAlert.addAction(actionTitle: "Thêm") { (_) in
-            self.addNewClassHandler(self.addNewClassAlert.getTextFieldInput())
+        addNewClassAlert.addAction(actionTitle: "Thêm") { [weak self] (_) in
+            self!.addNewClassHandler(self!.addNewClassAlert.getTextFieldInput())
         }
     }
     

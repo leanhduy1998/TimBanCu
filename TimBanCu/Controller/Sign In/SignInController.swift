@@ -10,39 +10,54 @@ import Foundation
 import GoogleSignIn
 import FirebaseAuth
 
-
-
-protocol SignInDelegate: class {
-    var state: UIState { get set}
-}
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
 final class SignInController{
-    var state: UIState = .Loading {
-        willSet(newState) {
-            update(newState: newState)
-        }
-    }
     
     var uid:String!
     
-    func update(newState: UIState) {
-        
-        switch(state, newState) {
-            
-        case (.Loading, .Success()): loadUserInfo()
-        case (.Success(), .Success()): break
-            
-        default: fatalError("Not yet implemented \(state) to \(newState)")
-        }
-    }
-    
-    func loadUserInfo(){
+    private func loadUserInfo(){
         AllUserHelper.getAnyStudentFromDatabase(uid: uid) { (student) in
             CurrentUser.setStudent(student: student)
         }
     }
     
-    func signIn(credential:AuthCredential, completionHandler: @escaping (_ uiState:UIState) -> Void){
+    func loginSilently(){
+        if let accessToken = AccessToken.current {
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+            
+            firebaseSignIn(credential: credential)
+        }
+        GIDSignIn.sharedInstance()?.signInSilently()
+    }
+    
+    func handleGoogleSignIn(user: GIDGoogleUser!, error: Error!,completionHandler: @escaping (_ uiState:UIState) -> Void){
+        if (error == nil) {
+            guard let authentication = user.authentication else { return }
+            
+            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+            
+            firebaseSignIn(credential: credential, completionHandler: completionHandler)
+        }
+        else{
+            completionHandler(.Failure(error.debugDescription))
+        }
+    }
+    
+    func handleFacebookSignIn(completionHandler: @escaping (_ uiState:UIState) -> Void){
+        if let accessToken = AccessToken.current {
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+            
+            firebaseSignIn(credential: credential, completionHandler: completionHandler)
+        }
+        else{
+            completionHandler(.Failure("Lỗi Đăng Nhập Facebook"))
+        }
+    }
+    
+    private func firebaseSignIn(credential:AuthCredential, completionHandler: @escaping (_ uiState:UIState) -> Void){
         Auth.auth().signInAndRetrieveData(with: credential) { [weak self] (authResult, error) in
             DispatchQueue.main.async {
                 if let error = error {
@@ -50,8 +65,19 @@ final class SignInController{
                 }
                 
                 self?.uid = Auth.auth().currentUser?.uid
-                // User is signed in
+                
+                self?.loadUserInfo()
+                
                 completionHandler(.Success())
+            }
+        }
+    }
+    
+    private func firebaseSignIn(credential:AuthCredential){
+        Auth.auth().signInAndRetrieveData(with: credential) { [weak self] (authResult, error) in
+            DispatchQueue.main.async {
+                self?.uid = Auth.auth().currentUser?.uid
+                self?.loadUserInfo()
             }
         }
     }

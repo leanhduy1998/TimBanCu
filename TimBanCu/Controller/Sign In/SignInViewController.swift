@@ -25,25 +25,30 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
     
-    private var signInController: SignInController!
-    private var signInUIController:SignInUIController!
+    private var controller: SignInController!
+    private var uiController:SignInUIController!
+    
+    private var fbLoginBtn: LoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupGoogleLogin()
+        setupFacebookLogin()
+        
+        self.uiController = SignInUIController(viewController: self, facebookBtn: fbLoginBtn, googleBtn: googleSignInBtn)
+        self.controller = SignInController()
+        
+        controller.loginSilently()
+    }
+    
+    private func setupGoogleLogin(){
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        
-        let fbLoginBtn = LoginButton(readPermissions: [ .publicProfile ])
+    }
+    private func setupFacebookLogin(){
+        fbLoginBtn = LoginButton(readPermissions: [ .publicProfile ])
         fbLoginBtn.delegate = self
-        
-        self.signInUIController = SignInUIController(viewController: self, facebookBtn: fbLoginBtn, googleBtn: googleSignInBtn)
-        self.signInController = SignInController()
-        
-        if let accessToken = AccessToken.current {
-            loginFacebookWithToken(accessToken: accessToken)
-        }
-        GIDSignIn.sharedInstance()?.signInSilently()
     }
     
     // Present a view that prompts the user to sign in with Google
@@ -60,41 +65,17 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     
     // sign in with google
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if (error == nil) {
-            guard let authentication = user.authentication else { return }
-        
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-            
-            signInController.signIn(credential: credential) { [weak self] (state) in
-                self?.signInController.state = state
-                self?.signInUIController.state = state
-            }
-        }
-        else{
-            self.signInUIController.state = .Failure(error.localizedDescription)
+        controller.handleGoogleSignIn(user: user, error: error) { [weak self] (uistate) in
+            self?.uiController.state = uistate
         }
     }
     
     //sign in with facebook
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        if let accessToken = AccessToken.current {
-            loginFacebookWithToken(accessToken: accessToken)
-        }
-        else{
-            self.signInUIController.state = .Failure("Lỗi Đăng Nhập Facebook")
+        controller.handleFacebookSignIn { [weak self] (uiState) in
+            self?.uiController.state = uiState
         }
     }
-    
-    private func loginFacebookWithToken(accessToken:AccessToken){
-        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-        
-        signInController.signIn(credential: credential) { [weak self] (state) in
-            self?.signInController.state = state
-            self?.signInUIController.state = state
-        }
-    }
-    
-  
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print()

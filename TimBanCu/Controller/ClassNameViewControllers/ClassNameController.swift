@@ -34,15 +34,15 @@ class ClassNameController{
     func fetchData(completionHandler: @escaping (UIState) -> ()){
         classDetails.removeAll()
         
-        Database.database().reference().child("classes").child(school.name).child(classNumber).observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child("classes").child(school.name).child(classNumber).observeSingleEvent(of: .value) { [weak self] (snapshot) in
             
             
             for snap in snapshot.children{
                 let className = (snap as! DataSnapshot).key
                 
-                let classDetail = ClassDetail(classNumber: self.classNumber, uid: "?", schoolName: self.school.name, className: className, classYear: "?")
+                let classDetail = ClassDetail(classNumber: self!.classNumber, uid: "?", schoolName: self!.school.name, className: className, classYear: "?")
                 
-                self.classDetails.append(classDetail)
+                self!.classDetails.append(classDetail)
             }
             
             completionHandler(.Success())

@@ -31,17 +31,17 @@ class StudentDetailController{
                     count += 1
                 }
                 else{
-                    Storage.storage().reference().child("users/\(student.uid!)/\(image.imageName!)").getData(maxSize: INT64_MAX) { (imageData, error) in
+                    Storage.storage().reference().child("users/\(student.uid!)/\(image.imageName!)").getData(maxSize: INT64_MAX) { [weak self] (imageData, error) in
                         
                         if(error == nil){
                             let uiimage = UIImage(data: imageData!)
 
-                            let newImage = Image(image: uiimage!, year: image.year, imageName:image.imageName, uid:self.student.uid)
-                            self.viewcontroller.userImages.append(newImage)
+                            let newImage = Image(image: uiimage!, year: image.year, imageName:image.imageName, uid:self!.student.uid)
+                            self!.viewcontroller.userImages.append(newImage)
                             
                             count += 1
                             
-                            if(count == self.student.images.count){
+                            if(count == self!.student.images.count){
                                 completionHandler(.Success())
                             }
                         }

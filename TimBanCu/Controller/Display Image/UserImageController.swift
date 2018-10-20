@@ -29,9 +29,6 @@ class UserImageController{
         let imageName = userImages[getImageIndex()].imageName
         userImages.remove(at: getImageIndex())
         
-        
-        
-        
         if(viewcontroller.previousClassIsStudentDetailViewController()){
             ref.child("publicUserProfile/\(CurrentUser.getUid())/images/\(imageName!)").removeValue { (dbErr, _) in
                 

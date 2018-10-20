@@ -49,12 +49,11 @@ final class SignInUIController{
     private func update(newState: UIState) {
         switch(state, newState) {
             
-        case (.Loading, .Success( _ )): goToHome()
+        case (.Loading, .Success( _ )),(.Failure, .Success): goToNextScreen()
         case (.Loading, .Failure(let errorStr)): createErrorAlert(errorStr: errorStr)
         case (.Success( _ ), .Success( _ )):break
             
         // after login silently failed, aka, when the user is not log in google account
-        case (.Failure, .Success): goToHome()
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -65,8 +64,13 @@ final class SignInUIController{
         errorAlert.show(viewcontroller: viewcontroller)
     }
     
-    private func goToHome(){
-        viewcontroller.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+    private func goToNextScreen(){
+        if(FirstTimeLaunch.sharedInstance.getBool()){
+            viewcontroller.performSegue(withIdentifier: "SignInToEULASegue", sender: viewcontroller)
+        }
+        else{
+            viewcontroller.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        }
     }
     
     private func setUpSplashView() {

@@ -54,13 +54,13 @@ class UserImageViewController: UIViewController {
     }
     
     func setupClosure(){
-        optionSelectedClosure = { (index,option) in
+        optionSelectedClosure = { [weak self] (index,option) in
             switch(option){
             case ImageAction.DeleteImage.rawValue:
-                self.deleteImage()
+                self!.deleteImage()
                 break
             case ImageAction.ChangeImageYear.rawValue:
-                self.changeYear()
+                self!.changeYear()
                 break
             default:
                 break
@@ -77,9 +77,9 @@ class UserImageViewController: UIViewController {
     }
     
     private func deleteImage(){
-        controller.removeImage(completionHandler: { uiState in
-            self.uiController.uiState = uiState
-            self.navigationController?.popViewController(animated: true)
+        controller.removeImage(completionHandler: { [weak self] uiState in
+            self!.uiController.uiState = uiState
+            self!.navigationController?.popViewController(animated: true)
         })
     }
 

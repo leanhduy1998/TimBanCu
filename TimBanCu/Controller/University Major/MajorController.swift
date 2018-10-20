@@ -24,11 +24,7 @@ final class MajorController{
   
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
         Database.database().reference().child("classes").child(school.name).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            for snap in snapshot.children{
-                print(snap)
-            }
-            
+    
             completionHandler(.Success())
             
         }) { (err) in

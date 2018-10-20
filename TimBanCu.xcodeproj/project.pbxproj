@@ -12,7 +12,6 @@
 		1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */; };
 		1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98F6210BB43700D20079 /* ChatViewController.swift */; };
 		1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */; };
-		1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */; };
 		1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */; };
 		1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4B9F215B1061002E4807 /* Constants.swift */; };
 		1C1D4BA2215B10B7002E4807 /* UnderlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */; };
@@ -134,6 +133,7 @@
 		1CD7301E213F33E700105ACE /* ClassDetailAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD7301D213F33E700105ACE /* ClassDetailAlerts.swift */; };
 		1CDB3F182173FA0D00BEC04C /* AlertAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB3F172173FA0D00BEC04C /* AlertAnimationType.swift */; };
 		1CDB3F1C2174051B00BEC04C /* QueryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB3F1B2174051A00BEC04C /* QueryState.swift */; };
+		1CDB3F23217BDD4100BEC04C /* FirstTimeLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB3F22217BDD4100BEC04C /* FirstTimeLaunch.swift */; };
 		1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBA7B02124FAD5002004F9 /* UserClassesViewController.swift */; };
 		1CDBA7B32124FBC4002004F9 /* UserClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBA7B22124FBC4002004F9 /* UserClassTableViewCell.swift */; };
 		1CE24D0220FBE153008DE3FB /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* CurrentUser.swift */; };
@@ -185,7 +185,6 @@
 		1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameAlerts.swift; sourceTree = "<group>"; };
 		1C1A98F6210BB43700D20079 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewExtension.swift; sourceTree = "<group>"; };
-		1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextFieldExtension.swift; sourceTree = "<group>"; };
 		1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		1C1D4B9F215B1061002E4807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TimBanCu/View/Constants.swift; sourceTree = SOURCE_ROOT; };
 		1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineState.swift; sourceTree = "<group>"; };
@@ -315,6 +314,7 @@
 		1CD7301D213F33E700105ACE /* ClassDetailAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailAlerts.swift; sourceTree = "<group>"; };
 		1CDB3F172173FA0D00BEC04C /* AlertAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAnimationType.swift; sourceTree = "<group>"; };
 		1CDB3F1B2174051A00BEC04C /* QueryState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryState.swift; sourceTree = "<group>"; };
+		1CDB3F22217BDD4100BEC04C /* FirstTimeLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeLaunch.swift; sourceTree = "<group>"; };
 		1CDBA7B02124FAD5002004F9 /* UserClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassesViewController.swift; sourceTree = "<group>"; };
 		1CDBA7B22124FBC4002004F9 /* UserClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassTableViewCell.swift; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -608,7 +608,6 @@
 				1CAB796C2155D72E00F21264 /* ChatUIController.swift */,
 				1CAB796A2155D61300F21264 /* ChatController.swift */,
 				1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */,
-				1C1A9903210CBEC100D20079 /* ChatTextFieldExtension.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -627,6 +626,7 @@
 			children = (
 				1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */,
 				1C98F66921288C3100EFD4EF /* Sign In */,
+				1CDB3F1D217A5CD800BEC04C /* EULA */,
 				1C1257382128C29D007FE4FF /* Select School */,
 				1C0A039A20F5162100E105A9 /* SchoolAndUniversity */,
 				1C4BF8732117F059006A7FBE /* University Major */,
@@ -783,6 +783,14 @@
 				1CAB796E2155DFDC00F21264 /* Status.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1CDB3F1D217A5CD800BEC04C /* EULA */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB3F22217BDD4100BEC04C /* FirstTimeLaunch.swift */,
+			);
+			path = EULA;
 			sourceTree = "<group>";
 		};
 		1CDBA7B52125081B002004F9 /* Class Detail */ = {
@@ -1368,6 +1376,7 @@
 			files = (
 				1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */,
 				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
+				1CDB3F23217BDD4100BEC04C /* FirstTimeLaunch.swift in Sources */,
 				1CAB796321509B0E00F21264 /* UserImageController.swift in Sources */,
 				1CA536392169B72B00FCF0FF /* UserClassesController.swift in Sources */,
 				1CD730052138AB8100105ACE /* MajorAlerts.swift in Sources */,
@@ -1418,7 +1427,6 @@
 				1C8EC8732128CBD80038ECB5 /* AskForInputAlert.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
-				1C1A9904210CBEC100D20079 /* ChatTextFieldExtension.swift in Sources */,
 				1CE24D0B20FC1070008DE3FB /* ClassNameViewModel.swift in Sources */,
 				1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */,
 				1C6CF60F21363042009174D2 /* UIState.swift in Sources */,

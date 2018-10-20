@@ -47,7 +47,6 @@ class ClassYearAlerts{
     private func setupAddNewClassCompleteAlert(){
         var title:String!
         
-        
         if(classProtocol is ClassDetail){
             title = "Lớp của bạn đã được thêm!"
         }

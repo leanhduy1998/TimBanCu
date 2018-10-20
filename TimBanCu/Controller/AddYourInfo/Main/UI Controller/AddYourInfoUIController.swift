@@ -69,21 +69,21 @@ class AddYourInfoUIController{
     }
     
     fileprivate func reloadYearLabel(page:Int){
-        DispatchQueue.main.async {
-            if(page > self.viewcontroller.userImages.count-1){
-                self.yearLabel.isHidden = true
+        DispatchQueue.main.async { [weak self] in
+            if(page > self!.viewcontroller.userImages.count-1){
+                self!.yearLabel.isHidden = true
             }
             else{
-                self.yearLabel.isHidden = false
+                self!.yearLabel.isHidden = false
                 
-                if(self.viewcontroller.userImages[page].year == nil){
-                    self.yearLabel.text = "Năm ?"
+                if(self!.viewcontroller.userImages[page].year == nil){
+                    self!.yearLabel.text = "Năm ?"
                 }
                 else{
-                    self.yearLabel.text = "\(self.viewcontroller.userImages[page].year!)"
+                    self!.yearLabel.text = "\(self!.viewcontroller.userImages[page].year!)"
                 }
             }
-            self.viewcontroller.view.layoutIfNeeded()
+            self!.viewcontroller.view.layoutIfNeeded()
         }
     }
 }
@@ -134,17 +134,17 @@ extension AddYourInfoUIController{
 
 extension AddYourInfoUIController{
     fileprivate func setupSlideShow(){
-        slideshow.setup(userImages: viewcontroller.userImages, didTapOnImage: slideshowDidTapOnImageAtIndex) { (page) in
+        slideshow.setup(userImages: viewcontroller.userImages, didTapOnImage: slideshowDidTapOnImageAtIndex) { [weak self] (page) in
             
-            self.reloadYearLabel(page: page)
+            self!.reloadYearLabel(page: page)
             
             // if the last image is the add new photo btn
-            if(page == self.viewcontroller.userImages.count-1){
-                self.yearLabel.isHidden = true
+            if(page == self!.viewcontroller.userImages.count-1){
+                self!.yearLabel.isHidden = true
             }
                 // else, show images'years
             else{
-                self.yearLabel.isHidden = false
+                self!.yearLabel.isHidden = false
             }
         }
         

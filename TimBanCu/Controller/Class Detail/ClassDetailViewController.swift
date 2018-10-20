@@ -38,8 +38,8 @@ class ClassDetailViewController: UIViewController {
     }
     
     func setupClosure(){
-        noResultViewAddBtnClosure =  {
-            self.addYourselfBtn.sendActions(for: .touchUpInside)
+        noResultViewAddBtnClosure =  { [weak self] in
+            self!.addYourselfBtn.sendActions(for: .touchUpInside)
         }
     }
     

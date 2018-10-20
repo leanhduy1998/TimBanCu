@@ -248,3 +248,4 @@ extension ClassDetailUIController {
     }
     
 }
+

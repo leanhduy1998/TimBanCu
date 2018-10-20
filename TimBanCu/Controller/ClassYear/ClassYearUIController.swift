@@ -20,9 +20,9 @@ class ClassYearUIController{
         
         self.viewcontroller = viewcontroller
         
-        genericTableView = GenericTableView(tableview: tableview, items: years, configure: { (cell, year) in
+        genericTableView = GenericTableView(tableview: tableview, items: years, configure: { [weak self] (cell, year) in
             cell.yearLabel.text = year
-            cell.selectedBackgroundView? = self.customSelectionColorView
+            cell.selectedBackgroundView? = self!.customSelectionColorView
         })
         
         genericTableView.didSelect = { selectedYear in

@@ -56,8 +56,8 @@ class MajorAlerts{
         let title = "Thêm Khoa Mới"
         addNewMajorAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Khoa")
 
-        addNewMajorAlert.addAction(actionTitle: "Thêm") { (_) in
-            self.addNewMajorBtnPressedClosure(self.addNewMajorAlert.getTextFieldInput())
+        addNewMajorAlert.addAction(actionTitle: "Thêm") { [weak self] (_) in
+            self!.addNewMajorBtnPressedClosure(self!.addNewMajorAlert.getTextFieldInput())
         }
     }
     

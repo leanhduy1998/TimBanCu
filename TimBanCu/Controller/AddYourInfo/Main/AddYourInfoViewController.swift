@@ -55,30 +55,30 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     }
     
     private func setupClosures(){
-        slideshowDidTapOnImageAtIndex = { (tappedImageIndex) in
+        slideshowDidTapOnImageAtIndex = { [weak self] (tappedImageIndex) in
             // user tapped on add new image button
-            if(tappedImageIndex > self.userImages.count-1){
-                self.uiController.showPickerController()
+            if(tappedImageIndex > self!.userImages.count-1){
+                self!.uiController.showPickerController()
             }
             else{
-                let image = self.userImages[tappedImageIndex]
+                let image = self!.userImages[tappedImageIndex]
                 
                 if(image.year == nil){
-                    self.imageForSegue = image
-                    self.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self)
+                    self!.imageForSegue = image
+                    self!.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self!)
                 }
                 else{
-                    self.performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self)
+                    self!.performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self!)
                 }
             }
         }
         
-        imagePickerDidSelectAssets = { (assets: [DKAsset]) in
+        imagePickerDidSelectAssets = { [weak self] (assets: [DKAsset]) in
             var fetchCount = 0
             let currentTime = Int(Date().timeIntervalSince1970.binade)
             
             if(assets.count == 0){
-                self.uiController.hidePickerController()
+                self!.uiController.hidePickerController()
             }
             
             for asset in assets{
@@ -90,13 +90,13 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                         
                         let image = Image(image: uiimage!, imageName: imageName, uid:CurrentUser.getUid())
                         
-                        self.userImages.append(image)
+                        self!.userImages.append(image)
                         
                         fetchCount = fetchCount + 1
                         
                         if(fetchCount == assets.count){
-                            self.uiController.hidePickerController()
-                            self.uiController.reloadSlideShow()
+                            self!.uiController.hidePickerController()
+                            self!.uiController.reloadSlideShow()
                         }
                     })
                 }
@@ -136,16 +136,16 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
         else{
             uiController.playLoadingAnimation()
             
-            controller.updateUserInfo(images: userImages, completeUploadClosure: {uiState in
+            controller.updateUserInfo(images: userImages, completeUploadClosure: { [weak self] uiState in
                 
                 switch(uiState){
                 case .Success():
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self)
+                        self!.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self!)
                     }
                     break
                 case .Failure(let errMsg):
-                    self.uiController.showUploadErrorAlert(errMsg: errMsg)
+                    self!.uiController.showUploadErrorAlert(errMsg: errMsg)
                 default:
                     break
                 }

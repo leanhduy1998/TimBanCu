@@ -55,8 +55,8 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        uiController = ChatUIController(viewcontroller: self, didFinishPickingImage: {uiimage in
-            self.controller.uploadImageToStorage(image: uiimage, completionHandler: { uploadStatus in
+        uiController = ChatUIController(viewcontroller: self, didFinishPickingImage: { [weak self] uiimage in
+            self!.controller.uploadImageToStorage(image: uiimage, completionHandler: { uploadStatus in
                 
             })
         })
@@ -69,8 +69,11 @@ class ChatViewController: JSQMessagesViewController {
         controller.observeMessages()
         controller.observeTyping()
         //
-        
-        
+    }
+    
+    override func textViewDidChange(_ textView: UITextView) {
+        super.textViewDidChange(textView)
+        isTyping = textView.text != ""
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {

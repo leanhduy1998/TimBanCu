@@ -24,9 +24,9 @@ class ClassViewController: UIViewController {
             cell.classLabel.text = classStr
         }
         
-        tableviewTool.didSelect = {selectedClass in
-            self.selectedClass = selectedClass
-            self.performSegue(withIdentifier: "ClassToClassDetailSegue", sender: self)
+        tableviewTool.didSelect = { [weak self] selectedClass in
+            self!.selectedClass = selectedClass
+            self!.performSegue(withIdentifier: "ClassToClassDetailSegue", sender: self)
         }
         
         tableview.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)

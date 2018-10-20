@@ -124,10 +124,10 @@ extension MajorUIController{
             cell.major = major
         }
         
-        tableViewTool.didSelect = { major in
-            self.viewcontroller.selectedMajor = major
+        tableViewTool.didSelect = { [weak self] major in
+            self!.viewcontroller.selectedMajor = major
             
-            self.viewcontroller.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self.viewcontroller)
+            self!.viewcontroller.performSegue(withIdentifier: "MajorToClassYearSegue", sender: self!.viewcontroller)
         }
     }
 }

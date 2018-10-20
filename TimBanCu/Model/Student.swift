@@ -36,17 +36,6 @@ class Student{
         self.uid = uid
     }
     
-    init(userData:UserData){
-        self.fullName = userData.fullname
-        self.birthYear = userData.birthday
-        self.phoneNumber = userData.phoneNumber
-        self.email = userData.email
-        self.images = []
-        self.enrolledIn = []
-        self.uid =  userData.uid
-    }
-    
-    
     
     init(){
         self.fullName = nil

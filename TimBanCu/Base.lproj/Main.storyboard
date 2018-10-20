@@ -47,11 +47,12 @@
                     <connections>
                         <outlet property="googleSignInBtn" destination="JqL-TP-ZFl" id="Vnz-UD-Yme"/>
                         <segue destination="cZk-61-rDc" kind="show" identifier="SignInToSelectSchoolTypeSegue" id="5Eh-CB-2Rw"/>
+                        <segue destination="ZEv-WL-nMF" kind="show" identifier="SignInToEULASegue" id="KUO-r2-bAH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiH-ED-d8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2692" y="1609.745127436282"/>
+            <point key="canvasLocation" x="-3535" y="1610"/>
         </scene>
         <!--Trang Chính-->
         <scene sceneID="pYe-CJ-ltI">
@@ -658,6 +659,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj1-v1-2v4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1297" y="3232"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LhW-up-K8W">
+            <objects>
+                <viewController id="ZEv-WL-nMF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BHj-kc-Z8C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-Id-2vX">
+                                <rect key="frame" x="20" y="79" width="335" height="518"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Vui lòng đọc kỹ Thỏa Thuận Sử Dụng (“Thỏa Thuận”) trước khi bạn tiến hành tải, cài đặt, sử dụng tất cả hoặc bất kỳ phần nào của ứng dụng “Tìm Bạn Cũ” (“Ứng Dụng”) (bao gồm nhưng không giới hạn phần mềm, các file và các tài liệu liên quan) cung cấp để kết nối đến Ứng Dụng. Bạn chấp thuận và đồng ý bị ràng buộc bởi các quy định và điều kiện trong Thỏa Thuận này khi thực hiện các thao tác trên đây. Trường hợp bạn không đồng ý với bất kỳ điều khoản sử dụng nào của chúng tôi (phiên bản này và các phiên bản cập nhật), bạn vui lòng không tải, cài đặt, sử dụng Ứng dụng hoặc tháo gỡ Ứng Dụng ra khỏi thiết bị di động của bạn.
+							
+1. Cập nhật:						
+Thỏa Thuận này có thể được cập nhật thường xuyên bởi Lê Anh Duy. Phiên bản cập nhật sẽ thay thế cho các quy định và điều kiện trong thỏa thuận ban đầu. 			 		
+							
+2. Giới Thiệu Về Ứng Dụng
+Bạn có những người bạn học thời thơ ấu nhưng mất liên lạc? Với hệ thống của Tìm Bạn Cũ, bạn có thể kết nối với những người bạn cũ của mình. Tìm Bạn Cũ là một ứng dụng miễn phí giúp ban kết nối và gửi tin nhắn với lớp cũ.	
+					
+Ứng dụng sử dụng Google Mail và Facebook làm nền tảng với các tính năng chính: (1) Chia sẻ thông tin, (2) Chat với lớp, (3) Thêm thông tin trường và lớp. Ứng dụng hỗ trợ tất cả các nền tảng Android, iOS.
+							
+3. Quyền Sở Hữu Ứng Dụng				
+Ứng Dụng này được phát triển và sở hữu bởi Lê Anh Duy, tất cả các quyền sở hữu trí tuệ liên quan đến Ứng Dụng (bao gồm nhưng không giới hạn mã nguồn, hình ảnh, dữ liệu, thông tin, nội dung chứa đựng trong Ứng Dụng; các sửa đổi, bổ sung, cập nhật của Ứng Dụng) và các tài liệu hướng dẫn liên quan (nếu có) sẽ thuộc quyền sở hữu duy nhất bởi Lê Anh Duy và không cá nhân, tổ chức nào được phép sao chép, tái tạo, phân phối, hoặc hình thức khác xâm phạm tới quyền của chủ sở hữu nếu không có sự đồng ý và cho phép bằng văn bản của Lê Anh Duy.
+							
+4. Tài Khoản		
+Để sử dụng Ứng Dụng bạn phải tạo một tài khoản theo yêu cầu của chúng tôi, bạn cam kết rằng việc sử dụng tài khoản phải tuân thủ các quy định của Lê Anh Duy, đồng thời tất cả các thông tin bạn cung cấp cho chúng tôi là đúng, chính xác, đầy đủ với tại thời điểm được yêu cầu. Mọi quyền lợi và nghĩa vụ của bạn sẽ căn cứ trên thông tin tài khoản bạn đã đăng ký, do đó nếu có bất kỳ thông tin sai lệch nào chúng tôi sẽ không chịu trách nhiệm trong trường hợp thông tin đó làm ảnh hưởng hoặc hạn chế quyền lợi của bạn.
+							
+5. Tài Khoản						
+Bạn có quyền sử dụng Ứng Dụng chúng tôi cung cấp, tuy nhiên việc sử dụng đó sẽ không bao gồm các hành vi sau đây nếu không có sự đồng ý bằng văn bản của Lê Anh Duy.
+							
+Sao chép, chỉnh sửa, tái tạo, tạo ra sản phẩm mới hoặc phiên bản phái sinh trên cơ sở Ứng Dụng này; Bán, chuyển giao, cấp quyền lại, tiết lộ hoặc hình thức chuyển giao khác hoặc đưa một phần hoặc toàn bộ Ứng Dụng cho bất kỳ bên thứ ba;
+Sử dụng Ứng Dụng để cung cấp dịch vụ cho bất kỳ bên thứ ba (tổ chức, cá nhân);
+							
+Di chuyển, xóa bỏ, thay đổi bất kỳ thông báo chính đáng hoặc dấu hiệu nào của Ứng Dụng (bao gồm nhưng không giới hạn các tuyên bố về bản quyền);
+Thiết kế lại, biên dịch, tháo gỡ, chỉnh sửa, đảo lộn thiết kế của Ứng Dụng hoặc nội dung Ứng Dụng; Thay đổi hoặc hủy bỏ trạng thái ban đầu của Ứng Dụng;
+							
+Sử dụng Ứng Dụng để thực hiện bất kỳ hành động gây hại cho hệ thống an ninh mạng của Lê Anh Duy, bao gồm nhưng không giới hạn sử dụng dữ liệu hoặc truy cập vào máy chủ hệ thống hoặc tài khoản không được phép; truy cập vào hệ thống mạng để xóa bỏ, chỉnh sửa và thêm các thông tin; phát tán các chương trình độc hại, virus hoặc thực hiện bất kỳ hành động nào khác nhằm gây hại hoặc phá hủy hệ thống mạng;
+							
+Đăng nhập và sử dụng Ứng Dụng bằng một phần mềm tương thích của bên thứ ba hoặc hệ thống không được phát triển, cấp quyền hoặc chấp thuận bởi Lê Anh Duy;
+Sử dụng, bán, cho mượn, sao chép, chỉnh sửa, kết nối tới, phiên dịch, phát hành, công bố các thông tin liên quan đến Ứng Dụng, xây dựng mirror website để công bố các thông tin này hoặc để phát triển các sản phẩm phái sinh, công việc hoặc dịch vụ;
+Sử dụng Ứng Dụng để đăng tải, chuyển, truyền hoặc lưu trữ các thông tin vi phạm pháp luật, vi phạm thuần phong mỹ tục của dân tộc;
+Sử dụng Ứng Dụng để sử dụng, đăng tải, chuyển, truyền hoặc lưu trữ bất kỳ nội dung vi phạm quyền sở hữu trí tuệ, bí mật kinh doanh hoặc quyền pháp lý của bên thứ ba;
+Sử dụng Ứng Dụng hoặc các dịch vụ khác được cung cấp bởi Lê Anh Duy trong bất kỳ hình thức vi phạm pháp luật nào, cho bất kỳ mục đích bất hợp pháp nào;
+Các hình thức vi phạm khác.
+							 						
+6. Xử Lý Vi Phạm											
+Trường hợp bạn vi phạm bất kỳ quy định nào trong Thỏa Thuận này, Lê Anh Duy có quyền ngay lập tức khóa tài khoản của bạn và/hoặc xóa bỏ toàn bộ các thông tin, nội dung vi phạm, đồng thời tùy thuộc vào tính chất, mức độ vi phạm bạn sẽ phải chịu trách nhiệm trước cơ quan có thẩm quyền, Lê Anh Duy và bên thứ ba về mọi thiệt hại gây ra bởi hoặc xuất phát từ hành vi vi phạm của bạn.
+							
+7. Quyền Truy Cập và Thu Thập Thông Tin						
+(a) Khi sử dụng Ứng Dụng, bạn thừa nhận rằng chúng tôi có quyền sử dụng những API hệ thống sau để truy cập vào dữ liệu trên điện thoại của bạn: (1) Đọc và ghi vào danh bạ điện thoại, (2) Lấy vị trí hiện tại của bạn khi được sự đồng ý, (3) Ghi dữ liệu của Ứng Dụng lên thẻ nhớ, (4) Truy cập vào Internet từ thiết bị của bạn. Tất cả các truy cập này đều được chúng tôi thực hiện sau khi có sự đồng ý của bạn, vì vậy bạn cam kết và thừa nhận rằng, khi bạn đã cấp quyền cho chúng tôi, bạn sẽ không có bất kỳ khiếu nại nào đối với Lê Anh Duy về việc truy cập này.
+							
+(b) Cùng với quyền truy cập, chúng tôi sẽ thu thập các thông tin sau của bạn		
+Thông tin cá nhân: bao gồm các thông tin bạn cung cấp cho chúng tôi để xác nhận tài khoản như tên, số điện thoại, địa chỉ email;
+Thông tin chung: như các thông tin về cấu hình điện thoại của bạn, thông tin phiên bản Tìm Bạn Cũ mà bạn đang sử dụng cho điện thoại của mình. Chúng tôi cam kết sẽ tôn trọng và không sử dụng danh bạ điện thoại của bạn vì bất kỳ mục đích nào nếu không có sự đồng ý của bạn;
+							
+Chúng tôi không sử dụng bất kỳ biện pháp nào để theo dõi nội dung tin nhắn, trao đổi hoặc hình thức khác nhằm theo dõi người dùng khi sử dụng Ứng Dụng này.
+							
+8. Cam Kết Bảo Mật Thông Tin						
+Lê Anh Duy sử dụng các phương thức truyền tin an toàn https và mã hóa để truyền tải và lưu trữ các dữ liệu cá nhân và giao tiếp của bạn. Chúng tôi cam kết giữ bí mật tất cả thông tin mà bạn cung cấp cho Lê Anh Duy hoặc chúng tôi thu thập từ bạn và không tiết lộ với bất kỳ bên thứ ba nào trừ khi có yêu cầu từ Cơ quan Nhà nước có thẩm quyền.
+							
+9. Phí Và Các Khoản Thu							
+Lê Anh Duy cam kết không thu bất cứ khoản phí nào từ người dùng cho các dịch vụ cơ bản mà hiện tại chúng tôi đang cung cấp.
+							
+10. Quảng cáo và các nội dung thương mại được phân phối bởi Tìm Bạn Cũ	
+Khi sử dụng ứng dụng, bạn thừa nhận rằng chúng tôi có quyền sử dụng các thông tin không định danh của bạn nhằm cung cấp các nội dung quảng cáo đúng đối tượng.
+							
+11. Liên Lạc Với Chúng Tôi						
+- Địa chỉ email andrewledev@gmail.com
+							
+Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vụ của chúng tôi.
+						
+					
+				
+			
+		
+
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điều Khoản Sử Dụng" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-nx-Idz">
+                                <rect key="frame" x="10" y="30" width="355" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Na-iB-j95">
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
+                                <state key="normal" title="Đồng Ý"/>
+                                <connections>
+                                    <segue destination="cZk-61-rDc" kind="show" id="xKq-Q6-Xbq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Na-iB-j95" firstAttribute="top" secondItem="MlJ-Id-2vX" secondAttribute="bottom" constant="20" id="3Hn-NL-7DG"/>
+                            <constraint firstItem="MlJ-Id-2vX" firstAttribute="leading" secondItem="IPe-jq-KlP" secondAttribute="leading" constant="20" id="5Vb-wN-rW3"/>
+                            <constraint firstItem="0zj-nx-Idz" firstAttribute="leading" secondItem="IPe-jq-KlP" secondAttribute="leading" constant="10" id="8zb-4X-t9v"/>
+                            <constraint firstItem="IPe-jq-KlP" firstAttribute="trailing" secondItem="0zj-nx-Idz" secondAttribute="trailing" constant="10" id="Mj4-rF-T3K"/>
+                            <constraint firstItem="IPe-jq-KlP" firstAttribute="trailing" secondItem="MlJ-Id-2vX" secondAttribute="trailing" constant="20" id="TwJ-pX-EU3"/>
+                            <constraint firstItem="IPe-jq-KlP" firstAttribute="bottom" secondItem="8Na-iB-j95" secondAttribute="bottom" constant="20" id="UFD-Gg-gdG"/>
+                            <constraint firstItem="IPe-jq-KlP" firstAttribute="trailing" secondItem="8Na-iB-j95" secondAttribute="trailing" constant="20" id="cUV-Qp-56f"/>
+                            <constraint firstItem="MlJ-Id-2vX" firstAttribute="top" secondItem="0zj-nx-Idz" secondAttribute="bottom" constant="20" id="d40-DE-gmC"/>
+                            <constraint firstItem="8Na-iB-j95" firstAttribute="leading" secondItem="IPe-jq-KlP" secondAttribute="leading" constant="20" id="lE0-yh-MQi"/>
+                            <constraint firstItem="0zj-nx-Idz" firstAttribute="top" secondItem="IPe-jq-KlP" secondAttribute="top" constant="10" id="lHQ-Le-5ZX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IPe-jq-KlP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTz-IQ-Cbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2636" y="2136.88155922039"/>
         </scene>
         <!--Chọn Loại Trường-->
         <scene sceneID="lb0-ud-nEn">
@@ -2236,5 +2351,6 @@
         <segue reference="Zn4-6w-hsp"/>
         <segue reference="6lU-c4-lFJ"/>
         <segue reference="4Ow-6o-u2i"/>
+        <segue reference="xKq-Q6-Xbq"/>
     </inferredMetricsTieBreakers>
 </document>
