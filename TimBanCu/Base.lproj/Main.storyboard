@@ -1593,7 +1593,7 @@
         <scene sceneID="8bB-1L-bxH">
             <objects>
                 <viewController storyboardIdentifier="StudentDetailViewController" id="Pba-mN-D9k" customClass="StudentDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RwC-TQ-NDq">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="RwC-TQ-NDq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1702,6 +1702,7 @@
                             <constraint firstItem="r2W-2l-3af" firstAttribute="leading" secondItem="jWe-uO-7kp" secondAttribute="leading" id="bgr-OG-Oph"/>
                             <constraint firstItem="jWe-uO-7kp" firstAttribute="trailing" secondItem="r2W-2l-3af" secondAttribute="trailing" id="gXV-K0-YSK"/>
                             <constraint firstItem="r2W-2l-3af" firstAttribute="top" secondItem="jWe-uO-7kp" secondAttribute="top" id="jJO-BH-miq"/>
+                            <constraint firstAttribute="bottom" secondItem="Ueu-cO-p3L" secondAttribute="bottom" constant="20" id="kyl-ik-lYS"/>
                             <constraint firstItem="Ueu-cO-p3L" firstAttribute="top" secondItem="IAR-Sn-pQQ" secondAttribute="bottom" constant="15" id="nqs-Or-5SQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IAR-Sn-pQQ" secondAttribute="trailing" constant="20" symbolic="YES" id="q45-3Q-Eya"/>
                             <constraint firstItem="jWe-uO-7kp" firstAttribute="trailing" secondItem="Ueu-cO-p3L" secondAttribute="trailing" constant="30" id="vyK-h8-Spy"/>
@@ -2233,7 +2234,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jrt-Tv-crs"/>
-        <segue reference="Z9F-1r-sr2"/>
+        <segue reference="Zn4-6w-hsp"/>
         <segue reference="6lU-c4-lFJ"/>
         <segue reference="4Ow-6o-u2i"/>
     </inferredMetricsTieBreakers>
