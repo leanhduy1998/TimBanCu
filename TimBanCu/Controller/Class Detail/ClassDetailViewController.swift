@@ -35,6 +35,8 @@ class ClassDetailViewController: UIViewController {
         setupClosure()
         uiController = ClassDetailUIController(viewcontroller: self, noResultViewAddBtnClosure: noResultViewAddBtnClosure)
         controller = ClassDetailController(classProtocol: classProtocol)
+        
+         searchTF.delegate = self
     }
     
     func setupClosure(){
