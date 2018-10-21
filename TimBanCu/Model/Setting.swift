@@ -26,9 +26,9 @@ class Setting{
         func getIconName()->UIImage{
             switch(self){
             case .Edit:
-                return UIImage(named: "edit")!
+                return UIImage(named: "Edit2")!
             case .SignOut:
-                return UIImage(named: "signOut")!
+                return UIImage(named: "signOut2")!
             }
         }
     }
