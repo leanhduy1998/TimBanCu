@@ -170,6 +170,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
             return false
         }
         
+        addInfoBtn.backgroundColor = Constants.AppColor.primaryColor
         return true
     }
     
