@@ -20,7 +20,7 @@ import FirebaseAuth
 
 import RevealingSplashView
 
-class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDelegate, LoginButtonDelegate, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
@@ -41,16 +41,11 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         
         controller.loginSilently()
     }
-    
-    private func setupGoogleLogin(){
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-    }
-    private func setupFacebookLogin(){
-        fbLoginBtn = LoginButton(readPermissions: [ .publicProfile ])
-        fbLoginBtn.delegate = self
-    }
-    
+
+}
+
+// MARK: Google Sign In
+extension SignInViewController:GIDSignInDelegate,GIDSignInUIDelegate{
     // Present a view that prompts the user to sign in with Google
     func sign(_ signIn: GIDSignIn!,
               present viewController: UIViewController!) {
@@ -70,6 +65,19 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
         }
     }
     
+    fileprivate func setupGoogleLogin(){
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+}
+
+// MARK: Facebook Sign In
+extension SignInViewController:LoginButtonDelegate{
+    private func setupFacebookLogin(){
+        fbLoginBtn = LoginButton(readPermissions: [ .publicProfile ])
+        fbLoginBtn.delegate = self
+    }
+    
     //sign in with facebook
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         controller.handleFacebookSignIn { [weak self] (uiState) in
@@ -80,5 +88,4 @@ class SignInViewController: UIViewController,GIDSignInDelegate, GIDSignInUIDeleg
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print()
     }
-
 }
