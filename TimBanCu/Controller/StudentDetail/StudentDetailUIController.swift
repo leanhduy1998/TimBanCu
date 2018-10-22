@@ -87,8 +87,10 @@ class StudentDetailUIController{
     fileprivate func setUpHeroId() {
         nameLabel.hero.isEnabled = true
         imageSlideshow.hero.isEnabled = true
-        nameLabel.hero.id = "\(student.fullName)"
-        imageSlideshow.hero.id = "\(student.fullName)image"
+        nameLabel.hero.id = "\(String(describing: student.fullName))"
+        imageSlideshow.hero.id = "\(String(describing: student.fullName))image"
+        nameLabel!.hero.modifiers = [.arc]
+        imageSlideshow.hero.modifiers = [.arc]
     }
     
     fileprivate func setUpStudentDetailsUI() {

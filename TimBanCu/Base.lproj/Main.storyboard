@@ -443,16 +443,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoB-So-DKI">
-                                                    <rect key="frame" x="80" y="30.5" width="250" height="19.5"/>
+                                                    <rect key="frame" x="70" y="30.5" width="260" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signOut" translatesAutoresizingMaskIntoConstraints="NO" id="4tC-ky-O8A">
-                                                    <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signOut2" translatesAutoresizingMaskIntoConstraints="NO" id="4tC-ky-O8A">
+                                                    <rect key="frame" x="20" y="25" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="vKH-Qw-bmE"/>
-                                                        <constraint firstAttribute="width" constant="40" id="yK9-Rt-Wgy"/>
+                                                        <constraint firstAttribute="height" constant="30" id="vKH-Qw-bmE"/>
+                                                        <constraint firstAttribute="width" constant="30" id="yK9-Rt-Wgy"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -507,35 +507,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rKs-KC-doa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rKs-KC-doa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserClassTableViewCell" rowHeight="132" id="Fdf-zd-GEJ" customClass="UserClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="132"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserClassTableViewCell" rowHeight="100" id="Fdf-zd-GEJ" customClass="UserClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fdf-zd-GEJ" id="uq8-cW-E1S">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ocu-ye-rrz">
-                                                    <rect key="frame" x="10" y="10" width="355" height="111.5"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lớp 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hG-d4-Kbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="37"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Phú Nhuận" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7T-d0-JqL">
-                                                            <rect key="frame" x="0.0" y="37" width="355" height="37.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                            <rect key="frame" x="0.0" y="26.5" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-lv-iL7">
-                                                            <rect key="frame" x="0.0" y="74.5" width="355" height="37"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="53" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -555,31 +555,31 @@
                                             <outlet property="schoolName" destination="h7T-d0-JqL" id="iMX-3U-21Q"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserUniversityTableViewCell" rowHeight="132" id="TDg-TL-fWw" customClass="UserUniversityTableViewCell" customModule="TimBanCu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="132"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserUniversityTableViewCell" rowHeight="100" id="TDg-TL-fWw" customClass="UserUniversityTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TDg-TL-fWw" id="7XN-5C-bX6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vUG-vX-00T">
-                                                    <rect key="frame" x="10" y="10" width="355" height="111.5"/>
+                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoa Máy Tính" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpD-P9-EP3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="37"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Đại Học Nông Nghiệp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-SO-Dvd">
-                                                            <rect key="frame" x="0.0" y="37" width="355" height="37.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                            <rect key="frame" x="0.0" y="26.5" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roK-Hd-i8O">
-                                                            <rect key="frame" x="0.0" y="74.5" width="355" height="37"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="53" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1304,11 +1304,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="0Ua-wx-Yxd" customClass="ClassDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GaK-7b-4ZG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kat-1D-gyg">
-                                <rect key="frame" x="0.0" y="114" width="375" height="404"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="404"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1355,7 +1355,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-AJ-ZHj">
-                                <rect key="frame" x="20" y="538" width="335" height="30"/>
+                                <rect key="frame" x="20" y="474" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Thêm Mình Vô Lớp">
                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1365,7 +1365,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwq-kt-NPR">
-                                <rect key="frame" x="20" y="578" width="335" height="30"/>
+                                <rect key="frame" x="20" y="514" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Chat với Cả Lớp">
                                     <color key="titleColor" red="0.99215686274509807" green="0.61568627450980395" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1375,7 +1375,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMR-Jf-mY2" customClass="CustomizeSearchView" customModule="TimBanCu" customModuleProvider="target">
-                                <rect key="frame" x="20" y="74" width="335" height="40"/>
+                                <rect key="frame" x="20" y="10" width="335" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="mcQ-xN-viG">
                                         <rect key="frame" x="5" y="7.5" width="25" height="25"/>
@@ -1589,11 +1589,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="Jet-um-s8D" customClass="ReportUserViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fYQ-va-TWU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KKF-W6-qma">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1652,11 +1652,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="Sge-KX-Ds7" customClass="ReportReasonViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAh-zf-Imk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SGb-dN-FOI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportReasonTableViewCell" rowHeight="72" id="oa9-Ph-8Kb" customClass="ReportReasonTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -1709,11 +1709,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController storyboardIdentifier="StudentDetailViewController" id="Pba-mN-D9k" customClass="StudentDetailViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RwC-TQ-NDq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2W-2l-3af" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <color key="backgroundColor" red="0.96990669289999998" green="0.96990669289999998" blue="0.96990669289999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="6b9-hb-1Wm"/>
@@ -1724,7 +1724,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-ZN-DIM">
-                                <rect key="frame" x="154.5" y="369" width="66" height="20"/>
+                                <rect key="frame" x="154.5" y="305" width="66" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gH2-QW-773"/>
                                 </constraints>
@@ -1733,7 +1733,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vy Le, 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-Sn-pQQ">
-                                <rect key="frame" x="30" y="427.5" width="90.5" height="26.5"/>
+                                <rect key="frame" x="30" y="363.5" width="90.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1743,19 +1743,19 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ueu-cO-p3L">
-                                <rect key="frame" x="30" y="469" width="315" height="180"/>
+                                <rect key="frame" x="30" y="405" width="315" height="178"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vSP-tx-hem">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="59.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NGÀY SINH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4s-mL-xPE">
-                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/03/2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1w-uS-XDJ">
-                                                <rect key="frame" x="0.0" y="30" width="83.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="29.5" width="83.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1764,16 +1764,16 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FId-GV-Apr">
-                                        <rect key="frame" x="0.0" y="60" width="315" height="60"/>
+                                        <rect key="frame" x="0.0" y="59.5" width="315" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SỐ ĐIỆN THOAI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sen-pq-G49">
-                                                <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD0-rp-DJT">
-                                                <rect key="frame" x="0.0" y="30" width="315" height="30"/>
+                                                <rect key="frame" x="0.0" y="29.5" width="315" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1782,7 +1782,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LJ1-iQ-sSc">
-                                        <rect key="frame" x="0.0" y="120" width="315" height="60"/>
+                                        <rect key="frame" x="0.0" y="118.5" width="315" height="59.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMh-cW-w8A">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
@@ -1791,7 +1791,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lethaovy2001@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-qI-45r">
-                                                <rect key="frame" x="0.0" y="30" width="315" height="30"/>
+                                                <rect key="frame" x="0.0" y="30" width="315" height="29.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1800,9 +1800,6 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="psA-Ng-YH4"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="cascade"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -1817,6 +1814,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                             <constraint firstItem="r2W-2l-3af" firstAttribute="leading" secondItem="jWe-uO-7kp" secondAttribute="leading" id="bgr-OG-Oph"/>
                             <constraint firstItem="jWe-uO-7kp" firstAttribute="trailing" secondItem="r2W-2l-3af" secondAttribute="trailing" id="gXV-K0-YSK"/>
                             <constraint firstItem="r2W-2l-3af" firstAttribute="top" secondItem="jWe-uO-7kp" secondAttribute="top" id="jJO-BH-miq"/>
+                            <constraint firstAttribute="bottom" secondItem="Ueu-cO-p3L" secondAttribute="bottom" constant="20" id="kyl-ik-lYS"/>
                             <constraint firstItem="Ueu-cO-p3L" firstAttribute="top" secondItem="IAR-Sn-pQQ" secondAttribute="bottom" constant="15" id="nqs-Or-5SQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IAR-Sn-pQQ" secondAttribute="trailing" constant="20" symbolic="YES" id="q45-3Q-Eya"/>
                             <constraint firstItem="jWe-uO-7kp" firstAttribute="trailing" secondItem="Ueu-cO-p3L" secondAttribute="trailing" constant="30" id="vyK-h8-Spy"/>
@@ -1847,11 +1845,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="qXR-vQ-3Eo" customClass="AddYourInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBj-44-A6P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDn-Vc-2hg">
-                                <rect key="frame" x="167" y="307" width="41" height="20"/>
+                                <rect key="frame" x="167" y="243" width="41" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GXj-aA-mge"/>
                                 </constraints>
@@ -1860,11 +1858,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrf-fB-Nle" customClass="Slideshow" customModule="TimBanCu" customModuleProvider="target">
-                                <rect key="frame" x="20" y="84" width="335" height="218"/>
+                                <rect key="frame" x="20" y="20" width="335" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uh6-PM-d0O">
-                                <rect key="frame" x="20" y="347" width="335" height="205"/>
+                                <rect key="frame" x="20" y="283" width="335" height="205"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zyv-kU-lCc">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -1897,14 +1895,14 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8SJ-Gf-5S5">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-rl-SOQ">
-                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1914,7 +1912,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbE-Uj-ywl">
-                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
+                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                                 <connections>
                                                     <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="G0O-J3-DI1"/>
@@ -1926,14 +1924,14 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-lD-IKn">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-Kt-Bs1">
-                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1943,7 +1941,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q6-ob-R3P">
-                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
+                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                                 <connections>
                                                     <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="GhP-hB-g5O"/>
@@ -1954,7 +1952,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wo5-6v-x2y">
-                                <rect key="frame" x="30" y="562" width="315" height="46"/>
+                                <rect key="frame" x="30" y="498" width="315" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có thể sửa thông tin cá nhân ở mục Công Cụ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu2-Hq-EEd">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="16"/>
@@ -1964,9 +1962,9 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jw-eh-eN4">
                                         <rect key="frame" x="0.0" y="16" width="315" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Thêm Thông Tin Cá Nhân">
-                                            <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="addInfoBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="3Ea-so-uTI"/>
@@ -2072,21 +2070,21 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcF-am-Slw">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTu-W5-TDF">
-                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDZ-kw-g8O">
-                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
+                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                             </button>
                                         </subviews>
@@ -2095,21 +2093,21 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDE-KU-isZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcG-xC-Xyo">
-                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDI-wv-Itg">
-                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
+                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                             </button>
                                         </subviews>
@@ -2172,7 +2170,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="7BC-Pe-RkX" customClass="ChatViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VOm-lI-FAC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="L0f-V6-JMC"/>
@@ -2194,11 +2192,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="LmB-rK-hkQ" customClass="UserImageViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEA-ZB-XK9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-Zn-xef">
-                                <rect key="frame" x="335" y="74" width="30" height="30"/>
+                                <rect key="frame" x="335" y="10" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="41u-zd-gbc"/>
                                     <constraint firstAttribute="height" constant="30" id="jHW-sS-PLy"/>
@@ -2209,10 +2207,10 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-7h-NCO">
-                                <rect key="frame" x="0.0" y="124" width="375" height="443.5"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="443.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2011" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cK-hj-4Qn">
-                                <rect key="frame" x="150" y="587.5" width="75.5" height="20.5"/>
+                                <rect key="frame" x="150" y="523.5" width="75.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2249,11 +2247,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
             <objects>
                 <viewController id="tBf-Ts-F6c" customClass="UpdateImageYearViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YN8-JA-ClY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm Hình Được Chụp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEk-V9-Z5A">
-                                <rect key="frame" x="20" y="84" width="335" height="24"/>
+                                <rect key="frame" x="20" y="20" width="335" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Wn6-Go-nfD"/>
                                 </constraints>
@@ -2262,14 +2260,14 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-CR-veA">
-                                <rect key="frame" x="20" y="568" width="335" height="30"/>
+                                <rect key="frame" x="20" y="504" width="335" height="30"/>
                                 <state key="normal" title="Cập Nhập Năm"/>
                                 <connections>
                                     <action selector="updateBtnPressed:" destination="tBf-Ts-F6c" eventType="touchUpInside" id="2sH-ij-385"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Năm" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-dc-Kwi">
-                                <rect key="frame" x="137.5" y="518" width="100" height="30"/>
+                                <rect key="frame" x="137.5" y="454" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GCd-JN-x9p"/>
                                     <constraint firstAttribute="height" constant="30" id="flZ-o3-vwI"/>
@@ -2279,10 +2277,10 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="coU-wn-74e">
-                                <rect key="frame" x="20" y="128" width="335" height="289"/>
+                                <rect key="frame" x="20" y="64" width="335" height="289"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hình có năm sẽ giúp các thành viên khác dễ nhận diện hơn (Ví dụ: Đây là hình của bạn năm 1990 khi bạn học lớp 1)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IF-Ip-A4W">
-                                <rect key="frame" x="20" y="437" width="335" height="61"/>
+                                <rect key="frame" x="20" y="373" width="335" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2326,30 +2324,30 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
     <resources>
         <image name="3dots" width="200" height="200"/>
         <image name="Cover" width="1208" height="1199"/>
-        <image name="computer" width="64" height="64"/>
-        <image name="elementary" width="64" height="64"/>
+        <image name="computer" width="48" height="48"/>
+        <image name="elementary" width="354.4615478515625" height="354.4615478515625"/>
         <image name="friends" width="2000" height="1306"/>
-        <image name="highSchool" width="64" height="64"/>
-        <image name="home4.5" width="25" height="25"/>
+        <image name="highSchool" width="354.4615478515625" height="354.4615478515625"/>
+        <image name="home4.5" width="18.75" height="18.75"/>
         <image name="homeDarkGray" width="25" height="25"/>
         <image name="homeOrange" width="24" height="24"/>
-        <image name="homeOrange4" width="25" height="25"/>
-        <image name="list4" width="25" height="25"/>
-        <image name="listOrange4" width="25" height="25"/>
-        <image name="middle" width="64" height="64"/>
-        <image name="moreInfo" width="36" height="36"/>
-        <image name="search" width="50" height="50"/>
-        <image name="signOut" width="64" height="64"/>
+        <image name="homeOrange4" width="18.75" height="18.75"/>
+        <image name="list4" width="18.75" height="18.75"/>
+        <image name="listOrange4" width="18.75" height="18.75"/>
+        <image name="middle" width="354.4615478515625" height="354.4615478515625"/>
+        <image name="moreInfo" width="27" height="27"/>
+        <image name="search" width="37.5" height="37.5"/>
+        <image name="signOut2" width="37.5" height="37.5"/>
         <image name="truongTranHungDao" width="720" height="320"/>
-        <image name="university" width="64" height="64"/>
+        <image name="university" width="384" height="384"/>
         <image name="user4" width="25" height="25"/>
         <image name="userOrange4.5" width="25" height="25"/>
-        <image name="village" width="64" height="64"/>
+        <image name="village" width="418.90908813476562" height="418.90908813476562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5hT-Vf-XNn"/>
+        <segue reference="jrt-Tv-crs"/>
         <segue reference="Zn4-6w-hsp"/>
-        <segue reference="6lU-c4-lFJ"/>
+        <segue reference="Yxf-fH-7mY"/>
         <segue reference="4Ow-6o-u2i"/>
         <segue reference="xKq-Q6-Xbq"/>
     </inferredMetricsTieBreakers>
