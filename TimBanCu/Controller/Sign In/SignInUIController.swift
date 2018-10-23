@@ -30,20 +30,33 @@ final class SignInUIController{
     private var googleBtn:GIDSignInButton!
     
     private var errorAlert:InfoAlert!
-    private var animateAppName: AnimateAppName!
+    private var appNameView: AnimateAppNameView!
+    
+    let whiteView = UIView()
     
     init(viewController: SignInViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
+        
         self.viewcontroller = viewController
         self.facebookBtn = facebookBtn
         self.googleBtn = googleBtn
         
-        self.animateAppName = AnimateAppName(viewController: viewcontroller)
+        self.appNameView = AnimateAppNameView(viewController: viewcontroller)
         
-        setUpSplashView()
+        setupInitialLoadingScreen()
         setupFacebookBtn()
         setupGoogleButton()
         
         errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "", alertType: .Error)
+    }
+    
+    func viewWillAppear(){
+        viewcontroller.view.bringSubview(toFront: whiteView)
+        viewcontroller.view.bringSubview(toFront: facebookBtn)
+        viewcontroller.view.bringSubview(toFront: googleBtn)
+        viewcontroller.view.bringSubview(toFront: revealingSplashView)
+    }
+    func viewWillDisappear(){
+        whiteView.removeFromSuperview()
     }
 
     private func update(newState: UIState) {
@@ -73,7 +86,23 @@ final class SignInUIController{
         }
     }
     
-    private func setUpSplashView() {
+    func animateAppName(){
+        DispatchQueue.main.async {
+            self.appNameView.animate()
+        }
+        
+    }
+    
+    
+    
+}
+
+// MARK: Initialize
+
+extension SignInUIController{
+    
+    
+    private func setupInitialLoadingScreen() {
         revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Logo")!, iconInitialSize: CGSize(width: 140, height: 140), backgroundColor: UIColor(red:255/255, green:158/255, blue: 0, alpha:1.0))
         viewcontroller.view.addSubview(revealingSplashView!)
         revealingSplashView?.animationType = SplashAnimationType.popAndZoomOut
@@ -94,5 +123,4 @@ final class SignInUIController{
     private func setupGoogleButton(){
         googleBtn.style = GIDSignInButtonStyle.wide
     }
-    
 }

@@ -671,7 +671,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-Id-2vX">
                                 <rect key="frame" x="20" y="79" width="335" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Vui lòng đọc kỹ Thỏa Thuận Sử Dụng (“Thỏa Thuận”) trước khi bạn tiến hành tải, cài đặt, sử dụng tất cả hoặc bất kỳ phần nào của ứng dụng “Tìm Bạn Cũ” (“Ứng Dụng”) (bao gồm nhưng không giới hạn phần mềm, các file và các tài liệu liên quan) cung cấp để kết nối đến Ứng Dụng. Bạn chấp thuận và đồng ý bị ràng buộc bởi các quy định và điều kiện trong Thỏa Thuận này khi thực hiện các thao tác trên đây. Trường hợp bạn không đồng ý với bất kỳ điều khoản sử dụng nào của chúng tôi (phiên bản này và các phiên bản cập nhật), bạn vui lòng không tải, cài đặt, sử dụng Ứng dụng hoặc tháo gỡ Ứng Dụng ra khỏi thiết bị di động của bạn.
+                                <string key="text">Vui lòng đọc kỹ Thỏa Thuận Sử Dụng (“Thỏa Thuận”) trước khi bạn tiến hành tải, cài đặt, sử dụng tất cả hoặc bất kỳ phần nào của ứng dụng “Tìm Bạn Cũ” (“Ứng Dụng”) (bao gồm nhưng không giới hạn phần mềm, các file và các tài liệu liên quan) cung cấp để kết nối đến Ứng Dụng. Bạn chấp thuận và đồng ý bị ràng buộc bởi các quy định và điều kiện trong Thỏa Thuận này khi thực hiện các thao tác trên đây. Trường hợp bạn không đồng ý với bất kỳ điều khoản sử dụng nào của chúng tôi (phiên bản này và các phiên bản cập nhật), bạn vui lòng không tải, cài đặt, sử dụng Ứng dụng hoặc tháo gỡ Ứng Dụng ra khỏi thiết bị di động của bạn.
 							
 1. Cập nhật:						
 Thỏa Thuận này có thể được cập nhật thường xuyên bởi Lê Anh Duy. Phiên bản cập nhật sẽ thay thế cho các quy định và điều kiện trong thỏa thuận ban đầu. 			 		
@@ -736,7 +736,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
 			
 		
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1895,14 +1895,14 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8SJ-Gf-5S5">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-rl-SOQ">
-                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1912,7 +1912,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbE-Uj-ywl">
-                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
+                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                                 <connections>
                                                     <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="G0O-J3-DI1"/>
@@ -1924,14 +1924,14 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-lD-IKn">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMM-Kt-Bs1">
-                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1941,7 +1941,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                                 </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q6-ob-R3P">
-                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
+                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                                 <connections>
                                                     <action selector="showPrivacyAlertBtnPressed:" destination="qXR-vQ-3Eo" eventType="touchUpInside" id="GhP-hB-g5O"/>
@@ -2070,21 +2070,21 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcF-am-Slw">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTu-W5-TDF">
-                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDZ-kw-g8O">
-                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
+                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                             </button>
                                         </subviews>
@@ -2093,21 +2093,21 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDE-KU-isZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="211" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcG-xC-Xyo">
-                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
+                                                <rect key="frame" x="221" y="0.0" width="68" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <state key="normal" title="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDI-wv-Itg">
-                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
+                                                <rect key="frame" x="299" y="0.0" width="36" height="40"/>
                                                 <state key="normal" image="moreInfo"/>
                                             </button>
                                         </subviews>
@@ -2324,25 +2324,25 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
     <resources>
         <image name="3dots" width="200" height="200"/>
         <image name="Cover" width="1208" height="1199"/>
-        <image name="computer" width="48" height="48"/>
-        <image name="elementary" width="354.4615478515625" height="354.4615478515625"/>
+        <image name="computer" width="64" height="64"/>
+        <image name="elementary" width="64" height="64"/>
         <image name="friends" width="2000" height="1306"/>
-        <image name="highSchool" width="354.4615478515625" height="354.4615478515625"/>
-        <image name="home4.5" width="18.75" height="18.75"/>
+        <image name="highSchool" width="64" height="64"/>
+        <image name="home4.5" width="25" height="25"/>
         <image name="homeDarkGray" width="25" height="25"/>
         <image name="homeOrange" width="24" height="24"/>
-        <image name="homeOrange4" width="18.75" height="18.75"/>
-        <image name="list4" width="18.75" height="18.75"/>
-        <image name="listOrange4" width="18.75" height="18.75"/>
-        <image name="middle" width="354.4615478515625" height="354.4615478515625"/>
-        <image name="moreInfo" width="27" height="27"/>
-        <image name="search" width="37.5" height="37.5"/>
-        <image name="signOut2" width="37.5" height="37.5"/>
+        <image name="homeOrange4" width="25" height="25"/>
+        <image name="list4" width="25" height="25"/>
+        <image name="listOrange4" width="25" height="25"/>
+        <image name="middle" width="64" height="64"/>
+        <image name="moreInfo" width="36" height="36"/>
+        <image name="search" width="50" height="50"/>
+        <image name="signOut2" width="50" height="50"/>
         <image name="truongTranHungDao" width="720" height="320"/>
-        <image name="university" width="384" height="384"/>
+        <image name="university" width="64" height="64"/>
         <image name="user4" width="25" height="25"/>
         <image name="userOrange4.5" width="25" height="25"/>
-        <image name="village" width="418.90908813476562" height="418.90908813476562"/>
+        <image name="village" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jrt-Tv-crs"/>

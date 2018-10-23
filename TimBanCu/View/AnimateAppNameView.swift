@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimateAppName {
+class AnimateAppNameView {
     
     private var shimmerAppNameLabel: ShimmeringLabel! = nil
     private var appNameLabel:ShimmeringLabel! = nil
@@ -19,7 +19,6 @@ class AnimateAppName {
     init(viewController: UIViewController) {
         self.viewcontroller = viewController
         setUpAppNameStackView()
-        animateAppName()
     }
     
     //set-ups
@@ -50,14 +49,29 @@ class AnimateAppName {
         viewcontroller.view.sendSubview(toBack: appNameLabel)
     }
     
+    func resetView(){
+        DispatchQueue.main.async {
+            for view in self.appNameStackView.arrangedSubviews{
+                view.removeFromSuperview()
+            }
+            
+            self.viewcontroller.viewDidLayoutSubviews()
+        }
+        
+    }
+    
     //chain animation
-    private func animateAppName() {
-        Timer.scheduledTimer(timeInterval: TimeInterval(2.0), target: self, selector: #selector(animateLettersSlideIn), userInfo: nil, repeats: false)
-        Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(animateShimmeringText), userInfo: nil, repeats: false)
+    func animate() {
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(timeInterval: TimeInterval(2.0), target: self, selector: #selector(self.animateLettersSlideIn), userInfo: nil, repeats: false)
+            
+            Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(self.animateShimmeringText), userInfo: nil, repeats: false)
+        }
     }
     
     //MARK: First Animation
     @objc private func animateLettersSlideIn() {
+        
         let appName = Constants.App.name
         var charInAppName = [String]()
         var charInAppNameLabel = [UILabel]()
@@ -68,11 +82,14 @@ class AnimateAppName {
         
         for i in 0..<charInAppName.count {
             charInAppNameLabel.append(UILabel())
-            appNameStackView.addArrangedSubview(charInAppNameLabel[i])
             
             setUpAppNameLabel(label: charInAppNameLabel[i], text: charInAppName[i])
+            appNameStackView.addArrangedSubview(charInAppNameLabel[i])
+            
             animateEachLetterOfAppName(letter: charInAppNameLabel[i], index: i)
         }
+        
+        
     }
     
     private func setUpAppNameLabel(label: UILabel, text: String) {
@@ -114,7 +131,10 @@ class AnimateAppName {
         animation.toValue = viewcontroller.view.frame.width
         gradient.add(animation, forKey: "shimmerKey")
         
-        appNameStackView.removeFromSuperview()
+        for view in appNameStackView.arrangedSubviews{
+            view.removeFromSuperview()
+        }
+        
     }
     
 }

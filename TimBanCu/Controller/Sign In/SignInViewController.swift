@@ -25,10 +25,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
     
+    @IBAction func unwindToSignInViewController(segue:UIStoryboardSegue) { }
+    
     private var controller: SignInController!
     private var uiController:SignInUIController!
     
     private var fbLoginBtn: LoginButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,32 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.controller = SignInController()
         
         controller.loginSilently()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        uiController.viewWillAppear()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            self.uiController.animateAppName()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.uiController.viewWillDisappear()
+        viewDidLayoutSubviews()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
     }
 
 }

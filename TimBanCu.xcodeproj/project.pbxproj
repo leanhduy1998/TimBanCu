@@ -15,7 +15,7 @@
 		1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */; };
 		1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4B9F215B1061002E4807 /* Constants.swift */; };
 		1C1D4BA2215B10B7002E4807 /* UnderlineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */; };
-		1C1D4BA4215B1100002E4807 /* AnimateAppName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA3215B1100002E4807 /* AnimateAppName.swift */; };
+		1C1D4BA4215B1100002E4807 /* AnimateAppNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA3215B1100002E4807 /* AnimateAppNameView.swift */; };
 		1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA6215B11BA002E4807 /* bikingishard.json */; };
 		1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */; };
 		1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA8215B11BA002E4807 /* empty_list.json */; };
@@ -188,7 +188,7 @@
 		1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		1C1D4B9F215B1061002E4807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TimBanCu/View/Constants.swift; sourceTree = SOURCE_ROOT; };
 		1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineState.swift; sourceTree = "<group>"; };
-		1C1D4BA3215B1100002E4807 /* AnimateAppName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAppName.swift; sourceTree = "<group>"; };
+		1C1D4BA3215B1100002E4807 /* AnimateAppNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAppNameView.swift; sourceTree = "<group>"; };
 		1C1D4BA6215B11BA002E4807 /* bikingishard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bikingishard.json; sourceTree = "<group>"; };
 		1C1D4BA7215B11BA002E4807 /* biking_is_cool.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = biking_is_cool.json; sourceTree = "<group>"; };
 		1C1D4BA8215B11BA002E4807 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
@@ -854,7 +854,7 @@
 				1C98F6662128667900EFD4EF /* TableCell */,
 				1C1D4B9F215B1061002E4807 /* Constants.swift */,
 				38EF89CD216A8290000B05D5 /* LoadingAnimation */,
-				1C1D4BA3215B1100002E4807 /* AnimateAppName.swift */,
+				1C1D4BA3215B1100002E4807 /* AnimateAppNameView.swift */,
 				1C8EC86C2128C8E80038ECB5 /* RoundedImageView.swift */,
 				1CF50FE5210B678100346EF9 /* CircleImageView.swift */,
 				1C8EC87A2128F36F0038ECB5 /* ShimmeringLabel.swift */,
@@ -1456,7 +1456,7 @@
 				1CA5363B2169B89D00FCF0FF /* UserClassesUIController.swift in Sources */,
 				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
 				38EF89CA216930AB000B05D5 /* LoadingAnimation.swift in Sources */,
-				1C1D4BA4215B1100002E4807 /* AnimateAppName.swift in Sources */,
+				1C1D4BA4215B1100002E4807 /* AnimateAppNameView.swift in Sources */,
 				1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */,
 				1CD7301C213F285500105ACE /* ClassDetailController.swift in Sources */,
 				1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */,
