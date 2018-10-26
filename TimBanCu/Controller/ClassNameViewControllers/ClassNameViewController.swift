@@ -84,15 +84,15 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
 //MARK: UITextFieldDelegate
 extension ClassNameViewController:UITextFieldDelegate{
     @objc func textFieldDidChange(_ textField: UITextField) {
-        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classes)
+        uiController.filterVisibleClassName(filter: textField.text!, allClasses: controller.classes)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        uiController.searchTFDidBeginEditing(allClassDetails: controller!.classes)
+        uiController.searchTFDidBeginEditing(allClasses: controller!.classes)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        uiController.searchTFDidEndEditing(allClassDetails: controller.classes)
+        uiController.searchTFDidEndEditing(allClasses: controller.classes)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,7 +101,7 @@ extension ClassNameViewController:UITextFieldDelegate{
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        uiController.filterVisibleClassName(filter: "", allClassDetails: controller.classes)
+        uiController.filterVisibleClassName(filter: "", allClasses: controller.classes)
         return true
     }
 }

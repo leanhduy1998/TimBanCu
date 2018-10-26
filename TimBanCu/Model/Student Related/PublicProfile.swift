@@ -86,16 +86,16 @@ class PublicProfile{
                         
                         let classs = Class(institution: institution, classNumber: classNumber, className: className, uid: uid)
                         
-                        let classDetail = ClassWithYear(classs: classs, year: year)
-                        enrolledIn.append(classDetail)
+                        let classWithYear = ClassWithYear(classs: classs, year: year)
+                        enrolledIn.append(classWithYear)
                     }
                     // if class is MajorDetail
                     else{
                         let majorName = value["majorName"] as! String
                         let major = Major(institution: institution, uid: uid, majorName: majorName)
                         
-                        let majorDetail = MajorWithYear(major: major, year: year)
-                        enrolledIn.append(majorDetail)
+                        let majorWithYear = MajorWithYear(major: major, year: year)
+                        enrolledIn.append(majorWithYear)
                     }
                 }
             }

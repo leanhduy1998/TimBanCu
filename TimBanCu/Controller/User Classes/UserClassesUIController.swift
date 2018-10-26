@@ -25,15 +25,15 @@ class UserClassesUIController:NSObject,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let classDetail = CurrentUser.getEnrolledClasses()[indexPath.row] as? ClassWithYear{
+        if let classWithYear = CurrentUser.getEnrolledClasses()[indexPath.row] as? ClassWithYear{
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserClassTableViewCell") as! UserClassTableViewCell
-            cell.viewModel = UserClassViewModel(classDetail: classDetail)
+            cell.viewModel = UserClassViewModel(classWithYear: classWithYear)
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserUniversityTableViewCell") as! UserUniversityTableViewCell
-            let majorDetail = CurrentUser.getEnrolledClasses()[indexPath.row] as! MajorWithYear
-            cell.viewModel = UserUniversityViewModel(majorDetail: majorDetail)
+            let majorWithYear = CurrentUser.getEnrolledClasses()[indexPath.row] as! MajorWithYear
+            cell.viewModel = UserUniversityViewModel(major: majorWithYear)
             return cell
         }
     }

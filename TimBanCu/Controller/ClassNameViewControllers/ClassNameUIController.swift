@@ -61,7 +61,7 @@ class ClassNameUIController{
             break
         case (.AddingNewData, .Success()):
             alerts.showAddNewClassNameComplete()
-            filterVisibleClassName(filter: searchTF.text!, allClassDetails: searchClasses)
+            filterVisibleClassName(filter: searchTF.text!, allClasses: searchClasses)
             break
         case (.AddingNewData, .Failure(let errorStr)):
             if(errorStr == "Permission denied") {
@@ -77,17 +77,17 @@ class ClassNameUIController{
         }
     }
     
-    func filterVisibleClassName(filter:String, allClassDetails:[Class]){
+    func filterVisibleClassName(filter:String, allClasses:[Class]){
         searchClasses.removeAll()
         
         if(filter.isEmpty){
-            searchClasses = allClassDetails
+            searchClasses = allClasses
         }
         else{
-            for classDetail in allClassDetails{
+            for classs in allClasses{
                 
-                if classDetail.getName().lowercased().range(of:filter.lowercased()) != nil {
-                    searchClasses.append(classDetail)
+                if classs.getName().lowercased().range(of:filter.lowercased()) != nil {
+                    searchClasses.append(classs)
                 }
             }
         }
@@ -118,12 +118,12 @@ extension ClassNameUIController{
 // TextField
 extension ClassNameUIController{
     
-    func searchTFDidBeginEditing(allClassDetails:[Class]){
-        filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
+    func searchTFDidBeginEditing(allClasses:[Class]){
+        filterVisibleClassName(filter: searchTF.text!, allClasses: allClasses)
         searchTFUnderline.textFieldDidBeginEditing()
     }
-    func searchTFDidEndEditing(allClassDetails:[Class]){
-        filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
+    func searchTFDidEndEditing(allClasses:[Class]){
+        filterVisibleClassName(filter: searchTF.text!, allClasses: allClasses)
         searchTFUnderline.textFieldDidEndEditing(searchTF)
     }
 }
@@ -131,14 +131,14 @@ extension ClassNameUIController{
 // TableView
 extension ClassNameUIController{
     fileprivate func setupGenericTableView(){
-        genericTableView = GenericTableView(tableview: tableview, items: searchClasses, configure: { (cell, classDetail) in
+        genericTableView = GenericTableView(tableview: tableview, items: searchClasses, configure: { (cell, classs) in
             
-            cell.classDetailViewModel = ClassNameViewModel(classs: classDetail)
+            cell.classNameViewModel = ClassNameViewModel(classs: classs)
             cell.selectedBackgroundView = self.customSelectionColorView
         })
         
-        genericTableView.didSelect = { classDetail in
-            self.viewcontroller.selectedClass = classDetail
+        genericTableView.didSelect = { classs in
+            self.viewcontroller.selectedClass = classs
             self.viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: self.viewcontroller)
         }
     }

@@ -1,5 +1,5 @@
 //
-//  ClassDetailTableViewCell.swift
+//  ClassNameTableViewCell.swift
 //  TimBanCu
 //
 //  Created by Duy Le 2 on 7/15/18.
@@ -15,9 +15,9 @@ class ClassNameTableViewCell: UITableViewCell {
     @IBOutlet weak var imageview: UIImageView!
     
     
-    var classDetailViewModel:ClassNameViewModel! = nil {
+    var classNameViewModel:ClassNameViewModel! = nil {
         didSet{
-            classLabel.text = classDetailViewModel.className
+            classLabel.text = classNameViewModel.className
         }
     }
     

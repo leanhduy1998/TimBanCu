@@ -123,7 +123,7 @@ class ClassDetailViewController: UIViewController {
         }
         
         if let destination = segue.destination as? ChatViewController{
-            destination.classDetail = classProtocol as! ClassWithYear
+            destination.classWithYear = classProtocol
             destination.students = controller.students
         }
         

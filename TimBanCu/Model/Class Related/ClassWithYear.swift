@@ -18,9 +18,9 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
         super.init(classs: classs)
     }
     
-    init(classDetail:ClassWithYear){
-        self.year = classDetail.year
-        super.init(institution: classDetail.institution, classNumber: classDetail.classNumber, className: classDetail.className, uid: classDetail.uid)
+    init(classWithYear:ClassWithYear){
+        self.year = classWithYear.year
+        super.init(institution: classWithYear.institution, classNumber: classWithYear.classNumber, className: classWithYear.className, uid: classWithYear.uid)
         
     }
     
@@ -50,7 +50,7 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
     }
 
     func copy() -> ClassAndMajorWithYearProtocol {
-        return ClassWithYear(classDetail: self)
+        return ClassWithYear(classWithYear: self)
     }
     
     /*

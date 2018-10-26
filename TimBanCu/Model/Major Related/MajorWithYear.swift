@@ -1,5 +1,5 @@
 //
-//  MajorDetail.swift
+//  MajorWithYear.swift
 //  TimBanCu
 //
 //  Created by Duy Le 2 on 8/2/18.
@@ -19,9 +19,9 @@ class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
         super.init(major: major)
     }
     
-    init(majorDetail:MajorWithYear){
-        self.year = majorDetail.year
-        super.init(institution: majorDetail.institution, uid: majorDetail.uid, majorName: majorDetail.majorName)
+    init(major:MajorWithYear){
+        self.year = major.year
+        super.init(institution: major.institution, uid: major.uid, majorName: major.majorName)
     }
     
     
@@ -32,7 +32,7 @@ class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
     }
     
     func copy() -> ClassAndMajorWithYearProtocol {
-        return MajorWithYear(majorDetail: self)
+        return MajorWithYear(major: self)
     }
     
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
