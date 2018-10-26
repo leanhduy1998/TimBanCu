@@ -538,6 +538,15 @@
 			path = "Student Related";
 			sourceTree = "<group>";
 		};
+		1C513A7A2183717900FFDC82 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1C513A622180DAEB00FFDC82 /* ClassAndMajorProtocol.swift */,
+				1C513A662181145C00FFDC82 /* ClassAndMajorWithYearProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		1C784B682110F85200647C40 /* StudentDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -861,9 +870,7 @@
 			children = (
 				1CD730002138906400105ACE /* GenericTableView.swift */,
 				1CAB795E2150660400F21264 /* Closures.swift */,
-				1CE24D0120FBE153008DE3FB /* CurrentUser.swift */,
 				1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */,
-				1CAB79682152B91300F21264 /* Cache.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -871,15 +878,16 @@
 		1CE24D0320FBE6E6008DE3FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CE24D0120FBE153008DE3FB /* CurrentUser.swift */,
 				1C513A7621836CA000FFDC82 /* Institution Related */,
 				1C513A7721836CAD00FFDC82 /* Class Related */,
 				1C513A7821836CBB00FFDC82 /* Major Related */,
 				1C513A7921836CC800FFDC82 /* Student Related */,
+				1C513A7A2183717900FFDC82 /* Protocols */,
 				1C4B6C372148A14700BDF724 /* Image.swift */,
 				1CA53648216E535F00FCF0FF /* Setting.swift */,
 				1CA53654216EDF9300FCF0FF /* ReportReason.swift */,
-				1C513A622180DAEB00FFDC82 /* ClassAndMajorProtocol.swift */,
-				1C513A662181145C00FFDC82 /* ClassAndMajorWithYearProtocol.swift */,
+				1CAB79682152B91300F21264 /* Cache.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

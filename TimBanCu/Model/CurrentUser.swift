@@ -14,10 +14,7 @@ class CurrentUser{
     private static let ref = Database.database().reference()
     
     static func hasEnoughDataInFireBase() -> Bool {
-        if(student.isStudentInfoCompleted()){
-            return true
-        }
-        return false
+        return student.isStudentInfoCompleted()
     }
     
     static func addEnrollment(classProtocol: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){

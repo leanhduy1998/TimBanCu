@@ -65,21 +65,14 @@ final class SignInController{
                 }
                 
                 self?.uid = Auth.auth().currentUser?.uid
-                
                 self?.loadUserInfo()
-                
                 completionHandler(.Success())
             }
         }
     }
     
     private func firebaseSignIn(credential:AuthCredential){
-        Auth.auth().signInAndRetrieveData(with: credential) { [weak self] (authResult, error) in
-            DispatchQueue.main.async {
-                self?.uid = Auth.auth().currentUser?.uid
-                self?.loadUserInfo()
-            }
-        }
+        firebaseSignIn(credential: credential) { (_) in}
     }
 }
 
