@@ -35,5 +35,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimBanCu/Model/ClassDetail.swift"
+            timestampString = "562260745.979575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "uploadToFirebase(year:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimBanCu.ClassDetail.uploadToFirebase(year: Swift.String, completionHandler: (TimBanCu.UIState) -&gt; ()) -&gt; ()"
+                  moduleName = "TimBanCu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Model/ClassDetail.swift"
+                  timestampString = "562260746.2459641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDatabaseReference) -&gt; () in TimBanCu.ClassDetail.uploadToFirebase(year: Swift.String, completionHandler: (TimBanCu.UIState) -&gt; ()) -&gt; ()"
+                  moduleName = "TimBanCu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Model/ClassDetail.swift"
+                  timestampString = "562260746.2495379"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

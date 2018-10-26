@@ -48,6 +48,7 @@
 		1C513A6D21824EE100FFDC82 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A6C21824EE000FFDC82 /* PublicProfile.swift */; };
 		1C513A6F2182641600FFDC82 /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A6E2182641600FFDC82 /* Institution.swift */; };
 		1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A702182680700FFDC82 /* PrivateProfile.swift */; };
+		1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A74218368E300FFDC82 /* EULAViewController.swift */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
@@ -229,6 +230,7 @@
 		1C513A6C21824EE000FFDC82 /* PublicProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
 		1C513A6E2182641600FFDC82 /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
 		1C513A702182680700FFDC82 /* PrivateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateProfile.swift; sourceTree = "<group>"; };
+		1C513A74218368E300FFDC82 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
 		1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpttphcm.txt; sourceTree = "<group>"; };
@@ -801,6 +803,7 @@
 			isa = PBXGroup;
 			children = (
 				1CDB3F22217BDD4100BEC04C /* FirstTimeLaunch.swift */,
+				1C513A74218368E300FFDC82 /* EULAViewController.swift */,
 			);
 			path = EULA;
 			sourceTree = "<group>";
@@ -1484,6 +1487,7 @@
 				1C1D4BA4215B1100002E4807 /* AnimateAppNameView.swift in Sources */,
 				1C513A6D21824EE100FFDC82 /* PublicProfile.swift in Sources */,
 				1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */,
+				1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */,
 				1CD7301C213F285500105ACE /* ClassDetailController.swift in Sources */,
 				1C513A6F2182641600FFDC82 /* Institution.swift in Sources */,
 				1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */,

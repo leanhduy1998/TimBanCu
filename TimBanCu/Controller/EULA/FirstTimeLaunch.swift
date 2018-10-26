@@ -9,18 +9,16 @@
 import Foundation
 
 class FirstTimeLaunch{
-    static var sharedInstance = FirstTimeLaunch()
-    
-    private var launched = false
-    
-    func setTrue(){
-        FirstTimeLaunch.sharedInstance.launched = true
+ 
+
+    static func setTrue(){
+        UserDefaults.standard.set(true, forKey: "firstTimeLaunch")
     }
-    func setFalse(){
-        FirstTimeLaunch.sharedInstance.launched = false
+    static func setFalse(){
+        UserDefaults.standard.set(false, forKey: "firstTimeLaunch")
     }
     
-    func getBool() -> Bool{
-        return FirstTimeLaunch.sharedInstance.launched
+    static func getBool() -> Bool{
+        return UserDefaults.standard.bool(forKey: "firstTimeLaunch")
     }
 }

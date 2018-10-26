@@ -12,7 +12,6 @@ import UIKit
 class ClassYearAlerts{
     private weak var viewcontroller:ClassYearViewController!
     private var addNewClassCompletedAlert:InfoAlert!
-    private var classAlreadyExistAlert:InfoAlert!
     private var classOrMajor:ClassAndMajorProtocol!
     
     init(viewcontroller:ClassYearViewController, classOrMajor:ClassAndMajorProtocol){
@@ -22,7 +21,6 @@ class ClassYearAlerts{
     }
     
     func setupAlerts(){
-        setupClassAlreadyExistAlert()
         setupAddNewClassCompleteAlert()
     }
     
@@ -31,12 +29,6 @@ class ClassYearAlerts{
     }
     func showAddNewClassCompleteAlertWithHandler(showAlertCompleteHandler: (()->Void)?){
         addNewClassCompletedAlert.show(viewcontroller: viewcontroller, showAlertCompleteHandler: showAlertCompleteHandler)
-    }
-    
-    
-    
-    func showClassAlreadyExistAlert(){
-        classAlreadyExistAlert.show(viewcontroller: viewcontroller)
     }
     
     func showAlert(title:String,message:String){
@@ -48,29 +40,15 @@ class ClassYearAlerts{
         var title:String!
         
         if(classOrMajor is Class){
-            title = "Lớp của bạn đã được thêm!"
+            title = "Chọn lớn thành công!"
         }
         else{
-            title = "Khoa của bạn đã được thêm!"
+            title = "Chọn khoa thành công!"
         }
         
         let message = "Bước Tiếp Theo: Thêm Bạn Vào Danh Sách"
         
         addNewClassCompletedAlert = InfoAlert(title: title, message: message, alertType: .Success)
-    }
-    private func setupClassAlreadyExistAlert(){
-        var title:String!
-        var message:String!
-        
-        if(classOrMajor is Class){
-            title = "Lớp của bạn đã có trong danh sách!"
-            message = "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới"
-        }
-        else{
-            title = "Khoa của bạn đã có trong danh sách!"
-            message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
-        }
-        classAlreadyExistAlert = InfoAlert(title: title, message: message, alertType: .AlreadyExist)
     }
     
 }

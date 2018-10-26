@@ -62,10 +62,8 @@ final class SignInUIController{
     private func update(newState: UIState) {
         switch(state, newState) {
             
-        case (.Loading, .Success( _ )),(.Failure, .Success): goToNextScreen()
-        case (.Loading, .Failure(let errorStr)): createErrorAlert(errorStr: errorStr)
-        case (.Success( _ ), .Success( _ )):break
-            
+        case (.Loading, .Success( _ )),(.Failure, .Success),(.Success( _ ), .Success( _ )): goToNextScreen()
+        case (.Loading, .Failure(let errorStr)): createErrorAlert(errorStr: errorStr)            
         // after login silently failed, aka, when the user is not log in google account
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
@@ -78,7 +76,8 @@ final class SignInUIController{
     }
     
     private func goToNextScreen(){
-        if(FirstTimeLaunch.sharedInstance.getBool()){
+        if(FirstTimeLaunch.getBool()){
+            FirstTimeLaunch.setFalse()
             viewcontroller.performSegue(withIdentifier: "SignInToEULASegue", sender: viewcontroller)
         }
         else{

@@ -15,12 +15,8 @@ protocol ClassAndMajorWithYearProtocol {
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void)
     func getInstitution() -> Institution
     func getFirebasePath()->String
-    static func get(institution:Institution, completionHandler: @escaping (ClassAndMajorWithYearProtocol) -> Void)
+    func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) 
 }
 
-extension ClassAndMajorWithYearProtocol{
-    static func get(institution:Institution, completionHandler: @escaping (ClassAndMajorWithYearProtocol) -> Void){
-        
-    }
-}
+
 

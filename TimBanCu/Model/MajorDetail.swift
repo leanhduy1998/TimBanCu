@@ -55,7 +55,7 @@ class MajorDetail: Major, ClassAndMajorWithYearProtocol{
     }
     
     func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName)/\(year)").setValue(0) { (err, _) in
+        Database.database().reference().child("classes/\(institution.name!)/\(majorName)/\(year)").setValue(CurrentUser.getUid()) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }

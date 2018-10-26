@@ -56,12 +56,7 @@ class ClassYearUIController{
             }
             break
         case (.ChoosingData, .Failure(let errorStr)), (.Failure(_),.Failure(let errorStr)):
-            if(errorStr == "Permission denied") {
-                alerts.showClassAlreadyExistAlert()
-            }
-            else{
-                alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
-            }
+            alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             
             break
       

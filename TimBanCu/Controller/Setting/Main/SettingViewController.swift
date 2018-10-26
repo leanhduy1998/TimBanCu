@@ -38,6 +38,6 @@ class SettingViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
         
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "SettingToSignInSegue", sender: self)
     }
 }

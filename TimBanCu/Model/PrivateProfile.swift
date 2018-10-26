@@ -37,15 +37,18 @@ class PrivateProfile{
         for snap in snapshot.children{
             let key = (snap as! DataSnapshot).key
             if(key == "phoneNumber"){
-                phoneNumber = (snap as! DataSnapshot).value as! String
+                phoneNumber = ((snap as! DataSnapshot).value as? String)
+                if(phoneNumber != nil){
+                    student.phoneNumber = phoneNumber
+                }
             }
             else if(key == "email"){
-                email = (snap as! DataSnapshot).value as! String
+                email = ((snap as! DataSnapshot).value as? String)
+                if(email != nil){
+                    student.email = email
+                }
             }
         }
-
-        student.phoneNumber = phoneNumber
-        student.email = email
     }
 }
 

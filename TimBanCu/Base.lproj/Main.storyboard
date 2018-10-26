@@ -493,9 +493,11 @@
                         <outlet property="tableview" destination="pLJ-87-Kea" id="uTK-mH-0q6"/>
                         <segue destination="iyJ-av-h4K" kind="show" identifier="SettingsToUpdateInfoSegue" id="EVE-td-HSX"/>
                         <segue destination="TFj-Jl-crk" kind="show" identifier="SettingToNoUserInfoSegue" id="DyI-81-XU1"/>
+                        <segue destination="jfw-Ug-u1X" kind="unwind" identifier="SettingToSignInSegue" unwindAction="unwindToSignInViewControllerWithSegue:" id="UHe-s5-o28"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqR-jX-Afb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jfw-Ug-u1X" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="302" y="2498"/>
         </scene>

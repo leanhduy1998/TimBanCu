@@ -14,6 +14,7 @@ class ClassYearViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     var classProtocol:ClassAndMajorProtocol!
+    var selectedClassProtocol:ClassAndMajorWithYearProtocol!
     var selectedYear:String!
     
     private var uiController:ClassYearUIController!
@@ -33,34 +34,35 @@ class ClassYearViewController: UIViewController {
     }
     
     func handleSelectedYear(){
-        classProtocol.classYearExist(year: selectedYear) { [weak self] (exist) in
+        if let classs = classProtocol as? Class{
+            let classDetail = ClassDetail(classs: classs, year: selectedYear)
+            selectedClassProtocol = classDetail
+            
+        }
+        else if let major = classProtocol as? Major{
+            let majorDetail = MajorDetail(major: major, year: selectedYear)
+            selectedClassProtocol = majorDetail
+        }
+        
+        uiController.state = .Success()
+    
+        /*classProtocol.classYearExist(year: selectedYear) { [weak self] (exist) in
             if(!exist){
-                if let classs = self!.classProtocol as? Class{
-                    let classDetail = ClassDetail(classs: classs, year: self!.selectedYear)
-                    self!.classProtocol = classDetail
-                    classDetail.uploadToFirebase(year: self!.selectedYear,completionHandler: { [weak self] (uistate) in
-                        self!.uiController.state = uistate
-                    })
-                }
-                else if let major = self!.classProtocol as? Major{
-                    let majorDetail = MajorDetail(major: major, year: self!.selectedYear)
-                    self!.classProtocol = majorDetail
-                    majorDetail.uploadToFirebase(year: self!.selectedYear,completionHandler: { [weak self] (uistate) in
-                        self!.uiController.state = uistate
-                    })
-                }
+                self!.selectedClassProtocol.uploadToFirebase(year: self!.selectedYear, completionHandler: { [weak self] (uistate) in
+                    
+                })
             }
             else{                
                 DispatchQueue.main.async {
                     self!.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self!)
                 }
             }
-        }
+        }*/
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
-            destination.classProtocol = (classProtocol as! ClassAndMajorWithYearProtocol)
+            destination.classProtocol = selectedClassProtocol
         }
     }
 }

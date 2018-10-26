@@ -24,14 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = "137184194492-5iokn36749o7gmlodjnv6gskddjen7p1.apps.googleusercontent.com"
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        let launchBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let firstTimeLaunch = UserDefaults.standard.object(forKey: "firstTimeLaunch")
         
-        if(launchBefore){
-            FirstTimeLaunch.sharedInstance.setFalse()
-        }
-        else{
-            FirstTimeLaunch.sharedInstance.setTrue()
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        if(firstTimeLaunch == nil){
+            print()
+            FirstTimeLaunch.setTrue()
         }
         
         return true

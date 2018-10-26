@@ -71,7 +71,7 @@ class ClassNameUIController{
                 alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
             break
-        case (.Success(), .AddingNewData),(.AddingNewData, .AddingNewData),(.Success(), .Success()): break
+        case (.Success(), .AddingNewData),(.AddingNewData, .AddingNewData),(.Success(), .Success()), (.Failure(_),.AddingNewData): break
   
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }

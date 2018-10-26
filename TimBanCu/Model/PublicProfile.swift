@@ -53,13 +53,19 @@ class PublicProfile{
                 }
             }
             else if(key == "phoneNumber"){
-                phoneNumber = ((snap as! DataSnapshot).value as! String)
+                phoneNumber = ((snap as! DataSnapshot).value as? String)
+                if(phoneNumber != nil){
+                    student.phoneNumber = phoneNumber
+                }
             }
             else if(key == "fullName"){
                 fullName = ((snap as! DataSnapshot).value as! String)
             }
             else if(key == "email"){
-                email = ((snap as! DataSnapshot).value as! String)
+                email = ((snap as! DataSnapshot).value as? String)
+                if(email != nil){
+                    student.email = email
+                }
             }
             else if(key == "enrolledIn"){
                 let enrollments = (snap as! DataSnapshot).value as! [String:Any]
@@ -97,9 +103,9 @@ class PublicProfile{
         
         student.birthYear = birthYear
         student.images = images
-        student.phoneNumber = phoneNumber
+        
         student.fullName = fullName
-        student.email = email
+        
         student.enrolledIn = enrolledIn
     }
 }
