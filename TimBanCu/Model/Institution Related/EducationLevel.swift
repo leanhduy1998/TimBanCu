@@ -15,8 +15,6 @@ enum EducationLevel{
     case HighSchool
     case University
     
-    
-    
     func getString()->String{
         switch(self){
         case .Elementary:

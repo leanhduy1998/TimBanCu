@@ -11,7 +11,7 @@ import Foundation
 class MajorViewModel{
     var majorName:String!
     
-    init(major:MajorDetail){
+    init(major:MajorWithYear){
         self.majorName = major.majorName
     }
 }

@@ -14,7 +14,7 @@ class UserClassViewModel {
     var schoolName:String!
     var classYear:String!
     
-    init(classDetail:ClassDetail){
+    init(classDetail:ClassWithYear){
         self.className = classDetail.className
         self.schoolName = classDetail.institution.name
         self.classYear = classDetail.year

@@ -35,12 +35,12 @@ class ClassYearViewController: UIViewController {
     
     func handleSelectedYear(){
         if let classs = classProtocol as? Class{
-            let classDetail = ClassDetail(classs: classs, year: selectedYear)
+            let classDetail = ClassWithYear(classs: classs, year: selectedYear)
             selectedClassProtocol = classDetail
             
         }
         else if let major = classProtocol as? Major{
-            let majorDetail = MajorDetail(major: major, year: selectedYear)
+            let majorDetail = MajorWithYear(major: major, year: selectedYear)
             selectedClassProtocol = majorDetail
         }
         

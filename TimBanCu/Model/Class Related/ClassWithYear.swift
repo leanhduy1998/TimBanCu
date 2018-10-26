@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-class ClassDetail: Class, ClassAndMajorWithYearProtocol{    
+class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
 
     var year: String
     
@@ -18,7 +18,7 @@ class ClassDetail: Class, ClassAndMajorWithYearProtocol{
         super.init(classs: classs)
     }
     
-    init(classDetail:ClassDetail){
+    init(classDetail:ClassWithYear){
         self.year = classDetail.year
         super.init(institution: classDetail.institution, classNumber: classDetail.classNumber, className: classDetail.className, uid: classDetail.uid)
         
@@ -50,7 +50,7 @@ class ClassDetail: Class, ClassAndMajorWithYearProtocol{
     }
 
     func copy() -> ClassAndMajorWithYearProtocol {
-        return ClassDetail(classDetail: self)
+        return ClassWithYear(classDetail: self)
     }
     
     /*

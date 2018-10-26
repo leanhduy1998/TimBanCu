@@ -38,7 +38,6 @@
 		1C4B6C49214C02B600BDF724 /* UpdateImageYearAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C48214C02B600BDF724 /* UpdateImageYearAlerts.swift */; };
 		1C4B6C4B214C562E00BDF724 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */; };
 		1C4B6C4D214C94FD00BDF724 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C4C214C94FD00BDF724 /* ImagePicker.swift */; };
-		1C513A58217FB17400FFDC82 /* InstitutionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A57217FB17400FFDC82 /* InstitutionProtocol.swift */; };
 		1C513A5F2180B94600FFDC82 /* ClassNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A5E2180B94600FFDC82 /* ClassNumberViewModel.swift */; };
 		1C513A612180D0AC00FFDC82 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A602180D0AC00FFDC82 /* Class.swift */; };
 		1C513A632180DAEB00FFDC82 /* ClassAndMajorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A622180DAEB00FFDC82 /* ClassAndMajorProtocol.swift */; };
@@ -71,7 +70,7 @@
 		1C83E818211228C400D647D0 /* ClassYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E817211228C400D647D0 /* ClassYearViewController.swift */; };
 		1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */; };
 		1C83E81D2113879E00D647D0 /* MajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E81C2113879E00D647D0 /* MajorViewController.swift */; };
-		1C83E82121138F4400D647D0 /* MajorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E82021138F4400D647D0 /* MajorDetail.swift */; };
+		1C83E82121138F4400D647D0 /* MajorWithYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E82021138F4400D647D0 /* MajorWithYear.swift */; };
 		1C83E8232113CCED00D647D0 /* MajorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8222113CCED00D647D0 /* MajorViewModel.swift */; };
 		1C83E8252113D3FD00D647D0 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8242113D3FD00D647D0 /* MajorTableViewCell.swift */; };
 		1C85E3202103F61200124FDA /* UserImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C85E31F2103F61200124FDA /* UserImageViewController.swift */; };
@@ -147,7 +146,7 @@
 		1CDBA7B32124FBC4002004F9 /* UserClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDBA7B22124FBC4002004F9 /* UserClassTableViewCell.swift */; };
 		1CE24D0220FBE153008DE3FB /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0120FBE153008DE3FB /* CurrentUser.swift */; };
 		1CE24D0520FBE6F8008DE3FB /* InstitutionFull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0420FBE6F8008DE3FB /* InstitutionFull.swift */; };
-		1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassDetail.swift */; };
+		1CE24D0720FC0690008DE3FB /* ClassWithYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0620FC0690008DE3FB /* ClassWithYear.swift */; };
 		1CE24D0920FC0B08008DE3FB /* ClassNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0820FC0B08008DE3FB /* ClassNameTableViewCell.swift */; };
 		1CE24D0B20FC1070008DE3FB /* ClassNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE24D0A20FC1070008DE3FB /* ClassNameViewModel.swift */; };
 		1CF50FE4210A738F00346EF9 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50FE3210A738F00346EF9 /* StudentDetailViewController.swift */; };
@@ -220,7 +219,6 @@
 		1C4B6C48214C02B600BDF724 /* UpdateImageYearAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageYearAlerts.swift; sourceTree = "<group>"; };
 		1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		1C4B6C4C214C94FD00BDF724 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		1C513A57217FB17400FFDC82 /* InstitutionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionProtocol.swift; sourceTree = "<group>"; };
 		1C513A5E2180B94600FFDC82 /* ClassNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNumberViewModel.swift; sourceTree = "<group>"; };
 		1C513A602180D0AC00FFDC82 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		1C513A622180DAEB00FFDC82 /* ClassAndMajorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAndMajorProtocol.swift; sourceTree = "<group>"; };
@@ -253,7 +251,7 @@
 		1C83E817211228C400D647D0 /* ClassYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearViewController.swift; sourceTree = "<group>"; };
 		1C83E81A211359FA00D647D0 /* ClassYearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassYearTableViewCell.swift; sourceTree = "<group>"; };
 		1C83E81C2113879E00D647D0 /* MajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorViewController.swift; sourceTree = "<group>"; };
-		1C83E82021138F4400D647D0 /* MajorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorDetail.swift; sourceTree = "<group>"; };
+		1C83E82021138F4400D647D0 /* MajorWithYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorWithYear.swift; sourceTree = "<group>"; };
 		1C83E8222113CCED00D647D0 /* MajorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorViewModel.swift; sourceTree = "<group>"; };
 		1C83E8242113D3FD00D647D0 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
 		1C85E31F2103F61200124FDA /* UserImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageViewController.swift; sourceTree = "<group>"; };
@@ -336,7 +334,7 @@
 		1CDBA7B22124FBC4002004F9 /* UserClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClassTableViewCell.swift; sourceTree = "<group>"; };
 		1CE24D0120FBE153008DE3FB /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		1CE24D0420FBE6F8008DE3FB /* InstitutionFull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionFull.swift; sourceTree = "<group>"; };
-		1CE24D0620FC0690008DE3FB /* ClassDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetail.swift; sourceTree = "<group>"; };
+		1CE24D0620FC0690008DE3FB /* ClassWithYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassWithYear.swift; sourceTree = "<group>"; };
 		1CE24D0820FC0B08008DE3FB /* ClassNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameTableViewCell.swift; sourceTree = "<group>"; };
 		1CE24D0A20FC1070008DE3FB /* ClassNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameViewModel.swift; sourceTree = "<group>"; };
 		1CF50FE3210A738F00346EF9 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
@@ -499,6 +497,45 @@
 				1CD7300A2139891A00105ACE /* MajorController.swift */,
 			);
 			path = "University Major";
+			sourceTree = "<group>";
+		};
+		1C513A7621836CA000FFDC82 /* Institution Related */ = {
+			isa = PBXGroup;
+			children = (
+				1C513A6E2182641600FFDC82 /* Institution.swift */,
+				1CE24D0420FBE6F8008DE3FB /* InstitutionFull.swift */,
+				1CD72FE5213736CA00105ACE /* EducationLevel.swift */,
+			);
+			path = "Institution Related";
+			sourceTree = "<group>";
+		};
+		1C513A7721836CAD00FFDC82 /* Class Related */ = {
+			isa = PBXGroup;
+			children = (
+				1C513A602180D0AC00FFDC82 /* Class.swift */,
+				1CE24D0620FC0690008DE3FB /* ClassWithYear.swift */,
+			);
+			path = "Class Related";
+			sourceTree = "<group>";
+		};
+		1C513A7821836CBB00FFDC82 /* Major Related */ = {
+			isa = PBXGroup;
+			children = (
+				1C513A642180E28100FFDC82 /* Major.swift */,
+				1C83E82021138F4400D647D0 /* MajorWithYear.swift */,
+			);
+			path = "Major Related";
+			sourceTree = "<group>";
+		};
+		1C513A7921836CC800FFDC82 /* Student Related */ = {
+			isa = PBXGroup;
+			children = (
+				1C53F4F620FD422A00F4ACEB /* Student.swift */,
+				1C513A6C21824EE000FFDC82 /* PublicProfile.swift */,
+				1C513A702182680700FFDC82 /* PrivateProfile.swift */,
+				1C4B6C322148541B00BDF724 /* UserData.swift */,
+			);
+			path = "Student Related";
 			sourceTree = "<group>";
 		};
 		1C784B682110F85200647C40 /* StudentDetail */ = {
@@ -834,18 +871,10 @@
 		1CE24D0320FBE6E6008DE3FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1C513A6E2182641600FFDC82 /* Institution.swift */,
-				1CE24D0420FBE6F8008DE3FB /* InstitutionFull.swift */,
-				1C513A57217FB17400FFDC82 /* InstitutionProtocol.swift */,
-				1CD72FE5213736CA00105ACE /* EducationLevel.swift */,
-				1C513A602180D0AC00FFDC82 /* Class.swift */,
-				1CE24D0620FC0690008DE3FB /* ClassDetail.swift */,
-				1C513A642180E28100FFDC82 /* Major.swift */,
-				1C83E82021138F4400D647D0 /* MajorDetail.swift */,
-				1C53F4F620FD422A00F4ACEB /* Student.swift */,
-				1C513A6C21824EE000FFDC82 /* PublicProfile.swift */,
-				1C513A702182680700FFDC82 /* PrivateProfile.swift */,
-				1C4B6C322148541B00BDF724 /* UserData.swift */,
+				1C513A7621836CA000FFDC82 /* Institution Related */,
+				1C513A7721836CAD00FFDC82 /* Class Related */,
+				1C513A7821836CBB00FFDC82 /* Major Related */,
+				1C513A7921836CC800FFDC82 /* Student Related */,
 				1C4B6C372148A14700BDF724 /* Image.swift */,
 				1CA53648216E535F00FCF0FF /* Setting.swift */,
 				1CA53654216EDF9300FCF0FF /* ReportReason.swift */,
@@ -1452,7 +1481,6 @@
 				1C8EC8732128CBD80038ECB5 /* AskForInputAlert.swift in Sources */,
 				1CFB9C2720F1702B00945819 /* SchoolTableViewCell.swift in Sources */,
 				1C513A5F2180B94600FFDC82 /* ClassNumberViewModel.swift in Sources */,
-				1C513A58217FB17400FFDC82 /* InstitutionProtocol.swift in Sources */,
 				1CAAAC6120F3E79000443225 /* ClassTableViewCell.swift in Sources */,
 				1CE24D0B20FC1070008DE3FB /* ClassNameViewModel.swift in Sources */,
 				1C1B4822213643DE008EFB5F /* SelectPhotoButton.swift in Sources */,
@@ -1463,7 +1491,7 @@
 				1CE24D0920FC0B08008DE3FB /* ClassNameTableViewCell.swift in Sources */,
 				1C8EC87B2128F3700038ECB5 /* ShimmeringLabel.swift in Sources */,
 				1C83E8252113D3FD00D647D0 /* MajorTableViewCell.swift in Sources */,
-				1CE24D0720FC0690008DE3FB /* ClassDetail.swift in Sources */,
+				1CE24D0720FC0690008DE3FB /* ClassWithYear.swift in Sources */,
 				1CD73013213C37BF00105ACE /* ClassNameController.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
 				1C513A632180DAEB00FFDC82 /* ClassAndMajorProtocol.swift in Sources */,
@@ -1494,7 +1522,7 @@
 				1CD72FF621383E8200105ACE /* NoResultView.swift in Sources */,
 				1CE24D0520FBE6F8008DE3FB /* InstitutionFull.swift in Sources */,
 				1C53F4F920FD44D200F4ACEB /* SettingViewController.swift in Sources */,
-				1C83E82121138F4400D647D0 /* MajorDetail.swift in Sources */,
+				1C83E82121138F4400D647D0 /* MajorWithYear.swift in Sources */,
 				1CAB796F2155DFDC00F21264 /* Status.swift in Sources */,
 				1C4B6C47214C01D700BDF724 /* UpdateImageYearUIController.swift in Sources */,
 				1C4B6C3A2148AF2100BDF724 /* Slideshow.swift in Sources */,

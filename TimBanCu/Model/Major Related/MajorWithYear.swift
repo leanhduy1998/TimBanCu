@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-class MajorDetail: Major, ClassAndMajorWithYearProtocol{
+class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
 
         
     var year:String
@@ -19,7 +19,7 @@ class MajorDetail: Major, ClassAndMajorWithYearProtocol{
         super.init(major: major)
     }
     
-    init(majorDetail:MajorDetail){
+    init(majorDetail:MajorWithYear){
         self.year = majorDetail.year
         super.init(institution: majorDetail.institution, uid: majorDetail.uid, majorName: majorDetail.majorName)
     }
@@ -32,7 +32,7 @@ class MajorDetail: Major, ClassAndMajorWithYearProtocol{
     }
     
     func copy() -> ClassAndMajorWithYearProtocol {
-        return MajorDetail(majorDetail: self)
+        return MajorWithYear(majorDetail: self)
     }
     
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
