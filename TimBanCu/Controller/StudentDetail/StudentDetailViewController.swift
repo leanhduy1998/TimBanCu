@@ -32,7 +32,7 @@ class StudentDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userImages = CurrentUser.getStudent().images
+        userImages = CurrentUser.student.images
         
         uiController = StudentDetailUIController(viewcontroller: self)
         controller = StudentDetailController(viewcontroller: self)

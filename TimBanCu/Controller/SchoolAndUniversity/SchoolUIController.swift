@@ -13,7 +13,7 @@ import Lottie
 class SchoolUIController{
     
     fileprivate weak var viewcontroller:SchoolViewController!
-    private var schoolType:SchoolType!
+    private var schoolType:EducationLevel!
     fileprivate weak var tableview:UITableView!
     fileprivate var alerts:SchoolAlerts!
     fileprivate var noResultView:NoResultView!
@@ -22,10 +22,10 @@ class SchoolUIController{
     fileprivate var keyboardHelper:KeyboardHelper!
     fileprivate var loadingAnimation:LoadingAnimation!
 
-    var searchSchoolModels = [School]()
-    private var genericTableView: GenericTableView<School, SchoolTableViewCell>!
+    var searchSchoolModels = [InstitutionFull]()
+    private var genericTableView: GenericTableView<InstitutionFull, SchoolTableViewCell>!
     
-    init(viewcontroller:SchoolViewController, schoolType:SchoolType, tableview:UITableView, searchTF:UITextField, addNewSchoolClosure: @escaping (String)->()){
+    init(viewcontroller:SchoolViewController, schoolType:EducationLevel, tableview:UITableView, searchTF:UITextField, addNewSchoolClosure: @escaping (String)->()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
         self.tableview = tableview
@@ -78,7 +78,7 @@ class SchoolUIController{
         }
     }
     
-    func filterVisibleSchools(filter:String, allSchools:[School]){
+    func filterVisibleSchools(filter:String, allSchools:[InstitutionFull]){
         searchSchoolModels.removeAll()
         
         if(filter.isEmpty){
@@ -144,7 +144,7 @@ extension SchoolUIController{
         }
         
         genericTableView.didSelect = { school in
-            self.viewcontroller.selectedSchool = school
+            self.viewcontroller.selectedInstitution = school
             
             if(self.schoolType == .University){
                 self.viewcontroller.performSegue(withIdentifier: "SchoolToMajorSegue", sender: self.viewcontroller)

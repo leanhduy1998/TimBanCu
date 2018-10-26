@@ -13,7 +13,7 @@ class ClassYearViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     
-    var classProtocol:ClassProtocol!
+    var classProtocol:ClassAndMajorProtocol!
     var selectedYear:String!
     
     private var uiController:ClassYearUIController!
@@ -24,7 +24,7 @@ class ClassYearViewController: UIViewController {
         
         controller = ClassYearController()
         
-        uiController = ClassYearUIController(viewcontroller: self, tableview: tableview, years: controller.years, classProtocol: classProtocol) { [weak self] (selectedYear) in
+        uiController = ClassYearUIController(viewcontroller: self, tableview: tableview, years: controller.years, classOrMajor: classProtocol) { [weak self] (selectedYear) in
             
             //didSelectYear
             self!.selectedYear = selectedYear
@@ -33,20 +33,24 @@ class ClassYearViewController: UIViewController {
     }
     
     func handleSelectedYear(){
-        controller.checkIfClassYearExist(selectedYear: selectedYear, classProtocol: classProtocol) { [weak self] (exist, uidIfExist) in
-            
-            self!.classProtocol.year = self!.selectedYear
-            
+        classProtocol.classYearExist(year: selectedYear) { [weak self] (exist) in
             if(!exist){
-                self!.classProtocol.uid = CurrentUser.getUid()
-                
-                self!.controller.writeToDatabaseThenShowCompleteAlert(classProtocol: self!.classProtocol, completionHandler: { (uistate) in
-                    self!.uiController.state = uistate
-                })
+                if let classs = self!.classProtocol as? Class{
+                    let classDetail = ClassDetail(classs: classs, year: self!.selectedYear)
+                    self!.classProtocol = classDetail
+                    classDetail.uploadToFirebase(year: self!.selectedYear,completionHandler: { [weak self] (uistate) in
+                        self!.uiController.state = uistate
+                    })
+                }
+                else if let major = self!.classProtocol as? Major{
+                    let majorDetail = MajorDetail(major: major, year: self!.selectedYear)
+                    self!.classProtocol = majorDetail
+                    majorDetail.uploadToFirebase(year: self!.selectedYear,completionHandler: { [weak self] (uistate) in
+                        self!.uiController.state = uistate
+                    })
+                }
             }
-            else{
-                self!.classProtocol.uid = uidIfExist
-                
+            else{                
                 DispatchQueue.main.async {
                     self!.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self!)
                 }
@@ -56,7 +60,7 @@ class ClassYearViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassDetailViewController{
-            destination.classProtocol = classProtocol
+            destination.classProtocol = (classProtocol as! ClassAndMajorWithYearProtocol)
         }
     }
 }

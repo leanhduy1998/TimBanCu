@@ -11,10 +11,8 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class AddYourInfoController{
-    fileprivate var privateUserProfileRef:DatabaseReference!
-    fileprivate var publicUserProfileRef:DatabaseReference!
     
-    fileprivate let classProtocol:ClassProtocol
+    fileprivate let classProtocol:ClassAndMajorWithYearProtocol
     fileprivate var userData:UserData!
     
     fileprivate weak var viewcontroller:AddYourInfoViewController!
@@ -22,7 +20,6 @@ class AddYourInfoController{
     init(viewcontroller:AddYourInfoViewController){
         self.viewcontroller = viewcontroller
         self.classProtocol = viewcontroller.classProtocol
-        setupFirebaseReference()
     }
     
     // TODO: Write unit test to make sure all the strings are not empty
@@ -30,7 +27,6 @@ class AddYourInfoController{
         
         setUserData(images: images)
         
-        updateLocalCurrentStudent()
         updateCurrentStudentInfo()
         
         var finishUploadingImagesToStorage = false
@@ -97,42 +93,15 @@ class AddYourInfoController{
     }
     
     fileprivate func updateCurrentStudentInfo(){
-        CurrentUser.setStudent(student: userData.student)
-    }
-    
-    fileprivate func updateLocalCurrentStudent(){
-        CurrentUser.setStudent(student: userData.student)
+        CurrentUser.student = userData
     }
 }
 
 // Firebase Database
 extension AddYourInfoController{
-    fileprivate func uploadUserInfoToSelectedClass(){
-        Database.database().reference().child(classProtocol.getFirebasePathWithSchoolYear()).child(CurrentUser.getUid()).setValue(CurrentUser.getFullname())
-    }
     
     private func uploadDataToFirebaseDatabase(images:[Image], completionHandler: @escaping (_ status:Status)->()){
-        let publicDic = userData.getPublicDataForUpload()
-        let privateDic = userData.getPrivateDataForUpload()
-        
-        publicUserProfileRef.child(CurrentUser.getUid()).setValue(publicDic) { (publicErr, _) in
-            if(publicErr == nil){
-                self.privateUserProfileRef.child(CurrentUser.getUid()).setValue(privateDic, withCompletionBlock: { (privateErr, _) in
-                    
-                    
-                    if(privateErr == nil){
-                        completionHandler(.Success())
-                    }
-                    else{
-                        completionHandler(.Failed(privateErr.debugDescription))
-                    }
-                    
-                })
-            }
-            else{
-                completionHandler(.Failed(publicErr.debugDescription))
-            }
-        }
+        userData.uploadDataToFirebase(images: images, completionHandler: completionHandler)
     }
     
     
@@ -141,39 +110,12 @@ extension AddYourInfoController{
 //Firebase Storage
 extension AddYourInfoController{
     fileprivate func uploadUserImagesToFirebaseStorage(images:[Image], completionHandler: @escaping (_ status:Status) -> Void){
-        
-        let storage = Storage.storage()
-        
-        var imageUploaded = 0
-        
-        for image in images{
-            let name = image.imageName
-            let imageRef = storage.reference().child("users").child("\(CurrentUser.getUid())/\(name!)")
-            
-            let data = image.image?.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
-            
-            let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
-                guard let metadata = metadata else {
-                    // Uh-oh, an error occurred!
-                    completionHandler(.Failed(error.debugDescription))
-                    return
-                }
-                imageUploaded = imageUploaded + 1
-                
-                if(imageUploaded == images.count){
-                    completionHandler(.Success())
-                }
-            }
-        }
+        userData.uploadImagesToFirebaseStorage(images: images, completionHandler: completionHandler)
     }
 }
 
 // Setup
 extension AddYourInfoController{
-    private func setupFirebaseReference(){
-        privateUserProfileRef = Database.database().reference().child("privateUserProfile")
-        publicUserProfileRef = Database.database().reference().child("publicUserProfile")
-    }
     
     private func setUserData(images:[Image]){
         let fullname = viewcontroller.fullNameTF.text

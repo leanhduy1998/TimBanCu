@@ -19,8 +19,8 @@ final class SignInController{
     var uid:String!
     
     private func loadUserInfo(){
-        AllUserHelper.getAnyStudentFromDatabase(uid: uid) { (student) in
-            CurrentUser.setStudent(student: student)
+        Student.getFromDatabase(withUid: uid) { (student) in
+            CurrentUser.student = student
         }
     }
     

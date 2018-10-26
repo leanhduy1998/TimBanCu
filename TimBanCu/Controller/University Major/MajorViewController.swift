@@ -15,8 +15,8 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var tableview: UITableView!
     
-    var school:School!
-    var selectedMajor:MajorDetail!
+    var institution:InstitutionFull!
+    var selectedMajor:Major!
     
     private var uiController: MajorUIController!
     private var controller:MajorController!
@@ -24,7 +24,7 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controller = MajorController(viewcontroller: self, school: school)
+        controller = MajorController(viewcontroller: self, school: institution)
         
         uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF, addNewMajorHandler: { [weak self] newMajorIfNotInList in
             
@@ -48,21 +48,17 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        uiController.filterVisibleSchools(filter: textField.text!, allMajors: getAllDataFetched())
+        uiController.filterVisibleSchools(filter: textField.text!, allMajors: controller!.majors)
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        uiController.filterVisibleSchools(filter: "", allMajors: getAllDataFetched())
+        uiController.filterVisibleSchools(filter: "", allMajors: controller!.majors)
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
-    }
-    
-    func getAllDataFetched()->[MajorDetail]{
-        return controller.majors
     }
     
     override func viewWillDisappear(_ animated: Bool) {

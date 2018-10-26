@@ -13,7 +13,7 @@ import FirebaseDatabase
 final class SchoolAlerts{
     
     private weak var viewcontroller:UIViewController!
-    private var schoolType:SchoolType!
+    private var schoolType:EducationLevel!
     
     
     private var addNewSchoolAlert:AskForInputAlert!
@@ -23,7 +23,7 @@ final class SchoolAlerts{
     
     private var addNewSchoolCompleteHandler: (String) -> ()
     
-    init(viewcontroller:UIViewController, schoolType:SchoolType,addNewSchoolHandler: @escaping (String) -> ()){
+    init(viewcontroller:UIViewController, schoolType:EducationLevel,addNewSchoolHandler: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller
         self.schoolType = schoolType
         self.addNewSchoolCompleteHandler = addNewSchoolHandler

@@ -13,11 +13,11 @@ class ClassYearAlerts{
     private weak var viewcontroller:ClassYearViewController!
     private var addNewClassCompletedAlert:InfoAlert!
     private var classAlreadyExistAlert:InfoAlert!
-    private var classProtocol:ClassProtocol!
+    private var classOrMajor:ClassAndMajorProtocol!
     
-    init(viewcontroller:ClassYearViewController, classProtocol:ClassProtocol){
+    init(viewcontroller:ClassYearViewController, classOrMajor:ClassAndMajorProtocol){
         self.viewcontroller = viewcontroller
-        self.classProtocol = classProtocol
+        self.classOrMajor = classOrMajor
         setupAlerts()
     }
     
@@ -47,7 +47,7 @@ class ClassYearAlerts{
     private func setupAddNewClassCompleteAlert(){
         var title:String!
         
-        if(classProtocol is ClassDetail){
+        if(classOrMajor is Class){
             title = "Lớp của bạn đã được thêm!"
         }
         else{
@@ -62,7 +62,7 @@ class ClassYearAlerts{
         var title:String!
         var message:String!
         
-        if(classProtocol is ClassDetail){
+        if(classOrMajor is Class){
             title = "Lớp của bạn đã có trong danh sách!"
             message = "Vui Lòng Chọn Lớp Trong Danh Sách Chúng Tôi Hoặc Thêm Lớp Mới"
         }

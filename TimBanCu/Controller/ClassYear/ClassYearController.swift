@@ -16,36 +16,6 @@ final class ClassYearController{
         setupManualYears()
     }
     
-    func checkIfClassYearExist(selectedYear:String,classProtocol:ClassProtocol,completionHandler: @escaping (_ exist:Bool, _ uid:String) -> Void){
-        Database.database().reference().child("classes").child(classProtocol.getFirebasePathWithoutSchoolYear()).child(selectedYear).observeSingleEvent(of: .value) { (snapshot) in
-            
-            let classValue = (snapshot as! DataSnapshot).value as? [String:String]
-            
-            if(classValue == nil){
-                completionHandler(false, "")
-            }
-            else{
-                let uid = classValue!["uid"]
-                completionHandler(true, uid!)
-            }
-            
-        }
-    }
-    
-    func writeToDatabaseThenShowCompleteAlert(classProtocol:ClassProtocol,completionHandler: @escaping (_ state:UIState)->Void){
-        
-        classProtocol.writeToDatabase { (err, ref) in
-            DispatchQueue.main.async {
-                if(err == nil){
-                    completionHandler(.Success())
-                }
-                else{
-                    completionHandler(.Failure((err?.localizedDescription)!))
-                }
-            }
-        }
-    }
-    
     private func setupManualYears(){
         let date = Date()
         let calendar = Calendar.current

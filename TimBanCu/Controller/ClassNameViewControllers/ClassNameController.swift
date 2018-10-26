@@ -10,49 +10,34 @@ import Foundation
 import FirebaseDatabase
 
 class ClassNameController{
-    var classDetails = [ClassDetail]()
-    private var school:School!
+    var classes = [Class]()
+    private var institution:InstitutionFull!
     private var classNumber: String!
-    private weak var viewcontroller:ClassNameViewController!
     
-    init(viewcontroller:ClassNameViewController,school:School,classNumber: String){
-        self.school = school
-        self.classNumber = classNumber
-        self.viewcontroller = viewcontroller
-    }
-    
-    func classExist(className:String) -> Bool{
-        let className = className.uppercased()
-        for classDetail in classDetails{
-            if(className == classDetail.className){
-                return true
-            }
-        }
-        return false
+    init(viewcontroller:ClassNameViewController){
+        self.institution = viewcontroller.institution
+        self.classNumber = viewcontroller.classNumber
     }
     
     func fetchData(completionHandler: @escaping (UIState) -> ()){
-        classDetails.removeAll()
-        
-        Database.database().reference().child("classes").child(school.name).child(classNumber).observeSingleEvent(of: .value) { [weak self] (snapshot) in
-            
-            
-            for snap in snapshot.children{
-                let className = (snap as! DataSnapshot).key
-                
-                let classDetail = ClassDetail(classNumber: self!.classNumber, uid: "?", schoolName: self!.school.name, className: className, classYear: "?")
-                
-                self!.classDetails.append(classDetail)
+        Class.fetchAllClass(institution: institution, classNumber: classNumber) { (uiState, classes) in
+            switch(uiState){
+            case .Success():
+                self.classes = classes
+                completionHandler(uiState)
+                break
+            case .Failure(_):
+                completionHandler(uiState)
+            default:
+                fatalError()
             }
-            
-            completionHandler(.Success())
         }
     }
     
     func addNewClass(className:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let classDetail = ClassDetail(classNumber: self.classNumber, uid: CurrentUser.getUid(), schoolName: self.school.name, className: className.uppercased())
-        classDetails.append(classDetail)
-        viewcontroller.selectedClassDetail = classDetail
-        completionHandler(.Success())
+        let classN = Class(institution: institution
+            , classNumber: classNumber, className: className, uid: CurrentUser.getUid())
+        classes.append(classN)
+        classN.uploadToFirebase(completionHandler: completionHandler)
     }
 }

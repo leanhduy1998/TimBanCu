@@ -16,8 +16,8 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchTF: UITextField!
     
-    var schoolType:SchoolType!
-    var selectedSchool:School!
+    var educationLevel:EducationLevel!
+    var selectedInstitution:InstitutionFull!
     
     private var uiController:SchoolUIController!
     private var controller:SchoolController!
@@ -25,12 +25,12 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controller = SchoolController(schoolType: schoolType)
+        controller = SchoolController(educationLevel: educationLevel)
         
-        uiController = SchoolUIController(viewcontroller: self, schoolType: schoolType, tableview: tableview, searchTF: searchTF, addNewSchoolClosure: { [weak self] newSchoolIfNotInList in
+        uiController = SchoolUIController(viewcontroller: self, schoolType: educationLevel, tableview: tableview, searchTF: searchTF, addNewSchoolClosure: { [weak self] newSchoolIfNotInList in
             
-            self?.controller.addNewSchool(schoolName: newSchoolIfNotInList, completionHandler: { [weak self] (uiState) in
-                self?.uiController.searchSchoolModels = (self?.controller.schoolModels)!
+            self?.controller.addNewInstitution(name: newSchoolIfNotInList, completionHandler: { [weak self] (uiState) in
+                self?.uiController.searchSchoolModels = (self?.controller.institutions)!
                 self?.uiController.state = uiState
             })
             
@@ -42,11 +42,11 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
     
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        uiController.filterVisibleSchools(filter: textField.text!, allSchools: controller.schoolModels)
+        uiController.filterVisibleSchools(filter: textField.text!, allSchools: controller.institutions)
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        uiController.filterVisibleSchools(filter: "", allSchools: controller.schoolModels)
+        uiController.filterVisibleSchools(filter: "", allSchools: controller.institutions)
         return true
     }
     
@@ -67,33 +67,19 @@ class SchoolViewController: UIViewController,UITextFieldDelegate {
         uiController.state = .Loading
 
         controller.fetchData { [weak self] (uiState) in
-            self?.uiController.searchSchoolModels = (self?.controller.schoolModels)!
+            self?.uiController.searchSchoolModels = (self?.controller.institutions)!
             self?.uiController.state = uiState
         }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? ClassViewController{
-            
-            switch(schoolType!){
-            case .Elementary:
-                destination.classes = ["Lớp 1", "Lớp 2", "Lớp 3", "Lớp 4", "Lớp 5"]
-                break
-            case .MiddleSchool:
-                destination.classes = ["Lớp 6", "Lớp 7", "Lớp 8", "Lớp 9"]
-                break
-            case .HighSchool:
-                destination.classes = ["Lớp 10", "Lớp 11", "Lớp 12"]
-                break
-            case .University:
-                break
-            }
-            
-            destination.school = selectedSchool
+        if let destination = segue.destination as? ClassNumberViewController{
+            destination.educationLevel = educationLevel
+            destination.school = selectedInstitution
         }
         if let destination = segue.destination as? MajorViewController{
-            destination.school = selectedSchool
+            destination.institution = selectedInstitution
         }
     }
 }

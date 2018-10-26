@@ -9,27 +9,51 @@
 import Foundation
 import FirebaseDatabase
 
-class ClassDetail: ClassProtocol{
+class ClassDetail: Class, ClassAndMajorWithYearProtocol{    
+
+    var year: String
     
-    
-    
-    
-    //class Detail: 10A11
-    // class name: Lớp 10
-    
-    var className:String!
-    var uid:String!
-    var schoolName:String!
-    var classNumber:String!
-    var year: String! = "Năm ?"
-    
-    init(classDic:[String:String]){
-        className = classDic["className"]
-        uid = classDic["uid"]
-        schoolName = classDic["schoolName"]
-        classNumber = classDic["classNumber"]
-        year = classDic["classYear"]!
+    init(classs:Class,year:String){
+        self.year = year
+        super.init(classs: classs)
     }
+    
+    init(classDetail:ClassDetail){
+        self.year = classDetail.year
+        super.init(institution: classDetail.institution, classNumber: classDetail.classNumber, className: classDetail.className, uid: classDetail.uid)
+        
+    }
+    
+    func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
+        Database.database().reference().child("students/\(institution.name!)/\(classNumber)/\(className)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
+            if(err == nil){
+                completionHandler(.Success())
+            }
+            else{
+                completionHandler(.Failure((err?.localizedDescription)!))
+            }
+        }
+    }
+    
+    func getInstitution() -> Institution {
+        return super.institution
+    }
+    
+    func getFirebasePath() -> String {
+        return "\(institution.name!)/\(classNumber)/\(className)/\(year)"
+    }
+    
+    func objectAsDictionary() -> [String : [String:String]] {
+        var dic = [String:[String:String]]()
+        dic[institution.name!] = ["className":className,"uid":uid,"classNumber":classNumber,"year":year]
+        return dic
+    }
+
+    func copy() -> ClassAndMajorWithYearProtocol {
+        return ClassDetail(classDetail: self)
+    }
+    
+    /*
     
     init(classNumber:String,uid:String, schoolName:String, className:String,classYear:String){
         self.classNumber = classNumber
@@ -55,24 +79,21 @@ class ClassDetail: ClassProtocol{
         dic["classYear"] = year
         
         return dic
-    }
+    }*/
         
-    func getFirebasePathWithoutSchoolYear()->String{
-        return "\(schoolName!)/\(classNumber!)/\(className!)"
+    
+    func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) {
+        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/\(year)").setValue(0) { (err, _) in
+            if(err == nil){
+                completionHandler(.Success())
+            }
+            else{
+                completionHandler(.Failure(err.debugDescription))
+            }
+        }
     }
     
-    func getFirebasePathWithSchoolYear()->String{
-        return "\(schoolName!)/\(classNumber!)/\(className!)/\(year!)"
-    }
-    
-    
-    
-    func getUidAsDictionary() -> [String : Any] {
-        return ["uid":uid]
-    }
-    
-    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
-        
-        Database.database().reference().child("classes/\(schoolName!)/\(classNumber!)/\(className!)/\(year!)").setValue(getUidAsDictionary(), withCompletionBlock: completionHandler)
+    override func uploadToFirebase(completionHandler: @escaping (UIState) -> Void) {
+        fatalError("Not Supported")
     }
 }

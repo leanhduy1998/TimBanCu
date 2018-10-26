@@ -18,6 +18,8 @@ class UpdateUserInfoUIController{
     private var emailTF: UITextField!
     private var yearLabel: UILabel!
     
+    private let viewModel = UpdateUserInfoViewModel(student: CurrentUser.student)
+    
     init(viewcontroller:UpdateUserInfoViewController){
         self.viewcontroller = viewcontroller
         self.fullNameTF = viewcontroller.fullNameTF
@@ -26,13 +28,11 @@ class UpdateUserInfoUIController{
     }
     
     private func setup(){
-        fullNameTF.text = CurrentUser.getFullname()
-        birthYearTF.text = CurrentUser.getStudent().birthYear
-        phoneNumberTF.text = CurrentUser.getStudent().phoneNumber
-        emailTF.text = CurrentUser.getStudent().email
-        yearLabel.text = CurrentUser.getStudent().birthYear
-        
-        
+        fullNameTF.text = viewModel.fullname
+        birthYearTF.text = viewModel.birthYear
+        phoneNumberTF.text = viewModel.phoneNumber
+        emailTF.text = viewModel.email
+        yearLabel.text = viewModel.birthYear
     }
     
     

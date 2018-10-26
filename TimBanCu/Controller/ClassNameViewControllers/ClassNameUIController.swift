@@ -17,10 +17,10 @@ class ClassNameUIController{
     
     private var tableview:UITableView!
     private var searchTF:UITextField!
-    private var genericTableView : GenericTableView<ClassDetail, ClassNameTableViewCell>!
+    private var genericTableView : GenericTableView<Class, ClassNameTableViewCell>!
     private let customSelectionColorView = CustomSelectionColorView()
     
-    var searchClassDetails = [ClassDetail]()
+    var searchClasses = [Class]()
     
     fileprivate var searchTFUnderline:UnderlineView!
     fileprivate var searchUnderlineHeightAnchor: NSLayoutConstraint?
@@ -50,7 +50,7 @@ class ClassNameUIController{
     private func update(newState: UIState) {
         switch(state, newState) {
             
-        case (.Loading, .Loading): showLoading()
+        case (.Loading, .Loading),(.Success(), .Loading): showLoading()
         case (.Loading, .Success()):
             reloadTableViewAndUpdateUI()
             stopLoadingAnimation()
@@ -61,7 +61,7 @@ class ClassNameUIController{
             break
         case (.AddingNewData, .Success()):
             alerts.showAddNewClassNameComplete()
-            filterVisibleClassName(filter: searchTF.text!, allClassDetails: searchClassDetails)
+            filterVisibleClassName(filter: searchTF.text!, allClassDetails: searchClasses)
             break
         case (.AddingNewData, .Failure(let errorStr)):
             if(errorStr == "Permission denied") {
@@ -71,26 +71,23 @@ class ClassNameUIController{
                 alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
             break
-        case (.Success(), .Loading): showLoading()
-        case (.Success(), .AddingNewData): break
-        case (.AddingNewData, .AddingNewData): break
-        case (.Success(), .Success()): break
-            
+        case (.Success(), .AddingNewData),(.AddingNewData, .AddingNewData),(.Success(), .Success()): break
+  
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
     }
     
-    func filterVisibleClassName(filter:String, allClassDetails:[ClassDetail]){
-        searchClassDetails.removeAll()
+    func filterVisibleClassName(filter:String, allClassDetails:[Class]){
+        searchClasses.removeAll()
         
         if(filter.isEmpty){
-            searchClassDetails = allClassDetails
+            searchClasses = allClassDetails
         }
         else{
             for classDetail in allClassDetails{
                 
-                if classDetail.className.lowercased().range(of:filter.lowercased()) != nil {
-                    searchClassDetails.append(classDetail)
+                if classDetail.getName().lowercased().range(of:filter.lowercased()) != nil {
+                    searchClasses.append(classDetail)
                 }
             }
         }
@@ -121,11 +118,11 @@ extension ClassNameUIController{
 // TextField
 extension ClassNameUIController{
     
-    func searchTFDidBeginEditing(allClassDetails:[ClassDetail]){
+    func searchTFDidBeginEditing(allClassDetails:[Class]){
         filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
         searchTFUnderline.textFieldDidBeginEditing()
     }
-    func searchTFDidEndEditing(allClassDetails:[ClassDetail]){
+    func searchTFDidEndEditing(allClassDetails:[Class]){
         filterVisibleClassName(filter: searchTF.text!, allClassDetails: allClassDetails)
         searchTFUnderline.textFieldDidEndEditing(searchTF)
     }
@@ -134,23 +131,23 @@ extension ClassNameUIController{
 // TableView
 extension ClassNameUIController{
     fileprivate func setupGenericTableView(){
-        genericTableView = GenericTableView(tableview: tableview, items: searchClassDetails, configure: { (cell, classDetail) in
+        genericTableView = GenericTableView(tableview: tableview, items: searchClasses, configure: { (cell, classDetail) in
             
-            cell.classDetailViewModel = ClassNameViewModel(classDetail: classDetail)
+            cell.classDetailViewModel = ClassNameViewModel(classs: classDetail)
             cell.selectedBackgroundView = self.customSelectionColorView
         })
         
         genericTableView.didSelect = { classDetail in
-            self.viewcontroller.selectedClassDetail = classDetail
+            self.viewcontroller.selectedClass = classDetail
             self.viewcontroller.performSegue(withIdentifier: "ClassNameToClassYear", sender: self.viewcontroller)
         }
     }
     
     fileprivate func reloadTableViewAndUpdateUI(){
-        genericTableView.items = searchClassDetails
+        genericTableView.items = searchClasses
         tableview.reloadData()
         
-        if(searchClassDetails.count == 0){
+        if(searchClasses.count == 0){
             noResultView.isHidden = false
             tableview.isHidden = true
         }

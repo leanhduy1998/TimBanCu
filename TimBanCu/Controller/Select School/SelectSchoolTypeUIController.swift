@@ -24,7 +24,7 @@ final class SelectSchoolTypeUIController{
         viewcontroller.performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: viewcontroller)
     }
     
-    func setHeroId(selectedSchoolType:SchoolType){
+    func setHeroId(selectedSchoolType:EducationLevel){
         
     }
     

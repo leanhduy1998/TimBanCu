@@ -16,7 +16,7 @@ class SelectSchoolTypeViewController: UIViewController {
     
     @IBOutlet weak var tieuHocButton: UIButton!
     
-    var selectedSchoolType:SchoolType!
+    var selectedSchoolType:EducationLevel!
     
     private var uiController: SelectSchoolTypeUIController!
 
@@ -47,10 +47,8 @@ class SelectSchoolTypeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SchoolViewController{
-            destination.schoolType = selectedSchoolType
+            destination.educationLevel = selectedSchoolType
         }
     }
-
-
 }
 

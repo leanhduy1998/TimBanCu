@@ -435,7 +435,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" rowHeight="80" id="mxB-4H-Yjw" customClass="SettingTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCell" rowHeight="80" id="mxB-4H-Yjw" customClass="SettingTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mxB-4H-Yjw" id="W5k-hK-gwC">
@@ -511,7 +511,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserClassTableViewCell" rowHeight="100" id="Fdf-zd-GEJ" customClass="UserClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserClassTableViewCell" rowHeight="100" id="Fdf-zd-GEJ" customClass="UserClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fdf-zd-GEJ" id="uq8-cW-E1S">
@@ -555,7 +555,7 @@
                                             <outlet property="schoolName" destination="h7T-d0-JqL" id="iMX-3U-21Q"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserUniversityTableViewCell" rowHeight="100" id="TDg-TL-fWw" customClass="UserUniversityTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserUniversityTableViewCell" rowHeight="100" id="TDg-TL-fWw" customClass="UserUniversityTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TDg-TL-fWw" id="7XN-5C-bX6">
@@ -821,7 +821,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SchoolTableViewCell" rowHeight="140" id="ro3-I2-MuB" customClass="SchoolTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SchoolTableViewCell" rowHeight="140" id="ro3-I2-MuB" customClass="SchoolTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ro3-I2-MuB" id="hgx-wT-4ZQ">
@@ -969,7 +969,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" rowHeight="100" id="ohx-ZB-RWl" customClass="MajorTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" rowHeight="100" id="ohx-ZB-RWl" customClass="MajorTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ohx-ZB-RWl" id="SIg-xi-pjJ">
@@ -1056,7 +1056,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CJL-9i-MXJ" id="7Be-th-7fq">
@@ -1110,7 +1110,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
         <!--Chọn Lớp-->
         <scene sceneID="qlC-wb-wBY">
             <objects>
-                <viewController id="fca-ua-7Ym" customClass="ClassViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fca-ua-7Ym" customClass="ClassNumberViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oqz-bN-pgs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1119,7 +1119,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassTableViewCell" rowHeight="110" id="5XS-Bi-qWQ" customClass="ClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ClassTableViewCell" rowHeight="110" id="5XS-Bi-qWQ" customClass="ClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5XS-Bi-qWQ" id="ERb-wZ-tB6">
@@ -1203,7 +1203,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <rect key="frame" x="0.0" y="114" width="375" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ClassNameTableViewCell" rowHeight="80" id="POe-53-gtW" customClass="ClassNameTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="ClassNameTableViewCell" rowHeight="80" id="POe-53-gtW" customClass="ClassNameTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="POe-53-gtW" id="y1K-j0-5cL">
@@ -1312,7 +1312,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="80" id="2NF-ef-gED" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="80" id="2NF-ef-gED" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2NF-ef-gED" id="c0E-8U-Wa2">
@@ -1453,7 +1453,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="80" id="wix-Qs-s7q" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassDetailTableViewCell" rowHeight="80" id="wix-Qs-s7q" customClass="ClassDetailTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wix-Qs-s7q" id="FuB-i7-E0u">
@@ -1597,7 +1597,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportUserTableViewCell" rowHeight="80" id="Qhy-UD-c5Z" customClass="ReportUserTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportUserTableViewCell" rowHeight="80" id="Qhy-UD-c5Z" customClass="ReportUserTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qhy-UD-c5Z" id="y35-jW-xoL">
@@ -1659,7 +1659,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportReasonTableViewCell" rowHeight="72" id="oa9-Ph-8Kb" customClass="ReportReasonTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportReasonTableViewCell" rowHeight="72" id="oa9-Ph-8Kb" customClass="ReportReasonTableViewCell" customModule="TimBanCu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oa9-Ph-8Kb" id="JSw-za-qJi">

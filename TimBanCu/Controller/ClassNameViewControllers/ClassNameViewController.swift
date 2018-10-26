@@ -16,11 +16,10 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var searchTF: UITextField!
     
     // From previous class
-    var school:School!
+    var institution:InstitutionFull!
     var classNumber: String!
     
-    var selectedClassDetail:ClassDetail!
-    var underlineState: UnderlineState!
+    var selectedClass:Class!
     
     fileprivate var uiController:ClassNameUIController!
     fileprivate var controller:ClassNameController!
@@ -32,19 +31,19 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
         
         uiController = ClassNameUIController(viewcontroller: self, searchTF: searchTF, tableview: tableview, addNewClassNameHandler: { [weak self] (addedClassName) in
             
-            if(self!.controller.classExist(className: addedClassName)){
+            if(Class.nameExist(name: addedClassName, classes: self!.controller.classes)){
                 self!.uiController.showClassAlreadyExistAlert()
             }
             else{
                 self!.controller.addNewClass(className: addedClassName, completionHandler: { [weak self] (uistate) in
-                    self?.uiController.searchClassDetails = self!.controller.classDetails
+                    self?.uiController.searchClasses = self!.controller.classes
                     self?.uiController.state = uistate
                     self?.state = .AddingClass
                 })
             }
         })
         
-        controller = ClassNameController(viewcontroller: self, school: school, classNumber: classNumber)
+        controller = ClassNameController(viewcontroller: self)
         
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -66,13 +65,10 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         controller.fetchData { (uistate) in
-            self.uiController.searchClassDetails = self.controller.classDetails
+            self.uiController.searchClasses = self.controller.classes
             self.uiController.state = uistate
         }
     }
@@ -80,7 +76,7 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassYearViewController{
-            destination.classProtocol = selectedClassDetail
+            destination.classProtocol = selectedClass
         }
     }
 }
@@ -88,15 +84,15 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
 //MARK: UITextFieldDelegate
 extension ClassNameViewController:UITextFieldDelegate{
     @objc func textFieldDidChange(_ textField: UITextField) {
-        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classDetails)
+        uiController.filterVisibleClassName(filter: textField.text!, allClassDetails: controller.classes)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        uiController.searchTFDidBeginEditing(allClassDetails: controller.classDetails)
+        uiController.searchTFDidBeginEditing(allClassDetails: controller!.classes)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        uiController.searchTFDidEndEditing(allClassDetails: controller.classDetails)
+        uiController.searchTFDidEndEditing(allClassDetails: controller.classes)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -105,7 +101,7 @@ extension ClassNameViewController:UITextFieldDelegate{
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        uiController.filterVisibleClassName(filter: "", allClassDetails: controller.classDetails)
+        uiController.filterVisibleClassName(filter: "", allClassDetails: controller.classes)
         return true
     }
 }

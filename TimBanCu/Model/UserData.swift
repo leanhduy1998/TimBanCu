@@ -7,22 +7,22 @@
 //
 
 import Foundation
+import FirebaseDatabase
+import FirebaseStorage
 
 enum PrivacyType{
     case Public
     case Private
 }
 
-class UserData{
+class UserData:Student{
     let phonePrivacy:PrivacyType
     let emailPrivacy:PrivacyType
-    let student:Student
-    let images:[Image]
+    
+    private let privateUserProfileRef = Database.database().reference().child("privateUserProfile")
+    private let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
     
     init(student:Student,phonePrivacyType:String,emailPrivacyType:String, images:[Image]){
-        self.student = student
-        self.images = images
-        
         if(phonePrivacyType == "Công Khai"){
             self.phonePrivacy = .Public
         }
@@ -37,32 +37,85 @@ class UserData{
             self.emailPrivacy = .Private
         }
         
+        super.init(student: student)
+        self.images.append(contentsOf: images)
     }
+   
     
-    func getPublicDataForUpload() -> [String:Any]{
+    private func getPublicDataForUpload() -> [String:Any]{
         var publicDic = [String:Any]()
         if phonePrivacy == PrivacyType.Public{
-            publicDic["phoneNumber"] = student.phoneNumber
+            publicDic["phoneNumber"] = phoneNumber
         }
         if emailPrivacy == PrivacyType.Public{
-            publicDic["email"] = student.email
+            publicDic["email"] = email
         }
-        publicDic["birthYear"] = student.birthYear
-        publicDic["fullName"] = student.fullName
+        publicDic["birthYear"] = birthYear
+        publicDic["fullName"] = fullName
         publicDic["images"] = getImageNameAndYearDictionary()
+        
         
         return publicDic
     }
     
-    func getPrivateDataForUpload() -> [String:Any]{
+    private func getPrivateDataForUpload() -> [String:Any]{
         var privateDic = [String:Any]()
         if phonePrivacy == PrivacyType.Private{
-            privateDic["phoneNumber"] = student.phoneNumber
+            privateDic["phoneNumber"] = phoneNumber
         }
         if emailPrivacy == PrivacyType.Private{
-            privateDic["email"] = student.email
+            privateDic["email"] = email
         }
         return privateDic
+    }
+    
+    func uploadDataToFirebase(images:[Image], completionHandler: @escaping (_ status:Status)->()){
+        let publicDic = getPublicDataForUpload()
+        let privateDic = getPrivateDataForUpload()
+        
+        publicUserProfileRef.child(uid).setValue(publicDic) { (publicErr, _) in
+            if(publicErr == nil){
+                self.privateUserProfileRef.child(CurrentUser.getUid()).setValue(privateDic, withCompletionBlock: { (privateErr, _) in
+                    
+                    
+                    if(privateErr == nil){
+                        completionHandler(.Success())
+                    }
+                    else{
+                        completionHandler(.Failed(privateErr.debugDescription))
+                    }
+                    
+                })
+            }
+            else{
+                completionHandler(.Failed(publicErr.debugDescription))
+            }
+        }
+    }
+    
+    func uploadImagesToFirebaseStorage(images:[Image], completionHandler: @escaping (_ status:Status) -> Void){
+        
+        var imageUploaded = 0
+        
+        for image in images{
+            let name = image.imageName
+            let imageRef = storage.child("users").child("\(CurrentUser.getUid())/\(name!)")
+            
+            let data = image.image?.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
+            
+            let uploadTask = imageRef.putData(data!, metadata: nil) { (metadata, error) in
+                guard let metadata = metadata else {
+                    // Uh-oh, an error occurred!
+                    completionHandler(.Failed(error.debugDescription))
+                    return
+                }
+                imageUploaded = imageUploaded + 1
+                
+                if(imageUploaded == images.count){
+                    completionHandler(.Success())
+                }
+            }
+        }
     }
     
     private func getImageNameAndYearDictionary() -> [String:String]{

@@ -10,30 +10,36 @@ import Foundation
 import FirebaseDatabase
 
 final class MajorController{
-    var majors = [MajorDetail]()
-    var school:School!
+    var majors = [Major]()
+    var school:InstitutionFull!
     
-    private var queryTool:SchoolQueryTool!
     private weak var viewcontroller:MajorViewController!
     
-    init(viewcontroller:MajorViewController, school:School){
+    init(viewcontroller:MajorViewController, school:InstitutionFull){
         self.school = school
         self.viewcontroller = viewcontroller
     }
     
   
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
-        Database.database().reference().child("classes").child(school.name).observeSingleEvent(of: .value, with: { (snapshot) in
-    
-            completionHandler(.Success())
+        Major.fetchAllMajor(institution: school) { (uiState, majors) in
+            switch(uiState){
+            case .Success():
+                self.majors = majors
+                completionHandler(uiState)
+                break
+            case .Failure(_):
+                completionHandler(uiState)
+                break
+            default:
+                break
+            }
             
-        }) { (err) in
-            completionHandler(.Failure(err.localizedDescription))
         }
     }
     
     func addNewMajor(inputedMajorName:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let major = MajorDetail(uid: CurrentUser.getUid(), schoolName: self.school.name, majorName: inputedMajorName)
+        let major = Major(institution: school, uid: CurrentUser.getUid(), majorName: inputedMajorName)
         majors.append(major)
         
         viewcontroller.selectedMajor = major

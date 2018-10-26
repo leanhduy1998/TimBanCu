@@ -22,7 +22,7 @@ class ClassDetailViewController: UIViewController {
     
 
     // segue from previous class
-    var classProtocol:ClassProtocol!
+    var classProtocol:ClassAndMajorWithYearProtocol!
     
     var selectedStudent:Student!
     

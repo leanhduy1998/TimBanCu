@@ -15,7 +15,7 @@ import FirebaseStorage
 class ChatViewController: JSQMessagesViewController {
 
     // from previous class
-    var classDetail:ClassProtocol!
+    var classDetail:ClassAndMajorWithYearProtocol!
     var students:[Student]!
     
     // chat

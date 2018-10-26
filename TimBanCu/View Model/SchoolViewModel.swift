@@ -13,7 +13,7 @@ class SchoolViewModel{
     var name:String!
     var address:String!
     
-    init(school:School){
+    init(school:InstitutionFull){
         self.name = school.name
         self.address = school.address
     }

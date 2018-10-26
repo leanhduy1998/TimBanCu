@@ -12,7 +12,7 @@ class MajorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var majorLabel: UILabel!
     
-    var major:MajorDetail! = nil{
+    var major:Major! = nil{
         didSet{
             majorLabel.text = major.majorName
         }

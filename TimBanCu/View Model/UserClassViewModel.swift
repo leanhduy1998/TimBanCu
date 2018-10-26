@@ -16,7 +16,7 @@ class UserClassViewModel {
     
     init(classDetail:ClassDetail){
         self.className = classDetail.className
-        self.schoolName = classDetail.schoolName
+        self.schoolName = classDetail.institution.name
         self.classYear = classDetail.year
     }
 }

@@ -13,7 +13,7 @@ class UserClassesViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     
-    var selectedClassProtocol:ClassProtocol!
+    var selectedClassProtocol:ClassAndMajorWithYearProtocol!
     var uiController: UserClassesUIController!
     
 

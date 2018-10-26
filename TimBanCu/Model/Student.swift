@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FirebaseDatabase
+import FirebaseStorage
 
 class Student{
     var fullName:String!
@@ -16,7 +18,9 @@ class Student{
     var images: [Image]!
     var uid:String!
     
-    var enrolledIn:[ClassProtocol]!
+    var storage = Storage.storage().reference()
+    
+    var enrolledIn:[ClassAndMajorWithYearProtocol]!
     init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String){
         self.fullName = fullname
         self.birthYear = birthYear
@@ -26,7 +30,7 @@ class Student{
         self.enrolledIn = []
         self.uid = uid
     }
-  init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String,enrolledIn:[ClassDetail]){
+  init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String,enrolledIn:[ClassAndMajorWithYearProtocol]){
         self.fullName = fullname
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber
@@ -46,6 +50,86 @@ class Student{
         self.enrolledIn = []
         self.uid = nil
     }
+    
+    init(student:Student){
+        self.fullName = student.fullName
+        self.birthYear = student.birthYear
+        self.phoneNumber = student.phoneNumber
+        self.email = student.email
+        self.images = student.images
+        self.enrolledIn = student.enrolledIn
+        self.uid = student.uid
+    }
+    
+    
+    static func getFromDatabase(withUid:String,completionHandler: @escaping (_ student:Student) -> Void){
+        
+        let student = Student()
+        student.uid = withUid
+        
+        student.getPublicData{
+            student.getPrivateData {
+                completionHandler(student)
+            }
+        }
+    }
+    
+    private func getPublicData(completionHandler: @escaping () -> Void){
+        PublicProfile.getData(student: self, completionHandler: completionHandler)
+    }
+    
+    private func getPrivateData(completionHandler: @escaping () -> Void){
+        PrivateProfile.getData(student: self, completionHandler: completionHandler)
+    }
+    
+    func getFirstImage(completionHandler: @escaping (_ uiState:UIState) -> Void){
+        storage.child("users/\(uid!)/\(images[0].imageName!)").getData(maxSize: INT64_MAX) { [weak self] (imageData, error) in
+            
+            if(error != nil){
+                completionHandler(.Failure(error.debugDescription))
+            }
+            else{
+                self!.images[0].image = UIImage(data: imageData!)
+                completionHandler(.Success())
+            }
+        }
+    }
+    
+    func enrollToClassInFirebase(to:ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
+        
+        to.addToPublicStudentListOnFirebase(student: self, completionHandler: completionHandler)
+
+        PublicProfile.addToPersonalEnrollmentListOnFirebase(uid: CurrentUser.getUid(), classOrMajor: to)
+    }
+    
+    static func getStudents(from: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState, _ students:[Student]) -> Void){
+        
+        let studentRef = Database.database().reference().child("students/\(from.getFirebasePath())")
+
+        var students = [Student]()
+        
+        studentRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            for snap in snapshot.children {
+                let uid = (snap as! DataSnapshot).key
+                
+                Student.getFromDatabase(withUid: uid, completionHandler: {  (student) in
+                    students.append(student)
+                    
+                    if(students.count == snapshot.children.allObjects.count){
+                        completionHandler(.Success(),students)
+                    }
+                })
+            }
+            
+            if(snapshot.children.allObjects.count == 0){
+                completionHandler(.Success(), students)
+            }
+        }) { (error) in
+            completionHandler(.Failure(error.localizedDescription),[Student]())
+        }
+    }
+    
+    
     
     func isStudentInfoCompleted() -> Bool{
         if(fullName == nil){

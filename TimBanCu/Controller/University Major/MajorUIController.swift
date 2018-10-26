@@ -17,9 +17,9 @@ class MajorUIController{
     private var searchTF:UITextField!
     fileprivate var loadingAnimation:LoadingAnimation!
     
-    var searchMajors = [MajorDetail]()
+    var searchMajors = [Major]()
     fileprivate var addNewMajorHandler: (String)->()
-    fileprivate var tableViewTool: GenericTableView<MajorDetail, MajorTableViewCell>!
+    fileprivate var tableViewTool: GenericTableView<Major, MajorTableViewCell>!
     fileprivate var keyboardHelper:KeyboardHelper!
     
     init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField,addNewMajorHandler: @escaping (String)->()){
@@ -41,7 +41,7 @@ class MajorUIController{
         }
     }
     
-    func filterVisibleSchools(filter:String, allMajors:[MajorDetail]){
+    func filterVisibleSchools(filter:String, allMajors:[Major]){
         searchMajors.removeAll()
         
         if(filter.isEmpty){
@@ -81,8 +81,7 @@ class MajorUIController{
                 alerts.showAlert(title: "Không Thể Thêm Khoa", message: errorStr)
             }
             break
-        case (.Success(), .AddingNewData): break
-        case (.AddingNewData, .AddingNewData): break
+        case (.Success(), .AddingNewData),(.AddingNewData, .AddingNewData),(.Success(), .Success()): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }

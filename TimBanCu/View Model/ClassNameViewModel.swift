@@ -11,7 +11,7 @@ import Foundation
 class ClassNameViewModel{
     var className:String!
     
-    init(classDetail:ClassDetail){
-        self.className = classDetail.className
+    init(classs:Class){
+        self.className = classs.getName()
     }
 }

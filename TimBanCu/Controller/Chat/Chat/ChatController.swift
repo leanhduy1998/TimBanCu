@@ -20,7 +20,7 @@ class ChatController{
     private let storage = Storage.storage()
     
     
-    private var classDetail:ClassProtocol!
+    private var classDetail:ClassAndMajorWithYearProtocol!
     fileprivate var viewcontroller:ChatViewController!
     
     fileprivate let imageURLNotSetKey = "NOTSET"
@@ -48,8 +48,8 @@ class ChatController{
     }
     
     private func setupDBReference(){
-        messageRef = Database.database().reference().child("messages").child(classDetail.getFirebasePathWithSchoolYear())
-        typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classDetail.getFirebasePathWithSchoolYear())
+        messageRef = Database.database().reference().child("messages").child(classDetail.getFirebasePath())
+        typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classDetail.getFirebasePath())
         
         usersTypingQuery = typingIndicatorRef!.queryOrderedByValue().queryEqual(toValue: true)
     }
@@ -99,7 +99,7 @@ extension ChatController{
             return
         }
         
-        let imageRef = storage.reference().child("messages/\(classDetail.getFirebasePathWithSchoolYear())")
+        let imageRef = storage.reference().child("messages/\(classDetail.getFirebasePath())")
         
         
         if let key = sendPhotoMessage() {

@@ -10,71 +10,40 @@ import Foundation
 import FirebaseDatabase
 
 final class SchoolController{
-    private var schoolType:SchoolType!
+    private var educationLevel:EducationLevel!
     
-    var schoolModels = [School]()
+    var institutions = [InstitutionFull]()
     
-    private var queryTool:SchoolQueryTool!
-    
-    init(schoolType:SchoolType){
-        self.schoolType = schoolType
-        queryTool = SchoolQueryTool(schoolType: schoolType)
-    }
-    
-    private func getSchoolTypeAsString() -> String{
-        switch(schoolType!){
-        case .Elementary:
-            return "th"
-        case .MiddleSchool:
-            return "thcs"
-        case .HighSchool:
-            return "thpt"
-        case .University:
-            return "dh"
-        }
+    init(educationLevel:EducationLevel){
+        self.educationLevel = educationLevel
     }
     
  
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
-        queryTool.getData { [weak self] (queryState) in
+        educationLevel.getInstitutions { [weak self] (queryState) in
             switch(queryState){
             case .Success(let snapshot):
-                self?.schoolModels.removeAll()
+                self?.institutions = InstitutionFull.getInstitutionsFromFirebaseSnapshot(snapshot: snapshot, educationLevel: self!.educationLevel)
                 
-                for snap in snapshot.children {
-                    let value = (snap as! DataSnapshot).value as? [String:Any]
-                    
-                    let name = (snap as! DataSnapshot).key
-                    let address = value!["address"] as? String
-                    let uid = value!["uid"] as? String
-                    
-                    let school = School(name: name, address: address!, type: (self?.getSchoolTypeAsString())!, uid: uid!)
-                    
-                    self?.schoolModels.append(school)
-                }
-                                
                 completionHandler(.Success())
-                
                 break
             case .Fail(let error):
                 completionHandler(.Failure(error.localizedDescription))
                 break
-
             }
         }
     }
     
-    func addNewSchool(schoolName:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let school = School(name: schoolName, address: "?", type: getSchoolTypeAsString(), uid: CurrentUser.getUid())
+    func addNewInstitution(name:String,completionHandler: @escaping (_ state:UIState)->Void){
+        let institution = InstitutionFull(name: name, type: educationLevel.getString(), addByUid: CurrentUser.getUid())
         
-        school.writeToDatabase { [weak self] (err, _) in
+        institution.writeToDatabase { [weak self] (err, _) in
             if(err == nil){
-                self?.schoolModels.append(school)
+                self?.institutions.append(institution)
                 completionHandler(.Success())
             }
             else{
                 let errorStr:String = (err?.localizedDescription)!
-                
                 completionHandler(.Failure(errorStr))
             }
         }

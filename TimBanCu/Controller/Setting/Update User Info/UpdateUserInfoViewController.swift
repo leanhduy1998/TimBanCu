@@ -27,7 +27,6 @@ class UpdateUserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(CurrentUser.getStudent().images.count)
     }
 
     override func didReceiveMemoryWarning() {

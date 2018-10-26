@@ -38,7 +38,20 @@ class UserClassesUIController:NSObject,UITableViewDelegate,UITableViewDataSource
         }
     }
     
+    func showLoadingView(){
+        
+    }
+    
+    func hideLoadingView(){
+        
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showLoadingView()
+        
+        let selected = CurrentUser.getEnrolledClasses()[indexPath.row]
+    
+        
         viewcontroller.selectedClassProtocol = CurrentUser.getEnrolledClasses()[indexPath.row]
         viewcontroller.performSegue(withIdentifier: "UserClassesToClassDetailSegue", sender: viewcontroller)
     }

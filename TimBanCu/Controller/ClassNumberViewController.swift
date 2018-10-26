@@ -8,19 +8,22 @@
 
 import UIKit
 
-class ClassViewController: UIViewController {
+class ClassNumberViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
-    var classes: [String]!
-    var school:School!
+    var school:InstitutionFull!
     var selectedClass:String!
+    var educationLevel:EducationLevel!
+    var viewModel:ClassNumberViewModel!
     
     private var tableviewTool:GenericTableView<String, ClassTableViewCell>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableviewTool = GenericTableView(tableview: tableview, items: classes) { (cell, classStr) in
+        viewModel = ClassNumberViewModel(educationLevel: educationLevel)
+    
+        tableviewTool = GenericTableView(tableview: tableview, items: viewModel.classNumbers) { (cell, classStr) in
             cell.classLabel.text = classStr
         }
         
@@ -34,7 +37,7 @@ class ClassViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassNameViewController{
-            destination.school = school
+            destination.institution = school
             destination.classNumber = selectedClass
         }
     }

@@ -16,7 +16,7 @@ class UserUniversityViewModel {
     
     init(majorDetail:MajorDetail){
         self.majorName = majorDetail.majorName
-        self.schoolName = majorDetail.schoolName
+        self.schoolName = majorDetail.institution.name
         self.classYear = majorDetail.year
     }
 }

@@ -16,7 +16,7 @@ class ClassYearUIController{
     private var alerts:ClassYearAlerts!
     
     
-    init(viewcontroller:ClassYearViewController, tableview:UITableView,years: [String], classProtocol:ClassProtocol, didSelectYear: @escaping (String) -> ()){
+    init(viewcontroller:ClassYearViewController, tableview:UITableView,years: [String], classOrMajor:ClassAndMajorProtocol, didSelectYear: @escaping (String) -> ()){
         
         self.viewcontroller = viewcontroller
         
@@ -29,7 +29,7 @@ class ClassYearUIController{
             didSelectYear(selectedYear)
         }
         
-        alerts = ClassYearAlerts(viewcontroller: viewcontroller, classProtocol: classProtocol)
+        alerts = ClassYearAlerts(viewcontroller: viewcontroller, classOrMajor: classOrMajor)
     }
     
     var state:UIState = .ChoosingData{
@@ -55,7 +55,7 @@ class ClassYearUIController{
                 }
             }
             break
-        case (.ChoosingData, .Failure(let errorStr)):
+        case (.ChoosingData, .Failure(let errorStr)), (.Failure(_),.Failure(let errorStr)):
             if(errorStr == "Permission denied") {
                 alerts.showClassAlreadyExistAlert()
             }
@@ -65,9 +65,8 @@ class ClassYearUIController{
             
             break
       
-        case (.Success(), .ChoosingData): break
-        case (.ChoosingData, .ChoosingData): break
-            
+        case (.Success(), .ChoosingData),(.ChoosingData, .ChoosingData): break
+       
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
     }
