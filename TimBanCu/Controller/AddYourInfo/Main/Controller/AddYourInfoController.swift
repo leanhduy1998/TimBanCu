@@ -78,7 +78,7 @@ class AddYourInfoController{
     }
     
     private func enrollUserIntoClass(completionHandler: @escaping (_ status:Status)->()){
-        CurrentUser.addEnrollment(classProtocol: classProtocol) { (uiState) in
+        CurrentUser.addEnrollmentLocalAndOnline(classProtocol: classProtocol) { (uiState) in
             switch(uiState){
             case .Success():
                 completionHandler(.Success())

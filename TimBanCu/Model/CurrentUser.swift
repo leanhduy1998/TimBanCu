@@ -17,7 +17,7 @@ class CurrentUser{
         return student.isStudentInfoCompleted()
     }
     
-    static func addEnrollment(classProtocol: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
+    static func addEnrollmentLocalAndOnline(classProtocol: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
         if(student == nil || !student.isStudentInfoCompleted()){
             print("Does not have enough data to update!")
             completionHandler(.Failure("Chúng tôi không có đủ thông tin của bạn! Mong bạn vui lòng liên hệ andrewledev@gmail.com"))

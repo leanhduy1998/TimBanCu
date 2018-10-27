@@ -94,7 +94,7 @@ class ClassDetailViewController: UIViewController {
     }
     
     func enrollUserToThisClass(){
-        CurrentUser.addEnrollment(classProtocol: self.classProtocol) { (uiState) in
+        CurrentUser.addEnrollmentLocalAndOnline(classProtocol: self.classProtocol) { (uiState) in
             switch(uiState){
             case .Success():
                 self.uiController.searchStudents = self.controller.students
