@@ -94,7 +94,7 @@ class AnimateAppNameView {
     
     private func setUpAppNameLabel(label: UILabel, text: String) {
         label.text = text
-        label.font = UIFont(name: Constants.App.font, size: 60)
+        label.font = UIFont(name: Constants.App.font, size: UIScreen.main.bounds.size.width / Constants.App.fontSizeRatioWithScreen)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Constants.AppColor.primaryColor
         label.textAlignment = .center

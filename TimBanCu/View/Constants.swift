@@ -12,7 +12,7 @@ struct Constants {
     struct App {
         static let name = "Tìm Bạn Cũ"
         static let font = "FSNokioBold"
-        static let fontSize: CGFloat = 60.0
+        static let fontSizeRatioWithScreen: CGFloat = 6.5
     }
     
     struct AppColor {

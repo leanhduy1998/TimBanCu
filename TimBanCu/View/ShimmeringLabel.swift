@@ -13,7 +13,7 @@ class ShimmeringLabel: UILabel {
     init(textColor: UIColor, view: UIView) {
         super.init(frame: CGRect(x: 0, y: CGFloat(view.frame.height / 6), width: view.frame.width, height: 100))
         self.text = Constants.App.name
-        self.font = UIFont(name: Constants.App.font, size: Constants.App.fontSize)
+        self.font = UIFont(name: Constants.App.font, size: UIScreen.main.bounds.size.width / Constants.App.fontSizeRatioWithScreen)
         self.textColor = textColor
         self.textAlignment = .center
     }
