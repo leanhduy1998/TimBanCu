@@ -49,10 +49,8 @@
 		1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A702182680700FFDC82 /* PrivateProfile.swift */; };
 		1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A74218368E300FFDC82 /* EULAViewController.swift */; };
 		1C513A7C21838E8000FFDC82 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A7B21838E8000FFDC82 /* Filter.swift */; };
-		1C513A862183CCBA00FFDC82 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A852183CC5700FFDC82 /* Chat.storyboard */; };
 		1C513A882183CCCE00FFDC82 /* ClassAndStudentDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A872183CCCD00FFDC82 /* ClassAndStudentDetail.storyboard */; };
 		1C513A8B2183D28600FFDC82 /* ClassOrMajorSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */; };
-		1C513A8C2183D33900FFDC82 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A892183CFAF00FFDC82 /* Setting.storyboard */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
@@ -165,6 +163,8 @@
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
+		38D8D2622186C5F300B1F052 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8D2612186C5F300B1F052 /* Chat.storyboard */; };
+		38D8D2642186C5FB00B1F052 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8D2632186C5FA00B1F052 /* Setting.storyboard */; };
 		38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */; };
 		38EF89CA216930AB000B05D5 /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EF89C9216930AB000B05D5 /* LoadingAnimation.swift */; };
 		38EF89CC216A77BB000B05D5 /* BlackFilterBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EF89CB216A77BB000B05D5 /* BlackFilterBackground.swift */; };
@@ -235,9 +235,7 @@
 		1C513A702182680700FFDC82 /* PrivateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateProfile.swift; sourceTree = "<group>"; };
 		1C513A74218368E300FFDC82 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		1C513A7B21838E8000FFDC82 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
-		1C513A852183CC5700FFDC82 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Chat.storyboard; path = /Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Chat.storyboard; sourceTree = "<absolute>"; };
 		1C513A872183CCCD00FFDC82 /* ClassAndStudentDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassAndStudentDetail.storyboard; sourceTree = "<group>"; };
-		1C513A892183CFAF00FFDC82 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Setting.storyboard; path = /Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Setting.storyboard; sourceTree = "<absolute>"; };
 		1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassOrMajorSelection.storyboard; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
@@ -359,6 +357,8 @@
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		38D8D2612186C5F300B1F052 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		38D8D2632186C5FA00B1F052 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		38EF89C9216930AB000B05D5 /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
 		38EF89CB216A77BB000B05D5 /* BlackFilterBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackFilterBackground.swift; sourceTree = "<group>"; };
 		4203691F03ED76B3F5BD22AE /* Pods_TimBanCu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimBanCu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -760,10 +760,10 @@
 		1CBF5C7620A8197B00B78E6A /* TimBanCu */ = {
 			isa = PBXGroup;
 			children = (
+				38D8D2632186C5FA00B1F052 /* Setting.storyboard */,
+				38D8D2612186C5F300B1F052 /* Chat.storyboard */,
 				1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */,
 				1CBF5C7B20A8197B00B78E6A /* Main.storyboard */,
-				1C513A852183CC5700FFDC82 /* Chat.storyboard */,
-				1C513A892183CFAF00FFDC82 /* Setting.storyboard */,
 				1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */,
 				1C513A872183CCCD00FFDC82 /* ClassAndStudentDetail.storyboard */,
 				1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */,
@@ -1094,9 +1094,11 @@
 				1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */,
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
+				38D8D2622186C5F300B1F052 /* Chat.storyboard in Resources */,
 				3869265A216DD07B00D7780F /* success.json in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
+				38D8D2642186C5FB00B1F052 /* Setting.storyboard in Resources */,
 				1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
 				1C1D4BAF215B11BA002E4807 /* loading...json in Resources */,
@@ -1108,11 +1110,9 @@
 				1C513A8B2183D28600FFDC82 /* ClassOrMajorSelection.storyboard in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */,
-				1C513A8C2183D33900FFDC82 /* Setting.storyboard in Resources */,
 				38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */,
 				3808954D216E9A1700ACAB15 /* yearError.json in Resources */,
 				1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */,
-				1C513A862183CCBA00FFDC82 /* Chat.storyboard in Resources */,
 				1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */,
 				3808954E216E9A1700ACAB15 /* info.json in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,
