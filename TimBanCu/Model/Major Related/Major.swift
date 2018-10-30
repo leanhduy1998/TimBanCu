@@ -35,7 +35,7 @@ class Major:ClassAndMajorProtocol{
     
     
     func classYearExist(year: String, completionHandler: @escaping (Bool) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName)/\(year)").observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child("classes/\(institution.name!)/\(majorName!)/\(year)").observeSingleEvent(of: .value) { (snapshot) in
             
             let value = (snapshot as! DataSnapshot).value as? [String:String]
             
@@ -49,7 +49,7 @@ class Major:ClassAndMajorProtocol{
     }
     
     internal func uploadToFirebase(completionHandler: @escaping (_ state:UIState)->Void){
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName))/createdBy").setValue(uid) { (err, _) in
+        Database.database().reference().child("classes/\(institution.name!)/\(majorName!)/createdBy").setValue(uid) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }

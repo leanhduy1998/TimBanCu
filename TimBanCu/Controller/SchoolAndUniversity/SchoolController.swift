@@ -23,7 +23,7 @@ final class SchoolController{
         educationLevel.getInstitutions { [weak self] (queryState) in
             switch(queryState){
             case .Success(let snapshot):
-                self?.institutions = InstitutionFull.getInstitutionsFromFirebaseSnapshot(snapshot: snapshot, educationLevel: self!.educationLevel)
+                self?.institutions = InstitutionFull.getInstitutionsFrom(snapshot: snapshot, educationLevel: self!.educationLevel)
                 
                 completionHandler(.Success())
                 break

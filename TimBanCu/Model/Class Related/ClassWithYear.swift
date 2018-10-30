@@ -25,7 +25,7 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
     }
     
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
-        Database.database().reference().child("students/\(institution.name!)/\(classNumber)/\(className)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
+        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }
@@ -52,34 +52,6 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
     func copy() -> ClassAndMajorWithYearProtocol {
         return ClassWithYear(classWithYear: self)
     }
-    
-    /*
-    
-    init(classNumber:String,uid:String, schoolName:String, className:String,classYear:String){
-        self.classNumber = classNumber
-        self.uid = uid
-        self.schoolName = schoolName
-        self.className = className
-        self.year = classYear
-    }
-    
-    init(classNumber:String,uid:String, schoolName:String, className:String){
-        self.classNumber = classNumber
-        self.uid = uid
-        self.schoolName = schoolName
-        self.className = className
-    }
-    
-    func getModelAsDictionary() -> [String:Any]{
-        var dic = [String:String]()
-        dic["className"] = className
-        dic["uid"] = uid
-        dic["schoolName"] = schoolName
-        dic["classNumber"] = classNumber
-        dic["classYear"] = year
-        
-        return dic
-    }*/
         
     
     func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) {

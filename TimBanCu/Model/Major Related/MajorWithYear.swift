@@ -36,7 +36,7 @@ class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
     }
     
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
-        Database.database().reference().child("students/\(institution.name!)/\(majorName!)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
+        Database.database().reference().child("classes/\(institution.name!)/\(majorName!)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }

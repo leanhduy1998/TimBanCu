@@ -41,8 +41,11 @@ final class MajorController{
     func addNewMajor(inputedMajorName:String,completionHandler: @escaping (_ state:UIState)->Void){
         let major = Major(institution: school, uid: CurrentUser.getUid(), majorName: inputedMajorName)
         majors.append(major)
-        
         viewcontroller.selectedMajor = major
-        completionHandler(.Success())
+        
+        major.uploadToFirebase { (uiState) in
+            completionHandler(uiState)
+        }
+        
     }
 }

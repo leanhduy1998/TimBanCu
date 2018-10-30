@@ -37,7 +37,7 @@ class Class:ClassAndMajorProtocol{
     }
     
     func uploadToFirebase(completionHandler: @escaping (_ state:UIState)->Void){
-        Database.database().reference().child("students/\(institution.name!)/\(classNumber)/\(className)/createdBy").setValue(uid) { (err, _) in
+        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/createdBy").setValue(uid) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }
@@ -62,7 +62,7 @@ class Class:ClassAndMajorProtocol{
     }
     
     func classYearExist(year: String, completionHandler: @escaping (Bool) -> Void) {
-        Database.database().reference().child("students/\(institution.name!)/\(classNumber)/\(className)/\(year)").observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/\(year)").observeSingleEvent(of: .value) { (snapshot) in
             
             let classValue = (snapshot as! DataSnapshot).value
             
@@ -76,7 +76,7 @@ class Class:ClassAndMajorProtocol{
     }
     
     static func fetchAllClass(institution:InstitutionFull,classNumber:String,completionHandler: @escaping (UIState, [Class]) -> ()){
-        Database.database().reference().child("students/\(institution.name!)/\(classNumber)").observeSingleEvent(of: .value, with: { (snapshot) in
+        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)").observeSingleEvent(of: .value, with: { (snapshot) in
             var classes = [Class]()
             
             for snap in snapshot.children{

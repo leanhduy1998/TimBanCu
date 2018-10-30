@@ -20,7 +20,7 @@ class SchoolTableViewCell: UITableViewCell {
         didSet{
             schoolName.text = schoolViewModel.name
             
-            if(schoolViewModel.address == "?"){
+            if(schoolViewModel.address == nil){
                 schoolAddress.text = "Không rõ địa chỉ"
             }
             else{

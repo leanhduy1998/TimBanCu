@@ -104,7 +104,7 @@ class Student{
     
     static func getStudents(from: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState, _ students:[Student]) -> Void){
         
-        let studentRef = Database.database().reference().child("students/\(from.getFirebasePath())")
+        let studentRef = Database.database().reference().child("classes/\(from.getFirebasePath())")
 
         var students = [Student]()
         

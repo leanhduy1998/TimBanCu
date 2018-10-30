@@ -13,10 +13,10 @@ class InstitutionFull:Institution{
     //var imageUrl:String
     var type:String!
     var addByUid:String!
-    var address:String!
+    var address:String?
     
     
-    init(name:String,address:String,type:String,addByUid:String){
+    init(name:String,address:String?,type:String,addByUid:String){
         super.init(name: name)
         self.type = type
         self.addByUid = addByUid
@@ -27,34 +27,40 @@ class InstitutionFull:Institution{
         super.init(name: name)
         self.type = type
         self.addByUid = addByUid
-        self.address = "?"
     }
     
-    func getModelAsDictionary() -> [String:Any]{
-        let dic:[String:Any] = ["type":type,"address":address,"uid":addByUid]
+    private func getModelAsDictionary() -> [String:Any]{
+        var dic:[String:Any] = ["type":type,"uid":addByUid]
+        if(address != nil){
+            dic["address"] = address!
+        }
         return dic
     }
     
-    static func getInstitutionsFromFirebaseSnapshot(snapshot:DataSnapshot,educationLevel:EducationLevel)->[InstitutionFull]{
+    static func getInstitutionsFrom(snapshot:DataSnapshot,educationLevel:EducationLevel)->[InstitutionFull]{
+    
         var institutions = [InstitutionFull]()
         
         for snap in snapshot.children {
-            let value = (snap as! DataSnapshot).value as? [String:Any]
-            
-            let name = (snap as! DataSnapshot).key
-            let address = value!["address"] as? String
-            let uid = value!["uid"] as? String
-            
-            let institution = InstitutionFull(name: name, address: address!, type: educationLevel.getString(), addByUid: uid!)
-            
-            institutions.append(institution)
+            institutions.append(getInstitution(key: (snap as! DataSnapshot).key, value: (snap as! DataSnapshot).value as! [String:Any], educationLevel: educationLevel))
         }
         
         return institutions
     }
     
-    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
+    static func getInstitution(key:String,value:[String:Any], educationLevel:EducationLevel)->InstitutionFull{
+        let name = key
+        let address = value["address"] as? String
+        let uid = value["uid"] as? String
         
+        let institution = InstitutionFull(name: name, address: address, type: educationLevel.getString(), addByUid: uid!)
+        
+        return institution
+    }
+    
+    func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
         Database.database().reference().child("schools").child(name).setValue(getModelAsDictionary(), withCompletionBlock: completionHandler)
     }
 }
+
+

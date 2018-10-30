@@ -44,20 +44,18 @@ class ClassYearViewController: UIViewController {
             selectedClassProtocol = majorWithYear
         }
         
-        uiController.state = .Success()
+        
     
-        /*classProtocol.classYearExist(year: selectedYear) { [weak self] (exist) in
-            if(!exist){
-                self!.selectedClassProtocol.uploadToFirebase(year: self!.selectedYear, completionHandler: { [weak self] (uistate) in
-                    
-                })
-            }
-            else{                
+        classProtocol.classYearExist(year: selectedYear) { [weak self] (exist) in
+            if(exist){
                 DispatchQueue.main.async {
                     self!.performSegue(withIdentifier: "ClassYearToClassDetailSegue", sender: self!)
                 }
             }
-        }*/
+            else{
+                self!.uiController.state = .Success()
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
