@@ -162,9 +162,14 @@ class Student{
     func getModelAsDictionary() -> [String:Any]{
         var imageNameAndYear = [String:String]()
         for image in images{
-            imageNameAndYear[image.imageName] = image.year
+            if(image.year == nil){
+                imageNameAndYear[image.imageName] = "?"
+            }
+            else{
+                imageNameAndYear[image.imageName] = image.year
+            }
         }
         
-        return ["fullName":fullName,"birthday":birthYear,"phoneNumber":phoneNumber,"email":email,"imageUrls":imageNameAndYear,"enrolledIn":enrolledIn]
+        return ["fullName":fullName!,"birthYear":birthYear!,"phoneNumber":phoneNumber!,"email":email!,"imageUrls":imageNameAndYear,"enrolledIn":enrolledIn]
     }
 }

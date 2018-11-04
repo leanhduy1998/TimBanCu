@@ -10,14 +10,22 @@ import Foundation
 import FirebaseDatabase
 
 class PublicProfile{
-    private static let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
+    private static let ref = Database.database().reference()
     
     static func addToPersonalEnrollmentListOnFirebase(uid:String, classOrMajor:ClassAndMajorWithYearProtocol){
-        publicUserProfileRef.child("\(uid)/enrolledIn").updateChildValues(classOrMajor.objectAsDictionary())
+        ref.child(firebaseEnrolledInPath(uid: uid)).updateChildValues(classOrMajor.objectAsDictionary())
+    }
+    
+    static func firebaseEnrolledInPath(uid:String) ->String{
+        return "publicUserProfile/\(uid)/enrolledIn"
+    }
+    
+    static func firebaseGetDataPath(student: Student)->String{
+        return "publicUserProfile/\(student.uid!)"
     }
     
     static func getData(student: Student, completionHandler: @escaping () -> Void){
-        publicUserProfileRef.child(student.uid).observeSingleEvent(of: .value, with: {  (publicSS) in
+        ref.child(firebaseGetDataPath(student: student)).observeSingleEvent(of: .value, with: {  (publicSS) in
             
             if(!publicSS.hasChildren()){
                 completionHandler()

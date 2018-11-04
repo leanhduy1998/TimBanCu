@@ -40,6 +40,26 @@ class StudentTest: XCTestCase {
         student = Student(fullname: "asd", birthYear: "asd", phoneNumber: "asd", email: "asd", uid: "")
     }
 
-    
+    func testGetModelAsDictionary(){
+        student.images = [Image(year: "1990", imageName: "imageName", uid: "uid")]
+        student.enrolledIn = [ClassWithYear(classs: Class(institution: Institution(name: "institutionName"), classNumber: "classNumber", className: "className", uid: "uid"), year: "year")]
+        
+        let dic = student.getModelAsDictionary()
+        
+        XCTAssertTrue((dic["fullName"] as! String) == "fullname")
+        XCTAssertTrue((dic["birthYear"] as! String) == "birthYear")
+        XCTAssertTrue((dic["phoneNumber"] as! String) == "phoneNumber")
+        XCTAssertTrue((dic["email"] as! String) == "email")
+        
+        let imageUrls = dic["imageUrls"] as! [String:String]
+        XCTAssertTrue((imageUrls["imageName"] as! String) == "1990")
+        
+        let enrolledIn = dic["enrolledIn"] as! [ClassAndMajorWithYearProtocol]
+        let subEnrolledIn = enrolledIn[0].objectAsDictionary()
+        XCTAssertTrue(subEnrolledIn.keys.first == "institutionName")
+        XCTAssertTrue(subEnrolledIn[subEnrolledIn.keys.first!]!["classNumber"] == "classNumber")
+        XCTAssertTrue(subEnrolledIn[subEnrolledIn.keys.first!]!["uid"] == "uid")
+        XCTAssertTrue(subEnrolledIn[subEnrolledIn.keys.first!]!["year"] == "year")
+    }
 
 }

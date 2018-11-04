@@ -19,8 +19,7 @@ class UserData:Student{
     let phonePrivacy:PrivacyType
     let emailPrivacy:PrivacyType
     
-    private let privateUserProfileRef = Database.database().reference().child("privateUserProfile")
-    private let publicUserProfileRef = Database.database().reference().child("publicUserProfile")
+    private let ref = Database.database().reference()
     
     init(student:Student,phonePrivacyType:String,emailPrivacyType:String, images:[Image]){
         if(phonePrivacyType == "Công Khai"){
@@ -73,10 +72,9 @@ class UserData:Student{
         let publicDic = getPublicDataForUpload()
         let privateDic = getPrivateDataForUpload()
         
-        publicUserProfileRef.child(uid).setValue(publicDic) { (publicErr, _) in
+        ref.child(firebasePublicUploadDataPath()).setValue(publicDic) { [weak self] (publicErr, _) in
             if(publicErr == nil){
-                self.privateUserProfileRef.child(CurrentUser.getUid()).setValue(privateDic, withCompletionBlock: { (privateErr, _) in
-                    
+                self!.ref.child(self!.firebasePrivateUploadDataPath()).setValue(privateDic, withCompletionBlock: { (privateErr, _) in
                     
                     if(privateErr == nil){
                         completionHandler(.Success())
@@ -93,13 +91,21 @@ class UserData:Student{
         }
     }
     
+    func firebasePublicUploadDataPath() ->String{
+        return "publicUserProfile/\(uid!)"
+    }
+    
+    func firebasePrivateUploadDataPath() ->String{
+        return "privateUserProfile/\(uid!)"
+    }
+    
     func uploadImagesToFirebaseStorage(images:[Image], completionHandler: @escaping (_ status:Status) -> Void){
         
         var imageUploaded = 0
         
         for image in images{
             let name = image.imageName
-            let imageRef = storage.child("users").child("\(CurrentUser.getUid())/\(name!)")
+            let imageRef = storage.child(firebaseStorageImageUploadPath(name: name!))
             
             let data = image.image?.jpeg(UIImage.JPEGQuality(rawValue: 0.5)!)
             
@@ -118,12 +124,16 @@ class UserData:Student{
         }
     }
     
+    func firebaseStorageImageUploadPath(name:String)->String{
+        return "users/\(CurrentUser.getUid())/\(name)"
+    }
+    
     private func getImageNameAndYearDictionary() -> [String:String]{
         var dic = [String:String]()
         
         for image in images{
             if(image.year == nil){
-                dic[image.imageName] = "-1"
+                dic[image.imageName] = "?"
             }
             else{
                 dic[image.imageName] = image.year
