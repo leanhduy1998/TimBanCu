@@ -35,7 +35,7 @@ class Major:ClassAndMajorProtocol{
     
     
     func classYearExist(year: String, completionHandler: @escaping (Bool) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName!)/\(year)").observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child(firebaseClassYearPath(year: year)).observeSingleEvent(of: .value) { (snapshot) in
             
             let value = (snapshot as! DataSnapshot).value as? [String:String]
             
@@ -48,8 +48,12 @@ class Major:ClassAndMajorProtocol{
         }
     }
     
-    internal func uploadToFirebase(completionHandler: @escaping (_ state:UIState)->Void){
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName!)/createdBy").setValue(uid) { (err, _) in
+    func firebaseClassYearPath(year:String)->String{
+        return "classes/\(institution.name!)/\(majorName!)/\(year)"
+    }
+    
+    func uploadToFirebase(completionHandler: @escaping (_ state:UIState)->Void){
+        Database.database().reference().child(firebaseCreatedByPath()).setValue(uid) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }
@@ -59,8 +63,12 @@ class Major:ClassAndMajorProtocol{
         }
     }
     
+    func firebaseCreatedByPath()->String{
+        return "classes/\(institution.name!)/\(majorName!)/createdBy"
+    }
+    
     static func fetchAllMajor(institution:InstitutionFull,completionHandler: @escaping (UIState, [Major]) -> ()){
-        Database.database().reference().child("classes/\(institution.name!)").observeSingleEvent(of: .value, with: { (snapshot) in
+        Database.database().reference().child(firebaseFetchPath(institution: institution)).observeSingleEvent(of: .value, with: { (snapshot) in
             var majors = [Major]()
             
             for snap in snapshot.children{
@@ -78,6 +86,10 @@ class Major:ClassAndMajorProtocol{
         }) { (er) in
             completionHandler(.Failure(er.localizedDescription),[Major]())
         }
+    }
+    
+    static func firebaseFetchPath(institution:InstitutionFull)->String{
+        return "classes/\(institution.name!)"
     }
     
     func copy() -> ClassAndMajorProtocol {

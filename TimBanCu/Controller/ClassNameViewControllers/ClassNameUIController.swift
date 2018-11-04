@@ -86,7 +86,7 @@ class ClassNameUIController{
         else{
             for classs in allClasses{
                 
-                if classs.getName().lowercased().range(of:filter.lowercased()) != nil {
+                if classs.getClassName().lowercased().range(of:filter.lowercased()) != nil {
                     searchClasses.append(classs)
                 }
             }

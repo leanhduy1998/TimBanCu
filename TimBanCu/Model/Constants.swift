@@ -25,4 +25,10 @@ struct Constants {
         static let hideUnderline = AppColor.primaryColor.withAlphaComponent(0.6)
     }
     
+    static let elementaryString = "th"
+    static let middleSchoolString = "thcs"
+    static let highschoolString = "thpt"
+    static let universityString = "dh"
+    static let googleClientId = "137184194492-5iokn36749o7gmlodjnv6gskddjen7p1.apps.googleusercontent.com"
+    
 }

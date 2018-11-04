@@ -14,7 +14,7 @@ protocol ClassAndMajorWithYearProtocol {
     func objectAsDictionary()->[String:[String:String]]
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void)
     func getInstitution() -> Institution
-    func getFirebasePath()->String
+    func firebaseClassYearPath(withParent:String)->String
     func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) 
 }
 

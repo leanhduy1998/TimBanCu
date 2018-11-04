@@ -21,13 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .default
         
         FirebaseApp.configure()
-        GIDSignIn.sharedInstance().clientID = "137184194492-5iokn36749o7gmlodjnv6gskddjen7p1.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = Constants.googleClientId
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         let firstTimeLaunch = UserDefaults.standard.object(forKey: "firstTimeLaunch")
         
         if(firstTimeLaunch == nil){
-            print()
             FirstTimeLaunch.setTrue()
         }
         

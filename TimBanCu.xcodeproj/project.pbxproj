@@ -38,6 +38,11 @@
 		1C4B6C49214C02B600BDF724 /* UpdateImageYearAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C48214C02B600BDF724 /* UpdateImageYearAlerts.swift */; };
 		1C4B6C4B214C562E00BDF724 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */; };
 		1C4B6C4D214C94FD00BDF724 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6C4C214C94FD00BDF724 /* ImagePicker.swift */; };
+		1C4C67CE218933D200D5383D /* ClassTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C67CD218933D200D5383D /* ClassTest.swift */; };
+		1C4C67D02189647A00D5383D /* ClassWithYearTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C67CF2189647A00D5383D /* ClassWithYearTest.swift */; };
+		1C4C67FE218E6D0900D5383D /* MajorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C67FD218E6D0900D5383D /* MajorTest.swift */; };
+		1C4C6800218F546700D5383D /* MajorWithYearTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C67FF218F546700D5383D /* MajorWithYearTest.swift */; };
+		1C4C6802218F5BDE00D5383D /* StudentTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C6801218F5BDE00D5383D /* StudentTest.swift */; };
 		1C513A5F2180B94600FFDC82 /* ClassNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A5E2180B94600FFDC82 /* ClassNumberViewModel.swift */; };
 		1C513A612180D0AC00FFDC82 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A602180D0AC00FFDC82 /* Class.swift */; };
 		1C513A632180DAEB00FFDC82 /* ClassAndMajorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A622180DAEB00FFDC82 /* ClassAndMajorProtocol.swift */; };
@@ -54,6 +59,8 @@
 		1C513A8B2183D28600FFDC82 /* ClassOrMajorSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */; };
 		1C513A8C2183D33900FFDC82 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A892183CFAF00FFDC82 /* Setting.storyboard */; };
 		1C513A8E2183E9CD00FFDC82 /* InstitutionFullTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */; };
+		1C513AAB2187E83800FFDC82 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAA2187E83800FFDC82 /* StringTest.swift */; };
+		1C513AAD2187E93100FFDC82 /* EducationLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAC2187E93100FFDC82 /* EducationLevelTest.swift */; };
 		1C5365B620E6ABE7000F7FB2 /* tieuhoctphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */; };
 		1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */; };
 		1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */; };
@@ -199,7 +206,7 @@
 		1C1A98F6210BB43700D20079 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1C1A98FD210CBC7000D20079 /* ChatCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewExtension.swift; sourceTree = "<group>"; };
 		1C1B4821213643DE008EFB5F /* SelectPhotoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
-		1C1D4B9F215B1061002E4807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TimBanCu/View/Constants.swift; sourceTree = SOURCE_ROOT; };
+		1C1D4B9F215B1061002E4807 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TimBanCu/Model/Constants.swift; sourceTree = SOURCE_ROOT; };
 		1C1D4BA1215B10B7002E4807 /* UnderlineState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineState.swift; sourceTree = "<group>"; };
 		1C1D4BA3215B1100002E4807 /* AnimateAppNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateAppNameView.swift; sourceTree = "<group>"; };
 		1C1D4BA6215B11BA002E4807 /* bikingishard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bikingishard.json; sourceTree = "<group>"; };
@@ -225,6 +232,11 @@
 		1C4B6C48214C02B600BDF724 /* UpdateImageYearAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateImageYearAlerts.swift; sourceTree = "<group>"; };
 		1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		1C4B6C4C214C94FD00BDF724 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		1C4C67CD218933D200D5383D /* ClassTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTest.swift; sourceTree = "<group>"; };
+		1C4C67CF2189647A00D5383D /* ClassWithYearTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassWithYearTest.swift; sourceTree = "<group>"; };
+		1C4C67FD218E6D0900D5383D /* MajorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTest.swift; sourceTree = "<group>"; };
+		1C4C67FF218F546700D5383D /* MajorWithYearTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorWithYearTest.swift; sourceTree = "<group>"; };
+		1C4C6801218F5BDE00D5383D /* StudentTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTest.swift; sourceTree = "<group>"; };
 		1C513A5E2180B94600FFDC82 /* ClassNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNumberViewModel.swift; sourceTree = "<group>"; };
 		1C513A602180D0AC00FFDC82 /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		1C513A622180DAEB00FFDC82 /* ClassAndMajorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAndMajorProtocol.swift; sourceTree = "<group>"; };
@@ -241,6 +253,8 @@
 		1C513A892183CFAF00FFDC82 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Setting.storyboard; path = /Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Setting.storyboard; sourceTree = "<absolute>"; };
 		1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassOrMajorSelection.storyboard; sourceTree = "<group>"; };
 		1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionFullTest.swift; sourceTree = "<group>"; };
+		1C513AAA2187E83800FFDC82 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
+		1C513AAC2187E93100FFDC82 /* EducationLevelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationLevelTest.swift; sourceTree = "<group>"; };
 		1C5365B520E6ABE7000F7FB2 /* tieuhoctphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tieuhoctphcm.txt; sourceTree = "<group>"; };
 		1C5365B720E6B7A1000F7FB2 /* thcshanoi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thcshanoi.txt; sourceTree = "<group>"; };
 		1C5365B920E6BDFE000F7FB2 /* thpttphcm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = thpttphcm.txt; sourceTree = "<group>"; };
@@ -566,6 +580,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1C513AA92187E82100FFDC82 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1C513AAA2187E83800FFDC82 /* StringTest.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		1C784B682110F85200647C40 /* StudentDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,9 +814,16 @@
 		1CBF5C8B20A8197C00B78E6A /* TimBanCuTests */ = {
 			isa = PBXGroup;
 			children = (
+				1C513AA92187E82100FFDC82 /* Helper */,
 				1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */,
 				1CBF5C8E20A8197C00B78E6A /* Info.plist */,
 				1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */,
+				1C513AAC2187E93100FFDC82 /* EducationLevelTest.swift */,
+				1C4C67CD218933D200D5383D /* ClassTest.swift */,
+				1C4C67CF2189647A00D5383D /* ClassWithYearTest.swift */,
+				1C4C67FD218E6D0900D5383D /* MajorTest.swift */,
+				1C4C67FF218F546700D5383D /* MajorWithYearTest.swift */,
+				1C4C6801218F5BDE00D5383D /* StudentTest.swift */,
 			);
 			path = TimBanCuTests;
 			sourceTree = "<group>";
@@ -904,6 +933,7 @@
 		1CE24D0320FBE6E6008DE3FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C1D4B9F215B1061002E4807 /* Constants.swift */,
 				1CE24D0120FBE153008DE3FB /* CurrentUser.swift */,
 				1C513A7621836CA000FFDC82 /* Institution Related */,
 				1C513A7721836CAD00FFDC82 /* Class Related */,
@@ -939,7 +969,6 @@
 				1CD73011213B1C2400105ACE /* Alerts */,
 				1CD73010213B1C1100105ACE /* NoResult */,
 				1C98F6662128667900EFD4EF /* TableCell */,
-				1C1D4B9F215B1061002E4807 /* Constants.swift */,
 				38EF89CD216A8290000B05D5 /* LoadingAnimation */,
 				1C1D4BA3215B1100002E4807 /* AnimateAppNameView.swift */,
 				1C8EC86C2128C8E80038ECB5 /* RoundedImageView.swift */,
@@ -1600,8 +1629,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C4C6800218F546700D5383D /* MajorWithYearTest.swift in Sources */,
 				1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */,
+				1C4C67CE218933D200D5383D /* ClassTest.swift in Sources */,
+				1C4C67FE218E6D0900D5383D /* MajorTest.swift in Sources */,
 				1C513A8E2183E9CD00FFDC82 /* InstitutionFullTest.swift in Sources */,
+				1C513AAB2187E83800FFDC82 /* StringTest.swift in Sources */,
+				1C513AAD2187E93100FFDC82 /* EducationLevelTest.swift in Sources */,
+				1C4C67D02189647A00D5383D /* ClassWithYearTest.swift in Sources */,
+				1C4C6802218F5BDE00D5383D /* StudentTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -83,7 +83,11 @@ class Student{
     }
     
     func getFirstImage(completionHandler: @escaping (_ uiState:UIState) -> Void){
-        storage.child("users/\(uid!)/\(images[0].imageName!)").getData(maxSize: INT64_MAX) { [weak self] (imageData, error) in
+        if(images.count == 0){
+            completionHandler(.Failure("Không có hình"))
+        }
+        
+        storage.child(firebaseStorageFirstImagePath()).getData(maxSize: INT64_MAX) { [weak self] (imageData, error) in
             
             if(error != nil){
                 completionHandler(.Failure(error.debugDescription))
@@ -95,6 +99,13 @@ class Student{
         }
     }
     
+    func firebaseStorageFirstImagePath()->String{
+        if(images.count == 0){
+            fatalError()
+        }
+        return "users/\(uid!)/\(images[0].imageName!)"
+    }
+    
     func enrollToClassInFirebase(to:ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
         
         to.addToPublicStudentListOnFirebase(student: self, completionHandler: completionHandler)
@@ -104,7 +115,7 @@ class Student{
     
     static func getStudents(from: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState, _ students:[Student]) -> Void){
         
-        let studentRef = Database.database().reference().child("classes/\(from.getFirebasePath())")
+        let studentRef = Database.database().reference().child(from.firebaseClassYearPath(withParent: "classes"))
 
         var students = [Student]()
         
@@ -129,35 +140,23 @@ class Student{
         }
     }
     
-    
-    
     func isStudentInfoCompleted() -> Bool{
-        if(fullName == nil){
+        if(fullName.isEmpty){
             return false
         }
-        if(birthYear == nil){
+        if(birthYear.isEmpty){
             return false
         }
-        if(phoneNumber == nil){
+        if(phoneNumber.isEmpty){
             return false
         }
-        if(email == nil){
+        if(email.isEmpty){
             return false
         }
-        /*if(imageUrls == nil){
-            return false
-        }
-        if(enrolledIn == nil){
-            return false
-        }*/
-        if(uid == nil){
+        if(uid.isEmpty){
             return false
         }
         return true
-    }
-    
-    func getOjectKey()-> String{
-        return uid
     }
     
     func getModelAsDictionary() -> [String:Any]{

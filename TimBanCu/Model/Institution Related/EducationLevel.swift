@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
+
 enum EducationLevel{
     case Elementary
     case MiddleSchool
@@ -18,13 +19,13 @@ enum EducationLevel{
     func getString()->String{
         switch(self){
         case .Elementary:
-            return "th"
+            return Constants.elementaryString
         case .MiddleSchool:
-            return "thcs"
+            return Constants.middleSchoolString
         case .HighSchool:
-            return "thpt"
+            return Constants.highschoolString
         case .University:
-            return "dh"
+            return Constants.universityString
         }
     }
     
@@ -33,21 +34,7 @@ enum EducationLevel{
         var query:DatabaseQuery!
         let queryOrderedByType = schoolsRef.queryOrdered(byChild: "type")
         
-        switch(self){
-        case .Elementary:
-            query = queryOrderedByType.queryEqual(toValue : "th")
-            break
-        case .MiddleSchool:
-            query = queryOrderedByType.queryEqual(toValue : "thcs")
-            break
-        case .HighSchool:
-            query = queryOrderedByType.queryEqual(toValue : "thpt")
-            break
-        case .University:
-            query = queryOrderedByType.queryEqual(toValue : "dh")
-            break
-            
-        }
+        query = queryOrderedByType.queryEqual(toValue : self.getString())
         
         query.observeSingleEvent(of: .value, with: { (snapshot) in
             completionHandler(.Success(snapshot))

@@ -20,12 +20,12 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
     
     init(classWithYear:ClassWithYear){
         self.year = classWithYear.year
-        super.init(institution: classWithYear.institution, classNumber: classWithYear.classNumber, className: classWithYear.className, uid: classWithYear.uid)
+        super.init(institution: classWithYear.institution, classNumber: classWithYear.getClassNumber(), className: classWithYear.getClassName(), uid: classWithYear.uid)
         
     }
     
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
+        Database.database().reference().child(firebaseClassYearPath()).child(student.uid).setValue(student.fullName) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }
@@ -39,13 +39,17 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
         return super.institution
     }
     
-    func getFirebasePath() -> String {
-        return "\(institution.name!)/\(classNumber)/\(className)/\(year)"
+    private func firebaseClassYearPath() -> String {
+        return firebaseClassYearPath(withParent: "classes")
+    }
+    
+    func firebaseClassYearPath(withParent:String) -> String {
+        return "\(withParent)/\(institution.name!)/\(getClassNumber)/\(getClassName())/\(year)"
     }
     
     func objectAsDictionary() -> [String : [String:String]] {
         var dic = [String:[String:String]]()
-        dic[institution.name!] = ["className":className,"uid":uid,"classNumber":classNumber,"year":year]
+        dic[institution.name!] = ["className":getClassName(),"uid":uid,"classNumber":getClassNumber(),"year":year]
         return dic
     }
 
@@ -55,7 +59,7 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
         
     
     func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/\(year)").setValue(CurrentUser.getUid()) { (err, _) in
+        Database.database().reference().child(firebaseClassYearPath()).setValue(CurrentUser.getUid()) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }

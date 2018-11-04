@@ -36,7 +36,7 @@ class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
     }
     
     func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName!)/\(year)").child(student.uid).setValue(student.fullName) { (err, _) in
+        Database.database().reference().child(firebaseClassYearPath()).child(student.uid).setValue(student.fullName) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }
@@ -46,8 +46,12 @@ class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
         }
     }
     
-    func getFirebasePath() -> String {
-        return "\(institution.name!)/\(majorName!)/\(year)"
+    private func firebaseClassYearPath() -> String {
+        return firebaseClassYearPath(withParent: "classes")
+    }
+    
+    func firebaseClassYearPath(withParent:String) -> String {
+        return "\(withParent)/\(institution.name!)/\(majorName!)/\(year)"
     }
     
     func getInstitution() -> Institution {
@@ -55,7 +59,7 @@ class MajorWithYear: Major, ClassAndMajorWithYearProtocol{
     }
     
     func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(majorName)/\(year)").setValue(CurrentUser.getUid()) { (err, _) in
+        Database.database().reference().child(firebaseClassYearPath()).setValue(CurrentUser.getUid()) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }

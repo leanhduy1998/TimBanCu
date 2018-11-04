@@ -12,6 +12,6 @@ class ClassNameViewModel{
     var className:String!
     
     init(classs:Class){
-        self.className = classs.getName()
+        self.className = classs.getClassName()
     }
 }

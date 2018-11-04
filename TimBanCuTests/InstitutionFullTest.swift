@@ -11,6 +11,8 @@ import XCTest
 
 class InstitutionFullTest: XCTestCase {
     var institution:InstitutionFull!
+    var firstInit:InstitutionFull!
+    var secondInit:InstitutionFull!
     
     override func setUp() {
         super.setUp()
@@ -19,29 +21,36 @@ class InstitutionFullTest: XCTestCase {
     
     func testGetInstitutions(){
         let institution = InstitutionFull.getInstitution(key: "testname", value: ["address":"testAddress","uid":"testUid"], educationLevel: EducationLevel.Elementary)
+        
         XCTAssertTrue(institution.address == "testAddress")
         XCTAssertTrue(institution.name == "testname")
         XCTAssertTrue(institution.addByUid == "testUid")
     }
     
     func testInit(){
-        let firstInit = InstitutionFull(name: "testName", address: "testAddress", type: "testType", addByUid: "testId")
+        firstInit = InstitutionFull(name: "testName", address: "testAddress", type: "testType", addByUid: "testId")
         XCTAssertTrue(firstInit.address == "testAddress")
         XCTAssertTrue(firstInit.name == "testName")
         XCTAssertTrue(firstInit.addByUid == "testId")
         XCTAssertTrue(firstInit.type == "testType")
         
-        let secondInit = InstitutionFull(name: "testName", type: "testType", addByUid: "testId")
+        secondInit = InstitutionFull(name: "testName", type: "testType", addByUid: "testId")
         XCTAssertTrue(secondInit.address == nil)
         XCTAssertTrue(secondInit.name == "testName")
         XCTAssertTrue(secondInit.addByUid == "testId")
         XCTAssertTrue(secondInit.type == "testType")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testFirebasePath(){
+        let path = institution.firebasePath()
+        XCTAssertFalse(StringTest.containOptional(string: path))
+        XCTAssertTrue(path == "schools/testName")
     }
 
-    
-
+    override func tearDown() {
+        super.tearDown()
+        institution = nil
+        firstInit = nil
+        secondInit = nil
+    }
 }

@@ -48,8 +48,9 @@ class ChatController{
     }
     
     private func setupDBReference(){
-        messageRef = Database.database().reference().child("messages").child(classOrMajorWithYear.getFirebasePath())
-        typingIndicatorRef = Database.database().reference().child("typingIndicator").child(classOrMajorWithYear.getFirebasePath())
+        messageRef = Database.database().reference().child(classOrMajorWithYear.firebaseClassYearPath(withParent: "messages"))
+        typingIndicatorRef = Database.database().reference().child(classOrMajorWithYear.firebaseClassYearPath(withParent: "typingIndicator"))
+
         
         usersTypingQuery = typingIndicatorRef!.queryOrderedByValue().queryEqual(toValue: true)
     }
@@ -99,8 +100,9 @@ extension ChatController{
             return
         }
         
-        let imageRef = storage.reference().child("messages/\(classOrMajorWithYear.getFirebasePath())")
+        let imageRef = storage.reference().child(classOrMajorWithYear.firebaseClassYearPath(withParent: "messages"))
         
+
         
         if let key = sendPhotoMessage() {
             let path = "\(Int(Date.timeIntervalSinceReferenceDate * 1000)))"

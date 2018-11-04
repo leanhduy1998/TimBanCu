@@ -10,34 +10,34 @@ import Foundation
 import FirebaseDatabase
 
 class Class:ClassAndMajorProtocol{
-    internal var uid: String!
-    internal var institution: Institution!
-    internal let className:String
-    internal let classNumber:String
+    var uid: String!
+    var institution: Institution!
+    private let classNameString:String
+    private let classNumberString:String
     
     init(institution:InstitutionFull, classNumber:String,className:String, uid:String){
-        self.className = className
+        self.classNameString = className
         self.uid = uid
         self.institution = institution
-        self.classNumber = classNumber
+        self.classNumberString = classNumber
     }
     
     init(institution:Institution, classNumber:String,className:String, uid:String){
-        self.className = className
+        self.classNameString = className
         self.uid = uid
         self.institution = institution
-        self.classNumber = classNumber
+        self.classNumberString = classNumber
     }
     
     init(classs:Class){
-        self.className = classs.className
+        self.classNameString = classs.getClassName()
         self.uid = classs.uid
         self.institution = classs.institution
-        self.classNumber = classs.classNumber
+        self.classNumberString = classs.getClassNumber()
     }
     
     func uploadToFirebase(completionHandler: @escaping (_ state:UIState)->Void){
-        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/createdBy").setValue(uid) { (err, _) in
+        Database.database().reference().child(firebaseUploadPath()).setValue(uid) { (err, _) in
             if(err == nil){
                 completionHandler(.Success())
             }
@@ -47,14 +47,22 @@ class Class:ClassAndMajorProtocol{
         }
     }
     
-    func getName()->String{
-        return className
+    func firebaseUploadPath()->String{
+        return "classes/\(institution.name!)/\(getClassNumber)/\(getClassName)/createdBy"
+    }
+    
+    func getClassName()->String{
+        return classNameString
+    }
+    
+    func getClassNumber()->String{
+        return classNumberString
     }
     
     static func nameExist(name:String, classes:[Class])->Bool{
         let className = name.uppercased()
         for classN in classes{
-            if(className == classN.getName()){
+            if(className == classN.getClassName().uppercased()){
                 return true
             }
         }
@@ -62,7 +70,7 @@ class Class:ClassAndMajorProtocol{
     }
     
     func classYearExist(year: String, completionHandler: @escaping (Bool) -> Void) {
-        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)/\(className)/\(year)").observeSingleEvent(of: .value) { (snapshot) in
+        Database.database().reference().child(firebaseClassYearPath(year: year)).observeSingleEvent(of: .value) { (snapshot) in
             
             let classValue = (snapshot as! DataSnapshot).value
             
@@ -75,8 +83,12 @@ class Class:ClassAndMajorProtocol{
         }
     }
     
+    func firebaseClassYearPath(year:String)->String{
+        return "classes/\(institution.name!)/\(getClassNumber())/\(getClassName())/\(year)"
+    }
+    
     static func fetchAllClass(institution:InstitutionFull,classNumber:String,completionHandler: @escaping (UIState, [Class]) -> ()){
-        Database.database().reference().child("classes/\(institution.name!)/\(classNumber)").observeSingleEvent(of: .value, with: { (snapshot) in
+        Database.database().reference().child(firebaseFetchPath(institutionName: institution.name, classNumber: classNumber)).observeSingleEvent(of: .value, with: { (snapshot) in
             var classes = [Class]()
             
             for snap in snapshot.children{
@@ -94,6 +106,10 @@ class Class:ClassAndMajorProtocol{
         }) { (er) in
             completionHandler(.Failure(er.localizedDescription),[Class]())
         }
+    }
+    
+    static func firebaseFetchPath(institutionName:String, classNumber:String)->String{
+        return "classes/\(institutionName)/\(classNumber)"
     }
     
     func copy() -> ClassAndMajorProtocol {

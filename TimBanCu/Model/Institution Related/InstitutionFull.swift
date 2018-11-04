@@ -59,7 +59,11 @@ class InstitutionFull:Institution{
     }
     
     func writeToDatabase(completionHandler: @escaping (Error?,DatabaseReference)->Void){
-        Database.database().reference().child("schools").child(name).setValue(getModelAsDictionary(), withCompletionBlock: completionHandler)
+        Database.database().reference().child(firebasePath()).setValue(getModelAsDictionary(), withCompletionBlock: completionHandler)
+    }
+    
+    func firebasePath()->String{
+        return "schools/\(name!)"
     }
 }
 
