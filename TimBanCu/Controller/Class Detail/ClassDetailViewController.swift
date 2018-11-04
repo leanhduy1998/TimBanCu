@@ -116,7 +116,7 @@ class ClassDetailViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AddYourInfoViewController{
-            destination.classProtocol = classProtocol as? ClassWithYear
+            destination.classProtocol = classProtocol
         }
         if let destination = segue.destination as? StudentDetailViewController{
             destination.student = selectedStudent

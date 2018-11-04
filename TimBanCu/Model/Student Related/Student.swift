@@ -141,19 +141,19 @@ class Student{
     }
     
     func isStudentInfoCompleted() -> Bool{
-        if(fullName.isEmpty){
+        if(fullName == nil || fullName.isEmpty){
             return false
         }
-        if(birthYear.isEmpty){
+        if(birthYear == nil || birthYear.isEmpty){
             return false
         }
-        if(phoneNumber.isEmpty){
+        if(phoneNumber == nil || phoneNumber.isEmpty){
             return false
         }
-        if(email.isEmpty){
+        if(email == nil || email.isEmpty){
             return false
         }
-        if(uid.isEmpty){
+        if(uid == nil || uid.isEmpty){
             return false
         }
         return true

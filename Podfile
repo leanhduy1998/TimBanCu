@@ -30,7 +30,7 @@ target 'TimBanCu' do
     inherit! :search_paths
 
     # Pods for testing
-    pod 'ImageSlideshow'
+     pod 'ImageSlideshow'
   pod 'GoogleSignIn'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
@@ -53,7 +53,7 @@ target 'TimBanCu' do
     inherit! :search_paths
 
     # Pods for testing
-    pod 'ImageSlideshow'
+     pod 'ImageSlideshow'
   pod 'GoogleSignIn'
   pod 'Firebase/Core'
   pod 'Firebase/Database'

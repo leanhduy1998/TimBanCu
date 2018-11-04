@@ -67,6 +67,7 @@ class ClassDetailUIController{
             break
         case (.AddingNewData, .Success()):
             alerts.showAddYourInfoCompleteAlert()
+            showAddYourInfoBtnIfYouAreNotInTheClass()
             filterVisibleStudent(filter: searchTF.text!, allStudent: searchStudents)
             break
         case (.AddingNewData, .Failure(let errorStr)):
@@ -80,6 +81,7 @@ class ClassDetailUIController{
         case (.Success(), .AddingNewData): break
         case (.Success(), .Success()):
             reloadTableViewAndUpdateUI()
+            showAddYourInfoBtnIfYouAreNotInTheClass()
             break
         case (.Success(), .Failure(let errStr)):
             reloadTableViewAndUpdateUI()
@@ -133,7 +135,7 @@ class ClassDetailUIController{
         chatBtn.isHidden = false
         addYourselfBtn.isHidden = false
         
-        if(viewcontroller.getAllStudents().count == 0){
+        if(searchStudents.count == 0){
             addYourselfBtn.isHidden = true
             chatBtn.isHidden = true
         }
