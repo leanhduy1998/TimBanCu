@@ -63,7 +63,7 @@ final class SignInUIController{
         switch(state, newState) {
             
         case (.Loading, .Success( _ )),(.Failure, .Success),(.Success( _ ), .Success( _ )): goToNextScreen()
-        case (.Loading, .Failure(let errorStr)): createErrorAlert(errorStr: errorStr)            
+        case (.Loading, .Failure(let errorStr)),(.Failure(_),.Failure(let errorStr)): createErrorAlert(errorStr: errorStr)            
         // after login silently failed, aka, when the user is not log in google account
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
