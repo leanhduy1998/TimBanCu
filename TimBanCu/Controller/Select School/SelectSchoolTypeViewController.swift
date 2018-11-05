@@ -16,6 +16,9 @@ class SelectSchoolTypeViewController: UIViewController {
     
     @IBOutlet weak var tieuHocButton: UIButton!
     
+    @IBOutlet weak var thptButton: UIButton!
+    
+    @IBOutlet weak var thcsButton: UIButton!
     var selectedSchoolType:EducationLevel!
     
     private var uiController: SelectSchoolTypeUIController!
@@ -23,6 +26,11 @@ class SelectSchoolTypeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiController = SelectSchoolTypeUIController(viewcontroller: self)
+        
+        uiController.customButtonTitleSize(button: thcsButton)
+        uiController.customButtonTitleSize(button: thptButton)
+        
+        
     }
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {

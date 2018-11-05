@@ -19,6 +19,7 @@ class InfoAlert{
     private var animation:LOTAnimationView!
     private var animationName: String!
     private var animationHeight: CGFloat!
+    private var loopAnimation = true
     private var alertType: AlertAnimationType!
 
     init(title:String,message:String, alertType: AlertAnimationType){
@@ -44,6 +45,7 @@ class InfoAlert{
         case .Success:
             animationName = "success"
             animationHeight = 100
+            loopAnimation = false
             break
         case .Error:
             animationName = "bikingishard"
@@ -75,7 +77,7 @@ class InfoAlert{
     private func setUpAnimation() {
         animation = LOTAnimationView(name: animationName)
         animation.contentMode = .scaleAspectFit
-        animation.loopAnimation = true
+        animation.loopAnimation = loopAnimation
         animation.play()
         animation.translatesAutoresizingMaskIntoConstraints = false
         alert.view.addSubview(animation)

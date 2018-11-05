@@ -134,16 +134,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nhf-Hl-TCd">
-                                <rect key="frame" x="20" y="100.5" width="335" height="402"/>
+                                <rect key="frame" x="20" y="50.5" width="335" height="502.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jkk-of-0JW">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="191"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="241"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-Ng-h4U" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="241"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5S-wc-uGJ" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="25.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29" y="50.5" width="100" height="100"/>
                                                         <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.25" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="i4m-gg-NFY"/>
@@ -151,17 +151,17 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elementary" translatesAutoresizingMaskIntoConstraints="NO" id="XKU-c8-Gxu">
-                                                        <rect key="frame" x="47" y="43.5" width="64" height="64"/>
+                                                        <rect key="frame" x="-98.5" y="-76.5" width="354.5" height="354"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xns-ln-A9o">
-                                                        <rect key="frame" x="8" y="145.5" width="141.5" height="35.5"/>
+                                                        <rect key="frame" x="8" y="170.5" width="141.5" height="60.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Tiểu Học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBh-mb-DeF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="241"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="elementary"/>
                                                         </userDefinedRuntimeAttributes>
@@ -191,17 +191,17 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0m4-v2-azd" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="241"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEU-LE-hq9">
-                                                        <rect key="frame" x="8" y="145.5" width="141.5" height="35.5"/>
+                                                        <rect key="frame" x="25" y="170.5" width="107.5" height="60.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Trung học cơ sở">
-                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         </state>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97O-bR-YGu" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="25.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29" y="50.5" width="100" height="100"/>
                                                         <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="0.59999999999999998" alpha="0.25" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="MAb-P5-5Uf"/>
@@ -209,10 +209,10 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle" translatesAutoresizingMaskIntoConstraints="NO" id="1SP-lr-A44">
-                                                        <rect key="frame" x="47" y="43.5" width="64" height="64"/>
+                                                        <rect key="frame" x="-98" y="-76.5" width="354" height="354"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-Q8-WR4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="241"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="middleSchool"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
@@ -227,7 +227,7 @@
                                                 <constraints>
                                                     <constraint firstItem="1SP-lr-A44" firstAttribute="centerY" secondItem="97O-bR-YGu" secondAttribute="centerY" id="0zy-QK-cqB"/>
                                                     <constraint firstItem="97O-bR-YGu" firstAttribute="centerY" secondItem="0m4-v2-azd" secondAttribute="centerY" constant="-20" id="4yJ-tb-SbC"/>
-                                                    <constraint firstItem="jEU-LE-hq9" firstAttribute="leading" secondItem="0m4-v2-azd" secondAttribute="leading" constant="8" id="5Tp-BK-R0g"/>
+                                                    <constraint firstItem="jEU-LE-hq9" firstAttribute="leading" secondItem="0m4-v2-azd" secondAttribute="leading" constant="25" id="5Tp-BK-R0g"/>
                                                     <constraint firstAttribute="bottom" secondItem="jEU-LE-hq9" secondAttribute="bottom" constant="10" id="7F5-wK-cQM"/>
                                                     <constraint firstItem="jEU-LE-hq9" firstAttribute="top" secondItem="97O-bR-YGu" secondAttribute="bottom" constant="20" id="BQ5-PH-iLK"/>
                                                     <constraint firstAttribute="bottom" secondItem="IpT-Q8-WR4" secondAttribute="bottom" id="BQG-tA-K9k"/>
@@ -235,7 +235,7 @@
                                                     <constraint firstItem="97O-bR-YGu" firstAttribute="centerX" secondItem="0m4-v2-azd" secondAttribute="centerX" id="WUW-pS-FSl"/>
                                                     <constraint firstItem="1SP-lr-A44" firstAttribute="centerX" secondItem="97O-bR-YGu" secondAttribute="centerX" id="cvm-Ot-0ik"/>
                                                     <constraint firstItem="IpT-Q8-WR4" firstAttribute="leading" secondItem="0m4-v2-azd" secondAttribute="leading" id="jdf-5k-i7v"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jEU-LE-hq9" secondAttribute="trailing" constant="8" id="lpx-ES-D6b"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jEU-LE-hq9" secondAttribute="trailing" constant="25" id="lpx-ES-D6b"/>
                                                     <constraint firstAttribute="trailing" secondItem="IpT-Q8-WR4" secondAttribute="trailing" id="nwD-NZ-eHp"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -246,13 +246,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GK2-T0-AXm">
-                                        <rect key="frame" x="0.0" y="211" width="335" height="191"/>
+                                        <rect key="frame" x="0.0" y="261" width="335" height="241.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQH-Al-Mu5" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="241.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-jJ-FoT" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="25.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29" y="50.5" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="VG8-vQ-9Er"/>
@@ -260,17 +260,17 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="highSchool" translatesAutoresizingMaskIntoConstraints="NO" id="HgZ-Bc-qKv">
-                                                        <rect key="frame" x="47" y="43.5" width="64" height="64"/>
+                                                        <rect key="frame" x="-98.5" y="-76.5" width="354.5" height="354"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WX-GR-zzx">
-                                                        <rect key="frame" x="8" y="145.5" width="141.5" height="35.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <rect key="frame" x="15" y="170.5" width="127.5" height="61"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Trung học phổ thông">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbJ-37-QD6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="241.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="highSchool"/>
                                                         </userDefinedRuntimeAttributes>
@@ -281,9 +281,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="8WX-GR-zzx" secondAttribute="trailing" constant="8" id="18w-pa-COy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8WX-GR-zzx" secondAttribute="trailing" constant="15" id="18w-pa-COy"/>
                                                     <constraint firstItem="fbJ-37-QD6" firstAttribute="leading" secondItem="zQH-Al-Mu5" secondAttribute="leading" id="6fz-EH-wzz"/>
-                                                    <constraint firstItem="8WX-GR-zzx" firstAttribute="leading" secondItem="zQH-Al-Mu5" secondAttribute="leading" constant="8" id="6ht-oy-VF3"/>
+                                                    <constraint firstItem="8WX-GR-zzx" firstAttribute="leading" secondItem="zQH-Al-Mu5" secondAttribute="leading" constant="15" id="6ht-oy-VF3"/>
                                                     <constraint firstItem="fbJ-37-QD6" firstAttribute="top" secondItem="zQH-Al-Mu5" secondAttribute="top" id="9fB-ha-eQ8"/>
                                                     <constraint firstAttribute="trailing" secondItem="fbJ-37-QD6" secondAttribute="trailing" id="D3e-Nf-2Pc"/>
                                                     <constraint firstItem="cWz-jJ-FoT" firstAttribute="centerX" secondItem="zQH-Al-Mu5" secondAttribute="centerX" id="RFl-BP-avR"/>
@@ -300,10 +300,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-hV-Lbv" customClass="ViewShadow" customModule="TimBanCu" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="191"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="241.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJH-jV-zSA" customClass="CircleView" customModule="TimBanCu" customModuleProvider="target">
-                                                        <rect key="frame" x="29" y="25.5" width="100" height="100"/>
+                                                        <rect key="frame" x="29" y="50.5" width="100" height="100"/>
                                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.59999999999999998" alpha="0.25" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="XaY-BO-XIN"/>
@@ -311,17 +311,17 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="university" translatesAutoresizingMaskIntoConstraints="NO" id="RYJ-yc-J8G">
-                                                        <rect key="frame" x="47" y="43.5" width="64" height="64"/>
+                                                        <rect key="frame" x="-113" y="-91.5" width="384" height="384"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgJ-oy-uyp">
-                                                        <rect key="frame" x="8" y="145.5" width="141.5" height="35.5"/>
+                                                        <rect key="frame" x="8" y="170.5" width="141.5" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Đại học">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH3-Jy-K1g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="191"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157.5" height="241.5"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="university"/>
                                                         </userDefinedRuntimeAttributes>
@@ -360,7 +360,7 @@
                             <constraint firstItem="egx-Rd-5we" firstAttribute="trailing" secondItem="Nhf-Hl-TCd" secondAttribute="trailing" constant="20" id="1Kz-dM-3jw"/>
                             <constraint firstItem="Nhf-Hl-TCd" firstAttribute="centerY" secondItem="t5p-DZ-eSO" secondAttribute="centerY" id="HLu-MO-J4P"/>
                             <constraint firstItem="Nhf-Hl-TCd" firstAttribute="leading" secondItem="egx-Rd-5we" secondAttribute="leading" constant="20" id="hlE-m8-Dyq"/>
-                            <constraint firstItem="Nhf-Hl-TCd" firstAttribute="height" secondItem="t5p-DZ-eSO" secondAttribute="height" multiplier="2:3" id="xiN-Fb-Pkw"/>
+                            <constraint firstItem="Nhf-Hl-TCd" firstAttribute="height" secondItem="t5p-DZ-eSO" secondAttribute="height" multiplier="2.5:3" id="xiN-Fb-Pkw"/>
                             <constraint firstItem="Nhf-Hl-TCd" firstAttribute="centerX" secondItem="t5p-DZ-eSO" secondAttribute="centerX" id="yGZ-5x-uKP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egx-Rd-5we"/>
@@ -380,6 +380,8 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="thcsButton" destination="jEU-LE-hq9" id="f81-hb-oS4"/>
+                        <outlet property="thptButton" destination="8WX-GR-zzx" id="AfG-Qg-ZLF"/>
                         <segue destination="MxZ-TI-ABJ" kind="show" identifier="SelectQueryToSchoolSegue" id="EZH-A0-8yp"/>
                     </connections>
                 </viewController>
@@ -1108,7 +1110,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:DIl-aM-9dw:image" translatesAutoresizingMaskIntoConstraints="NO" id="OWW-F3-M0t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="OWW-F3-M0t">
                                         <rect key="frame" x="5" y="7.5" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="7N6-Mw-xDg"/>
@@ -1176,11 +1178,11 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
         <image name="computer" width="64" height="64"/>
         <image name="elementary" width="64" height="64"/>
         <image name="friends" width="2000" height="1306"/>
-        <image name="highSchool" width="64" height="64"/>
-        <image name="home4.5" width="25" height="25"/>
+        <image name="highSchool" width="354.4615478515625" height="354.4615478515625"/>
+        <image name="home4.5" width="18.75" height="18.75"/>
         <image name="homeDarkGray" width="25" height="25"/>
         <image name="homeOrange" width="24" height="24"/>
-        <image name="homeOrange4" width="25" height="25"/>
+        <image name="homeOrange4" width="18.75" height="18.75"/>
         <image name="imageView:DIl-aM-9dw:image" width="50" height="50">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI

@@ -28,4 +28,9 @@ final class SelectSchoolTypeUIController{
         
     }
     
+    func customButtonTitleSize(button: UIButton) {
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .center
+    }
+    
 }

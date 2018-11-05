@@ -11,6 +11,7 @@ import UIKit
 
 class UserClassesUIController:NSObject,UITableViewDelegate,UITableViewDataSource{
     private weak var viewcontroller:UserClassesViewController!
+    private let customSelectionColorView = CustomSelectionColorView()
     
     init(viewcontroller:UserClassesViewController){
         super.init()
@@ -28,12 +29,14 @@ class UserClassesUIController:NSObject,UITableViewDelegate,UITableViewDataSource
         if let classWithYear = CurrentUser.getEnrolledClasses()[indexPath.row] as? ClassWithYear{
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserClassTableViewCell") as! UserClassTableViewCell
             cell.viewModel = UserClassViewModel(classWithYear: classWithYear)
+            cell.selectedBackgroundView = self.customSelectionColorView
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserUniversityTableViewCell") as! UserUniversityTableViewCell
             let majorWithYear = CurrentUser.getEnrolledClasses()[indexPath.row] as! MajorWithYear
             cell.viewModel = UserUniversityViewModel(major: majorWithYear)
+            cell.selectedBackgroundView = self.customSelectionColorView
             return cell
         }
     }

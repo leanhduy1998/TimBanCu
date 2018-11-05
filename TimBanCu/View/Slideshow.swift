@@ -38,7 +38,7 @@ class Slideshow:ImageSlideshow{
     
     func setUserImages(images:[Image]){
         userImages = images
-        userImages.append(Image(image: #imageLiteral(resourceName: "addImage"), uid:CurrentUser.getUid()))
+        userImages.append(Image(image: UIImage(named: "photo")!, uid:CurrentUser.getUid()))
     }
     
     func reloadImageSlideShow(){

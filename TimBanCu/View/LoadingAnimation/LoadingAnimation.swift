@@ -87,8 +87,8 @@ class LoadingAnimation: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.centerYAnchor.constraint(equalTo: viewcontroller.view.centerYAnchor).isActive = true
         self.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
-        self.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width / 2).isActive = true
-        self.heightAnchor.constraint(equalToConstant: viewcontroller.view.frame.width / 2).isActive = true
+        self.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
     private func setUpLoadingLabelConstraints() {
