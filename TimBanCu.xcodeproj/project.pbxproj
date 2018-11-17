@@ -55,10 +55,8 @@
 		1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A702182680700FFDC82 /* PrivateProfile.swift */; };
 		1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A74218368E300FFDC82 /* EULAViewController.swift */; };
 		1C513A7C21838E8000FFDC82 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A7B21838E8000FFDC82 /* Filter.swift */; };
-		1C513A862183CCBA00FFDC82 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A852183CC5700FFDC82 /* Chat.storyboard */; };
 		1C513A882183CCCE00FFDC82 /* ClassAndStudentDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A872183CCCD00FFDC82 /* ClassAndStudentDetail.storyboard */; };
 		1C513A8B2183D28600FFDC82 /* ClassOrMajorSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */; };
-		1C513A8C2183D33900FFDC82 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C513A892183CFAF00FFDC82 /* Setting.storyboard */; };
 		1C513A8E2183E9CD00FFDC82 /* InstitutionFullTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */; };
 		1C513AAB2187E83800FFDC82 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAA2187E83800FFDC82 /* StringTest.swift */; };
 		1C513AAD2187E93100FFDC82 /* EducationLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAC2187E93100FFDC82 /* EducationLevelTest.swift */; };
@@ -171,6 +169,8 @@
 		3808954D216E9A1700ACAB15 /* yearError.json in Resources */ = {isa = PBXBuildFile; fileRef = 3808954B216E9A1500ACAB15 /* yearError.json */; };
 		3808954E216E9A1700ACAB15 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 3808954C216E9A1600ACAB15 /* info.json */; };
 		3869265A216DD07B00D7780F /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 38692659216DD07B00D7780F /* success.json */; };
+		38730F602190CFDE009B6217 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38730F5F2190CFDE009B6217 /* Chat.storyboard */; };
+		38730F622190CFEB009B6217 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38730F612190CFEB009B6217 /* Setting.storyboard */; };
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
@@ -250,9 +250,7 @@
 		1C513A702182680700FFDC82 /* PrivateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateProfile.swift; sourceTree = "<group>"; };
 		1C513A74218368E300FFDC82 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		1C513A7B21838E8000FFDC82 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
-		1C513A852183CC5700FFDC82 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Chat.storyboard; path = /Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Chat.storyboard; sourceTree = "<absolute>"; };
 		1C513A872183CCCD00FFDC82 /* ClassAndStudentDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassAndStudentDetail.storyboard; sourceTree = "<group>"; };
-		1C513A892183CFAF00FFDC82 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Setting.storyboard; path = /Users/duyle2/Desktop/ios/TimBanCu/TimBanCu/Setting.storyboard; sourceTree = "<absolute>"; };
 		1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClassOrMajorSelection.storyboard; sourceTree = "<group>"; };
 		1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionFullTest.swift; sourceTree = "<group>"; };
 		1C513AAA2187E83800FFDC82 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
@@ -374,6 +372,8 @@
 		3808954B216E9A1500ACAB15 /* yearError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yearError.json; sourceTree = "<group>"; };
 		3808954C216E9A1600ACAB15 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
 		38692659216DD07B00D7780F /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		38730F5F2190CFDE009B6217 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		38730F612190CFEB009B6217 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -573,13 +573,6 @@
 				1C513A662181145C00FFDC82 /* ClassAndMajorWithYearProtocol.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		1C513AA62187D0FE00FFDC82 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1C513AA92187E82100FFDC82 /* Helper */ = {
@@ -793,10 +786,10 @@
 		1CBF5C7620A8197B00B78E6A /* TimBanCu */ = {
 			isa = PBXGroup;
 			children = (
+				38730F612190CFEB009B6217 /* Setting.storyboard */,
+				38730F5F2190CFDE009B6217 /* Chat.storyboard */,
 				1CBF5C7720A8197B00B78E6A /* AppDelegate.swift */,
 				1CBF5C7B20A8197B00B78E6A /* Main.storyboard */,
-				1C513A852183CC5700FFDC82 /* Chat.storyboard */,
-				1C513A892183CFAF00FFDC82 /* Setting.storyboard */,
 				1C513A8A2183D28600FFDC82 /* ClassOrMajorSelection.storyboard */,
 				1C513A872183CCCD00FFDC82 /* ClassAndStudentDetail.storyboard */,
 				1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */,
@@ -808,7 +801,6 @@
 				1CD73016213CB53F00105ACE /* Enums */,
 				1CE24D0020FBE142008DE3FB /* Helper */,
 				1CBF5C8320A8197C00B78E6A /* Info.plist */,
-				1C513AA62187D0FE00FFDC82 /* Extensions */,
 			);
 			path = TimBanCu;
 			sourceTree = "<group>";
@@ -1137,9 +1129,11 @@
 				1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */,
 				1C5365BA20E6BDFE000F7FB2 /* thpttphcm.txt in Resources */,
 				1C5365BE20E6D953000F7FB2 /* thpthanoi.txt in Resources */,
+				38730F602190CFDE009B6217 /* Chat.storyboard in Resources */,
 				3869265A216DD07B00D7780F /* success.json in Resources */,
 				1C5365C020E7F384000F7FB2 /* dhcanuoc.txt in Resources */,
 				1C3ADA8C20F962BB0041421F /* awsconfiguration.json in Resources */,
+				38730F622190CFEB009B6217 /* Setting.storyboard in Resources */,
 				1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */,
 				1CBF5C7F20A8197C00B78E6A /* Assets.xcassets in Resources */,
 				1C1D4BAF215B11BA002E4807 /* loading...json in Resources */,
@@ -1151,11 +1145,9 @@
 				1C513A8B2183D28600FFDC82 /* ClassOrMajorSelection.storyboard in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */,
-				1C513A8C2183D33900FFDC82 /* Setting.storyboard in Resources */,
 				38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */,
 				3808954D216E9A1700ACAB15 /* yearError.json in Resources */,
 				1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */,
-				1C513A862183CCBA00FFDC82 /* Chat.storyboard in Resources */,
 				1C1D4BAC215B11BA002E4807 /* bikingishard.json in Resources */,
 				3808954E216E9A1700ACAB15 /* info.json in Resources */,
 				1CB5F33020E3202500876F80 /* tieuhochanoi.txt in Resources */,

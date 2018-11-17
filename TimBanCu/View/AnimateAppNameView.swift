@@ -34,7 +34,7 @@ class AnimateAppNameView {
         
         appNameStackView.translatesAutoresizingMaskIntoConstraints = false
         appNameStackView.centerXAnchor.constraint(equalTo: viewcontroller.view.centerXAnchor).isActive = true
-        appNameStackView.topAnchor.constraint(equalTo: viewcontroller.view.topAnchor, constant: (viewcontroller.view.frame.height / 6) + 10).isActive = true
+        appNameStackView.topAnchor.constraint(equalTo: viewcontroller.view.topAnchor, constant: (viewcontroller.view.frame.height / 6) + 18).isActive = true
         appNameStackView.widthAnchor.constraint(equalToConstant: viewcontroller.view.frame.width)
         appNameStackView.heightAnchor.constraint(equalToConstant: 100)
     }

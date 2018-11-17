@@ -57,7 +57,7 @@ class InfoAlert{
             break
         case .Info:
             animationName = "info"
-            animationHeight = 150
+            animationHeight = 1 
             break
         case .YearIsInTheFuture:
             animationName = "yearError"
