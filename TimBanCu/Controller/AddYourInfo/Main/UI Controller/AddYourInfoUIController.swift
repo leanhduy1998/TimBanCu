@@ -107,9 +107,11 @@ extension AddYourInfoUIController{
             (phoneTF.text?.isEmpty)! || (emailTF.text?.isEmpty)!){
             
             viewcontroller.addInfoBtn.isEnabled = false
+            viewcontroller.addInfoBtn.setTitleColor(UIColor.gray, for: .normal)
         }
         else{
             viewcontroller.addInfoBtn.isEnabled = true
+            viewcontroller.addInfoBtn.setTitleColor(Constants.AppColor.primaryColor, for: .normal)
         }
     }
 }
