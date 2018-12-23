@@ -55,6 +55,7 @@ final class SignInUIController{
         viewcontroller.view.bringSubview(toFront: googleBtn)
         viewcontroller.view.bringSubview(toFront: revealingSplashView)
     }
+    
     func viewWillDisappear(){
         whiteView.removeFromSuperview()
     }
@@ -87,9 +88,8 @@ final class SignInUIController{
     
     func animateAppName(){
         DispatchQueue.main.async {
-            self.appNameView.animate()
+           self.appNameView.animate()
         }
-        
     }
     
     
