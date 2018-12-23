@@ -40,4 +40,6 @@ class SettingViewController: UIViewController {
         
         performSegue(withIdentifier: "SettingToSignInSegue", sender: self)
     }
+    
+    
 }

@@ -16,7 +16,11 @@ class NoUserInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addStudentInfoBtn(_ sender: Any) {
+        let addYourInfoVC = AddYourInfoViewController()
+        self.present(addYourInfoVC, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

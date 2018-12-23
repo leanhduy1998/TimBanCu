@@ -12,7 +12,7 @@ import FirebaseStorage
 
 class AddYourInfoController{
     
-    fileprivate let classProtocol:ClassAndMajorWithYearProtocol
+    fileprivate var classProtocol:ClassAndMajorWithYearProtocol?
     fileprivate var userData:UserData!
     
     fileprivate weak var viewcontroller:AddYourInfoViewController!
@@ -27,7 +27,7 @@ class AddYourInfoController{
         
         setUserData(images: images)
         
-        updateCurrentStudentInfo()
+        updateMyLocalStudentInfo()
         
         var finishUploadingImagesToStorage = false
         var finishUploadingDataToDatabase = false
@@ -62,23 +62,25 @@ class AddYourInfoController{
             }
         }
         
-        enrollUserIntoClass { (status) in
-            switch(status){
-            case .Success():
-                finishEnrollUserToClass = true
-                if(finishUploadingDataToDatabase && finishUploadingImagesToStorage){
-                    completeUploadClosure(.Success())
+        if classProtocol != nil{
+            enrollUserIntoClass { (status) in
+                switch(status){
+                case .Success():
+                    finishEnrollUserToClass = true
+                    if(finishUploadingDataToDatabase && finishUploadingImagesToStorage){
+                        completeUploadClosure(.Success())
+                    }
+                    break
+                case .Failed(let errMsg):
+                    completeUploadClosure(.Failure(errMsg))
+                    break
                 }
-                break
-            case .Failed(let errMsg):
-                completeUploadClosure(.Failure(errMsg))
-                break
             }
         }
     }
     
     private func enrollUserIntoClass(completionHandler: @escaping (_ status:Status)->()){
-        CurrentUser.addEnrollmentLocalAndOnline(classProtocol: classProtocol) { (uiState) in
+        CurrentUser.addEnrollmentLocalAndOnline(classProtocol: classProtocol!) { (uiState) in
             switch(uiState){
             case .Success():
                 completionHandler(.Success())
@@ -92,7 +94,7 @@ class AddYourInfoController{
         }
     }
     
-    fileprivate func updateCurrentStudentInfo(){
+    fileprivate func updateMyLocalStudentInfo(){
         CurrentUser.student = userData
     }
 }

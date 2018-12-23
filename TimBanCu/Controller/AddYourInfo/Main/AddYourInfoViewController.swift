@@ -38,7 +38,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     private var loadingAnimation: LoadingAnimation!
     
     // from previous class
-    var classProtocol:ClassAndMajorWithYearProtocol!
+    var classProtocol:ClassAndMajorWithYearProtocol?
     
     // this class
     var userImages = [Image]()
