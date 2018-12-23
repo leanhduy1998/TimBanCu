@@ -51,6 +51,10 @@ class ClassTest: XCTestCase {
         XCTAssertTrue(thirdInit.uid == "uid")
         XCTAssertFalse(StringTest.containOptional(string: thirdInit.firebaseUploadPath()))
         
+        XCTAssertTrue(firstInit.firebaseUploadPath() == "classes/name/classNumber/className/createdBy")
+        XCTAssertTrue(secondInit.firebaseUploadPath() == "classes/name/classNumber/className/createdBy")
+        XCTAssertTrue(thirdInit.firebaseUploadPath() == "classes/name/classNumber/className/createdBy")
+        
     }
     
     func testNameExist(){

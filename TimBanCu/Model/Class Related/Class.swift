@@ -48,7 +48,7 @@ class Class:ClassAndMajorProtocol{
     }
     
     func firebaseUploadPath()->String{
-        return "classes/\(institution.name!)/\(getClassNumber)/\(getClassName)/createdBy"
+        return "classes/\(institution.name!)/\(getClassNumber())/\(getClassName())/createdBy"
     }
     
     func getClassName()->String{
