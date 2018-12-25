@@ -14,7 +14,7 @@ import FacebookLogin
 import GoogleSignIn
 import FBSDKLoginKit
 
-final class SignInUIController{
+final class SignInUIController {
     
     var state: UIState = .Loading {
         willSet(newState) {
@@ -31,16 +31,12 @@ final class SignInUIController{
     
     private var errorAlert:InfoAlert!
     private var appNameView: AnimateAppNameView!
-    
-    let whiteView = UIView()
-    
+
     init(viewController: SignInViewController, facebookBtn:LoginButton, googleBtn:GIDSignInButton) {
         
         self.viewcontroller = viewController
         self.facebookBtn = facebookBtn
         self.googleBtn = googleBtn
-        
-        self.appNameView = AnimateAppNameView(viewController: viewcontroller)
         
         setupInitialLoadingScreen()
         setupFacebookBtn()
@@ -50,21 +46,24 @@ final class SignInUIController{
     }
     
     func viewWillAppear(){
-        viewcontroller.view.bringSubview(toFront: whiteView)
-        viewcontroller.view.bringSubview(toFront: facebookBtn)
-        viewcontroller.view.bringSubview(toFront: googleBtn)
-        viewcontroller.view.bringSubview(toFront: revealingSplashView)
+        self.appNameView = AnimateAppNameView(viewController: viewcontroller)
+        self.appNameView.animate()
+        viewcontroller.view.bringSubview(toFront: appNameView)
+        
     }
     
-    func viewWillDisappear(){
-        whiteView.removeFromSuperview()
+    func viewDidDisappear() {
+        appNameView.remove()
     }
 
     private func update(newState: UIState) {
         switch(state, newState) {
             
         case (.Loading, .Success( _ )),(.Failure, .Success),(.Success( _ ), .Success( _ )): goToNextScreen()
-        case (.Loading, .Failure(let errorStr)),(.Failure(_),.Failure(let errorStr)): createErrorAlert(errorStr: errorStr)            
+        case (.Loading, .Failure(let errorStr)),
+             (.Failure(_),.Failure(let errorStr)),
+             (.Success(_),.Failure(let errorStr))
+             : createErrorAlert(errorStr: errorStr)
         // after login silently failed, aka, when the user is not log in google account
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
@@ -85,15 +84,6 @@ final class SignInUIController{
             viewcontroller.performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
         }
     }
-    
-    func animateAppName(){
-        DispatchQueue.main.async {
-           self.appNameView.animate()
-        }
-    }
-    
-    
-    
 }
 
 // MARK: Initialize
