@@ -466,6 +466,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Poy-hc-yYL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVb-ip-nmj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hVb-ip-nmj" firstAttribute="top" secondItem="Poy-hc-yYL" secondAttribute="top" id="TfF-h7-tdH"/>
+                                    <constraint firstItem="hVb-ip-nmj" firstAttribute="leading" secondItem="Poy-hc-yYL" secondAttribute="leading" id="XYL-Ar-rLa"/>
+                                    <constraint firstItem="hVb-ip-nmj" firstAttribute="width" secondItem="Poy-hc-yYL" secondAttribute="width" id="l3l-hZ-lKQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVb-ip-nmj" secondAttribute="bottom" id="mxZ-pt-Fm1"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVb-ip-nmj" secondAttribute="trailing" id="oE5-yH-k67"/>
+                                    <constraint firstItem="hVb-ip-nmj" firstAttribute="height" secondItem="Poy-hc-yYL" secondAttribute="height" id="tRz-hc-8PM"/>
+                                </constraints>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nem-tV-jXh">
                                 <rect key="frame" x="167" y="356" width="41" height="20"/>
                                 <constraints>
@@ -488,6 +505,9 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Họ và Tên" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-WA-EO5">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="drQ-hY-XWo"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -503,11 +523,17 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Năm Sinh" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngl-KL-USS">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="W8z-W2-gkB"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" smartDashesType="yes"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FgR-sI-mZE"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gMp-z3-bYn">
                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
@@ -515,6 +541,9 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-TA-ZkR">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="YQL-De-plY"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
@@ -537,6 +566,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="m1Q-uG-obm"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" tag="5" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lOT-O6-BQ1">
                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
@@ -544,6 +576,9 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y21-EO-qUF">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="noG-Br-QA7"/>
+                                                </constraints>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
@@ -566,8 +601,14 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4IN-BO-I6J"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="JeU-OF-BUw"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lKi-M9-bf8">
                                 <rect key="frame" x="30" y="611" width="315" height="46"/>
@@ -596,14 +637,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Poy-hc-yYL" firstAttribute="trailing" secondItem="hSz-IF-BPL" secondAttribute="trailing" id="07s-Vb-kTO"/>
                             <constraint firstItem="hSz-IF-BPL" firstAttribute="trailing" secondItem="d42-Eq-ggF" secondAttribute="trailing" constant="20" id="0D4-9B-B71"/>
                             <constraint firstItem="Nem-tV-jXh" firstAttribute="bottom" secondItem="d42-Eq-ggF" secondAttribute="bottom" constant="25" id="2jp-Ew-VuX"/>
                             <constraint firstItem="d42-Eq-ggF" firstAttribute="leading" secondItem="hSz-IF-BPL" secondAttribute="leading" constant="20" id="3rZ-j9-UyB"/>
                             <constraint firstItem="hSz-IF-BPL" firstAttribute="trailing" secondItem="W73-K7-JQT" secondAttribute="trailing" constant="20" id="4sW-fv-1jL"/>
                             <constraint firstItem="d42-Eq-ggF" firstAttribute="top" secondItem="hSz-IF-BPL" secondAttribute="top" constant="20" id="8bb-Vf-Vs8"/>
                             <constraint firstItem="W73-K7-JQT" firstAttribute="top" secondItem="d42-Eq-ggF" secondAttribute="bottom" constant="45" id="AuB-Hj-npd"/>
+                            <constraint firstItem="Poy-hc-yYL" firstAttribute="bottom" secondItem="hSz-IF-BPL" secondAttribute="bottom" id="FhX-Uo-Te0"/>
                             <constraint firstItem="lKi-M9-bf8" firstAttribute="leading" secondItem="hSz-IF-BPL" secondAttribute="leading" constant="30" id="HDs-d1-HHJ"/>
                             <constraint firstItem="lKi-M9-bf8" firstAttribute="top" secondItem="W73-K7-JQT" secondAttribute="bottom" constant="10" id="Npb-oX-Fd9"/>
+                            <constraint firstItem="Poy-hc-yYL" firstAttribute="leading" secondItem="hSz-IF-BPL" secondAttribute="leading" id="Pex-0z-N0h"/>
+                            <constraint firstItem="Poy-hc-yYL" firstAttribute="top" secondItem="hSz-IF-BPL" secondAttribute="top" id="YTp-H7-L98"/>
                             <constraint firstItem="hSz-IF-BPL" firstAttribute="trailing" secondItem="lKi-M9-bf8" secondAttribute="trailing" constant="30" id="oCb-sz-6TS"/>
                             <constraint firstItem="Nem-tV-jXh" firstAttribute="centerX" secondItem="hSz-IF-BPL" secondAttribute="centerX" id="sTV-Av-bWM"/>
                             <constraint firstItem="hSz-IF-BPL" firstAttribute="bottom" secondItem="lKi-M9-bf8" secondAttribute="bottom" constant="10" id="sYz-Jv-JZA"/>

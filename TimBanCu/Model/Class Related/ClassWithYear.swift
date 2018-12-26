@@ -44,7 +44,7 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
     }
     
     func firebaseClassYearPath(withParent:String) -> String {
-        return "\(withParent)/\(institution.name!)/\(getClassNumber)/\(getClassName())/\(year)"
+        return "\(withParent)/\(institution.name!)/\(getClassNumber())/\(getClassName())/\(year)"
     }
     
     func objectAsDictionary() -> [String : [String:String]] {
