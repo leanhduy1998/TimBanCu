@@ -34,6 +34,7 @@ class AddYourInfoUIController{
     fileprivate var birthYearTF:UITextField!
     fileprivate var phoneTF:UITextField!
     fileprivate var emailTF:UITextField!
+    fileprivate var scrollView: UIScrollView!
     
     fileprivate var loadingAnimation:LoadingAnimation!
     
@@ -50,6 +51,7 @@ class AddYourInfoUIController{
         self.birthYearTF = viewcontroller.birthYearTF
         self.phoneTF = viewcontroller.phoneTF
         self.emailTF = viewcontroller.emailTF
+        self.scrollView = viewcontroller.scrollView
         
         setupAlerts()
         setupPrivacyDropDowns()
@@ -220,16 +222,11 @@ extension AddYourInfoUIController{
         
         UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
             if show {
-                self.viewcontroller.addInfoButtonBottomContraint.constant += changeInHeight
-                self.viewcontroller.imageSlideShow.alpha = 0
-                self.viewcontroller.yearLabel.alpha = 0
+                if (self.scrollView.contentOffset.y + changeInHeight < self.scrollView.contentSize.height - self.scrollView.frame.size.height) {
+                let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y + changeInHeight)
+                self.scrollView.setContentOffset(bottomOffset, animated: true)
+                }
             }
-            else {
-                self.viewcontroller.addInfoButtonBottomContraint.constant = 15
-                self.viewcontroller.imageSlideShow.alpha = 1
-                self.viewcontroller.yearLabel.alpha = 1
-            }
-            self.viewcontroller.view.layoutIfNeeded()
         })
     }
 }

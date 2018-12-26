@@ -24,6 +24,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var imageSlideShow: Slideshow!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var addInfoBtn: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
     @IBAction func unwindToAddYourInfoController(segue:UIStoryboardSegue) { }
