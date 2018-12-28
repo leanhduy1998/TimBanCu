@@ -37,6 +37,7 @@ class AddYourInfoUIController{
     fileprivate var scrollView: UIScrollView!
     
     fileprivate var loadingAnimation:LoadingAnimation!
+    fileprivate var tabBarHeight : CGFloat = 0.0
     
     init(viewcontroller:AddYourInfoViewController, slideshowDidTapOnImageAtIndex:@escaping (Int)->(), imagePickerDidSelectAssets:@escaping ([DKAsset])->()){
         self.viewcontroller = viewcontroller
@@ -52,6 +53,8 @@ class AddYourInfoUIController{
         self.phoneTF = viewcontroller.phoneTF
         self.emailTF = viewcontroller.emailTF
         self.scrollView = viewcontroller.scrollView
+        
+        self.tabBarHeight = (viewcontroller.tabBarController?.tabBar.frame.size.height)!
         
         setupAlerts()
         setupPrivacyDropDowns()
@@ -216,16 +219,17 @@ extension AddYourInfoUIController{
     
     private func adjustingViewHeight(notification: NSNotification, show: Bool) {
         var userInfo = notification.userInfo!
-        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         let changeInHeight = keyboardFrame.height
         
         UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
             if show {
-                if (self.scrollView.contentOffset.y + changeInHeight < self.scrollView.contentSize.height - self.scrollView.frame.size.height) {
-                let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y + changeInHeight)
+                let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentSize.height - self.scrollView.bounds.size.height)
                 self.scrollView.setContentOffset(bottomOffset, animated: true)
-                }
+                self.viewcontroller.view.frame.origin.y = self.viewcontroller.view.frame.origin.y - changeInHeight + self.tabBarHeight
+            } else {
+                self.viewcontroller.view.frame.origin.y = self.viewcontroller.view.frame.origin.y + changeInHeight - self.tabBarHeight
             }
         })
     }

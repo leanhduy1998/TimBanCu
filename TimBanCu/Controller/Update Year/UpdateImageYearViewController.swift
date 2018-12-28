@@ -23,12 +23,13 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
     private var uiController:UpdateImageYearUIController!
     private var keyboardHelper:KeyboardHelper!
     
-    var tabBarHeight : CGFloat = 0.0
+    private var tabBarHeight : CGFloat = 0.0
     
     //TODO: write test case to make sure all items needed are passed from segue
     override func viewDidLoad() {
         super.viewDidLoad()
         imageview.image = selectedImage.image
+        tabBarHeight = (tabBarController?.tabBar.frame.size.height)!
         
         if(selectedImage.year != nil){
             yearTF.placeholder = selectedImage.year
@@ -41,8 +42,6 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         
         setupYearBounds()
         setupKeyboard()
-        
-        tabBarHeight = (tabBarController?.tabBar.frame.size.height)!
     }
     
     private func setupYearBounds(){
@@ -110,24 +109,13 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         let changeInHeight = keyboardFrame.height
-        print(changeInHeight)
         
         
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+        UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
             if show {
-                //if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y = self.view.frame.origin.y - changeInHeight + self.tabBarHeight
-                //}
-//                self.view.frame.origin.y -= (changeInHeight / 2 + (self.navigationController?.navigationBar.frame.height)! *  2)
-//                if (self.scrollView.contentOffset.y + changeInHeight < self.scrollView.contentSize.height - self.scrollView.frame.size.height) {
-//                    let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y + changeInHeight)
-//                    self.scrollView.setContentOffset(bottomOffset, animated: true)
-//                }
             } else {
-                //if self.view.frame.origin.y != 0 {
                 self.view.frame.origin.y = self.view.frame.origin.y + changeInHeight - self.tabBarHeight
-
-                //}
             }
         })
     }

@@ -463,14 +463,14 @@
             <objects>
                 <viewController id="Hhg-C2-u4a" customClass="AddYourInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GsE-ly-0ms">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Poy-hc-yYL">
-                                <rect key="frame" x="0.0" y="20" width="375" height="880"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="680"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVb-ip-nmj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d42-Eq-ggF" customClass="Slideshow" customModule="TimBanCu" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="20" width="335" height="300"/>
@@ -638,7 +638,7 @@
                                             <constraint firstItem="Nem-tV-jXh" firstAttribute="top" secondItem="d42-Eq-ggF" secondAttribute="bottom" constant="20" id="R60-gJ-7tD"/>
                                             <constraint firstItem="W73-K7-JQT" firstAttribute="top" secondItem="Nem-tV-jXh" secondAttribute="bottom" constant="20" id="Z4f-af-7z3"/>
                                             <constraint firstItem="d42-Eq-ggF" firstAttribute="leading" secondItem="hVb-ip-nmj" secondAttribute="leading" constant="20" id="dU4-AJ-baK"/>
-                                            <constraint firstAttribute="height" constant="900" id="mEw-m5-zgx"/>
+                                            <constraint firstAttribute="height" constant="700" id="mEw-m5-zgx"/>
                                             <constraint firstAttribute="trailing" secondItem="Nem-tV-jXh" secondAttribute="trailing" constant="40" id="mXR-hm-AYP"/>
                                             <constraint firstItem="lKi-M9-bf8" firstAttribute="leading" secondItem="hVb-ip-nmj" secondAttribute="leading" constant="20" id="oMQ-XG-Tqe"/>
                                             <constraint firstItem="d42-Eq-ggF" firstAttribute="top" secondItem="hVb-ip-nmj" secondAttribute="top" constant="20" id="opr-TK-sAw"/>
@@ -664,7 +664,7 @@
                         <viewLayoutGuide key="safeArea" id="hSz-IF-BPL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Thêm Thông Tin Cá Nhân" id="CbQ-c9-sMQ"/>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="addInfoBtn" destination="tVn-m4-9RV" id="QEv-RY-kuw"/>
                         <outlet property="birthYearTF" destination="ngl-KL-USS" id="e1Y-cO-6Hr"/>
@@ -835,7 +835,7 @@
         <image name="search" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KX9-sv-TYK"/>
+        <segue reference="Gdv-dF-cSA"/>
         <segue reference="aa7-kv-DZo"/>
     </inferredMetricsTieBreakers>
 </document>
