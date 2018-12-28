@@ -21,6 +21,9 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
     private var allowedUpperBoundYear:Int!
     
     private var uiController:UpdateImageYearUIController!
+    private var keyboardHelper:KeyboardHelper!
+    
+    var tabBarHeight : CGFloat = 0.0
     
     //TODO: write test case to make sure all items needed are passed from segue
     override func viewDidLoad() {
@@ -37,6 +40,9 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         uiController = UpdateImageYearUIController(viewcontroller: self)
         
         setupYearBounds()
+        setupKeyboard()
+        
+        tabBarHeight = (tabBarController?.tabBar.frame.size.height)!
     }
     
     private func setupYearBounds(){
@@ -85,6 +91,45 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
                 }
             }*/
         }
+    }
+    
+    private func setupKeyboard(){
+        keyboardHelper = KeyboardHelper(viewcontroller: self, shiftViewWhenShow: false, keyboardWillShowClosure: { notification in
+            
+            self.adjustingViewHeight(notification: notification, show: true)
+            
+        }, keyboardWillHideClosure: { notification in
+            
+            self.adjustingViewHeight(notification: notification, show: false)
+            
+        })
+    }
+    
+    private func adjustingViewHeight(notification: NSNotification, show: Bool) {
+        var userInfo = notification.userInfo!
+        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let changeInHeight = keyboardFrame.height
+        print(changeInHeight)
+        
+        
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            if show {
+                //if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y = self.view.frame.origin.y - changeInHeight + self.tabBarHeight
+                //}
+//                self.view.frame.origin.y -= (changeInHeight / 2 + (self.navigationController?.navigationBar.frame.height)! *  2)
+//                if (self.scrollView.contentOffset.y + changeInHeight < self.scrollView.contentSize.height - self.scrollView.frame.size.height) {
+//                    let bottomOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y + changeInHeight)
+//                    self.scrollView.setContentOffset(bottomOffset, animated: true)
+//                }
+            } else {
+                //if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = self.view.frame.origin.y + changeInHeight - self.tabBarHeight
+
+                //}
+            }
+        })
     }
     
 
