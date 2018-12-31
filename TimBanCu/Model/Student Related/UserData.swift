@@ -10,10 +10,7 @@ import Foundation
 import FirebaseDatabase
 import FirebaseStorage
 
-enum PrivacyType{
-    case Public
-    case Private
-}
+
 
 class UserData:Student{
     let phonePrivacy:PrivacyType
@@ -21,20 +18,9 @@ class UserData:Student{
     
     private let ref = Database.database().reference()
     
-    init(student:Student,phonePrivacyType:String,emailPrivacyType:String, images:[Image]){
-        if(phonePrivacyType == "Công Khai"){
-            self.phonePrivacy = .Public
-        }
-        else{
-            self.phonePrivacy = .Private
-        }
-        
-        if(emailPrivacyType == "Công Khai"){
-            self.emailPrivacy = .Public
-        }
-        else{
-            self.emailPrivacy = .Private
-        }
+    init(student:Student,phonePrivacyType:PrivacyType,emailPrivacyType:PrivacyType, images:[Image]){
+        self.phonePrivacy = phonePrivacyType
+        self.emailPrivacy = emailPrivacyType
         
         super.init(student: student)
         self.images.append(contentsOf: images)

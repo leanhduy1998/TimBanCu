@@ -531,7 +531,7 @@
                                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-TA-ZkR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="245" height="40"/>
                                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="YQL-De-plY"/>
@@ -540,10 +540,13 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                             </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcv-1h-unn">
-                                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                <state key="normal" title="Công Khai">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcv-1h-unn">
+                                                                <rect key="frame" x="255" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="7fD-LD-33O"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="WGX-cA-YjN"/>
+                                                                </constraints>
+                                                                <state key="normal" image="Công Khai">
                                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -551,7 +554,10 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" alpha="0.5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYa-Ag-trM">
-                                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
+                                                                <rect key="frame" x="305" y="0.0" width="30" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="Qm3-58-fQx"/>
+                                                                </constraints>
                                                                 <state key="normal" image="moreInfo"/>
                                                                 <connections>
                                                                     <action selector="showPrivacyAlertBtnPressed:" destination="Hhg-C2-u4a" eventType="touchUpInside" id="23D-h0-jkI"/>
@@ -566,7 +572,7 @@
                                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y21-EO-qUF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="245" height="40"/>
                                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="noG-Br-QA7"/>
@@ -575,10 +581,13 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                                             </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwH-UF-3a1">
-                                                                <rect key="frame" x="230" y="0.0" width="68" height="40"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                <state key="normal" title="Công Khai">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwH-UF-3a1">
+                                                                <rect key="frame" x="255" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Lcr-Xx-MK8"/>
+                                                                    <constraint firstAttribute="width" constant="40" id="ZLk-dy-m3b"/>
+                                                                </constraints>
+                                                                <state key="normal" image="Công Khai">
                                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -586,7 +595,10 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpG-cH-y5m">
-                                                                <rect key="frame" x="308" y="0.0" width="27" height="40"/>
+                                                                <rect key="frame" x="305" y="0.0" width="30" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="30" id="Ccb-W7-Hci"/>
+                                                                </constraints>
                                                                 <state key="normal" image="moreInfo"/>
                                                                 <connections>
                                                                     <action selector="showPrivacyAlertBtnPressed:" destination="Hhg-C2-u4a" eventType="touchUpInside" id="6CC-tI-Dfs"/>
@@ -760,7 +772,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G28-5V-SaC">
                                 <rect key="frame" x="20" y="617" width="335" height="30"/>
-                                <state key="normal" title="Cập Nhập Năm"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Cập Nhập Năm">
+                                    <color key="titleColor" red="1" green="0.6781730055809021" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="updateBtnPressed:" destination="rbS-as-OOI" eventType="touchUpInside" id="NeT-wP-a1n"/>
                                 </connections>
@@ -775,7 +790,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2A-UU-nZ2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2A-UU-nZ2">
                                 <rect key="frame" x="20" y="84" width="335" height="382"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hình có năm sẽ giúp các thành viên khác dễ nhận diện hơn (Ví dụ: Đây là hình của bạn năm 1990 khi bạn học lớp 1)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-R6-gbU">
@@ -831,11 +846,12 @@
     <resources>
         <image name="3dots" width="200" height="200"/>
         <image name="Cover" width="1208" height="1199"/>
+        <image name="Công Khai" width="512" height="512"/>
         <image name="moreInfo" width="27" height="27"/>
         <image name="search" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gdv-dF-cSA"/>
+        <segue reference="KX9-sv-TYK"/>
         <segue reference="aa7-kv-DZo"/>
     </inferredMetricsTieBreakers>
 </document>

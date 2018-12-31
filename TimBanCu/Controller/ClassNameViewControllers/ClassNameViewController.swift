@@ -56,6 +56,11 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
+    @IBAction func addNewClassBtnPressed(_ sender: Any) {
+        self.uiController.showAddNewClassNameAlert()
+        
+    }
+    
     @objc func backBtnPressed(_ sender: UIBarButtonItem){
         switch(state){
         case .AddingClass:

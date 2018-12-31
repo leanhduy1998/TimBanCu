@@ -29,6 +29,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
     @IBAction func unwindToAddYourInfoController(segue:UIStoryboardSegue) { }
     
+    var phonePrivacyType: PrivacyType!
+    var emailPrivacyType: PrivacyType!
     
     private var controller:AddYourInfoController!
     private var uiController:AddYourInfoUIController!
@@ -53,6 +55,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     
         controller = AddYourInfoController(viewcontroller: self)
         uiController = AddYourInfoUIController(viewcontroller: self, slideshowDidTapOnImageAtIndex: slideshowDidTapOnImageAtIndex, imagePickerDidSelectAssets: imagePickerDidSelectAssets)
+        
+        
     }
     
     private func setupClosures(){
@@ -120,6 +124,12 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         uiController.animateSlideShow()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        phonePrivacyType = uiController.phonePrivacyType
+        emailPrivacyType = uiController.emailPrivacyType
     }
     
     @IBAction func phoneDropDownBtnPressed(_ sender: Any) {

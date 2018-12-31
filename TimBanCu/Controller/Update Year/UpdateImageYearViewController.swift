@@ -24,6 +24,7 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
     private var keyboardHelper:KeyboardHelper!
     
     private var tabBarHeight : CGFloat = 0.0
+    private var keyboardIsShowing = false
     
     //TODO: write test case to make sure all items needed are passed from segue
     override func viewDidLoad() {
@@ -112,10 +113,12 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         
         
         UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
-            if show {
+            if show && !self.keyboardIsShowing {
                 self.view.frame.origin.y = self.view.frame.origin.y - changeInHeight + self.tabBarHeight
-            } else {
+                self.keyboardIsShowing = true
+            } else if !show && self.keyboardIsShowing {
                 self.view.frame.origin.y = self.view.frame.origin.y + changeInHeight - self.tabBarHeight
+                self.keyboardIsShowing = false
             }
         })
     }

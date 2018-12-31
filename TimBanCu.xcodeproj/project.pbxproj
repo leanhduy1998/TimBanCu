@@ -171,6 +171,7 @@
 		3869265A216DD07B00D7780F /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 38692659216DD07B00D7780F /* success.json */; };
 		38730F602190CFDE009B6217 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38730F5F2190CFDE009B6217 /* Chat.storyboard */; };
 		38730F622190CFEB009B6217 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38730F612190CFEB009B6217 /* Setting.storyboard */; };
+		3898242521D995750081EAE6 /* PrivacyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898242421D995750081EAE6 /* PrivacyType.swift */; };
 		38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */; };
 		38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D02129BD04005BE656 /* UnderlineView.swift */; };
 		38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */; };
@@ -374,6 +375,7 @@
 		38692659216DD07B00D7780F /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		38730F5F2190CFDE009B6217 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		38730F612190CFEB009B6217 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		3898242421D995750081EAE6 /* PrivacyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyType.swift; sourceTree = "<group>"; };
 		38CAE9CE2129B881005BE656 /* CustomSelectionColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectionColorView.swift; sourceTree = "<group>"; };
 		38CAE9D02129BD04005BE656 /* UnderlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineView.swift; sourceTree = "<group>"; };
 		38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				1C513A6C21824EE000FFDC82 /* PublicProfile.swift */,
 				1C513A702182680700FFDC82 /* PrivateProfile.swift */,
 				1C4B6C322148541B00BDF724 /* UserData.swift */,
+				3898242421D995750081EAE6 /* PrivacyType.swift */,
 			);
 			path = "Student Related";
 			sourceTree = "<group>";
@@ -1590,6 +1593,7 @@
 				1CD730072138B85400105ACE /* AddYourInfoUIController.swift in Sources */,
 				1C4B6C49214C02B600BDF724 /* UpdateImageYearAlerts.swift in Sources */,
 				1C513A652180E28100FFDC82 /* Major.swift in Sources */,
+				3898242521D995750081EAE6 /* PrivacyType.swift in Sources */,
 				1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */,
 				1CA5364B216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift in Sources */,
 				1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */,

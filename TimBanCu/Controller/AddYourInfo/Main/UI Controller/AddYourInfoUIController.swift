@@ -39,6 +39,9 @@ class AddYourInfoUIController{
     fileprivate var loadingAnimation:LoadingAnimation!
     fileprivate var tabBarHeight : CGFloat = 0.0
     
+    var phonePrivacyType: PrivacyType!
+    var emailPrivacyType: PrivacyType!
+    
     init(viewcontroller:AddYourInfoViewController, slideshowDidTapOnImageAtIndex:@escaping (Int)->(), imagePickerDidSelectAssets:@escaping ([DKAsset])->()){
         self.viewcontroller = viewcontroller
         self.yearLabel = viewcontroller.yearLabel
@@ -173,10 +176,22 @@ extension AddYourInfoUIController{
         emailPrivacyDropDown.dataSource = ["Công Khai", "Chỉ Riêng Tôi"]
         
         phonePrivacyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.phonePrivacyDropDownBtn.setTitle(item, for: .normal)
+            self.phonePrivacyDropDownBtn.setImage(UIImage(named: item), for: .normal)
+            if item == "Công Khai"{
+                self.phonePrivacyType = PrivacyType.Public
+            }
+            else{
+                self.phonePrivacyType = PrivacyType.Private
+            }
         }
         emailPrivacyDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.emailPrivacyDropDownBtn.setTitle(item, for: .normal)
+            self.emailPrivacyDropDownBtn.setImage(UIImage(named: item), for: .normal)
+            if item == "Công Khai"{
+                self.emailPrivacyType = PrivacyType.Public
+            }
+            else{
+                self.emailPrivacyType = PrivacyType.Private
+            }
         }
     }
     func showPhonePrivacyDownDown(){
