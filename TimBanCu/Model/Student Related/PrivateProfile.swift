@@ -17,8 +17,7 @@ class PrivateProfile{
     }
     
     static func getData(student: Student, completionHandler: @escaping () -> Void){
-        privateUserProfileRef.child(student.uid).observeSingleEvent(of: .value, with: {  (privateSS) in
-            
+        privateUserProfileRef.child(student.uid).observeSingleEvent(of: .value, with: { (privateSS) in
             if(!privateSS.hasChildren()){
                 completionHandler()
             }
@@ -26,8 +25,14 @@ class PrivateProfile{
             fillInStudent(student: student, snapshot: privateSS)
             
             completionHandler()
-            
-        })
+        }) { (err) in
+            if(err.localizedDescription == "Permission Denied"){
+                completionHandler()
+            }
+            else{
+                fatalError()
+            }
+        }
     }
     
     private static func fillInStudent(student: Student, snapshot:DataSnapshot){

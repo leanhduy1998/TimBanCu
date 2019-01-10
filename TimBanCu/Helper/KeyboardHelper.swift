@@ -50,21 +50,21 @@ class KeyboardHelper{
     }
     
     @objc private func keyboardWillShow(notification:NSNotification) {
-        if(keyboardIsShowing){
-           return
-        }
-        keyboardIsShowing = true
-        
-        if(shiftViewWhenShow){
-            var userInfo = notification.userInfo!
-            let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-            let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-            let keyboardHeight = keyboardFrame.height
-            
-            UIView.animate(withDuration: animationDurarion) {
-                self.viewcontroller.view.frame.origin.y -= keyboardHeight
-            }
-        }
+//        if(keyboardIsShowing){
+//           return
+//        }
+//        keyboardIsShowing = true
+//
+//        if(shiftViewWhenShow){
+//            var userInfo = notification.userInfo!
+//            let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+//            let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+//            let keyboardHeight = keyboardFrame.height
+//
+//            UIView.animate(withDuration: animationDurarion) {
+//                self.viewcontroller.view.frame.origin.y -= keyboardHeight
+//            }
+//        }
         if(keyboardWillShowClosure != nil){
             keyboardWillShowClosure!(notification)
         }
@@ -72,18 +72,18 @@ class KeyboardHelper{
     
     @objc private func keyboardWillHide(notification:NSNotification) {
 
-        keyboardIsShowing = false
-        
-        if(shiftViewWhenShow){
-            var userInfo = notification.userInfo!
-            let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-            let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-            let keyboardHeight = keyboardFrame.height
-            
-            UIView.animate(withDuration: animationDurarion) {
-                self.viewcontroller.view.frame.origin.y += keyboardHeight
-            }
-        }
+//        keyboardIsShowing = false
+//
+//        if(shiftViewWhenShow){
+//            var userInfo = notification.userInfo!
+//            let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+//            let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+//            let keyboardHeight = keyboardFrame.height
+//
+//            UIView.animate(withDuration: animationDurarion) {
+//                self.viewcontroller.view.frame.origin.y += keyboardHeight
+//            }
+//        }
         if(keyboardWillHideClosure != nil){
             keyboardWillHideClosure!(notification)
         }

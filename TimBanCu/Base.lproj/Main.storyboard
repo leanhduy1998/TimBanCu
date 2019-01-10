@@ -1144,6 +1144,12 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                     </view>
                     <navigationItem key="navigationItem" title="Tên Lớp" id="2Kg-Db-IcN">
                         <barButtonItem key="backBarButtonItem" title=" " id="X3e-1x-eh6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0FT-Rt-Lx5">
+                            <color key="tintColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="addNewClassBtnPressed:" destination="L0Q-5x-sEu" id="uxw-gz-Y7h"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchTF" destination="vAy-2T-OsJ" id="E4Y-w8-93n"/>

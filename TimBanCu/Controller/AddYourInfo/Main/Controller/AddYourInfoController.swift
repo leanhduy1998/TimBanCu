@@ -124,8 +124,8 @@ extension AddYourInfoController{
         let birthYear = viewcontroller.birthYearTF.text
         let phoneNumber = viewcontroller.phoneTF.text
         let email = viewcontroller.emailTF.text
-        let phonePrivacy = viewcontroller.phonePrivacyDropDownBtn.currentTitle
-        let emailPrivacy = viewcontroller.emailPrivacyDropDownBtn.currentTitle
+        let phonePrivacy = viewcontroller.phonePrivacyType
+        let emailPrivacy = viewcontroller.emailPrivacyType
         
         let student = Student(fullname: fullname!, birthYear: birthYear!, phoneNumber: phoneNumber!, email: email!, uid: CurrentUser.getUid())
         
