@@ -158,6 +158,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                 case .Failure(let errMsg):
                     self!.uiController.showUploadErrorAlert(errMsg: errMsg)
                 default:
+                    let studentDetailVC = StudentDetailViewController()
+                    self!.present(studentDetailVC, animated: true, completion: nil)
                     break
                 }
             })

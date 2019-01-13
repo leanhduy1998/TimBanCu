@@ -37,7 +37,7 @@ class AddYourInfoUIController{
     fileprivate var scrollView: UIScrollView!
     
     fileprivate var loadingAnimation:LoadingAnimation!
-    fileprivate var tabBarHeight : CGFloat = 0.0
+    fileprivate var tabBarHeight: CGFloat = 0.0
     
     var phonePrivacyType: PrivacyType!
     var emailPrivacyType: PrivacyType!

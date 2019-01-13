@@ -124,10 +124,18 @@ extension AddYourInfoController{
         let birthYear = viewcontroller.birthYearTF.text
         let phoneNumber = viewcontroller.phoneTF.text
         let email = viewcontroller.emailTF.text
-        let phonePrivacy = viewcontroller.phonePrivacyType
-        let emailPrivacy = viewcontroller.emailPrivacyType
+        
+        var phonePrivacy = viewcontroller.phonePrivacyType
+        var emailPrivacy = viewcontroller.emailPrivacyType
         
         let student = Student(fullname: fullname!, birthYear: birthYear!, phoneNumber: phoneNumber!, email: email!, uid: CurrentUser.getUid())
+        
+        if phonePrivacy == nil {
+            phonePrivacy = PrivacyType.Public
+        }
+        if emailPrivacy == nil {
+            emailPrivacy = PrivacyType.Public
+        }
         
         let userData = UserData(student: student, phonePrivacyType: phonePrivacy!, emailPrivacyType: emailPrivacy!, images: images)
         self.userData = userData

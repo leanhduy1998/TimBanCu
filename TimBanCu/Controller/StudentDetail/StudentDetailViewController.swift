@@ -33,6 +33,7 @@ class StudentDetailViewController: UIViewController {
         super.viewDidLoad()
         
         userImages = CurrentUser.student.images
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sửa", style: .plain, target: self, action: #selector(editStudentInfo))
         
         uiController = StudentDetailUIController(viewcontroller: self)
         controller = StudentDetailController(viewcontroller: self)
@@ -40,6 +41,10 @@ class StudentDetailViewController: UIViewController {
         controller.fetchStudentImages { [weak self] (uiState) in
             self!.uiController.state = uiState
         }
+    }
+    
+    @objc func editStudentInfo() {
+        performSegue(withIdentifier: "StudentDetailToUpdateUserInfoSegue", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

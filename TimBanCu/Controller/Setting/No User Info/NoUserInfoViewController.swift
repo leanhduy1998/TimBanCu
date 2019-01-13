@@ -17,8 +17,9 @@ class NoUserInfoViewController: UIViewController {
     }
     
     @IBAction func addStudentInfoBtn(_ sender: Any) {
-        let addYourInfoVC = AddYourInfoViewController()
-        self.present(addYourInfoVC, animated: true, completion: nil)
+        performSegue(withIdentifier: "NoUserInfoToAddYourInfoSegue", sender: self)
+//        let addYourInfoVC = AddYourInfoViewController()
+//        self.present(addYourInfoVC, animated: true, completion: nil)
     }
     
     /*

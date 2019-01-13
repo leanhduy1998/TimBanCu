@@ -139,8 +139,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wy-PD-kPT">
-                                <rect key="frame" x="20" y="504" width="335" height="30"/>
-                                <state key="normal" title="Thêm Thông Tin Cá Nhân"/>
+                                <rect key="frame" x="20" y="502" width="335" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Thêm Thông Tin Cá Nhân">
+                                    <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addStudentInfoBtn:" destination="TFj-Jl-crk" eventType="touchUpInside" id="nEx-3Q-ihq"/>
                                 </connections>
@@ -156,15 +159,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uJ7-wn-p48"/>
                     </view>
+                    <connections>
+                        <segue destination="Vnu-rR-BxH" kind="show" identifier="NoUserInfoToAddYourInfoSegue" id="eyH-hM-CLs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qj1-v1-2v4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1297" y="3232"/>
         </scene>
+        <!--AddYourInfoViewController-->
+        <scene sceneID="m6h-Sk-1Hf">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddYourInfoViewController" storyboardName="ClassAndStudentDetail" referencedIdentifier="AddYourInfoViewController" id="Vnu-rR-BxH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbh-wr-kHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2064" y="3249"/>
+        </scene>
         <!--Sửa Thông Tin Cá Nhân-->
         <scene sceneID="nS5-vU-Cjn">
             <objects>
-                <viewController id="iyJ-av-h4K" customClass="UpdateUserInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateUserInfoViewController" id="iyJ-av-h4K" customClass="UpdateUserInfoViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sdv-HG-855">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,15 +230,19 @@
                                         <rect key="frame" x="0.0" y="110" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số Điện Thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EcF-am-Slw">
-                                                <rect key="frame" x="0.0" y="0.0" width="261" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTu-W5-TDF">
-                                                <rect key="frame" x="271" y="0.0" width="27" height="40"/>
-                                                <state key="normal" image="moreInfo">
+                                                <rect key="frame" x="258" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="SE3-0u-dC6"/>
+                                                    <constraint firstAttribute="width" constant="40" id="hqR-yd-HEe"/>
+                                                </constraints>
+                                                <state key="normal" image="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
@@ -238,15 +256,19 @@
                                         <rect key="frame" x="0.0" y="165" width="335" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xDE-KU-isZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="261" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="40"/>
                                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.080000000000000002" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcG-xC-Xyo">
-                                                <rect key="frame" x="271" y="0.0" width="27" height="40"/>
-                                                <state key="normal" image="moreInfo">
+                                                <rect key="frame" x="258" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="ato-Xx-4vA"/>
+                                                    <constraint firstAttribute="height" constant="40" id="vh3-Fb-Ioc"/>
+                                                </constraints>
+                                                <state key="normal" image="Công Khai">
                                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
@@ -311,6 +333,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Công Khai" width="512" height="512"/>
         <image name="moreInfo" width="27" height="27"/>
         <image name="signOut2" width="37.5" height="37.5"/>
         <image name="user4" width="25" height="25"/>

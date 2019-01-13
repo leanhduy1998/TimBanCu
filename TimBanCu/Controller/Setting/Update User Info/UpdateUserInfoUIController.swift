@@ -23,6 +23,10 @@ class UpdateUserInfoUIController{
     init(viewcontroller:UpdateUserInfoViewController){
         self.viewcontroller = viewcontroller
         self.fullNameTF = viewcontroller.fullNameTF
+        self.birthYearTF = viewcontroller.birthYearTF
+        self.phoneNumberTF = viewcontroller.phoneNumberTF
+        self.emailTF = viewcontroller.emailTF
+        self.yearLabel = viewcontroller.yearLabel
         
         setup()
     }
