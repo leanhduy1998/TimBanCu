@@ -33,12 +33,22 @@ class SettingUIController{
                 viewcontroller.signOut()
                 break
             case .Edit:
-                if(!CurrentUser.hasEnoughDataInFireBase()){
-                    viewcontroller.performSegue(withIdentifier: "SettingToNoUserInfoSegue", sender: self)
+                DispatchQueue.main.async {
+                    if(!CurrentUser.hasEnoughDataInFireBase()){
+                        viewcontroller.performSegue(withIdentifier: "SettingToNoUserInfoSegue", sender: self)
+                    }
+                    else{
+                        /*let studentDetailVC = StudentDetailViewController()
+                        viewcontroller.navigationController?.pushViewController(studentDetailVC, animated: true)*/
+                        
+                        
+                       // let newViewController = storyBoard.instantiateViewController(withIdentifier: "newViewController") as! NewViewController
+                        //self.present(newViewController, animated: true, completion: nil)
+                        
+                        viewcontroller.performSegue(withIdentifier: "SettingsToUpdateInfoSegue", sender: self)
+                    }
                 }
-                else{
-                    viewcontroller.performSegue(withIdentifier: "SettingsToUpdateInfoSegue", sender: self)
-                }
+                
                 break
             }
         }

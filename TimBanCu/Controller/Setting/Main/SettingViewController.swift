@@ -20,6 +20,8 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     
     private var uiController:SettingUIController!
+    
+    @IBAction func unwindToSettingViewController(segue:UIStoryboardSegue) { }
 
     override func viewDidLoad() {
         super.viewDidLoad()

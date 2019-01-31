@@ -22,22 +22,26 @@ class AddYourInfoController{
         self.classProtocol = viewcontroller.classProtocol
     }
     
+    private var finishUploadingImagesToStorage = false
+    private var finishUploadingDataToDatabase = false
+    private var finishEnrollUserToClass = false
+    
     // TODO: Write unit test to make sure all the strings are not empty
     func updateUserInfo(images:[Image], completeUploadClosure:@escaping (_ uistate:UIState)->Void){
+        
+        finishUploadingImagesToStorage = false
+        finishUploadingDataToDatabase = false
+        finishEnrollUserToClass = false
         
         setUserData(images: images)
         
         updateMyLocalStudentInfo()
-        
-        var finishUploadingImagesToStorage = false
-        var finishUploadingDataToDatabase = false
-        var finishEnrollUserToClass = false
-        
         uploadDataToFirebaseDatabase(images: images) { (status) in
             switch(status){
             case .Success():
-                finishUploadingDataToDatabase = true
-                if(finishUploadingImagesToStorage && finishEnrollUserToClass){
+                self.finishUploadingDataToDatabase = true
+                
+                if self.isUploadingComplete(){
                     completeUploadClosure(.Success())
                 }
                 break
@@ -51,8 +55,8 @@ class AddYourInfoController{
         uploadUserImagesToFirebaseStorage(images: images) { (status) in
             switch(status){
             case .Success():
-                finishUploadingImagesToStorage = true
-                if(finishUploadingDataToDatabase && finishEnrollUserToClass){
+                self.finishUploadingImagesToStorage = true
+                if self.isUploadingComplete(){
                     completeUploadClosure(.Success())
                 }
                 break
@@ -62,12 +66,12 @@ class AddYourInfoController{
             }
         }
         
-        if classProtocol != nil{
+        if shouldEnrollUser(){
             enrollUserIntoClass { (status) in
                 switch(status){
                 case .Success():
-                    finishEnrollUserToClass = true
-                    if(finishUploadingDataToDatabase && finishUploadingImagesToStorage){
+                    self.finishEnrollUserToClass = true
+                    if self.isUploadingComplete(){
                         completeUploadClosure(.Success())
                     }
                     break
@@ -77,6 +81,22 @@ class AddYourInfoController{
                 }
             }
         }
+    }
+    
+    private func isUploadingComplete()->Bool{
+        if(finishUploadingDataToDatabase && finishUploadingImagesToStorage){
+            if shouldEnrollUser(){
+                return finishEnrollUserToClass
+            }
+            else{
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func shouldEnrollUser()->Bool{
+        return classProtocol != nil
     }
     
     private func enrollUserIntoClass(completionHandler: @escaping (_ status:Status)->()){

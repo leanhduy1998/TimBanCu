@@ -29,8 +29,6 @@ class SelectSchoolTypeViewController: UIViewController {
         
         uiController.customButtonTitleSize(button: thcsButton)
         uiController.customButtonTitleSize(button: thptButton)
-        
-        
     }
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {

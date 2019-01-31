@@ -99,6 +99,45 @@ class Student{
         }
     }
     
+    func getImages(completionHandler: @escaping (_ uiState:UIState) -> Void){
+        var count = 0
+        
+        for image in images{
+            if(image.image == nil){
+                if(Cache.getImageFromCache(imageName: image.imageName) != nil){
+                    image.image = Cache.getImageFromCache(imageName: image.imageName)
+                    count += 1
+                }
+                else{
+                    Storage.storage().reference().child("users/\(uid!)/\(image.imageName!)").getData(maxSize: INT64_MAX) { [weak self] (imageData, error) in
+                        
+                        if(error == nil){
+                            let uiimage = UIImage(data: imageData!)
+                            image.image = uiimage
+                            
+                            count += 1
+                            
+                            if(count == self!.images.count){
+                                completionHandler(.Success())
+                            }
+                        }
+                        else{
+                            completionHandler(.Failure(error.debugDescription))
+                        }
+                    }
+                    
+                }
+            }
+            else{
+                count += 1
+            }
+            
+            if(count == images.count){
+                completionHandler(.Success())
+            }
+        }
+    }
+    
     func firebaseStorageFirstImagePath()->String{
         if(images.count == 0){
             fatalError()

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Idh-GW-Wyv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lớp Của Bạn-->
+        <scene sceneID="BSp-Ol-ejg">
+            <objects>
+                <navigationController id="Idh-GW-Wyv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" title="Lớp Của Bạn" image="list4" selectedImage="listOrange4" id="EHR-AE-V54"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6jt-kQ-VJz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="hOy-X9-dhG" kind="relationship" relationship="rootViewController" id="E2b-oa-VYZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baL-Fm-9Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="3386"/>
+        </scene>
+        <!--Lớp Của Bạn-->
+        <scene sceneID="0ya-QX-ZVe">
+            <objects>
+                <viewController id="hOy-X9-dhG" customClass="UserClassesViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dwd-kr-9Pr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ST-df-WJ1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserClassTableViewCell" rowHeight="100" id="qfK-m5-1PR" customClass="UserClassTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qfK-m5-1PR" id="u1R-O9-JGw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-eD-56W">
+                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lớp 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-Cl-gMi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Phú Nhuận" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ji-3R-kKJ">
+                                                            <rect key="frame" x="0.0" y="26.5" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg7-gb-jul">
+                                                            <rect key="frame" x="0.0" y="53" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Yt2-eD-56W" firstAttribute="top" secondItem="u1R-O9-JGw" secondAttribute="top" constant="10" id="6hS-H1-RdX"/>
+                                                <constraint firstItem="Yt2-eD-56W" firstAttribute="leading" secondItem="u1R-O9-JGw" secondAttribute="leading" constant="10" id="8A1-fr-CAs"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yt2-eD-56W" secondAttribute="bottom" constant="10" id="WYT-Ge-CtZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yt2-eD-56W" secondAttribute="trailing" constant="10" id="cKc-SZ-t5i"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="className" destination="z9s-Cl-gMi" id="YT0-AV-XXG"/>
+                                            <outlet property="classYear" destination="jg7-gb-jul" id="Ylb-db-kNR"/>
+                                            <outlet property="schoolName" destination="6Ji-3R-kKJ" id="gd1-vc-jHm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserUniversityTableViewCell" rowHeight="100" id="Kgd-0X-CT8" customClass="UserUniversityTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kgd-0X-CT8" id="HuE-TA-wqy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RnE-Oy-NVx">
+                                                    <rect key="frame" x="10" y="10" width="355" height="79.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoa Máy Tính" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqm-gf-E0Y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trường Đại Học Nông Nghiệp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDX-81-m2V">
+                                                            <rect key="frame" x="0.0" y="26.5" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Năm 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djX-SS-q4N">
+                                                            <rect key="frame" x="0.0" y="53" width="355" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RnE-Oy-NVx" firstAttribute="leading" secondItem="HuE-TA-wqy" secondAttribute="leading" constant="10" id="B69-Yg-Qwj"/>
+                                                <constraint firstItem="RnE-Oy-NVx" firstAttribute="top" secondItem="HuE-TA-wqy" secondAttribute="top" constant="10" id="OQD-RU-vEi"/>
+                                                <constraint firstAttribute="bottom" secondItem="RnE-Oy-NVx" secondAttribute="bottom" constant="10" id="Uww-Ze-bsQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="RnE-Oy-NVx" secondAttribute="trailing" constant="10" id="hc1-qJ-7gn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="classYearLabel" destination="djX-SS-q4N" id="alV-wS-XRq"/>
+                                            <outlet property="majorLabel" destination="tqm-gf-E0Y" id="gyb-N7-yF8"/>
+                                            <outlet property="schoolNameLabel" destination="WDX-81-m2V" id="ldp-y7-6uu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hOy-X9-dhG" id="L9F-pg-1Ko"/>
+                                    <outlet property="delegate" destination="hOy-X9-dhG" id="Gq5-IL-u6I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sWd-dM-pQP" firstAttribute="trailing" secondItem="6ST-df-WJ1" secondAttribute="trailing" id="1mG-ru-Ote"/>
+                            <constraint firstItem="6ST-df-WJ1" firstAttribute="top" secondItem="sWd-dM-pQP" secondAttribute="top" id="aqr-B9-ebF"/>
+                            <constraint firstItem="6ST-df-WJ1" firstAttribute="leading" secondItem="sWd-dM-pQP" secondAttribute="leading" id="dEe-M9-Qpa"/>
+                            <constraint firstItem="sWd-dM-pQP" firstAttribute="bottom" secondItem="6ST-df-WJ1" secondAttribute="bottom" id="gsp-Fq-7tW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sWd-dM-pQP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="2" title="Lớp Của Bạn" id="xZO-gb-Y7Y"/>
+                    <navigationItem key="navigationItem" title="Lớp Của Bạn" id="QI7-Hy-kRk"/>
+                    <connections>
+                        <outlet property="tableview" destination="6ST-df-WJ1" id="VaE-K0-R2H"/>
+                        <segue destination="4RL-8Y-eXj" kind="show" id="BIv-Fk-2rW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grV-bF-FHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="3387"/>
+        </scene>
+        <!--ClassDetailViewController-->
+        <scene sceneID="Gsv-zQ-ccQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="ClassDetailViewController" id="4RL-8Y-eXj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="teY-vw-VKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="3385"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list4" width="25" height="25"/>
+        <image name="listOrange4" width="25" height="25"/>
+    </resources>
+</document>

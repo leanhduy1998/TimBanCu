@@ -8,27 +8,43 @@
 
 import UIKit
 
-class UpdateUserInfoViewController: UIViewController {
+class UpdateUserInfoViewController: AddYourInfoViewController {
     
-    @IBOutlet weak var fullNameTF: UITextField!
-    @IBOutlet weak var birthYearTF: UITextField!
-    @IBOutlet weak var phoneNumberTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var yearLabel: UILabel!
-    
-    @IBOutlet weak var phonePrivacyDropDownBtn: UIButton!
-    @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
-    @IBOutlet weak var imageSlideShow: Slideshow!
+   
     @IBOutlet weak var updateInfoBtn: UIButton!
     
     @IBOutlet weak var updateInfoButtonBottomContraint: NSLayoutConstraint!
     
-    private var uiController:UpdateUserInfoUIController!
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiController = UpdateUserInfoUIController(viewcontroller: self)
         
+        let viewModel = UpdateUserInfoViewModel(student: CurrentUser.student)
+        
+        fullNameTF.text = viewModel.fullname
+        birthYearTF.text = viewModel.birthYear
+        phoneTF.text = viewModel.phoneNumber
+        emailTF.text = viewModel.email
+        yearLabel.text = viewModel.birthYear
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        CurrentUser.student.getImages { (uistate) in
+            switch(uistate){
+            case .Success():
+                DispatchQueue.main.async {
+                    self.userImages = CurrentUser.student.images
+                    self.uiController.reloadSlideShow()
+                }
+                break
+            default:
+                break
+            }
+        }
     }
     
     

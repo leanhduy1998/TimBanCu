@@ -23,7 +23,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
     @IBOutlet weak var imageSlideShow: Slideshow!
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var addInfoBtn: UIButton!
+    @IBOutlet weak var cornfirmInfoBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
@@ -33,7 +33,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     var emailPrivacyType: PrivacyType!
     
     private var controller:AddYourInfoController!
-    private var uiController:AddYourInfoUIController!
+    var uiController:AddYourInfoUIController!
     
     private var slideshowDidTapOnImageAtIndex:IndexOfImageClosure!
     private var imagePickerDidSelectAssets:ImageAssetSelectionClosure!
@@ -55,8 +55,18 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     
         controller = AddYourInfoController(viewcontroller: self)
         uiController = AddYourInfoUIController(viewcontroller: self, slideshowDidTapOnImageAtIndex: slideshowDidTapOnImageAtIndex, imagePickerDidSelectAssets: imagePickerDidSelectAssets)
-        
-        
+    }
+    
+    func goToPreviousController(){
+        let count = navigationController!.viewControllers.count
+        if count > 1 {
+            if navigationController!.viewControllers[count - 2] is ClassDetailViewController {
+                performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self)
+            }
+            if navigationController!.viewControllers[count - 2] is NoUserInfoViewController {
+                performSegue(withIdentifier: "AddYourInfoToSettingSegue", sender: self)
+            }
+        }
     }
     
     private func setupClosures(){
@@ -70,7 +80,11 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                 
                 if(image.year == nil){
                     self!.imageForSegue = image
-                    self!.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self!)
+                    DispatchQueue.main.async {
+                        self!.navigationController?.popViewController(animated: true)
+                    }
+                    
+                    //self!.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self!)
                 }
                 else{
                     self!.performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self!)
@@ -152,7 +166,8 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                 switch(uiState){
                 case .Success():
                     DispatchQueue.main.async {
-                        self!.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self!)
+                        self!.uiController.stopLoadingAnimation()
+                        self!.goToPreviousController()
                     }
                     break
                 case .Failure(let errMsg):
@@ -183,7 +198,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
             return false
         }
         
-        addInfoBtn.backgroundColor = Constants.AppColor.primaryColor
+        cornfirmInfoBtn.backgroundColor = Constants.AppColor.primaryColor
         return true
     }
     
