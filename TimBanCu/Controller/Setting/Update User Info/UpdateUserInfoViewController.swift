@@ -10,14 +10,6 @@ import UIKit
 
 class UpdateUserInfoViewController: AddYourInfoViewController {
     
-   
-    @IBOutlet weak var updateInfoBtn: UIButton!
-    
-    @IBOutlet weak var updateInfoButtonBottomContraint: NSLayoutConstraint!
-    
-
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
