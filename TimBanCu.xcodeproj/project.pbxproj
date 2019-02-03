@@ -54,7 +54,6 @@
 		1C513A6F2182641600FFDC82 /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A6E2182641600FFDC82 /* Institution.swift */; };
 		1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A702182680700FFDC82 /* PrivateProfile.swift */; };
 		1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A74218368E300FFDC82 /* EULAViewController.swift */; };
-		1C513A7C21838E8000FFDC82 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A7B21838E8000FFDC82 /* Filter.swift */; };
 		1C513A8E2183E9CD00FFDC82 /* InstitutionFullTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */; };
 		1C513AAB2187E83800FFDC82 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAA2187E83800FFDC82 /* StringTest.swift */; };
 		1C513AAD2187E93100FFDC82 /* EducationLevelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAC2187E93100FFDC82 /* EducationLevelTest.swift */; };
@@ -247,7 +246,6 @@
 		1C513A6E2182641600FFDC82 /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
 		1C513A702182680700FFDC82 /* PrivateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateProfile.swift; sourceTree = "<group>"; };
 		1C513A74218368E300FFDC82 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
-		1C513A7B21838E8000FFDC82 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionFullTest.swift; sourceTree = "<group>"; };
 		1C513AAA2187E83800FFDC82 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		1C513AAC2187E93100FFDC82 /* EducationLevelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationLevelTest.swift; sourceTree = "<group>"; };
@@ -914,7 +912,6 @@
 				1CD730002138906400105ACE /* GenericTableView.swift */,
 				1CAB795E2150660400F21264 /* Closures.swift */,
 				1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */,
-				1C513A7B21838E8000FFDC82 /* Filter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1551,7 +1548,6 @@
 				1CAB795D2150507A00F21264 /* UserImageUIController.swift in Sources */,
 				1CD7300B2139891A00105ACE /* MajorController.swift in Sources */,
 				1C0A039C20F5163C00E105A9 /* SchoolAlerts.swift in Sources */,
-				1C513A7C21838E8000FFDC82 /* Filter.swift in Sources */,
 				1CAB795F2150660400F21264 /* Closures.swift in Sources */,
 				1CAAAC5B20F3C64300443225 /* SchoolViewModel.swift in Sources */,
 				1CA53649216E535F00FCF0FF /* Setting.swift in Sources */,

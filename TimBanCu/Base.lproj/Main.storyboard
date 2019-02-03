@@ -1216,9 +1216,6 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                     <action selector="addYourselfBtnPressed:" destination="imb-xu-vXv" eventType="touchUpInside" id="Ons-qn-11r"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SA2-XI-fwU">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-Vu-EKP">
                                 <rect key="frame" x="20" y="578" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -1262,7 +1259,6 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SA2-XI-fwU" firstAttribute="centerY" secondItem="0lw-EQ-W2X" secondAttribute="centerY" id="0kI-1O-gEv"/>
                             <constraint firstItem="rc7-zQ-RFU" firstAttribute="leading" secondItem="tVU-JV-pc5" secondAttribute="leading" constant="20" id="C2n-B2-HhZ"/>
                             <constraint firstItem="tVU-JV-pc5" firstAttribute="trailing" secondItem="prX-jB-zuQ" secondAttribute="trailing" id="DEu-8P-91p"/>
                             <constraint firstItem="tVU-JV-pc5" firstAttribute="trailing" secondItem="rc7-zQ-RFU" secondAttribute="trailing" constant="20" id="JV0-hk-rYe"/>
@@ -1275,7 +1271,6 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                             <constraint firstItem="tVU-JV-pc5" firstAttribute="bottom" secondItem="WGT-Vu-EKP" secondAttribute="bottom" constant="10" id="dYg-WV-smK"/>
                             <constraint firstItem="prX-jB-zuQ" firstAttribute="top" secondItem="rc7-zQ-RFU" secondAttribute="bottom" id="fSg-ye-Lcn"/>
                             <constraint firstItem="rc7-zQ-RFU" firstAttribute="top" secondItem="tVU-JV-pc5" secondAttribute="top" constant="10" id="iVV-fN-1pD"/>
-                            <constraint firstItem="SA2-XI-fwU" firstAttribute="centerX" secondItem="0lw-EQ-W2X" secondAttribute="centerX" id="thg-7U-rZN"/>
                             <constraint firstItem="tVU-JV-pc5" firstAttribute="trailing" secondItem="WGT-Vu-EKP" secondAttribute="trailing" constant="20" id="yn0-uW-gZm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tVU-JV-pc5"/>
@@ -1284,7 +1279,6 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                         <barButtonItem key="backBarButtonItem" title=" " id="a2k-Xn-58B"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="SA2-XI-fwU" id="cHQ-J2-2x2"/>
                         <outlet property="addYourselfBtn" destination="Edx-cB-cbl" id="2Jt-px-Lyk"/>
                         <outlet property="chatBtn" destination="WGT-Vu-EKP" id="x7S-Be-Alz"/>
                         <outlet property="searchTF" destination="PUJ-PP-OLA" id="ucD-hr-4y9"/>
