@@ -10,7 +10,12 @@ import Foundation
 import FirebaseDatabase
 
 class FirebaseSnapshotParser{
-    static func getInstitutions(from snapshot:DataSnapshot,educationLevel:EducationLevel)->[InstitutionFull]{
+    
+    init(caller:FirebaseDownloader){
+        
+    }
+    
+    func getInstitutions(from snapshot:DataSnapshot,educationLevel:EducationLevel)->[InstitutionFull]{
         
         var institutions = [InstitutionFull]()
         
@@ -28,7 +33,7 @@ class FirebaseSnapshotParser{
         return institutions
     }
     
-    static func getClasses(from snapshot:DataSnapshot,institution:Institution,classNumber:String)->[Class]{
+    func getClasses(from snapshot:DataSnapshot,institution:Institution,classNumber:String)->[Class]{
         
         var classes = [Class]()
         
@@ -46,7 +51,7 @@ class FirebaseSnapshotParser{
         return classes
     }
     
-    static func getMajors(from snapshot:DataSnapshot, institution:Institution) -> [Major]{
+    func getMajors(from snapshot:DataSnapshot, institution:Institution) -> [Major]{
         var majors = [Major]()
         
         for snap in snapshot.children{
@@ -62,7 +67,7 @@ class FirebaseSnapshotParser{
         return majors
     }
     
-    static func getStudent(uid:String, publicSS:DataSnapshot, privateSS:DataSnapshot)->Student?{
+    func getStudent(uid:String, publicSS:DataSnapshot, privateSS:DataSnapshot)->Student?{
         var birthYear:String!
         var images = [Image]()
         var phoneNumber:String!
@@ -144,6 +149,38 @@ class FirebaseSnapshotParser{
         student.phoneNumber = phoneNumber
         student.email = email
         return student
+    }
+    
+    static func getStudents(from snapshot:DataSnapshot, completion: @escaping (_ students: [Student])->Void){
+        
+        var count = 0
+        var students = [Student]()
+        
+        for snap in snapshot.children {
+            let uid = (snap as! DataSnapshot).key
+            
+            FirebaseSnapshotDownloader.getStudent(with: uid) { (publicSS, privateSS, state) in
+            
+                switch(state){
+                case .Success():
+                    let student = getStudent(uid: uid, publicSS: publicSS!, privateSS: privateSS!)
+                    if let student = student{
+                        students.append(student)
+                    }
+                    break
+                default:
+                    break
+                }
+                
+                count = count + 1
+                
+                if(count == snapshot.children.allObjects.count){
+                    completion(students)
+                }
+            }
+        }
+        
+        completion(students)
     }
     
     private static func getEnrollment(institutionName:String, institutionValue:[String:String])->ClassAndMajorWithYearProtocol?{

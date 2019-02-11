@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 
-
+/*
 class UserData:Student{
     let phonePrivacy:PrivacyType
     let emailPrivacy:PrivacyType
@@ -130,3 +130,4 @@ class UserData:Student{
     
     
 }
+*/

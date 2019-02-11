@@ -23,6 +23,8 @@ final class SchoolController:Subject{
     
  
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
+        
+        
         educationLevel.getInstitutions { [weak self] (queryState) in
             switch(queryState){
             case .Success(let snapshot):

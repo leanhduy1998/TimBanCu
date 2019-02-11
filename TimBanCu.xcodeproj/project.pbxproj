@@ -50,9 +50,7 @@
 		1C513A652180E28100FFDC82 /* Major.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A642180E28100FFDC82 /* Major.swift */; };
 		1C513A672181145C00FFDC82 /* ClassAndMajorWithYearProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A662181145C00FFDC82 /* ClassAndMajorWithYearProtocol.swift */; };
 		1C513A6921812CF600FFDC82 /* UpdateUserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A6821812CF600FFDC82 /* UpdateUserInfoViewModel.swift */; };
-		1C513A6D21824EE100FFDC82 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A6C21824EE000FFDC82 /* PublicProfile.swift */; };
 		1C513A6F2182641600FFDC82 /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A6E2182641600FFDC82 /* Institution.swift */; };
-		1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A702182680700FFDC82 /* PrivateProfile.swift */; };
 		1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A74218368E300FFDC82 /* EULAViewController.swift */; };
 		1C513A8E2183E9CD00FFDC82 /* InstitutionFullTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */; };
 		1C513AAB2187E83800FFDC82 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C513AAA2187E83800FFDC82 /* StringTest.swift */; };
@@ -148,6 +146,8 @@
 		1CCF989B2210BB9C00C491A8 /* FirebaseUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF989A2210BB9C00C491A8 /* FirebaseUploader.swift */; };
 		1CCF989D2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */; };
 		1CCF989F2210C29000C491A8 /* FirebaseDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */; };
+		1CCF98A12211186600C491A8 /* FirebaseStorageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF98A02211186600C491A8 /* FirebaseStorageDownloader.swift */; };
+		1CCF98A322111A8100C491A8 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF98A222111A8000C491A8 /* UIImageExtension.swift */; };
 		1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF2211A836200429FA2 /* Butcherandblock.otf */; };
 		1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */; };
 		1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */; };
@@ -262,9 +262,7 @@
 		1C513A642180E28100FFDC82 /* Major.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major.swift; sourceTree = "<group>"; };
 		1C513A662181145C00FFDC82 /* ClassAndMajorWithYearProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassAndMajorWithYearProtocol.swift; sourceTree = "<group>"; };
 		1C513A6821812CF600FFDC82 /* UpdateUserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoViewModel.swift; sourceTree = "<group>"; };
-		1C513A6C21824EE000FFDC82 /* PublicProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfile.swift; sourceTree = "<group>"; };
 		1C513A6E2182641600FFDC82 /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
-		1C513A702182680700FFDC82 /* PrivateProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateProfile.swift; sourceTree = "<group>"; };
 		1C513A74218368E300FFDC82 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		1C513A8D2183E9CD00FFDC82 /* InstitutionFullTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionFullTest.swift; sourceTree = "<group>"; };
 		1C513AAA2187E83800FFDC82 /* StringTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
@@ -367,6 +365,8 @@
 		1CCF989A2210BB9C00C491A8 /* FirebaseUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUploader.swift; sourceTree = "<group>"; };
 		1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSnapshotDownloader.swift; sourceTree = "<group>"; };
 		1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDownloader.swift; sourceTree = "<group>"; };
+		1CCF98A02211186600C491A8 /* FirebaseStorageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageDownloader.swift; sourceTree = "<group>"; };
+		1CCF98A222111A8000C491A8 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		1CCFACF2211A836200429FA2 /* Butcherandblock.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherandblock.otf; sourceTree = "<group>"; };
 		1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FS Playlist Caps.otf"; sourceTree = "<group>"; };
 		1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShowcaseSans.ttf; sourceTree = "<group>"; };
@@ -594,8 +594,6 @@
 			isa = PBXGroup;
 			children = (
 				1C53F4F620FD422A00F4ACEB /* Student.swift */,
-				1C513A6C21824EE000FFDC82 /* PublicProfile.swift */,
-				1C513A702182680700FFDC82 /* PrivateProfile.swift */,
 				1C4B6C322148541B00BDF724 /* UserData.swift */,
 				3898242421D995750081EAE6 /* PrivacyType.swift */,
 			);
@@ -646,6 +644,7 @@
 			isa = PBXGroup;
 			children = (
 				1C578FB42208CCF30077E1DD /* UIViewControllerExtension.swift */,
+				1CCF98A222111A8000C491A8 /* UIImageExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -805,7 +804,6 @@
 				1C98F6632128642900EFD4EF /* User Classes */,
 				1C8EC8872129ED850038ECB5 /* Setting */,
 				1C578FB12207FC420077E1DD /* NoResultViewController.swift */,
-				1C578FB32208CCCD0077E1DD /* Extension */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -865,6 +863,7 @@
 				1CFB9C2820F1703300945819 /* View */,
 				1CFB9C2520F15A6F00945819 /* View Model */,
 				1CAAAC5C20F3CA6E00443225 /* Controller */,
+				1C578FB32208CCCD0077E1DD /* Extension */,
 				1CCF988B220FEC5000C491A8 /* Factory */,
 				1CD73016213CB53F00105ACE /* Enums */,
 				1CE24D0020FBE142008DE3FB /* Helper */,
@@ -1003,6 +1002,7 @@
 				1CCF989A2210BB9C00C491A8 /* FirebaseUploader.swift */,
 				1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */,
 				1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */,
+				1CCF98A02211186600C491A8 /* FirebaseStorageDownloader.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1609,6 +1609,7 @@
 				1CCF9888220FE76600C491A8 /* RootFactory.swift in Sources */,
 				1CD72FEC213743AD00105ACE /* SchoolController.swift in Sources */,
 				1C53F4F520FD408A00F4ACEB /* ClassDetailViewController.swift in Sources */,
+				1CCF98A322111A8100C491A8 /* UIImageExtension.swift in Sources */,
 				1C513A6921812CF600FFDC82 /* UpdateUserInfoViewModel.swift in Sources */,
 				1CD7300F213B143B00105ACE /* NoResultType.swift in Sources */,
 				1C578F9B22079AA50077E1DD /* Model.swift in Sources */,
@@ -1661,7 +1662,6 @@
 				38EF89CA216930AB000B05D5 /* LoadingAnimation.swift in Sources */,
 				1C1D4BA4215B1100002E4807 /* AnimateAppNameView.swift in Sources */,
 				1CCF988D220FEC7400C491A8 /* NoResultVCFactory.swift in Sources */,
-				1C513A6D21824EE100FFDC82 /* PublicProfile.swift in Sources */,
 				1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */,
 				1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */,
 				1CCF9895220FFC3000C491A8 /* SchoolExtensionAnimation.swift in Sources */,
@@ -1691,7 +1691,6 @@
 				1CA5364B216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift in Sources */,
 				1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */,
 				1C4B6C382148A14700BDF724 /* Image.swift in Sources */,
-				1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */,
 				1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */,
 				1C578FB52208CCF30077E1DD /* UIViewControllerExtension.swift in Sources */,
 				1CD73015213CB4D200105ACE /* ClassYearUIController.swift in Sources */,
@@ -1706,6 +1705,7 @@
 				1C98F65F21285D6800EFD4EF /* UserClassViewModel.swift in Sources */,
 				1CDB3F1C2174051B00BEC04C /* QueryState.swift in Sources */,
 				1CA536372169B64000FCF0FF /* UserUniversityViewModel.swift in Sources */,
+				1CCF98A12211186600C491A8 /* FirebaseStorageDownloader.swift in Sources */,
 				1C1D4BA0215B1061002E4807 /* Constants.swift in Sources */,
 				1CD73018213CBEDF00105ACE /* ClassYearController.swift in Sources */,
 				1CA5364F216EB66300FCF0FF /* ReportUserViewController.swift in Sources */,

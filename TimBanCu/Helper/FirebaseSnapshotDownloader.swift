@@ -10,9 +10,14 @@ import Foundation
 import FirebaseDatabase
 
 class FirebaseSnapshotDownloader{
-    private static let ref = Database.database().reference()
     
-    static func getInstitutions(educationalLevel:EducationLevel,completionHandler: @escaping (_ state:QueryState) -> Void){
+    init(caller:FirebaseDownloader){
+        
+    }
+    
+    private let ref = Database.database().reference()
+    
+    func getInstitutions(educationalLevel:EducationLevel,completionHandler: @escaping (_ state:QueryState) -> Void){
         let schoolsRef = ref.child("schools")
         var query:DatabaseQuery!
         let queryOrderedByType = schoolsRef.queryOrdered(byChild: "type")
@@ -26,7 +31,7 @@ class FirebaseSnapshotDownloader{
         }
     }
     
-    static func getClasses(institution:Institution,classNumber:String,completionHandler: @escaping (UIState, DataSnapshot?) -> ()){
+    func getClasses(institution:Institution,classNumber:String,completionHandler: @escaping (UIState, DataSnapshot?) -> ()){
         
         let path = "classes/\(institution.name!)/\(classNumber)"
         ref.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -36,7 +41,7 @@ class FirebaseSnapshotDownloader{
         }
     }
     
-    static func getMajor(institution:Institution,completionHandler: @escaping (UIState, DataSnapshot?) -> ()){
+    func getMajor(institution:Institution,completionHandler: @escaping (UIState, DataSnapshot?) -> ()){
         
         let path = "classes/\(institution.name!)"
         
@@ -47,11 +52,11 @@ class FirebaseSnapshotDownloader{
         }
     }
     
-    static func getStudent(with uid:String,completionHandler: @escaping (_ publicSS:DataSnapshot?,_ privateSS:DataSnapshot?, _ state:UIState) -> Void){
+    func getStudent(with uid:String,completionHandler: @escaping (_ publicSS:DataSnapshot?,_ privateSS:DataSnapshot?, _ state:UIState) -> Void){
 
         ref.child("publicUserProfile/\(uid)").observeSingleEvent(of: .value, with: { (publicSS) in
             
-            ref.child("privateUserProfile/\(uid)").observeSingleEvent(of: .value, with: { (privateSS) in
+            self.ref.child("privateUserProfile/\(uid)").observeSingleEvent(of: .value, with: { (privateSS) in
                 
                 completionHandler(publicSS,privateSS,.Success())
                 
@@ -62,7 +67,15 @@ class FirebaseSnapshotDownloader{
         }) { (err) in
             completionHandler(nil,nil,.Failure(err.localizedDescription))
         }
+    }
+    
+    func getStudents(from model: ClassWithYear,completionHandler: @escaping (_ snapshot: DataSnapshot) -> Void){
         
+        let path = "classes/\(model.institution.name!)/\(model.classNumberString)/\(model.classNameString)/\(model.year)"
         
+        ref.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
+            completionHandler(snapshot)
+            
+        })
     }
 }

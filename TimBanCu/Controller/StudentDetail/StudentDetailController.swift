@@ -21,18 +21,11 @@ class StudentDetailController{
     func fetchStudentImages(completionHandler: @escaping (_ uiState:UIState) -> Void) {
         viewcontroller.userImages.removeAll()
         
-        student.getImages { (uistate) in
-            switch(uistate){
-            case .Success():
-                for image in self.student.images{
-                    self.viewcontroller.userImages.append(image)
-                }
-                completionHandler(uistate)
-                break
-            default:
-                completionHandler(uistate)
-                break
+        FirebaseDownloader.shared.getImages(student: student, completion: {
+            for image in self.student.images{
+                self.viewcontroller.userImages.append(image)
             }
-        }
+            completionHandler(.Success())
+        })
     }
 }
