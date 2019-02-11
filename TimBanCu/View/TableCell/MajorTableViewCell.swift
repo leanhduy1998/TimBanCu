@@ -14,7 +14,7 @@ class MajorTableViewCell: UITableViewCell {
     
     var major:Major! = nil{
         didSet{
-            majorLabel.text = major.majorName
+            majorLabel.text = major.name
         }
     }
 

@@ -12,5 +12,4 @@ protocol ClassAndMajorProtocol {
     var uid:String! { get set }
     var institution:Institution! { get set }
     func classYearExist(year:String,completionHandler: @escaping (_ exist:Bool) -> Void)
-    func uploadToFirebase(completionHandler: @escaping (_ state:UIState)->Void)
 }

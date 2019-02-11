@@ -10,34 +10,24 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-final class SchoolAlerts{
+class SchoolAlerts{
     
     private weak var viewcontroller:UIViewController!
     private var schoolType:EducationLevel!
-    
-    
-    private var addNewSchoolAlert:AskForInputAlert!
+
     private var addNewSchoolCompletedAlert:InfoAlert!
     private var schoolAlreadyExistAlert:InfoAlert!
     
     
-    private var addNewSchoolCompleteHandler: (String) -> ()
-    
-    init(viewcontroller:UIViewController, schoolType:EducationLevel,addNewSchoolHandler: @escaping (String) -> ()){
+    init(viewcontroller:SchoolViewController){
         self.viewcontroller = viewcontroller
-        self.schoolType = schoolType
-        self.addNewSchoolCompleteHandler = addNewSchoolHandler
+        self.schoolType = viewcontroller.educationLevel
         
-        setupAddNewSchoolAlert()
         setupAddNewSchoolCompletedAlert()
         setupSchoolAlreadyExistAlert()
     }
     
-  
-    func showAddNewSchoolAlert(){
-        addNewSchoolAlert.show(viewcontroller: viewcontroller)
-    }
-    
+
     func showAddNewSchoolCompletedAlert(){
         addNewSchoolCompletedAlert.show(viewcontroller: viewcontroller)
     }
@@ -56,31 +46,7 @@ final class SchoolAlerts{
 
         schoolAlreadyExistAlert = InfoAlert(title: title, message: message, alertType: .AlreadyExist)
     }
-    
-    private func setupAddNewSchoolAlert(){
-        var title:String!
         
-        switch(schoolType!){
-        case .Elementary:
-            title = "Thêm Trường Tiểu Học Mới"
-            break
-        case .MiddleSchool:
-            title = "Thêm Trường Trung Học Cơ Sở Mới"
-            break
-        case .HighSchool:
-            title = "Thêm Trường Trung Học Phổ Thông Mới"
-            break
-        case .University:
-            title = "Thêm Trường Đại Học Mới"
-            break
-        }
-        
-        addNewSchoolAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Trường")
-        addNewSchoolAlert.addAction(actionTitle: "Thêm") { [weak self] (_) in
-            self?.addNewSchoolCompleteHandler((self?.addNewSchoolAlert.getTextFieldInput())!)
-        }
-    }
-    
     private func setupAddNewSchoolCompletedAlert(){
         let title = "Thêm Trường Thành Công!"
         addNewSchoolCompletedAlert = InfoAlert(title: title, message: "Bước Tiếp Theo: Chọn Lớp của bạn", alertType: .Success)

@@ -70,10 +70,21 @@
 		1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53F4FC20FD496100F4ACEB /* ClassDetailTableViewCell.swift */; };
 		1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C53F4FE20FD4BA400F4ACEB /* ClassDetailViewModel.swift */; };
 		1C578F7222037F9D0077E1DD /* YourClassTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C578F7122037F9D0077E1DD /* YourClassTab.storyboard */; };
+		1C578F9822079A490077E1DD /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578F9722079A490077E1DD /* TableViewDataSource.swift */; };
+		1C578F9B22079AA50077E1DD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578F9A22079AA50077E1DD /* Model.swift */; };
+		1C578F9F22079FDB0077E1DD /* TableViewDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578F9E22079FDB0077E1DD /* TableViewDataSourceFactory.swift */; };
+		1C578FA12207A8E00077E1DD /* SchoolTableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FA02207A8E00077E1DD /* SchoolTableViewConfigurator.swift */; };
+		1C578FA32207AEBB0077E1DD /* RootTableViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FA22207AEBB0077E1DD /* RootTableViewConfigurator.swift */; };
+		1C578FA52207B2B00077E1DD /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FA42207B2B00077E1DD /* TableViewDelegate.swift */; };
+		1C578FA72207C4390077E1DD /* TableViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FA62207C4390077E1DD /* TableViewAnimation.swift */; };
+		1C578FAA2207E1800077E1DD /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FA92207E1800077E1DD /* Observer.swift */; };
+		1C578FAC2207E1940077E1DD /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FAB2207E1940077E1DD /* Subject.swift */; };
+		1C578FB02207FA8D0077E1DD /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C578FAF2207FA8D0077E1DD /* Result.storyboard */; };
+		1C578FB22207FC420077E1DD /* NoResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FB12207FC420077E1DD /* NoResultViewController.swift */; };
+		1C578FB52208CCF30077E1DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C578FB42208CCF30077E1DD /* UIViewControllerExtension.swift */; };
 		1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF60A2136254E009174D2 /* SignInController.swift */; };
 		1C6CF60D21362AC3009174D2 /* SignInUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF60C21362AC3009174D2 /* SignInUIController.swift */; };
 		1C6CF60F21363042009174D2 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF60E21363042009174D2 /* UIState.swift */; };
-		1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */; };
 		1C6D51F720FAC85300F8F5D7 /* ViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */; };
 		1C6D51F920FAC86F00F8F5D7 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */; };
 		1C83E8162112053D00D647D0 /* UpdateUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C83E8152112053C00D647D0 /* UpdateUserInfoViewController.swift */; };
@@ -127,11 +138,20 @@
 		1CBF5C8220A8197C00B78E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */; };
 		1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */; };
 		1CBF5C9820A8197C00B78E6A /* TimBanCuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */; };
+		1CCF9888220FE76600C491A8 /* RootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF9887220FE76600C491A8 /* RootFactory.swift */; };
+		1CCF988A220FE88400C491A8 /* SchoolViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF9889220FE88400C491A8 /* SchoolViewControllerTest.swift */; };
+		1CCF988D220FEC7400C491A8 /* NoResultVCFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF988C220FEC7400C491A8 /* NoResultVCFactory.swift */; };
+		1CCF988F220FF07E00C491A8 /* SchoolExtensionTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF988E220FF07E00C491A8 /* SchoolExtensionTextFieldDelegate.swift */; };
+		1CCF9895220FFC3000C491A8 /* SchoolExtensionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF9894220FFC2F00C491A8 /* SchoolExtensionAnimation.swift */; };
+		1CCF9897220FFD3000C491A8 /* SchoolLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF9896220FFD3000C491A8 /* SchoolLogicController.swift */; };
+		1CCF98992210BA8800C491A8 /* FirebaseSnapshotParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF98982210BA8800C491A8 /* FirebaseSnapshotParser.swift */; };
+		1CCF989B2210BB9C00C491A8 /* FirebaseUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF989A2210BB9C00C491A8 /* FirebaseUploader.swift */; };
+		1CCF989D2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */; };
+		1CCF989F2210C29000C491A8 /* FirebaseDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */; };
 		1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF2211A836200429FA2 /* Butcherandblock.otf */; };
 		1CCFACF6211A836200429FA2 /* FS Playlist Caps.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */; };
 		1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */; };
 		1CD72FE6213736CA00105ACE /* EducationLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FE5213736CA00105ACE /* EducationLevel.swift */; };
-		1CD72FE82137380A00105ACE /* SchoolUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FE72137380A00105ACE /* SchoolUIController.swift */; };
 		1CD72FEA21373CDF00105ACE /* AnimatedEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FE921373CDF00105ACE /* AnimatedEmoticon.swift */; };
 		1CD72FEC213743AD00105ACE /* SchoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FEB213743AD00105ACE /* SchoolController.swift */; };
 		1CD72FF621383E8200105ACE /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD72FF521383E8200105ACE /* NoResultView.swift */; };
@@ -262,10 +282,21 @@
 		1C53F4FC20FD496100F4ACEB /* ClassDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTableViewCell.swift; sourceTree = "<group>"; };
 		1C53F4FE20FD4BA400F4ACEB /* ClassDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewModel.swift; sourceTree = "<group>"; };
 		1C578F7122037F9D0077E1DD /* YourClassTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YourClassTab.storyboard; sourceTree = "<group>"; };
+		1C578F9722079A490077E1DD /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		1C578F9A22079AA50077E1DD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1C578F9E22079FDB0077E1DD /* TableViewDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceFactory.swift; sourceTree = "<group>"; };
+		1C578FA02207A8E00077E1DD /* SchoolTableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewConfigurator.swift; sourceTree = "<group>"; };
+		1C578FA22207AEBB0077E1DD /* RootTableViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewConfigurator.swift; sourceTree = "<group>"; };
+		1C578FA42207B2B00077E1DD /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		1C578FA62207C4390077E1DD /* TableViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimation.swift; sourceTree = "<group>"; };
+		1C578FA92207E1800077E1DD /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		1C578FAB2207E1940077E1DD /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		1C578FAF2207FA8D0077E1DD /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		1C578FB12207FC420077E1DD /* NoResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultViewController.swift; sourceTree = "<group>"; };
+		1C578FB42208CCF30077E1DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1C6CF60A2136254E009174D2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		1C6CF60C21362AC3009174D2 /* SignInUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIController.swift; sourceTree = "<group>"; };
 		1C6CF60E21363042009174D2 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
-		1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSchoolTypeUIController.swift; sourceTree = "<group>"; };
 		1C6D51F620FAC85300F8F5D7 /* ViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShadow.swift; sourceTree = "<group>"; };
 		1C6D51F820FAC86F00F8F5D7 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		1C83E8152112053C00D647D0 /* UpdateUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoViewController.swift; sourceTree = "<group>"; };
@@ -326,11 +357,20 @@
 		1CBF5C9320A8197C00B78E6A /* TimBanCuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimBanCuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBF5C9720A8197C00B78E6A /* TimBanCuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimBanCuUITests.swift; sourceTree = "<group>"; };
 		1CBF5C9920A8197C00B78E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CCF9887220FE76600C491A8 /* RootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFactory.swift; sourceTree = "<group>"; };
+		1CCF9889220FE88400C491A8 /* SchoolViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewControllerTest.swift; sourceTree = "<group>"; };
+		1CCF988C220FEC7400C491A8 /* NoResultVCFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultVCFactory.swift; sourceTree = "<group>"; };
+		1CCF988E220FF07E00C491A8 /* SchoolExtensionTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolExtensionTextFieldDelegate.swift; sourceTree = "<group>"; };
+		1CCF9894220FFC2F00C491A8 /* SchoolExtensionAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolExtensionAnimation.swift; sourceTree = "<group>"; };
+		1CCF9896220FFD3000C491A8 /* SchoolLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolLogicController.swift; sourceTree = "<group>"; };
+		1CCF98982210BA8800C491A8 /* FirebaseSnapshotParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSnapshotParser.swift; sourceTree = "<group>"; };
+		1CCF989A2210BB9C00C491A8 /* FirebaseUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUploader.swift; sourceTree = "<group>"; };
+		1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSnapshotDownloader.swift; sourceTree = "<group>"; };
+		1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDownloader.swift; sourceTree = "<group>"; };
 		1CCFACF2211A836200429FA2 /* Butcherandblock.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Butcherandblock.otf; sourceTree = "<group>"; };
 		1CCFACF3211A836200429FA2 /* FS Playlist Caps.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FS Playlist Caps.otf"; sourceTree = "<group>"; };
 		1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ShowcaseSans.ttf; sourceTree = "<group>"; };
 		1CD72FE5213736CA00105ACE /* EducationLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationLevel.swift; sourceTree = "<group>"; };
-		1CD72FE72137380A00105ACE /* SchoolUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolUIController.swift; sourceTree = "<group>"; };
 		1CD72FE921373CDF00105ACE /* AnimatedEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedEmoticon.swift; sourceTree = "<group>"; };
 		1CD72FEB213743AD00105ACE /* SchoolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolController.swift; sourceTree = "<group>"; };
 		1CD72FF521383E8200105ACE /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
@@ -412,9 +452,11 @@
 			isa = PBXGroup;
 			children = (
 				1CFB9C2320F134C600945819 /* SchoolViewController.swift */,
-				1CD72FE72137380A00105ACE /* SchoolUIController.swift */,
 				1CD72FEB213743AD00105ACE /* SchoolController.swift */,
 				1C0A039B20F5163C00E105A9 /* SchoolAlerts.swift */,
+				1CCF988E220FF07E00C491A8 /* SchoolExtensionTextFieldDelegate.swift */,
+				1CCF9894220FFC2F00C491A8 /* SchoolExtensionAnimation.swift */,
+				1CCF9896220FFD3000C491A8 /* SchoolLogicController.swift */,
 			);
 			path = SchoolAndUniversity;
 			sourceTree = "<group>";
@@ -435,7 +477,6 @@
 			isa = PBXGroup;
 			children = (
 				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
-				1C6CF61021363D24009174D2 /* SelectSchoolTypeUIController.swift */,
 			);
 			path = "Select School";
 			sourceTree = "<group>";
@@ -576,6 +617,37 @@
 				1C513AAA2187E83800FFDC82 /* StringTest.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		1C578F9922079A920077E1DD /* TableView Stuffs */ = {
+			isa = PBXGroup;
+			children = (
+				1C578F9722079A490077E1DD /* TableViewDataSource.swift */,
+				1C578F9E22079FDB0077E1DD /* TableViewDataSourceFactory.swift */,
+				1C578FA02207A8E00077E1DD /* SchoolTableViewConfigurator.swift */,
+				1C578F9A22079AA50077E1DD /* Model.swift */,
+				1C578FA22207AEBB0077E1DD /* RootTableViewConfigurator.swift */,
+				1C578FA42207B2B00077E1DD /* TableViewDelegate.swift */,
+				1C578FA62207C4390077E1DD /* TableViewAnimation.swift */,
+			);
+			path = "TableView Stuffs";
+			sourceTree = "<group>";
+		};
+		1C578FA82207E1670077E1DD /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				1C578FAB2207E1940077E1DD /* Subject.swift */,
+				1C578FA92207E1800077E1DD /* Observer.swift */,
+			);
+			path = Temp;
+			sourceTree = "<group>";
+		};
+		1C578FB32208CCCD0077E1DD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1C578FB42208CCF30077E1DD /* UIViewControllerExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		1C784B682110F85200647C40 /* StudentDetail */ = {
@@ -732,6 +804,8 @@
 				1C1A98FA210CBBC800D20079 /* Chat */,
 				1C98F6632128642900EFD4EF /* User Classes */,
 				1C8EC8872129ED850038ECB5 /* Setting */,
+				1C578FB12207FC420077E1DD /* NoResultViewController.swift */,
+				1C578FB32208CCCD0077E1DD /* Extension */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -785,11 +859,13 @@
 				1CBF5C7B20A8197B00B78E6A /* Main.storyboard */,
 				1C578F7122037F9D0077E1DD /* YourClassTab.storyboard */,
 				1CBF5C8020A8197C00B78E6A /* LaunchScreen.storyboard */,
+				1C578FAF2207FA8D0077E1DD /* Result.storyboard */,
 				1CAAAC5D20F3CA7E00443225 /* Resource */,
 				1CE24D0320FBE6E6008DE3FB /* Model */,
 				1CFB9C2820F1703300945819 /* View */,
 				1CFB9C2520F15A6F00945819 /* View Model */,
 				1CAAAC5C20F3CA6E00443225 /* Controller */,
+				1CCF988B220FEC5000C491A8 /* Factory */,
 				1CD73016213CB53F00105ACE /* Enums */,
 				1CE24D0020FBE142008DE3FB /* Helper */,
 				1CBF5C8320A8197C00B78E6A /* Info.plist */,
@@ -800,6 +876,7 @@
 		1CBF5C8B20A8197C00B78E6A /* TimBanCuTests */ = {
 			isa = PBXGroup;
 			children = (
+				1CCF9889220FE88400C491A8 /* SchoolViewControllerTest.swift */,
 				1C513AA92187E82100FFDC82 /* Helper */,
 				1CBF5C8C20A8197C00B78E6A /* TimBanCuTests.swift */,
 				1CBF5C8E20A8197C00B78E6A /* Info.plist */,
@@ -822,6 +899,15 @@
 				1CBF5C9920A8197C00B78E6A /* Info.plist */,
 			);
 			path = TimBanCuUITests;
+			sourceTree = "<group>";
+		};
+		1CCF988B220FEC5000C491A8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1CCF9887220FE76600C491A8 /* RootFactory.swift */,
+				1CCF988C220FEC7400C491A8 /* NoResultVCFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		1CCFACF1211A836200429FA2 /* Fonts */ = {
@@ -909,9 +995,14 @@
 		1CE24D0020FBE142008DE3FB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				1C578F9922079A920077E1DD /* TableView Stuffs */,
 				1CD730002138906400105ACE /* GenericTableView.swift */,
 				1CAB795E2150660400F21264 /* Closures.swift */,
 				1C4B6C4A214C562E00BDF724 /* KeyboardHelper.swift */,
+				1CCF98982210BA8800C491A8 /* FirebaseSnapshotParser.swift */,
+				1CCF989A2210BB9C00C491A8 /* FirebaseUploader.swift */,
+				1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */,
+				1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -919,6 +1010,7 @@
 		1CE24D0320FBE6E6008DE3FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C578FA82207E1670077E1DD /* Temp */,
 				1C1D4B9F215B1061002E4807 /* Constants.swift */,
 				1CE24D0120FBE153008DE3FB /* CurrentUser.swift */,
 				1C513A7621836CA000FFDC82 /* Institution Related */,
@@ -1144,6 +1236,7 @@
 				1C1D4BB1215B11BA002E4807 /* trail_loading.json in Resources */,
 				3808954A216E988300ACAB15 /* postcard.json in Resources */,
 				1CCFACF7211A836200429FA2 /* ShowcaseSans.ttf in Resources */,
+				1C578FB02207FA8D0077E1DD /* Result.storyboard in Resources */,
 				1CBF5C7D20A8197B00B78E6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1473,6 +1566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C900E2E210141AA0016DFDC /* NoResultLabel.swift in Sources */,
+				1C578FA72207C4390077E1DD /* TableViewAnimation.swift in Sources */,
 				1CF50FE6210B678200346EF9 /* CircleImageView.swift in Sources */,
 				1CDB3F23217BDD4100BEC04C /* FirstTimeLaunch.swift in Sources */,
 				1CAB796321509B0E00F21264 /* UserImageController.swift in Sources */,
@@ -1482,7 +1576,9 @@
 				1CA53642216D38A100FCF0FF /* NoUserInfoViewController.swift in Sources */,
 				1C8EC86D2128C8E80038ECB5 /* RoundedImageView.swift in Sources */,
 				1C53F4FD20FD496100F4ACEB /* ClassDetailTableViewCell.swift in Sources */,
+				1C578FA12207A8E00077E1DD /* SchoolTableViewConfigurator.swift in Sources */,
 				1C83E81B211359FA00D647D0 /* ClassYearTableViewCell.swift in Sources */,
+				1C578FA32207AEBB0077E1DD /* RootTableViewConfigurator.swift in Sources */,
 				38CAE9CF2129B881005BE656 /* CustomSelectionColorView.swift in Sources */,
 				1CAB79672152B17000F21264 /* StudentDetailController.swift in Sources */,
 				1C1A98FE210CBC7000D20079 /* ChatCollectionViewExtension.swift in Sources */,
@@ -1501,18 +1597,25 @@
 				1C83E8162112053D00D647D0 /* UpdateUserInfoViewController.swift in Sources */,
 				1C1A98F7210BB43700D20079 /* ChatViewController.swift in Sources */,
 				1C85E3202103F61200124FDA /* UserImageViewController.swift in Sources */,
+				1C578FAC2207E1940077E1DD /* Subject.swift in Sources */,
 				1C4B6C4B214C562E00BDF724 /* KeyboardHelper.swift in Sources */,
+				1CCF988F220FF07E00C491A8 /* SchoolExtensionTextFieldDelegate.swift in Sources */,
 				1CD7300D213B093B00105ACE /* ClassNameUIController.swift in Sources */,
 				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
 				1CA53655216EDF9300FCF0FF /* ReportReason.swift in Sources */,
+				1C578FA52207B2B00077E1DD /* TableViewDelegate.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1CD7301E213F33E700105ACE /* ClassDetailAlerts.swift in Sources */,
+				1CCF9888220FE76600C491A8 /* RootFactory.swift in Sources */,
 				1CD72FEC213743AD00105ACE /* SchoolController.swift in Sources */,
 				1C53F4F520FD408A00F4ACEB /* ClassDetailViewController.swift in Sources */,
 				1C513A6921812CF600FFDC82 /* UpdateUserInfoViewModel.swift in Sources */,
 				1CD7300F213B143B00105ACE /* NoResultType.swift in Sources */,
+				1C578F9B22079AA50077E1DD /* Model.swift in Sources */,
+				1CCF9897220FFD3000C491A8 /* SchoolLogicController.swift in Sources */,
 				1C83E81D2113879E00D647D0 /* MajorViewController.swift in Sources */,
 				1C3ADA8420F6B6F80041421F /* SignInViewController.swift in Sources */,
+				1C578FAA2207E1800077E1DD /* Observer.swift in Sources */,
 				1C53F4F720FD422A00F4ACEB /* Student.swift in Sources */,
 				1CD72FEA21373CDF00105ACE /* AnimatedEmoticon.swift in Sources */,
 				1C4B6C44214B432C00BDF724 /* UpdateImageYearViewController.swift in Sources */,
@@ -1538,11 +1641,11 @@
 				1CE24D0720FC0690008DE3FB /* ClassWithYear.swift in Sources */,
 				1CD73013213C37BF00105ACE /* ClassNameController.swift in Sources */,
 				1CBF5C7820A8197B00B78E6A /* AppDelegate.swift in Sources */,
+				1CCF989B2210BB9C00C491A8 /* FirebaseUploader.swift in Sources */,
 				1C513A632180DAEB00FFDC82 /* ClassAndMajorProtocol.swift in Sources */,
-				1C6CF61121363D24009174D2 /* SelectSchoolTypeUIController.swift in Sources */,
+				1CCF98992210BA8800C491A8 /* FirebaseSnapshotParser.swift in Sources */,
 				1CA53651216EB67D00FCF0FF /* ReportReasonViewController.swift in Sources */,
 				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
-				1CD72FE82137380A00105ACE /* SchoolUIController.swift in Sources */,
 				1CA536352169B51E00FCF0FF /* UserUniversityTableViewCell.swift in Sources */,
 				1CAAAC5F20F3E6C700443225 /* ClassNumberViewController.swift in Sources */,
 				1CAB795D2150507A00F21264 /* UserImageUIController.swift in Sources */,
@@ -1557,19 +1660,25 @@
 				1CBC0FBB210D3FE500DBFBE8 /* AddImagesViewController.swift in Sources */,
 				38EF89CA216930AB000B05D5 /* LoadingAnimation.swift in Sources */,
 				1C1D4BA4215B1100002E4807 /* AnimateAppNameView.swift in Sources */,
+				1CCF988D220FEC7400C491A8 /* NoResultVCFactory.swift in Sources */,
 				1C513A6D21824EE100FFDC82 /* PublicProfile.swift in Sources */,
 				1C6CF60B2136254E009174D2 /* SignInController.swift in Sources */,
 				1C513A75218368E300FFDC82 /* EULAViewController.swift in Sources */,
+				1CCF9895220FFC3000C491A8 /* SchoolExtensionAnimation.swift in Sources */,
 				1CD7301C213F285500105ACE /* ClassDetailController.swift in Sources */,
+				1C578FB22207FC420077E1DD /* NoResultViewController.swift in Sources */,
 				1C513A6F2182641600FFDC82 /* Institution.swift in Sources */,
 				1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */,
 				1CD72FF621383E8200105ACE /* NoResultView.swift in Sources */,
 				1CE24D0520FBE6F8008DE3FB /* InstitutionFull.swift in Sources */,
+				1C578F9F22079FDB0077E1DD /* TableViewDataSourceFactory.swift in Sources */,
 				1C53F4F920FD44D200F4ACEB /* SettingViewController.swift in Sources */,
 				1C83E82121138F4400D647D0 /* MajorWithYear.swift in Sources */,
 				1CAB796F2155DFDC00F21264 /* Status.swift in Sources */,
 				1C4B6C47214C01D700BDF724 /* UpdateImageYearUIController.swift in Sources */,
 				1C4B6C3A2148AF2100BDF724 /* Slideshow.swift in Sources */,
+				1C578F9822079A490077E1DD /* TableViewDataSource.swift in Sources */,
+				1CCF989F2210C29000C491A8 /* FirebaseDownloader.swift in Sources */,
 				1CD730012138906400105ACE /* GenericTableView.swift in Sources */,
 				1CE24D0220FBE153008DE3FB /* CurrentUser.swift in Sources */,
 				1CAB796B2155D61300F21264 /* ChatController.swift in Sources */,
@@ -1584,9 +1693,11 @@
 				1C4B6C382148A14700BDF724 /* Image.swift in Sources */,
 				1C513A712182680700FFDC82 /* PrivateProfile.swift in Sources */,
 				1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */,
+				1C578FB52208CCF30077E1DD /* UIViewControllerExtension.swift in Sources */,
 				1CD73015213CB4D200105ACE /* ClassYearUIController.swift in Sources */,
 				1CA53657216EE62400FCF0FF /* ConfirmationAlert.swift in Sources */,
 				1C3500B52172F7A100C6BF82 /* MainNavigationViewController.swift in Sources */,
+				1CCF989D2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift in Sources */,
 				38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */,
 				38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */,
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,
@@ -1606,6 +1717,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CCF988A220FE88400C491A8 /* SchoolViewControllerTest.swift in Sources */,
 				1C4C6800218F546700D5383D /* MajorWithYearTest.swift in Sources */,
 				1CBF5C8D20A8197C00B78E6A /* TimBanCuTests.swift in Sources */,
 				1C4C6806218F98D200D5383D /* UserDataTest.swift in Sources */,

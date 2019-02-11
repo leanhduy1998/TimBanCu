@@ -18,7 +18,10 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     var tableview: UITableView!
     var finishAnimateCells = false
     
+    var animation:TableViewAnimation!
+    
     init(tableview:UITableView, items: [Item], configure: @escaping (Cell, Item) -> ()) {
+        
         self.configure = configure
         super.init()
         
@@ -32,6 +35,8 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
         
         self.items = items
         reuseIdentifier = String(describing: Cell.self)
+        
+        
 
     }
     
@@ -57,35 +62,10 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        DispatchQueue.main.async { [weak self] in
-            var animateLastCell = false
-            
-            if !self!.finishAnimateCells {
-                if let indexPathsForVisibleRows = self!.tableview.indexPathsForVisibleRows,let lastIndexPath = indexPathsForVisibleRows.last, lastIndexPath.row == indexPath.row {
-                    animateLastCell = true
-                }
-                
-                if animateLastCell {
-                    self!.finishAnimateCells = true
-                }
-                
-                self!.animateCells(cell: cell, tableView: self!.tableview, indexPath: indexPath)
-            }
+        if animation == nil{
+            animation = TableViewAnimation(tableview: tableview)
         }
-    }
-    
-    private func animateCells(cell: UITableViewCell, tableView: UITableView, indexPath: IndexPath) {
         
-        DispatchQueue.main.async {
-            cell.transform = CGAffineTransform(translationX: 0, y: tableView.rowHeight / 2)
-            cell.alpha = 0
-            
-            UIView.animate(withDuration: 0.5, delay: 0.03 * Double(indexPath.row), options: [.curveEaseInOut], animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-                cell.alpha = 1
-            }, completion: nil)
-        }
+        animation.animateCellFromBelowUpAtLoading(cell: cell, indexPath: indexPath)
     }
-
 }

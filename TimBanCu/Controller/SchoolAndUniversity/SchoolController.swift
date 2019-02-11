@@ -9,10 +9,13 @@
 import Foundation
 import FirebaseDatabase
 
-final class SchoolController{
+final class SchoolController:Subject{
     private var educationLevel:EducationLevel!
-    
-    var institutions = [InstitutionFull]()
+    var institutions = [InstitutionFull]() {
+        didSet{
+            notify()
+        }
+    }
     
     init(educationLevel:EducationLevel){
         self.educationLevel = educationLevel
@@ -35,7 +38,7 @@ final class SchoolController{
     }
     
     func addNewInstitution(name:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let institution = InstitutionFull(name: name, type: educationLevel.getString(), addByUid: CurrentUser.getUid())
+        let institution = InstitutionFull(name: name, type: educationLevel.getShortString(), addByUid: CurrentUser.getUid())
         
         institution.writeToDatabase { [weak self] (err, _) in
             if(err == nil){

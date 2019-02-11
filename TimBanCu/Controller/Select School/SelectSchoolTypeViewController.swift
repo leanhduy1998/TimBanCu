@@ -19,42 +19,44 @@ class SelectSchoolTypeViewController: UIViewController {
     @IBOutlet weak var thptButton: UIButton!
     
     @IBOutlet weak var thcsButton: UIButton!
-    var selectedSchoolType:EducationLevel!
     
-    private var uiController: SelectSchoolTypeUIController!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiController = SelectSchoolTypeUIController(viewcontroller: self)
+       
+        customButtonTitleSize(button: thcsButton)
+        customButtonTitleSize(button: thptButton)
         
-        uiController.customButtonTitleSize(button: thcsButton)
-        uiController.customButtonTitleSize(button: thptButton)
+        addNavigationBarShadow()
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func presentNextViewController(educationLevel:EducationLevel) {
+        navigationController?.hero.isEnabled = true
+        navigationController?.hero.navigationAnimationType = .fade
+        
+        let controller = RootFactory.getSchoolViewController(educationLevel: educationLevel)
+        navigationController?.add(controller)
+    }
+    
+    private func customButtonTitleSize(button: UIButton) {
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .center
     }
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {
-        selectedSchoolType = .Elementary
-        uiController.presentNextViewController()
+        presentNextViewController(educationLevel: .Elementary)
     }
     
     @IBAction func trunghoccosoBtnPressed(_ sender: Any) {
-        selectedSchoolType = .MiddleSchool
-        uiController.presentNextViewController()
+        presentNextViewController(educationLevel: .MiddleSchool)
     }
     
     @IBAction func trunghocphothongBtnPressed(_ sender: Any) {
-        selectedSchoolType = .HighSchool
-        uiController.presentNextViewController()
+        presentNextViewController(educationLevel: .HighSchool)
     }
     
     @IBAction func daihocBtnPressed(_ sender: Any) {
-        selectedSchoolType = .University
-        uiController.presentNextViewController()
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SchoolViewController{
-            destination.educationLevel = selectedSchoolType
-        }
+        presentNextViewController(educationLevel: .University)
     }
 }
 

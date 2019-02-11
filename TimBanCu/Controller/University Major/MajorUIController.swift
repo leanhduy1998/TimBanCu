@@ -50,7 +50,7 @@ class MajorUIController{
         else{
             for major in allMajors{
                 
-                if major.majorName.lowercased().range(of:filter.lowercased()) != nil {
+                if major.name.lowercased().range(of:filter.lowercased()) != nil {
                     searchMajors.append(major)
                 }
             }

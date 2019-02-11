@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--No Result View Controller-->
+        <scene sceneID="0yJ-El-pzm">
+            <objects>
+                <viewController id="vtQ-Cy-Rqv" customClass="NoResultViewController" customModule="TimBanCu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eGr-Uj-egW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3Y-Dz-zw4" customClass="LOTAnimationView">
+                                <rect key="frame" x="112.5" y="20" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Y1u-F8-U2x"/>
+                                    <constraint firstAttribute="width" constant="150" id="fPy-bc-6Xy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="empty_list"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có kết quả. Bạn vui lòng điền có dấu." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5n-ig-ADV">
+                                <rect key="frame" x="20" y="190" width="335" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="vff-Ft-TAc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-QT-AnZ">
+                                <rect key="frame" x="138.5" y="340" width="98" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="tPB-Bd-sZf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Thêm ? Mới">
+                                    <color key="titleColor" red="1" green="0.61960784313725492" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDidPressed:" destination="vtQ-Cy-Rqv" eventType="touchUpInside" id="z9x-Df-bDA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-mV-Xdt">
+                                <rect key="frame" x="40" y="290" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fRy-k4-nS4" firstAttribute="trailing" secondItem="x5n-ig-ADV" secondAttribute="trailing" constant="20" id="7ZB-Kl-5zN"/>
+                            <constraint firstItem="x5n-ig-ADV" firstAttribute="leading" secondItem="fRy-k4-nS4" secondAttribute="leading" constant="20" id="CA1-Qw-fKm"/>
+                            <constraint firstItem="O3Y-Dz-zw4" firstAttribute="top" secondItem="fRy-k4-nS4" secondAttribute="top" id="HGo-Qj-fci"/>
+                            <constraint firstItem="fRy-k4-nS4" firstAttribute="trailing" secondItem="Mkl-mV-Xdt" secondAttribute="trailing" constant="40" id="Rkf-sx-E5W"/>
+                            <constraint firstItem="Mkl-mV-Xdt" firstAttribute="leading" secondItem="fRy-k4-nS4" secondAttribute="leading" constant="40" id="Xqs-1b-bQJ"/>
+                            <constraint firstItem="x5n-ig-ADV" firstAttribute="top" secondItem="O3Y-Dz-zw4" secondAttribute="bottom" constant="20" id="YDr-98-a12"/>
+                            <constraint firstItem="Mkl-mV-Xdt" firstAttribute="top" secondItem="x5n-ig-ADV" secondAttribute="bottom" constant="20" id="fYo-7K-rZn"/>
+                            <constraint firstItem="gh3-QT-AnZ" firstAttribute="centerX" secondItem="eGr-Uj-egW" secondAttribute="centerX" id="jJS-ep-eNE"/>
+                            <constraint firstItem="O3Y-Dz-zw4" firstAttribute="centerX" secondItem="eGr-Uj-egW" secondAttribute="centerX" id="jl5-aM-Ucd"/>
+                            <constraint firstItem="gh3-QT-AnZ" firstAttribute="top" secondItem="Mkl-mV-Xdt" secondAttribute="bottom" constant="20" id="nCm-RU-9Ff"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fRy-k4-nS4"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionBtn" destination="gh3-QT-AnZ" id="7Rs-aK-LDZ"/>
+                        <outlet property="animationView" destination="O3Y-Dz-zw4" id="OH6-iQ-eFa"/>
+                        <outlet property="textfield" destination="Mkl-mV-Xdt" id="J6X-fu-alO"/>
+                        <outlet property="titleLabel" destination="x5n-ig-ADV" id="EgA-1j-1T4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdT-lt-Dvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="127"/>
+        </scene>
+    </scenes>
+</document>
