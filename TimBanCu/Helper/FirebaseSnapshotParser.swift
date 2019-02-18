@@ -11,10 +11,6 @@ import FirebaseDatabase
 
 class FirebaseSnapshotParser{
     
-    init(caller:FirebaseDownloader){
-        
-    }
-    
     func getInstitutions(from snapshot:DataSnapshot,educationLevel:EducationLevel)->[InstitutionFull]{
         
         var institutions = [InstitutionFull]()
@@ -151,39 +147,19 @@ class FirebaseSnapshotParser{
         return student
     }
     
-    static func getStudents(from snapshot:DataSnapshot, completion: @escaping (_ students: [Student])->Void){
+    func getStudentsUids(from snapshot:DataSnapshot, completion: @escaping (_ uid: [String])->Void){
         
-        var count = 0
-        var students = [Student]()
+        var uids = [String]()
         
         for snap in snapshot.children {
             let uid = (snap as! DataSnapshot).key
-            
-            FirebaseSnapshotDownloader.getStudent(with: uid) { (publicSS, privateSS, state) in
-            
-                switch(state){
-                case .Success():
-                    let student = getStudent(uid: uid, publicSS: publicSS!, privateSS: privateSS!)
-                    if let student = student{
-                        students.append(student)
-                    }
-                    break
-                default:
-                    break
-                }
-                
-                count = count + 1
-                
-                if(count == snapshot.children.allObjects.count){
-                    completion(students)
-                }
-            }
+            uids.append(uid)
         }
         
-        completion(students)
+        completion(uids)
     }
     
-    private static func getEnrollment(institutionName:String, institutionValue:[String:String])->ClassAndMajorWithYearProtocol?{
+    private func getEnrollment(institutionName:String, institutionValue:[String:String])->ClassAndMajorWithYearProtocol?{
         
         let institution = Institution(name: institutionName)
         

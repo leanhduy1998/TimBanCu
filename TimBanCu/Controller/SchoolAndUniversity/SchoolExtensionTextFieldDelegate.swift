@@ -11,12 +11,12 @@ import UIKit
 
 extension SchoolViewController:UITextFieldDelegate{
     @objc func textFieldDidChange(_ textField: UITextField) {
-        filterVisibleSchools()
+        updateUI()
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         textField.text = ""
-        filterVisibleSchools()
+        updateUI()
         return true
     }
     

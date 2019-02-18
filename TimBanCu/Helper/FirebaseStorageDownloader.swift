@@ -10,11 +10,7 @@ import Foundation
 import FirebaseStorage
 
 class FirebaseStorageDownloader{
-    
-    init(caller:FirebaseDownloader){
         
-    }
-    
     private let storageRef = Storage.storage().reference()
     
     func getImage(from path:String,completion: @escaping (UIImage?)->Void){

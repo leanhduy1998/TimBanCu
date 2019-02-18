@@ -673,6 +673,40 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-GA-n35">
                                 <rect key="frame" x="0.0" y="124" width="375" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" rowHeight="100" id="bMD-9P-Czo" customClass="MajorTableViewCell" customModule="TimBanCu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMD-9P-Czo" id="y4T-LZ-74p">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoa Máy Tính" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPh-ZN-32E">
+                                                    <rect key="frame" x="130.5" y="40" width="114" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer" translatesAutoresizingMaskIntoConstraints="NO" id="74P-1o-TRo">
+                                                    <rect key="frame" x="45" y="20" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="c9E-bb-1b9"/>
+                                                        <constraint firstAttribute="width" constant="60" id="ulH-gJ-1sS"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pPh-ZN-32E" firstAttribute="centerY" secondItem="y4T-LZ-74p" secondAttribute="centerY" id="AR6-bB-uqs"/>
+                                                <constraint firstItem="74P-1o-TRo" firstAttribute="centerY" secondItem="y4T-LZ-74p" secondAttribute="centerY" id="Kcw-aS-BMv"/>
+                                                <constraint firstItem="pPh-ZN-32E" firstAttribute="centerX" secondItem="y4T-LZ-74p" secondAttribute="centerX" id="mwG-pA-HTC"/>
+                                                <constraint firstItem="74P-1o-TRo" firstAttribute="leading" secondItem="y4T-LZ-74p" secondAttribute="leadingMargin" constant="30" id="uyJ-f3-Tjy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="majorLabel" destination="pPh-ZN-32E" id="LNJ-jw-V5c"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="VKK-rM-WxU" id="9b3-v9-8wg"/>
                                     <outlet property="delegate" destination="VKK-rM-WxU" id="r4U-hP-9j5"/>
@@ -724,7 +758,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OWp-TG-1zC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClassYearTableViewCell" rowHeight="75" id="CJL-9i-MXJ" customClass="ClassYearTableViewCell" customModule="TimBanCu" customModuleProvider="target">
@@ -907,38 +941,6 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                         <connections>
                                             <outlet property="classLabel" destination="8ij-Sv-Kt5" id="lg0-OV-Crq"/>
                                             <outlet property="imageview" destination="nRR-q2-lhW" id="Dak-3l-ic2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" rowHeight="100" id="fo3-it-Hma" customClass="MajorTableViewCell" customModule="TimBanCu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="108" width="375" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fo3-it-Hma" id="1lS-C2-1lC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoa Máy Tính" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nU-rb-KAo">
-                                                    <rect key="frame" x="130.5" y="40.5" width="114" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computer" translatesAutoresizingMaskIntoConstraints="NO" id="G9l-qL-6kS">
-                                                    <rect key="frame" x="45" y="20" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="acm-Kt-fWL"/>
-                                                        <constraint firstAttribute="height" constant="60" id="vzj-31-OlF"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="8nU-rb-KAo" firstAttribute="centerX" secondItem="1lS-C2-1lC" secondAttribute="centerX" id="8cg-xh-EaN"/>
-                                                <constraint firstItem="8nU-rb-KAo" firstAttribute="centerY" secondItem="1lS-C2-1lC" secondAttribute="centerY" id="dWf-gz-L4g"/>
-                                                <constraint firstItem="G9l-qL-6kS" firstAttribute="centerY" secondItem="1lS-C2-1lC" secondAttribute="centerY" id="nqb-OE-gfa"/>
-                                                <constraint firstItem="G9l-qL-6kS" firstAttribute="leading" secondItem="1lS-C2-1lC" secondAttribute="leadingMargin" constant="30" id="qD8-lJ-Vbd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="majorLabel" destination="8nU-rb-KAo" id="vwJ-oI-rsX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1158,7 +1160,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="prX-jB-zuQ">
-                                <rect key="frame" x="0.0" y="114" width="375" height="404"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="453"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1205,7 +1207,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edx-cB-cbl">
-                                <rect key="frame" x="20" y="538" width="335" height="30"/>
+                                <rect key="frame" x="20" y="587" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Thêm Mình Vô Lớp">
                                     <color key="titleColor" red="1" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1215,7 +1217,7 @@ Trân trọng cảm ơn bạn đã sử dụng sản phẩm và dịch vu�
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-Vu-EKP">
-                                <rect key="frame" x="20" y="578" width="335" height="30"/>
+                                <rect key="frame" x="20" y="627" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Chat với Cả Lớp">
                                     <color key="titleColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2566,7 +2568,7 @@ fkODAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAQ4U
     <inferredMetricsTieBreakers>
         <segue reference="PLe-i0-m1W"/>
         <segue reference="isF-LK-Xu3"/>
-        <segue reference="4Ow-6o-u2i"/>
+        <segue reference="PUn-kT-WBf"/>
         <segue reference="xKq-Q6-Xbq"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,16 +25,11 @@ class UpdateUserInfoViewController: AddYourInfoViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        CurrentUser.student.getImages { (uistate) in
-            switch(uistate){
-            case .Success():
-                DispatchQueue.main.async {
-                    self.userImages = CurrentUser.student.images
-                    self.uiController.reloadSlideShow()
-                }
-                break
-            default:
-                break
+        
+        FirebaseDownloader.shared.getImages(student: CurrentUser.student) {
+            DispatchQueue.main.async {
+                self.userImages = CurrentUser.student.images
+                self.uiController.reloadSlideShow()
             }
         }
     }

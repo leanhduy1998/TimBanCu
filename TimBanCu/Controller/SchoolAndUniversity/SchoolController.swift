@@ -23,17 +23,21 @@ final class SchoolController:Subject{
     
  
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
-        
-        
-        educationLevel.getInstitutions { [weak self] (queryState) in
-            switch(queryState){
-            case .Success(let snapshot):
-                self?.institutions = InstitutionFull.getInstitutionsFrom(snapshot: snapshot, educationLevel: self!.educationLevel)
-                
+        FirebaseDownloader.shared.getInstitutions(educationalLevel: educationLevel) { [weak self] (institutions, state) in
+            
+            guard let strongself = self else{
+                return
+            }
+            
+            switch(state){
+            case .Success():
+                strongself.institutions = institutions!
                 completionHandler(.Success())
                 break
-            case .Fail(let error):
-                completionHandler(.Failure(error.localizedDescription))
+            case .Failure(let error):
+                completionHandler(.Failure(error))
+                break
+            default:
                 break
             }
         }
@@ -42,9 +46,14 @@ final class SchoolController:Subject{
     func addNewInstitution(name:String,completionHandler: @escaping (_ state:UIState)->Void){
         let institution = InstitutionFull(name: name, type: educationLevel.getShortString(), addByUid: CurrentUser.getUid())
         
-        institution.writeToDatabase { [weak self] (err, _) in
+        FirebaseUploader.uploadInstitution(institution: institution) { [weak self] (err, _) in
+            
+            guard let strongself = self else{
+                return
+            }
+            
             if(err == nil){
-                self?.institutions.append(institution)
+                strongself.institutions.append(institution)
                 completionHandler(.Success())
             }
             else{

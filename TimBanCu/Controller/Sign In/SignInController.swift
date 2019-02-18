@@ -19,8 +19,11 @@ final class SignInController{
     var uid:String!
     
     private func loadUserInfo(){
-        Student.getFromDatabase(withUid: uid) { (student) in
-            CurrentUser.student = student
+        
+        FirebaseDownloader.shared.getStudent(with: uid) { (student) in
+            if(student != nil){
+                CurrentUser.student = student
+            }
         }
     }
     

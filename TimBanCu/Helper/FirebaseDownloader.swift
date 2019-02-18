@@ -19,9 +19,9 @@ class FirebaseDownloader{
     private let storageDownloader:FirebaseStorageDownloader
     
     init(){
-        snapshotDownloader = FirebaseSnapshotDownloader(caller: self)
-        snapshotParser = FirebaseSnapshotParser(caller: self)
-        storageDownloader = FirebaseStorageDownloader(caller: self)
+        snapshotDownloader = FirebaseSnapshotDownloader()
+        snapshotParser = FirebaseSnapshotParser()
+        storageDownloader = FirebaseStorageDownloader()
     }
     
     func getStudent(with uid:String, completionHandler: @escaping (_ student:Student?)->Void){
@@ -29,12 +29,57 @@ class FirebaseDownloader{
             
             switch(state){
             case .Success():
-                let student = snapshotParser.getStudent(uid: uid, publicSS: publicSS!, privateSS: privateSS!)
+                let student = self.snapshotParser.getStudent(uid: uid, publicSS: publicSS!, privateSS: privateSS!)
                 completionHandler(student)
             default:
                 completionHandler(nil)
             }
         }
+    }
+    
+    func getStudents(classWithYear:ClassWithYear,completionHandler: @escaping ( _ students:[Student], _ error:String?) -> Void){
+        
+        var error:String?
+        
+        var students = [Student]()
+        
+        snapshotDownloader.getStudents(from: classWithYear) {[weak self] (snapshot) in
+            
+            guard let strongself = self else{
+                return
+            }
+            
+            strongself.snapshotParser.getStudentsUids(from: snapshot, completion: { (uids) in
+                
+                var count = 0
+                
+                for uid in uids{
+                    strongself.snapshotDownloader.getStudent(with: uid, completionHandler: { (publicSS, privateSS, state) in
+                        
+                        count += 1
+                        
+                        switch(state){
+                        case .Success():
+                            let student = strongself.snapshotParser.getStudent(uid: uid, publicSS: publicSS!, privateSS: privateSS!)
+                            students.append(student!)
+                            
+                            
+                            break
+                        case .Failure(let err):
+                            error = err
+                            break
+                        default:
+                            break
+                        }
+                        
+                        if(count == uids.count){
+                            completionHandler(students, error)
+                        }
+                    })
+                }
+            })
+        }
+        
     }
     
     private var imageDownloaded = 0
@@ -71,6 +116,44 @@ class FirebaseDownloader{
         imageDownloaded += 1
         if imageDownloaded == totalImages{
             completion()
+        }
+    }
+    
+    func getInstitutions(educationalLevel:EducationLevel, completionHandler:@escaping (_ institutions:[InstitutionFull]?, _ state:UIState)->Void){
+        snapshotDownloader.getInstitutions(educationalLevel: educationalLevel) { (state, snapshot) in
+            
+            switch(state){
+            case .Success():
+                let institutions = self.snapshotParser.getInstitutions(from: snapshot!, educationLevel: educationalLevel)
+                completionHandler(institutions, .Success())
+                break
+            case .Failure(let err):
+                completionHandler(nil, .Failure(err))
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    func getClasses(institution: InstitutionFull, classNumber: String,completionHandler: @escaping (UIState, [Class]?) -> ()){
+        snapshotDownloader.getClasses(institution: institution, classNumber: classNumber) { [weak self] (state, snapshot) in
+            
+            guard let strongself = self else{
+                return
+            }
+            
+            switch(state){
+            case .Success():
+                let models = strongself.snapshotParser.getClasses(from: snapshot!, institution: institution, classNumber: classNumber)
+                completionHandler(.Success(),models)
+                break
+            case .Failure(let err):
+                completionHandler(.Failure(err),nil)
+                break
+            default:
+                break
+            }
         }
     }
 }

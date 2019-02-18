@@ -24,19 +24,22 @@ class ClassDetailController{
     
     
     func fetchStudents(completionHandler: @escaping (_ uiState:UIState) -> Void){
-        Student.getStudents(from: classProtocol, completionHandler: { (uiState, students) in
-            switch(uiState){
-            case .Success():
-                self.students = students
-                completionHandler(.Success())
-                break
-            case .Failure(let errString):
-                completionHandler(.Failure(errString))
-                break
-            default:
-                break
+        FirebaseDownloader.shared.getStudents(classWithYear: classProtocol as! ClassWithYear) { [weak self] (students, err) in
+            
+            guard let strongself = self else{
+                return
             }
-        })
+            
+            if err == nil{
+                strongself.students = students
+                completionHandler(.Success())
+            }
+            else{
+                completionHandler(.Failure(err!))
+            }
+        }
+        
+ 
     }
     
     func fetchStudentsImages(completionHandler: @escaping (_ uiState:UIState) -> Void){

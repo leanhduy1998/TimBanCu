@@ -49,6 +49,17 @@ class FirebaseUploader{
         }
     }
     
+    static func enroll(student:Student, model:ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ uiState:UIState) -> Void){
+        
+        if model is ClassWithYear{
+            enroll(student: student, to: model as! ClassWithYear, completionHandler: completionHandler)
+        }
+        else{
+            enroll(student: student, to: model as! MajorWithYear, completionHandler: completionHandler)
+        }
+        
+    }
+    
     private static func enroll(student:Student, to classs:ClassWithYear,completionHandler: @escaping (_ uiState:UIState) -> Void) {
         
         let path = "classes/\(classs.institution.name!)/\(classs.classNumberString)/\(classs.classNameString)/\(classs.year)"

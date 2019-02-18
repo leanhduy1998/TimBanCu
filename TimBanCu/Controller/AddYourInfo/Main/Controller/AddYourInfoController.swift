@@ -13,7 +13,6 @@ import FirebaseStorage
 class AddYourInfoController{
     
     fileprivate var classProtocol:ClassAndMajorWithYearProtocol?
-    fileprivate var userData:UserData!
     
     fileprivate weak var viewcontroller:AddYourInfoViewController!
     

@@ -102,9 +102,7 @@ class SchoolViewController: UIViewController {
         }
     }
     
-    
-    
-    private func updateUI(){
+    func updateUI(){
         guard let name = searchTF.text else{
             return
         }

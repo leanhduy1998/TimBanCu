@@ -461,7 +461,7 @@
 			path = SchoolAndUniversity;
 			sourceTree = "<group>";
 		};
-		1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */ = {
+		1C0A039F20F51BE200E105A9 /* 2.2 ClassNameViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				1CAAAC6220F4428D00443225 /* ClassNameViewController.swift */,
@@ -470,15 +470,15 @@
 				1C0A03A020F51BFF00E105A9 /* ClassNameAlerts.swift */,
 				1C3500B621738FBB00C6BF82 /* ClassNameState.swift */,
 			);
-			path = ClassNameViewControllers;
+			path = "2.2 ClassNameViewControllers";
 			sourceTree = "<group>";
 		};
-		1C1257382128C29D007FE4FF /* Select School */ = {
+		1C1257382128C29D007FE4FF /* Step 1 Select School */ = {
 			isa = PBXGroup;
 			children = (
 				1CBF5C7920A8197B00B78E6A /* SelectSchoolTypeViewController.swift */,
 			);
-			path = "Select School";
+			path = "Step 1 Select School";
 			sourceTree = "<group>";
 		};
 		1C1A98FA210CBBC800D20079 /* Chat */ = {
@@ -505,6 +505,25 @@
 				1C1D4BAB215B11BA002E4807 /* trail_loading.json */,
 			);
 			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
+		1C262C72221A2A7000343C79 /* Step 2 */ = {
+			isa = PBXGroup;
+			children = (
+				1C262C73221A2AA500343C79 /* Class */,
+				1C4BF8732117F059006A7FBE /* University Major */,
+			);
+			path = "Step 2";
+			sourceTree = "<group>";
+		};
+		1C262C73221A2AA500343C79 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				1CAAAC5E20F3E6C700443225 /* ClassNumberViewController.swift */,
+				1C0A039F20F51BE200E105A9 /* 2.2 ClassNameViewControllers */,
+				1C9710452116699000A140FE /* 2.3 ClassYear */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		1C2E737421091990007EAE63 /* AddYourInfo */ = {
@@ -689,7 +708,7 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		1C9710452116699000A140FE /* ClassYear */ = {
+		1C9710452116699000A140FE /* 2.3 ClassYear */ = {
 			isa = PBXGroup;
 			children = (
 				1C83E817211228C400D647D0 /* ClassYearViewController.swift */,
@@ -697,7 +716,7 @@
 				1CD73017213CBEDF00105ACE /* ClassYearController.swift */,
 				1C9710432116698B00A140FE /* ClassYearAlerts.swift */,
 			);
-			path = ClassYear;
+			path = "2.3 ClassYear";
 			sourceTree = "<group>";
 		};
 		1C98F6632128642900EFD4EF /* User Classes */ = {
@@ -789,12 +808,9 @@
 				1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */,
 				1C98F66921288C3100EFD4EF /* Sign In */,
 				1CDB3F1D217A5CD800BEC04C /* EULA */,
-				1C1257382128C29D007FE4FF /* Select School */,
+				1C1257382128C29D007FE4FF /* Step 1 Select School */,
 				1C0A039A20F5162100E105A9 /* SchoolAndUniversity */,
-				1C4BF8732117F059006A7FBE /* University Major */,
-				1CAAAC5E20F3E6C700443225 /* ClassNumberViewController.swift */,
-				1C0A039F20F51BE200E105A9 /* ClassNameViewControllers */,
-				1C9710452116699000A140FE /* ClassYear */,
+				1C262C72221A2A7000343C79 /* Step 2 */,
 				1CDBA7B52125081B002004F9 /* Class Detail */,
 				1C2E737421091990007EAE63 /* AddYourInfo */,
 				1C4B6C45214C01B900BDF724 /* Update Year */,

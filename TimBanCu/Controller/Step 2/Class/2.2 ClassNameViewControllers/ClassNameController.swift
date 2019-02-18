@@ -20,10 +20,10 @@ class ClassNameController{
     }
     
     func fetchData(completionHandler: @escaping (UIState) -> ()){
-        Class.fetchAllClass(institution: institution, classNumber: classNumber) { (uiState, classes) in
+        FirebaseDownloader.shared.getClasses(institution: institution, classNumber: classNumber) { (uiState, classes) in
             switch(uiState){
             case .Success():
-                self.classes = classes
+                self.classes = classes!
                 completionHandler(uiState)
                 break
             case .Failure(_):
@@ -38,6 +38,7 @@ class ClassNameController{
         let classN = Class(institution: institution
             , classNumber: classNumber, className: className, uid: CurrentUser.getUid())
         classes.append(classN)
-        classN.uploadToFirebase(completionHandler: completionHandler)
+        
+        FirebaseUploader.uploadClass(classs: classN, completionHandler: completionHandler)
     }
 }

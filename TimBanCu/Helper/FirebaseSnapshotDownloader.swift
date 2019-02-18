@@ -10,14 +10,9 @@ import Foundation
 import FirebaseDatabase
 
 class FirebaseSnapshotDownloader{
-    
-    init(caller:FirebaseDownloader){
-        
-    }
-    
     private let ref = Database.database().reference()
     
-    func getInstitutions(educationalLevel:EducationLevel,completionHandler: @escaping (_ state:QueryState) -> Void){
+    func getInstitutions(educationalLevel:EducationLevel,completionHandler: @escaping (_ state:UIState, _ snapshot:DataSnapshot?) -> Void){
         let schoolsRef = ref.child("schools")
         var query:DatabaseQuery!
         let queryOrderedByType = schoolsRef.queryOrdered(byChild: "type")
@@ -25,9 +20,9 @@ class FirebaseSnapshotDownloader{
         query = queryOrderedByType.queryEqual(toValue : educationalLevel.getShortString())
         
         query.observeSingleEvent(of: .value, with: { (snapshot) in
-            completionHandler(.Success(snapshot))
+            completionHandler(.Success(),snapshot)
         }) { (error) in
-            completionHandler(.Fail(error))
+            completionHandler(.Failure(error),nil)
         }
     }
     

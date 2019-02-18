@@ -29,7 +29,7 @@ class ClassWithYear: Class, ClassAndMajorWithYearProtocol{
     
     func objectAsDictionary() -> [String : [String:String]] {
         var dic = [String:[String:String]]()
-        dic[institution.name!] = ["className":getClassName(),"uid":uid,"classNumber":getClassNumber(),"year":year]
+        dic[institution.name!] = ["className":classNameString,"uid":uid,"classNumber":classNumberString,"year":year]
         return dic
     }
 

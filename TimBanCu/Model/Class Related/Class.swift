@@ -61,7 +61,7 @@ class Class:ClassAndMajorProtocol{
     }
     
     func firebaseClassYearPath(year:String)->String{
-        return "classes/\(institution.name!)/\(getClassNumber())/\(getClassName())/\(year)"
+        return "classes/\(institution.name!)/\(classNumberString)/\(classNameString)/\(year)"
     }
     
     func copy() -> ClassAndMajorProtocol {
