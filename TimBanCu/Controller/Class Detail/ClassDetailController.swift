@@ -46,17 +46,17 @@ class ClassDetailController{
         var count = 0
         
         for student in students{
-            student.getFirstImage { (uiState) in
-                switch(uiState){
-                case .Success():
-                    count+=1
+            FirebaseStorageDownloader().getImage(from: student.images[0].imageName) { [weak self] (image) in
+                
+                guard let strongself = self else{
+                    return
+                }
+                
+                student.images[0].image = image
+                count+=1
+                
+                if count == strongself.students.count{
                     completionHandler(.Success())
-                    break
-                case .Failure(_):
-                    completionHandler(uiState)
-                    break
-                default:
-                    break
                 }
             }
         }

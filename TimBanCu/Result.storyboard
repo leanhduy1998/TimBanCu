@@ -74,10 +74,10 @@
                         <viewLayoutGuide key="safeArea" id="fRy-k4-nS4"/>
                     </view>
                     <connections>
-                        <outlet property="actionBtn" destination="gh3-QT-AnZ" id="7Rs-aK-LDZ"/>
+                        <outlet property="actionBtn" destination="gh3-QT-AnZ" id="Lhw-No-5m5"/>
                         <outlet property="animationView" destination="O3Y-Dz-zw4" id="OH6-iQ-eFa"/>
-                        <outlet property="textfield" destination="Mkl-mV-Xdt" id="J6X-fu-alO"/>
-                        <outlet property="titleLabel" destination="x5n-ig-ADV" id="EgA-1j-1T4"/>
+                        <outlet property="textfield" destination="Mkl-mV-Xdt" id="l1U-zB-ST4"/>
+                        <outlet property="titleLabel" destination="x5n-ig-ADV" id="t8M-R1-PPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DdT-lt-Dvl" userLabel="First Responder" sceneMemberID="firstResponder"/>

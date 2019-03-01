@@ -18,10 +18,13 @@ class Student{
     var images: [Image]!
     var uid:String!
     
+    var phonePrivacy:PrivacyType!
+    var emailPrivacy:PrivacyType!
+    
     var storage = Storage.storage().reference()
     
     var enrolledIn:[ClassAndMajorWithYearProtocol]!
-    init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String){
+    init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String,phonePrivacy:PrivacyType,emailPrivacy:PrivacyType){
         self.fullName = fullname
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber
@@ -30,7 +33,7 @@ class Student{
         self.enrolledIn = []
         self.uid = uid
     }
-  init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String,enrolledIn:[ClassAndMajorWithYearProtocol]){
+  init(fullname:String,birthYear:String,phoneNumber:String,email:String,uid:String,enrolledIn:[ClassAndMajorWithYearProtocol],phonePrivacy:PrivacyType,emailPrivacy:PrivacyType){
         self.fullName = fullname
         self.birthYear = birthYear
         self.phoneNumber = phoneNumber
@@ -80,7 +83,7 @@ class Student{
         return true
     }
     
-    func getModelAsDictionary() -> [String:Any]{
+    /*func getModelAsDictionary() -> [String:Any]{
         var imageNameAndYear = [String:String]()
         for image in images{
             if(image.year == nil){
@@ -92,5 +95,5 @@ class Student{
         }
         
         return ["fullName":fullName!,"birthYear":birthYear!,"phoneNumber":phoneNumber!,"email":email!,"imageUrls":imageNameAndYear,"enrolledIn":enrolledIn]
-    }
+    }*/
 }

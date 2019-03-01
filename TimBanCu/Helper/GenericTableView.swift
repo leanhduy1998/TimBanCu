@@ -62,7 +62,7 @@ class GenericTableView<Item,Cell:UITableViewCell>: NSObject, UITableViewDelegate
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if animation == nil{
+        if animation == nil && tableView.indexPathsForVisibleRows != nil{
             animation = TableViewAnimation(tableview: tableview)
         }
         

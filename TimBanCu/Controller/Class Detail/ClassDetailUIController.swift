@@ -65,11 +65,11 @@ class ClassDetailUIController{
             stopLoadingAnimation()
             alerts.showGeneralErrorAlert(message: errorStr)
             break
-        case (.AddingNewData, .Success()):
+        /*case (.AddingNewData, .Success()):
             alerts.showAddYourInfoCompleteAlert()
             showAddYourInfoBtnIfYouAreNotInTheClass()
             filterVisibleStudent(filter: searchTF.text!, allStudent: searchStudents)
-            break
+            break*/
         case (.Success, .Loading):
             showLoading()
             showAddYourInfoBtnIfYouAreNotInTheClass()

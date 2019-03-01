@@ -46,7 +46,7 @@ final class SchoolController:Subject{
     func addNewInstitution(name:String,completionHandler: @escaping (_ state:UIState)->Void){
         let institution = InstitutionFull(name: name, type: educationLevel.getShortString(), addByUid: CurrentUser.getUid())
         
-        FirebaseUploader.uploadInstitution(institution: institution) { [weak self] (err, _) in
+        FirebaseUploader.shared.uploadInstitution(institution: institution) { [weak self] (err, _) in
             
             guard let strongself = self else{
                 return

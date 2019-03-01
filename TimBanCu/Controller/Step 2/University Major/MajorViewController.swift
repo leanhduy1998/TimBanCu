@@ -21,19 +21,46 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     private var uiController: MajorUIController!
     private var controller:MajorController!
     
+    private var addNewClassView:AskForInputView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addNewClassView = AskForInputView(frame: view.frame, type:.Major, onAccept: { [weak self] (majorName) in
+            
+            guard let strongself = self else{
+                return
+            }
+            
+            for major in strongself.controller.majors{
+                if major.name == majorName{
+                    strongself.uiController.alerts.showAlert(title: "Khoa đã có trong danh sách của chúng tôi", message: "Bạn vui lòng thêm tên khác!")
+                }
+            }
+            
+            strongself.controller.addNewMajor(majorName: majorName, completionHandler: { err in
+                
+                if err == nil{
+                    strongself.uiController.searchMajors = (strongself.controller.majors)
+                    strongself.uiController.alerts.showAddNewMajorCompletedAlert()
+                    strongself.uiController.filterVisibleSchools(filter: strongself.searchTF.text!, allMajors: strongself.controller.majors)
+                }
+                else{
+                    if(err == "Permission denied") {
+                        strongself.uiController.alerts.showMajorAlreadyExistAlert()
+                    }
+                    else{
+                        strongself.uiController.alerts.showAlert(title: "Không Thể Thêm Khoa", message: err!)
+                    }
+                }
+            })
+        })
+        
+        view.addSubview(addNewClassView)
+        
         controller = MajorController(viewcontroller: self, school: institution)
         
-        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF, addNewMajorHandler: { [weak self] newMajorIfNotInList in
-            
-            self?.controller.addNewMajor(inputedMajorName: newMajorIfNotInList, completionHandler: { (uiState) in
-                self?.uiController.searchMajors = (self?.controller.majors)!
-                self?.uiController.state = uiState
-            })
-            
-        })
+        uiController = MajorUIController(viewcontroller: self, tableview: tableview, searchTF: searchTF)
         
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)

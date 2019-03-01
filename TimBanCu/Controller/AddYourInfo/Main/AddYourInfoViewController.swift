@@ -53,7 +53,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
 
         setupClosures()
     
-        controller = AddYourInfoController(viewcontroller: self)
+        controller = AddYourInfoController(classProtocol: classProtocol)
         uiController = AddYourInfoUIController(viewcontroller: self, slideshowDidTapOnImageAtIndex: slideshowDidTapOnImageAtIndex, imagePickerDidSelectAssets: imagePickerDidSelectAssets)
     }
     
@@ -161,23 +161,29 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
         else{
             uiController.playLoadingAnimation()
             
-            controller.updateUserInfo(images: userImages, completeUploadClosure: { [weak self] uiState in
+            let student = Student(fullname: fullNameTF.text!, birthYear: birthYearTF.text!, phoneNumber: phoneTF.text!, email: emailTF.text!, uid: CurrentUser.getUid(), phonePrivacy: phonePrivacyType, emailPrivacy: emailPrivacyType)
+            student.images = userImages
+            
+            controller.updateUserInfo(student: student) {[weak self] (uistate) in
+                guard let strongself = self else{
+                    return
+                }
                 
-                switch(uiState){
+                switch(uistate){
                 case .Success():
                     DispatchQueue.main.async {
-                        self!.uiController.stopLoadingAnimation()
-                        self!.goToPreviousController()
+                        strongself.uiController.stopLoadingAnimation()
+                        strongself.goToPreviousController()
                     }
                     break
                 case .Failure(let errMsg):
-                    self!.uiController.showUploadErrorAlert(errMsg: errMsg)
+                    strongself.uiController.showUploadErrorAlert(errMsg: errMsg)
                 default:
                     let studentDetailVC = StudentDetailViewController()
-                    self!.present(studentDetailVC, animated: true, completion: nil)
+                    strongself.present(studentDetailVC, animated: true, completion: nil)
                     break
                 }
-            })
+            }
         }
     }
     

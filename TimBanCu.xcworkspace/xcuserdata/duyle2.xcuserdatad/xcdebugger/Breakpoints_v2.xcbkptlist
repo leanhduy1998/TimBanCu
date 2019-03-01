@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/Class Detail/ClassDetailUIController.swift"
-            timestampString = "563078907.906605"
+            timestampString = "572859447.594069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -58,28 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimBanCu/Controller/MainNavigationViewController.swift"
-            timestampString = "563067511.4142129"
+            timestampString = "572859447.594228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "navigationBar(_:shouldPop:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TimBanCu/Controller/AddYourInfo/Main/Controller/AddYourInfoController.swift"
-            timestampString = "570940844.053111"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "uploadUserImagesToFirebaseStorage(images:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +78,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "uploadDataToFirebaseDatabase(images:completionHandler:)"
-            landmarkType = "7">
+            endingLineNumber = "126">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

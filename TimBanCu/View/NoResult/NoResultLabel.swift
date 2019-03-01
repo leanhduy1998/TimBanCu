@@ -21,10 +21,10 @@ class NoResultLabel: UILabel {
     
     private func setUpText(type: NoResultType) {
         switch(type){
-        case .School:
+        case .Institution:
             self.text = "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?"
             break
-        case .University:
+        case .Major:
             self.text = "Không có kết quả. Bạn vui lòng điền có dấu. Bạn có muốn thêm tên khoa mới? Ví Dụ: Khoa Kinh Tế"
             break
         case .Class:
@@ -37,7 +37,7 @@ class NoResultLabel: UILabel {
     
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
 }

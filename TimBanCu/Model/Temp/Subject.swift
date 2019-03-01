@@ -9,7 +9,7 @@
 import Foundation
 
 class Subject{
-    private var observers:[Observer]!
+    private var observers = [Observer]()
     
     init(){
         

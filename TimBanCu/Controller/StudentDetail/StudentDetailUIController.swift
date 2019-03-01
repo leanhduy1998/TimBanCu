@@ -24,7 +24,7 @@ class StudentDetailUIController{
     private let generalErrorAlert = InfoAlert(title: "Lỗi Kết Nối", message: "", alertType: .Error)
     
     
-    private func update(newState: UIState) {
+    func update(newState: UIState) {
         switch(newState) {
         case (.Loading): showLoading()
         case (.Success()):

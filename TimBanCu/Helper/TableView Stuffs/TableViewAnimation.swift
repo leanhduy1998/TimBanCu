@@ -10,16 +10,23 @@ import Foundation
 import UIKit
 
 class TableViewAnimation{
-    private let lastIndexPath:IndexPath
+    private let lastIndexPath:IndexPath?
     private let rowHeight:CGFloat
     
     private var animateLastCell = false
     
     init(tableview: UITableView){
-        let indexPathsForVisibleRows = tableview.indexPathsForVisibleRows
-        lastIndexPath = indexPathsForVisibleRows!.last!
-        
         rowHeight = tableview.rowHeight
+        
+        let indexPathsForVisibleRows = tableview.indexPathsForVisibleRows
+        
+        if(indexPathsForVisibleRows == nil){
+            lastIndexPath = nil
+            return
+        }
+        else{
+            lastIndexPath = indexPathsForVisibleRows!.last
+        }
     }
     
     func animateCellFromBelowUpAtLoading(cell: UITableViewCell, indexPath: IndexPath){
@@ -27,7 +34,7 @@ class TableViewAnimation{
             return
         }
         
-        if lastIndexPath.row == indexPath.row {
+        if lastIndexPath?.row == indexPath.row {
             animateLastCell = true
         }
         

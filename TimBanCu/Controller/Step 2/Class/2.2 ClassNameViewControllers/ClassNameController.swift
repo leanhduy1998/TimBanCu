@@ -39,6 +39,6 @@ class ClassNameController{
             , classNumber: classNumber, className: className, uid: CurrentUser.getUid())
         classes.append(classN)
         
-        FirebaseUploader.uploadClass(classs: classN, completionHandler: completionHandler)
+        FirebaseUploader.shared.uploadClass(classs: classN, completionHandler: completionHandler)
     }
 }

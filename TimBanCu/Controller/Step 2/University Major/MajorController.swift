@@ -22,10 +22,10 @@ final class MajorController{
     
   
     func fetchData(completionHandler: @escaping (_ state:UIState)->Void){
-        Major.fetchAllMajor(institution: school) { (uiState, majors) in
+        FirebaseDownloader.shared.getMajors(institution: school) { (uiState, majors) in
             switch(uiState){
             case .Success():
-                self.majors = majors
+                self.majors = majors!
                 completionHandler(uiState)
                 break
             case .Failure(_):
@@ -34,18 +34,14 @@ final class MajorController{
             default:
                 break
             }
-            
         }
     }
     
-    func addNewMajor(inputedMajorName:String,completionHandler: @escaping (_ state:UIState)->Void){
-        let major = Major(institution: school, uid: CurrentUser.getUid(), majorName: inputedMajorName)
+    func addNewMajor(majorName:String,completionHandler: @escaping (_ err:String?)->Void){
+        let major = Major(institution: school, uid: CurrentUser.getUid(), majorName: majorName)
         majors.append(major)
         viewcontroller.selectedMajor = major
         
-        major.uploadToFirebase { (uiState) in
-            completionHandler(uiState)
-        }
-        
+        FirebaseUploader.shared.uploadMajor(model: major, completionHandler: completionHandler)
     }
 }

@@ -13,25 +13,17 @@ import FirebaseDatabase
 class MajorAlerts{
     
     var viewcontroller:UIViewController!
-    var addNewMajorAlert:AskForInputAlert!
     var addNewMajorCompletedAlert:InfoAlert!
     var majorAlreadyExistAlert:InfoAlert!
     
     
-    var addNewMajorBtnPressedClosure: (String) -> ()
-    
-    init(viewcontroller:UIViewController,addNewMajorBtnPressedClosure: @escaping (String) -> ()){
+    init(viewcontroller:UIViewController){
         self.viewcontroller = viewcontroller
-        self.addNewMajorBtnPressedClosure = addNewMajorBtnPressedClosure
-  
-        setupAddNewMajorAlert()
+       
         setupAddNewMajorCompletedAlert()
         setupMajorAlreadyExistAlert()
     }
     
-    func showAddNewMajorAlert(){
-        addNewMajorAlert.show(viewcontroller: viewcontroller)
-    }
     
     func showAddNewMajorCompletedAlert(){
         addNewMajorCompletedAlert.show(viewcontroller: viewcontroller)
@@ -50,15 +42,6 @@ class MajorAlerts{
         let message = "Vui Lòng Chọn Khoa Trong Danh Sách Chúng Tôi Hoặc Thêm Khoa Mới"
         
         majorAlreadyExistAlert = InfoAlert(title: title, message: message, alertType: .AlreadyExist)
-    }
-    
-    private func setupAddNewMajorAlert(){
-        let title = "Thêm Khoa Mới"
-        addNewMajorAlert = AskForInputAlert(title: title, message: "", textFieldPlaceHolder: "Tên Khoa")
-
-        addNewMajorAlert.addAction(actionTitle: "Thêm") { [weak self] (_) in
-            self!.addNewMajorBtnPressedClosure(self!.addNewMajorAlert.getTextFieldInput())
-        }
     }
     
     private func setupAddNewMajorCompletedAlert(){

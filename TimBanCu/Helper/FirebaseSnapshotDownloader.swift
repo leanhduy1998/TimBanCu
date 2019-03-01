@@ -19,11 +19,10 @@ class FirebaseSnapshotDownloader{
         
         query = queryOrderedByType.queryEqual(toValue : educationalLevel.getShortString())
         
+        // for some reason, handling cancel keeps saying that context is ambiguous
         query.observeSingleEvent(of: .value, with: { (snapshot) in
             completionHandler(.Success(),snapshot)
-        }) { (error) in
-            completionHandler(.Failure(error),nil)
-        }
+        }, withCancel: nil)
     }
     
     func getClasses(institution:Institution,classNumber:String,completionHandler: @escaping (UIState, DataSnapshot?) -> ()){
@@ -36,14 +35,14 @@ class FirebaseSnapshotDownloader{
         }
     }
     
-    func getMajor(institution:Institution,completionHandler: @escaping (UIState, DataSnapshot?) -> ()){
+    func getMajor(institution:Institution,completionHandler: @escaping (DataSnapshot?) -> ()){
         
         let path = "classes/\(institution.name!)"
         
         ref.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
-            completionHandler(.Success(),snapshot)
+            completionHandler(snapshot)
         }) { (er) in
-            completionHandler(.Failure(er.localizedDescription),nil)
+            completionHandler(nil)
         }
     }
     

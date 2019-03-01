@@ -57,7 +57,7 @@ class ClassNameViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func addNewClassBtnPressed(_ sender: Any) {
-        self.uiController.showAddNewClassNameAlert()
+        //self.uiController.showAddNewClassNameAlert()
         
     }
     

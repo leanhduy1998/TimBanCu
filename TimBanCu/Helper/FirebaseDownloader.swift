@@ -156,4 +156,25 @@ class FirebaseDownloader{
             }
         }
     }
+    
+    func getMajors(institution: Institution, completionHandler: @escaping (UIState, [Major]?) -> ()){
+        
+        snapshotDownloader.getMajor(institution: institution) {[weak self] snapshot in
+            
+            guard let strongself = self else{
+                return
+            }
+            
+            if snapshot != nil{
+                let majors = strongself.snapshotParser.getMajors(from: snapshot!, institution: institution)
+                completionHandler(.Success(),majors)
+            }
+            else{
+                completionHandler(.Failure("Không Thể Lấy Các Khoa Của Trường"),nil)
+            }
+        }
+        
+        
+     
+    }
 }

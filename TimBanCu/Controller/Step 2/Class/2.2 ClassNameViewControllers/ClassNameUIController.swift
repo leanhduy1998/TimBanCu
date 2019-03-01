@@ -59,7 +59,7 @@ class ClassNameUIController{
             stopLoadingAnimation()
             alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             break
-        case (.AddingNewData, .Success()):
+        /*case (.AddingNewData, .Success()):
             alerts.showAddNewClassNameComplete()
             filterVisibleClassName(filter: searchTF.text!, allClasses: searchClasses)
             break
@@ -70,9 +70,7 @@ class ClassNameUIController{
             else{
                 alerts.showAlert(title: "Không Thể Thêm Trường", message: errorStr)
             }
-            break
-        case (.Success(), .AddingNewData),(.AddingNewData, .AddingNewData),(.Success(), .Success()), (.Failure(_),.AddingNewData): break
-  
+            break*/
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
     }
@@ -86,7 +84,7 @@ class ClassNameUIController{
         else{
             for classs in allClasses{
                 
-                if classs.getClassName().lowercased().range(of:filter.lowercased()) != nil {
+                if classs.classNameString.lowercased().range(of:filter.lowercased()) != nil {
                     searchClasses.append(classs)
                 }
             }
@@ -103,10 +101,10 @@ extension ClassNameUIController{
             self.addNewClassNameHandler(addedClassName)
         })
     }
-    func showAddNewClassNameAlert(){
+    /*func showAddNewClassNameAlert(){
         state = .AddingNewData
         alerts.showAddNewClassNameAlert()
-    }
+    }*/
     func showCancelAddingClassAlert(){
         alerts.showCancelAddingClassAlert()
     }
@@ -162,7 +160,7 @@ extension ClassNameUIController{
 extension ClassNameUIController{
     fileprivate func setupNoResultView(){
         noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
-            self.showAddNewClassNameAlert()
+            //self.showAddNewClassNameAlert()
         }
         noResultView.translatesAutoresizingMaskIntoConstraints = false
         viewcontroller.view.addSubview(noResultView)

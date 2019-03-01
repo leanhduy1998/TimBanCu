@@ -25,8 +25,8 @@ class NoResultViewController: UIViewController, UITextFieldDelegate {
     private var actionStr = "Lỗi! Không thể thêm thông tin"
    
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         titleLabel.text = titleStr
         actionBtn.setTitle(actionStr, for: .normal)
         textfield.placeholder = textfieldPlaceholder

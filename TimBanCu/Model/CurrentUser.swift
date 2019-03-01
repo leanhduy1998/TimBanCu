@@ -24,8 +24,7 @@ class CurrentUser{
         }
         else{
             student.enrolledIn.append(classProtocol)
-            
-            FirebaseUploader.enroll(student: student, model: classProtocol, completionHandler: completionHandler)
+            FirebaseUploader.shared.enroll(student: student, model: classProtocol, completionHandler: completionHandler)
         }
         
     }

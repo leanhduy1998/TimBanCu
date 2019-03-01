@@ -22,6 +22,13 @@
 		1C1D4BAF215B11BA002E4807 /* loading...json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BA9215B11BA002E4807 /* loading...json */; };
 		1C1D4BB0215B11BA002E4807 /* movingBus.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BAA215B11BA002E4807 /* movingBus.json */; };
 		1C1D4BB1215B11BA002E4807 /* trail_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C1D4BAB215B11BA002E4807 /* trail_loading.json */; };
+		1C262C76221B210900343C79 /* AskForInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C262C75221B210900343C79 /* AskForInputView.swift */; };
+		1C262C78221B246A00343C79 /* AskForInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C262C77221B246A00343C79 /* AskForInputView.xib */; };
+		1C262C8E221CEF0300343C79 /* StudentPublicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C262C8D221CEF0300343C79 /* StudentPublicData.swift */; };
+		1C262C90221CEFA900343C79 /* StudentPrivateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C262C8F221CEFA900343C79 /* StudentPrivateData.swift */; };
+		1C262C92221CF1E100343C79 /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C262C91221CF1E100343C79 /* StudentManager.swift */; };
+		1C262C94221CF34900343C79 /* FirebaseStorageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C262C93221CF34900343C79 /* FirebaseStorageUploader.swift */; };
+		1C262C962221ED8400343C79 /* plane_flying.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C262C952221ED8300343C79 /* plane_flying.json */; };
 		1C278CA820FE785300CCB7C0 /* AddYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */; };
 		1C2E737821091A3A007EAE63 /* AddYourInfoAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */; };
 		1C3500B52172F7A100C6BF82 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */; };
@@ -234,6 +241,33 @@
 		1C1D4BAA215B11BA002E4807 /* movingBus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movingBus.json; sourceTree = "<group>"; };
 		1C1D4BAB215B11BA002E4807 /* trail_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail_loading.json; sourceTree = "<group>"; };
 		1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FSNokioBold.otf; sourceTree = "<group>"; };
+		1C262C75221B210900343C79 /* AskForInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForInputView.swift; sourceTree = "<group>"; };
+		1C262C77221B246A00343C79 /* AskForInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AskForInputView.xib; sourceTree = "<group>"; };
+		1C262C79221B26E900343C79 /* NokioSansAlt-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-Bold.ttf"; sourceTree = "<group>"; };
+		1C262C7A221B26E900343C79 /* NokioSansAlt-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1C262C7B221B26EA00343C79 /* NokioSansAlt-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-RegularItalic.ttf"; sourceTree = "<group>"; };
+		1C262C7C221B26EB00343C79 /* NokioSansAlt-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		1C262C7D221B26EE00343C79 /* NokioSans-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-RegularItalic.ttf"; sourceTree = "<group>"; };
+		1C262C7E221B26EF00343C79 /* NokioSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		1C262C7F221B26F100343C79 /* NokioSansAlt-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-ExtraLight.ttf"; sourceTree = "<group>"; };
+		1C262C80221B26F300343C79 /* NokioSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-Regular.ttf"; sourceTree = "<group>"; };
+		1C262C81221B26F400343C79 /* NokioSansAlt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-Regular.ttf"; sourceTree = "<group>"; };
+		1C262C82221B26F500343C79 /* NokioSansAlt-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-MediumItalic.ttf"; sourceTree = "<group>"; };
+		1C262C83221B26F700343C79 /* NokioSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		1C262C84221B26F900343C79 /* NokioSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-Bold.ttf"; sourceTree = "<group>"; };
+		1C262C85221B26FB00343C79 /* NokioSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-Medium.ttf"; sourceTree = "<group>"; };
+		1C262C86221B26FC00343C79 /* NokioSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		1C262C87221B26FD00343C79 /* NokioSansAlt-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-LightItalic.ttf"; sourceTree = "<group>"; };
+		1C262C88221B26FE00343C79 /* NokioSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		1C262C89221B270100343C79 /* NokioSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1C262C8A221B270200343C79 /* NokioSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSans-Light.ttf"; sourceTree = "<group>"; };
+		1C262C8B221B270400343C79 /* NokioSansAlt-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-Light.ttf"; sourceTree = "<group>"; };
+		1C262C8C221B270700343C79 /* NokioSansAlt-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NokioSansAlt-Medium.ttf"; sourceTree = "<group>"; };
+		1C262C8D221CEF0300343C79 /* StudentPublicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPublicData.swift; sourceTree = "<group>"; };
+		1C262C8F221CEFA900343C79 /* StudentPrivateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPrivateData.swift; sourceTree = "<group>"; };
+		1C262C91221CF1E100343C79 /* StudentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
+		1C262C93221CF34900343C79 /* FirebaseStorageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageUploader.swift; sourceTree = "<group>"; };
+		1C262C952221ED8300343C79 /* plane_flying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plane_flying.json; sourceTree = "<group>"; };
 		1C278CA720FE785300CCB7C0 /* AddYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoViewController.swift; sourceTree = "<group>"; };
 		1C2E737721091A3A007EAE63 /* AddYourInfoAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYourInfoAlerts.swift; sourceTree = "<group>"; };
 		1C3500B42172F7A100C6BF82 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
@@ -448,6 +482,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C02BF4C2222393300D0E505 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				1C262C77221B246A00343C79 /* AskForInputView.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		1C0A039A20F5162100E105A9 /* SchoolAndUniversity */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +545,7 @@
 				1C1D4BA9215B11BA002E4807 /* loading...json */,
 				1C1D4BAA215B11BA002E4807 /* movingBus.json */,
 				1C1D4BAB215B11BA002E4807 /* trail_loading.json */,
+				1C262C952221ED8300343C79 /* plane_flying.json */,
 			);
 			path = LottieAnimation;
 			sourceTree = "<group>";
@@ -615,6 +658,8 @@
 				1C53F4F620FD422A00F4ACEB /* Student.swift */,
 				1C4B6C322148541B00BDF724 /* UserData.swift */,
 				3898242421D995750081EAE6 /* PrivacyType.swift */,
+				1C262C8D221CEF0300343C79 /* StudentPublicData.swift */,
+				1C262C8F221CEFA900343C79 /* StudentPrivateData.swift */,
 			);
 			path = "Student Related";
 			sourceTree = "<group>";
@@ -933,6 +978,26 @@
 				1CA53647216E52B600FCF0FF /* ButcherandBlockExtras1.otf */,
 				1C1D4BB2215B122B002E4807 /* FSNokioBold.otf */,
 				1CCFACF4211A836200429FA2 /* ShowcaseSans.ttf */,
+				1C262C84221B26F900343C79 /* NokioSans-Bold.ttf */,
+				1C262C89221B270100343C79 /* NokioSans-BoldItalic.ttf */,
+				1C262C86221B26FC00343C79 /* NokioSans-ExtraLight.ttf */,
+				1C262C7E221B26EF00343C79 /* NokioSans-ExtraLightItalic.ttf */,
+				1C262C8A221B270200343C79 /* NokioSans-Light.ttf */,
+				1C262C83221B26F700343C79 /* NokioSans-LightItalic.ttf */,
+				1C262C85221B26FB00343C79 /* NokioSans-Medium.ttf */,
+				1C262C88221B26FE00343C79 /* NokioSans-MediumItalic.ttf */,
+				1C262C80221B26F300343C79 /* NokioSans-Regular.ttf */,
+				1C262C7D221B26EE00343C79 /* NokioSans-RegularItalic.ttf */,
+				1C262C79221B26E900343C79 /* NokioSansAlt-Bold.ttf */,
+				1C262C7A221B26E900343C79 /* NokioSansAlt-BoldItalic.ttf */,
+				1C262C7F221B26F100343C79 /* NokioSansAlt-ExtraLight.ttf */,
+				1C262C7C221B26EB00343C79 /* NokioSansAlt-ExtraLightItalic.ttf */,
+				1C262C8B221B270400343C79 /* NokioSansAlt-Light.ttf */,
+				1C262C87221B26FD00343C79 /* NokioSansAlt-LightItalic.ttf */,
+				1C262C8C221B270700343C79 /* NokioSansAlt-Medium.ttf */,
+				1C262C82221B26F500343C79 /* NokioSansAlt-MediumItalic.ttf */,
+				1C262C81221B26F400343C79 /* NokioSansAlt-Regular.ttf */,
+				1C262C7B221B26EA00343C79 /* NokioSansAlt-RegularItalic.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1019,6 +1084,8 @@
 				1CCF989C2210BCE100C491A8 /* FirebaseSnapshotDownloader.swift */,
 				1CCF989E2210C29000C491A8 /* FirebaseDownloader.swift */,
 				1CCF98A02211186600C491A8 /* FirebaseStorageDownloader.swift */,
+				1C262C91221CF1E100343C79 /* StudentManager.swift */,
+				1C262C93221CF34900343C79 /* FirebaseStorageUploader.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1060,6 +1127,7 @@
 		1CFB9C2820F1703300945819 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1C02BF4C2222393300D0E505 /* Xib */,
 				1CD73011213B1C2400105ACE /* Alerts */,
 				1CD73010213B1C1100105ACE /* NoResult */,
 				1C98F6662128667900EFD4EF /* TableCell */,
@@ -1076,6 +1144,7 @@
 				1C4B6C392148AF2100BDF724 /* Slideshow.swift */,
 				1C4B6C4C214C94FD00BDF724 /* ImagePicker.swift */,
 				38CAE9D22129D7B8005BE656 /* UIViewExtension.swift */,
+				1C262C75221B210900343C79 /* AskForInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1242,6 +1311,8 @@
 				1CCFACF5211A836200429FA2 /* Butcherandblock.otf in Resources */,
 				1C5365B820E6B7A1000F7FB2 /* thcshanoi.txt in Resources */,
 				1C1D4BAD215B11BA002E4807 /* biking_is_cool.json in Resources */,
+				1C262C78221B246A00343C79 /* AskForInputView.xib in Resources */,
+				1C262C962221ED8400343C79 /* plane_flying.json in Resources */,
 				38EF89C6216023E8000B05D5 /* FSNokioBold.otf in Resources */,
 				3808954D216E9A1700ACAB15 /* yearError.json in Resources */,
 				1C1D4BAE215B11BA002E4807 /* empty_list.json in Resources */,
@@ -1620,6 +1691,7 @@
 				1CAAAC6320F4428D00443225 /* ClassNameViewController.swift in Sources */,
 				1CA53655216EDF9300FCF0FF /* ReportReason.swift in Sources */,
 				1C578FA52207B2B00077E1DD /* TableViewDelegate.swift in Sources */,
+				1C262C90221CEFA900343C79 /* StudentPrivateData.swift in Sources */,
 				1CBF5C7A20A8197B00B78E6A /* SelectSchoolTypeViewController.swift in Sources */,
 				1CD7301E213F33E700105ACE /* ClassDetailAlerts.swift in Sources */,
 				1CCF9888220FE76600C491A8 /* RootFactory.swift in Sources */,
@@ -1654,6 +1726,7 @@
 				1CFB9C2420F134C600945819 /* SchoolViewController.swift in Sources */,
 				1CE24D0920FC0B08008DE3FB /* ClassNameTableViewCell.swift in Sources */,
 				1C8EC87B2128F3700038ECB5 /* ShimmeringLabel.swift in Sources */,
+				1C262C94221CF34900343C79 /* FirebaseStorageUploader.swift in Sources */,
 				1C83E8252113D3FD00D647D0 /* MajorTableViewCell.swift in Sources */,
 				1CE24D0720FC0690008DE3FB /* ClassWithYear.swift in Sources */,
 				1CD73013213C37BF00105ACE /* ClassNameController.swift in Sources */,
@@ -1661,6 +1734,7 @@
 				1CCF989B2210BB9C00C491A8 /* FirebaseUploader.swift in Sources */,
 				1C513A632180DAEB00FFDC82 /* ClassAndMajorProtocol.swift in Sources */,
 				1CCF98992210BA8800C491A8 /* FirebaseSnapshotParser.swift in Sources */,
+				1C262C8E221CEF0300343C79 /* StudentPublicData.swift in Sources */,
 				1CA53651216EB67D00FCF0FF /* ReportReasonViewController.swift in Sources */,
 				1C900E2F210141AA0016DFDC /* NoResultButton.swift in Sources */,
 				1CA536352169B51E00FCF0FF /* UserUniversityTableViewCell.swift in Sources */,
@@ -1704,6 +1778,7 @@
 				1C513A652180E28100FFDC82 /* Major.swift in Sources */,
 				3898242521D995750081EAE6 /* PrivacyType.swift in Sources */,
 				1C0A03A120F51C0000E105A9 /* ClassNameAlerts.swift in Sources */,
+				1C262C76221B210900343C79 /* AskForInputView.swift in Sources */,
 				1CA5364B216EB5CF00FCF0FF /* ReportReasonTableViewCell.swift in Sources */,
 				1CDBA7B12124FAD5002004F9 /* UserClassesViewController.swift in Sources */,
 				1C4B6C382148A14700BDF724 /* Image.swift in Sources */,
@@ -1716,6 +1791,7 @@
 				38CAE9D32129D7B8005BE656 /* UIViewExtension.swift in Sources */,
 				38CAE9D12129BD04005BE656 /* UnderlineView.swift in Sources */,
 				1C8EC8712128CB490038ECB5 /* InfoAlert.swift in Sources */,
+				1C262C92221CF1E100343C79 /* StudentManager.swift in Sources */,
 				1C53F4FF20FD4BA400F4ACEB /* ClassDetailViewModel.swift in Sources */,
 				1CD7301A213F1D2C00105ACE /* ClassDetailUIController.swift in Sources */,
 				1C98F65F21285D6800EFD4EF /* UserClassViewModel.swift in Sources */,

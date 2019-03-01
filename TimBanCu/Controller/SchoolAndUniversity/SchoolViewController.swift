@@ -29,6 +29,52 @@ class SchoolViewController: UIViewController {
     var alerts:SchoolAlerts!
     private var keyboardSetter:KeyboardHelper!
     
+    private var dataSource:TableViewDataSource!
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        controller = SchoolController(educationLevel: educationLevel)
+        //controller.attach(observer: self)
+        
+        setupSearchTF()
+        setupTableView()
+        
+        view.hero.id = educationLevel.getFullString()
+        setupLoadingAnimation()
+        
+        setup()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        moveToNextControllerAnimation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setup()
+    }
+    
+    func setup(){
+        render(newState: .Loading)
+        
+        controller.fetchData { [weak self] (uiState) in
+            guard let strongSelf = self else{
+                return
+            }
+            strongSelf.onDataUpdated()
+            strongSelf.render(newState: uiState)
+        }
+        
+        keyboardSetter = KeyboardHelper(viewcontroller: self, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
+    }
+    
+    
     
     func render(newState: UIState) {
         switch(newState) {
@@ -48,7 +94,7 @@ class SchoolViewController: UIViewController {
         default: break
         }
     }
-
+    
     private func handleAddNewInstitution(state:UIState){
         switch(state){
         case .Success():
@@ -59,38 +105,6 @@ class SchoolViewController: UIViewController {
             render(newState: state)
             break
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        controller = SchoolController(educationLevel: educationLevel)
-        controller.attach(observer: self)
-        
-        setupSearchTF()
-        setupTableView()
-        
-        view.hero.id = educationLevel.getFullString()
-        setupLoadingAnimation()
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        moveToNextControllerAnimation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        render(newState: .Loading)
-        
-        controller.fetchData { [weak self] (uiState) in
-            guard let strongSelf = self else{
-                return
-            }
-            strongSelf.render(newState: uiState)
-        }
-        
-        keyboardSetter = KeyboardHelper(viewcontroller: self, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
     
     
@@ -169,6 +183,7 @@ extension SchoolViewController:Observer{
         let filteredList = getFilteredList()
         
         let dataSource:TableViewDataSource = .make(for: filteredList, reuseIdentifier: "SchoolTableViewCell", configurer: SchoolTableViewConfigurator())
+        self.dataSource = dataSource
         tableview.dataSource = dataSource
         tableview.reloadData()
     }
@@ -203,5 +218,6 @@ extension SchoolViewController{
         tableviewAnimation = TableViewAnimation(tableview: tableview)
         tableview.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         tableview.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        onDataUpdated()
     }
 }

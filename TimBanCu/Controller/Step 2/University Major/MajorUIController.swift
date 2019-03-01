@@ -11,25 +11,21 @@ import UIKit
 
 class MajorUIController{
     private weak var viewcontroller:MajorViewController!
-    fileprivate var alerts :MajorAlerts!
+    var alerts :MajorAlerts!
     private weak var tableview:UITableView!
-    private var noResultView:NoResultView!
     private var searchTF:UITextField!
     fileprivate var loadingAnimation:LoadingAnimation!
     
     var searchMajors = [Major]()
-    fileprivate var addNewMajorHandler: (String)->()
     fileprivate var tableViewTool: GenericTableView<Major, MajorTableViewCell>!
     fileprivate var keyboardHelper:KeyboardHelper!
     
-    init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField,addNewMajorHandler: @escaping (String)->()){
+    init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField){
         self.viewcontroller = viewcontroller
         self.tableview = tableview
         self.searchTF = searchTF
-        self.addNewMajorHandler = addNewMajorHandler
         
         setupAlerts()
-        setupNoResultView()
         setupGenericTableView()
         setupKeyboard()
         setupLoadingAnimation()
@@ -69,19 +65,7 @@ class MajorUIController{
             stopLoadingAnimation()
             alerts.showAlert(title: "Lỗi Kết Nối", message: errorStr)
             break
-        case (.AddingNewData, .Success()):
-            alerts.showAddNewMajorCompletedAlert()
-            filterVisibleSchools(filter: searchTF.text!, allMajors: searchMajors)
-            break
-        case (.AddingNewData, .Failure(let errorStr)):
-            if(errorStr == "Permission denied") {
-                alerts.showMajorAlreadyExistAlert()
-            }
-            else{
-                alerts.showAlert(title: "Không Thể Thêm Khoa", message: errorStr)
-            }
-            break
-        case (.Success(), .AddingNewData),(.AddingNewData, .AddingNewData),(.Success(), .Success()): break
+        case (.Success(), .Success()): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }
@@ -92,11 +76,11 @@ class MajorUIController{
         tableview.reloadData()
         
         if(searchMajors.count == 0){
-            noResultView.isHidden = false
+            //noResultView.isHidden = false
             tableview.isHidden = true
         }
         else{
-            noResultView.isHidden = true
+            //noResultView.isHidden = true
             tableview.isHidden = false
         }
     }
@@ -108,11 +92,6 @@ class MajorUIController{
             viewcontroller.navigationController?.hero.isEnabled = true
             viewcontroller.navigationController?.hero.navigationAnimationType = .fade
         }
-    }
-    
-    func showAddNewMajorAlert(){
-        state = .AddingNewData
-        alerts.showAddNewMajorAlert()
     }
 }
 
@@ -134,18 +113,9 @@ extension MajorUIController{
 // MARK: Other UI Setup
 extension MajorUIController{
     fileprivate func setupAlerts(){
-        alerts = MajorAlerts(viewcontroller: viewcontroller, addNewMajorBtnPressedClosure: addNewMajorHandler)
+        alerts = MajorAlerts(viewcontroller: viewcontroller)
     }
-    fileprivate func setupNoResultView(){
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .University) {
-            self.showAddNewMajorAlert()
-        }
-        
-        noResultView.isHidden = true
-        
-        viewcontroller.view.addSubview(noResultView)
-        viewcontroller.view.bringSubview(toFront: noResultView)
-    }
+
     fileprivate func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
@@ -169,7 +139,7 @@ extension MajorUIController {
     }
     
     private func showLoading(){
-        noResultView.isHidden = true
+        //noResultView.isHidden = true
         tableview.isHidden = true
         self.playLoadingAnimation()
     }
