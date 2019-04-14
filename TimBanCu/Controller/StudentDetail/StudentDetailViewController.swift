@@ -39,7 +39,7 @@ class StudentDetailViewController: UIViewController {
         controller = StudentDetailController(viewcontroller: self)
        
         controller.fetchStudentImages { [weak self] (uiState) in
-            self!.uiController.state = uiState
+            self!.uiController.update(newState: uiState) 
         }
     }
     

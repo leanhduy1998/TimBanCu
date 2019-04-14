@@ -21,45 +21,11 @@ class StudentDetailController{
     func fetchStudentImages(completionHandler: @escaping (_ uiState:UIState) -> Void) {
         viewcontroller.userImages.removeAll()
         
-        var count = 0
-        
-        for image in student.images{
-            if(image.image == nil){
-                if(Cache.getImageFromCache(imageName: image.imageName) != nil){
-                    image.image = Cache.getImageFromCache(imageName: image.imageName)
-                    viewcontroller.userImages.append(image)
-                    count += 1
-                }
-                else{
-                    Storage.storage().reference().child("users/\(student.uid!)/\(image.imageName!)").getData(maxSize: INT64_MAX) { [weak self] (imageData, error) in
-                        
-                        if(error == nil){
-                            let uiimage = UIImage(data: imageData!)
-
-                            let newImage = Image(image: uiimage!, year: image.year, imageName:image.imageName, uid:self!.student.uid)
-                            self!.viewcontroller.userImages.append(newImage)
-                            
-                            count += 1
-                            
-                            if(count == self!.student.images.count){
-                                completionHandler(.Success())
-                            }
-                        }
-                        else{
-                            completionHandler(.Failure(error.debugDescription))
-                        }
-                    }
-
-                }
+        FirebaseDownloader.shared.getImages(student: student, completion: {
+            for image in self.student.images{
+                self.viewcontroller.userImages.append(image)
             }
-            else{
-                viewcontroller.userImages.append(image)
-                count += 1
-            }
-            
-            if(count == self.student.images.count){
-                completionHandler(.Success())
-            }
-        }
+            completionHandler(.Success())
+        })
     }
 }

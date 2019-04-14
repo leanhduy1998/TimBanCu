@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Institution{
+class Institution:Model{
     var name:String!
     
     init(name:String){

@@ -16,7 +16,7 @@ enum EducationLevel{
     case HighSchool
     case University
     
-    func getString()->String{
+    func getShortString()->String{
         switch(self){
         case .Elementary:
             return Constants.elementaryString
@@ -29,17 +29,16 @@ enum EducationLevel{
         }
     }
     
-    func getInstitutions(completionHandler: @escaping (_ state:QueryState) -> Void){
-        let schoolsRef = Database.database().reference().child("schools")
-        var query:DatabaseQuery!
-        let queryOrderedByType = schoolsRef.queryOrdered(byChild: "type")
-        
-        query = queryOrderedByType.queryEqual(toValue : self.getString())
-        
-        query.observeSingleEvent(of: .value, with: { (snapshot) in
-            completionHandler(.Success(snapshot))
-        }) { (error) in
-            completionHandler(.Fail(error))
+    func getFullString()->String{
+        switch(self){
+        case .Elementary:
+            return "elementary"
+        case .MiddleSchool:
+            return "middleSchool"
+        case .HighSchool:
+            return "highSchool"
+        case .University:
+            return "university"
         }
     }
 }

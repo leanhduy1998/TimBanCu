@@ -9,8 +9,8 @@
 import Foundation
 
 enum NoResultType:String {
-    case School
-    case University
+    case Institution
+    case Major
     case Class
     case Student
 }

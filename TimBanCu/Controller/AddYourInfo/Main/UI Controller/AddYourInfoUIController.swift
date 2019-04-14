@@ -114,12 +114,12 @@ extension AddYourInfoUIController{
         if((fullNameTF.text?.isEmpty)! || (birthYearTF.text?.isEmpty)! ||
             (phoneTF.text?.isEmpty)! || (emailTF.text?.isEmpty)!){
             
-            viewcontroller.addInfoBtn.isEnabled = false
-            viewcontroller.addInfoBtn.setTitleColor(UIColor.gray, for: .normal)
+            viewcontroller.cornfirmInfoBtn.isEnabled = false
+            viewcontroller.cornfirmInfoBtn.setTitleColor(UIColor.gray, for: .normal)
         }
         else{
-            viewcontroller.addInfoBtn.isEnabled = true
-            viewcontroller.addInfoBtn.setTitleColor(Constants.AppColor.primaryColor, for: .normal)
+            viewcontroller.cornfirmInfoBtn.isEnabled = true
+            viewcontroller.cornfirmInfoBtn.setTitleColor(Constants.AppColor.primaryColor, for: .normal)
         }
     }
 }
@@ -260,5 +260,10 @@ extension AddYourInfoUIController{
     func playLoadingAnimation(){
         loadingAnimation.isHidden = false
         loadingAnimation.playAnimation()
+    }
+    
+    func stopLoadingAnimation(){
+        loadingAnimation.isHidden = true
+        loadingAnimation.stopAnimation()
     }
 }

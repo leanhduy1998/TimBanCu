@@ -65,20 +65,16 @@ class ClassDetailUIController{
             stopLoadingAnimation()
             alerts.showGeneralErrorAlert(message: errorStr)
             break
-        case (.AddingNewData, .Success()):
+        /*case (.AddingNewData, .Success()):
             alerts.showAddYourInfoCompleteAlert()
             showAddYourInfoBtnIfYouAreNotInTheClass()
             filterVisibleStudent(filter: searchTF.text!, allStudent: searchStudents)
-            break
-        case (.AddingNewData, .Failure(let errorStr)):
-            alerts.showGeneralErrorAlert(message: errorStr)
-            break
+            break*/
         case (.Success, .Loading):
             showLoading()
             showAddYourInfoBtnIfYouAreNotInTheClass()
             showNoResultViewIfThereIsNoStudent()
             break
-        case (.Success(), .AddingNewData): break
         case (.Success(), .Success()):
             reloadTableViewAndUpdateUI()
             showAddYourInfoBtnIfYouAreNotInTheClass()
@@ -87,7 +83,6 @@ class ClassDetailUIController{
             reloadTableViewAndUpdateUI()
             alerts.showGeneralErrorAlert(message: errStr)
             break
-        case (.AddingNewData, .AddingNewData): break
             
         default: fatalError("Not yet implemented \(state) to \(newState)")
         }

@@ -23,39 +23,22 @@ class StudentDetailUIController{
     
     private let generalErrorAlert = InfoAlert(title: "Lỗi Kết Nối", message: "", alertType: .Error)
     
-    var state:UIState = .Loading{
-        willSet(newState){
-            update(newState: newState)
-        }
-    }
     
-    private func update(newState: UIState) {
-        switch(state, newState) {
-        case (.Loading, .Loading): showLoading()
-        case (.Loading, .Success()):
+    func update(newState: UIState) {
+        switch(newState) {
+        case (.Loading): showLoading()
+        case (.Success()):
             stopLoading()
             reloadimageSlideshow()
             break
-        case (.Loading, .Failure(let errStr)):
+        case (.Failure(let errStr)):
             stopLoading()
             
             generalErrorAlert.changeMessage(message: errStr)
             generalErrorAlert.show(viewcontroller: viewcontroller)
             break
-
-        case (.Success, .Loading):
-            showLoading()
+        default:
             break
-        case (.Success(), .Success()):
-            break
-        case (.Success(), .Failure(let errStr)):
-            stopLoading()
-            generalErrorAlert.changeMessage(message: errStr)
-            generalErrorAlert.show(viewcontroller: viewcontroller)
-            break
-        case (.AddingNewData, .AddingNewData): break
-            
-        default: fatalError("Not yet implemented \(state) to \(newState)")
         }
     }
     

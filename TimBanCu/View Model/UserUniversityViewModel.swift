@@ -15,7 +15,7 @@ class UserUniversityViewModel {
     var classYear:String!
     
     init(major:MajorWithYear){
-        self.majorName = major.majorName
+        self.majorName = major.name
         self.schoolName = major.institution.name
         self.classYear = major.year
     }

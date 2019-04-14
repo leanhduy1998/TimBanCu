@@ -12,10 +12,7 @@ import FirebaseDatabase
 protocol ClassAndMajorWithYearProtocol {
     func copy()->ClassAndMajorWithYearProtocol
     func objectAsDictionary()->[String:[String:String]]
-    func addToPublicStudentListOnFirebase(student:Student,completionHandler: @escaping (_ uiState:UIState) -> Void)
     func getInstitution() -> Institution
-    func firebaseClassYearPath(withParent:String)->String
-    func uploadToFirebase(year:String,completionHandler: @escaping (UIState) -> Void) 
 }
 
 

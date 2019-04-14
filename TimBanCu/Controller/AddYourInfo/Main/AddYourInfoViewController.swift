@@ -23,7 +23,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var emailPrivacyDropDownBtn: UIButton!
     @IBOutlet weak var imageSlideShow: Slideshow!
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var addInfoBtn: UIButton!
+    @IBOutlet weak var cornfirmInfoBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var addInfoButtonBottomContraint: NSLayoutConstraint!
@@ -33,7 +33,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
     var emailPrivacyType: PrivacyType!
     
     private var controller:AddYourInfoController!
-    private var uiController:AddYourInfoUIController!
+    var uiController:AddYourInfoUIController!
     
     private var slideshowDidTapOnImageAtIndex:IndexOfImageClosure!
     private var imagePickerDidSelectAssets:ImageAssetSelectionClosure!
@@ -53,10 +53,20 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
 
         setupClosures()
     
-        controller = AddYourInfoController(viewcontroller: self)
+        controller = AddYourInfoController(classProtocol: classProtocol)
         uiController = AddYourInfoUIController(viewcontroller: self, slideshowDidTapOnImageAtIndex: slideshowDidTapOnImageAtIndex, imagePickerDidSelectAssets: imagePickerDidSelectAssets)
-        
-        
+    }
+    
+    func goToPreviousController(){
+        let count = navigationController!.viewControllers.count
+        if count > 1 {
+            if navigationController!.viewControllers[count - 2] is ClassDetailViewController {
+                performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self)
+            }
+            if navigationController!.viewControllers[count - 2] is NoUserInfoViewController {
+                performSegue(withIdentifier: "AddYourInfoToSettingSegue", sender: self)
+            }
+        }
     }
     
     private func setupClosures(){
@@ -70,7 +80,11 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
                 
                 if(image.year == nil){
                     self!.imageForSegue = image
-                    self!.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self!)
+                    DispatchQueue.main.async {
+                        self!.navigationController?.popViewController(animated: true)
+                    }
+                    
+                    //self!.performSegue(withIdentifier: "AddYourInfoToUpdateYearSegue", sender: self!)
                 }
                 else{
                     self!.performSegue(withIdentifier: "AddYourInfoToImageDetail", sender: self!)
@@ -147,22 +161,29 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
         else{
             uiController.playLoadingAnimation()
             
-            controller.updateUserInfo(images: userImages, completeUploadClosure: { [weak self] uiState in
+            let student = Student(fullname: fullNameTF.text!, birthYear: birthYearTF.text!, phoneNumber: phoneTF.text!, email: emailTF.text!, uid: CurrentUser.getUid(), phonePrivacy: phonePrivacyType, emailPrivacy: emailPrivacyType)
+            student.images = userImages
+            
+            controller.updateUserInfo(student: student) {[weak self] (uistate) in
+                guard let strongself = self else{
+                    return
+                }
                 
-                switch(uiState){
+                switch(uistate){
                 case .Success():
                     DispatchQueue.main.async {
-                        self!.performSegue(withIdentifier: "AddYourInfoToClassDetailSegue", sender: self!)
+                        strongself.uiController.stopLoadingAnimation()
+                        strongself.goToPreviousController()
                     }
                     break
                 case .Failure(let errMsg):
-                    self!.uiController.showUploadErrorAlert(errMsg: errMsg)
+                    strongself.uiController.showUploadErrorAlert(errMsg: errMsg)
                 default:
                     let studentDetailVC = StudentDetailViewController()
-                    self!.present(studentDetailVC, animated: true, completion: nil)
+                    strongself.present(studentDetailVC, animated: true, completion: nil)
                     break
                 }
-            })
+            }
         }
     }
     
@@ -183,7 +204,7 @@ class AddYourInfoViewController: UIViewController, UINavigationControllerDelegat
             return false
         }
         
-        addInfoBtn.backgroundColor = Constants.AppColor.primaryColor
+        cornfirmInfoBtn.backgroundColor = Constants.AppColor.primaryColor
         return true
     }
     

@@ -14,8 +14,6 @@ class MainNavigationViewController: UINavigationController, UINavigationBarDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {

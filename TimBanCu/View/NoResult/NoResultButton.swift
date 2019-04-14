@@ -28,10 +28,10 @@ class NoResultButton: UIButton {
     private func setUpText(type: NoResultType) -> String {
         var title: String
         switch(type){
-        case .School:
+        case .Institution:
             title = "Thêm Trường Mới"
             break
-        case .University:
+        case .Major:
             title = "Thêm Khoa Mới"
             break
         case .Class:
@@ -45,7 +45,7 @@ class NoResultButton: UIButton {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     

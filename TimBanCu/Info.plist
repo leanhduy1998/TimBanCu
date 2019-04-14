@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -27,7 +29,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>FacebookAppID</key>
 	<string>1816918598394676</string>
 	<key>FacebookDisplayName</key>
@@ -67,6 +69,26 @@
 	<array>
 		<string>FS Playlist Caps.otf</string>
 		<string>FSNokioBold.otf</string>
+        <string>NokioSans-Bold.ttf</string>
+        <string>NokioSans-BoldItalic.ttf</string>
+        <string>NokioSans-ExtraLight.ttf</string>
+        <string>NokioSans-ExtraLightItalic.ttf</string>
+        <string>NokioSans-Light.ttf</string>
+        <string>NokioSans-LightItalic.ttf</string>
+        <string>NokioSans-Medium.ttf</string>
+        <string>NokioSans-MediumItalic.ttf</string>
+        <string>NokioSans-Regular.ttf</string>
+        <string>NokioSans-RegularItalic.ttf</string>
+        <string>NokioSansAlt-Bold.ttf</string>
+        <string>NokioSansAlt-BoldItalic.ttf</string>
+        <string>NokioSansAlt-ExtraLight.ttf</string>
+        <string>NokioSansAlt-ExtraLightItalic.ttf</string>
+        <string>NokioSansAlt-Light.ttf</string>
+        <string>NokioSansAlt-LightItalic.ttf</string>
+        <string>NokioSansAlt-Medium.ttf</string>
+        <string>NokioSansAlt-MediumItalic.ttf</string>
+        <string>NokioSansAlt-Regular.ttf</string>
+        <string>NokioSansAlt-RegularItalic.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

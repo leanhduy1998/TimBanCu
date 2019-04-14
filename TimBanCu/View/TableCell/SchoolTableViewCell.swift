@@ -26,25 +26,6 @@ class SchoolTableViewCell: UITableViewCell {
             else{
                 schoolAddress.text = schoolViewModel.address
             }
-            
-            /*
-            if(schoolViewModel.image == nil){
-                if(schoolViewModel.type == scanType.elementary.rawValue){
-                    imageview.image = #imageLiteral(resourceName: "elementary")
-                }
-                else if(schoolViewModel.type == scanType.secondary.rawValue){
-                    imageview.image = #imageLiteral(resourceName: "middle")
-                }
-                else if(schoolViewModel.type == scanType.highschool.rawValue){
-                    imageview.image = #imageLiteral(resourceName: "middle")
-                }
-                else if(schoolViewModel.type == scanType.university.rawValue){
-                    imageview.image = #imageLiteral(resourceName: "university")
-                }
-            }
-            else{
-                imageview.image = schoolViewModel.image
-            }*/
         }
     }
     

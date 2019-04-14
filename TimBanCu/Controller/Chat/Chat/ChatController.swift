@@ -26,10 +26,28 @@ class ChatController{
     fileprivate let imageURLNotSetKey = "NOTSET"
     fileprivate var photoMessageMap = [String: JSQPhotoMediaItem]()
     
+    private var messagePath:String!
+    private var typeIndicatorPath:String!
+    
+    private let ref = Database.database().reference()
+    
     init(viewcontroller:ChatViewController){
         self.viewcontroller = viewcontroller
         classOrMajorWithYear = viewcontroller.classWithYear
+        
+        setupFirebasePaths()
         setupDBReference()
+    }
+    
+    private func setupFirebasePaths(){
+        if let model = classOrMajorWithYear as? ClassWithYear {
+            messagePath = "messages/\(model.getInstitution().name!)/\(model.classNumberString)/\(model.classNameString)/\(model.year)"
+            typeIndicatorPath = "typingIndicator/\(model.getInstitution().name!)/\(model.classNumberString)/\(model.classNameString)/\(model.year)"
+        }
+        if let model = classOrMajorWithYear as? MajorWithYear {
+            messagePath = "messages/\(model.getInstitution().name!)/\(model.name!)/\(model.year)"
+            messagePath = "typingIndicator/\(model.getInstitution().name!)/\(model.name!)/\(model.year)"
+        }
     }
     
     func removeAllObservers(){
@@ -48,8 +66,8 @@ class ChatController{
     }
     
     private func setupDBReference(){
-        messageRef = Database.database().reference().child(classOrMajorWithYear.firebaseClassYearPath(withParent: "messages"))
-        typingIndicatorRef = Database.database().reference().child(classOrMajorWithYear.firebaseClassYearPath(withParent: "typingIndicator"))
+        messageRef = ref.child(messagePath)
+        typingIndicatorRef = ref.child(typeIndicatorPath)
 
         
         usersTypingQuery = typingIndicatorRef!.queryOrderedByValue().queryEqual(toValue: true)
@@ -100,7 +118,7 @@ extension ChatController{
             return
         }
         
-        let imageRef = storage.reference().child(classOrMajorWithYear.firebaseClassYearPath(withParent: "messages"))
+        let imageRef = storage.reference().child(messagePath)
         
 
         

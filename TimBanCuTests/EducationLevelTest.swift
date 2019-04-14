@@ -28,9 +28,9 @@ class EducationLevelTest: XCTestCase {
     }
     
     func testGetString(){
-        XCTAssertTrue(elementary.getString() == Constants.elementaryString)
-        XCTAssertTrue(middleSchool.getString() == Constants.middleSchoolString)
-        XCTAssertTrue(highSchool.getString() == Constants.highschoolString)
-        XCTAssertTrue(university.getString() == Constants.universityString)
+        XCTAssertTrue(elementary.getShortString() == Constants.elementaryString)
+        XCTAssertTrue(middleSchool.getShortString() == Constants.middleSchoolString)
+        XCTAssertTrue(highSchool.getShortString() == Constants.highschoolString)
+        XCTAssertTrue(university.getShortString() == Constants.universityString)
     }
 }

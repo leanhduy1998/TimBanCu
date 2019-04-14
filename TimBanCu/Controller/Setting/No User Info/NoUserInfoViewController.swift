@@ -9,6 +9,8 @@
 import UIKit
 
 class NoUserInfoViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

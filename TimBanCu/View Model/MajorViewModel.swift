@@ -12,6 +12,6 @@ class MajorViewModel{
     var majorName:String!
     
     init(major:MajorWithYear){
-        self.majorName = major.majorName
+        self.majorName = major.name
     }
 }
