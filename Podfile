@@ -25,6 +25,7 @@ target 'TimBanCu' do
   pod 'lottie-ios'
   pod 'Hero'
   pod 'RevealingSplashView'
+  pod 'IQKeyboardManager'
 
   target 'TimBanCuTests' do
     inherit! :search_paths

@@ -12,14 +12,11 @@ import UIKit
 class UpdateImageYearUIController{
     fileprivate var alerts:UpdateImageYearAlerts!
     fileprivate weak var viewcontroller:UIViewController!
-    fileprivate var keyboardHelper:KeyboardHelper!
     
     init(viewcontroller:UpdateImageYearViewController){
         self.viewcontroller = viewcontroller
         
         setupAlerts()
-        
-        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: true, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
     
     func showYearOutOfLowerBoundAlert(){

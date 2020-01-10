@@ -63,13 +63,31 @@ class FirebaseSnapshotDownloader{
         }
     }
     
-    func getStudents(from model: ClassWithYear,completionHandler: @escaping (_ snapshot: DataSnapshot) -> Void){
+    func getStudents(from model: ClassAndMajorWithYearProtocol,completionHandler: @escaping (_ snapshot: DataSnapshot) -> Void){
+        
+        if let model = model as? ClassWithYear{
+            getStudents(from: model, completionHandler: completionHandler)
+        }
+        else if let model = model as? MajorWithYear{
+            getStudents(from: model, completionHandler: completionHandler)
+        }
+    }
+    
+    private func getStudents(from model: ClassWithYear,completionHandler: @escaping (_ snapshot: DataSnapshot) -> Void){
         
         let path = "classes/\(model.institution.name!)/\(model.classNumberString)/\(model.classNameString)/\(model.year)"
         
         ref.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
             completionHandler(snapshot)
-            
+        })
+    }
+    
+    private func getStudents(from model: MajorWithYear,completionHandler: @escaping (_ snapshot: DataSnapshot) -> Void){
+        
+        let path = "classes/\(model.institution.name!)/\(model.name!)/\(model.year)"
+        
+        ref.child(path).observeSingleEvent(of: .value, with: { (snapshot) in
+            completionHandler(snapshot)
         })
     }
 }

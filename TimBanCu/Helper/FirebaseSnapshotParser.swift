@@ -144,6 +144,7 @@ class FirebaseSnapshotParser{
         student.enrolledIn = enrolledIn
         student.phoneNumber = phoneNumber
         student.email = email
+        student.uid = uid
         return student
     }
     

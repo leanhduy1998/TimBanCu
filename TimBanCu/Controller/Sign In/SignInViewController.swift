@@ -24,31 +24,33 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var googleSignInBtn: GIDSignInButton!
-    
+    private var fbLoginBtn: LoginButton!
     @IBAction func unwindToSignInViewController(segue:UIStoryboardSegue) { }
     
-    private var controller: SignInController!
-    private var uiController:SignInUIController!
+    private var signInService: SignInService!
     
-    private var fbLoginBtn: LoginButton!
+    
+    private var revealingSplashView: RevealingSplashView! = nil
+    private var appNameView: AnimateAppNameView!
+    
+    private var errorAlert = InfoAlert(title: "Đăng Nhập Không Thành Công", message: "", alertType: .Error)
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupGoogleLogin()
         setupFacebookLogin()
         
-        self.uiController = SignInUIController(viewController: self, facebookBtn: fbLoginBtn, googleBtn: googleSignInBtn)
-        self.controller = SignInController()
-        
-        controller.loginSilently()
+        signInService = SignInService()
+        signInService.loginSilently()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        uiController.viewWillAppear()
+        appNameView = AnimateAppNameView(viewController: self)
+        appNameView.animate()
+        view.bringSubview(toFront: appNameView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,13 +60,47 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         viewDidLayoutSubviews()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        uiController.viewDidDisappear()
+        appNameView.remove()
+    }
+    
+    private func goToNextScreen(){
+        if(FirstTimeLaunch.getBool()){
+            FirstTimeLaunch.setFalse()
+            performSegue(withIdentifier: "SignInToEULASegue", sender: self)
+        }
+        else{
+            performSegue(withIdentifier: "SignInToSelectSchoolTypeSegue", sender: self)
+        }
+    }
+    
+    private func render(newState: State) {
+        switch(newState) {
+        case .Success( _ ): goToNextScreen()
+        case .Failure(let errorStr): createErrorAlert(errorStr: errorStr)
+            // after login silently failed, aka, when the user is not log in google account
+        default: break
+        }
+    }
+    
+    private func createErrorAlert(errorStr:String){
+        errorAlert.changeMessage(message: errorStr)
+        errorAlert.show(viewcontroller: self)
     }
 
+}
+
+// MARK: Setup
+extension SignInViewController{
+    private func setupInitialLoadingScreen() {
+        revealingSplashView = HomeRevealingSplashView()
+        view.addSubview(revealingSplashView!)
+        revealingSplashView?.startAnimation()
+    }
 }
 
 // MARK: Google Sign In
@@ -83,14 +119,18 @@ extension SignInViewController:GIDSignInDelegate,GIDSignInUIDelegate{
     
     // sign in with google
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        controller.handleGoogleSignIn(user: user, error: error) { [weak self] (uistate) in
-            self?.uiController.state = uistate
+        signInService.handleGoogleSignIn(user: user, error: error) { [weak self] (uistate) in
+            guard let strongself = self else{
+                return
+            }
+            strongself.render(newState: uistate)
         }
     }
     
     fileprivate func setupGoogleLogin(){
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        googleSignInBtn.style = GIDSignInButtonStyle.wide
     }
 }
 
@@ -99,12 +139,24 @@ extension SignInViewController:LoginButtonDelegate{
     private func setupFacebookLogin(){
         fbLoginBtn = LoginButton(readPermissions: [ .publicProfile ])
         fbLoginBtn.delegate = self
+        
+        view.addSubview(fbLoginBtn)
+        view.sendSubview(toBack: fbLoginBtn)
+        
+        fbLoginBtn.translatesAutoresizingMaskIntoConstraints = false
+        fbLoginBtn.bottomAnchor.constraint(equalTo: googleSignInBtn.topAnchor, constant: -10).isActive = true
+        fbLoginBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        fbLoginBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
+        fbLoginBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
     }
     
     //sign in with facebook
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        controller.handleFacebookSignIn { [weak self] (uiState) in
-            self?.uiController.state = uiState
+        signInService.handleFacebookSignIn { [weak self] (uiState) in
+            guard let strongself = self else{
+                return
+            }
+            strongself.render(newState: uiState)
         }
     }
     

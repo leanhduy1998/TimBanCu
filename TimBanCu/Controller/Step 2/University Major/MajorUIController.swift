@@ -18,7 +18,6 @@ class MajorUIController{
     
     var searchMajors = [Major]()
     fileprivate var tableViewTool: GenericTableView<Major, MajorTableViewCell>!
-    fileprivate var keyboardHelper:KeyboardHelper!
     
     init(viewcontroller:MajorViewController,tableview:UITableView, searchTF:UITextField){
         self.viewcontroller = viewcontroller
@@ -27,7 +26,6 @@ class MajorUIController{
         
         setupAlerts()
         setupGenericTableView()
-        setupKeyboard()
         setupLoadingAnimation()
     }
     
@@ -76,11 +74,13 @@ class MajorUIController{
         tableview.reloadData()
         
         if(searchMajors.count == 0){
-            //noResultView.isHidden = false
+            viewcontroller.view.bringSubview(toFront: viewcontroller.noResultVC.view)
+            viewcontroller.noResultVC.view.isHidden = false
             tableview.isHidden = true
         }
         else{
-            //noResultView.isHidden = true
+            viewcontroller.view.sendSubview(toBack: viewcontroller.noResultVC.view)
+            viewcontroller.noResultVC.view.isHidden = true
             tableview.isHidden = false
         }
     }
@@ -115,10 +115,6 @@ extension MajorUIController{
     fileprivate func setupAlerts(){
         alerts = MajorAlerts(viewcontroller: viewcontroller)
     }
-
-    fileprivate func setupKeyboard(){
-        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
-    }
 }
 
 //MARK: Loading Animation
@@ -139,7 +135,8 @@ extension MajorUIController {
     }
     
     private func showLoading(){
-        //noResultView.isHidden = true
+        viewcontroller.view.sendSubview(toBack: viewcontroller.noResultVC.view)
+        viewcontroller.noResultVC.view.isHidden = true
         tableview.isHidden = true
         self.playLoadingAnimation()
     }

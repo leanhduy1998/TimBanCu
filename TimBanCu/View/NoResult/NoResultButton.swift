@@ -10,22 +10,19 @@ import UIKit
 
 class NoResultButton: UIButton {
     
-    init(type: NoResultType) {
+    init() {
         super.init(frame: .zero)
-        let title = setUpText(type: type)
-        self.setAttributedTitle(NSAttributedString(string: title, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: Constants.AppColor.primaryColor]), for: .normal)
         
-        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setContraints(view: UIView, contraintTo label: UIView) {
-        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20).isActive = true
-        self.widthAnchor.constraint(equalToConstant: view.frame.size.width - 40).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setAttributedTitle(NSAttributedString(string: currentTitle ?? "", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.semibold), NSAttributedStringKey.foregroundColor: Constants.AppColor.primaryColor]), for: .normal)
     }
     
-    private func setUpText(type: NoResultType) -> String {
+    
+    
+    /*private func setUpText(type: NoResultType) -> String {
         var title: String
         switch(type){
         case .Institution:
@@ -42,7 +39,7 @@ class NoResultButton: UIButton {
             break
         }
         return title
-    }
+    }*/
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

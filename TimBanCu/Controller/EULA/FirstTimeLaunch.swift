@@ -9,8 +9,6 @@
 import Foundation
 
 class FirstTimeLaunch{
- 
-
     static func setTrue(){
         UserDefaults.standard.set(true, forKey: "firstTimeLaunch")
     }

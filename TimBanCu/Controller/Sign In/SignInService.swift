@@ -14,7 +14,7 @@ import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 
-final class SignInController{
+final class SignInService{
     
     var uid:String!
     
@@ -36,7 +36,7 @@ final class SignInController{
         GIDSignIn.sharedInstance()?.signInSilently()
     }
     
-    func handleGoogleSignIn(user: GIDGoogleUser!, error: Error!,completionHandler: @escaping (_ uiState:UIState) -> Void){
+    func handleGoogleSignIn(user: GIDGoogleUser!, error: Error!,completionHandler: @escaping (_ state:State) -> Void){
         if (error == nil) {
             guard let authentication = user.authentication else { return }
             
@@ -49,7 +49,7 @@ final class SignInController{
         }
     }
     
-    func handleFacebookSignIn(completionHandler: @escaping (_ uiState:UIState) -> Void){
+    func handleFacebookSignIn(completionHandler: @escaping (_ state:State) -> Void){
         if let accessToken = AccessToken.current {
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             
@@ -60,7 +60,7 @@ final class SignInController{
         }
     }
     
-    private func firebaseSignIn(credential:AuthCredential, completionHandler: @escaping (_ uiState:UIState) -> Void){
+    private func firebaseSignIn(credential:AuthCredential, completionHandler: @escaping (_ state:State) -> Void){
         Auth.auth().signInAndRetrieveData(with: credential) { [weak self] (authResult, error) in
             DispatchQueue.main.async {
                 if let error = error {
@@ -69,7 +69,7 @@ final class SignInController{
                 
                 self?.uid = Auth.auth().currentUser?.uid
                 self?.loadUserInfo()
-                completionHandler(.Success())
+                completionHandler(.Success(nil))
             }
         }
     }

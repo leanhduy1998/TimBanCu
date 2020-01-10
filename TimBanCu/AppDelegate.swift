@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,10 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FirstTimeLaunch.setTrue()
         }
         
-        
+        IQKeyboardManager.shared().isEnabled = true
         
         return true
 
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
     }
     
 

@@ -24,25 +24,26 @@ class SchoolViewController: UIViewController {
     
     var tableviewAnimation:TableViewAnimation!
     var loadingAnimation:LoadingAnimation!
-    var noResultVC:NoResultViewController!
     
     var alerts:SchoolAlerts!
-    private var keyboardSetter:KeyboardHelper!
     
     private var dataSource:TableViewDataSource!
     
     
     
+    private var noResultView:NoResultViewController!
+    
+    private var filteredList = [InstitutionFull]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         controller = SchoolController(educationLevel: educationLevel)
-        //controller.attach(observer: self)
+        controller.attach(observer: self)
         
         setupSearchTF()
         setupTableView()
+        setupNoResultVC()
         
         view.hero.id = educationLevel.getFullString()
         setupLoadingAnimation()
@@ -70,8 +71,6 @@ class SchoolViewController: UIViewController {
             strongSelf.onDataUpdated()
             strongSelf.render(newState: uiState)
         }
-        
-        keyboardSetter = KeyboardHelper(viewcontroller: self, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
     }
     
     
@@ -95,18 +94,6 @@ class SchoolViewController: UIViewController {
         }
     }
     
-    private func handleAddNewInstitution(state:UIState){
-        switch(state){
-        case .Success():
-            alerts.showAddNewSchoolCompletedAlert()
-            render(newState: state)
-            break
-        default:
-            render(newState: state)
-            break
-        }
-    }
-    
     
     func moveToNextControllerAnimation(){
         view.endEditing(true)
@@ -121,31 +108,30 @@ class SchoolViewController: UIViewController {
             return
         }
         
-        let filteredList = logicController.filter(name: name, institutions: controller.institutions)
+        filteredList = logicController.filter(name: name, institutions: controller.institutions)
+        updateTableViewData()
         
+        showNoResultVCIfNeeded()
         tableview.reloadData()
-        showNoResultVCIfNeeded(list: filteredList)
         stopLoadingAnimation()
     }
     
-    private func showNoResultVCIfNeeded(list:[InstitutionFull]){
-        if(list.count == 0){
-            noResultVC.view.isHidden = false
-            view.bringSubview(toFront: noResultVC.view)
+    private func showNoResultVCIfNeeded(){
+        if(filteredList.count == 0){
+            noResultView.view.isHidden = false
+            view.bringSubview(toFront: noResultView.view)
+            noResultView.view.frame = tableview.frame
             tableview.isHidden = true
         }
         else{
-            noResultVC.view.isHidden = true
-            view.sendSubview(toBack: noResultVC.view)
+            noResultView.view.isHidden = true
+            view.sendSubview(toBack: noResultView.view)
             tableview.isHidden = false
         }
     }
     
-    private func getFilteredList()->[InstitutionFull]{
-        return logicController.filter(name: searchTF.text!, institutions: controller.institutions)
-    }
-    
-    
+
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ClassNumberViewController{
             destination.educationLevel = educationLevel
@@ -161,7 +147,7 @@ class SchoolViewController: UIViewController {
 extension SchoolViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let school = getFilteredList()[indexPath.row]
+        let school = filteredList[indexPath.row]
         selectedInstitution = school
         
         if(educationLevel == .University){
@@ -175,13 +161,8 @@ extension SchoolViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         tableviewAnimation.animateCellFromBelowUpAtLoading(cell: cell, indexPath: indexPath)
     }
-}
-
-// MARK: Data updated
-extension SchoolViewController:Observer{
-    func onDataUpdated() {
-        let filteredList = getFilteredList()
-        
+    
+    private func updateTableViewData(){
         let dataSource:TableViewDataSource = .make(for: filteredList, reuseIdentifier: "SchoolTableViewCell", configurer: SchoolTableViewConfigurator())
         self.dataSource = dataSource
         tableview.dataSource = dataSource
@@ -189,24 +170,47 @@ extension SchoolViewController:Observer{
     }
 }
 
+// MARK: Data updated
+extension SchoolViewController:Observer{
+    func onDataUpdated() {
+        updateTableViewData()
+    }
+}
+
 // MARK: Setup
 
 extension SchoolViewController{
-    func setup(educationLevel:EducationLevel){
+    func inject(educationLevel:EducationLevel){
         self.educationLevel = educationLevel
         
-        self.noResultVC = NoResultVCFactory.getNoResultViewControllerForSchoolViewController(handleAction: {
+        
+        
+        alerts = SchoolAlerts(viewcontroller: self)
+    }
+    
+    fileprivate func setupNoResultVC(){
+   
+        noResultView = NoResultFactory.build(viewcontroller: self)
+        noResultView.setOnAcceptBtnPressed(onAccept: { [weak self] (result) in
             
-            let result = self.noResultVC.getTextFieldText()
+            guard let strongself = self else{
+                return
+            }
             
-            self.controller.addNewInstitution(name: result, completionHandler: { (state) in
+            guard let result = result else{
+                return
+            }
+            
+            strongself.controller.addNewInstitution(name: result, completionHandler: { (state) in
                 DispatchQueue.main.async {
-                    self.handleAddNewInstitution(state: state)
+                    if case .Success = state{
+                        strongself.alerts.showAddNewSchoolCompletedAlert()
+                    }
+                    strongself.render(newState: state)
                 }
             })
         })
-        
-        alerts = SchoolAlerts(viewcontroller: self)
+        add(noResultView)
     }
     
     fileprivate func setupSearchTF(){

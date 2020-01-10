@@ -12,7 +12,7 @@ import UIKit
 class ClassNameUIController{
     fileprivate weak var viewcontroller:ClassNameViewController!
     private var alerts: ClassNameAlerts!
-    private var noResultView: NoResultView!
+    //private var noResultView: NoResultView!
     fileprivate var loadingAnimation:LoadingAnimation!
     
     private var tableview:UITableView!
@@ -25,7 +25,6 @@ class ClassNameUIController{
     fileprivate var searchTFUnderline:UnderlineView!
     fileprivate var searchUnderlineHeightAnchor: NSLayoutConstraint?
     fileprivate var addNewClassNameHandler: (String) -> ()
-    fileprivate var keyboardHelper:KeyboardHelper!
     
     init(viewcontroller:ClassNameViewController,searchTF:UITextField,tableview:UITableView,addNewClassNameHandler: @escaping (String) -> ()){
         self.viewcontroller = viewcontroller
@@ -37,7 +36,6 @@ class ClassNameUIController{
         setupAlerts()
         setupNoResultView()
         setupGenericTableView()
-        setupKeyboard()
         setupLoadingAnimation()
     }
     
@@ -146,11 +144,11 @@ extension ClassNameUIController{
         tableview.reloadData()
         
         if(searchClasses.count == 0){
-            noResultView.isHidden = false
+            //noResultView.isHidden = false
             tableview.isHidden = true
         }
         else{
-            noResultView.isHidden = true
+            //noResultView.isHidden = true
             tableview.isHidden = false
         }
     }
@@ -159,15 +157,12 @@ extension ClassNameUIController{
 // Other UI setup
 extension ClassNameUIController{
     fileprivate func setupNoResultView(){
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
+        //noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Class) {
             //self.showAddNewClassNameAlert()
-        }
-        noResultView.translatesAutoresizingMaskIntoConstraints = false
-        viewcontroller.view.addSubview(noResultView)
-        noResultView.isHidden = true
-    }
-    fileprivate func setupKeyboard(){
-        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
+        //}
+        //noResultView.translatesAutoresizingMaskIntoConstraints = false
+        //viewcontroller.view.addSubview(noResultView)
+        //noResultView.isHidden = true
     }
 }
 
@@ -188,7 +183,7 @@ extension ClassNameUIController {
     }
     
     private func showLoading(){
-        noResultView.isHidden = true
+        //noResultView.isHidden = true
         tableview.isHidden = true
         self.playLoadingAnimation()
     }

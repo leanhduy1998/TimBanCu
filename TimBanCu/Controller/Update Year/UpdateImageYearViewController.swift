@@ -21,7 +21,6 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
     private var allowedUpperBoundYear:Int!
     
     private var uiController:UpdateImageYearUIController!
-    private var keyboardHelper:KeyboardHelper!
     
     private var tabBarHeight : CGFloat = 0.0
     private var keyboardIsShowing = false
@@ -42,7 +41,6 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         uiController = UpdateImageYearUIController(viewcontroller: self)
         
         setupYearBounds()
-        setupKeyboard()
     }
     
     private func setupYearBounds(){
@@ -93,7 +91,7 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
         }
     }
     
-    private func setupKeyboard(){
+    /*private func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: self, shiftViewWhenShow: false, keyboardWillShowClosure: { notification in
             
             self.adjustingViewHeight(notification: notification, show: true)
@@ -121,7 +119,7 @@ class UpdateImageYearViewController: UIViewController,UITextFieldDelegate {
                 self.keyboardIsShowing = false
             }
         })
-    }
+    }*/
     
 
 }

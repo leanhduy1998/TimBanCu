@@ -143,6 +143,7 @@ PODS:
   - ImageSlideshow (1.7.0):
     - ImageSlideshow/Core (= 1.7.0)
   - ImageSlideshow/Core (1.7.0)
+  - IQKeyboardManager (6.2.0)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -175,6 +176,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - Hero
   - ImageSlideshow
+  - IQKeyboardManager
   - JSQMessagesViewController
   - lottie-ios
   - RevealingSplashView
@@ -208,6 +210,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Hero
     - ImageSlideshow
+    - IQKeyboardManager
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - leveldb-library
@@ -244,6 +247,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -252,6 +256,6 @@ SPEC CHECKSUMS:
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
 
-PODFILE CHECKSUM: 8a56b65fbb4c74c3b00e6349868e6915e984e2fc
+PODFILE CHECKSUM: 6b38f0b51e4ca83a66d07c1c88b5ed55cebed468
 
 COCOAPODS: 1.5.2

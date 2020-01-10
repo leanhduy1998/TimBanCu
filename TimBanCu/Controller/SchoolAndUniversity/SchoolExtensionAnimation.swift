@@ -21,7 +21,7 @@ extension SchoolViewController{
     }
     
     func showLoading(){
-        noResultVC.view.isHidden = true
+        //noResultVC.view.isHidden = true
         tableview.isHidden = true
         playLoadingAnimation()
     }

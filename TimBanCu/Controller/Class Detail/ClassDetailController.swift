@@ -24,7 +24,7 @@ class ClassDetailController{
     
     
     func fetchStudents(completionHandler: @escaping (_ uiState:UIState) -> Void){
-        FirebaseDownloader.shared.getStudents(classWithYear: classProtocol as! ClassWithYear) { [weak self] (students, err) in
+        FirebaseDownloader.shared.getStudents(model: classProtocol) { [weak self] (students, err) in
             
             guard let strongself = self else{
                 return

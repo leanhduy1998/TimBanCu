@@ -21,14 +21,18 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
     private var uiController: MajorUIController!
     private var controller:MajorController!
     
-    private var addNewClassView:AskForInputView!
+    var noResultVC:NoResultViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addNewClassView = AskForInputView(frame: view.frame, type:.Major, onAccept: { [weak self] (majorName) in
-            
+        noResultVC = NoResultFactory.build(viewcontroller: self)
+        noResultVC.setOnAcceptBtnPressed { [ weak self] (majorName) in
             guard let strongself = self else{
+                return
+            }
+            
+            guard let majorName = majorName else{
                 return
             }
             
@@ -54,9 +58,10 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
                     }
                 }
             })
-        })
+        }
         
-        view.addSubview(addNewClassView)
+        
+        add(noResultVC)
         
         controller = MajorController(viewcontroller: self, school: institution)
         
@@ -64,6 +69,11 @@ class MajorViewController: UIViewController,UITextFieldDelegate {
         
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        noResultVC.view.frame = view.frame
     }
     
     override func viewWillAppear(_ animated: Bool) {

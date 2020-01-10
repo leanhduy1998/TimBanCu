@@ -24,7 +24,7 @@ class AddYourInfoUIController{
     
     fileprivate var slideshow:Slideshow!
     fileprivate var yearLabel:UILabel!
-    fileprivate var keyboardHelper:KeyboardHelper!
+
     fileprivate var pickerController:ImagePicker!
     
     fileprivate var slideshowDidTapOnImageAtIndex:IndexOfImageClosure!
@@ -62,7 +62,6 @@ class AddYourInfoUIController{
         setupAlerts()
         setupPrivacyDropDowns()
         setupSlideShow()
-        setupKeyboard()
         setupImagePicker()
         
         observeTextFields()
@@ -220,7 +219,7 @@ extension AddYourInfoUIController{
 
 // MARK:Keyboard
 extension AddYourInfoUIController{
-    fileprivate func setupKeyboard(){
+    /*fileprivate func setupKeyboard(){
         keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: { notification in
             
             self.adjustingViewHeight(notification: notification, show: true)
@@ -247,7 +246,7 @@ extension AddYourInfoUIController{
                 self.viewcontroller.view.frame.origin.y = self.viewcontroller.view.frame.origin.y + changeInHeight - self.tabBarHeight
             }
         })
-    }
+    }*/
 }
 
 // MARK:Loading Animation

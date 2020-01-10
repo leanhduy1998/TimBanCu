@@ -37,13 +37,14 @@ class FirebaseDownloader{
         }
     }
     
-    func getStudents(classWithYear:ClassWithYear,completionHandler: @escaping ( _ students:[Student], _ error:String?) -> Void){
+    func getStudents(model:ClassAndMajorWithYearProtocol,completionHandler: @escaping ( _ students:[Student], _ error:String?) -> Void){
         
         var error:String?
         
         var students = [Student]()
         
-        snapshotDownloader.getStudents(from: classWithYear) {[weak self] (snapshot) in
+
+        snapshotDownloader.getStudents(from: model) {[weak self] (snapshot) in
             
             guard let strongself = self else{
                 return

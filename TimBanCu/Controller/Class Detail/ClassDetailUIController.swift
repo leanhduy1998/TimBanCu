@@ -11,7 +11,7 @@ import UIKit
 
 class ClassDetailUIController{
     
-    private var noResultView:NoResultView!
+    //private var noResultView:NoResultView!
     private weak var viewcontroller:ClassDetailViewController!
     private var searchTF:UITextField!
     private var genericTableView:GenericTableView<Student, ClassDetailTableViewCell>!
@@ -23,7 +23,6 @@ class ClassDetailUIController{
     
     fileprivate var searchTFUnderline:UnderlineView!
     fileprivate var noResultViewAddBtnClosure: ()->()
-    fileprivate var keyboardHelper:KeyboardHelper!
     
     var searchStudents = [Student]()
     
@@ -48,7 +47,6 @@ class ClassDetailUIController{
         setupNoResultView()
         setupAlerts()
         setupGenericTableView()
-        setupKeyboard()
         setupLoadingAnimation()
     }
     
@@ -113,11 +111,11 @@ class ClassDetailUIController{
         
         UIView.animate(withDuration: 1) {
             if(self.searchStudents.count == 0){
-                self.noResultView.isHidden = false
+               // self.noResultView.isHidden = false
                 self.tableview.isHidden = true
             }
             else{
-                self.noResultView.isHidden = true
+               // self.noResultView.isHidden = true
                 self.tableview.isHidden = false
             }
         }
@@ -142,10 +140,10 @@ class ClassDetailUIController{
     
     private func showNoResultViewIfThereIsNoStudent(){
         if(viewcontroller.getAllStudents().count == 0){
-            noResultView.isHidden = false
+            //noResultView.isHidden = false
         }
         else{
-            noResultView.isHidden = true
+           // noResultView.isHidden = true
         }
     }
 }
@@ -213,13 +211,10 @@ extension ClassDetailUIController{
 extension ClassDetailUIController{
     fileprivate func setupNoResultView(){
         
-        noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: noResultViewAddBtnClosure)
-        noResultView.isHidden = true
+        //noResultView = NoResultView(viewcontroller: viewcontroller, searchTF: searchTF, type: .Student, addBtnPressedClosure: noResultViewAddBtnClosure)
+        //noResultView.isHidden = true
     }
     
-    fileprivate func setupKeyboard(){
-        keyboardHelper = KeyboardHelper(viewcontroller: viewcontroller, shiftViewWhenShow: false, keyboardWillShowClosure: nil, keyboardWillHideClosure: nil)
-    }
 }
 
 //MARK: Loading Animation
@@ -240,7 +235,7 @@ extension ClassDetailUIController {
     }
     
     private func showLoading(){
-        noResultView.isHidden = true
+        //noResultView.isHidden = true
         tableview.isHidden = false
         addYourselfBtn.isHidden = true
         self.playLoadingAnimation()

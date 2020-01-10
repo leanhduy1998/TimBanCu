@@ -12,14 +12,13 @@ class NoResultLabel: UILabel {
 
     init(type:NoResultType) {
         super.init(frame: .zero)
-        setUpText(type: type)
         self.textColor = UIColor.darkGray
         self.textAlignment = .center
-        self.numberOfLines = 3
+        self.numberOfLines = 0
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private func setUpText(type: NoResultType) {
+    /*private func setUpText(type: NoResultType) {
         switch(type){
         case .Institution:
             self.text = "Không có kết quả. Bạn vui lòng điền có dấu.\n Bạn có muốn thêm tên trường?"
@@ -33,7 +32,7 @@ class NoResultLabel: UILabel {
         case .Student:
             self.text = "Chưa có học sinh nào.\n Bạn có muốn thông tin của mình?"
         }
-    }
+    }*/
     
     
     required init?(coder aDecoder: NSCoder) {

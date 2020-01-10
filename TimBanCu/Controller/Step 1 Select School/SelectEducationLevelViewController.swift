@@ -12,13 +12,14 @@ import FacebookLogin
 import FirebaseDatabase
 import Hero
 
-class SelectSchoolTypeViewController: UIViewController {
+class SelectEducationLevelViewController: UIViewController {
     
     @IBOutlet weak var tieuHocButton: UIButton!
     
     @IBOutlet weak var thptButton: UIButton!
-    
     @IBOutlet weak var thcsButton: UIButton!
+    
+    private var selectedEducationLevel:EducationLevel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +31,10 @@ class SelectSchoolTypeViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     
-    private func presentNextViewController(educationLevel:EducationLevel) {
+    private func presentNextViewController() {
         navigationController?.hero.isEnabled = true
         navigationController?.hero.navigationAnimationType = .fade
-        
-        let controller = RootFactory.getSchoolViewController(educationLevel: educationLevel)
-        navigationController?.add(controller)
+        performSegue(withIdentifier: "SelectQueryToSchoolSegue", sender: self)
     }
     
     private func customButtonTitleSize(button: UIButton) {
@@ -44,19 +43,29 @@ class SelectSchoolTypeViewController: UIViewController {
     }
     
     @IBAction func tieuHocBtnPressed(_ sender: Any) {
-        presentNextViewController(educationLevel: .Elementary)
+        selectedEducationLevel = EducationLevel.Elementary
+        presentNextViewController()
     }
     
     @IBAction func trunghoccosoBtnPressed(_ sender: Any) {
-        presentNextViewController(educationLevel: .MiddleSchool)
+        selectedEducationLevel = EducationLevel.MiddleSchool
+        presentNextViewController()
     }
     
     @IBAction func trunghocphothongBtnPressed(_ sender: Any) {
-        presentNextViewController(educationLevel: .HighSchool)
+        selectedEducationLevel = EducationLevel.HighSchool
+        presentNextViewController()
     }
     
     @IBAction func daihocBtnPressed(_ sender: Any) {
-        presentNextViewController(educationLevel: .University)
+        selectedEducationLevel = EducationLevel.University
+        presentNextViewController()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destionation = segue.destination as? SchoolViewController{
+            destionation.inject(educationLevel: selectedEducationLevel)
+        }
     }
 }
 
